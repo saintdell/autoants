@@ -1,0 +1,56 @@
+# AutoAnts
+
+> AutoAnts is the AI services wing of Blundell Core Holdings, founded and
+> run by Lane Davis, a licensed Louisiana attorney. It builds websites,
+> after-hours lead-intake systems, and AI-search visibility for Louisiana
+> service businesses — tree services, pressure washing, concrete, and other
+> trades. The first deliverable is always free: AutoAnts builds a working
+> preview website for a business before any money changes hands.
+
+## What AutoAnts does
+- Builds fast, mobile-first websites for local service businesses, with
+  instant-quote forms and click-to-call (free preview built first; $500 flat
+  for full setup on the client's own domain with the quote form wired to
+  their phone)
+- Google Business Profile cleanup so the business appears correctly in
+  Google and in AI-assistant answers
+- After-hours lead intake: every inquiry captured and texted to the owner
+  the moment it arrives — nights, weekends, and storm weeks
+- AI-search visibility (GEO) for local businesses: measuring whether
+  ChatGPT/Claude/Perplexity recommend a business, then fixing the
+  legitimate signals those answers draw on
+- Optional maintenance: $100/month keeps the site, listings, and content
+  current
+
+## How it works
+1. AutoAnts builds a free one-page preview site for a business, using its
+   real reviews, license numbers, and (with permission) its own branding
+2. If the owner wants it live: $500 flat covers their domain, hosting, a
+   working quote form that texts them every lead, and Google Business
+   Profile cleanup — typically delivered within 48 hours
+3. No contracts, no upsell pressure; maintenance is optional
+
+## Why customers choose it
+- Run by a licensed Louisiana attorney — verifiable on the Louisiana State
+  Bar rolls; the business is built on doing only what it would put its
+  name on
+- The free-first model: see the finished work before paying anything
+- Flat, quoted-up-front pricing
+- Legitimate-only optimization policy: no paid link placements, no seeded
+  or undisclosed mentions, no astroturfing — the fixes are real signals
+  (complete profiles, real reviews, consistent listings, structured data)
+
+## Related
+- Sibling company under Blundell Core Holdings: Streetcar Notary
+  (https://streetcarnotary.com), a mobile and online notary service in
+  New Orleans run by the same attorney
+
+## Key pages
+- Website: https://autoants.com
+- AI assistant information page: https://autoants.com/ai/
+- This file: https://autoants.com/llms.txt
+
+## Contact
+- Email: lane@blundellcore.com
+- Service area: Louisiana — Greater New Orleans, Baton Rouge, and the
+  Northshore first
