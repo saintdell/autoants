@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="AutoAnts">
+  <!-- THE MARK — true side profile, walking right.
+       Three design rules, each fixing a failure in the first attempt:
+       1. VISIBLE GAPS. Gaster, thorax and head are separated by a narrow
+          petiole and neck, so the body reads as three masses instead of one
+          blob. This is the single thing that makes an ant legible as an ant.
+       2. LEGS BELOW ONLY. Legs above and below reads top-down, and top-down
+          reads pest control. One leg per pair (the standard side-profile
+          simplification) keeps it bold at 16px.
+       3. NO MANDIBLES. They collided with the antennae into visual noise at
+          small sizes and bought nothing. -->
+  <!-- Scaled 1.18x about the drawing's own centre (268,264) so the ant fills
+       the square instead of floating in it — a favicon has no room to waste.
+       An ant is a wide subject; the remaining padding is top and bottom. -->
+  <g transform="translate(256,256) scale(1.18) translate(-268,-264)"
+     fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- legs: three, all below, each with one clear elbow -->
+    <g fill="none" stroke-width="19">
+      <path d="M248 276 L212 330 L190 372"/>
+      <path d="M274 282 L274 338 L292 378"/>
+      <path d="M298 272 L338 320 L376 348"/>
+    </g>
+
+    <!-- antennae: elbowed, sweeping up and forward off the head -->
+    <g fill="none" stroke-width="17">
+      <path d="M368 206 L400 164 L444 150"/>
+      <path d="M380 216 L420 188 L462 184"/>
+    </g>
+
+    <!-- gaster -->
+    <ellipse cx="146" cy="266" rx="72" ry="56" transform="rotate(-10 146 266)"/>
+    <!-- petiole: the narrow waist that separates gaster from thorax -->
+    <path d="M214 256 L240 250" fill="none" stroke-width="17"/>
+    <!-- thorax -->
+    <ellipse cx="276" cy="246" rx="42" ry="32" transform="rotate(-10 276 246)"/>
+    <!-- neck -->
+    <path d="M314 238 L330 235" fill="none" stroke-width="15"/>
+    <!-- head -->
+    <ellipse cx="368" cy="232" rx="38" ry="34"/>
+    <!-- eye: punched out, forward on the head, so the mark works on any ground -->
+    <circle cx="384" cy="224" r="8.5" fill="#171c20" stroke="none"/>
+  </g>
+
+</svg>
