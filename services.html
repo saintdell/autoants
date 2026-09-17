@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services — AutoAnts | AI that puts money in your pocket</title>
+<meta name="description" content="Everything AutoAnts does for local trades — websites, 24/7 call capture, quotes, follow-up, reviews, and back-office automation. Built to make you money, not just save you time.">
+<meta name="theme-color" content="#0d0e0c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d0e0c; --surface:#1a1c17; --surface2:#22241d; --ink:#f4f1e8; --muted:#a6a89b;
+    --faint:#6f7267; --amber:#ffb302; --amber-deep:#e08a00; --amber-ink:#1a1204; --ok:#7bc96a;
+    --line:#2c2e26; --disp:"Archivo",system-ui,sans-serif; --body:"Inter",system-ui,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  nav{display:flex;align-items:center;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
+  .logo{display:flex;align-items:center;gap:9px;font-family:var(--disp);font-weight:800;font-size:20px;text-decoration:none}
+  .logo .dot{width:30px;height:30px;border-radius:50%;background:var(--amber);color:var(--amber-ink);display:flex;align-items:center;justify-content:center;font-weight:800}
+  .logo span{color:var(--amber)}
+  nav .sp{margin-left:auto}
+  nav a.btn{background:var(--amber);color:var(--amber-ink);font-weight:700;padding:9px 16px;border-radius:9px;text-decoration:none;font-family:var(--disp)}
+  nav a.ghost{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
+  header.hero{padding:56px 0 34px;border-bottom:1px solid var(--line)}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber)}
+  h1{font-family:var(--disp);font-weight:800;font-size:clamp(32px,5vw,50px);line-height:1.06;margin:12px 0 14px;text-wrap:balance}
+  h1 em{color:var(--amber);font-style:normal}
+  .sub{font-size:19px;color:var(--muted);max-width:60ch}
+  .principle{margin-top:22px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:10px;padding:14px 18px;font-size:15px;color:var(--ink)}
+  .principle b{color:var(--amber)}
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  .group-title{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 18px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card .ic{font-size:22px}
+  .card h3{font-family:var(--disp);font-weight:700;font-size:17px;margin:10px 0 6px}
+  .card p{margin:0;color:var(--muted);font-size:14.5px}
+  .card .money{display:block;margin-top:9px;color:var(--ok);font-size:13px;font-weight:600}
+  h2.sec{font-family:var(--disp);font-weight:800;font-size:clamp(24px,3.4vw,32px);margin:0 0 6px;text-wrap:balance}
+  .sec-lede{color:var(--muted);margin:0 0 26px;max-width:62ch}
+  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+  .tier{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column}
+  .tier.feat{border-color:var(--amber);box-shadow:0 0 0 1px var(--amber) inset}
+  .tier .t{font-family:var(--disp);font-weight:800;font-size:19px}
+  .tier .price{font-family:var(--disp);font-weight:800;font-size:26px;margin:8px 0 2px}
+  .tier .price small{font-size:14px;color:var(--muted);font-weight:600}
+  .tier .d{color:var(--muted);font-size:14px;margin:6px 0 14px}
+  .tier ul{list-style:none;margin:0 0 16px;padding:0;font-size:14px}
+  .tier li{padding:5px 0 5px 22px;position:relative;color:var(--ink)}
+  .tier li::before{content:"→";position:absolute;left:0;color:var(--amber)}
+  .tier .cta{margin-top:auto;background:var(--amber);color:var(--amber-ink);text-align:center;font-family:var(--disp);font-weight:700;padding:10px;border-radius:9px;text-decoration:none}
+  .tier.feat .badge{align-self:flex-start;background:var(--amber);color:var(--amber-ink);font-family:var(--mono);font-size:11px;font-weight:600;padding:3px 8px;border-radius:6px;margin-bottom:8px;letter-spacing:.08em}
+  .how{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .step .n{font-family:var(--mono);color:var(--amber);font-size:13px}
+  .step h4{font-family:var(--disp);font-weight:700;margin:6px 0 6px;font-size:17px}
+  .step p{margin:0;color:var(--muted);font-size:14px}
+  .results{background:var(--surface2);border:1px dashed var(--line);border-radius:14px;padding:26px;text-align:center;color:var(--muted)}
+  .results b{color:var(--ink);font-family:var(--disp)}
+  .cta-band{text-align:center;padding:52px 0}
+  .cta-band h2{font-family:var(--disp);font-weight:800;font-size:clamp(26px,4vw,38px);margin:0 0 10px}
+  .cta-band a{display:inline-block;background:var(--amber);color:var(--amber-ink);font-family:var(--disp);font-weight:800;font-size:18px;padding:14px 30px;border-radius:11px;text-decoration:none;margin-top:8px}
+  footer{color:var(--faint);font-size:13px;padding:26px 0 40px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="logo" href="index.html"><span class="dot">A</span>Auto<span>Ants</span></a>
+    <div class="sp"></div>
+    <a class="ghost" href="index.html">Home</a>
+    <a class="btn" href="index.html#contact">Get a free preview</a>
+  </nav>
+
+  <header class="hero">
+    <div class="eyebrow">The full colony</div>
+    <h1>Everything we do to put <em>more money</em> in your pocket.</h1>
+    <p class="sub">You run the crew. We run the colony — the website, the phone, the follow-up, and the back office — so more of the customers looking for you actually become paying jobs.</p>
+    <div class="principle"><b>Our rule:</b> we sell what makes you <b>money</b>, not what just saves you time. Every service below is aimed at one thing — turning missed calls, dead leads, and no-shows into booked work.</div>
+  </header>
+
+  <section>
+    <div class="group-title">① Get found — so customers can hire you</div>
+    <div class="grid">
+      <div class="card"><div class="ic">🌐</div><h3>A website that works</h3><p>Fast, mobile-first, click-to-call. Built to turn a Google search into a ringing phone.</p><span class="money">→ the searches you're invisible for today = booked jobs</span></div>
+      <div class="card"><div class="ic">📍</div><h3>Local Visibility (SEO + AI)</h3><p>Google Maps, the local pack, Apple/Bing, and the new frontier — showing up in ChatGPT & Gemini answers.</p><span class="money">→ found where competitors aren't looking yet</span></div>
+      <div class="card"><div class="ic">⭐</div><h3>Review engine</h3><p>Automated review requests and responses that lift your rating and your rank.</p><span class="money">→ more 5-stars → higher rank → more calls</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="group-title">② Never miss a job — capture every call</div>
+    <div class="grid">
+      <div class="card"><div class="ic">💬</div><h3>Missed-call text-back</h3><p>Miss a call and the customer instantly gets a text — before they dial your competitor.</p><span class="money">→ every missed call is a lost job; we catch them</span></div>
+      <div class="card"><div class="ic">📞</div><h3>AI receptionist · 24/7</h3><p>You can't answer on a roof. We capture, qualify, and book the calls you'd miss — day or night — and hand you the warm ones.</p><span class="money">→ the after-hours jobs you lose today</span></div>
+      <div class="card"><div class="ic">⚡</div><h3>Speed-to-lead</h3><p>A lead answered in 5 minutes books far more than one answered in 30. We make you first.</p><span class="money">→ first to respond wins the job</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="group-title">③ Book more work — turn interest into jobs</div>
+    <div class="grid">
+      <div class="card"><div class="ic">🧮</div><h3>Instant quotes</h3><p>A real ballpark in 60 seconds while they're still deciding — priced from your rates.</p><span class="money">→ the job they'd have slept on</span></div>
+      <div class="card"><div class="ic">🔁</div><h3>Sales follow-up</h3><p>Most jobs close on the 2nd–5th touch. We run the follow-up you never get to.</p><span class="money">→ the money left on the table today</span></div>
+      <div class="card"><div class="ic">🌅</div><h3>Reactivation campaigns</h3><p>Your old customer list is buried money. One campaign wakes it up.</p><span class="money">→ jobs this week, $0 ad spend</span></div>
+      <div class="card"><div class="ic">📅</div><h3>Booking + no-show reminders</h3><p>Fill the calendar and cut the no-shows that leave your crew standing around.</p><span class="money">→ every empty slot is a paid day lost</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="group-title">④ Run the back office — get paid, stay clean</div>
+    <div class="grid">
+      <div class="card"><div class="ic">📝</div><h3>Proposals & estimates</h3><p>Send the proposal from the driveway, not three days later when they've moved on.</p><span class="money">→ close while the interest is hot</span></div>
+      <div class="card"><div class="ic">💵</div><h3>Invoice & payment follow-up</h3><p>We chase unpaid invoices automatically — on <em>your</em> payment processor. We never touch your money.</p><span class="money">→ stop bleeding on invoices you forget to chase</span></div>
+      <div class="card"><div class="ic">🛡️</div><h3>COI Guard</h3><p>Never lose a job to an expired certificate of insurance again — we track and chase them for you.</p><span class="money">→ the contracts you'd lose to lapsed paperwork</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec">Simple ways to start</h2>
+    <p class="sec-lede">Pick a door. Most trades start with a website or the office-manager stack, then add services as they see the calls come in. Founding-client pricing for our first customers.</p>
+    <div class="tiers">
+      <div class="tier">
+        <div class="t">Ready-Launch</div>
+        <div class="price">$750 <small>one-time</small></div>
+        <div class="d">A real site, live this week — content, domain, Google Business Profile, click-to-call.</div>
+        <ul><li>Live in ~48–72 hours</li><li>Mobile-first + click-to-call</li><li>Google Business Profile set up</li></ul>
+        <a class="cta" href="index.html#contact">Get started</a>
+      </div>
+      <div class="tier feat">
+        <div class="badge">MOST POPULAR</div>
+        <div class="t">Office Manager</div>
+        <div class="price">$500<small>/mo</small></div>
+        <div class="d">The recurring stack that captures and books the work you're missing now.</div>
+        <ul><li>Missed-call text-back</li><li>Speed-to-lead + follow-up</li><li>Reviews + booking</li><li>Add the AI receptionist anytime</li></ul>
+        <a class="cta" href="index.html#contact">Book a call</a>
+      </div>
+      <div class="tier">
+        <div class="t">Local Visibility</div>
+        <div class="price">Custom</div>
+        <div class="d">Get found everywhere a customer — or an AI — looks. GBP, listings, reviews, SEO + GEO.</div>
+        <ul><li>Google + Apple + Bing</li><li>AI-answer visibility</li><li>Monthly visibility report</li></ul>
+        <a class="cta" href="index.html#contact">See if you qualify</a>
+      </div>
+      <div class="tier">
+        <div class="t">À la carte</div>
+        <div class="price">Any one</div>
+        <div class="d">Just need one thing — a receptionist, invoice follow-up, reactivation? Take it on its own.</div>
+        <ul><li>Any single service above</li><li>No long contracts</li><li>Scale up when you're ready</li></ul>
+        <a class="cta" href="index.html#contact">Ask us</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec">How it works</h2>
+    <div class="how">
+      <div class="step"><div class="n">01</div><h4>Free preview</h4><p>We build you a real preview of your site — before you pay a cent. If you like it, we go live.</p></div>
+      <div class="step"><div class="n">02</div><h4>Turn on the colony</h4><p>Add call capture, follow-up, and the services that fit — set up on our standard stack, fast.</p></div>
+      <div class="step"><div class="n">03</div><h4>Watch the calls</h4><p>You see the jobs come in. We report the numbers. You add more as it pays for itself.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="results"><b>Results, coming soon.</b><br>We're onboarding our first founding clients now — real numbers and their words will live here. Want to be one of them, at founding pricing? <a href="index.html#contact" style="color:var(--amber);font-weight:600">Let's talk.</a></div>
+  </section>
+
+  <div class="cta-band">
+    <h2>See it before you pay for it.</h2>
+    <p class="sub" style="margin:0 auto">We'll build you a free preview of your site — no catch, worst case you delete it.</p>
+    <a href="index.html#contact">Get my free preview</a>
+  </div>
+
+  <footer>
+    AutoAnts — AI for local trades. We build websites and automation that make you money. Commercial services only.
+  </footer>
+</div>
+</body>
+</html>
