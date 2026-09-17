@@ -1,325 +1,285 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AutoAnts — Automated Assistants for the work that eats your week</title>
-<meta name="description" content="AutoAnts finds the recurring paperwork that eats your week, tells you honestly whether it should be automated at all, then builds it or coaches you through it. Consulting and done-for-you AI services. A Blundell Core Holdings company.">
-<link rel="canonical" href="https://autoants.com/">
-<meta property="og:title" content="AutoAnts — Automated Assistants">
-<meta property="og:description" content="We find the work that eats your week, tell you honestly whether to automate it, then build it or coach you through it.">
+<meta name="description" content="AutoAnts is the AI office manager for tree, HVAC and roofing crews — we build your website, catch every missed call, and get you found on Google and in AI answers, so jobs book themselves. Free site preview, you see it before you pay. A Blundell Core Holdings company.">
+<meta property="og:title" content="AutoAnts — the AI office manager for the trades">
+<meta property="og:description" content="You run the crew. We run the colony. Website, missed-call text-back, booking, local visibility + AI answers — one system that books jobs while you're in the field.">
 <meta property="og:url" content="https://autoants.com/">
 <meta property="og:type" content="website">
-<link rel="icon" href="/mark.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0d0e0c">
+<title>AutoAnts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#171c20; --bg2:#1e252a; --card:#222a30; --line:#313b42;
-    --ink:#f2f4f5; --dim:#a3aeb5; --faint:#78848b;
-    --accent:#e8842c; --accent-soft:#f0a15c; --mark-bg:#171c20;
-    --max:68rem;
+    --bg:#0d0e0c; --bg2:#141511; --surface:#1a1c17; --surface2:#202318;
+    --ink:#f4f1e8; --muted:#a6a89b; --faint:#6f7267;
+    --amber:#ffb302; --amber-deep:#e08a00; --amber-ink:#1a1204;
+    --line:rgba(244,241,232,.10); --line2:rgba(244,241,232,.16);
+    --ok:#7bbf6a;
+    --disp:'Archivo',-apple-system,system-ui,sans-serif;
+    --body:'Inter',-apple-system,system-ui,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --wrap:74rem;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{
-    background:var(--bg); color:var(--ink);
-    font:400 17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
-  section{padding:5.5rem 0;border-top:1px solid var(--line)}
-  section:first-of-type{border-top:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:var(--disp);letter-spacing:-.02em;line-height:1.02}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 1.5rem}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--amber)}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--disp);font-weight:800;font-size:1rem;padding:.95rem 1.5rem;border-radius:11px;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;border:0}
+  .btn:active{transform:scale(.98)}
+  .btn-amber{background:var(--amber);color:var(--amber-ink);box-shadow:0 10px 30px rgba(255,179,2,.22)}
+  .btn-amber:hover{box-shadow:0 14px 40px rgba(255,179,2,.34)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line2)}
+  .btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
 
-  /* ---------- type ---------- */
-  h1{font-size:clamp(2.1rem,5.6vw,3.9rem);line-height:1.06;letter-spacing:-.025em;font-weight:800}
-  h2{font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.15;letter-spacing:-.02em;font-weight:800;margin-bottom:.9rem}
-  h3{font-size:1.08rem;font-weight:700;letter-spacing:-.01em}
-  .eyebrow{font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
-  .lede{font-size:clamp(1.05rem,2.1vw,1.28rem);color:var(--dim);max-width:42rem}
-  .small{font-size:.92rem;color:var(--faint)}
+  /* ---- nav ---- */
+  nav{position:sticky;top:0;z-index:50;background:rgba(13,14,12,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:.55rem;font-family:var(--disp);font-weight:900;font-size:1.22rem;letter-spacing:-.03em}
+  .brand .mark{width:26px;height:26px;display:grid;place-items:center;font-size:1.15rem}
+  .navlinks{display:flex;gap:2rem;font-size:.92rem;font-weight:500;color:var(--muted)}
+  .navlinks a:hover{color:var(--ink)}
+  @media(max-width:760px){.navlinks{display:none}}
 
-  /* ---------- header ---------- */
-  header{padding:2rem 0 0}
-  .brand{display:flex;align-items:center;gap:.7rem}
-  .brand svg{width:46px;height:46px;color:var(--ink);flex:none}
-  .brand .wm{font-size:1.22rem;font-weight:800;letter-spacing:.01em}
-  .brand .wm span{font-weight:400;opacity:.72}
+  /* ---- hero ---- */
+  header{position:relative;padding:6rem 0 5rem;overflow:hidden}
+  header:before{content:"";position:absolute;inset:0;background:
+    radial-gradient(60rem 34rem at 78% -12%,rgba(255,179,2,.13),transparent 62%),
+    radial-gradient(50rem 30rem at 6% 8%,rgba(255,179,2,.05),transparent 60%);pointer-events:none}
+  .trail{position:absolute;top:0;right:0;width:46%;height:100%;opacity:.5;pointer-events:none}
+  .hero-inner{position:relative;max-width:42rem}
+  header h1{font-size:clamp(2.6rem,7.2vw,5rem);font-weight:900;margin:1.1rem 0 1.3rem}
+  header h1 .amb{color:var(--amber)}
+  .lede{font-size:clamp(1.1rem,2.2vw,1.32rem);color:var(--muted);max-width:36rem;margin-bottom:2rem}
+  .lede b{color:var(--ink);font-weight:600}
+  .cta-row{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:2.2rem}
+  .trust{display:flex;gap:.5rem 1.4rem;flex-wrap:wrap;font-family:var(--mono);font-size:.75rem;color:var(--faint);letter-spacing:.02em}
+  .trust span{display:inline-flex;align-items:center;gap:.45rem}
+  .trust b{color:var(--amber);font-weight:700}
 
-  /* ---------- hero ---------- */
-  .hero{padding:4.5rem 0 5rem}
-  .hero .backronym{margin:1.4rem 0 0;color:var(--faint);font-size:.98rem}
-  .hero .backronym b{color:var(--accent-soft);font-weight:700}
-  .hero h1{margin-bottom:1.4rem;max-width:20ch}
-  .hero .lede{margin-bottom:2.2rem}
-  .cta-row{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
-  .btn{display:inline-block;background:var(--accent);color:#17120c;font-weight:800;
-       padding:.95rem 1.7rem;border-radius:9px;text-decoration:none;font-size:1rem;
-       transition:transform .12s ease,background .12s ease}
-  .btn:hover{background:var(--accent-soft);transform:translateY(-1px)}
-  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);font-weight:600}
-  .btn.ghost:hover{border-color:var(--faint);background:rgba(255,255,255,.03)}
+  section{padding:5rem 0;position:relative}
+  .sec-head{max-width:40rem;margin-bottom:2.6rem}
+  .sec-head h2{font-size:clamp(1.9rem,4.2vw,2.8rem);font-weight:800;margin:.8rem 0 .7rem}
+  .sec-head p{color:var(--muted);font-size:1.06rem}
+  .band{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 
-  /* ---------- ant trail divider ---------- */
-  .trail{display:flex;align-items:center;gap:1.6rem;opacity:.5;margin:0;padding:1.2rem 0}
-  .trail svg{width:19px;height:19px;color:var(--faint);flex:none}
-  .trail .rule{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
-  @media (prefers-reduced-motion:no-preference){
-    .trail svg{animation:march 5.5s ease-in-out infinite}
-    .trail svg:nth-child(2){animation-delay:.5s}
-    .trail svg:nth-child(3){animation-delay:1s}
-    @keyframes march{0%,100%{transform:translateX(0)}50%{transform:translateX(9px)}}
-  }
+  /* ---- problem cards ---- */
+  .prob{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.1rem}
+  .pcard{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.6rem;border-top:3px solid var(--amber)}
+  .pcard .n{font-family:var(--mono);font-size:.72rem;color:var(--faint);letter-spacing:.12em}
+  .pcard h3{font-size:1.22rem;font-weight:800;margin:.5rem 0 .5rem}
+  .pcard p{color:var(--muted);font-size:.96rem}
+  .pcard .cost{margin-top:.9rem;font-family:var(--mono);font-size:.8rem;color:var(--amber);font-weight:700}
 
-  /* ---------- doctrine ---------- */
-  .doctrine{background:var(--bg2)}
-  .doctrine blockquote{font-size:clamp(1.6rem,4vw,2.5rem);font-weight:800;line-height:1.15;
-    letter-spacing:-.02em;max-width:20ch;margin-bottom:1.3rem}
-  .doctrine blockquote::before{content:"“";color:var(--accent);margin-right:.05em}
-  .doctrine blockquote::after{content:"”";color:var(--accent)}
-  .doctrine p{color:var(--dim);max-width:40rem}
+  /* ---- the stack ---- */
+  .stack{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+  .scard{background:var(--surface);border:1px solid var(--line);border-radius:15px;padding:1.5rem 1.4rem;transition:transform .16s ease,border-color .16s ease,background .16s ease;position:relative}
+  .scard:hover{transform:translateY(-3px);border-color:var(--line2);background:var(--surface2)}
+  .scard .tag{font-family:var(--mono);font-size:.68rem;font-weight:700;letter-spacing:.1em;color:var(--amber);text-transform:uppercase}
+  .scard h3{font-size:1.16rem;font-weight:800;margin:.45rem 0 .5rem}
+  .scard p{color:var(--muted);font-size:.93rem}
+  .scard .free{position:absolute;top:1.1rem;right:1.1rem;font-family:var(--mono);font-size:.62rem;font-weight:700;letter-spacing:.08em;background:var(--amber);color:var(--amber-ink);padding:.2rem .5rem;border-radius:6px}
+  .stack-note{margin-top:1.6rem;font-size:1.02rem;color:var(--muted);text-align:center}
+  .stack-note b{color:var(--ink)}
 
-  /* ---------- service lines ---------- */
-  .lines{display:grid;grid-template-columns:1fr;gap:1.2rem;margin-top:2.4rem}
-  @media(min-width:860px){.lines{grid-template-columns:1fr 1fr}}
-  .line{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.7rem 1.6rem}
-  .line > .eyebrow{margin-bottom:.4rem}
-  .line > p.blurb{color:var(--dim);font-size:.97rem;margin-bottom:1.4rem}
-  .item{padding:1rem 0;border-top:1px solid var(--line)}
-  .item:first-of-type{border-top:0;padding-top:.2rem}
-  .item .top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
-  .item .price{color:var(--accent);font-weight:800;font-size:.95rem;white-space:nowrap;text-align:right}
-  .item p{color:var(--faint);font-size:.9rem;margin-top:.3rem}
+  /* ---- how it works ---- */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.4rem;counter-reset:s}
+  .step{position:relative;padding-top:1rem}
+  .step:before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:var(--mono);font-size:.85rem;font-weight:700;color:var(--amber);display:block;margin-bottom:.6rem}
+  .step h3{font-size:1.18rem;font-weight:800;margin-bottom:.45rem}
+  .step p{color:var(--muted);font-size:.95rem}
 
-  /* ---------- paths ---------- */
-  .paths{counter-reset:p;display:grid;gap:1rem;margin-top:2.2rem}
-  @media(min-width:800px){.paths{grid-template-columns:repeat(3,1fr)}}
-  .path{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.5rem}
-  .path::before{counter-increment:p;content:counter(p);display:block;font-size:.78rem;font-weight:800;
-    color:var(--accent);letter-spacing:.14em;margin-bottom:.6rem}
-  .path p{color:var(--faint);font-size:.92rem;margin-top:.4rem}
+  /* ---- why / proof ---- */
+  .why{display:grid;grid-template-columns:1.1fr 1fr;gap:2.5rem;align-items:start}
+  @media(max-width:820px){.why{grid-template-columns:1fr}}
+  .whylist{display:grid;gap:1.1rem}
+  .wrow{display:flex;gap:.9rem}
+  .wrow .dot{flex:0 0 auto;width:9px;height:9px;border-radius:50%;background:var(--amber);margin-top:.5rem}
+  .wrow h4{font-size:1.05rem;font-weight:700;font-family:var(--body);margin-bottom:.15rem}
+  .wrow p{color:var(--muted);font-size:.93rem}
+  .proofcard{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.8rem}
+  .proofcard .eyebrow{margin-bottom:.7rem}
+  .proofcard h3{font-size:1.4rem;font-weight:800;margin-bottom:.6rem}
+  .proofcard p{color:var(--muted);font-size:.96rem;margin-bottom:1.2rem}
+  .placeholder{border:1px dashed var(--line2);border-radius:11px;padding:1.1rem;font-family:var(--mono);font-size:.78rem;color:var(--faint);text-align:center}
 
-  /* ---------- won't do ---------- */
-  .wont ul{list-style:none;margin-top:2rem;display:grid;gap:.1rem}
-  .wont li{padding:1.15rem 0;border-top:1px solid var(--line);display:flex;gap:1rem;align-items:flex-start}
-  .wont li::before{content:"×";color:var(--accent);font-weight:800;font-size:1.2rem;line-height:1.3;flex:none}
-  .wont li b{display:block;margin-bottom:.15rem}
-  .wont li span{color:var(--faint);font-size:.92rem}
+  /* ---- pricing ---- */
+  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.1rem}
+  .tier{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.8rem 1.6rem;display:flex;flex-direction:column}
+  .tier.feature{border-color:var(--amber);box-shadow:0 0 0 1px var(--amber),0 18px 50px rgba(255,179,2,.1)}
+  .tier .flag{font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.1em;color:var(--amber);text-transform:uppercase;margin-bottom:.6rem}
+  .tier h3{font-size:1.3rem;font-weight:800;margin-bottom:.3rem}
+  .tier .price{font-family:var(--disp);font-weight:900;font-size:2.1rem;margin:.4rem 0 .1rem;letter-spacing:-.03em}
+  .tier .price small{font-family:var(--mono);font-size:.8rem;font-weight:500;color:var(--muted);letter-spacing:0}
+  .tier ul{list-style:none;margin:1.1rem 0 1.4rem;display:grid;gap:.6rem}
+  .tier li{font-size:.92rem;color:var(--muted);padding-left:1.4rem;position:relative}
+  .tier li:before{content:"→";position:absolute;left:0;color:var(--amber);font-weight:700}
+  .tier .btn{margin-top:auto;width:100%;justify-content:center}
+  .price-note{margin-top:1.4rem;font-family:var(--mono);font-size:.78rem;color:var(--faint);text-align:center}
 
-  /* ---------- who ---------- */
-  .who{background:var(--bg2)}
-  .who .grid{display:grid;gap:2rem;align-items:start}
-  @media(min-width:800px){.who .grid{grid-template-columns:1.4fr 1fr}}
-  .who p{color:var(--dim);margin-bottom:1rem}
-  .note{border-left:2px solid var(--accent);padding:.2rem 0 .2rem 1.1rem;color:var(--dim);font-size:.96rem}
+  /* ---- final cta ---- */
+  .final{text-align:center;padding:6rem 0}
+  .final h2{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;margin-bottom:1rem}
+  .final p{color:var(--muted);font-size:1.15rem;max-width:34rem;margin:0 auto 2rem}
 
-  /* ---------- footer ---------- */
-  footer{border-top:1px solid var(--line);padding:3rem 0 4rem;color:var(--faint);font-size:.88rem}
-  footer a{color:var(--faint)}
-  footer .f-top{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.2rem}
-  a{color:var(--accent-soft)}
+  footer{border-top:1px solid var(--line);padding:2.5rem 0;color:var(--faint);font-size:.86rem}
+  footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+  footer .brand{font-size:1rem;color:var(--muted)}
+  footer a:hover{color:var(--amber)}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
 </style>
 </head>
 <body>
+<nav><div class="wrap">
+  <a class="brand" href="#top"><span class="mark">🐜</span>AutoAnts</a>
+  <div class="navlinks">
+    <a href="#problem">The problem</a>
+    <a href="#stack">What you get</a>
+    <a href="#how">How it works</a>
+    <a href="#pricing">Pricing</a>
+  </div>
+  <a class="btn btn-amber" href="#pricing" style="padding:.6rem 1.1rem;font-size:.9rem">Free site preview</a>
+</div></nav>
 
-<!-- reusable ant mark -->
-<svg style="display:none" aria-hidden="true">
-  <symbol id="ant" viewBox="0 0 512 512">
-    <g transform="translate(256,256) scale(1.18) translate(-268,-264)"
-       fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <g fill="none" stroke-width="19">
-        <path d="M248 276 L212 330 L190 372"/>
-        <path d="M274 282 L274 338 L292 378"/>
-        <path d="M298 272 L338 320 L376 348"/>
-      </g>
-      <g fill="none" stroke-width="17">
-        <path d="M368 206 L400 164 L444 150"/>
-        <path d="M380 216 L420 188 L462 184"/>
-      </g>
-      <ellipse cx="146" cy="266" rx="72" ry="56" transform="rotate(-10 146 266)"/>
-      <path d="M214 256 L240 250" fill="none" stroke-width="17"/>
-      <ellipse cx="276" cy="246" rx="42" ry="32" transform="rotate(-10 276 246)"/>
-      <path d="M314 238 L330 235" fill="none" stroke-width="15"/>
-      <ellipse cx="368" cy="232" rx="38" ry="34"/>
-      <circle cx="384" cy="224" r="8.5" fill="var(--mark-bg)" stroke="none"/>
+<header id="top"><div class="wrap"><div class="hero-inner">
+  <svg class="trail" viewBox="0 0 400 600" fill="none" aria-hidden="true">
+    <path d="M380 -20 C 320 120, 240 160, 300 300 S 180 480, 260 620" stroke="var(--amber)" stroke-width="1.5" stroke-dasharray="2 12" stroke-linecap="round" opacity=".55"/>
+    <g fill="var(--amber)" opacity=".8">
+      <circle cx="352" cy="70" r="3"/><circle cx="286" cy="182" r="3"/><circle cx="298" cy="300" r="3"/><circle cx="228" cy="430" r="3"/><circle cx="262" cy="540" r="3"/>
     </g>
-  </symbol>
-</svg>
+  </svg>
+  <p class="eyebrow">AI-run back office · built for the trades</p>
+  <h1>You run the crew.<br>We run the <span class="amb">colony.</span></h1>
+  <p class="lede">AutoAnts is the AI office manager for tree, HVAC &amp; roofing crews. We build your website, <b>catch every missed call</b>, and turn you into the business that shows up first on Google — and books itself while you're in the field.</p>
+  <div class="cta-row">
+    <a class="btn btn-amber" href="#pricing">Get your free site preview →</a>
+    <a class="btn btn-ghost" href="#how">See how it works</a>
+  </div>
+  <div class="trust">
+    <span><b>◆</b> Louisiana-built</span>
+    <span><b>◆</b> Attorney-owned</span>
+    <span><b>◆</b> You see it before you pay a dime</span>
+  </div>
+</div></div></header>
 
-<header>
-  <div class="wrap">
-    <div class="brand">
-      <svg viewBox="0 0 512 512"><use href="#ant"/></svg>
-      <div class="wm"><span>Auto</span>Ants</div>
+<section id="problem"><div class="wrap">
+  <div class="sec-head">
+    <p class="eyebrow">The problem</p>
+    <h2>Right now, money's on the floor.</h2>
+    <p>You're the best in the field and invisible in the office. Every day, jobs you already earned walk out the door — and you never even see them go.</p>
+  </div>
+  <div class="prob">
+    <div class="pcard"><div class="n">01 / MISSED</div><h3>The phone rings out</h3><p>You're up a tree or under a house. The call goes to voicemail. That homeowner doesn't leave one — they just call the next guy on Google.</p><div class="cost">→ a booked job, gone in 20 seconds</div></div>
+    <div class="pcard"><div class="n">02 / INVISIBLE</div><h3>Nobody can find you</h3><p>You've got the reviews and the reputation — and no website, or a broken one. The crew <em>with</em> a site is getting your Google searches. And now your customers are asking ChatGPT, too.</p><div class="cost">→ the searches never reach you</div></div>
+    <div class="pcard"><div class="n">03 / DROPPED</div><h3>Quotes die quietly</h3><p>Estimates sent, never followed up. A text on Tuesday would've closed it. By Friday it's someone else's job.</p><div class="cost">→ work you already priced, walking</div></div>
+  </div>
+</div></section>
+
+<section id="stack" class="band"><div class="wrap">
+  <div class="sec-head">
+    <p class="eyebrow">What you get · the colony</p>
+    <h2>One system. It works while you work.</h2>
+    <p>Think of it as a crew of workers who never sleep, handling the office so you can stay on the job. One number to text you, one dashboard, everything talking to everything.</p>
+  </div>
+  <div class="stack">
+    <div class="scard"><span class="free">FREE</span><div class="tag">Get found</div><h3>Your website</h3><p>A real, fast, mobile site with your reviews and a quote form — built <em>before</em> you pay. Yours to keep either way.</p></div>
+    <div class="scard"><div class="tag">Never lose a call</div><h3>Missed-Call Text-Back</h3><p>Miss a call, and it instantly texts them back: "Sorry I missed you — what do you need?" The job stays yours.</p></div>
+    <div class="scard"><div class="tag">Be first</div><h3>Speed-to-Lead</h3><p>The crew that answers first wins the job. New lead comes in, we respond in seconds — automatically.</p></div>
+    <div class="scard"><div class="tag">Fill the calendar</div><h3>Booking</h3><p>Quote requests turn into estimates and booked jobs without you touching your phone.</p></div>
+    <div class="scard"><div class="tag">Get found everywhere</div><h3>Local Visibility + AI Answers</h3><p>Google Business Profile, Yelp, Apple, Bing — dialed in and consistent. Plus the new frontier: showing up when someone asks <em>ChatGPT</em> for the best crew in town.</p></div>
+    <div class="scard"><div class="tag">When you can't pick up</div><h3>Voice Receptionist</h3><p>An AI that answers the phone in your voice, screens the job, and books it — so a live person always picks up.</p></div>
+    <div class="scard"><div class="tag">More 5-stars</div><h3>Reviews Engine</h3><p>Every finished job asks for a review, automatically. Your rating climbs; the bad ones get caught in private first.</p></div>
+    <div class="scard"><div class="tag">Fill the pipeline</div><h3>Content &amp; Ads</h3><p>Before/after job clips and hyper-local ads that put you in front of the neighborhood before the storm hits.</p></div>
+    <div class="scard"><div class="tag">Found money</div><h3>Database Reactivation</h3><p>We text your past customers "time for a trim?" — revenue from a list you already own and forgot about.</p></div>
+  </div>
+  <p class="stack-note"><b>Turn on what you need, when you need it.</b> Start with the essentials; add the rest as you grow.</p>
+</div></div></section>
+
+<section id="how"><div class="wrap">
+  <div class="sec-head">
+    <p class="eyebrow">How it works</p>
+    <h2>I do the work first. You decide after.</h2>
+    <p>No contracts to start, no risk. I prove it's worth it before you spend a dollar.</p>
+  </div>
+  <div class="steps">
+    <div class="step"><h3>Free audit</h3><p>I find the money you're leaving on the floor — and build your website before you pay anything.</p></div>
+    <div class="step"><h3>You see it live</h3><p>Your name, your reviews, on a real site you can pull up on your phone. Like it? Keep it.</p></div>
+    <div class="step"><h3>Turn on the office</h3><p>We switch on the missed-call catch, the booking, the visibility — the whole colony, tuned to your trade.</p></div>
+    <div class="step"><h3>The 30-day receipt</h3><p>One page: calls caught, quotes booked, reviews gained, dollars moved. The numbers do the talking.</p></div>
+  </div>
+</div></section>
+
+<section id="why" class="band"><div class="wrap">
+  <div class="sec-head">
+    <p class="eyebrow">Why AutoAnts</p>
+    <h2>Built by someone who gets it — and won't BS you.</h2>
+  </div>
+  <div class="why">
+    <div class="whylist">
+      <div class="wrow"><div class="dot"></div><div><h4>An attorney's eye for what's true</h4><p>I'm a licensed Louisiana attorney. I only put claims on your site I can actually stand behind — no fake reviews, no made-up credentials. That protects you, and customers can tell.</p></div></div>
+      <div class="wrow"><div class="dot"></div><div><h4>Local, not a call center</h4><p>Louisiana-built and Louisiana-run. I know storm season, I know your customers, and you talk to a person — me.</p></div></div>
+      <div class="wrow"><div class="dot"></div><div><h4>Done-for-you, not another login</h4><p>You didn't get into trees to manage software. I run the whole system; you get the jobs.</p></div></div>
+      <div class="wrow"><div class="dot"></div><div><h4>The AI stack the big firms use</h4><p>The same modern AI the national brands pay agencies thousands for — pointed at one thing: putting money in your pocket.</p></div></div>
+      <div class="wrow"><div class="dot"></div><div><h4>Honest about what to automate</h4><p>Sometimes the answer is "don't." If a tool won't earn its keep for you, I'll say so. That's how you know the next thing I recommend is real.</p></div></div>
+    </div>
+    <div class="proofcard">
+      <p class="eyebrow">Proof</p>
+      <h3>Real sites, already built.</h3>
+      <p>Before we ever talk money, there's a live website with your business on it — because that's how I work. Dozens are built and live right now.</p>
+      <div class="placeholder">[ your results go here ]<br>you'll be an early case study —<br>calls caught · jobs booked · dollars moved</div>
     </div>
   </div>
-</header>
+</div></section>
 
-<div class="wrap">
-  <section class="hero">
-    <h1>Every business runs on paperwork nobody wants to do.</h1>
-    <p class="lede">AutoAnts finds the recurring work that eats your week, tells you honestly whether it should be automated at all — and then either builds it for you or teaches you to build it yourself.</p>
-    <div class="cta-row">
-      <a class="btn" href="mailto:lane@blundellcore.com?subject=AI%20Tools%20Assessment">Book an assessment</a>
-      <a class="btn ghost" href="#lines">See what it costs</a>
+<section id="pricing"><div class="wrap">
+  <div class="sec-head">
+    <p class="eyebrow">Pricing</p>
+    <h2>Founding-client pricing. Locks in before I raise it.</h2>
+    <p>Start free. Go live for a flat fee. Add the office manager when you're ready.</p>
+  </div>
+  <div class="tiers">
+    <div class="tier">
+      <div class="flag">Start here</div>
+      <h3>The Website</h3>
+      <div class="price">Free<br><small>preview · $750 to go live &amp; keep</small></div>
+      <ul><li>Built with your real info + reviews</li><li>Fast, mobile, quote form</li><li>Live on your own domain</li><li>Yours to keep, no strings</li></ul>
+      <a class="btn btn-ghost" href="mailto:lane@blundellcore.com?subject=Free%20AutoAnts%20site%20preview">Get my free preview</a>
     </div>
-    <p class="backronym">AutoAnts is short for <b>Automated Assistants</b>. One ant is useless. A colony runs the shop.</p>
-  </section>
-</div>
-
-<section class="doctrine">
-  <div class="wrap">
-    <p class="eyebrow">The rule above all of it</p>
-    <blockquote>We don't automate dysfunction.</blockquote>
-    <p>A broken process running faster is still a broken process — now it produces mistakes at machine speed. So the messy ones get fixed on paper first, and sometimes the honest prescription is a process fix and <em>zero</em> AI. Saying that out loud is exactly why the next recommendation is worth trusting.</p>
-    <p style="margin-top:1rem">The same rule has a second half: we never automate the relationship. The call where somebody decides whether to trust you stays yours. We automate the logistics around it.</p>
-  </div>
-</section>
-
-<div class="wrap">
-  <div class="trail" aria-hidden="true">
-    <svg viewBox="0 0 512 512"><use href="#ant"/></svg>
-    <svg viewBox="0 0 512 512"><use href="#ant"/></svg>
-    <svg viewBox="0 0 512 512"><use href="#ant"/></svg>
-    <div class="rule"></div>
-  </div>
-</div>
-
-<section id="lines">
-  <div class="wrap">
-    <p class="eyebrow">Two ways to work together</p>
-    <h2>Advice, or execution. Both are priced in the open.</h2>
-    <p class="lede">The assessment is the front door to either one. Whatever you spend on it credits your first month if you continue.</p>
-
-    <div class="lines">
-      <div class="line">
-        <p class="eyebrow">Consulting — we advise, we build nothing</p>
-        <p class="blurb">For owners who want to know what to do, and may well do it themselves.</p>
-
-        <div class="item">
-          <div class="top"><h3>AI Tools Assessment</h3><div class="price">$997</div></div>
-          <p>A recorded 45–60 minute interview, then a scored report prescribing three to seven off-the-shelf fixes, an explainer video, and a walkthrough call. A doctor prescribing medicine, not a pharmacy selling it.</p>
-        </div>
-        <div class="item">
-          <div class="top"><h3>Process Redesign</h3><div class="price">$3,000–5,000<br><span class="small">per process</span></div></div>
-          <p>One chaotic process — intake, proposals, onboarding — mapped end to end, waste stripped out, future state drawn on paper. No builds.</p>
-        </div>
-        <div class="item">
-          <div class="top"><h3>AI Concierge</h3><div class="price">$1,000–2,000<br><span class="small">per month</span></div></div>
-          <p>Done <em>with</em> you: two 45-minute working calls a month plus async support, while you build. Not implementation.</p>
-        </div>
-      </div>
-
-      <div class="line">
-        <p class="eyebrow">Implementation — done for you</p>
-        <p class="blurb">For owners who want it handled, one workflow at a time, highest impact first.</p>
-
-        <div class="item">
-          <div class="top"><h3>Founding bundle</h3><div class="price">$750 + $500<span class="small">/mo</span></div></div>
-          <p>Site, review requests, missed-call text-back, booking funnel. Founding pricing, and it is what it is because you'd be among the first.</p>
-        </div>
-        <div class="item">
-          <div class="top"><h3>Single workflow build</h3><div class="price">$1,000–3,000</div></div>
-          <p>One process automated end to end, with the human approval step left exactly where it belongs.</p>
-        </div>
-        <div class="item">
-          <div class="top"><h3>Knowledge system</h3><div class="price">from $3,000</div></div>
-          <p>Your SOPs, pricing, and history in one place your team and your agents can both actually query.</p>
-        </div>
-        <div class="item">
-          <div class="top"><h3>Full build</h3><div class="price">$5,000–10,000+<br><span class="small">+10%/mo upkeep</span></div></div>
-          <p>Agents, data, and integrations wired together. Maintenance is priced honestly rather than hidden.</p>
-        </div>
-        <div class="item">
-          <div class="top"><h3>Voice receptionist</h3><div class="price">metered</div></div>
-          <p>Answers the calls you're already missing. It captures and schedules — it never quotes a price, never promises a time, and tells every caller it's an AI. <b>Inbound only.</b></p>
-        </div>
-        <div class="item">
-          <div class="top"><h3>COI Guard</h3><div class="price">$250<span class="small">/mo founding</span></div></div>
-          <p>Every subcontractor's insurance certificate swept monthly, expiries and coverage gaps flagged, chase emails drafted. The failure mode is silent until it's a liability.</p>
-        </div>
-      </div>
+    <div class="tier feature">
+      <div class="flag">Most crews start here</div>
+      <h3>The Office Manager</h3>
+      <div class="price">$500<small>/mo · founding</small></div>
+      <ul><li>Everything in The Website</li><li>Missed-call text-back + speed-to-lead</li><li>Booking + quote follow-up</li><li>Reviews engine</li><li>The 30-day results receipt</li></ul>
+      <a class="btn btn-amber" href="mailto:lane@blundellcore.com?subject=AutoAnts%20Office%20Manager">Book a free audit</a>
+    </div>
+    <div class="tier">
+      <div class="flag">Grow into it</div>
+      <h3>Add the colony</h3>
+      <div class="price">à la carte</div>
+      <ul><li>Local Visibility + AI answers</li><li>Voice receptionist (AI phone)</li><li>Content &amp; short-video</li><li>Hyper-local ads</li><li>Database reactivation</li></ul>
+      <a class="btn btn-ghost" href="mailto:lane@blundellcore.com?subject=AutoAnts%20full%20package">Talk through the options</a>
     </div>
   </div>
-</section>
+  <p class="price-note">Founding-client rates for the first crews on board. The assessment fee credits your first month.</p>
+</div></section>
 
-<section>
-  <div class="wrap">
-    <p class="eyebrow">After the assessment</p>
-    <h2>Three honest paths, and one of them is walking away.</h2>
-    <div class="paths">
-      <div class="path">
-        <h3>Take it and run</h3>
-        <p>The blueprint is yours. Implement it yourself, or hand it to somebody cheaper. That was a fair trade for $997 and there's no pitch attached.</p>
-      </div>
-      <div class="path">
-        <h3>We coach you through it</h3>
-        <p>Concierge. You build, we work alongside you twice a month. Your assessment fee credits the first month.</p>
-      </div>
-      <div class="path">
-        <h3>We build it for you</h3>
-        <p>One workflow at a time, starting with the highest impact-over-effort score in your own report. The assessment fee credits here too.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="final"><div class="wrap">
+  <h2>Let's find the money<br>you're leaving on the table.</h2>
+  <p>Free audit, free site, no catch. Worst case, you get a website out of it and delete my number.</p>
+  <a class="btn btn-amber" href="mailto:lane@blundellcore.com?subject=AutoAnts%20free%20audit" style="font-size:1.1rem;padding:1.1rem 2rem">Get my free audit + site →</a>
+</div></section>
 
-<section class="wont">
-  <div class="wrap">
-    <p class="eyebrow">Constraints we don't negotiate</p>
-    <h2>What we won't do.</h2>
-    <p class="lede">Most of this industry sells the opposite of this list. It's the most useful thing we can tell you before you spend money.</p>
-    <ul>
-      <li><div><b>We won't manufacture your reputation.</b><span>No written reviews, no bought ones, no "only ask the happy customers." Review gating and fake testimonials violate the FTC's Consumer Reviews Rule, and we'd be the ones who built it.</span></div></li>
-      <li><div><b>Our voice agent answers your phone. It never dials your customers.</b><span>The FCC ruled in February 2024 that an AI voice is an artificial voice under the TCPA — outbound runs $500–$1,500 per call with no cap, and you'd be the one sued. We don't sell that product at any price.</span></div></li>
-      <li><div><b>We won't promise you a ranking, a lead count, or a revenue number.</b><span>We'll help you measure what actually happens. Anyone quoting you a multiple before they've seen your numbers is guessing.</span></div></li>
-      <li><div><b>We won't work for free to get in the door.</b><span>A small priced pilot removes your risk honestly and keeps both of us serious. The first artifact is free; the work isn't.</span></div></li>
-      <li><div><b>We won't automate something that should just be deleted.</b><span>Sometimes the answer is a form, a checklist, or firing a subscription. You'll hear it.</span></div></li>
-    </ul>
-  </div>
-</section>
-
-<section class="who">
-  <div class="wrap">
-    <div class="grid">
-      <div>
-        <p class="eyebrow">Who you're dealing with</p>
-        <h2>Lane Davis</h2>
-        <p>I'm a licensed Louisiana attorney, a notary, and the person who will actually answer your email. AutoAnts is a Blundell Core Holdings company, built here and run here.</p>
-        <p>The legal background matters less for the credential than for the habit: I read the rule before I sell you the thing. That's why the list above exists, and why the voice agent only answers the phone.</p>
-        <p class="note">AutoAnts is early, and you'd be among the first clients — which is exactly why the founding pricing is what it is. No case studies to wave at you yet. When there are, they'll have real numbers and a real name attached.</p>
-      </div>
-      <div>
-        <div class="line" style="background:var(--card)">
-          <p class="eyebrow">Who this is for</p>
-          <p style="color:var(--dim);font-size:.96rem;margin-bottom:.9rem">Any business where the same paperwork comes around every week — trades, field services, professional offices, property, clinics with the right agreements in place.</p>
-          <p class="small">Started with the trades because that's where the engine got built. It was never where it stops.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap" style="text-align:center">
-    <h2>Start with the assessment.</h2>
-    <p class="lede" style="margin:0 auto 2rem">One recorded conversation, one scored report, and a straight answer about what's worth automating — including the parts that aren't.</p>
-    <div class="cta-row" style="justify-content:center">
-      <a class="btn" href="mailto:lane@blundellcore.com?subject=AI%20Tools%20Assessment">lane@blundellcore.com</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="f-top">
-      <div class="brand" style="gap:.55rem">
-        <svg viewBox="0 0 512 512" style="width:24px;height:24px;color:var(--faint)"><use href="#ant"/></svg>
-        <span>AutoAnts · a Blundell Core Holdings company</span>
-      </div>
-      <div><a href="/ai/">Information for AI assistants</a> · <a href="/llms.txt">llms.txt</a></div>
-    </div>
-    <p class="small">Louisiana. Prices shown are current and quoted in full before any work starts. Nothing on this page is legal advice, and reading it doesn't make anyone a client of Lane Davis or of any law firm.</p>
-  </div>
-</footer>
-
+<footer><div class="wrap">
+  <span class="brand"><span class="mark">🐜</span> AutoAnts</span>
+  <span>A Blundell Core Holdings company · Louisiana</span>
+  <a href="mailto:lane@blundellcore.com">lane@blundellcore.com</a>
+</div></footer>
 </body>
 </html>
