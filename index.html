@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="AutoAnts is the AI office manager for tree, HVAC and roofing crews — we build your website, catch every missed call, and get you found on Google and in AI answers, so jobs book themselves. Free site preview, you see it before you pay. A Blundell Core Holdings company.">
-<meta property="og:title" content="AutoAnts — the AI office manager for the trades">
-<meta property="og:description" content="You run the crew. We run the colony. Website, missed-call text-back, booking, local visibility + AI answers — one system that books jobs while you're in the field.">
+<meta name="description" content="AutoAnts builds websites that win the job for tree, HVAC and roofing crews, then puts AI agents to work on them: missed calls texted back, quotes followed up, reviews asked for, and you found on Google and in AI answers. Free site preview; live in 7 days or your setup fee back. A Blundell Core Holdings company.">
+<meta property="og:title" content="AutoAnts — websites that win the job, and the AI that answers when they call">
+<meta property="og:description" content="Websites for the trades, plus the AI agents that answer, follow up and ask for reviews. Free site preview. Live in 7 days or your setup fee back.">
 <meta property="og:url" content="https://autoants.com/">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0d0e0c">
@@ -156,6 +156,33 @@
   footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
   footer .brand{font-size:1rem;color:var(--muted)}footer .brand .ant{width:20px;height:20px}
   footer a:hover{color:var(--amber)}
+  /* ---- before/after slider (#transform) ---- */
+  .ba{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line2);aspect-ratio:16/10;background:var(--surface);user-select:none;touch-action:pan-y}
+  .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+  .ba .after{clip-path:inset(0 0 0 var(--pos,50%))}
+  .ba .handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:var(--amber);transform:translateX(-1px)}
+  .ba .handle:after{content:"◀ ▶";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--amber);color:var(--amber-ink);font:700 .7rem var(--mono);padding:.5rem .6rem;border-radius:999px;white-space:nowrap}
+  .ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+  .ba .lab{position:absolute;top:.8rem;font:700 .66rem var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:.3rem .6rem;border-radius:6px;background:rgba(13,14,12,.8)}
+  .ba .lab.l{left:.8rem}.ba .lab.r{right:.8rem;color:var(--amber)}
+  .fine{margin-top:.9rem;font-family:var(--mono);font-size:.74rem;color:var(--faint)}
+  /* ---- build animation (#build) ---- */
+  .build-track{height:220vh;position:relative}
+  .build-pin{position:sticky;top:84px;display:grid;grid-template-columns:.8fr 1.2fr;gap:2.5rem;align-items:center}
+  @media(max-width:900px){.build-pin{grid-template-columns:1fr;gap:1.4rem;top:72px}.build-track{height:200vh}}
+  .build-media{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line2);aspect-ratio:1376/768}
+  .build-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .build-media .after{clip-path:inset(0 calc(100% - var(--p,0%)) 0 0)}
+  .build-media .edge{position:absolute;top:0;bottom:0;left:var(--p,0%);width:3px;background:var(--amber);box-shadow:0 0 18px rgba(255,179,2,.7)}
+  .build-meter{margin-top:1rem;height:3px;background:var(--line2);border-radius:3px;overflow:hidden}.build-meter i{display:block;height:100%;width:var(--p,0%);background:var(--amber)}
+  /* ---- proof + founder ---- */
+  .bignum{font-family:var(--disp);font-weight:900;font-size:clamp(3rem,8vw,4.6rem);color:var(--amber);line-height:1;letter-spacing:-.03em}
+  .thumb{border-radius:11px;overflow:hidden;border:1px solid var(--line2);margin:1.1rem 0 .6rem}.thumb img{display:block;width:100%}
+  .founder{display:flex;gap:1.2rem;align-items:center;margin-bottom:1.8rem}
+  .founder img{width:92px;height:92px;border-radius:50%;object-fit:cover;border:2px solid var(--amber);flex:0 0 auto}
+  .founder p{color:var(--muted)}.founder b{color:var(--ink)}
+  .guarantee{margin:1.6rem auto 0;max-width:46rem;text-align:center;border:1px solid var(--amber);border-radius:14px;padding:1.1rem 1.3rem;background:rgba(255,179,2,.06)}
+  .guarantee b{color:var(--amber)}
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
 </style>
 </head>
@@ -182,14 +209,14 @@
 
 <header id="top"><div class="wrap"><div class="hero-grid">
   <div>
-    <p class="eyebrow">AI-run back office · built for the trades</p>
-    <h1>You run the crew.<br>We run the <span class="amb">colony.</span></h1>
-    <p class="lede">AutoAnts is the AI office manager for tree, HVAC &amp; roofing crews. We build your website, <b>catch every missed call</b>, and get you found on Google — so jobs book themselves while you're in the field.</p>
+    <p class="eyebrow">Websites + AI agents · built for the trades</p>
+    <h1>Websites that win the job, <span class="amb">and the AI that answers when they call.</span></h1>
+    <p class="lede">AutoAnts builds your website first, then puts AI to work on it: <b>missed calls texted back in seconds</b>, quotes followed up, reviews asked for, and you found on Google and in ChatGPT. For tree, HVAC &amp; roofing crews.</p>
     <div class="cta-row">
       <a class="btn btn-amber" href="#pricing">Get your free site preview →</a>
-      <a class="btn btn-ghost" href="#how">See how it works</a>
+      <a class="btn btn-ghost" href="mailto:lane@blundellcore.com?subject=15-minute%20call&amp;body=A%20couple%20of%20times%20that%20work%20for%20me%3A%20">Book a 15-minute call</a>
     </div>
-    <div class="trust"><span><b>◆</b> Louisiana-built</span><span><b>◆</b> Attorney-owned</span><span><b>◆</b> You see it before you pay</span></div>
+    <div class="trust"><span><b>◆</b> Louisiana-built</span><span><b>◆</b> Attorney-owned</span><span><b>◆</b> You see it before you pay</span><span><b>◆</b> Live in 7 days or your setup fee back</span></div>
   </div>
   <div class="dispatch">
     <div class="dhead"><svg class="ant"><use href="#ant"/></svg><span class="t">AutoAnt Dispatch</span><span class="live-dot"><i></i>LIVE</span></div>
@@ -203,6 +230,17 @@
     <span class="chip">Google Business Profile</span><span class="chip">Your phone &amp; texting</span><span class="chip">QuickBooks</span><span class="chip">Jobber</span><span class="chip">Housecall Pro</span><span class="chip">Yelp &amp; Apple Maps</span>
   </div>
 </div></div>
+
+<section id="transform"><div class="wrap">
+  <div class="sec-head"><p class="eyebrow">The upgrade</p><h2>From the site you have to the site that books jobs.</h2><p>Drag the line. Left is the kind of site most crews have; right is what we build: your name, your number, one tap to call.</p></div>
+  <div class="ba" style="--pos:50%">
+    <img src="assets/example/old.jpg" alt="Example of a dated tree-service website" loading="lazy">
+    <img class="after" src="assets/example/new.jpg" alt="The same business on an AutoAnts site" loading="lazy">
+    <div class="handle"></div><span class="lab l">Their site today</span><span class="lab r">Built by AutoAnts</span>
+    <input type="range" min="0" max="100" value="50" aria-label="Compare the old and new site">
+  </div>
+  <p class="fine">Example business, made up for this page. Real before-and-afters go here with each owner's OK.</p>
+</div></section>
 
 <section id="problem" class="band"><div class="wrap">
   <div class="sec-head"><p class="eyebrow">The problem</p><h2>Right now, money's on the floor.</h2><p>You're the best in the field and invisible in the office. Every day, jobs you already earned walk out the door — and you never see them go.</p></div>
@@ -229,6 +267,25 @@
   <p class="stack-note"><b>Turn on what you need, when you need it.</b> Start with the essentials; add the rest as you grow.</p>
 </div></section>
 
+<section id="build"><div class="wrap">
+  <div class="build-track"><div class="build-pin">
+    <div>
+      <p class="eyebrow">Add-on · the build animation</p>
+      <h2 style="font-size:clamp(1.9rem,4vw,2.7rem);font-weight:800;margin:.7rem 0 .6rem">Watch the job come together.</h2>
+      <p style="color:var(--muted);font-size:1.05rem">Send us one before and one after photo of a real job, same spot. On your site, the visitor's scroll plays the job from start to finish. Nothing sells a crew like its own work.</p>
+      <p class="fine">This demo is an illustration made with AI. On your site it's your real photos, animated between, and labeled that way.</p>
+    </div>
+    <div>
+      <div class="build-media" id="buildMedia">
+        <img src="assets/build-demo/before.jpg" alt="Illustration: a dead oak leaning over a raised Louisiana cottage">
+        <img class="after" src="assets/build-demo/after.jpg" alt="Illustration: the same yard with the tree removed and the stump ground out">
+        <div class="edge"></div>
+      </div>
+      <div class="build-meter" id="buildMeter"><i></i></div>
+    </div>
+  </div></div>
+</div></section>
+
 <section id="roi" class="band"><div class="wrap">
   <div class="sec-head"><p class="eyebrow">ROI calculator</p><h2>See what you're leaving on the floor.</h2><p>Your numbers, not ours. Slide them to your reality — this is the money slipping past every month.</p></div>
   <div class="calc">
@@ -248,7 +305,7 @@
 </div></section>
 
 <section id="how"><div class="wrap">
-  <div class="sec-head"><p class="eyebrow">How it works</p><h2>I do the work first. You decide after.</h2><p>No contract to start, no risk. I prove it's worth it before you spend a dollar.</p></div>
+  <div class="sec-head"><p class="eyebrow">How it works</p><h2>I do the work first. You decide after.</h2><p>No contract to start. I prove it's worth it before you spend a dollar, and once you say go, you're live in 7 days or your setup fee comes back.</p></div>
   <div class="steps">
     <div class="step"><h3>Free audit</h3><p>I find the money you're leaving on the floor — and build your website before you pay anything.</p></div>
     <div class="step"><h3>You see it live</h3><p>Your name, your reviews, on a real site you can pull up on your phone. Like it? Keep it.</p></div>
@@ -258,8 +315,10 @@
 </div></section>
 
 <section id="why" class="band"><div class="wrap">
-  <div class="sec-head"><p class="eyebrow">Why AutoAnts</p><h2>Built by someone who gets it — and won't BS you.</h2></div>
+  <div class="sec-head"><p class="eyebrow">Who builds your site</p><h2>Built by someone who gets it — and won't BS you.</h2></div>
   <div class="why">
+    <div>
+    <div class="founder"><img src="assets/lane.jpg" alt="Lane Davis" onerror="this.remove()"><p><b>I'm Lane Davis.</b> I build every site and the AI behind it myself, here in Louisiana, and you deal with me, not a call center.</p></div>
     <div class="whylist">
       <div class="wrow"><div class="dot"></div><div><h4>An attorney's eye for what's true</h4><p>I'm a licensed Louisiana attorney. I only put claims on your site I can stand behind — no fake reviews, no made-up credentials. That protects you, and customers can tell.</p></div></div>
       <div class="wrow"><div class="dot"></div><div><h4>Local, not a call center</h4><p>Louisiana-built and Louisiana-run. I know storm season, I know your customers, and you talk to a person — me.</p></div></div>
@@ -267,24 +326,28 @@
       <div class="wrow"><div class="dot"></div><div><h4>The AI stack the big firms use</h4><p>The same modern AI the national brands pay agencies thousands for — pointed at one thing: putting money in your pocket.</p></div></div>
       <div class="wrow"><div class="dot"></div><div><h4>Honest about what to automate</h4><p>Sometimes the answer is "don't." If a tool won't earn its keep, I'll say so. That's how you know the next thing I recommend is real.</p></div></div>
     </div>
-    <div class="proofcard"><p class="eyebrow">Proof</p><h3>Real sites, already built.</h3><p>Before we ever talk money, there's a live website with your business on it — because that's how I work. Dozens are built and live right now.</p><div class="placeholder">[ your results go here ]<br>you'll be an early case study —<br>calls caught · jobs booked · dollars moved</div></div>
+    </div>
+    <div class="proofcard"><p class="eyebrow">Proof</p><div class="bignum">61</div><h3>site previews built for Louisiana crews.</h3><p>Before we ever talk money, there's a live website with your business on it. That's how I work.</p><div class="thumb"><img src="assets/example/new.jpg" alt="Example of the AutoAnts site design" loading="lazy"></div><p class="fine" style="margin-top:0">The design every preview now uses (example business). Live client sites and their numbers go here as they launch.</p></div>
   </div>
 </div></section>
 
 <section id="pricing"><div class="wrap">
-  <div class="sec-head"><p class="eyebrow">Pricing</p><h2>Founding-client pricing. Locks in before I raise it.</h2><p>Start free. Go live for a flat fee. Add the office manager when you're ready.</p></div>
+  <div class="sec-head"><p class="eyebrow">Pricing</p><h2>Founding-client pricing. Locks in before I raise it.</h2><p>Start free. Go live for a flat fee. Keep it running for a small monthly, or add the office manager when you're ready.</p></div>
   <div class="tiers">
     <div class="tier"><div class="flag">Start here</div><h3>The Website</h3><div class="price">Free<br><small>preview · $750 to go live &amp; keep</small></div><ul><li>Built with your real info + reviews</li><li>Fast, mobile, quote form</li><li>Live on your own domain</li><li>Yours to keep, no strings</li></ul><a class="btn btn-ghost" href="mailto:lane@blundellcore.com?subject=Free%20AutoAnts%20site%20preview">Get my free preview</a></div>
+    <div class="tier"><div class="flag">Just the site</div><h3>Site Care</h3><div class="price">$99<small>/mo</small></div><ul><li>Hosting on your own domain</li><li>Edits when you need them</li><li>Google profile kept current</li><li>Support by text, from me</li></ul><a class="btn btn-ghost" href="mailto:lane@blundellcore.com?subject=AutoAnts%20Site%20Care">Ask about Site Care</a></div>
     <div class="tier feature"><div class="flag">Most crews start here</div><h3>The Office Manager</h3><div class="price">$500<small>/mo · founding</small></div><ul><li>Everything in The Website</li><li>Missed-call text-back + speed-to-lead</li><li>Booking + quote follow-up</li><li>Reviews engine</li><li>The 30-day results receipt</li></ul><a class="btn btn-amber" href="mailto:lane@blundellcore.com?subject=AutoAnts%20Office%20Manager">Book a free audit</a></div>
     <div class="tier"><div class="flag">Grow into it</div><h3>Add the colony</h3><div class="price">à la carte</div><ul><li>Local Visibility + AI answers</li><li>Voice receptionist (AI phone)</li><li>Content &amp; short-video</li><li>Hyper-local ads</li><li>Database reactivation</li></ul><a class="btn btn-ghost" href="mailto:lane@blundellcore.com?subject=AutoAnts%20full%20package">Talk through the options</a></div>
   </div>
   <p class="price-note">Founding-client rates for the first crews on board. The assessment fee credits your first month.</p>
+  <div class="guarantee"><b>The guarantee:</b> once you say go, your site is live within 7 days or the $750 setup fee comes back. Monthly plans cancel anytime after 90 days.</div>
 </div></section>
 
 <section class="final"><div class="wrap">
   <h2>Let's find the money<br>you're leaving on the table.</h2>
   <p>Free audit, free site, no catch. Worst case, you get a website out of it and delete my number.</p>
-  <a class="btn btn-amber" href="mailto:lane@blundellcore.com?subject=AutoAnts%20free%20audit" style="font-size:1.1rem;padding:1.1rem 2rem">Get my free audit + site →</a>
+  <div class="cta-row" style="justify-content:center"><a class="btn btn-amber" href="mailto:lane@blundellcore.com?subject=AutoAnts%20free%20audit" style="font-size:1.1rem;padding:1.1rem 2rem">Get my free audit + site →</a>
+  <a class="btn btn-ghost" href="mailto:lane@blundellcore.com?subject=15-minute%20call&amp;body=A%20couple%20of%20times%20that%20work%20for%20me%3A%20" style="font-size:1.1rem;padding:1.1rem 2rem">Book a 15-minute call</a></div>
 </div></section>
 
 <footer><div class="wrap">
@@ -308,6 +371,24 @@
       document.getElementById('peryr').textContent=fmt(mo*12);
     }
     [c,cl,j].forEach(function(el){el.addEventListener('input',upd)}); upd();
+  })();
+
+  // ---- before/after drag ----
+  document.querySelectorAll('.ba').forEach(function(b){
+    var r=b.querySelector('input'); r.addEventListener('input',function(){b.style.setProperty('--pos',r.value+'%')});
+  });
+  // ---- build animation: scroll position reveals the after photo ----
+  (function(){
+    var track=document.querySelector('.build-track'); if(!track) return;
+    var media=document.getElementById('buildMedia'), meter=document.getElementById('buildMeter');
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function set(p){var v=(p*100).toFixed(1)+'%';media.style.setProperty('--p',v);meter.style.setProperty('--p',v);}
+    if(reduce){track.style.height='auto';set(1);return;}
+    var ticking=false;
+    function upd(){ticking=false;var r=track.getBoundingClientRect(),span=track.offsetHeight-window.innerHeight;
+      set(Math.min(1,Math.max(0,-r.top/(span||1))));}
+    window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(upd);}},{passive:true});
+    window.addEventListener('resize',upd,{passive:true}); upd();
   })();
 
   // ---- live dispatch feed ----

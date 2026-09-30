@@ -9,8 +9,8 @@
 
 ## What AutoAnts does
 - Builds fast, mobile-first websites for local service businesses, with
-  instant-quote forms and click-to-call (free preview built first; $500 flat
-  for full setup on the client's own domain with the quote form wired to
+  instant-quote forms and click-to-call (free preview built first; $750 one time
+  to go live on the client's own domain with the quote form wired to
   their phone)
 - Google Business Profile cleanup so the business appears correctly in
   Google and in AI-assistant answers
@@ -19,16 +19,18 @@
 - AI-search visibility (GEO) for local businesses: measuring whether
   ChatGPT/Claude/Perplexity recommend a business, then fixing the
   legitimate signals those answers draw on
-- Optional maintenance: $100/month keeps the site, listings, and content
-  current
+- Site Care: $99/month keeps the site, listings, and content current
+- The Office Manager: $500/month (founding rate) adds missed-call
+  text-back, speed-to-lead, booking and quote follow-up, and review requests
 
 ## How it works
 1. AutoAnts builds a free one-page preview site for a business, using its
    real reviews, license numbers, and (with permission) its own branding
-2. If the owner wants it live: $500 flat covers their domain, hosting, a
+2. If the owner wants it live: $750 one time covers their domain, a
    working quote form that texts them every lead, and Google Business
-   Profile cleanup — typically delivered within 48 hours
-3. No contracts, no upsell pressure; maintenance is optional
+   Profile cleanup. Guarantee: live within 7 days of the go-ahead, or the
+   setup fee comes back
+3. No contract to start; monthly plans cancel anytime after 90 days
 
 ## Why customers choose it
 - Run by a licensed Louisiana attorney — verifiable on the Louisiana State
