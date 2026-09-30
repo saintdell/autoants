@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>AutoAnts logo directions</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Barlow+Condensed:wght@800&family=Space+Grotesk:wght@700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+:root{--bg:#0d0e0c;--ink:#f4f1e8;--amber:#ffb302;--muted:#a6a89b;--line:rgba(244,241,232,.12)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"JetBrains Mono",monospace;padding:28px}
+.row{display:grid;grid-template-columns:90px 520px 170px 90px 330px;gap:22px;align-items:center;padding:22px 0;border-bottom:1px solid var(--line)}
+.letter{font:900 44px Archivo,sans-serif;color:var(--amber)}
+.name{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.4}
+.nav{height:64px;border:1px solid var(--line);border-radius:10px;display:flex;align-items:center;padding:0 18px;background:rgba(13,14,12,.9);gap:28px}
+.nav .links{margin-left:auto;display:flex;gap:18px;font:500 12px system-ui;color:var(--muted)}
+.app{width:120px;height:120px;border-radius:26px;background:#16180f;border:1px solid var(--line);display:grid;place-items:center}
+.fav{display:flex;gap:14px;align-items:end}.fav div{display:grid;place-items:center;background:#202219;border-radius:5px}
+.light{background:#f4f1e8;border-radius:10px;height:84px;display:flex;align-items:center;padding:0 18px}
+h1{font:900 22px Archivo;margin:0 0 6px}p.sub{color:var(--muted);font-size:12px;margin:0 0 10px}
+</style></head><body>
+<h1>AutoAnts — four logo directions</h1>
+<p class="sub">Each row: in the site's nav bar · as an app/social icon · at browser-tab size (32px, 16px) · on white. Amber #ffb302 on the site's dark ground.</p>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+ <!-- A: colony trail — three ants in a line become a path -->
+ <symbol id="A" viewBox="0 0 64 64"><g fill="currentColor">
+  <circle cx="12" cy="44" r="6"/><circle cx="32" cy="32" r="7.5"/><circle cx="52" cy="18" r="9"/></g>
+  <path d="M12 44 L32 32 L52 18" stroke="currentColor" stroke-width="3" stroke-dasharray="2 5" stroke-linecap="round" fill="none"/></symbol>
+ <!-- B: hex cell — a colony cell with an A cut through it -->
+ <symbol id="B" viewBox="0 0 64 64"><path fill="currentColor" d="M32 3 57 17.5v29L32 61 7 46.5v-29z"/>
+  <path fill="var(--cut,#0d0e0c)" d="M32 16 45 46h-7.2l-2.3-5.8h-7l-2.3 5.8H19zM32 26.8l-2.5 7.2h5z"/></symbol>
+ <!-- C: geometric worker ant, top-down, three segments -->
+ <symbol id="C" viewBox="0 0 64 64"><g fill="currentColor"><circle cx="32" cy="13" r="7"/><circle cx="32" cy="29" r="6.5"/><ellipse cx="32" cy="48" rx="10" ry="12"/></g>
+  <g stroke="currentColor" stroke-width="3.2" stroke-linecap="round" fill="none"><path d="M26 25 14 19M26 30 11 31M27 35 15 43M38 25 50 19M38 30 53 31M37 35 49 43M28 8 23 2M36 8 41 2"/></g></symbol>
+</defs></svg>
+
+<!-- A -->
+<div class="row"><div><div class="letter">A</div><div class="name">Colony trail<br>three ants become a path: the system doing the work</div></div>
+ <div class="nav"><svg width="30" height="30" style="color:var(--amber)"><use href="#A"/></svg><span style="font:900 22px Archivo;letter-spacing:-.03em;margin-left:-18px">AutoAnts</span><div class="links">Services · Pricing</div></div>
+ <div class="app"><svg width="72" height="72" style="color:var(--amber)"><use href="#A"/></svg></div>
+ <div class="fav"><div style="width:32px;height:32px"><svg width="26" height="26" style="color:var(--amber)"><use href="#A"/></svg></div><div style="width:16px;height:16px"><svg width="14" height="14" style="color:var(--amber)"><use href="#A"/></svg></div></div>
+ <div class="light"><svg width="30" height="30" style="color:#1a1204"><use href="#A"/></svg><span style="font:900 24px Archivo;letter-spacing:-.03em;color:#1a1204;margin-left:8px">AutoAnts</span></div></div>
+
+<!-- B -->
+<div class="row"><div><div class="letter">B</div><div class="name">Hex cell<br>a colony cell with an A: sturdy, trade-sign feel</div></div>
+ <div class="nav"><svg width="30" height="30" style="color:var(--amber)"><use href="#B"/></svg><span style="font:800 26px 'Barlow Condensed';letter-spacing:.02em;text-transform:uppercase;margin-left:-16px">AutoAnts</span><div class="links">Services · Pricing</div></div>
+ <div class="app"><svg width="76" height="76" style="color:var(--amber)"><use href="#B"/></svg></div>
+ <div class="fav"><div style="width:32px;height:32px"><svg width="28" height="28" style="color:var(--amber)"><use href="#B"/></svg></div><div style="width:16px;height:16px"><svg width="15" height="15" style="color:var(--amber)"><use href="#B"/></svg></div></div>
+ <div class="light"><svg width="32" height="32" style="color:#1a1204;--cut:#f4f1e8"><use href="#B"/></svg><span style="font:800 28px 'Barlow Condensed';text-transform:uppercase;color:#1a1204;margin-left:8px">AutoAnts</span></div></div>
+
+<!-- C -->
+<div class="row"><div><div class="letter">C</div><div class="name">Worker ant, geometric<br>today's ant, rebuilt from circles: friendlier, holds up small</div></div>
+ <div class="nav"><svg width="30" height="30" style="color:var(--amber)"><use href="#C"/></svg><span style="font:700 23px 'Space Grotesk';letter-spacing:-.02em;margin-left:-18px">autoants</span><div class="links">Services · Pricing</div></div>
+ <div class="app"><svg width="76" height="76" style="color:var(--amber)"><use href="#C"/></svg></div>
+ <div class="fav"><div style="width:32px;height:32px"><svg width="28" height="28" style="color:var(--amber)"><use href="#C"/></svg></div><div style="width:16px;height:16px"><svg width="15" height="15" style="color:var(--amber)"><use href="#C"/></svg></div></div>
+ <div class="light"><svg width="32" height="32" style="color:#1a1204"><use href="#C"/></svg><span style="font:700 26px 'Space Grotesk';letter-spacing:-.02em;color:#1a1204;margin-left:8px">autoants</span></div></div>
+
+<!-- D -->
+<div class="row"><div><div class="letter">D</div><div class="name">Wordmark only<br>no bug at all; the amber slash says "auto" and "ants" are one system</div></div>
+ <div class="nav"><span style="font:900 23px Archivo;letter-spacing:-.04em">auto<span style="color:var(--amber)">/</span>ants</span><div class="links">Services · Pricing</div></div>
+ <div class="app"><span style="font:900 44px Archivo;letter-spacing:-.05em">a<span style="color:var(--amber)">/</span>a</span></div>
+ <div class="fav"><div style="width:32px;height:32px;font:900 15px Archivo;letter-spacing:-.06em">a<span style="color:var(--amber)">/</span>a</div><div style="width:16px;height:16px;font:900 10px Archivo;color:var(--amber)">/</div></div>
+ <div class="light"><span style="font:900 26px Archivo;letter-spacing:-.04em;color:#1a1204">auto<span style="color:#e08a00">/</span>ants</span></div></div>
+</body></html>
