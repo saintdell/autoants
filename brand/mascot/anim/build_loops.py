@@ -44,8 +44,7 @@ def head(p, eyes, hat=False):
            f'<circle cx="100" cy="82" r="46" fill="{M.MINT}"/>')
     out += "".join(f'<g class="{cls}">{M.eyes(kind, look)}</g>' for cls, kind, look in eyes)
     if hat:
-        out += (f'<path d="M56 64a44 40 0 0 1 88 0z" fill="{M.STONE}"/><rect x="48" y="60" width="104" height="9" rx="4.5" fill="{M.FOREST}"/>'
-                f'<path d="M100 26v34" stroke="{M.FOREST}" stroke-width="5"/>')
+        out += M.HARDHAT
     return out + "</g>"
 
 

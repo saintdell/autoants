@@ -27,14 +27,21 @@ def eyes(kind="dot", look=0, c=FOREST):
     raise ValueError(kind)
 
 
+# Hard hat, option C "ribbed" (Lane, 2026-10-01): stone shell, three forest ribs, forest brim (ink vanished on night grounds).
+# The antennae come through the top. Below 48 px use the plain head icon instead.
+HARDHAT = (f'<path d="M56 64a44 40 0 0 1 88 0z" fill="{STONE}"/>'
+           f'<g stroke="{FOREST}" stroke-width="4" fill="none" stroke-linecap="round"><path d="M100 26v34"/>'
+           f'<path d="M85 30q-7 14-7 30"/><path d="M115 30q7 14 7 30"/></g>'
+           f'<rect x="48" y="60" width="104" height="9" rx="4.5" fill="{FOREST}"/>')
+
+
 def head(eye="dot", look=0, ant_stroke=None, hat=False):
     ant_stroke = ant_stroke or ANT
     ants = (f'<g stroke="{ant_stroke}" stroke-width="6" stroke-linecap="round"><path d="M88 40 74 8M112 40l14-32"/></g>'
             f'<circle cx="74" cy="7" r="6.5" fill="{ant_stroke}"/><circle cx="126" cy="7" r="6.5" fill="{ant_stroke}"/>')
     h = f'<circle cx="100" cy="82" r="46" fill="{MINT}"/>' + eyes(eye, look)
-    if hat:  # hard hat: stone shell, forest brim and ridge; antennae come through the top
-        h += (f'<path d="M56 64a44 40 0 0 1 88 0z" fill="{STONE}"/><rect x="48" y="60" width="104" height="9" rx="4.5" fill="{FOREST}"/>'
-              f'<path d="M100 26v34" stroke="{FOREST}" stroke-width="5"/>')
+    if hat:
+        h += HARDHAT
     return ants + h
 
 
