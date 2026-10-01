@@ -88,6 +88,8 @@ POSES = {
               + arm("M90 144C92 168 104 172 115 168", None, hand=False) + arm("M110 144C142 140 166 150 178 159", None, hand=False)
               + ENVELOPE + f'<circle cx="115" cy="168" r="10" fill="{MINT}"/><circle cx="178" cy="159" r="10" fill="{MINT}"/>'),
     "hardhat": ("On the job", lambda: body() + arm(*DOWN_L) + arm(*HIP_R) + head("dot", hat=True)),
+    "wavehat": ("Hello from the job", lambda: body() + arm(*DOWN_L) + head("happy", hat=True)
+                + arm("M110 142C138 132 154 112 160 86", (162, 80))),
 }
 
 

@@ -1,0 +1,131 @@
+"""autoants door hanger: 4.25 x 11 in, 0.125 in bleed, standard 1.25 in hole. Print-ready PDF + proof.
+
+    uv run --with qrcode python3 brand/print/door-hanger/make_hanger.py
+
+Front (night): wordmark, the waving hard-hat mascot, the promise, QR + autoants.com.
+Back (stone): Meet the crew (the four assistants in The Office Manager, plus a line for the
+rest) and How it works (what happens after someone reaches out). Copy matches the site's
+own wording. Generic, so it prints in bulk; PHONE stays a red placeholder until the
+business line exists.
+
+Hang on business doors only. Never in mailboxes (federal law), on poles (New Orleans CZO
+art. 24) or on vehicles, and skip any door marked No soliciting."""
+import os, subprocess, sys
+import qrcode
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+BRAND = os.path.normpath(os.path.join(HERE, "..", ".."))
+sys.path.insert(0, os.path.join(BRAND, "mascot"))
+from mascot import mascot, FOREST, MINT, STONE, INK, NIGHT  # noqa: E402
+
+INFO = dict(phone=None,  # e.g. "(504) 555-0100" once the business line exists
+            email="lane@autoants.com", web="autoants.com",
+            qr="https://autoants.com/?ref=hanger#contact")
+CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+FONTS = ('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800'
+         '&family=JetBrains+Mono:wght@500;700&display=swap">')
+W, H, B = 4.5, 11.25, 0.125
+HOLE_Y, HOLE_D = B + 1.25, 1.25
+SOFT = "#c9d3cc"
+WORD = open(os.path.join(BRAND, "autoants-logo-reverse.svg")).read().strip()
+
+
+def qr_svg(url, size_in):
+    q = qrcode.QRCode(border=0, error_correction=qrcode.constants.ERROR_CORRECT_M)
+    q.add_data(url)
+    m = q.get_matrix()
+    n = len(m)
+    rects = "".join(f'<rect x="{x}" y="{y}" width="1.02" height="1.02"/>' for y, r in enumerate(m) for x, v in enumerate(r) if v)
+    return f'<svg viewBox="0 0 {n} {n}" style="width:{size_in}in;height:{size_in}in;display:block" fill="{INK}" shape-rendering="crispEdges">{rects}</svg>'
+
+
+def svg_h(svg, h_in):
+    return svg.replace("<svg ", f'<svg style="height:{h_in}in;width:auto;display:block" ', 1)
+
+
+def die(show):
+    if not show:
+        return ""
+    c = "#e0457b"
+    return (f'<div style="position:absolute;left:{B}in;top:{B}in;width:{W-2*B}in;height:{H-2*B}in;outline:1px solid {c}"></div>'
+            f'<div style="position:absolute;left:{B*2}in;top:{B*2}in;width:{W-4*B}in;height:{H-4*B}in;outline:1px dashed {c}"></div>'
+            f'<div style="position:absolute;left:{W/2-HOLE_D/2}in;top:{HOLE_Y-HOLE_D/2}in;width:{HOLE_D}in;height:{HOLE_D}in;border-radius:50%;outline:1px solid {c}"></div>'
+            f'<div style="position:absolute;left:{W/2}in;top:{B}in;height:{HOLE_Y-HOLE_D/2-B}in;border-left:1px solid {c}"></div>')
+
+
+def front(guides):
+    m = mascot("wavehat", 100, dark=True).replace('width="100" height="130"', 'style="height:4.15in;width:auto;display:block"')
+    return (f'<div class="pg" style="background:radial-gradient(90% 45% at 85% 30%,rgba(61,220,174,.17),transparent 62%),{NIGHT};color:{STONE}">'
+            f'<div style="position:absolute;left:0;right:0;top:2.2in;display:flex;justify-content:center">{svg_h(WORD, .58)}</div>'
+            f'<div style="position:absolute;left:.4in;right:.4in;top:3.05in;text-align:center">'
+            f'<div style="font:800 23pt/1.02 Onest;letter-spacing:-.03em">Never miss another job.</div>'
+            f'<div style="font:500 10.5pt/1.35 Onest;color:{SOFT};margin-top:.08in">Automated assistants for tree, HVAC &amp; roofing crews.</div></div>'
+            f'<div style="position:absolute;left:50%;transform:translateX(-50%);top:4.15in">{m}</div>'
+            f'<div style="position:absolute;left:.45in;right:.45in;top:8.75in;display:flex;align-items:center;gap:.2in">'
+            f'<div style="background:{STONE};border-radius:.09in;padding:.1in">{qr_svg(INFO["qr"], .95)}</div>'
+            f'<div><div style="font:800 13pt/1.1 Onest">See what we\'d build you</div>'
+            f'<div style="font:700 12pt JetBrains Mono,monospace;color:{MINT};margin-top:.06in">{INFO["web"]}</div>'
+            f'<div style="font:500 8.5pt/1.3 Onest;color:{SOFT};margin-top:.05in">Free website preview, built before you pay.</div></div></div>'
+            f'{die(guides)}</div>')
+
+
+CREW = [("phone", "The Callback", "Miss a call and it texts them back in seconds, so the job stays yours."),
+        ("carry", "The Responder", "A new lead gets an answer in seconds, even while you're on a roof."),
+        ("clipboard", "The Scheduler", "Quote requests become estimates and booked jobs. You approve; it handles the back-and-forth."),
+        ("thumbs", "The Reviewer", "Every finished job gets the same review ask, one tap from your phone.")]
+STEPS = [("Reach out", "Scan the code, visit autoants.com, or call or text."),
+         ("Tell us about your business", "A two-minute form: your name, number and trade. You hear back from Lane, usually the same day."),
+         ("See your free preview", "Your new site, built with your real info and reviews, before you pay anything."),
+         ("Pick your crew", "A 15-minute call to choose the assistants you want. Once you say go, your site is live within 7 days or the $500 setup fee comes back.")]
+
+
+def back(guides):
+    crew = "".join(
+        f'<div style="display:flex;gap:.12in;align-items:center;padding:.07in 0;border-top:1px solid #d6d1c6">'
+        f'<div style="width:.5in;flex:0 0 .5in;display:flex;justify-content:center">'
+        f'{mascot(pose, 100).replace(chr(119)+"idth=\"100\" height=\"130\"", "style=\"height:.62in;width:auto;display:block\"")}</div>'
+        f'<div><div style="font:800 11pt Onest;color:{INK}">{name}</div><div style="font:500 8.6pt/1.32 Onest;color:#4d5a51">{line}</div></div></div>'
+        for pose, name, line in CREW)
+    steps = "".join(
+        f'<div style="display:flex;gap:.11in;align-items:flex-start;padding:.045in 0">'
+        f'<div style="flex:0 0 .24in;height:.24in;border-radius:50%;background:{FOREST};color:{STONE};font:800 8.5pt/.24in Onest;text-align:center">{i}</div>'
+        f'<div><div style="font:800 9.8pt Onest;color:{INK}">{t}</div><div style="font:500 8.3pt/1.32 Onest;color:#4d5a51">{d}</div></div></div>'
+        for i, (t, d) in enumerate(STEPS, 1))
+    phone = INFO["phone"] or '<span style="color:#d1242f;font-weight:700">PHONE TBD</span>'
+    return (f'<div class="pg" style="background:{STONE};color:{INK}">'
+            f'<div style="position:absolute;left:.38in;right:.38in;top:2.15in">'
+            f'<div style="font:700 7.5pt JetBrains Mono,monospace;letter-spacing:.14em;text-transform:uppercase;color:{FOREST}">Meet the crew</div>'
+            f'<div style="font:800 16pt/1.05 Onest;letter-spacing:-.02em;margin-top:.05in;text-wrap:balance">Assistants that work while you\'re on the job.</div>'
+            f'<div style="margin-top:.1in">{crew}</div>'
+            f'<div style="font:500 8pt/1.35 Onest;color:#4d5a51;padding-top:.07in;border-top:1px solid #d6d1c6">Also on the crew: The Receptionist (an AI phone '
+            f'that says it\'s an AI), The Reminder, The Scout and The Promoter.</div></div>'
+            f'<div style="position:absolute;left:.38in;right:.38in;top:6.95in">'
+            f'<div style="font:700 7.5pt JetBrains Mono,monospace;letter-spacing:.14em;text-transform:uppercase;color:{FOREST}">How it works</div>'
+            f'<div style="margin-top:.06in">{steps}</div></div>'
+            f'<div style="position:absolute;left:.38in;right:.38in;bottom:.42in;border-top:2px solid {INK};padding-top:.1in;display:flex;justify-content:space-between;align-items:flex-end">'
+            f'<div><div style="font:800 12pt Onest">Lane Davis</div><div style="font:500 8pt Onest;color:#4d5a51">founder, autoants · Louisiana-built</div></div>'
+            f'<div style="text-align:right;font:500 7.6pt/1.55 JetBrains Mono,monospace">{phone}<br>{INFO["email"]}<br><b style="color:{FOREST}">{INFO["web"]}</b></div></div>'
+            f'{die(guides)}</div>')
+
+
+def doc(pages, flex=False):
+    wrap = f'<div style="display:flex">{pages}</div>' if flex else pages
+    return (f'<!doctype html><meta charset="utf-8">{FONTS}<style>@page{{size:{W}in {H}in;margin:0}}html,body{{margin:0}}'
+            f'*{{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}}'
+            f'.pg{{position:relative;width:{W}in;height:{H}in;overflow:hidden;font-family:Onest,sans-serif;{"" if flex else "page-break-after:always"}}}</style>'
+            f'<body>{wrap}</body>')
+
+
+def run(html, args):
+    src = os.path.join(HERE, "_render.html")
+    open(src, "w").write(html)
+    subprocess.run([CHROME, "--headless", "--disable-gpu", "--hide-scrollbars", "--virtual-time-budget=6000", *args, "file://" + src],
+                   check=True, capture_output=True)
+    os.remove(src)
+
+
+if __name__ == "__main__":
+    run(doc(front(False) + back(False)), ["--no-pdf-header-footer", f"--print-to-pdf={os.path.join(HERE, 'door-hanger.pdf')}"])
+    run(doc(front(True) + back(True), flex=True), ["--force-device-scale-factor=2", f"--window-size={int(W*96)*2},{int(H*96)}",
+                                                  f"--screenshot={os.path.join(HERE, 'door-hanger-proof.png')}"])
+    print("door-hanger.pdf, door-hanger-proof.png")
