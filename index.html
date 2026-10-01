@@ -396,7 +396,7 @@
       <label>Your name<input name="name" autocomplete="name" required></label>
       <label>Business name<input name="business" autocomplete="organization" required></label>
       <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
-      <label>Trade<select name="trade"><option>Tree service</option><option>HVAC</option><option>Roofing</option><option>Other trade</option></select></label>
+      <label>Type of business<select name="trade"><option>Home services</option><option>Auto</option><option>Beauty &amp; personal care</option><option>Fitness</option><option>Pets</option><option>Food &amp; events</option><option>Professional services</option><option>Other</option></select></label>
       <label class="full">I'm interested in<select name="interest" id="interest"><option>Free site preview</option><option>Free audit</option><option>15-minute call</option><option>Site Care</option><option>The Office Manager</option><option>More assistants</option><option>Something else</option></select></label>
       <label class="full">Anything I should know?<textarea name="msg" rows="3" placeholder="e.g. we miss calls when the crew is out on jobs"></textarea></label>
       <p class="consent full">By sending, you agree that AutoAnts can call or text you about this request. No lists, no spam.</p>
@@ -449,13 +449,20 @@
       var sel = document.getElementById('interest'); if (sel) sel.value = a.getAttribute('data-interest');
     });
   });
+  // Where the visitor came from: ?ref= on the link (hanger, card, dm, badge...). Kept for the visit.
+  function leadSource(){
+    var r = ''; try { r = new URLSearchParams(location.search).get('ref') || ''; } catch(e) {}
+    try { if (r) sessionStorage.setItem('aa-ref', r); else r = sessionStorage.getItem('aa-ref') || ''; } catch(e) {}
+    return r.replace(/[^a-z0-9_-]/gi, '').slice(0, 40) || 'direct';
+  }
+  leadSource();
   (function(){
     var f = document.getElementById('contactForm'); if (!f) return;
     f.addEventListener('submit', function(e){
       e.preventDefault();
       if (!f.name.value.trim() || !f.phone.value.trim() || !f.business.value.trim()) { f.reportValidity && f.reportValidity(); return; }
       var d = {name:f.name.value.trim(), business:f.business.value.trim(), phone:f.phone.value.trim(),
-               trade:f.trade.value, interest:f.interest.value, msg:f.msg.value.trim(), page:'autoants.com'};
+               trade:f.trade.value, interest:f.interest.value, msg:f.msg.value.trim(), page:'autoants.com', source:leadSource()};
       var done = function(){ document.getElementById('sentNote').style.display='flex'; };
       if (LEAD_ENDPOINT) {
         fetch(LEAD_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(d)})
@@ -464,7 +471,7 @@
       } else { mail(d); done(); }
     });
     function mail(d){
-      var body = 'Name: '+d.name+'\nBusiness: '+d.business+'\nPhone: '+d.phone+'\nTrade: '+d.trade+'\nInterested in: '+d.interest+'\n\n'+d.msg;
+      var body = 'Name: '+d.name+'\nBusiness: '+d.business+'\nPhone: '+d.phone+'\nBusiness type: '+d.trade+'\nInterested in: '+d.interest+'\nFound us via: '+d.source+'\n\n'+d.msg;
       location.href = 'mailto:lane@blundellcore.com?subject='+encodeURIComponent('AutoAnts: '+d.interest+' — '+d.business)+'&body='+encodeURIComponent(body);
     }
   })();
