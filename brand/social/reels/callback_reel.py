@@ -77,7 +77,7 @@ html,body{{margin:0;background:#0b1712}}
   </div>
   <div class="ant" id="ant-ring">{ring}</div>
   <div id="end"><div class="a">{thumbs}</div><div class="w">{WORD}</div>
-    <div class="l">Automated assistants for local businesses.</div><div class="u">autoants.com · free website preview</div></div>
+    <div class="l">Automated assistants for local businesses.</div><div class="u">autoants.com · free 15-minute call</div></div>
 </div>
 <script>
 const F = .28, clamp = x => Math.max(0, Math.min(1, x));
