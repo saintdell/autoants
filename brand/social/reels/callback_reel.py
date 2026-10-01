@@ -4,7 +4,7 @@
 
 1080x1920, 30 fps, silent (add a sound in the app). Story: the phone rings while you're with a
 customer -> missed call -> The Callback texts back in seconds -> they reply and book -> "The customer
-stays yours." The business on the phone is a made-up example, labeled on screen."""
+stays yours." The business is "Your Business", so any owner pictures their own shop."""
 import os, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -16,15 +16,15 @@ WORD = open(os.path.join(BRAND, "autoants-logo-reverse.svg")).read().strip()
 ring = open(os.path.join(ANIM, "ringing-dark.svg")).read()
 thumbs = open(os.path.join(ANIM, "thumbs-up-dark.svg")).read()
 
-BIZ, NUM = "Bayou Oak Tree Co.", "(985) 555-0142"
+BIZ, NUM = "Your Business", "(985) 555-0142"
 CAPS = [(0.2, 3.0, "You're with a customer. The phone rings."),
         (3.0, 5.6, "You can't pick up. Most callers won't leave a voicemail."),
         (5.6, 8.6, "The Callback texts them back in seconds."),
         (8.6, 12.7, "They answer. You get the job."),
         (12.7, 17.2, "The customer stays yours.")]
-BUBBLES = [("out", 6.5, f"Hi, this is {BIZ} Sorry we missed your call! What can we help with?"),
-           ("in", 9.0, "Need a big oak trimmed before the storm."),
-           ("out", 10.4, "We can come look Thursday. 9 or 2?"),
+BUBBLES = [("out", 6.5, f"Hi, this is {BIZ}! Sorry we missed your call. What can we help with?"),
+           ("in", 9.0, "Do you have anything open this week?"),
+           ("out", 10.4, "We can fit you in Thursday. 9 or 2?"),
            ("in", 11.5, "9 works 👍")]
 TYPING = [(5.9, 6.5), (9.8, 10.4)]
 
@@ -75,7 +75,6 @@ html,body{{margin:0;background:#0b1712}}
     <div class="scr" id="s-missed"><div class="who">Missed call</div><div class="num">{NUM}</div><div class="badge">No voicemail</div></div>
     <div class="scr" id="s-msgs"><div class="hd">{NUM}</div>{bubbles}{typing}</div>
   </div>
-  <div id="tag">Example business</div>
   <div class="ant" id="ant-ring">{ring}</div>
   <div id="end"><div class="a">{thumbs}</div><div class="w">{WORD}</div>
     <div class="l">Automated assistants for local businesses.</div><div class="u">autoants.com · free website preview</div></div>
@@ -86,7 +85,7 @@ const win = (t, a, b) => clamp((t - a) / F) * clamp((b - t) / F);
 function show(el, a, t, b = 99, rise = 24) {{ const k = win(t, a, b); el.style.opacity = k; el.style.transform = `translateY(${{(1 - k) * rise}}px)`; }}
 window.seek = (t) => {{
   document.querySelectorAll('.cap').forEach(c => show(c, +c.dataset.in, t, +c.dataset.out));
-  show(phone, 0.3, t, 12.9, 40); show(tag, 0.6, t, 12.9, 0);
+  show(phone, 0.3, t, 12.9, 40);
   document.getElementById('s-call').style.opacity = win(t, 0.3, 3.0);
   document.getElementById('s-missed').style.opacity = win(t, 3.0, 5.7);
   document.getElementById('s-msgs').style.opacity = win(t, 5.6, 99);
