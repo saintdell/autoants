@@ -69,6 +69,12 @@ Hashtags are kept to three or four, all local or trade: they help a little, and 
 > We'll build your new website before you pay anything: your name, your reviews, your number, one tap to call. Like it? Keep it. Ask at autoants.com.
 > #Louisiana #SmallBusiness #TreeService
 
+## Once the auto-DM is live (see AUTO-DM.md)
+Swap the last line of the **free-preview** and **meet-the-ants** captions for:
+> Want to see yours? Comment PREVIEW and I'll send you the link.
+
+Until then, keep "autoants.com" / "link in bio".
+
 ## Rules for every post
 - One message per post, about what the assistant does. Never lead with "AI".
 - No numbers, results or customer quotes we can't show. Before-and-afters only with the owner's OK, labeled.
