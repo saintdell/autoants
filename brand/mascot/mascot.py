@@ -76,8 +76,10 @@ POSES = {
                   + arm("M110 144C132 156 130 178 120 184", (119, 184))),
     "point": ("This way", lambda: body() + arm(*DOWN_L) + head("dot", look=4)
               + arm("M110 142C140 138 164 126 186 124", (188, 123)) + f'<path d="M193 122h14" stroke="{MINT}" stroke-width="7" stroke-linecap="round"/>'),
-    "carry": ("Got your lead", lambda: body() + head("dot", look=3) + ENVELOPE
-              + arm("M90 144C92 168 106 174 118 168", (118, 168)) + arm("M110 144C142 144 160 158 170 172", (170, 172))),
+    # arms behind the envelope, hands gripping its two side edges
+    "carry": ("Got your lead", lambda: body() + head("dot", look=3)
+              + arm("M90 144C92 168 104 172 115 168", None, hand=False) + arm("M110 144C142 140 166 150 178 159", None, hand=False)
+              + ENVELOPE + f'<circle cx="115" cy="168" r="10" fill="{MINT}"/><circle cx="178" cy="159" r="10" fill="{MINT}"/>'),
     "hardhat": ("On the job", lambda: body() + arm(*DOWN_L) + arm(*HIP_R) + head("dot", hat=True)),
 }
 
