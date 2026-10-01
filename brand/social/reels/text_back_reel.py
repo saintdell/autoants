@@ -123,5 +123,35 @@ def render():
     return dest
 
 
+# Sound design, generated (no licensed audio): ring while the call comes in, a soft "missed" tone,
+# a ding per text bubble (higher for ours, lower for theirs), and a chime on the end card.
+# Quiet enough to sit under a music track added in the app.
+def ding(f, t):
+    return (f"aevalsrc='0.42*sin(2*PI*{f}*t)*exp(-7*t)+0.12*sin(2*PI*{2*f}*t)*exp(-11*t)':d=0.7:s=44100", t)
+
+
+SOUNDS = (
+    [("aevalsrc='0.16*(sin(2*PI*440*t)+sin(2*PI*480*t))*(0.5+0.5*sin(2*PI*22*t))':d=0.85:s=44100", t) for t in (0.45, 1.75)]
+    + [("aevalsrc='0.3*sin(2*PI*392*t)*exp(-9*t)':d=0.35:s=44100", 3.05), ("aevalsrc='0.3*sin(2*PI*294*t)*exp(-9*t)':d=0.45:s=44100", 3.2)]
+    + [ding(1320 if kind == "out" else 990, t) for kind, t, _ in BUBBLES]
+    + [(f"aevalsrc='0.22*sin(2*PI*{f}*t)*exp(-2.6*t)':d=1.6:s=44100", 12.9 + i * 0.07) for i, f in enumerate((523.25, 659.25, 783.99))]
+)
+
+
+def add_sound(video):
+    args, labels = [], []
+    for i, (src, start) in enumerate(SOUNDS):
+        args += ["-f", "lavfi", "-i", src]
+        labels.append(f"[{i + 1}:a]afade=t=in:d=0.01,adelay={int(start * 1000)}:all=1[a{i}]")
+    mix = ";".join(labels) + ";" + "".join(f"[a{i}]" for i in range(len(SOUNDS))) + \
+          f"amix=inputs={len(SOUNDS)}:normalize=0,apad=whole_dur={DUR},atrim=0:{DUR},volume=0.9[aout]"
+    tmp = video.replace(".mp4", "-snd.mp4")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", video, *args, "-filter_complex", mix,
+                    "-map", "0:v", "-map", "[aout]", "-c:v", "copy", "-c:a", "aac", "-b:a", "160k",
+                    "-movflags", "+faststart", "-shortest", tmp], check=True)
+    os.replace(tmp, video)
+    return video
+
+
 if __name__ == "__main__":
-    print(render())
+    print(add_sound(render()))
