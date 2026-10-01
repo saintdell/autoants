@@ -14,19 +14,17 @@
 html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font:500 18px/1.5 Onest,system-ui,sans-serif}
 main{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:32px 16px;text-align:center}
 .logo{height:34px;width:auto}
-.ant{width:92px;height:auto}
+.ant{width:130px;height:auto}
 h1{margin:0;font-size:clamp(28px,5vw,40px);font-weight:800;letter-spacing:-.03em;text-wrap:balance;max-width:20ch}
 p{margin:0;color:var(--muted);max-width:44ch}
 a.btn{display:inline-block;background:var(--mint);color:#0b1712;font-weight:800;text-decoration:none;border-radius:12px;padding:12px 20px}
 a.btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
-@media (prefers-reduced-motion:no-preference){.ant{animation:look 3.2s ease-in-out 1 both}}
-@keyframes look{0%,100%{transform:translateX(0)}35%{transform:translateX(-6px)}70%{transform:translateX(6px)}}
 </style>
 </head>
 <body>
 <main>
   <a href="/"><img class="logo" src="/brand/autoants-logo-reverse.svg" alt="AutoAnts home"></a>
-  <svg class="ant" viewBox="0 0 62 86" aria-hidden="true"><g stroke="#ebe8e2" stroke-width="4" stroke-linecap="round"><path d="M24 31 15 9M38 31l9-22"/></g><circle cx="15" cy="7.5" r="3.6" fill="#ebe8e2"/><circle cx="47" cy="7.5" r="3.6" fill="#ebe8e2"/><circle cx="31" cy="57" r="29" fill="#3ddcae"/><circle cx="19" cy="53" r="4.3" fill="#0f5132"/><circle cx="38" cy="53" r="4.3" fill="#0f5132"/></svg>
+  <img class="ant" src="/brand/mascot/anim/svg/looking-dark.svg" alt="" width="130" height="161">
   <h1>This page wandered off.</h1>
   <p>Head back home. The colony's still working.</p>
   <a class="btn" href="/">Back to autoants.com</a>

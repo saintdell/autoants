@@ -3,7 +3,7 @@
     uv run --with playwright python3 brand/mascot/anim/build_loops.py
 
 Writes, per loop:
-  svg/<loop>.svg               self-animating SVG (CSS keyframes), transparent, for the website
+  svg/<loop>.svg, <loop>-dark.svg   self-animating SVG (CSS keyframes), transparent; -dark for dark grounds (the site)
   video/<loop>-1080x1920.mp4   Reels / Shorts / Stories: night ground, headline, 12 s (the 4 s loop x3), silent
 
 Every loop is exactly 4 s and ends where it starts, so platforms loop it seamlessly.
@@ -42,7 +42,7 @@ def head(p, eyes, hat=False):
     out = (f'<g class="head"><g class="ants"><path d="M88 40 74 8M112 40l14-32" stroke="{a}" stroke-width="6" stroke-linecap="round"/>'
            f'<circle cx="74" cy="7" r="6.5" fill="{a}"/><circle cx="126" cy="7" r="6.5" fill="{a}"/></g>'
            f'<circle cx="100" cy="82" r="46" fill="{M.MINT}"/>')
-    out += "".join(f'<g class="{cls}">{M.eyes(kind, look)}</g>' for cls, kind, look in eyes)
+    out += '<g class="gaze">' + "".join(f'<g class="{cls}">{M.eyes(kind, look)}</g>' for cls, kind, look in eyes) + "</g>"
     if hat:
         out += M.HARDHAT
     return out + "</g>"
@@ -54,7 +54,7 @@ HIP_R = lambda p: stroke("M110 146C142 150 144 178 124 176", p["body"]) + hand(1
 
 # shared motion: transform-box view-box makes every origin a point in the drawing
 BASE = """
-.legL,.legR,.upper,.head,.ants,.blink,.armR,.phone,.spark,.speed{transform-box:view-box}
+.legL,.legR,.upper,.head,.ants,.blink,.gaze,.armR,.phone,.spark,.speed{transform-box:view-box}
 .upper{animation:bob 2s ease-in-out infinite}
 .head{transform-origin:100px 128px;animation:tilt 4s ease-in-out infinite}
 .ants{transform-origin:100px 40px;animation:sway 2s ease-in-out infinite;animation-delay:-.35s}
@@ -126,12 +126,21 @@ def onthejob(p):
     return body, ""
 
 
+def looking(p):
+    """For the 404 page: hands on hips, eyes searching left and right."""
+    body = legs(p) + '<g class="upper">' + torso(p) + HIP_L(p) + HIP_R(p) + head(p, [("blink", "dot", 0)]) + "</g>"
+    css = (".gaze{animation:gaze 4s ease-in-out infinite}"
+           "@keyframes gaze{0%,12%,88%,100%{transform:translateX(0)}22%,40%{transform:translateX(-6px)}55%,75%{transform:translateX(6px)}}")
+    return body, css
+
+
 LOOPS = {  # name: (draw, eyebrow, headline) — copy matches posts.json
     "hello": (hello, "autoants", "Meet the ants."),
     "ringing": (ringing, "The Callback", "Missed calls are jobs walking away."),
     "delivery": (delivery, "The Responder", "The crew that answers first wins."),
     "thumbs-up": (thumbs, "The Reviewer", "Every customer gets the ask."),
     "on-the-job": (onthejob, "Your office, handled", "They work while you're on the job."),
+    "looking": (looking, None, None),   # website only (404), no reel
 }
 
 
@@ -184,4 +193,5 @@ if __name__ == "__main__":
     os.makedirs(os.path.join(HERE, "svg"), exist_ok=True)
     for n in names:
         open(os.path.join(HERE, "svg", f"{n}.svg"), "w").write(svg(n, LIGHT))
-    render_reels(names)
+        open(os.path.join(HERE, "svg", f"{n}-dark.svg"), "w").write(svg(n, DARK))   # for the site's dark grounds
+    render_reels([n for n in names if LOOPS[n][2]])

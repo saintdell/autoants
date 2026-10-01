@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 260" role="img" aria-label="autoants mascot"><style>
+.legL,.legR,.upper,.head,.ants,.blink,.gaze,.armR,.phone,.spark,.speed{transform-box:view-box}
+.upper{animation:bob 2s ease-in-out infinite}
+.head{transform-origin:100px 128px;animation:tilt 4s ease-in-out infinite}
+.ants{transform-origin:100px 40px;animation:sway 2s ease-in-out infinite;animation-delay:-.35s}
+.blink{transform-origin:100px 78px;animation:blink 4s linear infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+@keyframes tilt{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+@keyframes sway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes blink{0%,64%,70%,100%{transform:scaleY(1)}67%{transform:scaleY(.1)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+.gaze{animation:gaze 4s ease-in-out infinite}@keyframes gaze{0%,12%,88%,100%{transform:translateX(0)}22%,40%{transform:translateX(-6px)}55%,75%{transform:translateX(6px)}}</style><g class="legL"><path d="M93 208C90 226 82 232 84 244" stroke="#1e7a50" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><ellipse cx="77" cy="248" rx="19" ry="8.5" fill="#33453b"/></g><g class="legR"><path d="M107 208C110 226 118 232 116 244" stroke="#1e7a50" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><ellipse cx="123" cy="248" rx="19" ry="8.5" fill="#33453b"/></g><g class="upper"><ellipse cx="100" cy="184" rx="24" ry="30" fill="#1e7a50"/><circle cx="100" cy="141" r="14" fill="#1e7a50"/><path d="M90 146C58 150 56 178 76 176" stroke="#1e7a50" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="78" cy="176" r="10" fill="#3ddcae"/><path d="M110 146C142 150 144 178 124 176" stroke="#1e7a50" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="122" cy="176" r="10" fill="#3ddcae"/><g class="head"><g class="ants"><path d="M88 40 74 8M112 40l14-32" stroke="#ebe8e2" stroke-width="6" stroke-linecap="round"/><circle cx="74" cy="7" r="6.5" fill="#ebe8e2"/><circle cx="126" cy="7" r="6.5" fill="#ebe8e2"/></g><circle cx="100" cy="82" r="46" fill="#3ddcae"/><g class="gaze"><g class="blink"><circle cx="84" cy="78" r="7" fill="#0f5132"/><circle cx="116" cy="78" r="7" fill="#0f5132"/></g></g></g></g></svg>

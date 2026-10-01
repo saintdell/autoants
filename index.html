@@ -213,7 +213,7 @@
   .cform input:focus,.cform select:focus,.cform textarea:focus{outline:2px solid var(--amber);outline-offset:1px;border-color:transparent}
   .cform .consent{font-size:.78rem;color:var(--faint);font-weight:400}
   .cform button{justify-self:start}
-  .cform .sent{grid-column:1/-1;color:var(--ok);font-weight:600;display:none}
+  .cform .sent{grid-column:1/-1;color:var(--ok);font-weight:600;display:none;align-items:center;gap:.6rem}
   @media(max-width:560px){.cform{grid-template-columns:1fr}}
   /* ---- mobile action bar ---- */
   .mbar{display:none}
@@ -399,7 +399,7 @@
       <label class="full">Anything I should know?<textarea name="msg" rows="3" placeholder="e.g. we miss calls when the crew is out on jobs"></textarea></label>
       <p class="consent full">By sending, you agree that AutoAnts can call or text you about this request. No lists, no spam.</p>
       <button class="btn btn-amber" type="submit">Send →</button>
-      <p class="sent" id="sentNote"><svg class="ant" style="width:14px;height:19px;vertical-align:-3px;margin-right:6px" viewBox="0 0 62 86" aria-hidden="true"><use href="#ant"/></svg><span id="sentText">Got it. If an email window opened, hit send there and it reaches me.</span></p>
+      <p class="sent" id="sentNote"><img src="/brand/mascot/anim/svg/thumbs-up-dark.svg" alt="" width="52" height="64"><span id="sentText">Got it. If an email window opened, hit send there and it reaches me.</span></p>
     </form>
   </div>
 </div></section>
@@ -454,7 +454,7 @@
       if (!f.name.value.trim() || !f.phone.value.trim() || !f.business.value.trim()) { f.reportValidity && f.reportValidity(); return; }
       var d = {name:f.name.value.trim(), business:f.business.value.trim(), phone:f.phone.value.trim(),
                trade:f.trade.value, interest:f.interest.value, msg:f.msg.value.trim(), page:'autoants.com'};
-      var done = function(){ document.getElementById('sentNote').style.display='block'; };
+      var done = function(){ document.getElementById('sentNote').style.display='flex'; };
       if (LEAD_ENDPOINT) {
         fetch(LEAD_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(d)})
           .then(function(r){ if(!r.ok) throw 0; document.getElementById('sentText').textContent='Got it. I\'ll be in touch, usually the same day.'; done(); f.reset(); })
