@@ -110,6 +110,6 @@ if __name__ == "__main__":
     for n in NAMES:
         svg = icon(n, 120, ground=STONE).replace("<svg ", '<svg xmlns="http://www.w3.org/2000/svg" role="img" ', 1)
         open(os.path.join(BRAND, "icons", n.lower() + ".svg"), "w").write(svg + "\n")
-    open(os.path.join(HERE, "colony-wide.svg"), "w").write(colony_wide())
-    open(os.path.join(HERE, "colony-tall.svg"), "w").write(colony_tall())
-    print("wrote", len(NAMES), "icons + colony-wide.svg + colony-tall.svg")
+    # colony_wide()/colony_tall() kept for reference; the cutaway was removed from the
+    # site on 2026-10-01 (Lane: "the ant tunnels look childish").
+    print("wrote", len(NAMES), "icons")
