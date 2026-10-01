@@ -1,16 +1,51 @@
 [
-  {"slug": "meet-the-ants", "pose": "wave", "eyebrow": "autoants",
-   "line": "Meet the ants.", "sub": "Automated assistants for tree, HVAC and roofing crews. Each one has one job."},
-  {"slug": "the-callback", "pose": "phone", "eyebrow": "The Callback",
-   "line": "Missed calls are jobs walking away.", "sub": "Miss a call and it texts them back in seconds. The job stays yours."},
-  {"slug": "the-responder", "pose": "carry", "eyebrow": "The Responder",
-   "line": "The crew that answers first wins.", "sub": "A new lead comes in and gets an answer in seconds."},
-  {"slug": "the-scheduler", "pose": "clipboard", "eyebrow": "The Scheduler",
-   "line": "Quote requests, booked.", "sub": "Requests turn into estimates and booked jobs without you touching your phone."},
-  {"slug": "the-reviewer", "pose": "thumbs", "eyebrow": "The Reviewer",
-   "line": "Every customer gets the ask.", "sub": "One tap from your phone after each job. More reviews, more calls."},
-  {"slug": "on-the-job", "pose": "hardhat", "eyebrow": "Your office, handled",
-   "line": "They work while you're on the job.", "sub": "You stay the boss: nothing goes to a customer without your OK."},
-  {"slug": "free-preview", "pose": "point", "eyebrow": "Free site preview",
-   "line": "See your new site before you pay.", "sub": "Your name, your reviews, on a real site. Ask at autoants.com."}
+  {
+    "slug": "meet-the-ants",
+    "pose": "wave",
+    "eyebrow": "autoants",
+    "line": "Meet the ants.",
+    "sub": "Automated assistants for local businesses. Each one has one job."
+  },
+  {
+    "slug": "the-callback",
+    "pose": "phone",
+    "eyebrow": "The Callback",
+    "line": "Missed calls are jobs walking away.",
+    "sub": "Miss a call and it texts them back in seconds. The job stays yours."
+  },
+  {
+    "slug": "the-responder",
+    "pose": "carry",
+    "eyebrow": "The Responder",
+    "line": "The crew that answers first wins.",
+    "sub": "A new lead comes in and gets an answer in seconds."
+  },
+  {
+    "slug": "the-scheduler",
+    "pose": "clipboard",
+    "eyebrow": "The Scheduler",
+    "line": "Quote requests, booked.",
+    "sub": "Requests turn into estimates and booked jobs without you touching your phone."
+  },
+  {
+    "slug": "the-reviewer",
+    "pose": "thumbs",
+    "eyebrow": "The Reviewer",
+    "line": "Every customer gets the ask.",
+    "sub": "One tap from your phone after each job. More reviews, more calls."
+  },
+  {
+    "slug": "on-the-job",
+    "pose": "hardhat",
+    "eyebrow": "Your office, handled",
+    "line": "They work while you're on the job.",
+    "sub": "You stay the boss: nothing goes to a customer without your OK."
+  },
+  {
+    "slug": "free-preview",
+    "pose": "point",
+    "eyebrow": "Free site preview",
+    "line": "See your new site before you pay.",
+    "sub": "Your name, your reviews, on a real site. Ask at autoants.com."
+  }
 ]

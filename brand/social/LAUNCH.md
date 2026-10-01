@@ -42,8 +42,8 @@ Use the `feed` size on Instagram, Facebook and LinkedIn, and `wide` on X. Use th
 Hashtags are kept to three or four, all local or trade: they help a little, and a wall of tags reads as spam.
 
 **meet-the-ants**
-> Meet the ants. 🐜 Each one does one job for your crew while you're out working: texts back the calls you miss, answers new leads, books estimates, asks every customer for a review. Louisiana-built. See what they'd do for you at autoants.com.
-> #TreeService #HVAC #Roofing #Louisiana
+> Meet the ants. 🐜 Each one does one job for your business while you're busy: texts back the calls you miss, answers new leads, books appointments, asks every customer for a review. See what they'd do for you at autoants.com.
+> #SmallBusiness #Louisiana #LocalBusiness
 
 **the-callback**
 > You're up a tree when the phone rings. The homeowner doesn't leave a voicemail; they call the next crew on Google. The Callback texts them back in seconds, so the job stays yours.
