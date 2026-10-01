@@ -12,3 +12,17 @@ Made 2026-10-01 from the Logo Lab boards (rubber-hose mascot). Sizes come from e
 | `linkedin-cover-1512x256.png` | LinkedIn page → Edit page → Cover image. The text starts 20% in, clear of the page logo that sits over the lower left. |
 
 The mascot never goes on Google Business Profile, Apple Business or Yelp: their rules ban illustrated or edited images. Use the logo and real photos there.
+
+## Post templates (`posts/`)
+
+Seven starter posts, one per mascot pose, each in three formats in `posts/out/`:
+- **feed** 1080×1350 for Instagram, Facebook and LinkedIn;
+- **story** 1080×1920 for Instagram and Facebook stories (text stays clear of the top and bottom bars);
+- **wide** 1920×1080 for X, LinkedIn and YouTube thumbnails.
+
+To make a new post, add a row to `posts/posts.json` (slug, pose, eyebrow, line, sub) and run `python3 brand/social/posts/make_post.py <slug>`.
+The poses are wave, phone, thumbs, clipboard, point, carry and hardhat.
+Copy rules:
+- one outcome per post;
+- name the assistant's job, never lead with "AI";
+- no numbers or results we can't show.
