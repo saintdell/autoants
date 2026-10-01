@@ -32,6 +32,12 @@
    setup fee comes back
 3. No contract to start; monthly plans cancel anytime after 90 days
 
+## Who it's for
+- Home services and trades (tree, HVAC, roofing, plumbing, landscaping): the core focus
+- Also offered to auto repair and tire shops, salons and nail spas, and gyms and fitness studios
+- Dental and medical offices: not yet; patient information needs a HIPAA program first
+- Details: https://autoants.com/who-we-help.html
+
 ## Why customers choose it
 - Owner-run: owners deal with Lane directly, not a call center; the
   business is built on doing only what it would put its name on
