@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Roof Quote Demo · AutoAnts</title>
+<meta name="description" content="A walk-through demo of the AutoAnts quote assistant for roof replacements, running on sample rates.">
+<link rel="icon" href="/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+:root{
+  --forest:#0f5132; --mint:#3ddcae; --stone:#ebe8e2; --ink:#0f2a1d; --night:#0b1712;
+  --ground:#f5f3ee; --card:#ffffff; --line:#d9d5cc; --muted:#56635a; --soft:#e7efe9; --warn:#8a4b08; --warn-bg:#fdf1e2;
+  --accent:var(--forest); --on-accent:#ffffff;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --line:#26372d; --muted:#9db0a4; --soft:#17291f; --warn:#f3b56a; --warn-bg:#2a1f12; --accent:#3ddcae; --on-accent:#0b1712; }
+}
+:root[data-theme="dark"]{ --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --line:#26372d; --muted:#9db0a4; --soft:#17291f; --warn:#f3b56a; --warn-bg:#2a1f12; --accent:#3ddcae; --on-accent:#0b1712; }
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--ground);color:var(--ink);font:500 16px/1.45 Onest,system-ui,-apple-system,sans-serif}
+main{max-width:980px;margin:0 auto;padding:20px 16px 56px;display:flex;flex-direction:column;gap:16px}
+.banner{margin:0;background:var(--warn-bg);color:var(--warn);border-radius:12px;padding:10px 14px;font-size:14px;font-weight:700}
+header h1{margin:0;font-size:clamp(26px,5vw,38px);font-weight:800;letter-spacing:-.03em;text-wrap:balance}
+header p{margin:6px 0 0;color:var(--muted);max-width:62ch}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:760px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:14px}
+.label{font:700 11px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+legend{font-size:14px;font-weight:700;color:var(--muted);margin-bottom:6px;padding:0}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label{border:1px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer;font-size:15px;background:var(--ground)}
+.seg input:checked + label{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:700}
+.seg input:focus-visible + label{outline:3px solid var(--mint);outline-offset:2px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.field{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:700;color:var(--muted)}
+input[type=number]{font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px;min-height:44px;width:100%;font-variant-numeric:tabular-nums}
+.checks{display:flex;flex-direction:column;gap:8px}
+.checks label{display:flex;gap:10px;align-items:center;font-size:15px}
+.checks input{width:20px;height:20px;accent-color:var(--forest)}
+.toggle{display:inline-flex;background:var(--ground);border:1px solid var(--line);border-radius:999px;padding:3px;align-self:flex-start}
+.toggle button{font:inherit;font-weight:700;font-size:14px;border:0;background:transparent;color:var(--ink);padding:8px 14px;border-radius:999px;cursor:pointer;min-height:40px}
+.toggle button[aria-pressed=true]{background:var(--accent);color:var(--on-accent)}
+.price{font-size:clamp(34px,6vw,48px);font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1}
+.sub{color:var(--muted);font-size:14px;margin:0}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:15px}
+td{padding:7px 0;border-top:1px solid var(--line)}
+td:last-child{text-align:right}
+tr.total td{font-weight:800}
+.visit{background:var(--warn-bg);color:var(--warn);border-radius:12px;padding:12px;font-weight:700}
+.custcard{border:2px solid var(--accent);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.hidden{display:none !important}
+details summary{cursor:pointer;font-weight:800;list-style:none}
+details summary::after{content:" +";color:var(--muted)}
+details[open] summary::after{content:" −"}
+.book{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:12px}
+.book .field{font-size:13px}
+.reset{font:inherit;font-weight:700;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 12px;cursor:pointer;justify-self:start;min-height:40px}
+footer{font-size:13px;color:var(--muted)}
+footer a{color:inherit}
+:focus-visible{outline:3px solid var(--mint);outline-offset:2px}
+</style>
+</head>
+<body>
+<main>
+  <p class="banner">Sample rates. Before anyone uses this, it gets set to your prices and checked against your last 20 quotes.</p>
+  <header>
+    <div class="label">Quote assistant · roofing</div>
+    <h1>Price the roof before you leave the driveway.</h1>
+    <p>Put in the measured squares, the pitch, the stories and the layers coming off, and get your number from your rates: material, labor, tear-off, decking, dumpsters and markup. The homeowner only ever sees the range.</p>
+  </header>
+
+  <div class="grid">
+    <form class="card" id="job" aria-label="The roof">
+      <div class="label">The roof</div>
+      <fieldset><legend>Work</legend><div class="seg" id="kind"></div></fieldset>
+      <div class="row">
+        <label class="field">Measured squares<input type="number" id="squares" min="1" max="200" step="0.5" value="28"></label>
+        <label class="field">Decking sheets to replace<input type="number" id="decking_sheets" min="0" max="200" value="4"></label>
+      </div>
+      <fieldset><legend>Pitch</legend><div class="seg" id="pitch"></div></fieldset>
+      <fieldset><legend>Stories</legend><div class="seg" id="stories"></div></fieldset>
+      <fieldset><legend>Layers coming off</legend><div class="seg" id="layers"></div></fieldset>
+      <fieldset><legend>Material</legend><div class="seg" id="material"></div></fieldset>
+    </form>
+
+    <section class="card" aria-live="polite">
+      <div class="toggle" role="group" aria-label="Who is looking">
+        <button type="button" id="v-crew" aria-pressed="true">Crew view</button>
+        <button type="button" id="v-cust" aria-pressed="false">Homeowner view</button>
+      </div>
+      <div id="crew"></div>
+      <div id="cust" class="hidden"></div>
+    </section>
+  </div>
+
+  <details class="card">
+    <summary>Your price book <span class="sub" style="font-weight:500">(sample numbers, change any of them)</span></summary>
+    <div class="book" id="book"></div>
+    <button type="button" class="reset" id="reset">Back to the sample rates</button>
+  </details>
+
+  <footer>A demo of the quote assistant by <a href="/">AutoAnts</a>. Squares come from a measurement, never a guess. Repairs and insurance claims always get a site visit. Nothing here is a real company's pricing. <a href="../estimate/">Tree work version</a>.</footer>
+</main>
+<script type="module">
+import { quoteRoof, customerView, ROOFING_SAMPLE_BOOK } from "./roofing.js";
+const $ = id => document.getElementById(id);
+let book = structuredClone(ROOFING_SAMPLE_BOOK);
+const money = n => "$" + Math.round(n).toLocaleString("en-US");
+const OPTIONS = {
+  kind: [["replace", "Replace"], ["repair", "Repair"], ["insurance", "Insurance claim"]],
+  pitch: [["low", "Low (≤4/12)"], ["standard", "5–7/12"], ["steep", "8–9/12"], ["very-steep", "10/12+"]],
+  stories: [["1", "1"], ["2", "2"], ["3", "3"]],
+  layers: [["0", "None"], ["1", "1"], ["2", "2"], ["3", "3"]],
+  material: [["architectural", "Architectural"], ["3-tab", "3-tab"], ["metal", "Metal"]],
+};
+const DEF = { kind: "replace", pitch: "standard", stories: "2", layers: "1", material: "architectural" };
+for (const [n, opts] of Object.entries(OPTIONS))
+  $(n).innerHTML = opts.map(([v, t]) => `<input type="radio" name="${n}" id="${n}-${v}" value="${v}" ${v === DEF[n] ? "checked" : ""}><label for="${n}-${v}">${t}</label>`).join("");
+const FIELDS = [["labor_cost_per_square", "Install labor / square ($)"], ["tearoff_cost_per_square_per_layer", "Tear-off / square / layer ($)"],
+  ["material_cost_per_square.architectural", "Architectural / square ($)"], ["accessories_cost_per_square", "Accessories / square ($)"],
+  ["decking_cost_per_sheet", "Decking / sheet ($)"], ["dumpster_cost", "Dumpster ($)"], ["markup", "Markup (x cost)"],
+  ["minimum", "Minimum job ($)"], ["waste_pct", "Waste (share)"], ["range_pct", "Homeowner range (±)"]];
+const getP = (o, p) => p.split(".").reduce((a, k) => a[k], o);
+const setP = (o, p, v) => { const ks = p.split("."); const l = ks.pop(); ks.reduce((a, k) => a[k], o)[l] = v; };
+const renderBook = () => $("book").innerHTML = FIELDS.map(([p, t]) => `<label class="field">${t}<input type="number" step="any" min="0" data-p="${p}" value="${getP(book, p)}"></label>`).join("");
+const val = n => document.querySelector(`input[name=${n}]:checked`).value;
+function render() {
+  let q;
+  try { q = quoteRoof({ job: val("kind"), squares: Number($("squares").value), pitch: val("pitch"), stories: val("stories"),
+                        layers: Number(val("layers")), material: val("material"), decking_sheets: Number($("decking_sheets").value) }, book); }
+  catch (e) { $("crew").innerHTML = `<p class="visit">${e.message}</p>`; $("cust").innerHTML = ""; return; }
+  const visit = q.needs_visit ? `<div class="visit">Site visit first: ${q.visit_reasons.join(" ")}</div>` : "";
+  $("crew").innerHTML = `<div class="label">What we'd quote</div><div class="price">${money(q.price)}</div>
+    <p class="sub">Homeowner sees ${money(q.low)}–${money(q.high)} · margin ${q.margin_pct}%${q.minimum_applied ? " · minimum job applied" : ""}</p>${visit}
+    <table>${q.lines.map(l => `<tr><td>${l.label}</td><td>${money(l.cost)}</td></tr>`).join("")}
+    <tr class="total"><td>Your cost</td><td>${money(q.cost)}</td></tr><tr><td>Markup</td><td>× ${book.markup}</td></tr></table>
+    <p class="sub">Price book ${q.book_version} · good for ${q.valid_days} days</p>`;
+  const c = customerView(q);
+  $("cust").innerHTML = c.needs_visit
+    ? `<div class="custcard"><strong>${c.message}</strong><span class="sub">${c.reasons.join(" ")}</span></div>`
+    : `<div class="custcard"><div class="label">${c.label}</div><div class="price">${money(c.low)}–${money(c.high)}</div><span class="sub">Good for ${c.valid_days} days. ${c.terms}</span></div>
+       <p class="sub">That's everything the homeowner sees: no costs, no markup, no margin.</p>`;
+}
+function setView(v) { $("v-crew").setAttribute("aria-pressed", v === "crew"); $("v-cust").setAttribute("aria-pressed", v === "cust");
+  $("crew").classList.toggle("hidden", v !== "crew"); $("cust").classList.toggle("hidden", v !== "cust"); }
+$("v-crew").onclick = () => setView("crew"); $("v-cust").onclick = () => setView("cust");
+$("job").addEventListener("input", render);
+$("book").addEventListener("input", e => { const p = e.target.dataset.p, v = Number(e.target.value);
+  if (p && Number.isFinite(v)) { setP(book, p, v); book.version = "edited"; render(); } });
+$("reset").onclick = () => { book = structuredClone(ROOFING_SAMPLE_BOOK); renderBook(); render(); };
+renderBook(); render();
+</script>
+</body>
+</html>

@@ -33,7 +33,19 @@ export const HEIGHTS = ["under-30", "30-60", "60-80", "over-80"];
 
 const round = (n, to) => Math.round(n / to) * to;
 
+const REQUIRED_RATES = ["crew_cost_per_hour", "equipment_cost_per_hour", "markup", "minimum",
+                        "stump_price_per_inch", "stump_minimum", "trim_factor", "inch_hours_over_12", "range_pct"];
+
+// A blank rate stops the quote. A guessed rate would go to a customer.
+export function checkBook(book) {
+  const missing = REQUIRED_RATES.filter(k => typeof book[k] !== "number" || !Number.isFinite(book[k]));
+  for (const t of ["removal_hours", "location_factor", "access_factor", "haul_off_cost"])
+    for (const [k, v] of Object.entries(book[t] || {})) if (typeof v !== "number") missing.push(`${t}.${k}`);
+  if (missing.length) throw new Error(`price book is missing: ${missing.join(", ")}`);
+}
+
 export function quote(job, book = SAMPLE_BOOK) {
+  checkBook(book);
   const j = {
     service: "removal", height: "30-60", diameter: 18, location: "open",
     access: "truck", haul_off: true, stump: false, stump_diameter: 0,
@@ -54,19 +66,19 @@ export function quote(job, book = SAMPLE_BOOK) {
     hours = (base + extra) * book.location_factor[j.location] * book.access_factor[j.access];
     const labor = hours * book.crew_cost_per_hour;
     const equip = hours * book.equipment_cost_per_hour;
-    lines.push({ label: `Crew, ${hours.toFixed(1)} h`, cost: labor });
-    lines.push({ label: `Truck and chipper, ${hours.toFixed(1)} h`, cost: equip });
+    lines.push({ label: `Crew, ${hours.toFixed(1)} h`, cost: labor, group: j.service === "trim" ? "Tree trimming" : "Tree removal" });
+    lines.push({ label: `Truck and chipper, ${hours.toFixed(1)} h`, cost: equip, group: j.service === "trim" ? "Tree trimming" : "Tree removal" });
     cost += labor + equip;
     if (j.haul_off) {
       const dump = book.haul_off_cost[j.height] * (j.service === "trim" ? 0.5 : 1);
-      lines.push({ label: "Haul-off and dump fee", cost: dump });
+      lines.push({ label: "Haul-off and dump fee", cost: dump, group: "Haul-off and disposal" });
       cost += dump;
     }
   }
   let price = cost * book.markup;
   if (j.stump || j.service === "stump-only") {
     const stump = Math.max(book.stump_minimum, (Number(j.stump_diameter) || Number(j.diameter) || 0) * book.stump_price_per_inch);
-    lines.push({ label: "Stump grinding", cost: stump / book.markup });
+    lines.push({ label: "Stump grinding", cost: stump / book.markup, group: "Stump grinding" });
     cost += stump / book.markup;
     price += stump;
   }
@@ -98,4 +110,18 @@ export function customerView(q) {
   }
   return { needs_visit: false, low: q.low, high: q.high,
            label: "Estimate, confirmed on site", valid_days: q.valid_days, terms: q.terms };
+}
+
+// Customer-facing proposal lines: each group's share of the final price, so the
+// items add up to exactly the quoted price and no cost, hour or markup appears.
+// Refuses a job that needs a site visit: there is no price to propose yet.
+export function proposalItems(q) {
+  if (q.needs_visit) throw new Error("needs a site visit before there's a price to propose: " + q.visit_reasons.join(" "));
+  const groups = new Map();
+  for (const l of q.lines) groups.set(l.group || l.label, (groups.get(l.group || l.label) || 0) + l.cost);
+  const total = [...groups.values()].reduce((a, b) => a + b, 0) || 1;
+  const items = [...groups].map(([label, cost]) => ({ label, price: Math.round((q.price * cost / total) / 5) * 5 }));
+  const diff = q.price - items.reduce((a, i) => a + i.price, 0);
+  if (items.length) items.reduce((a, b) => (b.price > a.price ? b : a)).price += diff;
+  return items;
 }
