@@ -1,10 +1,8 @@
 # AutoAnts
 
-> AutoAnts (the name is short for "automated assistants") is a Louisiana company founded and
-> run by Lane Davis in Louisiana. It builds websites,
+> AutoAnts (the name is short for "automated assistants") is a Louisiana company founded and run by Lane Davis. It builds websites,
 > after-hours lead-intake systems, and AI-search visibility for Louisiana
-> service businesses — tree services, pressure washing, concrete, and other
-> trades. The first deliverable is always free: AutoAnts builds a working
+> local businesses: trades, auto shops, salons, gyms and more. The first deliverable is always free: AutoAnts builds a working
 > preview website for a business before any money changes hands.
 
 ## What AutoAnts does
