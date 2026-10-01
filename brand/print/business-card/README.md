@@ -12,4 +12,4 @@ Regenerate with `uv run --with qrcode python3 brand/print/business-card/make_car
 
 **Stock:** 16 pt or heavier, matte or uncoated, so it takes a pen. 250 to start.
 
-The title is "Founder", not "Attorney". The law license stays off AutoAnts print to keep the legal firewall clean; the site's "Attorney-owned" line carries the trust.
+The title is "Founder". Lane's law license never appears in AutoAnts copy unless it's material to the client (for example, a law firm).

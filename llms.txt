@@ -1,7 +1,7 @@
 # AutoAnts
 
 > AutoAnts (the name is short for "automated assistants") is the AI services wing of Blundell Core Holdings, founded and
-> run by Lane Davis, a licensed Louisiana attorney. It builds websites,
+> run by Lane Davis in Louisiana. It builds websites,
 > after-hours lead-intake systems, and AI-search visibility for Louisiana
 > service businesses — tree services, pressure washing, concrete, and other
 > trades. The first deliverable is always free: AutoAnts builds a working
@@ -33,9 +33,8 @@
 3. No contract to start; monthly plans cancel anytime after 90 days
 
 ## Why customers choose it
-- Run by a licensed Louisiana attorney — verifiable on the Louisiana State
-  Bar rolls; the business is built on doing only what it would put its
-  name on
+- Owner-run: owners deal with Lane directly, not a call center; the
+  business is built on doing only what it would put its name on
 - The free-first model: see the finished work before paying anything
 - Flat, quoted-up-front pricing
 - Legitimate-only optimization policy: no paid link placements, no seeded
@@ -45,7 +44,7 @@
 ## Related
 - Sibling company under Blundell Core Holdings: Streetcar Notary
   (https://streetcarnotary.com), a mobile and online notary service in
-  New Orleans run by the same attorney
+  New Orleans run by the same owner
 
 ## Key pages
 - Website: https://autoants.com
