@@ -8,16 +8,18 @@
 <meta property="og:description" content="Websites for the trades, plus the AI agents that answer, follow up and ask for reviews. Free site preview. Live in 7 days or your setup fee back.">
 <meta property="og:url" content="https://autoants.com/">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#0d0e0c">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
 <title>AutoAnts</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0d0e0c; --bg2:#141511; --surface:#1a1c17; --surface2:#20231a;
-    --ink:#f4f1e8; --muted:#a6a89b; --faint:#6f7267;
-    --amber:#ffb302; --amber-deep:#e08a00; --amber-ink:#1a1204;
+    --bg:#0b1712; --bg2:#0f1f18; --surface:#14261e; --surface2:#1a2f25;
+    --ink:#f4f1e8; --muted:#a3b0a8; --faint:#6f7d75;
+    --amber:#3ddcae; --amber-deep:#22b892; --amber-ink:#062a1d;
     --line:rgba(244,241,232,.10); --line2:rgba(244,241,232,.16);
     --ok:#7bc96a;
     --disp:'Archivo',-apple-system,system-ui,sans-serif;
@@ -35,8 +37,8 @@
   .ant{width:1em;height:1em;color:var(--amber);flex:0 0 auto}
   .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--disp);font-weight:800;font-size:1rem;padding:.95rem 1.5rem;border-radius:11px;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;border:0}
   .btn:active{transform:scale(.98)}
-  .btn-amber{background:var(--amber);color:var(--amber-ink);box-shadow:0 10px 30px rgba(255,179,2,.22)}
-  .btn-amber:hover{box-shadow:0 14px 40px rgba(255,179,2,.34)}
+  .btn-amber{background:var(--amber);color:var(--amber-ink);box-shadow:0 10px 30px rgba(61,220,174,.22)}
+  .btn-amber:hover{box-shadow:0 14px 40px rgba(61,220,174,.34)}
   .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line2)}
   .btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
 
@@ -51,8 +53,8 @@
   /* ---- hero (two-col) ---- */
   header{position:relative;padding:5rem 0 4.5rem;overflow:hidden}
   header:before{content:"";position:absolute;inset:0;background:
-    radial-gradient(60rem 34rem at 80% -10%,rgba(255,179,2,.13),transparent 62%),
-    radial-gradient(50rem 30rem at 4% 6%,rgba(255,179,2,.05),transparent 60%);pointer-events:none}
+    radial-gradient(60rem 34rem at 80% -10%,rgba(61,220,174,.13),transparent 62%),
+    radial-gradient(50rem 30rem at 4% 6%,rgba(61,220,174,.05),transparent 60%);pointer-events:none}
   .hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center}
   @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:2.4rem}}
   header h1{font-size:clamp(2.4rem,5.8vw,4rem);font-weight:900;margin:1rem 0 1.2rem}
@@ -65,7 +67,7 @@
 
   /* ---- dispatch panel ---- */
   .dispatch{background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line2);border-radius:18px;padding:1.1rem;box-shadow:0 30px 70px rgba(0,0,0,.45);position:relative}
-  .dispatch:before{content:"";position:absolute;inset:-1px;border-radius:19px;padding:1px;background:linear-gradient(180deg,rgba(255,179,2,.4),transparent 40%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+  .dispatch:before{content:"";position:absolute;inset:-1px;border-radius:19px;padding:1px;background:linear-gradient(180deg,rgba(61,220,174,.4),transparent 40%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
   .dispatch .dhead{display:flex;align-items:center;gap:.55rem;padding:.3rem .5rem .8rem;border-bottom:1px solid var(--line);margin-bottom:.7rem}
   .dispatch .dhead .ant{width:20px;height:20px}
   .dispatch .dhead .t{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
@@ -138,7 +140,7 @@
 
   .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.1rem}
   .tier{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.8rem 1.6rem;display:flex;flex-direction:column}
-  .tier.feature{border-color:var(--amber);box-shadow:0 0 0 1px var(--amber),0 18px 50px rgba(255,179,2,.1)}
+  .tier.feature{border-color:var(--amber);box-shadow:0 0 0 1px var(--amber),0 18px 50px rgba(61,220,174,.1)}
   .tier .flag{font-family:var(--mono);font-size:.64rem;font-weight:700;letter-spacing:.1em;color:var(--amber);text-transform:uppercase;margin-bottom:.6rem}
   .tier h3{font-size:1.28rem;font-weight:800;margin-bottom:.3rem}
   .tier .price{font-family:var(--disp);font-weight:900;font-size:2rem;margin:.4rem 0 .1rem;letter-spacing:-.03em}
@@ -173,7 +175,7 @@
   .build-media{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line2);aspect-ratio:1376/768}
   .build-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .build-media .after{clip-path:inset(0 calc(100% - var(--p,0%)) 0 0)}
-  .build-media .edge{position:absolute;top:0;bottom:0;left:var(--p,0%);width:3px;background:var(--amber);box-shadow:0 0 18px rgba(255,179,2,.7)}
+  .build-media .edge{position:absolute;top:0;bottom:0;left:var(--p,0%);width:3px;background:var(--amber);box-shadow:0 0 18px rgba(61,220,174,.7)}
   .build-meter{margin-top:1rem;height:3px;background:var(--line2);border-radius:3px;overflow:hidden}.build-meter i{display:block;height:100%;width:var(--p,0%);background:var(--amber)}
   /* ---- proof + founder ---- */
   .bignum{font-family:var(--disp);font-weight:900;font-size:clamp(3rem,8vw,4.6rem);color:var(--amber);line-height:1;letter-spacing:-.03em}
@@ -181,26 +183,16 @@
   .founder{display:flex;gap:1.2rem;align-items:center;margin-bottom:1.8rem}
   .founder img{width:92px;height:92px;border-radius:50%;object-fit:cover;border:2px solid var(--amber);flex:0 0 auto}
   .founder p{color:var(--muted)}.founder b{color:var(--ink)}
-  .guarantee{margin:1.6rem auto 0;max-width:46rem;text-align:center;border:1px solid var(--amber);border-radius:14px;padding:1.1rem 1.3rem;background:rgba(255,179,2,.06)}
+  .guarantee{margin:1.6rem auto 0;max-width:46rem;text-align:center;border:1px solid var(--amber);border-radius:14px;padding:1.1rem 1.3rem;background:rgba(61,220,174,.06)}
   .guarantee b{color:var(--amber)}
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="ant" viewBox="0 0 64 64">
-  <g stroke="currentColor" stroke-width="2.6" stroke-linecap="round" fill="none">
-    <path d="M31 30 L17 23 M31 33 L15 34 M31 36 L18 45"/>
-    <path d="M33 30 L47 23 M33 33 L49 34 M33 36 L46 45"/>
-    <path d="M29 12 Q24 4 27 2 M35 12 Q40 4 37 2"/>
-  </g>
-  <ellipse cx="32" cy="15" rx="7" ry="6.5" fill="currentColor"/>
-  <ellipse cx="32" cy="29" rx="6" ry="7.2" fill="currentColor"/>
-  <ellipse cx="32" cy="46" rx="9.5" ry="11" fill="currentColor"/>
-  <circle cx="29.5" cy="14" r="1.5" fill="var(--bg)"/><circle cx="34.5" cy="14" r="1.5" fill="var(--bg)"/>
-</symbol></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="ant" viewBox="0 0 62 86"><g stroke="currentColor" stroke-width="5" stroke-linecap="round"><path d="M24 31 15 9M38 31l9-22"/></g><circle cx="31" cy="57" r="29" fill="currentColor"/><circle cx="21.5" cy="53" r="4.6" fill="var(--bg)"/><circle cx="40.5" cy="53" r="4.6" fill="var(--bg)"/></symbol></svg>
 
 <nav><div class="wrap">
-  <a class="brand" href="#top"><svg class="ant"><use href="#ant"/></svg>AutoAnts</a>
+  <a class="brand" href="#top"><img src="brand/autoants-logo-reverse.svg" alt="AutoAnts" style="height:30px;width:auto;display:block"></a>
   <div class="navlinks">
     <a href="#stack">What you get</a><a href="services.html">Services</a><a href="#roi">ROI calculator</a><a href="#how">How it works</a><a href="#pricing">Pricing</a>
   </div>
@@ -351,7 +343,7 @@
 </div></section>
 
 <footer><div class="wrap">
-  <span class="brand"><svg class="ant"><use href="#ant"/></svg> AutoAnts</span>
+  <span class="brand"><img src="brand/autoants-logo-reverse.svg" alt="AutoAnts" style="height:22px;width:auto;display:block"></span>
   <span>A Blundell Core Holdings company · Louisiana</span>
   <a href="mailto:lane@blundellcore.com">lane@blundellcore.com</a>
 </div></footer>
