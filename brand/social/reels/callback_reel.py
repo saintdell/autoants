@@ -97,7 +97,8 @@ window.seek = (t) => {{
     b.querySelectorAll('i').forEach((d, i) => d.style.opacity = on ? .3 + .7 * Math.max(0, Math.sin((t * 6 - i) )) : 0); }});
   show(document.getElementById('ant-ring'), 0.5, t, 8.7, 30);
   show(document.getElementById('end'), 12.9, t, 99, 30);
-  document.getAnimations().forEach(a => {{ a.pause(); a.currentTime = t * 1000; }});
+  document.getAnimations().forEach(a => {{ a.pause(); const inEnd = a.effect && a.effect.target && a.effect.target.closest && a.effect.target.closest('#end');
+    a.currentTime = (inEnd ? Math.max(0, t - 12.6) : t) * 1000; }});   // the end card's thumbs-up starts its pop as the card appears
 }};
 </script>'''
 
