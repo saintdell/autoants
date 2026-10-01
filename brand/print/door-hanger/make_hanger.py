@@ -69,42 +69,37 @@ def front(guides):
             f'{die(guides)}</div>')
 
 
-CREW = [("phone", "The Callback", "Miss a call and it texts them back in seconds, so the customer stays yours."),
-        ("carry", "The Responder", "A new lead gets an answer in seconds, even when your hands are full."),
-        ("clipboard", "The Scheduler", "Requests turn into booked appointments and jobs. You approve; it handles the back-and-forth."),
-        ("thumbs", "The Reviewer", "Every customer gets the same review ask, one tap from your phone.")]
-STEPS = [("Reach out", "Scan the code, visit autoants.com, or call or text."),
-         ("Tell us about your business", "A two-minute form: your name, number and business. You hear back from Lane, usually the same day."),
-         ("See your free preview", "Your new site, built with your real info and reviews, before you pay anything."),
-         ("Pick your crew", "A 15-minute call to choose the assistants you want. Once you say go, your site is live within 7 days or the $500 setup fee comes back.")]
+CREW = [("phone", "The Callback", "Texts back every missed call."),
+        ("carry", "The Responder", "Answers new leads in seconds."),
+        ("clipboard", "The Scheduler", "Books the appointment."),
+        ("thumbs", "The Reviewer", "Asks every customer for a review.")]
+STEPS = ["Scan the code or visit autoants.com", "See your free website preview", "Pick your crew"]
 
 
 def back(guides):
     crew = "".join(
-        f'<div style="display:flex;gap:.12in;align-items:center;padding:.07in 0;border-top:1px solid #d6d1c6">'
-        f'<div style="width:.5in;flex:0 0 .5in;display:flex;justify-content:center">'
-        f'{mascot(pose, 100).replace(chr(119)+"idth=\"100\" height=\"130\"", "style=\"height:.62in;width:auto;display:block\"")}</div>'
-        f'<div><div style="font:800 11pt Onest;color:{INK}">{name}</div><div style="font:500 8.6pt/1.32 Onest;color:#4d5a51">{line}</div></div></div>'
+        f'<div style="display:flex;gap:.16in;align-items:center;padding:.1in 0;border-top:1px solid #d6d1c6">'
+        f'<div style="width:.62in;flex:0 0 .62in;display:flex;justify-content:center">'
+        f'{mascot(pose, 100).replace(chr(119)+"idth=\"100\" height=\"130\"", "style=\"height:.78in;width:auto;display:block\"")}</div>'
+        f'<div><div style="font:800 13pt Onest;color:{INK}">{name}</div><div style="font:500 10.5pt/1.3 Onest;color:#4d5a51">{line}</div></div></div>'
         for pose, name, line in CREW)
     steps = "".join(
-        f'<div style="display:flex;gap:.11in;align-items:flex-start;padding:.045in 0">'
-        f'<div style="flex:0 0 .24in;height:.24in;border-radius:50%;background:{FOREST};color:{STONE};font:800 8.5pt/.24in Onest;text-align:center">{i}</div>'
-        f'<div><div style="font:800 9.8pt Onest;color:{INK}">{t}</div><div style="font:500 8.3pt/1.32 Onest;color:#4d5a51">{d}</div></div></div>'
-        for i, (t, d) in enumerate(STEPS, 1))
+        f'<div style="display:flex;gap:.12in;align-items:center;padding:.05in 0">'
+        f'<div style="flex:0 0 .28in;height:.28in;border-radius:50%;background:{FOREST};color:{STONE};font:800 10pt/.28in Onest;text-align:center">{i}</div>'
+        f'<div style="font:700 11pt Onest;color:{INK}">{t}</div></div>'
+        for i, t in enumerate(STEPS, 1))
     phone = INFO["phone"] or '<span style="color:#d1242f;font-weight:700">PHONE TBD</span>'
     return (f'<div class="pg" style="background:{STONE};color:{INK}">'
-            f'<div style="position:absolute;left:.38in;right:.38in;top:2.15in">'
-            f'<div style="font:700 7.5pt JetBrains Mono,monospace;letter-spacing:.14em;text-transform:uppercase;color:{FOREST}">Meet the crew</div>'
-            f'<div style="font:800 16pt/1.05 Onest;letter-spacing:-.02em;margin-top:.05in;text-wrap:balance">Assistants that work while you\'re busy.</div>'
-            f'<div style="margin-top:.1in">{crew}</div>'
-            f'<div style="font:500 8pt/1.35 Onest;color:#4d5a51;padding-top:.07in;border-top:1px solid #d6d1c6">Also on the crew: The Receptionist (an AI phone '
-            f'that says it\'s an AI), The Reminder, The Scout and The Promoter.</div></div>'
-            f'<div style="position:absolute;left:.38in;right:.38in;top:6.95in">'
-            f'<div style="font:700 7.5pt JetBrains Mono,monospace;letter-spacing:.14em;text-transform:uppercase;color:{FOREST}">How it works</div>'
-            f'<div style="margin-top:.06in">{steps}</div></div>'
-            f'<div style="position:absolute;left:.38in;right:.38in;bottom:.42in;border-top:2px solid {INK};padding-top:.1in;display:flex;justify-content:space-between;align-items:flex-end">'
-            f'<div><div style="font:800 12pt Onest">Lane Davis</div><div style="font:500 8pt Onest;color:#4d5a51">founder, autoants · Louisiana-built</div></div>'
-            f'<div style="text-align:right;font:500 7.6pt/1.55 JetBrains Mono,monospace">{phone}<br>{INFO["email"]}<br><b style="color:{FOREST}">{INFO["web"]}</b></div></div>'
+            f'<div style="position:absolute;left:.42in;right:.42in;top:2.25in">'
+            f'<div style="font:700 8pt JetBrains Mono,monospace;letter-spacing:.14em;text-transform:uppercase;color:{FOREST}">Meet the crew</div>'
+            f'<div style="font:800 19pt/1.04 Onest;letter-spacing:-.02em;margin-top:.06in;text-wrap:balance">Assistants that work while you\'re busy.</div>'
+            f'<div style="margin-top:.16in;border-bottom:1px solid #d6d1c6">{crew}</div></div>'
+            f'<div style="position:absolute;left:.42in;right:.42in;top:7.45in">'
+            f'<div style="font:700 8pt JetBrains Mono,monospace;letter-spacing:.14em;text-transform:uppercase;color:{FOREST}">How it works</div>'
+            f'<div style="margin-top:.08in">{steps}</div></div>'
+            f'<div style="position:absolute;left:.42in;right:.42in;bottom:.45in;border-top:2px solid {INK};padding-top:.1in;display:flex;justify-content:space-between;align-items:flex-end">'
+            f'<div><div style="font:800 12pt Onest">Lane Davis</div><div style="font:500 8.5pt Onest;color:#4d5a51">founder, autoants</div></div>'
+            f'<div style="text-align:right;font:500 8pt/1.55 JetBrains Mono,monospace">{phone}<br>{INFO["email"]}<br><b style="color:{FOREST}">{INFO["web"]}</b></div></div>'
             f'{die(guides)}</div>')
 
 
