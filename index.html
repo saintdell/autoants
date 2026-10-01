@@ -8,6 +8,12 @@
 <meta property="og:description" content="Websites for the trades, plus the AI agents that answer, follow up and ask for reviews. Free site preview. Live in 7 days or your setup fee back.">
 <meta property="og:url" content="https://autoants.com/">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://autoants.com/brand/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://autoants.com/brand/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"AutoAnts","alternateName":"Automated Assistants","url":"https://autoants.com/","logo":"https://autoants.com/brand/autoants-icon.svg","email":"lane@blundellcore.com","areaServed":{"@type":"State","name":"Louisiana"},"description":"Websites and AI assistants for tree, HVAC and roofing businesses: missed-call text-back, booking, reviews, and local search visibility.","parentOrganization":{"@type":"Organization","name":"Blundell Core Holdings"}}</script>
 <meta name="theme-color" content="#0b1712">
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
@@ -185,6 +191,37 @@
   .founder p{color:var(--muted)}.founder b{color:var(--ink)}
   .guarantee{margin:1.6rem auto 0;max-width:46rem;text-align:center;border:1px solid var(--amber);border-radius:14px;padding:1.1rem 1.3rem;background:rgba(61,220,174,.06)}
   .guarantee b{color:var(--amber)}
+  /* ---- assistants ---- */
+  .scard .who{display:flex;align-items:center;gap:.6rem;margin-bottom:.15rem}
+  .scard .who .ant{width:22px;height:30px}
+  .scard .role{font-family:var(--mono);font-size:.66rem;color:var(--faint);letter-spacing:.06em;text-transform:uppercase;margin-top:.1rem}
+  /* ---- FAQ ---- */
+  .faq{display:grid;gap:.7rem;max-width:52rem}
+  .faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.05rem 1.3rem}
+  .faq summary{cursor:pointer;font-family:var(--disp);font-weight:800;font-size:1.08rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary:after{content:"+";color:var(--amber);font-weight:900}
+  .faq details[open] summary:after{content:"–"}
+  .faq details p{color:var(--muted);margin-top:.6rem;font-size:.97rem}
+  /* ---- contact form ---- */
+  .contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:2.5rem;align-items:start}
+  @media(max-width:900px){.contact{grid-template-columns:1fr}}
+  .cform{background:var(--surface);border:1px solid var(--line2);border-radius:18px;padding:1.6rem;display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+  .cform label{display:grid;gap:.35rem;font-size:.85rem;font-weight:600;color:var(--muted)}
+  .cform .full{grid-column:1/-1}
+  .cform input,.cform select,.cform textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line2);border-radius:10px;padding:.75rem .8rem;width:100%}
+  .cform input:focus,.cform select:focus,.cform textarea:focus{outline:2px solid var(--amber);outline-offset:1px;border-color:transparent}
+  .cform .consent{font-size:.78rem;color:var(--faint);font-weight:400}
+  .cform button{justify-self:start}
+  .cform .sent{grid-column:1/-1;color:var(--ok);font-weight:600;display:none}
+  @media(max-width:560px){.cform{grid-template-columns:1fr}}
+  /* ---- mobile action bar ---- */
+  .mbar{display:none}
+  @media(max-width:720px){
+    .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(11,23,18,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line2);padding:.6rem;gap:.5rem}
+    .mbar a{justify-content:center;padding:.85rem .6rem;font-size:.95rem}
+    body{padding-bottom:72px}
+  }
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
 </style>
 </head>
@@ -194,9 +231,9 @@
 <nav><div class="wrap">
   <a class="brand" href="#top"><img src="brand/autoants-logo-reverse.svg" alt="AutoAnts" style="height:30px;width:auto;display:block"></a>
   <div class="navlinks">
-    <a href="#stack">What you get</a><a href="services.html">Services</a><a href="#roi">ROI calculator</a><a href="#how">How it works</a><a href="#pricing">Pricing</a>
+    <a href="#stack">What you get</a><a href="services.html">Services</a><a href="#roi">ROI calculator</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
   </div>
-  <a class="btn btn-amber" href="#pricing" style="padding:.6rem 1.1rem;font-size:.9rem">Free site preview</a>
+  <a class="btn btn-amber" href="#contact" data-interest="Free site preview" style="padding:.6rem 1.1rem;font-size:.9rem">Free site preview</a>
 </div></nav>
 
 <header id="top"><div class="wrap"><div class="hero-grid">
@@ -205,8 +242,8 @@
     <h1>Websites that win the job, <span class="amb">and the AI that answers when they call.</span></h1>
     <p class="lede">AutoAnts builds your website first, then puts AI to work on it: <b>missed calls texted back in seconds</b>, quotes followed up, reviews asked for, and you found on Google and in ChatGPT. For tree, HVAC &amp; roofing crews.</p>
     <div class="cta-row">
-      <a class="btn btn-amber" href="#pricing">Get your free site preview →</a>
-      <a class="btn btn-ghost" href="mailto:lane@blundellcore.com?subject=15-minute%20call&amp;body=A%20couple%20of%20times%20that%20work%20for%20me%3A%20">Book a 15-minute call</a>
+      <a class="btn btn-amber" href="#contact" data-interest="Free site preview">Get your free site preview →</a>
+      <a class="btn btn-ghost" href="#contact" data-interest="15-minute call" data-call>Book a 15-minute call</a>
     </div>
     <div class="trust"><span><b>◆</b> Louisiana-built</span><span><b>◆</b> Attorney-owned</span><span><b>◆</b> You see it before you pay</span><span><b>◆</b> Live in 7 days or your setup fee back</span></div>
   </div>
@@ -247,14 +284,14 @@
   <div class="sec-head"><p class="eyebrow">What you get · your automated assistants</p><h2>One crew. It works while you work.</h2><p>That's where the name comes from: <b style="color:var(--ink)">Auto</b>mated assist<b style="color:var(--ink)">Ants</b>. A crew of AI assistants that never sleep, each with one job, handling the office so you stay on the job.</p></div>
   <div class="stack">
     <div class="scard"><span class="free">FREE</span><div class="tag">Get found</div><h3>Your website</h3><p>A real, fast, mobile site with your reviews and a quote form — built <em>before</em> you pay. Yours to keep either way.</p></div>
-    <div class="scard"><div class="tag">Never lose a call</div><h3>Missed-Call Text-Back</h3><p>Miss a call, and it instantly texts them: "Sorry I missed you — what do you need?" The job stays yours.</p></div>
-    <div class="scard"><div class="tag">Be first</div><h3>Speed-to-Lead</h3><p>The crew that answers first wins. New lead comes in, we respond in seconds — automatically.</p></div>
-    <div class="scard"><div class="tag">Fill the calendar</div><h3>Booking</h3><p>Quote requests turn into estimates and booked jobs without you touching your phone.</p></div>
-    <div class="scard"><div class="tag">Everywhere they look</div><h3>Local Visibility + AI Answers</h3><p>Google, Yelp, Apple, Bing — dialed in and consistent. Plus showing up when someone asks <em>ChatGPT</em> for the best crew in town.</p></div>
-    <div class="scard"><div class="tag">When you can't pick up</div><h3>Voice Receptionist</h3><p>An AI that answers the phone, screens the job, and books it — so a live voice always picks up.</p></div>
-    <div class="scard"><div class="tag">More 5-stars</div><h3>Reviews Engine</h3><p>Every finished job asks for a review, automatically. Your rating climbs; the bad ones get caught in private first.</p></div>
-    <div class="scard"><div class="tag">Fill the pipeline</div><h3>Content &amp; Ads</h3><p>Before/after job clips and hyper-local ads that put you in front of the neighborhood before the storm hits.</p></div>
-    <div class="scard"><div class="tag">Found money</div><h3>Database Reactivation</h3><p>We text your past customers "time for a trim?" — revenue from a list you already own and forgot about.</p></div>
+    <div class="scard"><div class="who"><svg class="ant"><use href="#ant"/></svg><div class="tag">Never lose a call</div></div><h3>The Callback</h3><div class="role">Missed-call text-back</div><p>Miss a call, and it instantly texts them: "Sorry I missed you — what do you need?" The job stays yours.</p></div>
+    <div class="scard"><div class="who"><svg class="ant"><use href="#ant"/></svg><div class="tag">Be first</div></div><h3>The Responder</h3><div class="role">Speed-to-lead</div><p>The crew that answers first wins. New lead comes in, we respond in seconds — automatically.</p></div>
+    <div class="scard"><div class="who"><svg class="ant"><use href="#ant"/></svg><div class="tag">Fill the calendar</div></div><h3>The Scheduler</h3><div class="role">Booking</div><p>Quote requests turn into estimates and booked jobs without you touching your phone.</p></div>
+    <div class="scard"><div class="who"><svg class="ant"><use href="#ant"/></svg><div class="tag">Everywhere they look</div></div><h3>The Scout</h3><div class="role">Local visibility + AI answers</div><p>Google, Yelp, Apple, Bing — dialed in and consistent. Plus showing up when someone asks <em>ChatGPT</em> for the best crew in town.</p></div>
+    <div class="scard"><div class="who"><svg class="ant"><use href="#ant"/></svg><div class="tag">When you can't pick up</div></div><h3>The Receptionist</h3><div class="role">Voice receptionist</div><p>An AI that answers the phone, screens the job, and books it — so a live voice always picks up.</p></div>
+    <div class="scard"><div class="who"><svg class="ant"><use href="#ant"/></svg><div class="tag">More 5-stars</div></div><h3>The Reviewer</h3><div class="role">Reviews engine</div><p>Every finished job asks for a review, automatically. Your rating climbs; the bad ones get caught in private first.</p></div>
+    <div class="scard"><div class="who"><svg class="ant"><use href="#ant"/></svg><div class="tag">Fill the pipeline</div></div><h3>The Promoter</h3><div class="role">Content &amp; ads</div><p>Before/after job clips and hyper-local ads that put you in front of the neighborhood before the storm hits.</p></div>
+    <div class="scard"><div class="who"><svg class="ant"><use href="#ant"/></svg><div class="tag">Found money</div></div><h3>The Reminder</h3><div class="role">Database reactivation</div><p>We text your past customers "time for a trim?" — revenue from a list you already own and forgot about.</p></div>
   </div>
   <p class="stack-note"><b>Turn on what you need, when you need it.</b> Start with the essentials; add the rest as you grow.</p>
 </div></section>
@@ -290,7 +327,7 @@
       <div class="cap">Walking out the door</div>
       <div class="big" id="permo">$0</div>
       <div class="yr">that's <b id="peryr" style="color:var(--ink)">$0</b> a year</div>
-      <a class="btn btn-amber" href="#pricing" style="width:100%;justify-content:center">Stop the leak — free audit →</a>
+      <a class="btn btn-amber" href="#contact" data-interest="Free audit" style="width:100%;justify-content:center">Stop the leak — free audit →</a>
       <div class="note">Estimate from your own inputs. Missed-Call Text-Back is built to catch these.</div>
     </div>
   </div>
@@ -326,20 +363,51 @@
 <section id="pricing"><div class="wrap">
   <div class="sec-head"><p class="eyebrow">Pricing</p><h2>Founding-client pricing. Locks in before I raise it.</h2><p>Start free. Go live for a flat fee. Keep it running for a small monthly, or add the office manager when you're ready.</p></div>
   <div class="tiers">
-    <div class="tier"><div class="flag">Start here</div><h3>The Website</h3><div class="price">Free<br><small>preview · $750 to go live &amp; keep</small></div><ul><li>Built with your real info + reviews</li><li>Fast, mobile, quote form</li><li>Live on your own domain</li><li>Yours to keep, no strings</li></ul><a class="btn btn-ghost" href="mailto:lane@blundellcore.com?subject=Free%20AutoAnts%20site%20preview">Get my free preview</a></div>
-    <div class="tier"><div class="flag">Just the site</div><h3>Site Care</h3><div class="price">$99<small>/mo</small></div><ul><li>Hosting on your own domain</li><li>Edits when you need them</li><li>Google profile kept current</li><li>Support by text, from me</li></ul><a class="btn btn-ghost" href="mailto:lane@blundellcore.com?subject=AutoAnts%20Site%20Care">Ask about Site Care</a></div>
-    <div class="tier feature"><div class="flag">Most crews start here</div><h3>The Office Manager</h3><div class="price">$500<small>/mo · founding</small></div><ul><li>Everything in The Website</li><li>Missed-call text-back + speed-to-lead</li><li>Booking + quote follow-up</li><li>Reviews engine</li><li>The 30-day results receipt</li></ul><a class="btn btn-amber" href="mailto:lane@blundellcore.com?subject=AutoAnts%20Office%20Manager">Book a free audit</a></div>
-    <div class="tier"><div class="flag">Grow into it</div><h3>Add the colony</h3><div class="price">à la carte</div><ul><li>Local Visibility + AI answers</li><li>Voice receptionist (AI phone)</li><li>Content &amp; short-video</li><li>Hyper-local ads</li><li>Database reactivation</li></ul><a class="btn btn-ghost" href="mailto:lane@blundellcore.com?subject=AutoAnts%20full%20package">Talk through the options</a></div>
+    <div class="tier"><div class="flag">Start here</div><h3>The Website</h3><div class="price">Free<br><small>preview · $750 to go live &amp; keep</small></div><ul><li>Built with your real info + reviews</li><li>Fast, mobile, quote form</li><li>Live on your own domain</li><li>Yours to keep, no strings</li></ul><a class="btn btn-ghost" href="#contact" data-interest="Free site preview">Get my free preview</a></div>
+    <div class="tier"><div class="flag">Just the site</div><h3>Site Care</h3><div class="price">$99<small>/mo</small></div><ul><li>Hosting on your own domain</li><li>Edits when you need them</li><li>Google profile kept current</li><li>Support by text, from me</li></ul><a class="btn btn-ghost" href="#contact" data-interest="Site Care">Ask about Site Care</a></div>
+    <div class="tier feature"><div class="flag">Most crews start here</div><h3>The Office Manager</h3><div class="price">$500<small>/mo · founding</small></div><ul><li>Everything in The Website</li><li>The Callback + The Responder</li><li>The Scheduler + quote follow-up</li><li>The Reviewer</li><li>The 30-day results receipt</li></ul><a class="btn btn-amber" href="#contact" data-interest="The Office Manager">Book a free audit</a></div>
+    <div class="tier"><div class="flag">Grow into it</div><h3>Add assistants</h3><div class="price">à la carte</div><ul><li>The Scout: local visibility + AI answers</li><li>The Receptionist: AI phone</li><li>The Promoter: content, short video, local ads</li><li>The Reminder: past-customer reactivation</li></ul><a class="btn btn-ghost" href="#contact" data-interest="More assistants">Talk through the options</a></div>
   </div>
   <p class="price-note">Founding-client rates for the first crews on board. The assessment fee credits your first month.</p>
   <div class="guarantee"><b>The guarantee:</b> once you say go, your site is live within 7 days or the $750 setup fee comes back. Monthly plans cancel anytime after 90 days.</div>
 </div></section>
 
+<section id="faq" class="band"><div class="wrap">
+  <div class="sec-head"><p class="eyebrow">Straight answers</p><h2>What owners ask first.</h2></div>
+  <div class="faq">
+    <details><summary>Is it really AI answering my customers?</summary><p>Yes. It says it's an AI assistant at the start of every call, and that the call is recorded. It takes the job, the address and how urgent it is, and texts the request to you. It doesn't make promises on your behalf.</p></details>
+    <details><summary>What if it gets something wrong?</summary><p>Nothing gets confirmed to your customer without your OK: you reply yes with a time, or no. The first weeks run supervised, and every miss becomes a new rule so it doesn't happen twice.</p></details>
+    <details><summary>Do I keep my phone number?</summary><p>Yes. Your number stays the same. Calls you don't pick up forward to your assistant.</p></details>
+    <details><summary>Do I own my website?</summary><p>Yes. It's on your own domain and it's yours to keep, even if you stop paying for anything else.</p></details>
+    <details><summary>What does it cost after the first month?</summary><p>Site Care is $99 a month if you just want the site kept up. The Office Manager is $500 a month at the founding rate. There's no contract to start, and monthly plans cancel anytime after 90 days.</p></details>
+    <details><summary>What do you need from me?</summary><p>Your Google Business Profile, about 20 minutes on the phone, and a few photos of real jobs if you have them. We build the rest.</p></details>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="contact">
+    <div class="sec-head" style="margin-bottom:0"><p class="eyebrow">Get started</p><h2>Tell me about your business.</h2><p>I'll build your free site preview or set up a 15-minute call, whichever you pick. You hear back from me, a person, usually the same day.</p></div>
+    <form class="cform" id="contactForm" novalidate>
+      <label>Your name<input name="name" autocomplete="name" required></label>
+      <label>Business name<input name="business" autocomplete="organization" required></label>
+      <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
+      <label>Trade<select name="trade"><option>Tree service</option><option>HVAC</option><option>Roofing</option><option>Other trade</option></select></label>
+      <label class="full">I'm interested in<select name="interest" id="interest"><option>Free site preview</option><option>Free audit</option><option>15-minute call</option><option>Site Care</option><option>The Office Manager</option><option>More assistants</option><option>Something else</option></select></label>
+      <label class="full">Anything I should know?<textarea name="msg" rows="3" placeholder="e.g. we miss calls when the crew is out on jobs"></textarea></label>
+      <p class="consent full">By sending, you agree that AutoAnts can call or text you about this request. No lists, no spam.</p>
+      <button class="btn btn-amber" type="submit">Send →</button>
+      <p class="sent" id="sentNote">Got it. If an email window opened, hit send there and it reaches me.</p>
+    </form>
+  </div>
+</div></section>
+
+<div class="mbar"><a class="btn btn-amber" href="#contact" data-interest="Free site preview">Free preview</a><a class="btn btn-ghost" href="#contact" data-interest="15-minute call" data-call>15-min call</a></div>
+
 <section class="final"><div class="wrap">
   <h2>Let's find the money<br>you're leaving on the table.</h2>
   <p>Free audit, free site, no catch. Worst case, you get a website out of it and delete my number.</p>
-  <div class="cta-row" style="justify-content:center"><a class="btn btn-amber" href="mailto:lane@blundellcore.com?subject=AutoAnts%20free%20audit" style="font-size:1.1rem;padding:1.1rem 2rem">Get my free audit + site →</a>
-  <a class="btn btn-ghost" href="mailto:lane@blundellcore.com?subject=15-minute%20call&amp;body=A%20couple%20of%20times%20that%20work%20for%20me%3A%20" style="font-size:1.1rem;padding:1.1rem 2rem">Book a 15-minute call</a></div>
+  <div class="cta-row" style="justify-content:center"><a class="btn btn-amber" href="#contact" data-interest="Free audit" style="font-size:1.1rem;padding:1.1rem 2rem">Get my free audit + site →</a>
+  <a class="btn btn-ghost" href="#contact" data-interest="15-minute call" data-call style="font-size:1.1rem;padding:1.1rem 2rem">Book a 15-minute call</a></div>
 </div></section>
 
 <footer><div class="wrap">
@@ -363,6 +431,37 @@
       document.getElementById('peryr').textContent=fmt(mo*12);
     }
     [c,cl,j].forEach(function(el){el.addEventListener('input',upd)}); upd();
+  })();
+
+  // ---- contact: every CTA preselects what they asked about ----
+  // When the AutoAnts lead route on the Cloudflare Worker is deployed, set LEAD_ENDPOINT to its URL
+  // and the form posts there. Until then it opens a pre-filled email so nothing is lost.
+  // CALL_URL: a Cal.com/Calendly link; when set, "15-minute call" buttons open it directly.
+  var LEAD_ENDPOINT = "", CALL_URL = "";
+  document.querySelectorAll('[data-interest]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      if (CALL_URL && a.hasAttribute('data-call')) { e.preventDefault(); window.open(CALL_URL, '_blank'); return; }
+      var sel = document.getElementById('interest'); if (sel) sel.value = a.getAttribute('data-interest');
+    });
+  });
+  (function(){
+    var f = document.getElementById('contactForm'); if (!f) return;
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (!f.name.value.trim() || !f.phone.value.trim() || !f.business.value.trim()) { f.reportValidity && f.reportValidity(); return; }
+      var d = {name:f.name.value.trim(), business:f.business.value.trim(), phone:f.phone.value.trim(),
+               trade:f.trade.value, interest:f.interest.value, msg:f.msg.value.trim(), page:'autoants.com'};
+      var done = function(){ document.getElementById('sentNote').style.display='block'; };
+      if (LEAD_ENDPOINT) {
+        fetch(LEAD_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(d)})
+          .then(function(r){ if(!r.ok) throw 0; document.getElementById('sentNote').textContent='Got it. I\'ll be in touch, usually the same day.'; done(); f.reset(); })
+          .catch(function(){ mail(d); done(); });
+      } else { mail(d); done(); }
+    });
+    function mail(d){
+      var body = 'Name: '+d.name+'\nBusiness: '+d.business+'\nPhone: '+d.phone+'\nTrade: '+d.trade+'\nInterested in: '+d.interest+'\n\n'+d.msg;
+      location.href = 'mailto:lane@blundellcore.com?subject='+encodeURIComponent('AutoAnts: '+d.interest+' — '+d.business)+'&body='+encodeURIComponent(body);
+    }
   })();
 
   // ---- before/after drag ----
