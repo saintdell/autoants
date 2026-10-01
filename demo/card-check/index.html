@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Card Check · AutoAnts</title>
+<meta name="description" content="See how much a trades business leaves on the table with the card it uses now. Rewards math from card terms checked on the issuers' own pages.">
+<link rel="icon" href="/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+:root{
+  --forest:#0f5132; --mint:#3ddcae; --stone:#ebe8e2; --ink:#0f2a1d; --night:#0b1712;
+  --ground:#f5f3ee; --card:#ffffff; --line:#d9d5cc; --muted:#56635a; --soft:#e7efe9; --warn:#8a4b08; --warn-bg:#fdf1e2;
+  --accent:var(--forest); --on-accent:#ffffff;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --line:#26372d; --muted:#9db0a4; --soft:#17291f; --warn:#f3b56a; --warn-bg:#2a1f12; --accent:#3ddcae; --on-accent:#0b1712; }
+}
+:root[data-theme="dark"]{ --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --line:#26372d; --muted:#9db0a4; --soft:#17291f; --warn:#f3b56a; --warn-bg:#2a1f12; --accent:#3ddcae; --on-accent:#0b1712; }
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--ground);color:var(--ink);font:500 16px/1.45 Onest,system-ui,-apple-system,sans-serif}
+main{max-width:980px;margin:0 auto;padding:20px 16px 56px;display:flex;flex-direction:column;gap:16px}
+.banner{margin:0;background:var(--warn-bg);color:var(--warn);border-radius:12px;padding:10px 14px;font-size:14px;font-weight:700}
+header h1{margin:0;font-size:clamp(26px,5vw,38px);font-weight:800;letter-spacing:-.03em;text-wrap:balance}
+header p{margin:6px 0 0;color:var(--muted);max-width:62ch}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:760px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:14px}
+.label{font:700 11px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+legend{font-size:14px;font-weight:700;color:var(--muted);margin-bottom:6px;padding:0}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label{border:1px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer;font-size:15px;background:var(--ground)}
+.seg input:checked + label{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:700}
+.seg input:focus-visible + label{outline:3px solid var(--mint);outline-offset:2px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.field{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:700;color:var(--muted)}
+input[type=number]{font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px;min-height:44px;width:100%;font-variant-numeric:tabular-nums}
+.checks{display:flex;flex-direction:column;gap:8px}
+.checks label{display:flex;gap:10px;align-items:center;font-size:15px}
+.checks input{width:20px;height:20px;accent-color:var(--forest)}
+.toggle{display:inline-flex;background:var(--ground);border:1px solid var(--line);border-radius:999px;padding:3px;align-self:flex-start}
+.toggle button{font:inherit;font-weight:700;font-size:14px;border:0;background:transparent;color:var(--ink);padding:8px 14px;border-radius:999px;cursor:pointer;min-height:40px}
+.toggle button[aria-pressed=true]{background:var(--accent);color:var(--on-accent)}
+.price{font-size:clamp(34px,6vw,48px);font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1}
+.sub{color:var(--muted);font-size:14px;margin:0}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:15px}
+td{padding:7px 0;border-top:1px solid var(--line)}
+td:last-child{text-align:right}
+tr.total td{font-weight:800}
+.visit{background:var(--warn-bg);color:var(--warn);border-radius:12px;padding:12px;font-weight:700}
+.custcard{border:2px solid var(--accent);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.hidden{display:none !important}
+details summary{cursor:pointer;font-weight:800;list-style:none}
+details summary::after{content:" +";color:var(--muted)}
+details[open] summary::after{content:" −"}
+.book{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:12px}
+.book .field{font-size:13px}
+.reset{font:inherit;font-weight:700;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 12px;cursor:pointer;justify-self:start;min-height:40px}
+footer{font-size:13px;color:var(--muted)}
+footer a{color:inherit}
+:focus-visible{outline:3px solid var(--mint);outline-offset:2px}
+
+.q{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.spend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (max-width:560px){.spend{grid-template-columns:1fr}}
+.big{font-size:clamp(34px,6vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+select{font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px;min-height:44px;width:100%}
+.stopcard{background:var(--warn-bg);color:var(--warn);border-radius:12px;padding:14px;font-weight:700}
+td small{color:var(--muted);display:block;font-weight:500}
+</style>
+</head>
+<body>
+<main>
+  <p class="banner" id="banner">Rewards math, not financial advice. Card terms checked on the issuers' own pages. Sign-up bonuses left out: this is what the setup earns every year.</p>
+  <header>
+    <div class="label">Card check</div>
+    <h1>Find the money in your card.</h1>
+    <p>Put in roughly what the business spends each month. You'll see what your card earns now, what the best simple setup would earn, and the difference over a year. No card numbers, no statements, nothing to sign up for.</p>
+  </header>
+  <div class="grid">
+    <form class="card" id="f" aria-label="Your spending">
+      <div class="label">First, one question</div>
+      <fieldset><legend>Do you pay the card off in full every month?</legend><div class="seg" id="pif"></div></fieldset>
+      <div class="label">Rough monthly spend <span class="sub" style="text-transform:none;letter-spacing:0">(sample numbers for a tree crew; change them)</span></div>
+      <div class="spend" id="spend"></div>
+      <label class="field">The card you use now<select id="current"></select></label>
+      <label class="field">Does your supply yard charge extra to pay by card? (%)<input type="number" id="sur" min="0" max="10" step="0.5" value="0"></label>
+    </form>
+    <section class="card" aria-live="polite" id="out"></section>
+  </div>
+  <footer id="foot"></footer>
+</main>
+<script type="module">
+import { check, CATEGORIES } from "./engine.js";
+const $ = id => document.getElementById(id);
+const money = n => (n < 0 ? "−$" : "$") + Math.abs(Math.round(n)).toLocaleString("en-US");
+const SAMPLE = { materials_home_improvement: 1500, fuel: 2500, equipment_rental: 1200, insurance: 0,
+  internet_cable_phone: 250, advertising_online: 600, software_cloud: 100, office_supplies: 100,
+  shipping: 0, restaurants: 300, travel: 0, utilities: 200, other: 1500 };
+const table = await (await fetch("./cards.json")).json();
+table.cards.push({ id: "generic1", name: "A plain 1% card", annual_fee: 0, base_rate: 1, point_value: 0.01, rules: [], generic: true });
+$("pif").innerHTML = [["yes", "Yes, every month"], ["no", "No, we carry a balance"]].map(([v, t], i) =>
+  `<input type="radio" name="pif" id="pif-${v}" value="${v}" ${i === 0 ? "checked" : ""}><label for="pif-${v}">${t}</label>`).join("");
+$("spend").innerHTML = Object.entries(CATEGORIES).map(([k, t]) =>
+  `<label class="field">${t}<input type="number" min="0" step="50" data-c="${k}" value="${SAMPLE[k] ?? 0}"></label>`).join("");
+$("current").innerHTML = `<option value="none">No card / debit card</option><option value="generic1" selected>A plain 1% card</option>` +
+  table.cards.filter(c => !c.generic).map(c => `<option value="${c.id}">${c.name}</option>`).join("");
+const name = id => (table.cards.find(c => c.id === id) || {}).name || id;
+function render() {
+  const monthlySpend = Object.fromEntries([...document.querySelectorAll("[data-c]")].map(i => [i.dataset.c, Number(i.value) || 0]));
+  const sur = (Number($("sur").value) || 0) / 100;
+  const r = check({ monthlySpend, paysInFull: document.querySelector("input[name=pif]:checked").value === "yes",
+                    currentCardId: $("current").value, surcharge: { materials_home_improvement: sur },
+                    table: { ...table, cards: table.cards.filter(c => !c.generic) } });
+  if (r.stop) { $("out").innerHTML = `<div class="stopcard">${r.message}</div>`; return; }
+  const cur = $("current").value === "generic1"
+    ? check({ monthlySpend, paysInFull: true, currentCardId: "generic1", table }).current : r.current;
+  const gain = r.recommended.net - cur.net;
+  const rows = r.recommended.lines.filter(l => l.amount > 0).map(l =>
+    `<tr><td>${CATEGORIES[l.category]}<small>${l.card ? name(l.card) + " · " + (l.rate * 100).toFixed(1) + "% back" : l.note || "no card"}</small></td><td>${money(l.earned)}</td></tr>`).join("");
+  const fees = r.recommended.cards.map(id => (table.cards.find(c => c.id === id) || {}).annual_fee || 0).reduce((a, b) => a + b, 0);
+  $("out").innerHTML = `
+    <div class="label">A year, on about ${money(r.annual_spend)} of card spending</div>
+    <div class="big">${gain > 0 ? "+" + money(gain) : money(0)}</div>
+    <p class="sub">more a year than ${$("current").selectedOptions[0].text.toLowerCase()} (${money(cur.net)} now → ${money(r.recommended.net)})</p>
+    <div class="label" style="margin-top:6px">The setup: ${r.recommended.cards.map(name).join(" + ")}</div>
+    <table>${rows}<tr><td>Annual fee${r.recommended.cards.length > 1 ? "s" : ""}</td><td>−${money(fees)}</td></tr>
+    <tr class="total"><td>Net a year</td><td>${money(r.recommended.net)}</td></tr></table>
+    <p class="sub">${r.recommended.cards.length === 1 && r.best_two ? "A second card would add " + money(Math.max(0, r.best_two.net - r.best_one.net)) + " a year; under $250 isn't worth carrying two." : ""}</p>
+    ${r.recommended.cards.flatMap(id => ((table.cards.find(c => c.id === id) || {}).notes || []).map(n => `<p class="sub">${name(id)}: ${n}</p>`)).join("")}
+    ${monthlySpend.materials_home_improvement > 0 ? `<p class="sub">Buying mostly at Lowe's? The Lowe's pro cards take 5% off there (not on Contractor Pack or volume pricing). It's a store discount, so it isn't in the math above.</p>` : ""}`;
+}
+$("f").addEventListener("input", render);
+$("foot").innerHTML = `Card terms checked ${table.checked_on} on each issuer's own page: ${table.cards.filter(c => !c.generic).map(c => `<a href="${c.source_url}" target="_blank" rel="noopener">${c.name}</a>`).join(", ")}. Terms change; we re-check before every review. This is arithmetic on published rewards rates, not advice on whether to open credit. AutoAnts takes no commission from any issuer. <a href="/">AutoAnts</a>.`;
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,367 @@
+{
+ "checked_on": "2026-10-01",
+ "cards": [
+  {
+   "id": "ink-business-unlimited",
+   "name": "Ink Business Unlimited",
+   "issuer": "Chase",
+   "annual_fee": 0,
+   "base_rate": 1.5,
+   "point_value": 0.01,
+   "charge_card": false,
+   "rules": [],
+   "notes": [],
+   "source_url": "https://creditcards.chase.com/business-credit-cards/ink/unlimited",
+   "checked_on": "2026-10-01"
+  },
+  {
+   "id": "ink-business-cash",
+   "name": "Ink Business Cash",
+   "issuer": "Chase",
+   "annual_fee": 0,
+   "base_rate": 1.0,
+   "point_value": 0.01,
+   "charge_card": false,
+   "rules": [
+    {
+     "categories": [
+      "office_supplies",
+      "internet_cable_phone"
+     ],
+     "rate": 5.0,
+     "cap_amount": 25000
+    },
+    {
+     "categories": [
+      "fuel",
+      "restaurants"
+     ],
+     "rate": 2.0,
+     "cap_amount": 25000
+    }
+   ],
+   "notes": [],
+   "source_url": "https://creditcards.chase.com/business-credit-cards/ink/cash",
+   "checked_on": "2026-10-01"
+  },
+  {
+   "id": "ink-business-preferred",
+   "name": "Ink Business Preferred",
+   "issuer": "Chase",
+   "annual_fee": 95,
+   "base_rate": 1,
+   "point_value": 0.01,
+   "charge_card": false,
+   "rules": [
+    {
+     "categories": [
+      "shipping",
+      "advertising_online",
+      "travel",
+      "internet_cable_phone"
+     ],
+     "rate": 3,
+     "cap_amount": 150000
+    }
+   ],
+   "notes": [],
+   "source_url": "https://creditcards.chase.com/business-credit-cards/ink/business-preferred",
+   "checked_on": "2026-10-01"
+  },
+  {
+   "id": "blue-business-cash-card",
+   "name": "Blue Business Cash",
+   "issuer": "American Express",
+   "annual_fee": 0,
+   "base_rate": 1.0,
+   "point_value": 0.01,
+   "charge_card": false,
+   "rules": [
+    {
+     "categories": [
+      "materials_home_improvement",
+      "fuel",
+      "equipment_rental",
+      "insurance",
+      "internet_cable_phone",
+      "advertising_online",
+      "software_cloud",
+      "office_supplies",
+      "shipping",
+      "restaurants",
+      "travel",
+      "utilities",
+      "other"
+     ],
+     "rate": 2.0,
+     "cap_amount": 50000
+    }
+   ],
+   "notes": [],
+   "source_url": "https://www.americanexpress.com/en-us/business/credit-cards/blue-business-cash/",
+   "checked_on": "2026-10-01"
+  },
+  {
+   "id": "blue-business-plus-credit-card",
+   "name": "Blue Business Plus",
+   "issuer": "American Express",
+   "annual_fee": 0,
+   "base_rate": 1,
+   "point_value": 0.006,
+   "charge_card": false,
+   "rules": [
+    {
+     "categories": [
+      "materials_home_improvement",
+      "fuel",
+      "equipment_rental",
+      "insurance",
+      "internet_cable_phone",
+      "advertising_online",
+      "software_cloud",
+      "office_supplies",
+      "shipping",
+      "restaurants",
+      "travel",
+      "utilities",
+      "other"
+     ],
+     "rate": 2,
+     "cap_amount": 50000
+    }
+   ],
+   "notes": [],
+   "source_url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-blue-business-plus-credit-card-amex/",
+   "checked_on": "2026-10-01"
+  },
+  {
+   "id": "business-gold-card",
+   "name": "Business Gold",
+   "issuer": "American Express",
+   "annual_fee": 375,
+   "base_rate": 1,
+   "point_value": 0.006,
+   "charge_card": true,
+   "rules": [
+    {
+     "top_n": 2,
+     "of": [
+      "advertising_online",
+      "software_cloud",
+      "restaurants",
+      "fuel",
+      "travel",
+      "internet_cable_phone"
+     ],
+     "categories": [
+      "advertising_online",
+      "software_cloud",
+      "restaurants",
+      "fuel",
+      "travel",
+      "internet_cable_phone"
+     ],
+     "rate": 4,
+     "cap_amount": 150000
+    }
+   ],
+   "notes": [
+    "4X goes automatically to your top 2 of its 6 categories each cycle.",
+    "Charge card: pay in full every month."
+   ],
+   "source_url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/",
+   "checked_on": "2026-10-01"
+  },
+  {
+   "id": "graphite-business-cash-unlimited-card",
+   "name": "Graphite Business Cash Unlimited",
+   "issuer": "American Express",
+   "annual_fee": 295,
+   "base_rate": 2.0,
+   "point_value": 0.01,
+   "charge_card": true,
+   "rules": [],
+   "notes": [
+    "Charge card: pay in full every month."
+   ],
+   "source_url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/graphite-business-cash-unlimited-card/",
+   "checked_on": "2026-10-01"
+  },
+  {
+   "id": "spark-cash-plus",
+   "name": "Spark Cash Plus",
+   "issuer": "Capital One",
+   "annual_fee": 150,
+   "base_rate": 2.0,
+   "point_value": 0.01,
+   "charge_card": true,
+   "rules": [],
+   "notes": [
+    "Annual fee refunded if you spend $150,000 in a year (not counted).",
+    "Charge card: pay in full every month."
+   ],
+   "source_url": "https://www.capitalone.com/small-business/credit-cards/spark-cash-plus/",
+   "checked_on": "2026-10-01"
+  },
+  {
+   "id": "spark-1-5-cash-select",
+   "name": "Spark 1.5% Cash Select",
+   "issuer": "Capital One",
+   "annual_fee": 0,
+   "base_rate": 1.5,
+   "point_value": 0.01,
+   "charge_card": false,
+   "rules": [],
+   "notes": [],
+   "source_url": "https://www.capitalone.com/small-business/credit-cards/spark-cash-select/",
+   "checked_on": "2026-10-01"
+  },
+  {
+   "id": "spark-2-cash-spark-cash",
+   "name": "Spark 2% Cash (Spark Cash)",
+   "issuer": "Capital One",
+   "annual_fee": 95,
+   "base_rate": 2.0,
+   "point_value": 0.01,
+   "charge_card": false,
+   "rules": [],
+   "notes": [],
+   "source_url": "https://www.capitalone.com/small-business/credit-cards/spark-cash/",
+   "checked_on": "2026-10-01"
+  },
+  {
+   "id": "u-s-bank-triple-cash-rewards-visa-busine",
+   "name": "U.S. Bank Triple Cash Rewards Visa Business",
+   "issuer": "U.S. Bank",
+   "annual_fee": 0,
+   "base_rate": 1.0,
+   "point_value": 0.01,
+   "charge_card": false,
+   "rules": [
+    {
+     "categories": [
+      "fuel"
+     ],
+     "rate": 3.0,
+     "cap_amount": null
+    },
+    {
+     "categories": [
+      "office_supplies"
+     ],
+     "rate": 3.0,
+     "cap_amount": null
+    },
+    {
+     "categories": [
+      "internet_cable_phone"
+     ],
+     "rate": 3.0,
+     "cap_amount": null
+    },
+    {
+     "categories": [
+      "restaurants"
+     ],
+     "rate": 3.0,
+     "cap_amount": null
+    }
+   ],
+   "notes": [
+    "A single gas charge over $200 earns 1%, not 3%."
+   ],
+   "source_url": "https://www.usbank.com/business-banking/business-credit-cards/business-triple-cash-back-credit-card.html",
+   "checked_on": "2026-10-01"
+  },
+  {
+   "id": "business-advantage-unlimited-cash-reward",
+   "name": "Business Advantage Unlimited Cash Rewards Mastercard",
+   "issuer": "Bank of America",
+   "annual_fee": 0,
+   "base_rate": 1.5,
+   "point_value": 0.01,
+   "charge_card": false,
+   "rules": [],
+   "notes": [],
+   "source_url": "https://business.bankofamerica.com/en/credit-cards/business-advantage-unlimited-cash-rewards",
+   "checked_on": "2026-10-01"
+  },
+  {
+   "id": "business-advantage-customized-cash-rewar",
+   "name": "Business Advantage Customized Cash Rewards Mastercard",
+   "issuer": "Bank of America",
+   "annual_fee": 0,
+   "base_rate": 1.0,
+   "point_value": 0.01,
+   "charge_card": false,
+   "rules": [
+    {
+     "categories": [
+      "fuel"
+     ],
+     "rate": 3.0,
+     "cap_amount": 50000,
+     "cap_id": "boa-3-2"
+    },
+    {
+     "categories": [
+      "restaurants"
+     ],
+     "rate": 2.0,
+     "cap_amount": 50000,
+     "cap_id": "boa-3-2"
+    }
+   ],
+   "notes": [
+    "3% category is your choice (gas by default); figured at gas."
+   ],
+   "source_url": "https://business.bankofamerica.com/en/credit-cards/business-advantage-customized-cash-rewards",
+   "checked_on": "2026-10-01"
+  }
+ ],
+ "store_cards": [
+  {
+   "name": "MyLowe's Pro Rewards American Express Card",
+   "note": "5% discount is the hard number; points have NO confirmed cash value and expire semiannually (6/30, 12/31).; Points awarded on qualifying spend up to $1.5M/yr.; Flexible payments: minimum or pay in full.",
+   "source_url": "https://www.lowes.com/l/Credit/business-credit-center"
+  },
+  {
+   "name": "MyLowe's Pro Rewards Credit Card",
+   "note": "Usable only at Lowe's.; Earns MyLowe's Pro loyalty points on Lowe's spend per loyalty status (value unconfirmed).",
+   "source_url": "https://www.lowes.com/l/Credit/business-credit-center"
+  },
+  {
+   "name": "Lowe's Commercial Account Credit Card",
+   "note": "Usable only at Lowe's.; Pay-by-invoice, optional Net Terms.",
+   "source_url": "https://www.lowes.com/l/Credit/business-credit-center"
+  },
+  {
+   "name": "Home Depot Pro Xtra Credit Card",
+   "note": "Usable only at Home Depot stores / homedepot.com.; Revolving: flexible monthly payments or pay in full; requires a Pro Xtra account first.; No per-dollar discount comparable to Lowe's 5%; model as 0 in cash math.",
+   "source_url": "https://www.citi.com/credit-cards/home-depot-pro-xtra-credit-card"
+  }
+ ],
+ "left_out": [
+  "Capital One Venture Business: Capital One doesn't publish a cash value for its miles.",
+  "Welcome offers: never counted.",
+  "Bank of America Preferred Rewards bonuses (25-75%) and Amex Gold's monthly credits: not counted.",
+  "Store cards (Lowe's, Home Depot): store-only discounts, kept out of the math; see store_cards.",
+  "{\"name\": \"Spark Miles for Business\", \"issuer\": \"Capital One\", \"reason\": \"No longer offered: capitalone.com/small-business/credit-cards/spark-miles/ redirects to the travel-cards category page; the 2X, $95 slot is now Venture Business (included above).\"}",
+  "{\"name\": \"Lowe's Business Rewards Card from American Express\", \"issuer\": \"American Express\", \"reason\": \"Not among the 11 cards on Amex's U.S. business card list; Lowe's business credit page lists only Synchrony-issued cards. Synchrony took over the Lowe's pro co-brand (press release 2026-04-30).\"}"
+ ],
+ "research_notes": [
+  "Rule for all cards: categories are assigned by merchant category code (MCC). Lumber/materials at Home Depot/Lowe's code as home improvement and get NO bonus on any Chase/Amex/Capital One/U.S. Bank/BofA card here; only the Lowe's 5% discount touches materials_home_improvement.",
+  "Amex Blue Business Cash/Plus: annual fee confirmed $0 via Amex compare page; foreign transaction fee and welcome offers load via JavaScript and were not captured.",
+  "Amex Business Gold welcome offer not captured (JS). Annual fee $375 confirmed.",
+  "Amex MR statement-credit value 0.6 cents is from Amex's own Credit Intel article (updated 2026-04-30), which illustrates with the Platinum card and says values vary by card; not confirmed card-specific for Blue Business Plus or Business Gold.",
+  "Capital One miles cash/erase value: NOT confirmed on any capitalone.com page (no cents-per-mile figure stated). Venture Business point_value_cash left null.",
+  "Chase Ink Unlimited and Ink Cash foreign transaction fees not shown on product pages (Ink Preferred confirmed none).",
+  "U.S. Bank Triple Cash foreign transaction fee not confirmed.",
+  "BofA: how often the Customized Cash 3% choice category can be changed was not confirmed from page text.",
+  "MyLowe's Pro Rewards point cash value not confirmed; Lowe's 5% discount cannot be combined with Contractor Pack, volume discounts or special/contract pricing, so for pros on volume pricing the 5% may not apply.",
+  "Graphite Business Cash Unlimited and Spark 2% Cash were not on the requested list but were found on issuer card lists and included as relevant flat-2% options; drop them if out of scope.",
+  "Portal/merchant-specific rates (Lyft, AmexTravel, Capital One Business Travel, U.S. Bank Travel Center) are kept in portal_or_merchant_specific_rules, NOT in earn_rules, so a calculator won't credit them to general 'travel' spend.",
+  "Welcome offers are recorded as notes only and must not be counted.",
+  "Blue Business Cash/Plus use base_cap_amount/base_cap_period/base_rate_after_cap: the 2%/2X tier applies to total card spend, not a category."
+ ]
+}
