@@ -2,7 +2,7 @@
 
     uv run --with qrcode python3 brand/print/door-hanger/make_hanger.py
 
-Front (night): wordmark, the waving mascot, the promise, QR + autoants.com.
+Front (night): wordmark, what we are in one line, the waving mascot, QR + autoants.com.
 Back (stone): Meet the crew (the four assistants in The Office Manager, plus a line for the
 rest) and How it works (what happens after someone reaches out). Copy matches the site's
 own wording. Generic, so it prints in bulk; PHONE stays a red placeholder until the
@@ -58,8 +58,7 @@ def front(guides):
     return (f'<div class="pg" style="background:radial-gradient(90% 45% at 85% 30%,rgba(61,220,174,.17),transparent 62%),{NIGHT};color:{STONE}">'
             f'<div style="position:absolute;left:0;right:0;top:2.2in;display:flex;justify-content:center">{svg_h(WORD, .58)}</div>'
             f'<div style="position:absolute;left:.4in;right:.4in;top:3.05in;text-align:center">'
-            f'<div style="font:800 23pt/1.02 Onest;letter-spacing:-.03em">Never miss another job.</div>'
-            f'<div style="font:500 10.5pt/1.35 Onest;color:{SOFT};margin-top:.08in">Automated assistants for local businesses.</div></div>'
+            f'<div style="font:700 15pt/1.25 Onest;letter-spacing:-.01em;text-wrap:balance">Automated assistants for local businesses.</div></div>'
             f'<div style="position:absolute;left:50%;transform:translateX(-50%);top:4.15in">{m}</div>'
             f'<div style="position:absolute;left:.45in;right:.45in;top:8.75in;display:flex;align-items:center;gap:.2in">'
             f'<div style="background:{STONE};border-radius:.09in;padding:.1in">{qr_svg(INFO["qr"], .95)}</div>'

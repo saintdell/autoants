@@ -1,4 +1,5 @@
-"""Builds who-we-help.html: the "what we can do for your kind of business" brochure page.
+"""Builds who-we-help.html: every kind of business we help, grouped, with one line on what we automate.
+Kept short on purpose (Lane, 2026-10-01: the long version was too much). SECTORS/CREW below are unused for now.
 It also prints as a brochure (Cmd+P, or make_pdf()) to brand/print/brochure/autoants-brochure.pdf.
 
     uv run --with playwright python3 brand/pages/who_we_help.py
@@ -62,6 +63,28 @@ DENTAL = ("clipboard", "Dental &amp; medical offices", "Coming later, built HIPA
           "Patient information comes with HIPAA rules: anyone who handles it for you has to sign a business associate agreement and protect it. "
           "We're building that before we touch a single patient record. Want to be first in line when it's ready? Tell us.")
 
+
+GROUPS = [
+    ("Home services", "Missed calls texted back, quote requests booked, every customer asked for a review.",
+     ["Tree service", "HVAC", "Roofing", "Plumbing", "Electrical", "Landscaping &amp; lawn care", "Pressure washing",
+      "Pest control", "Pool service", "House cleaning", "Garage doors", "Handyman", "Movers"], False),
+    ("Auto", "Calls answered while the techs are under a car, drop-offs booked, service-due reminders for customers who opted in.",
+     ["Auto repair", "Tire &amp; brake", "Oil change &amp; lube", "Body &amp; collision", "Auto detailing", "Towing"], False),
+    ("Beauty &amp; personal care", "Appointments booked and confirmed, a reminder the day before, rebooking for clients who said yes.",
+     ["Nail spas", "Hair salons", "Barbershops", "Lash &amp; brow studios", "Day spas &amp; massage", "Tattoo studios"], False),
+    ("Fitness", "Trial and class questions answered in seconds, tours booked, lapsed members invited back if they agreed to hear from you.",
+     ["Gyms", "Yoga &amp; pilates", "CrossFit &amp; boxing", "Martial arts", "Personal trainers", "Dance studios"], False),
+    ("Pets", "Grooming and boarding booked and confirmed, reminders, reviews.",
+     ["Pet grooming", "Boarding &amp; daycare", "Dog training", "Veterinary clinics"], False),
+    ("Food &amp; events", "Calls and messages answered, catering and event inquiries followed up, reviews.",
+     ["Restaurants", "Catering", "Food trucks", "Event rentals", "Photographers", "DJs &amp; entertainment"], False),
+    ("Professional &amp; local services", "New-client inquiries answered fast, consultations booked, reviews.",
+     ["Accountants &amp; bookkeepers", "Insurance agencies", "Real estate agents", "Tutors &amp; learning centers",
+      "Property managers", "Storage facilities"], False),
+    ("Health &amp; medical", "Patient information needs a HIPAA program and signed agreements first, so we're building that before we touch a single patient record.",
+     ["Dental offices", "Chiropractors", "Physical therapy", "Med spas", "Optometry", "Clinics"], True),
+]
+
 STEPS = [("Reach out", "Fill out the form, or call or text. Two minutes: your name, number and business."),
          ("See your free preview", "We build your new website with your real info and reviews, before you pay anything."),
          ("Pick your crew", "A 15-minute call to choose the assistants that fit. You approve every message before it goes out."),
@@ -90,6 +113,10 @@ def page():
     sectors += (f'<article class="sector later" id="dental"><div class="art">{pose(p, 120)}</div><div><div class="eyebrow">{s}</div><h3>{t}</h3>'
                 f'<p class="moment">{d}</p></div></article>')
     steps = "".join(f'<li><b>{t}</b><span>{d}</span></li>' for t, d in STEPS)
+    allb = "".join(
+        f'<div class="grp{" later-grp" if later else ""}"><h3>{name}</h3><p>{line}</p>'
+        f'<div class="chips">{"".join(f"<span>{b}</span>" for b in biz)}</div></div>'
+        for name, line, biz, later in GROUPS)
     never = "".join(f'<li>{x}</li>' for x in NEVER)
     return f'''<!doctype html>
 <html lang="en">
@@ -124,6 +151,15 @@ def page():
   section{{padding:44px 0;border-bottom:1px solid var(--line)}}
   h2{{font-family:var(--disp);font-weight:800;font-size:clamp(24px,3.4vw,32px);margin:0 0 6px;text-wrap:balance}}
   .lede{{color:var(--muted);margin:0 0 24px;max-width:62ch}}
+  .grps{{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}}
+  .grp{{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px}}
+  .grp h3{{font-family:var(--disp);font-weight:800;font-size:19px;margin:0 0 4px}}
+  .grp p{{margin:0 0 12px;color:var(--muted);font-size:14px;line-height:1.45}}
+  .chips{{display:flex;flex-wrap:wrap;gap:6px}}
+  .chips span{{font-size:13px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(61,220,174,.08)}}
+  .later-grp{{border-style:dashed;background:transparent}}
+  .later-grp h3::after{{content:"coming later";margin-left:10px;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--faint);vertical-align:3px}}
+  .later-grp .chips span{{background:transparent;color:var(--muted)}}
   .crews{{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}}
   .crew{{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}}
   .crew .ic{{flex:0 0 40px;width:40px;height:40px;border-radius:10px;background:#ebe8e2;display:grid;place-items:center}}
@@ -144,7 +180,8 @@ def page():
   .later .moment{{color:var(--muted)}}
   .two{{display:grid;grid-template-columns:1.3fr 1fr;gap:28px}}
   ol.steps{{list-style:none;counter-reset:s;margin:0;padding:0;display:grid;gap:14px}}
-  ol.steps li{{counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:0 12px}}
+  ol.steps.three{{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}}
+  ol.steps li{{counter-increment:s;align-content:start;display:grid;grid-template-columns:34px 1fr;gap:0 12px}}
   ol.steps li::before{{content:counter(s);grid-row:span 2;width:30px;height:30px;border-radius:50%;background:var(--mint);color:var(--mint-ink);font:800 15px/30px var(--disp);text-align:center}}
   ol.steps b{{font-family:var(--disp);font-size:17px}}
   ol.steps span{{color:var(--muted);font-size:15px}}
@@ -166,7 +203,8 @@ def page():
     .sector{{break-inside:avoid;padding:10px 0;grid-template-columns:70px 1fr;gap:14px}} .sector .art svg{{width:62px}}
     .sector h3{{font-size:19px;margin:2px 0 4px}} .moment{{font-size:13px;margin-bottom:8px}} .jobs{{gap:3px}} .jobs li{{font-size:12px}} .soon{{font-size:11.5px}}
     ol.steps span,.never li{{font-size:12px}} .crew,.never{{break-inside:avoid}}
-    section:nth-of-type(2){{break-before:page}} h2{{break-after:avoid}} .two,.price{{break-inside:avoid}}
+    .grp{{break-inside:avoid;padding:10px 12px}} .grp p{{font-size:11.5px;margin-bottom:6px}} .chips span{{font-size:10.5px;padding:2px 7px}} .grps{{grid-template-columns:repeat(2,1fr);gap:8px}}
+ h2{{break-after:avoid}} .two,.price{{break-inside:avoid}}
     .sector{{padding:7px 0}} ol.steps{{gap:6px}} ol.steps b{{font-size:14px}} .never{{padding:12px 14px}} .price{{margin:10px 0 0;font-size:12.5px}} footer{{display:none}}
     a{{text-decoration:none}} *{{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
   }}
@@ -184,31 +222,23 @@ def page():
   <header>
     <img class="printonly" src="brand/autoants-logo.svg" alt="autoants" style="height:34px;width:auto;margin-bottom:14px">
     <div class="eyebrow">Who we help</div>
-    <h1>Your phone rings. Your hands are full. <em>The crew picks up.</em></h1>
-    <p class="sub">autoants builds automated assistants for local businesses that run on calls and appointments. Here's what they do in your kind of shop, and what we'll never do.</p>
+    <h1>If your phone rings and your calendar matters, <em>the crew fits.</em></h1>
+    <p class="sub">autoants builds automated assistants for local businesses that run on calls, messages and appointments. Here are the businesses we help.</p>
     <p class="printonly" style="font-size:14px;margin:12px 0 0"><b>Get your free preview:</b> autoants.com · lane@autoants.com</p>
   </header>
-  <section>
-    <h2>Meet the crew</h2>
-    <p class="lede">Eight assistants, each with one job. Turn on the ones you need; you approve how they talk to your customers.</p>
-    <div class="crews">{crew}</div>
+  <section id="all">
+    <h2>The businesses we help</h2>
+    <p class="lede">Find yours. Don't see it? If customers call or book with you, ask us.</p>
+    <div class="grps">{allb}</div>
   </section>
   <section>
-    <h2>What they do in your business</h2>
-    <p class="lede">The same crew, pointed at the moment your business loses customers.</p>
-    {sectors}
-  </section>
-  <section>
-    <div class="two">
-      <div>
-        <h2>How it works</h2>
-        <ol class="steps">{steps}</ol>
-      </div>
-      <div class="never"><div class="eyebrow">What we never do</div><ul>{never}</ul></div>
-    </div>
-    <div class="price"><span><b>Your website:</b> free preview, $500 to go live and keep</span>
-      <span><b>The Office Manager:</b> $750 setup + $500/mo, founding rate</span><span><b>Other assistants:</b> à la carte</span></div>
-    <a class="cta noprint" href="index.html#contact">Get your free preview →</a>
+    <h2>How it works</h2>
+    <ol class="steps three">
+      <li><b>Reach out</b><span>Fill out the form, or call or text.</span></li>
+      <li><b>See your free preview</b><span>Your new website, built before you pay anything.</span></li>
+      <li><b>Pick your crew</b><span>A 15-minute call to choose the assistants that fit.</span></li>
+    </ol>
+    <a class="cta noprint" href="index.html#contact" style="display:inline-block;margin-top:24px">Get your free preview →</a>
   </section>
   <footer>autoants, short for automated assistants · Louisiana · autoants.com · Commercial services only.</footer>
 </div>

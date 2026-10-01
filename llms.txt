@@ -34,7 +34,7 @@
 
 ## Who it's for
 - Home services and trades (tree, HVAC, roofing, plumbing, landscaping): the core focus
-- Also offered to auto repair and tire shops, salons and nail spas, and gyms and fitness studios
+- Also offered to auto shops, salons and nail spas, gyms and studios, pet businesses, restaurants and event businesses, and professional services (accountants, insurance, real estate, tutors)
 - Dental and medical offices: not yet; patient information needs a HIPAA program first
 - Details: https://autoants.com/who-we-help.html
 
