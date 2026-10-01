@@ -136,9 +136,9 @@ def looking(p):
 
 LOOPS = {  # name: (draw, eyebrow, headline) — copy matches posts.json
     "hello": (hello, "autoants", "Meet the ants."),
-    "ringing": (ringing, "The Callback", "Missed calls are jobs walking away."),
-    "delivery": (delivery, "The Responder", "The crew that answers first wins."),
-    "thumbs-up": (thumbs, "The Reviewer", "Every customer gets the ask."),
+    "ringing": (ringing, "Callback Ant", "Missed calls are jobs walking away."),
+    "delivery": (delivery, "Responder Ant", "The crew that answers first wins."),
+    "thumbs-up": (thumbs, "Reviewer Ant", "Every customer gets the ask."),
     "on-the-job": (onthejob, "Your office, handled", "They work while you're on the job."),
     "looking": (looking, None, None),   # website only (404), no reel
 }

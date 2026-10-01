@@ -68,10 +68,10 @@ def front(guides):
             f'{die(guides)}</div>')
 
 
-CREW = [("phone", "The Callback", "Miss a call and it texts them back in seconds, so the customer stays yours."),
-        ("carry", "The Responder", "A new lead gets an answer in seconds, even when your hands are full."),
-        ("clipboard", "The Scheduler", "Requests turn into booked appointments and jobs. You approve; it handles the back-and-forth."),
-        ("thumbs", "The Reviewer", "Every customer gets the same review ask, one tap from your phone.")]
+CREW = [("phone", "Callback Ant", "Miss a call and it texts them back in seconds, so the customer stays yours."),
+        ("carry", "Responder Ant", "A new lead gets an answer in seconds, even when your hands are full."),
+        ("clipboard", "Scheduler Ant", "Requests turn into booked appointments and jobs. You approve; it handles the back-and-forth."),
+        ("thumbs", "Reviewer Ant", "Every customer gets the same review ask, one tap from your phone.")]
 STEPS = [("Reach out", "Scan the code, visit autoants.com, or call or text."),
          ("Tell us about your business", "A two-minute form: your name, number and business. We get back to you, usually the same day."),
          ("See your free preview", "Your new site, built with your real info and reviews, before you pay anything."),
@@ -96,8 +96,8 @@ def back(guides):
             f'<div style="font:700 7.5pt JetBrains Mono,monospace;letter-spacing:.14em;text-transform:uppercase;color:{FOREST}">Meet the crew</div>'
             f'<div style="font:800 16pt/1.05 Onest;letter-spacing:-.02em;margin-top:.05in;text-wrap:balance">Assistants that work while you\'re busy.</div>'
             f'<div style="margin-top:.1in">{crew}</div>'
-            f'<div style="font:500 8pt/1.35 Onest;color:#4d5a51;padding-top:.07in;border-top:1px solid #d6d1c6">Also on the crew: The Receptionist (an AI phone '
-            f'that says it\'s an AI), The Reminder, The Scout and The Promoter.</div></div>'
+            f'<div style="font:500 8pt/1.35 Onest;color:#4d5a51;padding-top:.07in;border-top:1px solid #d6d1c6">Also on the crew: Receptionist Ant (an AI phone '
+            f'that says it\'s an AI), Reminder Ant, Scout Ant and Promoter Ant.</div></div>'
             f'<div style="position:absolute;left:.38in;right:.38in;top:6.95in">'
             f'<div style="font:700 7.5pt JetBrains Mono,monospace;letter-spacing:.14em;text-transform:uppercase;color:{FOREST}">How it works</div>'
             f'<div style="margin-top:.06in">{steps}</div></div>'

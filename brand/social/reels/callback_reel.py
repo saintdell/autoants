@@ -1,9 +1,9 @@
-"""'What happens when you miss a call': a 17-second Reel showing The Callback at work.
+"""'What happens when you miss a call': a 17-second Reel showing Callback Ant at work.
 
     uv run --with playwright python3 brand/social/reels/callback_reel.py
 
 1080x1920, 30 fps, silent (add a sound in the app). Story: the phone rings while you're with a
-customer -> missed call -> The Callback texts back in seconds -> they reply and book -> "The customer
+customer -> missed call -> Callback Ant texts back in seconds -> they reply and book -> "The customer
 stays yours." The business is "Your Business", so any owner pictures their own shop."""
 import os, subprocess, sys
 
@@ -19,7 +19,7 @@ thumbs = open(os.path.join(ANIM, "thumbs-up-dark.svg")).read()
 BIZ, NUM = "Your Business", "(985) 555-0142"
 CAPS = [(0.2, 3.0, "You're with a customer. The phone rings."),
         (3.0, 5.6, "You can't pick up. Most callers won't leave a voicemail."),
-        (5.6, 8.6, "The Callback texts them back in seconds."),
+        (5.6, 8.6, "Callback Ant texts them back in seconds."),
         (8.6, 12.7, "They answer. You get the job."),
         (12.7, 17.2, "The customer stays yours.")]
 BUBBLES = [("out", 6.5, f"Hi, this is {BIZ}! Sorry we missed your call. What can we help with?"),

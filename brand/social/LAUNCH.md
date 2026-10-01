@@ -46,19 +46,19 @@ Hashtags are kept to three or four, all local or trade: they help a little, and 
 > #SmallBusiness #Louisiana #LocalBusiness
 
 **the-callback**
-> You're up a tree when the phone rings. The homeowner doesn't leave a voicemail; they call the next crew on Google. The Callback texts them back in seconds, so the job stays yours.
+> You're up a tree when the phone rings. The homeowner doesn't leave a voicemail; they call the next crew on Google. Callback Ant texts them back in seconds, so the job stays yours.
 > #TreeService #SmallBusiness #Louisiana
 
 **the-responder**
-> The crew that answers first usually gets the job. When a new lead comes in, The Responder answers in seconds, even when you're on a roof.
+> The crew that answers first usually gets the job. When a new lead comes in, Responder Ant answers in seconds, even when you're on a roof.
 > #Roofing #HVAC #SmallBusiness
 
 **the-scheduler**
-> Quote requests shouldn't sit in your inbox until Sunday night. The Scheduler turns them into estimates and booked jobs. You approve; it handles the back-and-forth.
+> Quote requests shouldn't sit in your inbox until Sunday night. Scheduler Ant turns them into estimates and booked jobs. You approve; it handles the back-and-forth.
 > #TreeService #HVAC #Roofing
 
 **the-reviewer**
-> Happy customers forget to leave reviews. The Reviewer asks every one of them, the same way, after every job, with one tap from your phone. More reviews, more calls.
+> Happy customers forget to leave reviews. Reviewer Ant asks every one of them, the same way, after every job, with one tap from your phone. More reviews, more calls.
 > #SmallBusiness #Louisiana #TreeService
 
 **on-the-job**

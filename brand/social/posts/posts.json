@@ -9,28 +9,28 @@
   {
     "slug": "the-callback",
     "pose": "phone",
-    "eyebrow": "The Callback",
+    "eyebrow": "Callback Ant",
     "line": "Missed calls are jobs walking away.",
     "sub": "Miss a call and it texts them back in seconds. The job stays yours."
   },
   {
     "slug": "the-responder",
     "pose": "carry",
-    "eyebrow": "The Responder",
+    "eyebrow": "Responder Ant",
     "line": "The crew that answers first wins.",
     "sub": "A new lead comes in and gets an answer in seconds."
   },
   {
     "slug": "the-scheduler",
     "pose": "clipboard",
-    "eyebrow": "The Scheduler",
+    "eyebrow": "Scheduler Ant",
     "line": "Quote requests, booked.",
     "sub": "Requests turn into estimates and booked jobs without you touching your phone."
   },
   {
     "slug": "the-reviewer",
     "pose": "thumbs",
-    "eyebrow": "The Reviewer",
+    "eyebrow": "Reviewer Ant",
     "line": "Every customer gets the ask.",
     "sub": "One tap from your phone after each job. More reviews, more calls."
   },
