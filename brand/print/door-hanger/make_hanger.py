@@ -2,7 +2,7 @@
 
     uv run --with qrcode python3 brand/print/door-hanger/make_hanger.py
 
-Front (night): wordmark, the waving hard-hat mascot, the promise, QR + autoants.com.
+Front (night): wordmark, the waving mascot, the promise, QR + autoants.com.
 Back (stone): Meet the crew (the four assistants in The Office Manager, plus a line for the
 rest) and How it works (what happens after someone reaches out). Copy matches the site's
 own wording. Generic, so it prints in bulk; PHONE stays a red placeholder until the
@@ -54,12 +54,12 @@ def die(show):
 
 
 def front(guides):
-    m = mascot("wavehat", 100, dark=True).replace('width="100" height="130"', 'style="height:4.15in;width:auto;display:block"')
+    m = mascot("wave", 100, dark=True).replace('width="100" height="130"', 'style="height:4.15in;width:auto;display:block"')
     return (f'<div class="pg" style="background:radial-gradient(90% 45% at 85% 30%,rgba(61,220,174,.17),transparent 62%),{NIGHT};color:{STONE}">'
             f'<div style="position:absolute;left:0;right:0;top:2.2in;display:flex;justify-content:center">{svg_h(WORD, .58)}</div>'
             f'<div style="position:absolute;left:.4in;right:.4in;top:3.05in;text-align:center">'
             f'<div style="font:800 23pt/1.02 Onest;letter-spacing:-.03em">Never miss another job.</div>'
-            f'<div style="font:500 10.5pt/1.35 Onest;color:{SOFT};margin-top:.08in">Automated assistants for tree, HVAC &amp; roofing crews.</div></div>'
+            f'<div style="font:500 10.5pt/1.35 Onest;color:{SOFT};margin-top:.08in">Automated assistants for local businesses.</div></div>'
             f'<div style="position:absolute;left:50%;transform:translateX(-50%);top:4.15in">{m}</div>'
             f'<div style="position:absolute;left:.45in;right:.45in;top:8.75in;display:flex;align-items:center;gap:.2in">'
             f'<div style="background:{STONE};border-radius:.09in;padding:.1in">{qr_svg(INFO["qr"], .95)}</div>'
@@ -69,12 +69,12 @@ def front(guides):
             f'{die(guides)}</div>')
 
 
-CREW = [("phone", "The Callback", "Miss a call and it texts them back in seconds, so the job stays yours."),
-        ("carry", "The Responder", "A new lead gets an answer in seconds, even while you're on a roof."),
-        ("clipboard", "The Scheduler", "Quote requests become estimates and booked jobs. You approve; it handles the back-and-forth."),
-        ("thumbs", "The Reviewer", "Every finished job gets the same review ask, one tap from your phone.")]
+CREW = [("phone", "The Callback", "Miss a call and it texts them back in seconds, so the customer stays yours."),
+        ("carry", "The Responder", "A new lead gets an answer in seconds, even when your hands are full."),
+        ("clipboard", "The Scheduler", "Requests turn into booked appointments and jobs. You approve; it handles the back-and-forth."),
+        ("thumbs", "The Reviewer", "Every customer gets the same review ask, one tap from your phone.")]
 STEPS = [("Reach out", "Scan the code, visit autoants.com, or call or text."),
-         ("Tell us about your business", "A two-minute form: your name, number and trade. You hear back from Lane, usually the same day."),
+         ("Tell us about your business", "A two-minute form: your name, number and business. You hear back from Lane, usually the same day."),
          ("See your free preview", "Your new site, built with your real info and reviews, before you pay anything."),
          ("Pick your crew", "A 15-minute call to choose the assistants you want. Once you say go, your site is live within 7 days or the $500 setup fee comes back.")]
 
@@ -95,7 +95,7 @@ def back(guides):
     return (f'<div class="pg" style="background:{STONE};color:{INK}">'
             f'<div style="position:absolute;left:.38in;right:.38in;top:2.15in">'
             f'<div style="font:700 7.5pt JetBrains Mono,monospace;letter-spacing:.14em;text-transform:uppercase;color:{FOREST}">Meet the crew</div>'
-            f'<div style="font:800 16pt/1.05 Onest;letter-spacing:-.02em;margin-top:.05in;text-wrap:balance">Assistants that work while you\'re on the job.</div>'
+            f'<div style="font:800 16pt/1.05 Onest;letter-spacing:-.02em;margin-top:.05in;text-wrap:balance">Assistants that work while you\'re busy.</div>'
             f'<div style="margin-top:.1in">{crew}</div>'
             f'<div style="font:500 8pt/1.35 Onest;color:#4d5a51;padding-top:.07in;border-top:1px solid #d6d1c6">Also on the crew: The Receptionist (an AI phone '
             f'that says it\'s an AI), The Reminder, The Scout and The Promoter.</div></div>'
