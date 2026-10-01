@@ -157,6 +157,8 @@ def page():
   .grp p{{margin:0 0 12px;color:var(--muted);font-size:14px;line-height:1.45}}
   .chips{{display:flex;flex-wrap:wrap;gap:6px}}
   .chips span{{font-size:13px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(61,220,174,.08)}}
+  .assess-note{{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--mint);border-radius:12px;padding:16px 18px;color:var(--muted);max-width:760px}}
+  .assess-note b{{color:var(--ink)}} .assess-note a{{color:var(--mint)}}
   .later-grp{{border-style:dashed;background:transparent}}
   .later-grp h3::after{{content:"coming later";margin-left:10px;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--faint);vertical-align:3px}}
   .later-grp .chips span{{background:transparent;color:var(--muted)}}
@@ -230,6 +232,10 @@ def page():
     <h2>The businesses we help</h2>
     <p class="lede">Find yours. Don't see it? If customers call or book with you, ask us.</p>
     <div class="grps">{allb}</div>
+  </section>
+  <section>
+    <div class="assess-note"><b>Not sure what you need?</b> Start with a free 15-minute call, or <a href="index.html#assessment">the assessment</a>
+      ($500, credited toward setup): a written report on what to automate first, and what each fix is worth.</div>
   </section>
   <section>
     <h2>How it works</h2>

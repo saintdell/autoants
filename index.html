@@ -144,6 +144,15 @@
   .proofcard h3{font-size:1.4rem;font-weight:800;margin:.6rem 0}.proofcard p{color:var(--muted);font-size:.95rem;margin-bottom:1.2rem}
   .placeholder{border:1px dashed var(--line2);border-radius:11px;padding:1.1rem;font-family:var(--mono);font-size:.76rem;color:var(--faint);text-align:center;line-height:1.7}
 
+  .assess{margin-top:1.4rem;display:grid;grid-template-columns:1.15fr 1fr;gap:2rem;align-items:start;background:var(--surface);border:1px solid var(--line2);border-radius:18px;padding:1.8rem 1.8rem 1.9rem}
+  @media(max-width:860px){.assess{grid-template-columns:1fr;gap:1.4rem}}
+  .assess h3{font-size:1.5rem;font-weight:800;margin:.3rem 0 .5rem}
+  .assess p{color:var(--muted);margin:0 0 1.2rem;max-width:56ch}
+  .ladder{list-style:none;margin:0;padding:0;counter-reset:l;display:grid;gap:.9rem}
+  .ladder li{counter-increment:l;display:grid;grid-template-columns:2rem 1fr;gap:.1rem .8rem}
+  .ladder li::before{content:counter(l);grid-row:span 2;width:1.8rem;height:1.8rem;border-radius:50%;background:var(--amber);color:var(--amber-ink);font:800 .9rem/1.8rem var(--disp);text-align:center}
+  .ladder b{font-family:var(--disp);font-weight:800}
+  .ladder span{color:var(--muted);font-size:.95rem}
   .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.1rem}
   .tier{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.8rem 1.6rem;display:flex;flex-direction:column}
   .tier.feature{border-color:var(--amber);box-shadow:0 0 0 1px var(--amber),0 18px 50px rgba(61,220,174,.1)}
@@ -332,7 +341,7 @@
       <div class="cap">Walking out the door</div>
       <div class="big" id="permo">$0</div>
       <div class="yr">that's <b id="peryr" style="color:var(--ink)">$0</b> a year</div>
-      <a class="btn btn-amber" href="#contact" data-interest="Free audit" style="width:100%;justify-content:center">Stop the leak — free audit →</a>
+      <a class="btn btn-amber" href="#contact" data-interest="15-minute call" style="width:100%;justify-content:center">Stop the leak — free 15-minute call →</a>
       <div class="note">Estimate from your own inputs. Missed-Call Text-Back is built to catch these.</div>
     </div>
   </div>
@@ -341,7 +350,7 @@
 <section id="how"><div class="wrap">
   <div class="sec-head"><p class="eyebrow">How it works</p><h2>I do the work first. You decide after.</h2><p>No contract to start. I prove it's worth it before you spend a dollar, and once you say go, you're live in 7 days or your setup fee comes back.</p></div>
   <div class="steps">
-    <div class="step"><h3>Free audit</h3><p>I find the money you're leaving on the floor — and build your website before you pay anything.</p></div>
+    <div class="step"><h3>Free preview</h3><p>I build your website before you pay anything, and point out where customers are slipping away.</p></div>
     <div class="step"><h3>You see it live</h3><p>Your name, your reviews, on a real site you can pull up on your phone. Like it? Keep it.</p></div>
     <div class="step"><h3>Turn on the office</h3><p>We switch on the missed-call catch, the booking, the visibility — the whole colony, tuned to your trade.</p></div>
     <div class="step"><h3>The 30-day receipt</h3><p>One page: calls caught, quotes booked, reviews gained, dollars moved. The numbers do the talking.</p></div>
@@ -370,10 +379,23 @@
   <div class="tiers">
     <div class="tier"><div class="flag">Start here</div><h3>The Website</h3><div class="price">Free<br><small>preview · $500 to go live &amp; keep</small></div><ul><li>Built with your real info + reviews</li><li>Fast, mobile, quote form</li><li>Live on your own domain</li><li>Yours to keep, no strings</li></ul><a class="btn btn-ghost" href="#contact" data-interest="Free site preview">Get my free preview</a></div>
     <div class="tier"><div class="flag">Just the site</div><h3>Site Care</h3><div class="price">$99<small>/mo</small></div><ul><li>Hosting on your own domain</li><li>Edits when you need them</li><li>Google profile kept current</li><li>Support by text, from me</li></ul><a class="btn btn-ghost" href="#contact" data-interest="Site Care">Ask about Site Care</a></div>
-    <div class="tier feature"><div class="flag">Recommended</div><h3>The Office Manager</h3><div class="price">$500<small>/mo · founding · $750 setup</small></div><ul><li>Everything in The Website</li><li>The Callback + The Responder</li><li>The Scheduler + quote follow-up</li><li>The Reviewer</li><li>The 30-day results receipt</li></ul><a class="btn btn-amber" href="#contact" data-interest="The Office Manager">Book a free audit</a></div>
+    <div class="tier feature"><div class="flag">Recommended</div><h3>The Office Manager</h3><div class="price">$500<small>/mo · founding · $750 setup</small></div><ul><li>Everything in The Website</li><li>The Callback + The Responder</li><li>The Scheduler + quote follow-up</li><li>The Reviewer</li><li>The 30-day results receipt</li></ul><a class="btn btn-amber" href="#contact" data-interest="The Office Manager">Book a free 15-minute call</a></div>
     <div class="tier"><div class="flag">Grow into it</div><h3>Add assistants</h3><div class="price">à la carte</div><ul><li>The Scout: local visibility + AI answers</li><li>The Receptionist: AI phone</li><li>The Promoter: content, short video, local ads</li><li>The Reminder: past-customer reactivation</li></ul><a class="btn btn-ghost" href="#contact" data-interest="More assistants">Talk through the options</a></div>
   </div>
-  <p class="price-note">Founding-client rates for the first crews on board. The assessment fee credits your first month.</p>
+  <div class="assess" id="assessment">
+    <div>
+      <p class="eyebrow">Not sure where to start?</p>
+      <h3>The assessment</h3>
+      <p>For any business, any size. A recorded 45-minute interview about how your week actually runs, then a written report: what to automate first, what each fix is worth in your own hours and dollars, and which ones you can do yourself. It's yours to keep, even if you never hire us.</p>
+      <a class="btn btn-amber" href="#contact" data-interest="The assessment ($500)">Book the assessment</a>
+    </div>
+    <ol class="ladder">
+      <li><b>Free 15-minute call</b><span>One bottleneck, one fix you can use. Free.</span></li>
+      <li><b>The assessment · $500 flat</b><span>The interview and the written report. Credited toward your setup if you continue.</span></li>
+      <li><b>The build</b><span>The Office Manager, or a custom project scoped from your report.</span></li>
+    </ol>
+  </div>
+  <p class="price-note">Founding-client rates for the first businesses on board.</p>
   <div class="guarantee"><b>The guarantee:</b> once you say go, your site is live within 7 days or the $500 setup fee comes back. Monthly plans cancel anytime after 90 days.</div>
 </div></section>
 
@@ -397,7 +419,7 @@
       <label>Business name<input name="business" autocomplete="organization" required></label>
       <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
       <label>Type of business<select name="trade"><option>Home services</option><option>Auto</option><option>Beauty &amp; personal care</option><option>Fitness</option><option>Pets</option><option>Food &amp; events</option><option>Professional services</option><option>Other</option></select></label>
-      <label class="full">I'm interested in<select name="interest" id="interest"><option>Free site preview</option><option>Free audit</option><option>15-minute call</option><option>Site Care</option><option>The Office Manager</option><option>More assistants</option><option>Something else</option></select></label>
+      <label class="full">I'm interested in<select name="interest" id="interest"><option>Free site preview</option><option>The assessment ($500)</option><option>15-minute call</option><option>Site Care</option><option>The Office Manager</option><option>More assistants</option><option>Something else</option></select></label>
       <label class="full">Anything I should know?<textarea name="msg" rows="3" placeholder="e.g. we miss calls when the crew is out on jobs"></textarea></label>
       <p class="consent full">By sending, you agree that AutoAnts can call or text you about this request. No lists, no spam.</p>
       <button class="btn btn-amber" type="submit">Send →</button>
@@ -410,8 +432,8 @@
 
 <section class="final"><div class="wrap">
   <h2>Let's find the money<br>you're leaving on the table.</h2>
-  <p>Free audit, free site, no catch. Worst case, you get a website out of it and delete my number.</p>
-  <div class="cta-row" style="justify-content:center"><a class="btn btn-amber" href="#contact" data-interest="Free audit" style="font-size:1.1rem;padding:1.1rem 2rem">Get my free audit + site →</a>
+  <p>Free call, free site, no catch. Worst case, you get a website out of it and delete my number.</p>
+  <div class="cta-row" style="justify-content:center"><a class="btn btn-amber" href="#contact" data-interest="Free site preview" style="font-size:1.1rem;padding:1.1rem 2rem">Get my free site preview →</a>
   <a class="btn btn-ghost" href="#contact" data-interest="15-minute call" data-call style="font-size:1.1rem;padding:1.1rem 2rem">Book a 15-minute call</a></div>
 </div></section>
 
