@@ -26,7 +26,7 @@ Cadence: three feed posts a week, and the matching loop as a Reel or Short the s
 | Week | Day | Feed post (stills) | Reel / Short (loop) |
 |---|---|---|---|
 | 1 | Mon | meet-the-ants | hello |
-| 1 | Wed | the-callback | ringing |
+| 1 | Wed | the-text-back | ringing |
 | 1 | Fri | free-preview (also the story) | |
 | 2 | Mon | the-responder | delivery |
 | 2 | Wed | the-reviewer | thumbs-up |
@@ -45,8 +45,8 @@ Hashtags are kept to three or four, all local or trade: they help a little, and 
 > Meet the ants. 🐜 Each one does one job for your business while you're busy: texts back the calls you miss, answers new leads, books appointments, asks every customer for a review. See what they'd do for you at autoants.com.
 > #SmallBusiness #Louisiana #LocalBusiness
 
-**the-callback**
-> You're up a tree when the phone rings. The homeowner doesn't leave a voicemail; they call the next crew on Google. Callback Ant texts them back in seconds, so the job stays yours.
+**the-text-back**
+> You're up a tree when the phone rings. The homeowner doesn't leave a voicemail; they call the next crew on Google. Text-Back Ant texts them back in seconds, so the job stays yours.
 > #TreeService #SmallBusiness #Louisiana
 
 **the-responder**

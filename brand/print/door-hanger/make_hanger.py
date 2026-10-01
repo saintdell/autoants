@@ -68,7 +68,7 @@ def front(guides):
             f'{die(guides)}</div>')
 
 
-CREW = [("phone", "Callback Ant", "Miss a call and it texts them back in seconds, so the customer stays yours."),
+CREW = [("phone", "Text-Back Ant", "Miss a call and it texts them back in seconds, so the customer stays yours."),
         ("carry", "Responder Ant", "A new lead gets an answer in seconds, even when your hands are full."),
         ("clipboard", "Scheduler Ant", "Requests turn into booked appointments and jobs. You approve; it handles the back-and-forth."),
         ("thumbs", "Reviewer Ant", "Every customer gets the same review ask, one tap from your phone.")]

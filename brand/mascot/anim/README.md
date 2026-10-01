@@ -5,7 +5,7 @@ Five 4-second loops, built from the mascot's own drawing code, so the character 
 | Loop | Gesture | Pairs with |
 |---|---|---|
 | hello | waves twice | Meet the ants |
-| ringing | phone buzzes, the ant answers, eyes go happy | Callback Ant |
+| ringing | phone buzzes, the ant answers, eyes go happy | Text-Back Ant |
 | delivery | walks in place carrying the envelope | Responder Ant |
 | thumbs-up | thumb pops up with a sparkle | Reviewer Ant |
 | on-the-job | hard hat, calm idle: sway and blink | Your office, handled |

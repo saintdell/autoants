@@ -16,7 +16,7 @@ from mascot import mascot  # noqa: E402
 
 ICON = lambda n: open(os.path.join(SITE, "brand", "icons", n + ".svg")).read().strip()
 
-CREW = [("callback", "Callback Ant", "Miss a call and it texts them back in seconds."),
+CREW = [("callback", "Text-Back Ant", "Miss a call and it texts them back in seconds."),
         ("responder", "Responder Ant", "Every new inquiry gets an answer right away, from your site or social."),
         ("scheduler", "Scheduler Ant", "Requests become booked appointments, confirmed and reminded."),
         ("reviewer", "Reviewer Ant", "Every customer gets the same review ask, one tap from your phone."),
@@ -29,21 +29,21 @@ CREW = [("callback", "Callback Ant", "Miss a call and it texts them back in seco
 SECTORS = [
     ("trades", "hardhat", "Home services &amp; trades", "Tree, HVAC, roofing, plumbing, landscaping",
      "You're up a tree or under a house when the phone rings. The homeowner doesn't leave a voicemail; they call the next crew.",
-     [("Callback Ant", "texts every missed call back in seconds"),
+     [("Text-Back Ant", "texts every missed call back in seconds"),
       ("Responder Ant", "answers quote requests while you're on the job"),
       ("Scheduler Ant", "turns requests into booked estimates"),
       ("Reviewer Ant", "asks every customer after every job"),
       ("Receptionist Ant", "picks up after hours, says it's an AI, and texts you the job")], None),
     ("auto", "point", "Auto repair &amp; tire shops", "Mechanics, tire and brake, oil change",
      "Your techs are under a car and the front desk is on the other line. A driver with a check-engine light calls three shops and books the first one that answers.",
-     [("Callback Ant", "texts back the calls nobody could grab"),
+     [("Text-Back Ant", "texts back the calls nobody could grab"),
       ("Responder Ant", "sends an estimate range from your own price list (the final price after inspection, always)"),
       ("Scheduler Ant", "books drop-off times and sends the confirmation"),
       ("Reminder Ant", "\"Your oil change is due\" to customers who opted in"),
       ("Reviewer Ant", "asks every customer when they pick up the car")], None),
     ("salons", "wave", "Salons, nail spas &amp; barbers", "Nails, hair, lashes, brows",
      "Your hands are busy with a client, the phone rings out, and a new client books somewhere else.",
-     [("Callback Ant", "texts back every call you can't take mid-appointment"),
+     [("Text-Back Ant", "texts back every call you can't take mid-appointment"),
       ("Scheduler Ant", "books and confirms appointments, with a reminder the day before"),
       ("Reminder Ant", "\"Time for a fill?\" to clients who said yes"),
       ("Reviewer Ant", "asks every client after the visit"),
@@ -55,7 +55,7 @@ SECTORS = [
       ("Scheduler Ant", "books the tour or first class"),
       ("Reminder Ant", "invites lapsed members back, only those who agreed to hear from you"),
       ("Reviewer Ant", "asks members after their first month"),
-      ("Callback Ant", "texts back the calls the front desk missed")], None),
+      ("Text-Back Ant", "texts back the calls the front desk missed")], None),
 ]
 OTHER = ("carry", "Something else?", "Cleaners, pet groomers, photographers, tutors, repair shops",
          "If your business runs on phone calls and appointments, the crew probably fits. Tell us what eats your week and we'll tell you honestly whether automation would pay for itself.")

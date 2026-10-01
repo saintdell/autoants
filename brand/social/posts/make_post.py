@@ -1,7 +1,7 @@
 """Post templates for autoants social. Edit posts.json (one row per post), then run:
 
     python3 brand/social/posts/make_post.py            # every post, every format
-    python3 brand/social/posts/make_post.py the-callback
+    python3 brand/social/posts/make_post.py the-text-back
 
 Each post comes out in three formats in out/:
   feed   1080x1350  Instagram, Facebook and LinkedIn feed (4:5)
