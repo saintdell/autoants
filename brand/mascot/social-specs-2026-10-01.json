@@ -1,0 +1,230 @@
+{
+  "checked_on": "2026-10-01",
+  "brand": "autoants",
+  "platforms": {
+    "x": {
+      "profile_photo": {
+        "recommended_px": "400x400",
+        "aspect_ratio": "1:1",
+        "max_file_size": "2MB",
+        "formats": ["JPEG", "GIF (not animated)", "PNG"],
+        "display_shape": "circle for standard accounts; square only for X Premium Business / Verified Organizations (gold check). Shape rule is from third-party sources plus X's Premium Business page, not stated on the spec page",
+        "source": "https://help.x.com/en/managing-your-account/common-issues-when-uploading-profile-photo"
+      },
+      "header": {
+        "recommended_px": "1500x500",
+        "aspect_ratio": "3:1",
+        "max_file_size": "not stated on X's help pages (third-party guides say 5MB; unverified)",
+        "formats": ["JPG", "GIF (not animated)", "PNG"],
+        "safe_area": "X says up to 60px top and bottom may be cropped depending on monitor/browser, so keep content inside roughly the middle 1500x380. The avatar also overlaps the lower-left on profile view",
+        "source": "https://help.x.com/en/managing-your-account/how-to-customize-your-profile"
+      }
+    },
+    "instagram": {
+      "profile_photo": {
+        "recommended_px": "no official pixel spec on help.instagram.com; 320x320 is the third-party consensus, so upload 1080x1080 for headroom",
+        "aspect_ratio": "1:1",
+        "display_shape": "circle (the help center describes the web upload target as a circle; the crop is circular on profile and feed)",
+        "official_status": "third-party numbers only",
+        "source": "https://help.instagram.com/1119629518070395"
+      },
+      "feed_post_portrait": {
+        "recommended_px": "1080x1350 (4:5) is the safe standard; Instagram's help center now allows down to 3:4, i.e. 1080x1440",
+        "official_rule": "width 320 to 1080px kept at native resolution if the aspect ratio is between 1.91:1 and 3:4 (1080 wide, 566 to 1440 tall); wider uploads are downsized to 1080",
+        "note": "the profile grid previews posts at 3:4, so a 4:5 post is slightly cropped in the grid",
+        "source": "https://help.instagram.com/1631821640426723/"
+      },
+      "story": {
+        "recommended_px": "1080x1920",
+        "minimum_px": "600x1067",
+        "aspect_ratio": "9:16",
+        "max_file_size": "30MB photo (stated for Stories ads)",
+        "formats": ["JPG", "PNG"],
+        "source": "https://www.facebook.com/business/help/2222978001316177",
+        "note": "Meta's only official Stories pixel spec is on its ads page; organic Stories use the same frame"
+      },
+      "reel_cover": {
+        "recommended_px": "420x654",
+        "aspect_ratio": "1:1.55",
+        "note": "Instagram says a cover can't be edited after upload. Reels accept aspect ratios 1.91:1 to 9:16 at a minimum of 720px and 30fps. In practice, design the cover at 1080x1920 with key content centered so it survives the 3:4 grid crop (design tip, not an Instagram rule)",
+        "source": "https://help.instagram.com/1038071743007909"
+      }
+    },
+    "facebook_page": {
+      "profile_picture": {
+        "recommended_px": "320x320",
+        "display_px": "176x176 desktop, 196x196 smartphone, 36x36 feature phones",
+        "display_shape": "circle",
+        "format_tip": "PNG recommended for logos and text",
+        "source": "https://www.facebook.com/help/125379114252045"
+      },
+      "cover_photo": {
+        "recommended_px": "851x315, sRGB JPG, under 100KB (fastest loading)",
+        "minimum_px": "400x150",
+        "desktop_display": "left-aligned, full bleed, '16:9 aspect ratio' per the help page",
+        "mobile_display": "left-aligned, full bleed, '2.4:1 aspect ratio' per the help page; the profile picture overlaps the cover by about 40px",
+        "safe_area": "Facebook gives no pixel safe area. Its official ratio text looks swapped against the common third-party figures (desktop about 820x312, mobile about 640x360). Third-party advice is to keep key content in the central ~640x312 and clear of the lower-left avatar overlap",
+        "source": "https://www.facebook.com/help/125379114252045"
+      }
+    },
+    "youtube": {
+      "profile_picture": {
+        "recommended_px": "the current help page gives no upload size, only 'renders at 98 x 98 px'. 800x800 is the long-standing figure but now appears only in third-party guides and YouTube's artist-avatar page",
+        "max_file_size": "15MB",
+        "formats": ["JPG", "GIF (not animated)", "BMP", "PNG"],
+        "display_shape": "circle (YouTube's tips page says 'upload a square or round image')",
+        "source": "https://support.google.com/youtube/answer/10456525?hl=en&co=GENIE.Platform%3DDesktop"
+      },
+      "banner": {
+        "recommended_px": "2560x1440 (especially for TV)",
+        "minimum_px": "2048x1152",
+        "aspect_ratio": "16:9",
+        "safe_area_px": "1235x338 at the 2048x1152 minimum, centered. This area shows on every device (about 1544x423 if scaled to 2560x1440; that scaling is our own arithmetic)",
+        "max_file_size": "6MB",
+        "rules": "no added shadows, borders or frames",
+        "source": "https://support.google.com/youtube/answer/10456525?hl=en&co=GENIE.Platform%3DDesktop"
+      },
+      "video_thumbnail": {
+        "recommended_px": "3840x2160 for videos (changed from the older 1280x720); 2160x3840 for Shorts",
+        "minimum": "640px wide for videos, 640px tall for Shorts",
+        "aspect_ratio": "16:9 videos, 9:16 Shorts, 1:1 podcast playlists",
+        "max_file_size": "2MB when uploading from mobile (10MB podcasts); 50MB when uploading from desktop",
+        "formats": ["JPG", "PNG"],
+        "requirement": "account must be verified to upload custom thumbnails",
+        "source": "https://support.google.com/youtube/answer/72431?hl=en&co=GENIE.Platform%3DDesktop"
+      }
+    },
+    "linkedin_company_page": {
+      "logo": {
+        "minimum_px": "268x268",
+        "recommended_px": "400x400",
+        "max_file_size": "3MB",
+        "formats": ["PNG", "JPEG"],
+        "display_shape": "square (LinkedIn company logos render square; the help page doesn't state a shape). LinkedIn: 'If your logo is transparent, it will be shown on a white background'; logos appear on both light and dark backgrounds",
+        "source": "https://www.linkedin.com/help/linkedin/answer/a563309/image-specifications-for-your-linkedin-pages-and-career-pages"
+      },
+      "cover_image": {
+        "recommended_px": "1512x256 (also the minimum)",
+        "aspect_ratio": "about 5.9:1",
+        "max_file_size": "3MB",
+        "formats": ["PNG", "JPEG (high-res JPEG preferred)"],
+        "safe_area": "LinkedIn gives no pixel safe area. It says the image may be trimmed horizontally or vertically and to keep key details away from the edges, especially the lower-right corner",
+        "conflict_note": "Third-party guides still quote 1128x191 or 4200x700. The official page (re-fetched raw 2026-10-01, 'last updated 1 month ago') says 1512x256",
+        "source": "https://www.linkedin.com/help/linkedin/answer/a563309/image-specifications-for-your-linkedin-pages-and-career-pages"
+      }
+    },
+    "yelp": {
+      "logo_slot": "No free logo slot. A logo on the Yelp page is a feature of the paid Business Page Upgrade Package (Yelp's page says about $6/day on average after a 14-day trial). Yelp publishes no logo specs",
+      "logo_source": "https://business.yelp.com/products/upgrades/",
+      "business_photos": {
+        "max_px": "smaller than 8000x8000 (some third-party guides say 5000x5000; that's outdated)",
+        "formats": "not stated",
+        "guidance": "Yelp marketing content (third-party summaries) says to avoid stock images and photos of just your logo",
+        "source": "https://biz.yelp.com/support-center/article/How-do-I-post-photos-of-my-business-to-Yelp"
+      },
+      "business_account_profile_photo": {
+        "rule": "Must be a real, clear photo of the business representative's face, and moderators must approve it before you can respond to reviews. Yelp explicitly rejects logos, storefronts, stock photos, group shots, distant shots and blurry shots",
+        "source": "https://biz.yelp.com/support-center/article/How-do-I-add-or-change-my-business-account-profile-photo"
+      }
+    },
+    "google_business_profile": {
+      "all_photos_incl_logo_and_cover": {
+        "formats": ["JPG", "PNG"],
+        "file_size": "10KB to 5MB",
+        "recommended_px": "720x720",
+        "minimum_px": "250x250",
+        "source": "https://support.google.com/business/answer/6103862?hl=en&co=GENIE.Platform%3DDesktop"
+      },
+      "logo": {
+        "spec": "Google gives no logo-specific size beyond the general photo spec; use a square 720x720+ image",
+        "display_shape": "not stated by Google (unverified)",
+        "visibility_rule": "The logo shows only when the profile has name, a valid location with a street address, categories, phone and hours. A service-area business with a hidden address may not show its logo",
+        "source": "https://support.google.com/business/answer/6103862?hl=en&co=GENIE.Platform%3DDesktop"
+      },
+      "cover_photo": {
+        "spec": "Google gives no cover-specific size; it displays wide. Third-party guides recommend 1024x576 (16:9)",
+        "rules": "Should 'best represent your business'. Setting a cover doesn't guarantee it shows first, and Google may substitute a user photo if yours is low quality or other sources suggest a better one",
+        "source": "https://support.google.com/business/answer/6103862?hl=en&co=GENIE.Platform%3DDesktop"
+      },
+      "content_rules": "All photos must be in focus and well lit with 'no significant alterations or excessive use of filters', i.e. represent reality. They must also comply with Google's Maps user-contributed content policy. Media appears only after the profile is verified and takes 24-48 hours to go live"
+    },
+    "apple_business_connect": {
+      "naming_note": "Apple's guide now calls the product 'Apple Business' (formerly Apple Business Connect)",
+      "logo": {
+        "minimum_px": "1024x1024",
+        "maximum_px": "4864x4864",
+        "aspect_ratio": "1:1",
+        "formats": ["HEIF", "JPEG", "PNG", "SVG"],
+        "svg_rules": "15MB max, well-formed XML, no <style>/<image>/<use>/<script>/<foreignObject> etc., no style/href attributes, no data: values (flatten styles to presentation attributes)",
+        "best_practice": "solid background, keep the mark away from the side edges, don't crop it too small. The logo is reused on every location's cover photo, merchant ID and branded mail",
+        "approval": "Apple approves logos, which can take up to 5 business days",
+        "display_shape": "not stated by Apple (unverified; keep the mark centered with padding to be safe under any crop)",
+        "source": "https://support.apple.com/guide/business/brand-identity-attributes-abcbb1973199/web"
+      },
+      "cover_photo": {
+        "minimum_px": "1600x1040",
+        "maximum_px": "4864x4864",
+        "crops": "2.5:1 center crop for Maps; 1.54:1 display crop for Apple Wallet",
+        "formats": ["HEIF", "JPEG", "PNG"],
+        "rule": "a single photo with no edits, promotional text, watermarks or clip art",
+        "source": "https://support.apple.com/guide/business/about-the-cover-photo-abcb139fcd45/web"
+      },
+      "content_rules": {
+        "summary": "Photos must be relevant to and recognizably of your location. Banned: text-heavy images or screenshots, filters, overlays, collages, date stamps, emoji, clip art, illustrations, stock photos, watermarks, QR codes, added text, graphics or borders, and ANY AI-GENERATED CONTENT. You need rights to the photo and permission from everyone pictured. Apple reviews photos in up to 3 business days, with a 100-photo limit per location",
+        "source": "https://support.apple.com/guide/business/photo-and-text-standards-and-guidelines-abcbbe8862ec/web",
+        "style_guide": "https://support.apple.com/guide/business/apple-business-image-style-guide-axm1009cd52f/web"
+      }
+    }
+  },
+  "handles": {
+    "x": {
+      "handle": "autoants",
+      "status": "likely_free",
+      "evidence": "x.com/autoants returns HTTP 404 'User Profile Not Found'. Logged out, the page says 'We're unable to show this account. The account may be private, deleted, or only available on the app.' This is identical to a gibberish-handle control; x.com/nasa returns 200 as the positive control. A suspended or recently deactivated account can look the same logged out, so this is confirmed only at signup",
+      "fallbacks_checked": {"autoantsla": "404", "autoants_la": "404", "autoantsco": "404", "autoantshq": "404", "getautoants": "404"}
+    },
+    "instagram": {
+      "handle": "autoants",
+      "status": "taken",
+      "evidence": "A profile exists at instagram.com/autoants with 0 followers, 0 following, 0 posts, no display name, no bio and the default avatar. It's a dormant placeholder account. The control (gibberish handle) shows 'Profile isn't available'. Owner unknown; Lane should confirm it isn't his own",
+      "fallbacks_checked": {"autoantsla": "Profile isn't available (likely free)", "autoants_la": "Profile isn't available (likely free)", "autoantsco": "Profile isn't available (likely free)", "autoantshq": "Profile isn't available (likely free)"},
+      "note": "Instagram can release inactive usernames only through its own process (no guaranteed path). Plan on a fallback"
+    },
+    "facebook": {
+      "handle": "autoants",
+      "status": "taken",
+      "evidence": "facebook.com/autoants redirects to facebook.com/AutoAnts/, a Chinese-language gaming Page titled '小小蟻國輔助-自動蟻國' (a bot/cheat helper for an ant-colony mobile game) with 99 followers. The last visible post is dated May 24, 2022 (a LINE contact promo). Dormant, but the username is held",
+      "fallbacks_checked": {"autoantsla": "'This content isn't available right now' (same as gibberish control, so likely free but not conclusive logged out)", "autoantsco": "same as control (likely free, inconclusive)"}
+    },
+    "youtube": {
+      "handle": "@autoants",
+      "status": "likely_free",
+      "evidence": "youtube.com/@autoants returns HTTP 404; youtube.com/@nasa returns 200 as the control. A 404 means no channel holds the handle, though YouTube may still reserve or block some handles at claim time",
+      "fallbacks_checked": {"@autoantsla": "404", "@autoants_la": "404", "@autoantsco": "404", "@autoantshq": "404", "@getautoants": "404"}
+    },
+    "linkedin": {
+      "handle": "company/autoants",
+      "status": "likely_free",
+      "evidence": "linkedin.com/company/autoants returns HTTP 404, the same as a gibberish control; linkedin.com/company/google returns 200. A page that exists under a different vanity slug wouldn't show here",
+      "fallbacks_checked": {"autoantsla": "404", "autoants-la": "404", "autoantsco": "404", "autoantshq": "404", "getautoants": "404"}
+    }
+  },
+  "recommended_handle_plan": {
+    "option_a_consistent_everywhere": "autoantsla. Free on X, IG, YT and LinkedIn, and FB looks free (inconclusive). It carries the Louisiana signal and has no underscore, which reads cleanly spoken aloud",
+    "option_b": "autoantsco",
+    "option_c": "autoantshq",
+    "option_d_keep_bare_where_free": "@autoants on X, YouTube and LinkedIn, plus autoantsla on Instagram and Facebook. This splits the brand; not recommended unless the bare name matters more than consistency",
+    "note": "Claim all five on the same day; handles are first-come. Nothing was signed up or submitted during this check"
+  },
+  "notes": [
+    "All specs were read from each platform's own help or docs page on 2026-10-01 unless marked as third-party.",
+    "Third-party-only numbers: Instagram profile photo pixel size (320x320), YouTube profile picture upload size (800x800), the X header max file size, the X square-avatar rule for organizations, Facebook cover pixel safe area, Google cover 16:9/1024x576, and Apple and Google logo display shapes.",
+    "Changes vs. common cheat sheets: LinkedIn cover is now 1512x256 (not 1128x191 or 4200x700); YouTube thumbnail recommendation is now 3840x2160 (not 1280x720); Instagram feed now officially accepts up to 3:4; Yelp photo cap is 8000x8000.",
+    "Facebook's official cover text says desktop is 16:9 and mobile 2.4:1, which looks swapped against observed rendering. Design one 851x315-or-larger image with center-weighted content.",
+    "APPLE BLOCKER: Apple Business bans AI-generated content, illustrations, clip art and added graphics in photos, including the cover. The cover must be a real, unedited photo. If the AUT◯ANTS mark or any imagery was AI-generated, it may not pass for the cover. The logo slot is separate and expects a graphic logo, but the logo is also reviewed against the standards.",
+    "Google logo visibility needs a full profile with a valid street address. If AutoAnts runs as a service-area business with a hidden address, the logo may not display.",
+    "Yelp: a logo on the page is a paid Upgrade feature, and the business-account profile photo must be Lane's face, never the logo.",
+    "Circle-safe design: X (standard accounts), Instagram, Facebook and YouTube avatars render as circles. Keep the AUT◯ANTS mark inside the inscribed circle with ~10-15% padding. LinkedIn logos render square.",
+    "Handle checks were logged-out, read-only page fetches with positive and negative controls. Nothing was signed up, logged into or submitted. TikTok was not checked (not requested)."
+  ]
+}
