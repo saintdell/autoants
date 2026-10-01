@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Tree Quote Demo · AutoAnts</title>
+<meta name="description" content="A walk-through demo of the AutoAnts quote assistant for tree work, running on sample rates.">
+<link rel="icon" href="/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+:root{
+  --forest:#0f5132; --mint:#3ddcae; --stone:#ebe8e2; --ink:#0f2a1d; --night:#0b1712;
+  --ground:#f5f3ee; --card:#ffffff; --line:#d9d5cc; --muted:#56635a; --soft:#e7efe9; --warn:#8a4b08; --warn-bg:#fdf1e2;
+  --accent:var(--forest); --on-accent:#ffffff;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --line:#26372d; --muted:#9db0a4; --soft:#17291f; --warn:#f3b56a; --warn-bg:#2a1f12; --accent:#3ddcae; --on-accent:#0b1712; }
+}
+:root[data-theme="dark"]{ --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --line:#26372d; --muted:#9db0a4; --soft:#17291f; --warn:#f3b56a; --warn-bg:#2a1f12; --accent:#3ddcae; --on-accent:#0b1712; }
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--ground);color:var(--ink);font:500 16px/1.45 Onest,system-ui,-apple-system,sans-serif}
+main{max-width:980px;margin:0 auto;padding:20px 16px 56px;display:flex;flex-direction:column;gap:16px}
+.banner{margin:0;background:var(--warn-bg);color:var(--warn);border-radius:12px;padding:10px 14px;font-size:14px;font-weight:700}
+header h1{margin:0;font-size:clamp(26px,5vw,38px);font-weight:800;letter-spacing:-.03em;text-wrap:balance}
+header p{margin:6px 0 0;color:var(--muted);max-width:62ch}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:760px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:14px}
+.label{font:700 11px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+legend{font-size:14px;font-weight:700;color:var(--muted);margin-bottom:6px;padding:0}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label{border:1px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer;font-size:15px;background:var(--ground)}
+.seg input:checked + label{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:700}
+.seg input:focus-visible + label{outline:3px solid var(--mint);outline-offset:2px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.field{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:700;color:var(--muted)}
+input[type=number]{font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px;min-height:44px;width:100%;font-variant-numeric:tabular-nums}
+.checks{display:flex;flex-direction:column;gap:8px}
+.checks label{display:flex;gap:10px;align-items:center;font-size:15px}
+.checks input{width:20px;height:20px;accent-color:var(--forest)}
+.toggle{display:inline-flex;background:var(--ground);border:1px solid var(--line);border-radius:999px;padding:3px;align-self:flex-start}
+.toggle button{font:inherit;font-weight:700;font-size:14px;border:0;background:transparent;color:var(--ink);padding:8px 14px;border-radius:999px;cursor:pointer;min-height:40px}
+.toggle button[aria-pressed=true]{background:var(--accent);color:var(--on-accent)}
+.price{font-size:clamp(34px,6vw,48px);font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1}
+.sub{color:var(--muted);font-size:14px;margin:0}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:15px}
+td{padding:7px 0;border-top:1px solid var(--line)}
+td:last-child{text-align:right}
+tr.total td{font-weight:800}
+.visit{background:var(--warn-bg);color:var(--warn);border-radius:12px;padding:12px;font-weight:700}
+.custcard{border:2px solid var(--accent);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.hidden{display:none !important}
+details summary{cursor:pointer;font-weight:800;list-style:none}
+details summary::after{content:" +";color:var(--muted)}
+details[open] summary::after{content:" −"}
+.book{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:12px}
+.book .field{font-size:13px}
+.reset{font:inherit;font-weight:700;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 12px;cursor:pointer;justify-self:start;min-height:40px}
+footer{font-size:13px;color:var(--muted)}
+footer a{color:inherit}
+:focus-visible{outline:3px solid var(--mint);outline-offset:2px}
+</style>
+</head>
+<body>
+<main>
+  <p class="banner">Sample rates. Before anyone uses this, it gets set to your prices and checked against your last 20 quotes.</p>
+  <header>
+    <div class="label">Quote assistant · tree work</div>
+    <h1>Quote it before you hang up.</h1>
+    <p>Your crew types in what the caller describes and gets your number back in seconds: your rates, your markup, your minimums. The customer only ever sees the range.</p>
+  </header>
+
+  <div class="grid">
+    <form class="card" id="job" aria-label="The job">
+      <div class="label">The job</div>
+      <fieldset><legend>Work</legend><div class="seg" id="service"></div></fieldset>
+      <fieldset id="heightset"><legend>Tree height</legend><div class="seg" id="height"></div></fieldset>
+      <div class="row">
+        <label class="field" id="diamwrap">Trunk across (inches)<input type="number" id="diameter" min="2" max="80" value="24"></label>
+        <label class="field">Stump across (inches)<input type="number" id="stump_diameter" min="0" max="80" value="24"></label>
+      </div>
+      <fieldset id="locset"><legend>Where it stands</legend><div class="seg" id="location"></div></fieldset>
+      <fieldset id="accset"><legend>Getting to it</legend><div class="seg" id="access"></div></fieldset>
+      <div class="checks">
+        <label><input type="checkbox" id="haul_off" checked> Haul off the wood and debris</label>
+        <label><input type="checkbox" id="stump"> Grind the stump</label>
+        <label><input type="checkbox" id="power_lines"> Power lines near the tree</label>
+      </div>
+    </form>
+
+    <section class="card" aria-live="polite">
+      <div class="toggle" role="group" aria-label="Who is looking">
+        <button type="button" id="v-crew" aria-pressed="true">Crew view</button>
+        <button type="button" id="v-cust" aria-pressed="false">Customer view</button>
+      </div>
+      <div id="crew"></div>
+      <div id="cust" class="hidden"></div>
+    </section>
+  </div>
+
+  <details class="card" id="bookcard">
+    <summary>Your price book <span class="sub" style="font-weight:500">(sample numbers, change any of them)</span></summary>
+    <div class="book" id="book"></div>
+    <button type="button" class="reset" id="reset">Back to the sample rates</button>
+  </details>
+
+  <footer>A demo of the quote assistant by <a href="/">AutoAnts</a>. Prices come from the rate table and plain arithmetic, so the same job always gets the same number. Nothing here is a real company's pricing.</footer>
+</main>
+<script type="module">
+import { quote, customerView, SAMPLE_BOOK, HEIGHTS } from "./engine.js";
+
+const $ = id => document.getElementById(id);
+let book = structuredClone(SAMPLE_BOOK);
+let view = "crew";
+const money = n => "$" + Math.round(n).toLocaleString("en-US");
+
+const OPTIONS = {
+  service: [["removal", "Take it down"], ["trim", "Trim"], ["stump-only", "Stump only"]],
+  height: HEIGHTS.map(h => [h, { "under-30": "Under 30 ft", "30-60": "30–60 ft", "60-80": "60–80 ft", "over-80": "Over 80 ft" }[h]]),
+  location: [["open", "Open yard"], ["near-house", "Near the house"], ["over-house", "Over the house"]],
+  access: [["truck", "Truck can reach"], ["backyard-climb", "Backyard, climb it"]],
+};
+const DEFAULTS = { service: "removal", height: "60-80", location: "near-house", access: "truck" };
+for (const [name, opts] of Object.entries(OPTIONS)) {
+  $(name).innerHTML = opts.map(([v, t]) =>
+    `<input type="radio" name="${name}" id="${name}-${v}" value="${v}" ${v === DEFAULTS[name] ? "checked" : ""}><label for="${name}-${v}">${t}</label>`).join("");
+}
+
+const BOOK_FIELDS = [
+  ["crew_cost_per_hour", "Crew cost / hour ($)"], ["equipment_cost_per_hour", "Truck + chipper / hour ($)"],
+  ["markup", "Markup (x cost)"], ["minimum", "Minimum job ($)"], ["stump_price_per_inch", "Stump $ / inch"],
+  ...HEIGHTS.map(h => [`removal_hours.${h}`, `Removal hours, ${h.replace("-", "–")} ft`]),
+  ["range_pct", "Customer range (±)"],
+];
+const getPath = (o, p) => p.split(".").reduce((a, k) => a[k], o);
+const setPath = (o, p, v) => { const ks = p.split("."); const last = ks.pop(); ks.reduce((a, k) => a[k], o)[last] = v; };
+function renderBook() {
+  $("book").innerHTML = BOOK_FIELDS.map(([p, t]) =>
+    `<label class="field">${t}<input type="number" step="any" min="0" data-p="${p}" value="${getPath(book, p)}"></label>`).join("");
+}
+
+function job() {
+  const val = n => document.querySelector(`input[name=${n}]:checked`).value;
+  return { service: val("service"), height: val("height"), location: val("location"), access: val("access"),
+           diameter: Number($("diameter").value) || 0, stump_diameter: Number($("stump_diameter").value) || 0,
+           haul_off: $("haul_off").checked, stump: $("stump").checked, power_lines: $("power_lines").checked };
+}
+
+function render() {
+  const j = job();
+  const stumpOnly = j.service === "stump-only";
+  for (const id of ["heightset", "locset", "accset", "diamwrap"]) $(id).classList.toggle("hidden", stumpOnly);
+  let q;
+  try { q = quote(j, book); } catch (e) { $("crew").innerHTML = `<p class="visit">${e.message}</p>`; return; }
+  const visit = q.needs_visit ? `<div class="visit">Site visit first: ${q.visit_reasons.join(" ")}</div>` : "";
+  $("crew").innerHTML = `
+    <div class="label">What we'd quote</div>
+    <div class="price">${money(q.price)}</div>
+    <p class="sub">Customer sees ${money(q.low)}–${money(q.high)} · margin ${q.margin_pct}%${q.minimum_applied ? " · minimum job applied" : ""}</p>
+    ${visit}
+    <table>${q.lines.map(l => `<tr><td>${l.label}</td><td>${money(l.cost)}</td></tr>`).join("")}
+      <tr class="total"><td>Your cost</td><td>${money(q.cost)}</td></tr>
+      <tr><td>Markup</td><td>× ${book.markup}</td></tr></table>
+    <p class="sub">Price book ${q.book_version} · valid ${q.valid_days} days</p>`;
+  const c = customerView(q);
+  $("cust").innerHTML = c.needs_visit
+    ? `<div class="custcard"><strong>${c.message}</strong><span class="sub">${c.reasons.join(" ")}</span></div>`
+    : `<div class="custcard"><div class="label">${c.label}</div><div class="price">${money(c.low)}–${money(c.high)}</div>
+       <span class="sub">Good for ${c.valid_days} days. ${c.terms}</span></div>
+       <p class="sub">That's everything the customer sees: no costs, no markup, no margin.</p>`;
+}
+
+function setView(v) {
+  view = v;
+  $("v-crew").setAttribute("aria-pressed", v === "crew"); $("v-cust").setAttribute("aria-pressed", v === "cust");
+  $("crew").classList.toggle("hidden", v !== "crew"); $("cust").classList.toggle("hidden", v !== "cust");
+}
+$("v-crew").onclick = () => setView("crew");
+$("v-cust").onclick = () => setView("cust");
+$("job").addEventListener("input", render);
+$("book").addEventListener("input", e => {
+  const p = e.target.dataset.p; const v = Number(e.target.value);
+  if (p && Number.isFinite(v)) { setPath(book, p, v); book.version = "edited"; render(); }
+});
+$("reset").onclick = () => { book = structuredClone(SAMPLE_BOOK); renderBook(); render(); };
+renderBook(); render();
+</script>
+</body>
+</html>
