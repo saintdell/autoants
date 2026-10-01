@@ -58,9 +58,9 @@ def front():
 
 def back():
     s = B * 2 + .06
-    hat = mascot("hardhat", 100, dark=True).replace('width="100" height="130"', 'style="height:1.5in;width:auto;display:block"')
+    hat = mascot("wave", 100, dark=True).replace('width="100" height="130"', 'style="height:1.5in;width:auto;display:block"')
     return (f'<div style="position:absolute;left:{s+.02}in;bottom:{s-.02}in">{hat}</div>'
-            f'<div style="position:absolute;left:1.42in;top:{s+.04}in;width:1.15in;font:800 13pt/1.04 Onest;letter-spacing:-.02em;color:{STONE}">Never miss another job.</div>'
+            f'<div style="position:absolute;left:1.42in;top:{s+.04}in;width:1.2in;font:800 11.5pt/1.08 Onest;letter-spacing:-.02em;color:{STONE};text-wrap:balance">Automated assistants for local businesses.</div>'
             f'<div style="position:absolute;right:{s}in;top:{s}in;background:{STONE};border-radius:.08in;padding:.1in">{qr_svg(CARD["qr"], .74)}</div>'
             f'<div style="position:absolute;right:{s}in;top:{s+1.0}in;width:.94in;text-align:center;font:700 6.5pt/1.3 Onest;color:{MINT}">'
             f'Scan for your free site preview</div>')

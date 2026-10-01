@@ -73,7 +73,7 @@ CREW = [("phone", "The Callback", "Miss a call and it texts them back in seconds
         ("clipboard", "The Scheduler", "Requests turn into booked appointments and jobs. You approve; it handles the back-and-forth."),
         ("thumbs", "The Reviewer", "Every customer gets the same review ask, one tap from your phone.")]
 STEPS = [("Reach out", "Scan the code, visit autoants.com, or call or text."),
-         ("Tell us about your business", "A two-minute form: your name, number and business. A real person gets back to you, usually the same day."),
+         ("Tell us about your business", "A two-minute form: your name, number and business. We get back to you, usually the same day."),
          ("See your free preview", "Your new site, built with your real info and reviews, before you pay anything."),
          ("Pick your crew", "A 15-minute call to choose the assistants you want. Once you say go, your site is live within 7 days or the $500 setup fee comes back.")]
 
@@ -102,7 +102,7 @@ def back(guides):
             f'<div style="font:700 7.5pt JetBrains Mono,monospace;letter-spacing:.14em;text-transform:uppercase;color:{FOREST}">How it works</div>'
             f'<div style="margin-top:.06in">{steps}</div></div>'
             f'<div style="position:absolute;left:.38in;right:.38in;bottom:.42in;border-top:2px solid {INK};padding-top:.1in;display:flex;justify-content:space-between;align-items:flex-end">'
-            f'<div><div style="font:800 12pt Onest">autoants</div><div style="font:500 8pt Onest;color:#4d5a51">Louisiana-built · real people, not a call center</div></div>'
+            f'<div style="font:800 14pt Onest">autoants</div>'
             f'<div style="text-align:right;font:500 7.6pt/1.55 JetBrains Mono,monospace">{phone}<br>{INFO["email"]}<br><b style="color:{FOREST}">{INFO["web"]}</b></div></div>'
             f'{die(guides)}</div>')
 

@@ -6,14 +6,14 @@ Everything needed to set up @autoants and run the first three weeks. Nothing pos
 
 | Platform | Profile picture | Banner | Bio (length checked against the limit) | Link |
 |---|---|---|---|---|
-| Instagram @autoants | `profile-1080.png` | none | Automated assistants for tree, HVAC & roofing crews. Never miss another job. See your new site before you pay ↓ (111/150) | autoants.com |
-| X @autoants | `profile-400.png` | `x-header-1500x500.png` | Automated assistants for tree, HVAC & roofing crews. Missed calls texted back, leads answered, every customer asked for a review. Louisiana-built. (146/160) | autoants.com |
-| Facebook page "autoants" (facebook.com/autoantshq) | `profile-1080.png` | `facebook-cover-1702x630.png` | Automated assistants for tree, HVAC & roofing crews. Never miss another job. (76/101) | autoants.com |
+| Instagram @autoants | `profile-1080.png` | none | Automated assistants for local businesses. Missed calls texted back, leads answered, reviews asked for. See your new site before you pay ↓ (138/150) | autoants.com |
+| X @autoants | `profile-400.png` | `x-header-1500x500.png` | Automated assistants for local businesses. Missed calls texted back, leads answered, every customer asked for a review. Louisiana-built. (136/160) | autoants.com |
+| Facebook page "autoants" (facebook.com/autoantshq) | `profile-1080.png` | `facebook-cover-1702x630.png` | Automated assistants for local businesses: missed calls, fast replies, booking and reviews. (91/101) | autoants.com |
 | YouTube @autoants | `profile-1080.png` | `youtube-banner-2560x1440.png` | the long version below | autoants.com |
-| LinkedIn page "autoants" | `profile-400.png` | `linkedin-cover-1512x256.png` | Tagline: Automated assistants for tree, HVAC & roofing crews: never miss another job. (76/120) | autoants.com |
+| LinkedIn page "autoants" | `profile-400.png` | `linkedin-cover-1512x256.png` | Tagline: Automated assistants for local businesses. (42/120) | autoants.com |
 
 **Long version** (YouTube About, LinkedIn About, Facebook details):
-> autoants builds automated assistants for tree service, HVAC and roofing crews in Louisiana. Each one has one job: text back a missed call, answer a new lead in seconds, book the estimate, ask every customer for a review. You stay the boss; nothing goes to a customer without your OK. We build your new website before you pay a dime. See yours at autoants.com.
+> autoants builds automated assistants for local businesses in Louisiana: trades, auto shops, salons, gyms and more. Each one has one job: text back a missed call, answer a new lead in seconds, book the estimate, ask every customer for a review. You stay the boss; nothing goes to a customer without your OK. We build your new website before you pay a dime. See yours at autoants.com.
 
 **Business category:** "Software company" or "Marketing agency" (Facebook, LinkedIn). Don't list an attorney or legal category anywhere on AutoAnts profiles; that keeps the legal firewall clean.
 
