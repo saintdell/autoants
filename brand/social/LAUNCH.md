@@ -7,7 +7,7 @@ Everything needed to set up @autoants and run the first three weeks. Nothing pos
 | Platform | Profile picture | Banner | Bio (length checked against the limit) | Link |
 |---|---|---|---|---|
 | Instagram @autoants | `profile-1080.png` | none | Automated assistants for local businesses. Missed calls texted back, leads answered, reviews asked for. See your new site before you pay ↓ (138/150) | autoants.com |
-| X @autoants | `profile-400.png` | `x-header-1500x500.png` | Automated assistants for local businesses. Missed calls texted back, leads answered, every customer asked for a review. Louisiana-built. (136/160) | autoants.com |
+| X @autoants | `profile-400.png` | `x-header-1500x500.png` | Automated assistants for local businesses. Missed calls texted back, leads answered, every customer asked for a review. (119/160) | autoants.com |
 | Facebook page "autoants" (facebook.com/autoantshq) | `profile-1080.png` | `facebook-cover-1702x630.png` | Automated assistants for local businesses: missed calls, fast replies, booking and reviews. (91/101) | autoants.com |
 | YouTube @autoants | `profile-1080.png` | `youtube-banner-2560x1440.png` | the long version below | autoants.com |
 | LinkedIn page "autoants" | `profile-400.png` | `linkedin-cover-1512x256.png` | Tagline: Automated assistants for local businesses. (42/120) | autoants.com |
