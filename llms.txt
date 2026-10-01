@@ -9,7 +9,7 @@
 
 ## What AutoAnts does
 - Builds fast, mobile-first websites for local service businesses, with
-  instant-quote forms and click-to-call (free preview built first; $750 one time
+  instant-quote forms and click-to-call (free preview built first; $500 one time
   to go live on the client's own domain with the quote form wired to
   their phone)
 - Google Business Profile cleanup so the business appears correctly in
@@ -26,7 +26,7 @@
 ## How it works
 1. AutoAnts builds a free one-page preview site for a business, using its
    real reviews, license numbers, and (with permission) its own branding
-2. If the owner wants it live: $750 one time covers their domain, a
+2. If the owner wants it live: $500 one time covers their domain, a
    working quote form that texts them every lead, and Google Business
    Profile cleanup. Guarantee: live within 7 days of the go-ahead, or the
    setup fee comes back
