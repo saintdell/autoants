@@ -18,8 +18,24 @@
   ChatGPT/Claude/Perplexity recommend a business, then fixing the
   legitimate signals those answers draw on
 - Site Care: $99/month keeps the site, listings, and content current
-- The Office Manager: $500/month (founding rate) adds missed-call
-  text-back, speed-to-lead, booking and quote follow-up, and review requests
+- The Office Manager: $750 setup + $500/month (founding rate) adds
+  missed-call text-back, speed-to-lead, booking and quote follow-up, and
+  review requests
+- The assessment: $500 flat. A recorded 45-minute interview, then a
+  written report on what to automate first, what each fix is worth in the
+  owner's own numbers, and which fixes they can do themselves. Credited
+  toward setup if they continue. A free 15-minute call comes first.
+
+## The assistants ("Ants", one job each; the owner approves what goes to customers)
+- Text-Back Ant: texts back a missed call within seconds
+- Responder Ant: answers a new web or social lead within seconds
+- Scheduler Ant: turns quote requests into estimates and booked appointments
+- Reviewer Ant: asks every customer for a review, the same way every time
+- Receptionist Ant: answers calls the owner can't pick up, says it's an AI,
+  texts the details to the owner
+- Scout Ant: local listings and AI-search visibility
+- Reminder Ant: reaches past customers who agreed to hear from the business
+- Promoter Ant: short job videos and local ads
 
 ## How it works
 1. AutoAnts builds a free one-page preview site for a business, using its
@@ -49,6 +65,7 @@
 - Website: https://autoants.com
 - AI assistant information page: https://autoants.com/ai/
 - This file: https://autoants.com/llms.txt
+- Privacy and texting terms: https://autoants.com/privacy.html
 
 ## Contact
 - Contact: the form at https://autoants.com/#contact
