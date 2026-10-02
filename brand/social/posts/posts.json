@@ -47,5 +47,82 @@
     "eyebrow": "Free site preview",
     "line": "See your new site before you pay.",
     "sub": "Your name, your reviews, on a real site. Ask at autoants.com."
+  },
+  {
+    "slug": "mistake-voicemail",
+    "pose": "phone",
+    "eyebrow": "One mistake",
+    "line": "Voicemail isn't a receptionist.",
+    "sub": "Plenty of callers hang up instead of leaving one. A text back in seconds keeps them talking."
+  },
+  {
+    "slug": "number-missed-calls",
+    "pose": "clipboard",
+    "eyebrow": "One number",
+    "line": "8 missed calls a week.",
+    "sub": "At 3 in 10 booking and a $650 job, that's about $6,700 a month. Example math: try yours at autoants.com."
+  },
+  {
+    "slug": "the-assessment",
+    "pose": "clipboard",
+    "eyebrow": "Not sure where to start?",
+    "line": "Find the one fix worth making first.",
+    "sub": "A 45-minute interview, then a written plan with what each fix is worth to you."
+  },
+  {
+    "slug": "who-auto",
+    "pose": "phone",
+    "eyebrow": "Auto shops",
+    "line": "Under a car when the phone rings?",
+    "sub": "The caller gets a text in seconds. You call back when your hands are free."
+  },
+  {
+    "slug": "mistake-reviews",
+    "pose": "thumbs",
+    "eyebrow": "One mistake",
+    "line": "Only asking your happiest customers.",
+    "sub": "Ask every customer, the same way, every time. It's fairer, and it's Google's rule."
+  },
+  {
+    "slug": "who-salons",
+    "pose": "carry",
+    "eyebrow": "Salons & spas",
+    "line": "Hands full, phone ringing.",
+    "sub": "Booking requests get an answer while you finish the client in your chair."
+  },
+  {
+    "slug": "number-first-reply",
+    "pose": "carry",
+    "eyebrow": "One number",
+    "line": "Seconds, not hours.",
+    "sub": "A new lead is shopping around. Answer while they're still on your page."
+  },
+  {
+    "slug": "who-gyms",
+    "pose": "wave",
+    "eyebrow": "Gyms & studios",
+    "line": "A trial request at 10 pm.",
+    "sub": "It gets an answer before they lose interest. You pick it up in the morning."
+  },
+  {
+    "slug": "straight-answer-ai",
+    "pose": "wave",
+    "eyebrow": "Straight answer",
+    "line": "Yes, it's AI. It says so.",
+    "sub": "Our phone receptionist tells callers up front, then texts the details to you."
+  },
+  {
+    "slug": "who-restaurants",
+    "pose": "point",
+    "eyebrow": "Restaurants & bars",
+    "line": "Every table gets the review ask.",
+    "sub": "A QR card on the table and receipt. Every guest, no filtering, no freebies for stars."
+  },
+  {
+    "slug": "who-we-help",
+    "pose": "hardhat",
+    "eyebrow": "Who we help",
+    "line": "Not just contractors.",
+    "sub": "Auto shops, salons, gyms, restaurants, pet care and more. See yours at autoants.com."
   }
 ]

@@ -13,7 +13,7 @@ BRAND = os.path.normpath(os.path.join(HERE, "..", ".."))
 sys.path.insert(0, os.path.join(BRAND, "mascot"))
 from mascot import mascot, FOREST, MINT, STONE, INK, NIGHT  # noqa: E402
 
-CARD = dict(name="Lane Davis", title="Founder", email="lane@autoants.com", web="autoants.com",
+CARD = dict(name="Lane Davis II", title="Founder", email="lane@autoants.com", web="autoants.com",
             phone=None,  # e.g. "(504) 555-0100" once the business line exists
             qr="https://autoants.com/?ref=card#contact")
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
