@@ -221,6 +221,9 @@
   .cform input,.cform select,.cform textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line2);border-radius:10px;padding:.75rem .8rem;width:100%}
   .cform input:focus,.cform select:focus,.cform textarea:focus{outline:2px solid var(--amber);outline-offset:1px;border-color:transparent}
   .cform .consent{font-size:.78rem;color:var(--faint);font-weight:400}
+  .cform .consent a{color:var(--muted)}
+  .cform label.smsbox{display:flex;align-items:flex-start;gap:.6rem;color:var(--ink);font-weight:600}
+  .cform label.smsbox input{width:20px;height:20px;padding:0;margin:.1rem 0 0;flex:none;accent-color:var(--amber)}
   .cform button{justify-self:start}
   .cform .sent{grid-column:1/-1;color:var(--ok);font-weight:600;display:none;align-items:center;gap:.6rem}
   @media(max-width:560px){.cform{grid-template-columns:1fr}}
@@ -260,7 +263,7 @@
     <div class="trust"><span><b>◆</b> No contract to start</span><span><b>◆</b> You see it before you pay</span><span><b>◆</b> Live in 7 days or your setup fee back</span></div>
   </div>
   <div class="dispatch">
-    <div class="dhead"><svg class="ant"><use href="#ant"/></svg><span class="t">AutoAnt Dispatch</span><span class="live-dot"><i></i>LIVE</span></div>
+    <div class="dhead"><svg class="ant"><use href="#ant"/></svg><span class="t">AutoAnt Dispatch</span><span class="live-dot"><i></i>EXAMPLE</span></div>
     <div id="feed"></div>
   </div>
 </div></div></header>
@@ -273,7 +276,7 @@
 </div></div>
 
 <section id="transform"><div class="wrap">
-  <div class="sec-head"><p class="eyebrow">The upgrade</p><h2>From the site you have to the site that books jobs.</h2><p>Drag the line. Left is the kind of site most crews have; right is what we build: your name, your number, one tap to call.</p></div>
+  <div class="sec-head"><p class="eyebrow">The upgrade</p><h2>From the site you have to the site that books jobs.</h2><p>Drag the line. Left is the kind of site most small businesses have; right is what we build: your name, your number, one tap to call.</p></div>
   <div class="ba" style="--pos:50%">
     <img src="assets/example/old.jpg" alt="Example of a dated tree-service website" loading="lazy">
     <img class="after" src="assets/example/new.jpg" alt="The same business on an AutoAnts site" loading="lazy">
@@ -284,10 +287,10 @@
 </div></section>
 
 <section id="problem" class="band"><div class="wrap">
-  <div class="sec-head"><p class="eyebrow">The problem</p><h2>Right now, money's on the floor.</h2><p>You're the best in the field and invisible in the office. Every day, jobs you already earned walk out the door — and you never see them go.</p></div>
+  <div class="sec-head"><p class="eyebrow">The problem</p><h2>Right now, money's on the floor.</h2><p>You're great at the work and stretched thin everywhere else. Every day, jobs you already earned walk out the door — and you never see them go.</p></div>
   <div class="prob">
-    <div class="pcard"><div class="n">01 / MISSED</div><h3>The phone rings out</h3><p>You're up a tree or under a house. The call goes to voicemail. That homeowner doesn't leave one — they call the next guy on Google.</p><div class="cost">→ a booked job, gone in 20 seconds</div></div>
-    <div class="pcard"><div class="n">02 / INVISIBLE</div><h3>Nobody can find you</h3><p>Great reviews, no website — or a broken one. The crew <em>with</em> a site gets your Google searches. And now customers are asking ChatGPT, too.</p><div class="cost">→ the searches never reach you</div></div>
+    <div class="pcard"><div class="n">01 / MISSED</div><h3>The phone rings out</h3><p>You're with a customer or on a job. The call goes to voicemail. That caller doesn't leave one — they call the next business on Google.</p><div class="cost">→ a booked job, gone in 20 seconds</div></div>
+    <div class="pcard"><div class="n">02 / INVISIBLE</div><h3>Nobody can find you</h3><p>Great reviews, no website — or a broken one. The business <em>with</em> a site gets your Google searches. And now customers are asking ChatGPT, too.</p><div class="cost">→ the searches never reach you</div></div>
     <div class="pcard"><div class="n">03 / DROPPED</div><h3>Quotes die quietly</h3><p>Estimates sent, never followed up. A text on Tuesday would've closed it. By Friday it's someone else's job.</p><div class="cost">→ work you already priced, walking</div></div>
   </div>
 </div></section>
@@ -297,9 +300,9 @@
   <div class="stack">
     <div class="scard"><span class="free">FREE</span><div class="tag">Get found</div><h3>Your website</h3><p>A real, fast, mobile site with your reviews and a quote form — built <em>before</em> you pay. Yours to keep either way.</p></div>
     <div class="scard"><div class="who"><img class="aicon" src="brand/icons/callback.svg" alt="" width="46" height="46" loading="lazy"><div class="tag">Never lose a call</div></div><h3>Text-Back Ant</h3><div class="role">Missed-call text-back</div><p>Miss a call, and it instantly texts them: "Sorry I missed you — what do you need?" The job stays yours.</p></div>
-    <div class="scard"><div class="who"><img class="aicon" src="brand/icons/responder.svg" alt="" width="46" height="46" loading="lazy"><div class="tag">Be first</div></div><h3>Responder Ant</h3><div class="role">Speed-to-lead</div><p>The crew that answers first wins. New lead comes in, we respond in seconds — automatically.</p></div>
+    <div class="scard"><div class="who"><img class="aicon" src="brand/icons/responder.svg" alt="" width="46" height="46" loading="lazy"><div class="tag">Be first</div></div><h3>Responder Ant</h3><div class="role">Speed-to-lead</div><p>The business that answers first wins. New lead comes in, we respond in seconds — automatically.</p></div>
     <div class="scard"><div class="who"><img class="aicon" src="brand/icons/scheduler.svg" alt="" width="46" height="46" loading="lazy"><div class="tag">Fill the calendar</div></div><h3>Scheduler Ant</h3><div class="role">Booking</div><p>Quote requests turn into estimates and booked jobs without you touching your phone.</p></div>
-    <div class="scard"><div class="who"><img class="aicon" src="brand/icons/scout.svg" alt="" width="46" height="46" loading="lazy"><div class="tag">Everywhere they look</div></div><h3>Scout Ant</h3><div class="role">Local visibility + AI answers</div><p>Google, Yelp, Apple, Bing — dialed in and consistent. Plus showing up when someone asks <em>ChatGPT</em> for the best crew in town.</p></div>
+    <div class="scard"><div class="who"><img class="aicon" src="brand/icons/scout.svg" alt="" width="46" height="46" loading="lazy"><div class="tag">Everywhere they look</div></div><h3>Scout Ant</h3><div class="role">Local visibility + AI answers</div><p>Google, Yelp, Apple, Bing — dialed in and consistent. Plus showing up when someone asks <em>ChatGPT</em> for the best one in town.</p></div>
     <div class="scard"><div class="who"><img class="aicon" src="brand/icons/receptionist.svg" alt="" width="46" height="46" loading="lazy"><div class="tag">When you can't pick up</div></div><h3>Receptionist Ant</h3><div class="role">Voice receptionist</div><p>An AI that answers when you can't, says up front that it's an AI, screens the job and texts it to you. A call never just rings out.</p></div>
     <div class="scard"><div class="who"><img class="aicon" src="brand/icons/reviewer.svg" alt="" width="46" height="46" loading="lazy"><div class="tag">More 5-stars</div></div><h3>Reviewer Ant</h3><div class="role">Reviews engine</div><p>Every finished job gets the same review ask, every customer, one tap from your phone. More reviews, more calls.</p></div>
     <div class="scard"><div class="who"><img class="aicon" src="brand/icons/promoter.svg" alt="" width="46" height="46" loading="lazy"><div class="tag">Fill the pipeline</div></div><h3>Promoter Ant</h3><div class="role">Content &amp; ads</div><p>Before/after job clips and hyper-local ads that put you in front of the neighborhood before the storm hits.</p></div>
@@ -365,12 +368,12 @@
     <div class="whylist">
       <div class="wrow"><div class="dot"></div><div><h4>Only claims I can back up</h4><p>I only put claims on your site I can stand behind — no fake reviews, no made-up credentials. That protects you, and customers can tell.</p></div></div>
       <div class="wrow"><div class="dot"></div><div><h4>Local, not a call center</h4><p>I know your area and your customers, and you talk to a person — me.</p></div></div>
-      <div class="wrow"><div class="dot"></div><div><h4>Done-for-you, not another login</h4><p>You didn't get into trees to manage software. I run the whole system; you get the jobs.</p></div></div>
+      <div class="wrow"><div class="dot"></div><div><h4>Done-for-you, not another login</h4><p>You didn't start a business to manage software. I run the whole system; you get the jobs.</p></div></div>
       <div class="wrow"><div class="dot"></div><div><h4>Big-company tools, small-shop price</h4><p>The same modern AI the national brands pay agencies thousands for — pointed at one thing: putting money in your pocket.</p></div></div>
       <div class="wrow"><div class="dot"></div><div><h4>Honest about what to automate</h4><p>Sometimes the answer is "don't." If a tool won't earn its keep, I'll say so. That's how you know the next thing I recommend is real.</p></div></div>
     </div>
     </div>
-    <div class="proofcard"><p class="eyebrow">Proof</p><div class="bignum">61</div><h3>site previews built for Louisiana crews.</h3><p>Before we ever talk money, there's a live website with your business on it. That's how I work.</p><div class="thumb"><img src="assets/example/new.jpg" alt="Example of the AutoAnts site design" loading="lazy"></div><p class="fine" style="margin-top:0">The design every preview now uses (example business). Live client sites and their numbers go here as they launch.</p></div>
+    <div class="proofcard"><p class="eyebrow">Proof</p><div class="bignum">61</div><h3>site previews built for Louisiana businesses.</h3><p>Before we ever talk money, there's a live website with your business on it. That's how I work.</p><div class="thumb"><img src="assets/example/new.jpg" alt="Example of the AutoAnts site design" loading="lazy"></div><p class="fine" style="margin-top:0">The design every preview now uses (example business). Live client sites and their numbers go here as they launch.</p></div>
   </div>
 </div></section>
 
@@ -396,7 +399,7 @@
     </ol>
   </div>
   <p class="price-note">Founding-client rates for the first businesses on board.</p>
-  <div class="guarantee"><b>The guarantee:</b> once you say go, your site is live within 7 days or the $500 setup fee comes back. Monthly plans cancel anytime after 90 days.</div>
+  <div class="guarantee"><b>The guarantee:</b> once you say go, your site is live within 7 days or your setup fee comes back. Monthly plans cancel anytime after 90 days.</div>
 </div></section>
 
 <section id="faq" class="band"><div class="wrap">
@@ -421,10 +424,11 @@
       <label>Type of business<select name="trade"><option>Home services</option><option>Auto</option><option>Beauty &amp; personal care</option><option>Fitness</option><option>Pets</option><option>Food &amp; events</option><option>Professional services</option><option>Other</option></select></label>
       <label class="full">I'm interested in<select name="interest" id="interest"><option>Free site preview</option><option>The assessment ($500)</option><option>15-minute call</option><option>Site Care</option><option>The Office Manager</option><option>More assistants</option><option>Something else</option></select></label>
       <label class="hp" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">Website<input name="website" tabindex="-1" autocomplete="off"></label>
-      <label class="full">Anything I should know?<textarea name="msg" rows="3" placeholder="e.g. we miss calls when the crew is out on jobs"></textarea></label>
-      <p class="consent full">By sending, you agree that AutoAnts can call or text you about this request. No lists, no spam.</p>
+      <label class="full">Anything I should know?<textarea name="msg" rows="3" placeholder="e.g. we miss calls when we're busy with customers"></textarea></label>
+      <label class="full smsbox"><input type="checkbox" name="sms" value="yes"><span>Text me about this request (optional)</span></label>
+      <p class="consent full">Ticking the box means autoants may text you about this request: replies, scheduling and follow-ups. Message frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. You don't have to agree to texts to send this form; I'll call or email instead. Nothing is shared or sold. <a href="privacy.html">Privacy &amp; texting terms</a></p>
       <button class="btn btn-amber" type="submit">Send →</button>
-      <p class="sent" id="sentNote"><img src="/brand/mascot/anim/svg/thumbs-up-dark.svg" alt="" width="52" height="64"><span id="sentText">Got it. If an email window opened, hit send there and it reaches me.</span></p>
+      <p class="sent" id="sentNote"><img src="/brand/mascot/anim/svg/thumbs-up-dark.svg" alt="" width="52" height="64"><span id="sentText">Got it. I'll be in touch, usually the same day.</span></p>
     </form>
   </div>
 </div></section>
@@ -440,7 +444,7 @@
 
 <footer><div class="wrap">
   <span class="brand"><img src="brand/autoants-logo-reverse.svg" alt="AutoAnts" style="height:22px;width:auto;display:block"></span>
-  <span>autoants, short for automated assistants · Louisiana</span>
+  <span>autoants, short for automated assistants · Louisiana · <a href="privacy.html" style="color:inherit">Privacy</a></span>
 </div></footer>
 
 <script>
@@ -461,10 +465,10 @@
   })();
 
   // ---- contact: every CTA preselects what they asked about ----
-  // When the AutoAnts lead route on the Cloudflare Worker is deployed, set LEAD_ENDPOINT to its URL
-  // and the form posts there. Until then it opens a pre-filled email so nothing is lost.
+  // The form posts to the autoants-leads Cloudflare Worker (pings Lane, keeps a copy).
+  // If that fails, the form keeps what they typed and asks them to try again.
   // CALL_URL: a Cal.com/Calendly link; when set, "15-minute call" buttons open it directly.
-  var LEAD_ENDPOINT = "", CALL_URL = "";
+  var LEAD_ENDPOINT = "https://autoants-leads.saintdell.workers.dev/lead", CALL_URL = "";
   document.querySelectorAll('[data-interest]').forEach(function(a){
     a.addEventListener('click', function(e){
       if (CALL_URL && a.hasAttribute('data-call')) { e.preventDefault(); window.open(CALL_URL, '_blank'); return; }
@@ -484,18 +488,14 @@
       e.preventDefault();
       if (!f.name.value.trim() || !f.phone.value.trim() || !f.business.value.trim()) { f.reportValidity && f.reportValidity(); return; }
       var d = {name:f.name.value.trim(), business:f.business.value.trim(), phone:f.phone.value.trim(),
-               trade:f.trade.value, interest:f.interest.value, msg:f.msg.value.trim(), page:'autoants.com', source:leadSource(), website:(f.website ? f.website.value : '')};
+               trade:f.trade.value, interest:f.interest.value, msg:f.msg.value.trim(), page:'autoants.com', source:leadSource(), website:(f.website ? f.website.value : ''), sms:(f.sms && f.sms.checked ? 'yes' : 'no')};
       var done = function(){ document.getElementById('sentNote').style.display='flex'; };
-      if (LEAD_ENDPOINT) {
-        fetch(LEAD_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(d)})
-          .then(function(r){ if(!r.ok) throw 0; document.getElementById('sentText').textContent='Got it. I\'ll be in touch, usually the same day.'; done(); f.reset(); })
-          .catch(function(){ mail(d); done(); });
-      } else { mail(d); done(); }
+      var btn = f.querySelector('button[type=submit]'); if (btn) btn.disabled = true;
+      fetch(LEAD_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(d)})
+        .then(function(r){ if(!r.ok) throw 0; document.getElementById('sentText').textContent='Got it. I\'ll be in touch, usually the same day.'; done(); f.reset(); })
+        .catch(function(){ document.getElementById('sentText').textContent='That didn\'t go through. Your details are still here; please try again in a minute.'; done(); })
+        .then(function(){ if (btn) btn.disabled = false; });
     });
-    function mail(d){
-      var body = 'Name: '+d.name+'\nBusiness: '+d.business+'\nPhone: '+d.phone+'\nBusiness type: '+d.trade+'\nInterested in: '+d.interest+'\nFound us via: '+d.source+'\n\n'+d.msg;
-      location.href = 'mailto:lane@blundellcore.com?subject='+encodeURIComponent('AutoAnts: '+d.interest+' — '+d.business)+'&body='+encodeURIComponent(body);
-    }
   })();
 
   // ---- before/after drag ----
