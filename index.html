@@ -154,7 +154,20 @@
   .ladder li::before{content:counter(l);grid-row:span 2;width:1.8rem;height:1.8rem;border-radius:50%;background:var(--amber);color:var(--amber-ink);font:800 .9rem/1.8rem var(--disp);text-align:center}
   .ladder b{font-family:var(--disp);font-weight:800}
   .ladder span{color:var(--muted);font-size:.95rem}
-  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.1rem}
+  /* three offerings (2026-10-05) */
+.offer3{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.2rem}
+.o3{background:var(--surface);border:1px solid var(--line2);border-radius:20px;padding:1.9rem 1.7rem;display:flex;flex-direction:column;gap:.75rem;position:relative;overflow:hidden}
+.o3::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--amber)}
+.o3 .o3-top{display:flex;align-items:center;gap:.85rem}
+.o3 .o3-top img{width:52px;height:52px}
+.o3 .o3-n{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.18em;color:var(--amber)}
+.o3 h3{font-family:var(--disp);font-weight:800;font-size:1.65rem;line-height:1.05;margin:0}
+.o3 .o3-out{color:var(--ink);font-weight:600;margin:0}
+.o3 ul{margin:.2rem 0 0;padding-left:1.1rem;color:var(--muted)} .o3 li{margin:.25rem 0}
+.o3 .o3-price{margin-top:auto;padding-top:.9rem;border-top:1px solid var(--line);color:var(--ink);font-size:.95rem}
+.o3 .o3-price b{font-family:var(--disp);font-size:1.3rem}
+.o3-start{margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:.8rem 1.4rem;align-items:center;justify-content:space-between;background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:1.2rem 1.4rem}
+.o3-start p{margin:0;color:var(--muted)} .o3-start b{color:var(--ink)}.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.1rem}
   .tier{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.8rem 1.6rem;display:flex;flex-direction:column}
   .tier.feature{border-color:var(--amber);box-shadow:0 0 0 1px var(--amber),0 18px 50px rgba(61,220,174,.1)}
   .tier .flag{font-family:var(--mono);font-size:.64rem;font-weight:700;letter-spacing:.1em;color:var(--amber);text-transform:uppercase;margin-bottom:.6rem}
@@ -247,7 +260,7 @@
 <nav><div class="wrap">
   <a class="brand" href="#top"><img src="brand/autoants-logo-reverse.svg" alt="AutoAnts" style="height:30px;width:auto;display:block"></a>
   <div class="navlinks">
-    <a href="#stack">What you get</a><a href="work/">The video audit</a><a href="services.html">Services</a><a href="who-we-help.html">Who we help</a><a href="#roi">ROI calculator</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+    <a href="#offerings">What we do</a><a href="work/">The video audit</a><a href="services.html">Services</a><a href="who-we-help.html">Who we help</a><a href="#roi">ROI calculator</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
   </div>
   <a class="btn btn-amber" href="#contact" data-interest="Free site preview" style="padding:.6rem 1.1rem;font-size:.9rem">Free site preview</a>
 </div></nav>
@@ -276,6 +289,25 @@
   </div>
 </div></div>
 
+<section id="offerings"><div class="wrap">
+  <div class="sec-head"><p class="eyebrow">What we do</p><h2>Three things grow a local business. We do all three.</h2><p>Get found. Never miss a job. Stay in front of the neighborhood. One local team, one text thread, and a monthly receipt that shows what moved.</p></div>
+  <div class="offer3">
+    <div class="o3"><div class="o3-top"><img src="brand/icons/scout.svg" alt="" width="52" height="52"><span class="o3-n">01 · GET FOUND</span></div>
+      <h3>Search optimization</h3><p class="o3-out">Show up when people search, and when they ask ChatGPT who to call.</p>
+      <ul><li>Google Business Profile, kept current</li><li>Apple, Bing, Yelp and the rest, matched</li><li>A website that answers what customers ask</li><li>Checked against what AI assistants actually say about you</li></ul>
+      <div class="o3-price">Quoted after your free video audit</div></div>
+    <div class="o3"><div class="o3-top"><img src="brand/icons/receptionist.svg" alt="" width="52" height="52"><span class="o3-n">02 · NEVER MISS A JOB</span></div>
+      <h3>AI employees</h3><p class="o3-out">The Ants answer, follow up, book and ask for reviews while you're on the job.</p>
+      <ul><li>Missed calls texted back in seconds</li><li>New leads answered and booked</li><li>A phone receptionist that says it's an AI</li><li>A review ask after every job</li></ul>
+      <div class="o3-price"><b>$500</b>/mo · $750 setup · founding rate</div></div>
+    <div class="o3"><div class="o3-top"><img src="brand/icons/promoter.svg" alt="" width="52" height="52"><span class="o3-n">03 · STAY IN FRONT</span></div>
+      <h3>Social media engine</h3><p class="o3-out">Text us photos from the job. Every week, posts from your real work, ready to approve by text.</p>
+      <ul><li>A before/after job clip</li><li>Google, Facebook and Instagram posts</li><li>Nextdoor and local-group posts</li><li>A real review, highlighted with the customer's OK</li></ul>
+      <div class="o3-price"><b>$400</b>/mo · founding rate</div></div>
+  </div>
+  <div class="o3-start"><p><b>Start free.</b> A 90-second video audit of your business, built from public information, or a preview of your new website. Yours to keep either way.</p><a class="btn btn-amber" href="work/">See the video audit →</a></div>
+</div></section>
+
 <section id="transform"><div class="wrap">
   <div class="sec-head"><p class="eyebrow">The upgrade</p><h2>From the site you have to the site that books jobs.</h2><p>Drag the line. Left is the kind of site most small businesses have; right is what we build: your name, your number, one tap to call.</p></div>
   <div class="ba" style="--pos:50%">
@@ -297,7 +329,7 @@
 </div></section>
 
 <section id="stack"><div class="wrap">
-  <div class="sec-head"><p class="eyebrow">What you get · your automated assistants</p><h2>They work while you're on the job.</h2><p>That's where the name comes from: <b style="color:var(--ink)">Auto</b>mated assist<b style="color:var(--ink)">Ants</b>. A crew of assistants that never clocks out, each with one job. You stay the boss: nothing gets confirmed to a customer without your OK.</p></div>
+  <div class="sec-head"><p class="eyebrow">AI employees · meet the Ants</p><h2>They work while you're on the job.</h2><p>That's where the name comes from: <b style="color:var(--ink)">Auto</b>mated assist<b style="color:var(--ink)">Ants</b>. A crew of assistants that never clocks out, each with one job. You stay the boss: nothing gets confirmed to a customer without your OK.</p></div>
   <div class="stack">
     <div class="scard"><span class="free">FREE</span><div class="tag">Get found</div><h3>Your website</h3><p>A real, fast, mobile site with your reviews and a quote form — built <em>before</em> you pay. Yours to keep either way.</p></div>
     <div class="scard"><div class="who"><img class="aicon" src="brand/icons/callback.svg" alt="" width="46" height="46" loading="lazy"><div class="tag">Never lose a call</div></div><h3>Text-Back Ant</h3><div class="role">Missed-call text-back</div><p>Miss a call, and it instantly texts them: "Sorry I missed you — what do you need?" The job stays yours.</p></div>
@@ -379,13 +411,14 @@
 </div></section>
 
 <section id="pricing"><div class="wrap">
-  <div class="sec-head"><p class="eyebrow">Pricing</p><h2>Founding-client pricing. Locks in before I raise it.</h2><p>Start free. Go live for a flat fee. Keep it running for a small monthly, or add the office manager when you're ready.</p></div>
+  <div class="sec-head"><p class="eyebrow">Pricing</p><h2>Founding-client pricing. Locks in before I raise it.</h2><p>Start free. Then pick the one that matters most: get found, never miss a job, or stay in front. Add the others when you're ready.</p></div>
   <div class="tiers">
-    <div class="tier"><div class="flag">Start here</div><h3>The Website</h3><div class="price">Free<br><small>preview · $500 to go live &amp; keep</small></div><ul><li>Built with your real info + reviews</li><li>Fast, mobile, quote form</li><li>Live on your own domain</li><li>Yours to keep, no strings</li></ul><a class="btn btn-ghost" href="#contact" data-interest="Free site preview">Get my free preview</a></div>
-    <div class="tier"><div class="flag">Just the site</div><h3>Site Care</h3><div class="price">$99<small>/mo</small></div><ul><li>Hosting on your own domain</li><li>Edits when you need them</li><li>Google profile kept current</li><li>Support by text, from me</li></ul><a class="btn btn-ghost" href="#contact" data-interest="Site Care">Ask about Site Care</a></div>
-    <div class="tier feature"><div class="flag">Recommended</div><h3>The Office Manager</h3><div class="price">$500<small>/mo · founding · $750 setup</small></div><ul><li>Everything in The Website</li><li>Text-Back Ant + Responder Ant</li><li>Scheduler Ant + quote follow-up</li><li>Reviewer Ant</li><li>Promoter Ant, light: 2 Google posts and 1 job clip a week</li><li>The 30-day results receipt</li></ul><a class="btn btn-amber" href="#contact" data-interest="The Office Manager">Book a free 15-minute call</a></div>
-    <div class="tier"><div class="flag">Grow into it</div><h3>Add assistants</h3><div class="price">à la carte</div><ul><li>Scout Ant: local visibility + AI answers</li><li>Receptionist Ant: AI phone</li><li>Promoter Ant, full Content Week: $400/mo founding</li><li>Reminder Ant: past-customer reactivation</li></ul><a class="btn btn-ghost" href="#contact" data-interest="More assistants">Talk through the options</a></div>
+    <div class="tier"><div class="flag">Start here, free</div><h3>Video audit + site preview</h3><div class="price">Free<small style="display:block;line-height:1.45;margin-top:.45rem">$500 to put the new site live on your domain</small></div><ul><li>A 90-second video about your business</li><li>What AI assistants say about you</li><li>A preview of your new website</li><li>Yours to keep, no strings</li></ul><a class="btn btn-ghost" href="#contact" data-interest="Video audit">Ask for my video audit</a></div>
+    <div class="tier"><div class="flag">01 · Get found</div><h3>Search optimization</h3><div class="price">$99<small>/mo Site Care</small><small style="display:block;line-height:1.45;margin-top:.45rem">Full search plan quoted after your audit</small></div><ul><li>Google profile kept current</li><li>Listings matched everywhere</li><li>Website hosting and edits</li><li>AI answers checked monthly</li></ul><a class="btn btn-ghost" href="#contact" data-interest="Search optimization">Ask about search</a></div>
+    <div class="tier feature"><div class="flag">02 · Recommended</div><h3>AI employees: the Office Manager</h3><div class="price">$500<small>/mo · founding · $750 setup</small></div><ul><li>Text-Back Ant + Responder Ant</li><li>Scheduler Ant + quote follow-up</li><li>Reviewer Ant</li><li>Social light: 2 Google posts and 1 job clip a week</li><li>The 30-day results receipt</li></ul><a class="btn btn-amber" href="#contact" data-interest="The Office Manager">Book a free 15-minute call</a></div>
+    <div class="tier"><div class="flag">03 · Stay in front</div><h3>Social media engine</h3><div class="price">$400<small>/mo · founding</small></div><ul><li>A full Content Week, every week</li><li>Before/after clips from your jobs</li><li>Google, Facebook, Instagram, Nextdoor</li><li>Approve everything by text</li></ul><a class="btn btn-ghost" href="#contact" data-interest="Social media engine">Ask about social</a></div>
   </div>
+  <p class="price-note">More AI employees when you're ready: the Receptionist Ant (AI phone), the Reminder Ant (past customers), the Scout Ant (local visibility). Priced with you.</p>
   <div class="assess" id="assessment">
     <div>
       <p class="eyebrow">Not sure where to start?</p>
@@ -423,7 +456,7 @@
       <label>Business name<input name="business" autocomplete="organization" required></label>
       <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
       <label>Type of business<select name="trade"><option>Home services</option><option>Auto</option><option>Beauty &amp; personal care</option><option>Fitness</option><option>Pets</option><option>Food &amp; events</option><option>Professional services</option><option>Other</option></select></label>
-      <label class="full">I'm interested in<select name="interest" id="interest"><option>Free site preview</option><option>Video audit</option><option>The assessment ($500)</option><option>15-minute call</option><option>Site Care</option><option>The Office Manager</option><option>More assistants</option><option>Something else</option></select></label>
+      <label class="full">I'm interested in<select name="interest" id="interest"><option>Free site preview</option><option>Video audit</option><option>Search optimization</option><option>Social media engine</option><option>The assessment ($500)</option><option>15-minute call</option><option>Site Care</option><option>The Office Manager</option><option>More assistants</option><option>Something else</option></select></label>
       <label class="hp" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">Website<input name="website" tabindex="-1" autocomplete="off"></label>
       <label class="full">Anything I should know?<textarea name="msg" rows="3" placeholder="e.g. we miss calls when we're busy with customers"></textarea></label>
       <label class="full smsbox"><input type="checkbox" name="sms" value="yes"><span>Text me about this request (optional)</span></label>
