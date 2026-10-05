@@ -25,7 +25,8 @@
   review requests
 - The assessment: $500 flat. A recorded 45-minute interview, then a
   written report on what to automate first, what each fix is worth in the
-  owner's own numbers, and which fixes they can do themselves. Credited
+  owner's own numbers, which fixes they can do themselves, and 3-7
+  ready-made AI tools they could set up alone in under 30 minutes. Credited
   toward setup if they continue. A free 15-minute call comes first.
 
 ## The assistants ("Ants", one job each; the owner approves what goes to customers)
