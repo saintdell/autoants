@@ -3,7 +3,7 @@
     uv run --with qrcode python3 brand/print/business-card/make_card.py
 
 Front: stone ground (prints reliably, writeable), wordmark, name, contact.
-Back: night ground (the site's dark green), the hard-hat mascot, the promise, and a QR code to the free preview.
+Back: night ground (the site's dark green), the mascot, the promise, and a QR code to the free preview.
 Edit CARD below; PHONE stays a red placeholder until there's a real business line."""
 import os, subprocess, sys
 import qrcode

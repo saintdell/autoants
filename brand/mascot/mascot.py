@@ -27,21 +27,15 @@ def eyes(kind="dot", look=0, c=FOREST):
     raise ValueError(kind)
 
 
-# Hard hat, option C "ribbed" (Lane, 2026-10-01): stone shell, three forest ribs, forest brim (ink vanished on night grounds).
-# The antennae come through the top. Below 48 px use the plain head icon instead.
-HARDHAT = (f'<path d="M56 64a44 40 0 0 1 88 0z" fill="{STONE}"/>'
-           f'<g stroke="{FOREST}" stroke-width="4" fill="none" stroke-linecap="round"><path d="M100 26v34"/>'
-           f'<path d="M85 30q-7 14-7 30"/><path d="M115 30q7 14 7 30"/></g>'
-           f'<rect x="48" y="60" width="104" height="9" rx="4.5" fill="{FOREST}"/>')
+# No hard hat (Lane, 2026-10-05: "take the hat off the ant everywhere"). The ribbed hat picked on
+# 2026-10-01 is retired; the antennae are the silhouette now.
 
 
-def head(eye="dot", look=0, ant_stroke=None, hat=False):
+def head(eye="dot", look=0, ant_stroke=None):
     ant_stroke = ant_stroke or ANT
     ants = (f'<g stroke="{ant_stroke}" stroke-width="6" stroke-linecap="round"><path d="M88 40 74 8M112 40l14-32"/></g>'
             f'<circle cx="74" cy="7" r="6.5" fill="{ant_stroke}"/><circle cx="126" cy="7" r="6.5" fill="{ant_stroke}"/>')
     h = f'<circle cx="100" cy="82" r="46" fill="{MINT}"/>' + eyes(eye, look)
-    if hat:
-        h += HARDHAT
     return ants + h
 
 
@@ -87,8 +81,9 @@ POSES = {
     "carry": ("Got your lead", lambda: body() + head("dot", look=3)
               + arm("M90 144C92 168 104 172 115 168", None, hand=False) + arm("M110 144C142 140 166 150 178 159", None, hand=False)
               + ENVELOPE + f'<circle cx="115" cy="168" r="10" fill="{MINT}"/><circle cx="178" cy="159" r="10" fill="{MINT}"/>'),
-    "hardhat": ("On the job", lambda: body() + arm(*DOWN_L) + arm(*HIP_R) + head("dot", hat=True)),
-    "wavehat": ("Hello from the job", lambda: body() + arm(*DOWN_L) + head("happy", hat=True)
+    # "hardhat"/"wavehat" keep their names so existing callers still work; no hat since 2026-10-05
+    "hardhat": ("On the job", lambda: body() + arm(*DOWN_L) + arm(*HIP_R) + head("dot")),
+    "wavehat": ("Hello from the job", lambda: body() + arm(*DOWN_L) + head("happy")
                 + arm("M110 142C138 132 154 112 160 86", (162, 80))),
 }
 

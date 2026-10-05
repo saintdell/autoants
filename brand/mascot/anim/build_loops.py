@@ -36,15 +36,13 @@ def torso(p):
     return f'<ellipse cx="100" cy="184" rx="24" ry="30" fill="{p["body"]}"/><circle cx="100" cy="141" r="14" fill="{p["body"]}"/>'
 
 
-def head(p, eyes, hat=False):
+def head(p, eyes):
     """eyes: list of (class, kind, look). More than one = cross-fade between them."""
     a = p["ant"]
     out = (f'<g class="head"><g class="ants"><path d="M88 40 74 8M112 40l14-32" stroke="{a}" stroke-width="6" stroke-linecap="round"/>'
            f'<circle cx="74" cy="7" r="6.5" fill="{a}"/><circle cx="126" cy="7" r="6.5" fill="{a}"/></g>'
            f'<circle cx="100" cy="82" r="46" fill="{M.MINT}"/>')
     out += '<g class="gaze">' + "".join(f'<g class="{cls}">{M.eyes(kind, look)}</g>' for cls, kind, look in eyes) + "</g>"
-    if hat:
-        out += M.HARDHAT
     return out + "</g>"
 
 
@@ -122,7 +120,7 @@ def thumbs(p):
 
 
 def onthejob(p):
-    body = legs(p) + '<g class="upper">' + torso(p) + DOWN_L(p) + HIP_R(p) + head(p, [("blink", "dot", 0)], hat=True) + "</g>"
+    body = legs(p) + '<g class="upper">' + torso(p) + DOWN_L(p) + HIP_R(p) + head(p, [("blink", "dot", 0)]) + "</g>"
     return body, ""
 
 
