@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The video audit · autoants</title>
+<meta name="description" content="Before we ask for anything, we make a 90-second video about your business from public information: what AI assistants say about you, your reviews, your listings, and four fixes. Then search optimization, AI employees and a social media engine.">
+<link rel="canonical" href="https://autoants.com/work/">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="The video audit · autoants">
+<meta property="og:description" content="A 90-second video about your business, from public information, before we ask for anything.">
+<meta property="og:image" content="https://autoants.com/work/sample-video-audit-poster.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0b1712;--bg2:#0f1f18;--surface:#14261e;--surface2:#1a2f25;--ink:#f4f1e8;--muted:#a3b0a8;--faint:#7d8a83;
+        --mint:#3ddcae;--mint-ink:#062a1d;--line:rgba(244,241,232,.12);
+        --disp:"Archivo",system-ui,sans-serif;--body:"Inter",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+  *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit} a:focus-visible,.btn:focus-visible,video:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+  nav{display:flex;align-items:center;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)} nav .sp{margin-left:auto}
+  nav a.ghost{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
+  .crumbs{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--faint);margin:36px 0 0} .crumbs a{color:var(--mint);text-decoration:none}
+  h1{font-family:var(--disp);font-weight:800;font-size:clamp(32px,5.6vw,56px);line-height:1.04;margin:10px 0 14px;text-wrap:balance;max-width:20ch}
+  .lede{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:62ch;margin:0 0 26px}
+  .lede b{color:var(--ink)}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mint);margin:0 0 8px}
+  h2{font-family:var(--disp);font-weight:800;font-size:clamp(24px,3.4vw,34px);line-height:1.1;margin:0 0 12px;text-wrap:balance}
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  .player{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000}
+  .cap{font-size:14px;color:var(--muted);padding:14px 18px;margin:0;border-top:1px solid var(--line)}
+  .cap b{color:var(--ink)}
+  .checks{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:22px 0 0;padding:0;list-style:none}
+  .checks li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;color:var(--muted);font-size:15px}
+  .checks li b{display:block;color:var(--ink);font-size:16px;margin-bottom:4px}
+  .offers{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:22px}
+  .offer{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px 24px 22px;display:flex;flex-direction:column;gap:10px}
+  .offer .n{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--mint)}
+  .offer h3{font-family:var(--disp);font-weight:800;font-size:24px;line-height:1.1;margin:0}
+  .offer p{margin:0;color:var(--muted);font-size:15px}
+  .offer ul{margin:4px 0 0;padding-left:18px;color:var(--muted);font-size:15px} .offer li{margin:3px 0}
+  .offer .price{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:15px;color:var(--ink)}
+  .offer .price b{font-family:var(--disp);font-size:20px}
+  .steps{counter-reset:s;list-style:none;padding:0;margin:20px 0 0;display:grid;gap:10px}
+  .steps li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start;color:var(--muted)}
+  .steps li::before{content:counter(s);display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--mint);color:var(--mint-ink);font-family:var(--disp);font-weight:800}
+  .steps b{color:var(--ink)}
+  .cta{background:var(--surface2);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+  .cta p{margin:0;color:var(--muted);max-width:52ch}
+  .btn{display:inline-block;background:var(--mint);color:var(--mint-ink);text-decoration:none;font-weight:700;border-radius:10px;padding:12px 20px}
+  footer{border-top:1px solid var(--line);margin:28px 0 0;padding:20px 0 40px;font-size:13px;color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><a href="../" aria-label="autoants home"><img src="../brand/autoants-logo-reverse.svg" alt="autoants" height="26"></a><span class="sp"></span><a class="ghost" href="../#contact">Talk to us</a></nav>
+<p class="crumbs"><a href="../">autoants</a> / the video audit</p>
+<h1>Before we ask for anything, we make a video about your business.</h1>
+<p class="lede">Ninety seconds, built from public information only: <b>what AI assistants tell people who ask for your trade</b>, how your reviews and listings look, and four fixes you could start this week. It's yours to keep, whether or not we ever work together.</p>
+
+<div class="player">
+  <video controls preload="metadata" playsinline poster="sample-video-audit-poster.jpg">
+    <source src="sample-video-audit.mp4" type="video/mp4">
+  </video>
+  <p class="cap"><b>A sample, made for a company that doesn't exist.</b> Every name and number in it is invented. A real one is built for your business, sent only to you, and every number on screen says where it came from and the date we read it.</p>
+</div>
+
+<section>
+  <p class="eyebrow">What it checks</p>
+  <h2>The things a customer sees before they ever call you.</h2>
+  <ul class="checks">
+    <li><b>What AI says about you</b>When someone asks ChatGPT or Claude who to call, are you named, and what does it say right after your name?</li>
+    <li><b>Your reviews</b>Your rating and count next to the busiest shop nearby, and what customers praise you for most.</li>
+    <li><b>Your phone numbers</b>Whether your website, Google listing and AI answers all hand out the same number.</li>
+    <li><b>Your email domain</b>Whether inboxes are told to reject mail that pretends to be you.</li>
+    <li><b>Your listings</b>Name, address, hours and services, the same everywhere customers look.</li>
+  </ul>
+</section>
+
+<section>
+  <p class="eyebrow">What we do about it</p>
+  <h2>Three things grow a local business. We do all three.</h2>
+  <div class="offers">
+    <div class="offer">
+      <span class="n">01 · GET FOUND</span>
+      <h3>Search optimization</h3>
+      <p>Show up when people search, and when they ask an AI assistant.</p>
+      <ul><li>Google Business Profile, kept current</li><li>Apple, Bing, Yelp and the rest, matched</li><li>A website that answers what customers ask</li><li>Checked against what AI assistants actually say</li></ul>
+      <div class="price">Quoted after your video audit</div>
+    </div>
+    <div class="offer">
+      <span class="n">02 · NEVER MISS A JOB</span>
+      <h3>AI employees</h3>
+      <p>Assistants that answer, follow up, book and ask for reviews while you're on the job. Nothing goes to a customer without your OK.</p>
+      <ul><li>Missed calls texted back in seconds</li><li>New leads answered and booked</li><li>A phone receptionist that says it's an AI</li><li>A review ask after every job</li></ul>
+      <div class="price"><b>$500</b>/mo · $750 setup · founding rate</div>
+    </div>
+    <div class="offer">
+      <span class="n">03 · STAY IN FRONT</span>
+      <h3>Social media engine</h3>
+      <p>Text us photos from the job. Every week you get posts made from your real work, ready to approve by text.</p>
+      <ul><li>A before/after clip</li><li>Google, Facebook and Instagram posts</li><li>Nextdoor and local-group posts</li><li>A real review, highlighted with the customer's OK</li></ul>
+      <div class="price"><b>$400</b>/mo · founding rate</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">How it goes</p>
+  <h2>You see it first. You decide after.</h2>
+  <ol class="steps">
+    <li><span><b>We make your video audit.</b> About a day, from public information only.</span></li>
+    <li><span><b>We send it to you, and only you.</b> Watch it when you have 90 seconds.</span></li>
+    <li><span><b>If it's useful, a 15-minute call.</b> We start with whichever fix matters most to you.</span></li>
+  </ol>
+</section>
+
+<div class="cta">
+  <p><b style="color:var(--ink)">Want one for your business?</b> Tell us your business name and city. If you'd rather start with a free preview of a new website, that's on the table too.</p>
+  <a class="btn" href="../#contact">Ask for a video audit</a>
+</div>
+
+<footer>autoants · Louisiana · The sample above is fictional. Real audits use public information only and are sent only to the business they're about.</footer>
+</div>
+</body>
+</html>
