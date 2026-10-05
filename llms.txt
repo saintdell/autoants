@@ -6,7 +6,7 @@
 > preview website for a business before any money changes hands.
 
 ## What AutoAnts does
-- Three offerings: search optimization (Google, listings and AI answers), AI employees (the "Ants": missed-call text-back, lead response, booking, voice receptionist, review requests), and a social media engine (weekly posts from the business's real jobs)
+- Three offerings: search optimization (Google, listings and AI answers), automated assistants (the "Ants": missed-call text-back, lead response, booking, voice receptionist, review requests), and a social media engine (weekly posts from the business's real jobs)
 - Starts with a free 90-second video audit of the business, built from public information only and sent only to that business: https://autoants.com/work/
 - Builds fast, mobile-first websites for local service businesses, with
   instant-quote forms and click-to-call (free preview built first; $500 one time
