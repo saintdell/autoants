@@ -59,6 +59,19 @@
   .tier li::before{content:"→";position:absolute;left:0;color:var(--amber)}
   .tier .cta{margin-top:auto;background:var(--amber);color:var(--amber-ink);text-align:center;font-family:var(--disp);font-weight:700;padding:10px;border-radius:9px;text-decoration:none}
   .tier.feat .badge{align-self:flex-start;background:var(--amber);color:var(--amber-ink);font-family:var(--mono);font-size:11px;font-weight:600;padding:3px 8px;border-radius:6px;margin-bottom:8px;letter-spacing:.08em}
+  .tier .addon{margin:0 0 16px;padding:10px 12px;border:1px dashed var(--amber-deep);border-radius:10px;font-size:13.5px;color:var(--muted);line-height:1.5}
+  .tier .addon b{color:var(--ink);font-family:var(--disp)}
+  .oneoff{margin-top:16px;display:grid;grid-template-columns:1fr auto;gap:14px 28px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .oneoff .t{font-family:var(--disp);font-weight:800;font-size:19px}
+  .oneoff .tag{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber)}
+  .oneoff p{margin:6px 0 0;color:var(--muted);font-size:14.5px;max-width:62ch}
+  .oneoff p a{color:var(--amber);font-weight:600}
+  .oneoff .side{display:flex;flex-direction:column;gap:10px;min-width:210px}
+  .oneoff .price{font-family:var(--disp);font-weight:800;font-size:26px}
+  .oneoff .price small{font-size:14px;color:var(--muted);font-weight:600}
+  .oneoff .cta{background:var(--amber);color:var(--amber-ink);text-align:center;font-family:var(--disp);font-weight:700;padding:10px 14px;border-radius:9px;text-decoration:none}
+  .plan-note{margin:16px 0 0;color:var(--muted);font-size:14px;text-align:center}
+  @media (max-width:640px){.oneoff{grid-template-columns:1fr}.oneoff .side{min-width:0}}
   .how{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
   .step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
   .step .n{font-family:var(--mono);color:var(--amber);font-size:13px}
@@ -158,9 +171,22 @@
         <div class="price">$400<small>/mo · founding</small></div>
         <div class="d">A full week of posts made from your real jobs, every week.</div>
         <ul><li>Before/after clips from your jobs</li><li>Google, Facebook, Instagram, Nextdoor</li><li>Approve everything by text</li></ul>
+        <div class="addon"><b>Add-on: animated Shorts, +$250/mo.</b> 4 short animated videos a month in your name, made from your own logo and photos. One business per trade per town.</div>
         <a class="cta" href="index.html?interest=Social%20media%20engine#contact">Ask about social</a>
       </div>
     </div>
+    <div class="oneoff">
+      <div>
+        <div class="tag">One-off</div>
+        <div class="t">Your 60-second explainer video</div>
+        <p>One short animated video that explains the service you most want to sell, made for the top of your homepage and your Google Business Profile. A wide and a vertical version, one round of changes, your own logo and photos only, and a clearly labeled AI voice. Often added after <a href="index.html#assessment">the assessment</a>.</p>
+      </div>
+      <div class="side">
+        <div class="price">$750 <small>flat</small></div>
+        <a class="cta" href="index.html?interest=Explainer%20video#contact">Ask about an explainer</a>
+      </div>
+    </div>
+    <p class="plan-note">Every monthly plan includes a 60-second recap video of your month: what we did, counted from our own logs.</p>
   </section>
 
   <section>
