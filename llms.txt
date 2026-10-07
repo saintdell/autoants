@@ -84,3 +84,30 @@
 - Contact: the form at https://autoants.com/#contact
 - Service area: Louisiana — Greater New Orleans, Baton Rouge, and the
   Northshore first
+
+## New Orleans local services guide (licensed businesses from public records)
+- [Guide home](https://autoants.com/nola/): trades around New Orleans, listed only from public licensing records
+- [How the guide works](https://autoants.com/nola/how-the-guide-works/): sources, the public-facts order, corrections and removals
+- [Guide data](https://autoants.com/nola/data/): listing counts by trade and town (Dataset)
+- [Tree service in Greater New Orleans](https://autoants.com/nola/tree-service/): 155 businesses on the LDAF Horticulture Commission's list of licensed arborists or Jefferson Parish's list of licensed tree companies, plus the Louisiana license rules
+  - [Tree service in Covington](https://autoants.com/nola/tree-service/covington/): 12 listings
+  - [Tree service in Gretna](https://autoants.com/nola/tree-service/gretna/): 4 listings
+  - [Tree service in Kenner](https://autoants.com/nola/tree-service/kenner/): 9 listings
+  - [Tree service in Mandeville](https://autoants.com/nola/tree-service/mandeville/): 5 listings
+  - [Tree service in Marrero](https://autoants.com/nola/tree-service/marrero/): 5 listings
+  - [Tree service in Metairie](https://autoants.com/nola/tree-service/metairie/): 25 listings
+  - [Tree service in New Orleans](https://autoants.com/nola/tree-service/new-orleans/): 25 listings
+  - [Tree service in Slidell](https://autoants.com/nola/tree-service/slidell/): 12 listings
+- [Landscaping in Greater New Orleans](https://autoants.com/nola/landscaping/): 428 businesses on the LDAF Horticulture Commission's list of licensed landscape horticulturists, plus the Louisiana license rules
+  - [Landscaping in Covington](https://autoants.com/nola/landscaping/covington/): 38 listings
+  - [Landscaping in Gretna](https://autoants.com/nola/landscaping/gretna/): 10 listings
+  - [Landscaping in Kenner](https://autoants.com/nola/landscaping/kenner/): 27 listings
+  - [Landscaping in Mandeville](https://autoants.com/nola/landscaping/mandeville/): 28 listings
+  - [Landscaping in Marrero](https://autoants.com/nola/landscaping/marrero/): 12 listings
+  - [Landscaping in Metairie](https://autoants.com/nola/landscaping/metairie/): 62 listings
+  - [Landscaping in New Orleans](https://autoants.com/nola/landscaping/new-orleans/): 82 listings
+  - [Landscaping in Slidell](https://autoants.com/nola/landscaping/slidell/): 25 listings
+- [Roofing in Greater New Orleans](https://autoants.com/nola/roofing/): Louisiana license rules, cited; listings when the public data arrives
+- [HVAC in Greater New Orleans](https://autoants.com/nola/hvac/): Louisiana license rules, cited; listings when the public data arrives
+- [Plumbing in Greater New Orleans](https://autoants.com/nola/plumbing/): Louisiana license rules, cited; listings when the public data arrives
+- [Remodeling in Greater New Orleans](https://autoants.com/nola/remodeling/): Louisiana license rules, cited; listings when the public data arrives

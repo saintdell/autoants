@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How the New Orleans local services guide works: sources, order and corrections</title>
+<meta name="description" content="Where the guide&#x27;s listings come from, the public facts that set their order, what we never use, and how a business claims, corrects or removes its listing.">
+<link rel="canonical" href="https://autoants.com/nola/how-the-guide-works/">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="../../brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0b1712;--surface:#14261e;--surface-2:#1b3328;--ink:#f4f1e8;--muted:#a3b0a8;--faint:#7d8a83;
+        --mint:#3ddcae;--mint-ink:#062a1d;--line:rgba(244,241,232,.12);
+        --disp:"Archivo",system-ui,sans-serif;--body:"Inter",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+  .wrap{max-width:820px;margin:0 auto;padding:0 16px}
+  nav{display:flex;align-items:center;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
+  nav .sp{margin-left:auto}
+  nav a.ghost{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
+  .crumbs{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--faint);margin:36px 0 0}
+  .crumbs a{color:var(--mint);text-decoration:none}
+  h1{font-family:var(--disp);font-weight:800;font-size:clamp(30px,5.4vw,46px);line-height:1.06;margin:10px 0 12px;text-wrap:balance}
+  .lede{font-size:18px;color:var(--muted);max-width:62ch;margin:0 0 10px}
+  .stamp{font-family:var(--mono);font-size:12px;color:var(--faint);margin:0 0 28px}
+  h2{font-family:var(--disp);font-weight:800;font-size:22px;margin:40px 0 10px;text-wrap:balance}
+  p,li{color:var(--muted);max-width:65ch}
+  b,strong{color:var(--ink)}
+  .parishes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:8px 0}
+  .parish{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  .parish:hover{border-color:var(--mint)}
+  .parish .n{font-family:var(--disp);font-weight:800;font-size:34px;color:var(--mint);font-variant-numeric:tabular-nums;line-height:1}
+  .parish h3{font-family:var(--disp);font-size:19px;margin:8px 0 4px}
+  .parish p{margin:0;font-size:14px}
+  ol.check{padding-left:1.3em;margin:6px 0}
+  ol.check li{margin:.5em 0}
+  .list{list-style:none;padding:0;margin:8px 0;border-top:1px solid var(--line)}
+  .item{display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:baseline;padding:16px 2px;border-bottom:1px solid var(--line)}
+  .item h3{font-family:var(--disp);font-weight:700;font-size:18px;margin:0;color:var(--ink)}
+  .meta{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:15px;color:var(--muted)}
+  .meta a{color:var(--ink);text-underline-offset:3px}
+  .meta .tel{font-variant-numeric:tabular-nums}
+  .badge{justify-self:start;font-family:var(--mono);font-size:12px;color:var(--mint-ink);background:var(--mint);border-radius:999px;padding:3px 10px;text-decoration:none;white-space:nowrap}
+  .fix{grid-column:1/-1;justify-self:start;background:none;border:0;padding:0;color:var(--faint);font:inherit;font-size:13px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+  .fix:hover{color:var(--mint)}
+  .note{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0}
+  .note p{margin:.35em 0}
+  .ad{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:36px 0}
+  .ad .tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 6px}
+  .ad h3{font-family:var(--disp);font-size:20px;margin:0 0 6px}
+  .ad p{margin:0 0 10px}
+  .btn{display:inline-block;background:var(--mint);color:var(--mint-ink);font-weight:700;text-decoration:none;border:0;border-radius:10px;padding:11px 18px;font:inherit;font-weight:700;cursor:pointer}
+  form{display:grid;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  label{display:grid;gap:5px;font-size:14px;color:var(--muted)}
+  input,textarea{background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:10px 12px;font:inherit}
+  textarea{min-height:90px;resize:vertical}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  #sent{display:none;color:var(--mint);margin:0}
+  footer{color:var(--faint);font-size:13px;padding:36px 0 48px;border-top:1px solid var(--line);margin-top:48px}
+  footer p{color:var(--faint);margin:.3em 0}
+  @media (max-width:560px){.two{grid-template-columns:1fr}.item{grid-template-columns:1fr}nav a.ghost.hide-sm{display:none}}
+
+  .draft{background:#f5c542;color:#1d1600;font-family:var(--mono);font-size:13px;text-align:center;padding:8px 16px}
+  .facts{list-style:none;padding:0;margin:8px 0}
+  .facts li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0}
+  .src{font-size:13px;color:var(--faint)}
+  .src a{color:var(--faint)}
+  .qa h3{font-family:var(--disp);font-size:18px;margin:22px 0 6px;color:var(--ink)}
+  .qa p{margin:.3em 0}
+  .badges{display:flex;flex-wrap:wrap;gap:6px}
+  .badge{white-space:normal;max-width:100%}
+  .meta a,.src a,.item h3{overflow-wrap:anywhere}
+  .badge.alt{background:var(--surface-2);color:var(--ink);border:1px solid var(--line)}
+  table.counts{border-collapse:collapse;width:100%;font-size:14px;margin:8px 0}
+  table.counts th,table.counts td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;color:var(--muted)}
+  table.counts td.n{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink)}
+  .wrapt{overflow-x:auto}
+  select{background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:10px 12px;font:inherit}
+  .chk{display:flex;gap:8px;align-items:flex-start;font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a href="../../index.html"><img src="../../brand/autoants-logo-reverse.svg" alt="autoants home" style="height:26px;width:auto;display:block"></a>
+    <div class="sp"></div>
+    <a class="ghost hide-sm" href="../../nola/index.html">New Orleans guide</a>
+    <a class="ghost" href="../../nola/how-the-guide-works/index.html">How it works</a>
+  </nav>
+
+  <p class="crumbs"><a href="../index.html">New Orleans guide</a> · How it works</p>
+  <h1>How the guide works</h1>
+  <p class="lede">A business is listed only when a public licensing record shows it. Its place in a list comes from
+  public facts, counted the same way for everyone, and the method is all on this page.</p>
+  <p class="stamp">Method last changed October 7, 2026</p>
+
+  <h2 id="sources">Where the listings come from</h2>
+  <p>Only public licensing records, read from the files the licensing bodies publish:</p>
+  <ul><li><a href="https://assets.ctfassets.net/pc5e1rlgfrov/76jFas05vxnYhx6WmLTgYp/c330b501d51d62315baeb222b822ac73/Hort_Arborist_List__3_.pdf" target="_blank" rel="noopener">LDAF Horticulture Commission: licensed arborists</a>: list dated July 27, 2026; downloaded October 7, 2026</li><li><a href="https://assets.ctfassets.net/pc5e1rlgfrov/7zAviECpLIrCg6u7kYf9wF/3809b8771aa54911e47d8b40dff78955/Hort_Landscape_Horticulturist_List__3_.pdf" target="_blank" rel="noopener">LDAF Horticulture Commission: licensed landscape horticulturists</a>: list dated July 27, 2026; downloaded October 7, 2026</li><li><a href="https://www.jeffparish.gov/DocumentCenter/View/4423/Licensed-Companies-PDF" target="_blank" rel="noopener">Jefferson Parish licensed tree companies</a>: 2026 list, licenses good through 2027-03-31; downloaded October 2, 2026</li></ul>
+  <p>Roofers, HVAC contractors, plumbers and remodelers get listings when the LSLBC and State Plumbing Board rosters
+  arrive as public records. Until then those pages carry the license rules and no listings. We never fill a list
+  from Google Maps, bought lists or anything a business didn't publish itself.</p>
+
+  <h2 id="who">Who is left out</h2>
+  <p>A person licensed under his or her own name with no business name, because that is a person, not a business.
+  Employers of a licensee that don't sell the service, like a hotel, a school or a museum. Businesses based out of
+  state. And any business that asked to be removed.</p>
+
+  <h2 id="rank">How each list is ordered</h2>
+  <p>Each listing earns points from public facts; the list runs from most points to fewest, and ties go A to Z by
+  name. The points:</p>
+  <div class="wrapt"><table class="counts"><tr><th>Fact</th><th>Points</th></tr><tr><td>License age: 1 point per 5 years since the board first issued it, up to 2 (only where the board publishes the first-issued date)</td><td class="n">2</td></tr><tr><td>Classification fit: 2 points when the license class is the one for this work (arborist for tree work, landscape horticulturist for landscaping), 1 more for a local license for the same work (Jefferson Parish&#x27;s tree company license)</td><td class="n">3</td></tr><tr><td>A working website we confirmed belongs to the business (its own site shows its phone number)</td><td class="n">1</td></tr><tr><td>The website loads over HTTPS</td><td class="n">1</td></tr><tr><td>The website is set up for phones (a mobile viewport)</td><td class="n">1</td></tr><tr><td>The website has a tap-to-call phone link</td><td class="n">1</td></tr><tr><td>A phone number the business publishes itself (on its own site or its license record)</td><td class="n">1</td></tr><tr><td>A service area the business publishes itself</td><td class="n">1</td></tr></table></div>
+  <p>Facts we haven't checked yet count as zero until the next monthly refresh. The state's tree and landscape lists
+  don't print a first-issued date, so license age counts for no one on those pages today. Website facts come from
+  reading the site's own pages; a business can send us its site to be checked.</p>
+
+  <h2 id="never">What we never use</h2>
+  <ul>
+    <li><b>Money.</b> Nobody pays to be listed or to move up. There are no sponsored spots today. If autoants ever
+    sells a spot, it will be labeled as an ad, kept apart from the listings, and it will never change their order.</li>
+    <li><b>Being our client.</b> autoants builds tools for local businesses, and some listed here may become clients.
+    That never changes whether or where a business appears.</li>
+    <li><b>Reviews and star ratings.</b> We don't copy them from anywhere. If a licensing body or another official
+    source ever offers them through a lawful public API, we'll say so here before using them.</li>
+    <li><b>Google Maps data, mystery calls or call testing.</b> None of it.</li>
+    <li><b>Words like the ones in ads.</b> A business here is "listed", and "licensed" only when it's on the license
+    list we link to. We don't call anyone unlicensed: lists lag renewals, and a missing badge only means we didn't
+    find it.</li>
+  </ul>
+
+  <h2 id="claim">Claim, correct or remove</h2>
+  <p>Every listing has a link to claim, correct or remove it. A correction to a phone, website or service area needs
+  a page on the business's own site that shows it. A removal is permanent: the business stays off the guide even if
+  it shows up on next year's license list, and we won't email it either. Claims and corrections are free and never
+  change the order except through the facts above.</p>
+
+  <h2 id="refresh">How often it's rebuilt</h2>
+  <p>Monthly, from the latest license lists, with every change written to a changelog. The <a href="../data/index.html">data page</a>
+  shows the counts.</p>
+
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://autoants.com/#org",
+   "name": "autoants",
+   "url": "https://autoants.com/",
+   "email": "hello@autoants.com"
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://autoants.com/nola/how-the-guide-works/",
+   "url": "https://autoants.com/nola/how-the-guide-works/",
+   "name": "How the New Orleans local services guide works: sources, order and corrections",
+   "description": "Where the guide's listings come from, the public facts that set their order, what we never use, and how a business claims, corrects or removes its listing.",
+   "dateModified": "2026-10-07",
+   "publisher": {
+    "@id": "https://autoants.com/#org"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "New Orleans guide",
+     "item": "https://autoants.com/nola/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "How it works",
+     "item": "https://autoants.com/nola/how-the-guide-works/"
+    }
+   ]
+  }
+ ]
+}</script>
+  <footer>
+    <p>Made by autoants, a New Orleans company that builds AI assistants and search tools for local businesses.
+    Nobody pays to be listed or to move up. Some businesses here may become our clients; that never changes
+    whether or where they appear. <a href="../../nola/how-the-guide-works/index.html">How the guide works</a>.</p>
+    <p>autoants is a private company. This guide is not run, endorsed or approved by the Louisiana Department of Agriculture and Forestry, the LSLBC, the State Plumbing Board, Jefferson Parish or any other government agency. We read the lists they publish.</p>
+    <p>Listings rebuilt October 7, 2026. Corrections: hello@autoants.com.</p>
+  </footer>
+</div>
+</body>
+</html>
