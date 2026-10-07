@@ -10,11 +10,11 @@ height of the t's beside it.
 
 Secondary files (added 2026-10-07, Lane approved the scope; the wordmark and ant above are
 reused untouched, only placed):
-  lockups/   autoants-stacked(-reverse)   the mark centered above the wordmark
-             opsmath-lockup(-reverse)     "Operations Math" over "by aut·ants" (the endorsed line)
-  one-color/ <logo|mark|stacked>-<black|white>   one solid color, the eyes cut out as holes,
+  lockups/   opsmath-lockup(-reverse)     "Operations Math" over "by aut·ants" (the endorsed line)
+             (no stacked mark-over-wordmark lockup: the o already is the ant, so it repeats; Lane cut it 2026-10-07)
+  one-color/ <logo|mark>-<black|white>   one solid color, the eyes cut out as holes,
              everything merged into one outline (vinyl, embroidery, stamps, print)
-             <logo|stacked>-small-<black|white>  the same with the antenna weight floored at
+             <logo>-small-<black|white>        the same with the antenna weight floored at
              MIN_LINE_MM when printed 1 inch wide (the masters' antennae are thinner than that there)
   each with a PNG at 2x the SVG's nominal (viewBox) size, transparent.
 
@@ -46,8 +46,6 @@ ANT_MARGIN_L = 4.0               # px at 76 px type: clears the t's crossbar
 ANT_MARGIN_R = 1.5               # px: the a's bowl sits close
 
 # secondary lockups
-STACK_MARK_OF_WIDTH = 0.30       # stacked: the mark's width / the wordmark's width
-STACK_GAP_OF_XH = 0.55           # stacked: gap between the mark and the wordmark, in x-heights
 OPS_TEXT = "Operations Math"
 OPS_TRACK = -0.03                # em, the endorsed product line is longer than the wordmark, so a touch looser
 OPS_SUB_OF_XH = 0.58             # "by aut·ants": its x-height / the main line's x-height
@@ -242,14 +240,6 @@ def antenna_mm_at(parts, vb_w, width_in=PRINT_WIDTH_IN):
 
 # ---------------------------------------------------------------- lockups
 
-def stacked(G):
-    """The mark centered above the wordmark (square and tall spaces)."""
-    w = G["width"]
-    s = STACK_MARK_OF_WIDTH * w / 62.0
-    mx = w / 2 - 31.0 * s
-    my = G["top"] - STACK_GAP_OF_XH * G["xh"] - 86.0 * s
-    parts = mark_parts(mx, my, s) + wm_parts(G)
-    return parts, fit_vb(parts)
 
 
 def opsmath(G, f800, f600, layout="stacked"):
@@ -326,16 +316,13 @@ def main(ttf, png=True):
     }
 
     # secondary lockups
-    st_parts, st_vb = stacked(G)
     f600 = load_font(ttf, BY_WGHT)
     op_parts, op_vb = opsmath(G, f800, f600, "stacked")
-    files["lockups/autoants-stacked.svg"] = svg_color(st_parts, st_vb, LIGHT)
-    files["lockups/autoants-stacked-reverse.svg"] = svg_color(st_parts, st_vb, REVERSE)
     files["lockups/opsmath-lockup.svg"] = svg_color(op_parts, op_vb, LIGHT, "Operations Math by autoants")
     files["lockups/opsmath-lockup-reverse.svg"] = svg_color(op_parts, op_vb, REVERSE, "Operations Math by autoants")
 
     # one color: the masters' geometry, plus a floored "-small" cut where 1 inch wide is too thin
-    mono = {"logo": (wm_parts(G), vb), "mark": (mark_parts(0, 0, 1.0), "-2 -2 66 90"), "stacked": (st_parts, st_vb)}
+    mono = {"logo": (wm_parts(G), vb), "mark": (mark_parts(0, 0, 1.0), "-2 -2 66 90")}
     for name, (parts, v) in mono.items():
         vb_w = float(v.split()[2])
         mm = antenna_mm_at(parts, vb_w)
