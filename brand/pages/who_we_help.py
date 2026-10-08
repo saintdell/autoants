@@ -180,6 +180,18 @@ def page():
   .sell h3{{font-family:var(--disp);font-weight:800;font-size:19px;margin:0;text-wrap:balance}}
   .sell p{{margin:0;color:var(--muted);font-size:15px;line-height:1.5}}
   .sell .cta{{align-self:flex-start;margin-top:auto}}
+  .nl{{margin-top:14px;display:grid;grid-template-columns:1.25fr 1fr;gap:14px 26px;align-items:center;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--mint);border-radius:14px;padding:18px}}
+  .nl h3{{font-family:var(--disp);font-weight:800;font-size:19px;margin:6px 0 4px;text-wrap:balance}}
+  .nl-copy p{{margin:0;color:var(--muted);font-size:15px;line-height:1.5}}
+  .nl-form{{display:flex;flex-wrap:wrap;gap:10px}}
+  .nl-form input{{flex:1 1 200px;font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:10px 12px;min-width:0}}
+  .nl-form select{{flex:1 1 200px;font:inherit;font-size:16px;color:var(--ink);background-color:var(--bg);background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(-45deg,transparent 50%,var(--muted) 50%);background-position:calc(100% - 18px) 52%,calc(100% - 12px) 52%;background-size:6px 6px;background-repeat:no-repeat;-webkit-appearance:none;appearance:none;border:1px solid var(--line);border-radius:9px;padding:10px 32px 10px 12px;min-width:0;cursor:pointer}}
+  .nl-form select:invalid{{color:var(--faint)}} .nl-form option{{color:var(--ink);background:var(--bg)}}
+  .nl-form input:focus,.nl-form select:focus{{outline:2px solid var(--mint);outline-offset:1px;border-color:transparent}}
+  .nl-form button{{border:0;cursor:pointer;font-size:15px}}
+  .nl-form .nl-consent{{flex-basis:100%;margin:0;font-size:13px;color:var(--faint)}}
+  .sr{{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+  @media (max-width:720px){{.nl{{grid-template-columns:1fr}}}}
   .assess-note{{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--mint);border-radius:12px;padding:16px 18px;color:var(--muted);max-width:760px}}
   .assess-note b{{color:var(--ink)}} .assess-note a{{color:var(--mint)}}
   .later-grp{{border-style:dashed;background:transparent}}
@@ -260,6 +272,24 @@ def page():
     <h2>Selling to local businesses?</h2>
     <p class="lede">Some owners don't need an assistant. They need to know who needs them this week.</p>
     <div class="sells">{sell}</div>
+    <div class="nl" id="permit-report">
+      <div class="nl-copy"><div class="eyebrow">Free · once a month</div><h3>Permits Pulled</h3>
+        <p>A monthly read on what New Orleans' public records say about where the work is, from the same records these lists come from: re-roofs by ZIP, where houses are getting work, and what kinds of businesses just opened. Counts only, a two-minute read.</p></div>
+      <form class="nl-form" data-newsletter action="#permit-report" method="post">
+        <label class="sr" for="nl-email-who">Your email</label>
+        <input id="nl-email-who" type="email" name="email" placeholder="you@yourbusiness.com" autocomplete="email" required>
+        <label class="sr" for="nl-seg-who">I mostly…</label>
+        <select id="nl-seg-who" name="segment" required>
+          <option value="" disabled selected>I mostly…</option>
+          <option value="trades">fix or build homes</option>
+          <option value="sells-to-business">sell to local businesses</option>
+          <option value="real-estate">work in real estate</option>
+          <option value="other">something else</option>
+        </select>
+        <button class="cta" type="submit">Send me the report</button>
+        <p class="nl-consent">Monthly. Unsubscribe anytime.</p>
+      </form>
+    </div>
   </section>
   <section>
     <div class="assess-note"><b>Not sure what you need?</b> Start with a free 15-minute call, or <a href="index.html#assessment">the assessment</a>
@@ -276,6 +306,7 @@ def page():
   </section>
   <footer>autoants, short for automated assistants · Louisiana · autoants.com · Commercial services only.</footer>
 </div>
+<script src="assets/newsletter-signup.js" defer></script>
 </body>
 </html>
 '''

@@ -169,7 +169,22 @@
 .o3 .o3-sub{display:block;color:var(--muted);font-size:.85rem;margin-top:.15rem}
 .o3 .o3-btn{justify-content:center;margin-top:.4rem}
 .o3-start{margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:.8rem 1.4rem;align-items:center;justify-content:space-between;background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:1.2rem 1.4rem}
-.o3-start p{margin:0;color:var(--muted)} .o3-start b{color:var(--ink)}.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.1rem}
+.o3-start p{margin:0;color:var(--muted)} .o3-start b{color:var(--ink)}
+/* monthly permit report sign-up (2026-10-08); destination set in assets/newsletter-signup.js */
+.nl{margin-top:1.1rem;display:grid;grid-template-columns:1.25fr 1fr;gap:1rem 1.6rem;align-items:center;background:var(--surface);border:1px solid var(--line2);border-left:3px solid var(--amber);border-radius:16px;padding:1.3rem 1.4rem}
+.nl h3{font-size:1.25rem;margin:.35rem 0 .35rem;text-wrap:balance}
+.nl-copy p{margin:0;color:var(--muted);font-size:.95rem}
+.nl-copy p.eyebrow{color:var(--amber);font-size:.72rem}
+.nl-form{display:flex;flex-wrap:wrap;gap:.6rem}
+.nl-form input{flex:1 1 13rem;font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line2);border-radius:10px;padding:.75rem .8rem;min-width:0}
+.nl-form select{flex:1 1 13rem;font:inherit;font-size:16px;color:var(--ink);background-color:var(--bg);background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(-45deg,transparent 50%,var(--muted) 50%);background-position:calc(100% - 1.1rem) 52%,calc(100% - .75rem) 52%;background-size:.35rem .35rem;background-repeat:no-repeat;-webkit-appearance:none;appearance:none;border:1px solid var(--line2);border-radius:10px;padding:.75rem 2rem .75rem .8rem;min-width:0;cursor:pointer}
+.nl-form select:invalid{color:var(--faint)} .nl-form option{color:var(--ink);background:var(--bg)}
+.nl-form input:focus,.nl-form select:focus{outline:2px solid var(--amber);outline-offset:1px;border-color:transparent}
+.nl-form .btn{padding:.75rem 1.1rem;font-size:.95rem}
+.nl-form .nl-consent{flex-basis:100%;margin:0;font-size:.78rem;color:var(--faint)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media(max-width:760px){.nl{grid-template-columns:1fr}}
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.1rem}
   .tier{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.8rem 1.6rem;display:flex;flex-direction:column}
   .tier.feature{border-color:var(--amber);box-shadow:0 0 0 1px var(--amber),0 18px 50px rgba(61,220,174,.1)}
   .tier .flag{font-family:var(--mono);font-size:.64rem;font-weight:700;letter-spacing:.1em;color:var(--amber);text-transform:uppercase;margin-bottom:.6rem}
@@ -307,10 +322,28 @@
     <div class="o3"><div class="o3-top"><img src="brand/icons/promoter.svg" alt="" width="52" height="52"><span class="o3-n">03</span></div>
       <h3>Get the next job.</h3><p class="o3-out">The neighbors, your past customers and your own work bring in the next one.</p>
       <ul><li>Hangers on the doors around every job you finish</li><li>Reminders to past customers when it's time again</li><li>Postcards to homes that just had the job before yours</li><li>A week of posts from your real jobs, approved by text</li></ul>
-      <div class="o3-price">From <b>$400</b>/mo<span class="o3-sub">Social engine · founding · mailers priced with you</span></div>
+      <div class="o3-price">From <b>$99</b>/mo<span class="o3-sub">Neighbor hangers or past-customer reminders · Social engine $400/mo · founding</span></div>
       <a class="btn btn-ghost o3-btn" href="#contact" data-interest="Get the next job">Get the next job →</a></div>
   </div>
   <div class="o3-start"><p><b>Start free.</b> A 90-second video audit of your business, built from public information, or a preview of your new website. Yours to keep either way. <a href="services.html" style="color:var(--amber);font-weight:600">Every price on one page →</a></p><a class="btn btn-amber" href="work/">See the video audit →</a></div>
+  <div class="nl" id="permit-report">
+    <div class="nl-copy"><p class="eyebrow">Free · once a month</p><h3>Permits Pulled</h3>
+      <p>A monthly read on what New Orleans' public records say about where the work is: re-roofs by ZIP, where houses are getting work, and what kinds of businesses just opened. For trades, people who sell to local businesses, and real estate. Counts from city data, a two-minute read.</p></div>
+    <form class="nl-form" data-newsletter action="#permit-report" method="post">
+      <label class="sr" for="nl-email-home">Your email</label>
+      <input id="nl-email-home" type="email" name="email" placeholder="you@yourbusiness.com" autocomplete="email" required>
+      <label class="sr" for="nl-seg-home">I mostly…</label>
+      <select id="nl-seg-home" name="segment" required>
+        <option value="" disabled selected>I mostly…</option>
+        <option value="trades">fix or build homes</option>
+        <option value="sells-to-business">sell to local businesses</option>
+        <option value="real-estate">work in real estate</option>
+        <option value="other">something else</option>
+      </select>
+      <button class="btn btn-amber" type="submit">Send me the report</button>
+      <p class="nl-consent">Monthly. Unsubscribe anytime.</p>
+    </form>
+  </div>
 </div></section>
 
 <section id="transform"><div class="wrap">
@@ -591,6 +624,7 @@
     setTimeout(tick,1400);
   })();
 </script>
+<script src="assets/newsletter-signup.js" defer></script>
 
 </body>
 </html>
