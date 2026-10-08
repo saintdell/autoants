@@ -6,7 +6,7 @@
 > preview website for a business before any money changes hands.
 
 ## What AutoAnts does
-- Three offerings: search optimization (Google, listings and AI answers), automated assistants (the "Ants": missed-call text-back, lead response, booking, voice receptionist, review requests), and a social media engine (weekly posts from the business's real jobs)
+- Three outcomes: get found (search optimization: Google, listings and AI answers), never miss a job (the automated assistants, the "Ants": missed-call text-back, lead response, booking, voice receptionist, review requests), and get the next job (neighbor door hangers after each job, reminders to past customers, postcards timed to public permits, and a social media engine with weekly posts from the business's real jobs)
 - Starts with a free 90-second video audit of the business, built from public information only and sent only to that business: https://autoants.com/work/
 - Builds fast, mobile-first websites for local service businesses, with
   instant-quote forms and click-to-call (free preview built first; $500 one time
@@ -20,6 +20,10 @@
   ChatGPT/Claude/Perplexity recommend a business, then fixing the
   legitimate signals those answers draw on
 - Site Care: $99/month keeps the site, listings, and content current
+- Search plan: $500/month + $250 setup (founding rate, 5 seats): Google profile,
+  map ranking, listings, a page for each service and town, and AI answers checked
+  monthly; setup includes a site rebuild of up to 5 pages when the old site is
+  costing calls
 - The Office Manager: $750 setup + $500/month (founding rate) adds
   missed-call text-back, speed-to-lead, booking and quote follow-up, and
   review requests

@@ -89,6 +89,20 @@ STEPS = [("Reach out", "Fill out the form, or call or text. Two minutes: your na
          ("See your free preview", "We build your new website with your real info and reviews, before you pay anything."),
          ("Pick your crew", "A 15-minute call to choose the assistants that fit. You approve every message before it goes out."),
          ("Go live", "Once you say go, your site is live within 7 days or the $500 setup fee comes back.")]
+# Owners who buy a public-records list or mailing from us, not the assistants (Lane, 2026-10-07: these
+# never go on the home or services page). One sentence and one contact button each; the interest
+# text must match an <option> in the index.html contact form.
+SELL_TO = [
+    ("insurance", "For insurance agents",
+     "Each month, the contractors in your parish whose liability coverage on file with the state board has expired, from public records, so you can reach them first.",
+     "Contractor coverage list", "Ask about the list"),
+    ("restaurants", "For pest control and commercial cleaners serving restaurants",
+     "Every week, the restaurants near you cited in state health inspections for the problems you fix, from the public inspection record.",
+     "Restaurant inspection list", "Ask about the weekly list"),
+    ("next-job", "For gutter, solar, fencing and pool companies",
+     "Your postcard in the mailbox the week a city permit shows the job before yours (a new roof, a panel upgrade, a new pool), with one company per trade.",
+     "Next-job postcards", "Ask about the postcards"),
+]
 NEVER = ["Fake reviews, or asking only the happy customers",
          "Texting anyone who didn't say yes",
          "An AI that pretends to be a person",
@@ -118,6 +132,10 @@ def page():
         f'<div class="chips">{"".join(f"<span>{b}</span>" for b in biz)}</div></div>'
         for name, line, biz, later in GROUPS)
     never = "".join(f'<li>{x}</li>' for x in NEVER)
+    sell = "".join(
+        f'<div class="sell" id="{sid}"><h3>{t}</h3><p>{d}</p>'
+        f'<a class="cta" href="index.html?interest={i.replace(" ", "%20")}#contact">{b}</a></div>'
+        for sid, t, d, i, b in SELL_TO)
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -157,6 +175,11 @@ def page():
   .grp p{{margin:0 0 12px;color:var(--muted);font-size:14px;line-height:1.45}}
   .chips{{display:flex;flex-wrap:wrap;gap:6px}}
   .chips span{{font-size:13px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(61,220,174,.08)}}
+  .sells{{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}}
+  .sell{{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--mint);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px}}
+  .sell h3{{font-family:var(--disp);font-weight:800;font-size:19px;margin:0;text-wrap:balance}}
+  .sell p{{margin:0;color:var(--muted);font-size:15px;line-height:1.5}}
+  .sell .cta{{align-self:flex-start;margin-top:auto}}
   .assess-note{{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--mint);border-radius:12px;padding:16px 18px;color:var(--muted);max-width:760px}}
   .assess-note b{{color:var(--ink)}} .assess-note a{{color:var(--mint)}}
   .later-grp{{border-style:dashed;background:transparent}}
@@ -233,9 +256,14 @@ def page():
     <p class="lede">Find yours. Don't see it? If customers call or book with you, ask us.</p>
     <div class="grps">{allb}</div>
   </section>
+  <section class="noprint" id="sell-to">
+    <h2>Selling to local businesses?</h2>
+    <p class="lede">Some owners don't need an assistant. They need to know who needs them this week.</p>
+    <div class="sells">{sell}</div>
+  </section>
   <section>
     <div class="assess-note"><b>Not sure what you need?</b> Start with a free 15-minute call, or <a href="index.html#assessment">the assessment</a>
-      ($500, credited toward setup): a written report on what to automate first, and what each fix is worth.</div>
+      ($500, credited toward setup, any remainder to the first month): a written report on what to automate first, and what each fix is worth.</div>
   </section>
   <section>
     <h2>How it works</h2>
