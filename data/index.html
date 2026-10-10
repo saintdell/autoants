@@ -25,6 +25,8 @@
 {"@type":"Dataset","name":"New Orleans trade seasonality index","description":"For 16 trades, each month's permit applications against an average month (100), with a confidence grade. Clean years 2016-2025.","temporalCoverage":"2016-01-01/2025-12-31","spatialCoverage":"New Orleans, Louisiana","isBasedOn":"https://data.nola.gov/d/72f9-bi28"},
 {"@type":"Dataset","name":"New Orleans new business licenses by category","description":"Newly licensed New Orleans businesses each month, grouped by kind of business.","spatialCoverage":"New Orleans, Louisiana","isBasedOn":["https://data.nola.gov/d/hjcd-grvu","https://data.nola.gov/d/iqay-p646"]},
 {"@type":"Dataset","name":"New Orleans next-job signal by ZIP","description":"Houses where a public record shows a finished job, mapped to the trade that usually comes next, counted by ZIP and month.","spatialCoverage":"New Orleans, Louisiana","isBasedOn":"https://data.nola.gov/d/72f9-bi28"},
+{"@type":"Dataset","name":"Who owns New Orleans, by ZIP","description":"Per Orleans ZIP: the share of parcels whose owner gets the tax bill at another address, the share mailed out of state, the share owned by an LLC, company, trust or public body, and the count of vacant lots. Aggregates only; no names or addresses.","spatialCoverage":"New Orleans, Louisiana","isBasedOn":"https://gis.nola.gov/arcgis/rest/services/apps/property3/MapServer/15"},
+{"@type":"Dataset","name":"Job prices from permit filings, New Orleans","description":"What New Orleans jobs are declared at on city permit filings, by trade and ZIP: re-roofs, HVAC, electrical, water heaters, renovations, new homes, pools, fences, solar and standby generators. Median, typical range and spread in 2026 dollars, residential and commercial apart. Declared values, not contract prices; aggregates only.","temporalCoverage":"2015-01-01/..","spatialCoverage":"New Orleans, Louisiana","isBasedOn":["https://data.nola.gov/d/72f9-bi28","https://data.nola.gov/d/rcm3-fn58"]},
 {"@type":"Dataset","name":"New Orleans storm and weather history joined to permits","description":"National Weather Service alerts and tropical warnings for Orleans Parish, and what each storm did to permit volume.","temporalCoverage":"2012-01-01/..","spatialCoverage":"New Orleans, Louisiana"}
 ]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -284,6 +286,40 @@
       <p class="latest">Re-roof permits ran <b>2.2 times</b> the usual pace in the 60 days after Ida's first warning; across all 13 warnings the median was <b>1.2 times</b>. <span class="src" style="display:block;margin-top:.3rem">72f9-bi28 (description-matched re-roofs before 2025-05-15) + NWS warnings, 2012-01-01 to 2026-10-07.</span></p>
     </article>
 
+    <article class="card">
+      <div class="top"><span class="kind">Ownership</span><span class="pill on">Available</span></div>
+      <h3>Who owns New Orleans, by ZIP</h3>
+      <p>For every Orleans ZIP: how many owners get the tax bill somewhere else, how many get it out of state, how many parcels an LLC, company, trust or public body owns, and how many vacant lots there are. Counts and percentages only.</p>
+      <dl>
+        <dt>Coverage</dt>
+        <dd>Orleans Parish, the 17 ZIPs with 100 or more parcels (about 160,000 parcels). Every parcel with a site address counts, homes or not: the open layer has no use code. "Elsewhere" means the mailing street address differs from the parcel's; PO boxes are left out of that count. Owners are read as entities from the name. The City's vacant-lot list is from the 2022 roll, so some lots have been built on since. We re-pull at least monthly.</dd>
+        <dt>Fields</dt>
+        <dd>ZIP, parcels, % owner mailed elsewhere, % out of state, % entity-owned, vacant lots, and the counts behind each percentage.</dd>
+        <dt>Source and license</dt>
+        <dd>City of New Orleans parcel layer (gis.nola.gov, from assessor data) and the City's Vacant Parcels layer. The parcel service states no license; the City's open-data policy (CAO Policy Memorandum No. 135) opens City data for commercial and non-commercial use. No names or addresses leave our machine.</dd>
+        <dt>Good for</dt>
+        <dd>Agents and investors sizing a farm, property managers finding owners who live elsewhere, trades that sell to landlords, reporters.</dd>
+      </dl>
+      <p class="latest">Citywide, <b>49%</b> of parcels' owners get the tax bill at another address and <b>23%</b> are owned by an LLC or other entity. Most held from elsewhere: 70112 (CBD), <b>81%</b>; least: 70124 (Lakeview), <b>28%</b>. <span class="src" style="display:block;margin-top:.3rem">gis.nola.gov property3/15 + Vacant Parcels layer, every parcel with a site address, pulled 2026-10-10.</span></p>
+    </article>
+
+    <article class="card">
+      <div class="top"><span class="kind">Prices</span><span class="pill on">Available</span></div>
+      <h3>Job prices from permit filings, New Orleans</h3>
+      <p>What jobs are declared at on city permit filings: re-roofs, HVAC, electrical, water heaters, renovations, new homes, pools, fences, solar and standby generators. The typical range, the median and the spread, in 2026 dollars, with homes and commercial kept apart.</p>
+      <dl>
+        <dt>Coverage</dt>
+        <dd>New Orleans (Orleans Parish). Applications from 2015, inflation-adjusted; prices use the last three years (2024 on), with a year-by-year trend back to 2015. A ZIP gets its own range at 30 or more priced permits, otherwise its part of town. About two in three trade permits carry a usable value. <b>The city's re-roof and plumbing permit types carry none</b>, so re-roofs are read from single-job renovation permits and plumbing means water heaters.</dd>
+        <dt>Fields</dt>
+        <dd>Trade, residential or commercial, ZIP or area, permits priced, median, typical range (25th–75th percentile), 10th–90th percentile, median by year, new-home cost per square foot, confidence grade, and the share of each trade's filings that were usable.</dd>
+        <dt>Source and license</dt>
+        <dd>City of New Orleans open data: Permits - BLDS (72f9-bi28) and Permits (rcm3-fn58), both CC0; BLS CPI-U for inflation. A declared value is what the filer wrote on the permit, not the contract price. Placeholders, flat values stamped on every job, and outliers are removed by written rules.</dd>
+        <dt>Good for</dt>
+        <dd>Contractors pricing against the local market, checking an estimate or proposal, lenders, insurers and reporters.</dd>
+      </dl>
+      <p class="latest">Re-roofs were typically declared at <b>$12,200–$23,800</b> and HVAC jobs at <b>$7,800–$16,600</b> (homes, 2024–2026, 2026 dollars); in 70115 (Uptown), HVAC ran <b>$8,400–$18,900</b>. <span class="src" style="display:block;margin-top:.3rem">72f9-bi28 declared values, residential, applications 2024-01-01 to 2026-10-07, pulled 2026-10-10.</span></p>
+    </article>
+
   </div>
 
   <h3 class="devhead">In development</h3>
@@ -381,6 +417,7 @@
     <div class="practice"><h3>Counts, not people</h3><p>We sell aggregates by ZIP, month, trade and category. We don't sell homeowner names.</p></div>
     <div class="practice"><h3>Not a consumer reporting agency</h3><p>Our data may not be used to decide anyone's credit, insurance, housing or employment (the Fair Credit Reporting Act), and we won't sell it for that.</p></div>
     <div class="practice"><h3>Client data stays private</h3><p>We don't sell client data that identifies anyone, our clients or their customers.</p></div>
+    <div class="practice"><h3>Address takedowns</h3><p>If you're a protected individual under La. R.S. 44:11.2, use the <a href="#ask">form on this page</a> (write "Address takedown" in the message) and we'll remove your address within 72 hours.</p></div>
   </div>
 </div></section>
 

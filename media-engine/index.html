@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neighborhood Media Engine · autoants</title>
+<meta name="description" content="Every week, posts and short videos about the New Orleans neighborhoods you work in, made from your own jobs and the city's public permit records. You approve them by text.">
+<link rel="canonical" href="https://autoants.com/media-engine/">
+<meta property="og:title" content="Neighborhood Media Engine · autoants">
+<meta property="og:description" content="Weekly posts about your own neighborhoods, from your jobs and the city's permit records, approved by text.">
+<meta property="og:url" content="https://autoants.com/media-engine/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://autoants.com/brand/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  /* autoants tokens: night #0b1712, mint #3ddcae. The site is dark-only, so there is no light theme to switch to. */
+  :root{
+    --bg:#0b1712; --bg2:#0f1f18; --surface:#14261e; --surface2:#1a2f25;
+    --ink:#f4f1e8; --muted:#a3b0a8; --faint:#7d8a83;
+    --mint:#3ddcae; --mint-ink:#062a1d;
+    --line:rgba(244,241,232,.10); --line2:rgba(244,241,232,.16);
+    --paper:#fcfcfb; --ok:#7bc96a; --dev:#c9c2b0;
+    --disp:'Archivo',-apple-system,system-ui,sans-serif;
+    --body:'Inter',-apple-system,system-ui,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --wrap:72rem;
+    color-scheme:dark;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+  h1,h2,h3{font-family:var(--disp);letter-spacing:-.02em;line-height:1.05;text-wrap:balance}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 1.25rem}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mint)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--disp);font-weight:800;font-size:1rem;padding:.9rem 1.4rem;border-radius:11px;cursor:pointer;border:0;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease}
+  .btn:active{transform:scale(.98)}
+  .btn-mint{background:var(--mint);color:var(--mint-ink);box-shadow:0 10px 30px rgba(61,220,174,.2)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line2)}
+  .btn-ghost:hover{border-color:var(--mint);color:var(--mint)}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(11,23,18,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:1.4rem;height:62px}
+  nav .links{display:flex;gap:1.5rem;margin-left:auto;font-size:.92rem;font-weight:500;color:var(--muted)}
+  nav .links a{text-decoration:none}
+  nav .links a:hover{color:var(--ink)}
+  nav .btn{padding:.55rem 1rem;font-size:.9rem}
+  @media(max-width:760px){nav .links{display:none} nav .btn{margin-left:auto}}
+
+  header{position:relative;padding:4.2rem 0 3rem;overflow:hidden}
+  header:before{content:"";position:absolute;inset:0;background:radial-gradient(56rem 30rem at 85% -10%,rgba(61,220,174,.12),transparent 62%);pointer-events:none}
+  header .wrap{position:relative}
+  header h1{font-size:clamp(2.3rem,6vw,3.9rem);font-weight:900;margin:.9rem 0 1.1rem;max-width:16ch}
+  header h1 span{color:var(--mint)}
+  .lede{font-size:clamp(1.05rem,2vw,1.2rem);color:var(--muted);max-width:40rem;margin-bottom:1.6rem}
+  .lede b{color:var(--ink);font-weight:600}
+  .cta-row{display:flex;gap:.8rem;flex-wrap:wrap}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,11rem),1fr));gap:.8rem;margin-top:2.4rem}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem}
+  .stat b{display:block;font-family:var(--disp);font-weight:900;font-size:1.9rem;color:var(--mint);line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+  .stat span{display:block;color:var(--muted);font-size:.88rem;margin-top:.35rem;line-height:1.4}
+  .src{font-family:var(--mono);font-size:.72rem;color:var(--faint);line-height:1.6;margin-top:.8rem;max-width:72ch}
+  .src a{color:var(--muted)}
+
+  section{padding:4rem 0}
+  .band{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .sec-head{max-width:44rem;margin-bottom:2rem}
+  .sec-head h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;margin:.6rem 0 .6rem}
+  .sec-head p{color:var(--muted);font-size:1.03rem}
+  .sec-head p.eyebrow{color:var(--mint);font-size:.72rem}
+  .sec-head p.src{color:var(--faint);font-size:.72rem}
+
+  /* catalog */
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,21rem),1fr));gap:1rem}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.4rem 1.35rem 1.3rem;display:flex;flex-direction:column;gap:.7rem;min-width:0}
+  .card .top{display:flex;align-items:center;justify-content:space-between;gap:.8rem}
+  .pill{font-family:var(--mono);font-size:.64rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .55rem;border-radius:6px;white-space:nowrap}
+  .pill.on{background:var(--mint);color:var(--mint-ink)}
+  .pill.dev{background:transparent;color:var(--dev);border:1px dashed var(--dev)}
+  .card .kind{font-family:var(--mono);font-size:.68rem;color:var(--faint);letter-spacing:.06em;text-transform:uppercase}
+  .card h3{font-size:1.25rem;font-weight:800}
+  .card > p{color:var(--muted);font-size:.95rem}
+  .card dl{display:grid;gap:.55rem;margin-top:.2rem;border-top:1px solid var(--line);padding-top:.8rem}
+  .card dt{font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mint)}
+  .card dd{color:var(--muted);font-size:.9rem;line-height:1.5;overflow-wrap:anywhere}
+  .card dd b{color:var(--ink);font-weight:600}
+  .card .latest{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:.7rem .8rem;font-size:.88rem;color:var(--muted)}
+  .card .latest b{color:var(--ink)}
+  .card.devcard{background:transparent;border-style:dashed;border-color:var(--line2)}
+  .devhead{margin:2.4rem 0 1rem;font-size:1.25rem;font-weight:800}
+  .also{margin-top:1.4rem;color:var(--muted);font-size:.95rem}
+  .also a{color:var(--mint);font-weight:600}
+
+  /* proof */
+  .findings{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:1rem;margin-bottom:2rem}
+  .finding{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--mint);border-radius:14px;padding:1.2rem 1.2rem 1.1rem}
+  .finding .n{font-family:var(--disp);font-weight:900;font-size:2.3rem;color:var(--mint);line-height:1;letter-spacing:-.02em}
+  .finding h3{font-size:1.08rem;font-weight:800;margin:.5rem 0 .35rem;line-height:1.25}
+  .finding p{color:var(--muted);font-size:.9rem}
+  .finding p.src{margin-top:.6rem;font-size:.72rem;color:var(--faint)}
+  figure{margin:0 0 1.6rem}
+  .chart{background:var(--paper);border-radius:14px;padding:.6rem;border:1px solid var(--line2);overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .chart img{display:block;width:100%;height:auto}
+  @media(max-width:640px){.chart img{width:640px;max-width:none}}
+  figcaption{color:var(--muted);font-size:.9rem;margin-top:.7rem;max-width:72ch}
+  figcaption .hint{display:none;color:var(--faint)}
+  @media(max-width:640px){figcaption .hint{display:inline}}
+
+  /* ways to get it */
+  .ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17.5rem),1fr));gap:1.1rem}
+  .way{background:var(--surface);border:1px solid var(--line2);border-radius:18px;padding:1.7rem 1.5rem;display:flex;flex-direction:column;gap:.7rem;position:relative;overflow:hidden}
+  .way:before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--mint)}
+  .way .num{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.18em;color:var(--mint)}
+  .way h3{font-size:1.5rem;font-weight:800}
+  .way p{color:var(--muted);font-size:.95rem}
+  .way ul{padding-left:1.1rem;color:var(--muted);font-size:.93rem}
+  .way li{margin:.25rem 0}
+  .way .price{margin-top:auto;padding-top:.9rem;border-top:1px solid var(--line);font-size:.95rem}
+  .way .price b{font-family:var(--disp);font-size:1.35rem}
+  .way .price small{display:block;color:var(--muted);font-size:.84rem;margin-top:.15rem}
+  .who{margin-top:1.4rem;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.3rem;color:var(--muted);font-size:.95rem}
+  .who b{color:var(--ink)}
+
+  /* form (the same lead endpoint as the home page) */
+  .ask{display:grid;grid-template-columns:.9fr 1.1fr;gap:2.4rem;align-items:start}
+  @media(max-width:900px){.ask{grid-template-columns:1fr}}
+  .cform{background:var(--surface);border:1px solid var(--line2);border-radius:18px;padding:1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:.9rem;min-width:0}
+  .cform label{display:grid;gap:.35rem;font-size:.85rem;font-weight:600;color:var(--muted);min-width:0}
+  .cform .full{grid-column:1/-1}
+  .cform input,.cform select,.cform textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line2);border-radius:10px;padding:.75rem .8rem;width:100%;min-width:0}
+  .cform input:focus,.cform select:focus,.cform textarea:focus{outline:2px solid var(--mint);outline-offset:1px;border-color:transparent}
+  .cform .consent{font-size:.78rem;color:var(--faint);font-weight:400}
+  .cform .consent a{color:var(--muted)}
+  .cform button{justify-self:start}
+  .cform .sent{grid-column:1/-1;color:var(--ok);font-weight:600;display:none}
+  @media(max-width:560px){.cform{grid-template-columns:1fr;padding:1.2rem}}
+  .opt{font-weight:400;color:var(--faint)}
+
+  /* practices */
+  .practices{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:1rem}
+  .practice{border-top:2px solid var(--mint);padding-top:.9rem}
+  .practice h3{font-size:1.05rem;font-weight:800;margin-bottom:.35rem;font-family:var(--body);letter-spacing:0}
+  .practice p{color:var(--muted);font-size:.93rem}
+
+  footer{border-top:1px solid var(--line);padding:2.4rem 0 3rem;color:var(--faint);font-size:.86rem}
+  footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+  footer a{color:inherit}
+  footer a:hover{color:var(--mint)}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+  /* media engine */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:1rem}
+  .step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.2rem 1.1rem}
+  .step .n{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.18em;color:var(--mint)}
+  .step h3{font-size:1.15rem;font-weight:800;margin:.45rem 0 .35rem}
+  .step p{color:var(--muted);font-size:.93rem}
+  .samples{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem}
+  @media(max-width:900px){.samples{grid-template-columns:repeat(2,1fr)}}
+  .samples figure{margin:0}
+  .samples img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid var(--line2)}
+  .samples figcaption{font-size:.84rem;margin-top:.45rem}
+  .weekly{list-style:none;display:grid;gap:.55rem;max-width:46rem}
+  .weekly li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:.8rem 1rem;color:var(--muted);font-size:.95rem}
+  .weekly li b{color:var(--ink);font-weight:600}
+</style>
+</head>
+<body>
+<!-- Published 2026-10-10 on Lane's "push". Founding prices: Core $550/mo, Plus $649/$700 (docs/playbooks/neighborhood-media-engine.md in tle-main). -->
+
+<nav><div class="wrap">
+  <a href="../" aria-label="autoants home"><img src="../brand/autoants-logo-reverse.svg" alt="autoants" style="height:28px;width:auto;display:block"></a>
+  <div class="links"><a href="#how">How it works</a><a href="#sample">Samples</a><a href="#price">Price</a><a href="#promise">What we don't promise</a></div>
+  <a class="btn btn-mint" href="#ask" data-interest="Neighborhood Media Engine">Ask about it</a>
+</div></nav>
+
+<header><div class="wrap">
+  <p class="eyebrow">Neighborhood Media Engine · New Orleans</p>
+  <h1>Posts about your neighborhoods, <span>every week.</span></h1>
+  <p class="lede">Every week you get posts and short videos about the neighborhoods you work in, made from <b>your own jobs</b> and <b>the city's public permit records</b>. You approve them with one text. Nothing goes up without your yes.</p>
+  <div class="cta-row">
+    <a class="btn btn-mint" href="#ask" data-interest="Neighborhood Media Engine">Ask about it</a>
+    <a class="btn btn-ghost" href="../work/">Start with a free video audit</a>
+  </div>
+</div></header>
+
+<section id="how" class="band"><div class="wrap">
+  <div class="sec-head"><p class="eyebrow">How a week works</p><h2>You send photos. We make the week. You text yes.</h2></div>
+  <div class="steps">
+    <div class="step"><span class="n">01</span><h3>Your jobs</h3><p>Send a few photos from the week's jobs. With your customer's OK, one real review becomes a highlight post.</p></div>
+    <div class="step"><span class="n">02</span><h3>Your neighborhoods</h3><p>We count the city's permits in your ZIP codes: what's changing, what the season usually brings, and the work that tends to come next. Each number shows its source and dates.</p></div>
+    <div class="step"><span class="n">03</span><h3>Your yes</h3><p>One review page a week. Text <b>YES 1 2 3</b> or <b>CHANGE 4: ...</b> and we fix it. Nothing posts until you say so.</p></div>
+  </div>
+</div></section>
+
+<section id="sample"><div class="wrap">
+  <div class="sec-head"><p class="eyebrow">Samples</p><h2>What the data posts look like.</h2><p>Two sample weeks for fictional businesses, made from real city permit data. A client's posts carry their own name, colors and logo.</p></div>
+  <div class="samples">
+    <figure><img src="img/heron-gable-sample-slide-01.jpg" width="1080" height="1350" loading="lazy" alt="Sample carousel slide for a fictional roofer: Re-roof permits more than doubled in Uptown (70115). 18 in the past four weeks, up from 7 in the four weeks before. Source: City of New Orleans permit data."><figcaption>Sample · fictional roofer · carousel slide 1</figcaption></figure>
+    <figure><img src="img/heron-gable-sample-slide-02.jpg" width="1080" height="1350" loading="lazy" alt="Sample carousel slide: re-roof permits by ZIP, the past four weeks against the four before, for 70115, 70118 and 70125. Source: City of New Orleans permit data."><figcaption>Sample · fictional roofer · by ZIP</figcaption></figure>
+    <figure><img src="img/cattail-air-sample-slide-01.jpg" width="1080" height="1350" loading="lazy" alt="Sample carousel slide for a fictional HVAC company: HVAC permits more than tripled in Gentilly (70122). 26 in the past four weeks, up from 5 in the four weeks before. Source: City of New Orleans permit data."><figcaption>Sample · fictional HVAC company · slide 1</figcaption></figure>
+    <figure><img src="img/cattail-air-sample-stat.jpg" width="1080" height="1080" loading="lazy" alt="Sample stat post: 63 HVAC permits in 70122, 70124 and 70119 in the past four weeks, against about 42 in a typical four weeks for this time of year. Source: City of New Orleans permit data."><figcaption>Sample · fictional HVAC company · stat post</figcaption></figure>
+  </div>
+  <p class="src">Source: City of New Orleans permit data, data.nola.gov (rcm3-fn58, 72f9-bi28, CC0). Permits issued Aug 15 to Oct 9, 2026, pulled Oct 10, 2026. Heron Gable Roofing and Cattail Air &amp; Heat are made-up businesses. Words like "doubled" appear only when the counts pass a significance test; a quiet week gets plain counts.</p>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="sec-head"><p class="eyebrow">Every week</p><h2>What's in a week.</h2></div>
+  <ul class="weekly">
+    <li><b>Posts from your jobs.</b> A before/after clip from your photos, 2 Google posts, 2 Facebook or Instagram posts, 1 Nextdoor post, and 1 review highlight.</li>
+    <li><b>Data posts about your ZIPs.</b> A carousel and a stat post from the city's permit records, each with its source and dates.</li>
+    <li><b>Captions and a short-video script.</b> Captions written for Facebook, Instagram, Google and Nextdoor.</li>
+    <li><b>Weather posts.</b> When the Weather Service issues an alert your trade watches for, a ready post and a note to your customers.</li>
+    <li><b>A monthly recap video.</b> 60 seconds on the month.</li>
+  </ul>
+</div></section>
+
+<section id="price"><div class="wrap">
+  <div class="sec-head"><p class="eyebrow">Price</p><h2>One plan. Two ways to add mail.</h2><p>Founding prices. Every plan shows its setup fee. Monthly plans cancel anytime after 90 days.</p></div>
+  <div class="ways">
+    <div class="way"><span class="num">CORE</span><h3>The weekly engine</h3>
+      <p>Job posts and data posts every week, approved by text, plus weather posts and the monthly recap.</p>
+      <div class="price"><b>$550</b>/mo<small>$0 setup. Data posts need an Orleans Parish ZIP; elsewhere the job posts are $400/mo.</small></div>
+      <a class="btn btn-mint" href="#ask" data-interest="Neighborhood Media Engine">Ask about Core</a></div>
+    <div class="way"><span class="num">PLUS</span><h3>Core plus mail</h3>
+      <p>For gutter, solar, insulation, fencing and similar trades: your postcard mailed the week a city permit shows the job before yours, one company per trade. For other trades: hangers around each finished job, or a reminder card to past customers.</p>
+      <div class="price"><b>$700</b>/mo + $1.29 a card<small>$199 setup, next-job postcards. Or <b>$649/mo</b> with hangers or reminder cards, printing and postage at cost.</small></div>
+      <a class="btn btn-ghost" href="#ask" data-interest="Neighborhood Media Engine">Ask about Plus</a></div>
+    <div class="way"><span class="num">NEW BUSINESS</span><h3>Launch, then Core</h3>
+      <p>Just opened? Your site live, your Google Business Profile set up and verified, and your first 30 days of posts.</p>
+      <div class="price"><b>$750</b> one time<small>Then Core at $550/mo from month 2, if you want it.</small></div>
+      <a class="btn btn-ghost" href="#ask" data-interest="Neighborhood Media Engine">Ask about the launch</a></div>
+  </div>
+  <p class="who"><b>Start free:</b> a 90-second video audit of your business, made from public information. <a href="../work/" style="color:var(--mint);font-weight:600">See one →</a></p>
+</div></section>
+
+<section id="promise" class="band"><div class="wrap">
+  <div class="sec-head"><p class="eyebrow">Plain rules</p><h2>What we don't promise.</h2></div>
+  <div class="practices">
+    <div class="practice"><h3>No promised results</h3><p>We don't promise calls, jobs, rankings or revenue. We promise true posts, on time, for your OK.</p></div>
+    <div class="practice"><h3>No borrowed numbers</h3><p>Every number is yours or the city's, with its source and date. No industry statistics from somewhere else.</p></div>
+    <div class="practice"><h3>No one's address</h3><p>Permit counts are by ZIP. No homeowner names or addresses, ever.</p></div>
+    <div class="practice"><h3>Nothing without your yes</h3><p>We don't post on our own, and we don't invent customers or reviews.</p></div>
+  </div>
+</div></section>
+
+<section id="ask"><div class="wrap">
+  <div class="ask">
+    <div class="sec-head" style="margin-bottom:0"><p class="eyebrow">Ask about it</p><h2>Want to see a week for your business?</h2><p>Tell us your trade and the ZIP codes you work in. We'll make a sample week from your own neighborhoods and walk you through it in 15 minutes. A person replies, usually the same day.</p>
+      <p class="src" style="margin-top:1.2rem">autoants · hello@autoants.com</p></div>
+    <form class="cform" id="mediaForm" novalidate>
+      <label>Your name<input name="name" autocomplete="name" required></label>
+      <label>Business<input name="business" autocomplete="organization" required></label>
+      <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
+      <label><span>Email <span class="opt">(optional)</span></span><input name="email" type="email" autocomplete="email"></label>
+      <label>Your trade<input name="trade" placeholder="roofing, HVAC, electrical..."></label>
+      <label>Interested in<select name="interest" id="interest">
+        <option selected>Neighborhood Media Engine</option><option>Video audit</option><option>15-minute call</option></select></label>
+      <label class="hp" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+      <label class="full">ZIP codes you work in<textarea name="msg" rows="2" placeholder="e.g. 70115, 70118, 70125"></textarea></label>
+      <p class="consent full">We'll reply by phone or email about this request. Nothing you send is shared or sold. <a href="../privacy.html">Privacy</a></p>
+      <button class="btn btn-mint" type="submit">Send</button>
+      <p class="sent" id="sentNote" role="status"></p>
+    </form>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <a href="../" aria-label="autoants home"><img src="../brand/autoants-logo-reverse.svg" alt="autoants" style="height:22px;width:auto;display:block"></a>
+  <span>autoants · hello@autoants.com · Louisiana · <a href="../privacy.html">Privacy</a> · <a href="../services.html">Services</a> · <a href="../data/">Data</a></span>
+</div></footer>
+
+<script>
+  // Same form endpoint as the home page: the autoants-leads worker /lead (pings Lane, keeps a copy in KV).
+  // It needs name, business and phone; interest arrives as "Neighborhood Media Engine" unless changed.
+  var LEAD_ENDPOINT = "https://autoants-leads.saintdell.workers.dev/lead";
+  document.querySelectorAll('[data-interest]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var sel = document.getElementById('interest'), want = a.getAttribute('data-interest');
+      if (sel) for (var i = 0; i < sel.options.length; i++) if (sel.options[i].text === want) { sel.selectedIndex = i; break; }
+    });
+  });
+  function leadSource(){
+    var r = ''; try { r = new URLSearchParams(location.search).get('ref') || ''; } catch(e) {}
+    try { if (r) sessionStorage.setItem('aa-ref', r); else r = sessionStorage.getItem('aa-ref') || ''; } catch(e) {}
+    return r.replace(/[^a-z0-9_-]/gi, '').slice(0, 40) || 'direct';
+  }
+  leadSource();
+  (function(){
+    var f = document.getElementById('mediaForm'); if (!f) return;
+    var note = document.getElementById('sentNote');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (!f.name.value.trim() || !f.phone.value.trim() || !f.business.value.trim()) { f.reportValidity && f.reportValidity(); return; }
+      var d = {name:f.name.value.trim(), business:f.business.value.trim(), phone:f.phone.value.trim(), email:f.email.value.trim(),
+               trade:f.trade.value.trim(), interest:f.interest.value, msg:f.msg.value.trim(), page:'autoants.com/media-engine', source:leadSource(),
+               website:(f.website ? f.website.value : ''), sms:'no'};
+      var btn = f.querySelector('button[type=submit]'); if (btn) btn.disabled = true;
+      var show = function(t){ note.textContent = t; note.style.display = 'block'; };
+      fetch(LEAD_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(d)})
+        .then(function(r){ if (!r.ok) throw 0; show("Got it. We'll be in touch, usually the same day."); f.reset(); })
+        .catch(function(){ show("That didn't go through. Your details are still here; please try again in a minute."); })
+        .then(function(){ if (btn) btn.disabled = false; });
+    });
+  })();
+</script>
+</body>
+</html>
