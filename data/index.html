@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New Orleans permit, business and seasonality data · autoants</title>
+<meta name="description" content="New Orleans public records, cleaned and joined: residential permits by trade since 2012, a 10-year trade seasonality index, new business licenses by category, and the next-job signal by ZIP. Free monthly report, weekly feeds and custom datasets.">
+<link rel="canonical" href="https://autoants.com/data/">
+<meta property="og:title" content="New Orleans data, cleaned and joined · autoants">
+<meta property="og:description" content="Permits by trade since 2012, a 10-year seasonality index, new businesses by category and the next job after each project. Built from public records, sold as counts by ZIP and month.">
+<meta property="og:url" content="https://autoants.com/data/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://autoants.com/brand/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="New Orleans data, cleaned and joined · autoants">
+<meta name="twitter:description" content="Permits by trade since 2012, a 10-year seasonality index, new businesses by category and the next job after each project.">
+<meta name="twitter:image" content="https://autoants.com/brand/og.png">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"DataCatalog","name":"autoants New Orleans data","url":"https://autoants.com/data/","description":"Aggregate datasets built from New Orleans public records and autoants' own analysis: counts by ZIP, month, trade and category. No homeowner names.","publisher":{"@type":"Organization","name":"autoants","legalName":"AutoAnts, LLC","url":"https://autoants.com/"},"spatialCoverage":{"@type":"Place","name":"New Orleans (Orleans Parish), Louisiana"},"dataset":[
+{"@type":"Dataset","name":"New Orleans residential permits by trade","description":"Trade-relevant City of New Orleans permit applications sorted into 16 trades, one house per trade per month, by ZIP. Dedicated re-roof permits exist only since 2025-05-15; earlier re-roofs are description-matched.","temporalCoverage":"2012-01-01/..","spatialCoverage":"New Orleans, Louisiana","isBasedOn":["https://data.nola.gov/d/72f9-bi28","https://data.nola.gov/d/rcm3-fn58"]},
+{"@type":"Dataset","name":"New Orleans trade seasonality index","description":"For 16 trades, each month's permit applications against an average month (100), with a confidence grade. Clean years 2016-2025.","temporalCoverage":"2016-01-01/2025-12-31","spatialCoverage":"New Orleans, Louisiana","isBasedOn":"https://data.nola.gov/d/72f9-bi28"},
+{"@type":"Dataset","name":"New Orleans new business licenses by category","description":"Newly licensed New Orleans businesses each month, grouped by kind of business.","spatialCoverage":"New Orleans, Louisiana","isBasedOn":["https://data.nola.gov/d/hjcd-grvu","https://data.nola.gov/d/iqay-p646"]},
+{"@type":"Dataset","name":"New Orleans next-job signal by ZIP","description":"Houses where a public record shows a finished job, mapped to the trade that usually comes next, counted by ZIP and month.","spatialCoverage":"New Orleans, Louisiana","isBasedOn":"https://data.nola.gov/d/72f9-bi28"},
+{"@type":"Dataset","name":"New Orleans storm and weather history joined to permits","description":"National Weather Service alerts and tropical warnings for Orleans Parish, and what each storm did to permit volume.","temporalCoverage":"2012-01-01/..","spatialCoverage":"New Orleans, Louisiana"}
+]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  /* autoants tokens: night #0b1712, mint #3ddcae. The site is dark-only, so there is no light theme to switch to. */
+  :root{
+    --bg:#0b1712; --bg2:#0f1f18; --surface:#14261e; --surface2:#1a2f25;
+    --ink:#f4f1e8; --muted:#a3b0a8; --faint:#7d8a83;
+    --mint:#3ddcae; --mint-ink:#062a1d;
+    --line:rgba(244,241,232,.10); --line2:rgba(244,241,232,.16);
+    --paper:#fcfcfb; --ok:#7bc96a; --dev:#c9c2b0;
+    --disp:'Archivo',-apple-system,system-ui,sans-serif;
+    --body:'Inter',-apple-system,system-ui,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --wrap:72rem;
+    color-scheme:dark;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+  h1,h2,h3{font-family:var(--disp);letter-spacing:-.02em;line-height:1.05;text-wrap:balance}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 1.25rem}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mint)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--disp);font-weight:800;font-size:1rem;padding:.9rem 1.4rem;border-radius:11px;cursor:pointer;border:0;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease}
+  .btn:active{transform:scale(.98)}
+  .btn-mint{background:var(--mint);color:var(--mint-ink);box-shadow:0 10px 30px rgba(61,220,174,.2)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line2)}
+  .btn-ghost:hover{border-color:var(--mint);color:var(--mint)}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(11,23,18,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:1.4rem;height:62px}
+  nav .links{display:flex;gap:1.5rem;margin-left:auto;font-size:.92rem;font-weight:500;color:var(--muted)}
+  nav .links a{text-decoration:none}
+  nav .links a:hover{color:var(--ink)}
+  nav .btn{padding:.55rem 1rem;font-size:.9rem}
+  @media(max-width:760px){nav .links{display:none} nav .btn{margin-left:auto}}
+
+  header{position:relative;padding:4.2rem 0 3rem;overflow:hidden}
+  header:before{content:"";position:absolute;inset:0;background:radial-gradient(56rem 30rem at 85% -10%,rgba(61,220,174,.12),transparent 62%);pointer-events:none}
+  header .wrap{position:relative}
+  header h1{font-size:clamp(2.3rem,6vw,3.9rem);font-weight:900;margin:.9rem 0 1.1rem;max-width:16ch}
+  header h1 span{color:var(--mint)}
+  .lede{font-size:clamp(1.05rem,2vw,1.2rem);color:var(--muted);max-width:40rem;margin-bottom:1.6rem}
+  .lede b{color:var(--ink);font-weight:600}
+  .cta-row{display:flex;gap:.8rem;flex-wrap:wrap}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,11rem),1fr));gap:.8rem;margin-top:2.4rem}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem}
+  .stat b{display:block;font-family:var(--disp);font-weight:900;font-size:1.9rem;color:var(--mint);line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+  .stat span{display:block;color:var(--muted);font-size:.88rem;margin-top:.35rem;line-height:1.4}
+  .src{font-family:var(--mono);font-size:.72rem;color:var(--faint);line-height:1.6;margin-top:.8rem;max-width:72ch}
+  .src a{color:var(--muted)}
+
+  section{padding:4rem 0}
+  .band{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .sec-head{max-width:44rem;margin-bottom:2rem}
+  .sec-head h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;margin:.6rem 0 .6rem}
+  .sec-head p{color:var(--muted);font-size:1.03rem}
+  .sec-head p.eyebrow{color:var(--mint);font-size:.72rem}
+  .sec-head p.src{color:var(--faint);font-size:.72rem}
+
+  /* catalog */
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,21rem),1fr));gap:1rem}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.4rem 1.35rem 1.3rem;display:flex;flex-direction:column;gap:.7rem;min-width:0}
+  .card .top{display:flex;align-items:center;justify-content:space-between;gap:.8rem}
+  .pill{font-family:var(--mono);font-size:.64rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .55rem;border-radius:6px;white-space:nowrap}
+  .pill.on{background:var(--mint);color:var(--mint-ink)}
+  .pill.dev{background:transparent;color:var(--dev);border:1px dashed var(--dev)}
+  .card .kind{font-family:var(--mono);font-size:.68rem;color:var(--faint);letter-spacing:.06em;text-transform:uppercase}
+  .card h3{font-size:1.25rem;font-weight:800}
+  .card > p{color:var(--muted);font-size:.95rem}
+  .card dl{display:grid;gap:.55rem;margin-top:.2rem;border-top:1px solid var(--line);padding-top:.8rem}
+  .card dt{font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mint)}
+  .card dd{color:var(--muted);font-size:.9rem;line-height:1.5;overflow-wrap:anywhere}
+  .card dd b{color:var(--ink);font-weight:600}
+  .card .latest{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:.7rem .8rem;font-size:.88rem;color:var(--muted)}
+  .card .latest b{color:var(--ink)}
+  .card.devcard{background:transparent;border-style:dashed;border-color:var(--line2)}
+  .devhead{margin:2.4rem 0 1rem;font-size:1.25rem;font-weight:800}
+  .also{margin-top:1.4rem;color:var(--muted);font-size:.95rem}
+  .also a{color:var(--mint);font-weight:600}
+
+  /* proof */
+  .findings{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:1rem;margin-bottom:2rem}
+  .finding{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--mint);border-radius:14px;padding:1.2rem 1.2rem 1.1rem}
+  .finding .n{font-family:var(--disp);font-weight:900;font-size:2.3rem;color:var(--mint);line-height:1;letter-spacing:-.02em}
+  .finding h3{font-size:1.08rem;font-weight:800;margin:.5rem 0 .35rem;line-height:1.25}
+  .finding p{color:var(--muted);font-size:.9rem}
+  .finding p.src{margin-top:.6rem;font-size:.72rem;color:var(--faint)}
+  figure{margin:0 0 1.6rem}
+  .chart{background:var(--paper);border-radius:14px;padding:.6rem;border:1px solid var(--line2);overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .chart img{display:block;width:100%;height:auto}
+  @media(max-width:640px){.chart img{width:640px;max-width:none}}
+  figcaption{color:var(--muted);font-size:.9rem;margin-top:.7rem;max-width:72ch}
+  figcaption .hint{display:none;color:var(--faint)}
+  @media(max-width:640px){figcaption .hint{display:inline}}
+
+  /* ways to get it */
+  .ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17.5rem),1fr));gap:1.1rem}
+  .way{background:var(--surface);border:1px solid var(--line2);border-radius:18px;padding:1.7rem 1.5rem;display:flex;flex-direction:column;gap:.7rem;position:relative;overflow:hidden}
+  .way:before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--mint)}
+  .way .num{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.18em;color:var(--mint)}
+  .way h3{font-size:1.5rem;font-weight:800}
+  .way p{color:var(--muted);font-size:.95rem}
+  .way ul{padding-left:1.1rem;color:var(--muted);font-size:.93rem}
+  .way li{margin:.25rem 0}
+  .way .price{margin-top:auto;padding-top:.9rem;border-top:1px solid var(--line);font-size:.95rem}
+  .way .price b{font-family:var(--disp);font-size:1.35rem}
+  .way .price small{display:block;color:var(--muted);font-size:.84rem;margin-top:.15rem}
+  .who{margin-top:1.4rem;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.3rem;color:var(--muted);font-size:.95rem}
+  .who b{color:var(--ink)}
+
+  /* form (the same lead endpoint as the home page) */
+  .ask{display:grid;grid-template-columns:.9fr 1.1fr;gap:2.4rem;align-items:start}
+  @media(max-width:900px){.ask{grid-template-columns:1fr}}
+  .cform{background:var(--surface);border:1px solid var(--line2);border-radius:18px;padding:1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:.9rem;min-width:0}
+  .cform label{display:grid;gap:.35rem;font-size:.85rem;font-weight:600;color:var(--muted);min-width:0}
+  .cform .full{grid-column:1/-1}
+  .cform input,.cform select,.cform textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line2);border-radius:10px;padding:.75rem .8rem;width:100%;min-width:0}
+  .cform input:focus,.cform select:focus,.cform textarea:focus{outline:2px solid var(--mint);outline-offset:1px;border-color:transparent}
+  .cform .consent{font-size:.78rem;color:var(--faint);font-weight:400}
+  .cform .consent a{color:var(--muted)}
+  .cform button{justify-self:start}
+  .cform .sent{grid-column:1/-1;color:var(--ok);font-weight:600;display:none}
+  @media(max-width:560px){.cform{grid-template-columns:1fr;padding:1.2rem}}
+  .opt{font-weight:400;color:var(--faint)}
+
+  /* practices */
+  .practices{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:1rem}
+  .practice{border-top:2px solid var(--mint);padding-top:.9rem}
+  .practice h3{font-size:1.05rem;font-weight:800;margin-bottom:.35rem;font-family:var(--body);letter-spacing:0}
+  .practice p{color:var(--muted);font-size:.93rem}
+
+  footer{border-top:1px solid var(--line);padding:2.4rem 0 3rem;color:var(--faint);font-size:.86rem}
+  footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+  footer a{color:inherit}
+  footer a:hover{color:var(--mint)}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a href="../" aria-label="autoants home"><img src="../brand/autoants-logo-reverse.svg" alt="autoants" style="height:28px;width:auto;display:block"></a>
+  <div class="links"><a href="#catalog">Datasets</a><a href="#proof">Findings</a><a href="#get">Get it</a><a href="#practices">Data practices</a></div>
+  <a class="btn btn-mint" href="#ask" data-interest="Data">Ask about data</a>
+</div></nav>
+
+<header><div class="wrap">
+  <p class="eyebrow">autoants data · New Orleans</p>
+  <h1>New Orleans data, <span>cleaned and joined.</span></h1>
+  <p class="lede">We turn the city's public records into signals about <b>where work is happening</b>: permits by trade, new businesses by kind, when each trade gets busy, and the next job after each project. Counted by ZIP and month, with the source on every number.</p>
+  <div class="cta-row">
+    <a class="btn btn-mint" href="#catalog">See the datasets</a>
+    <a class="btn btn-ghost" href="../#permit-report">Get the free monthly report</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>306,165</b><span>trade permit applications cleaned, since 2012</span></div>
+    <div class="stat"><b>16</b><span>trades sorted, each with its own seasonal index</span></div>
+    <div class="stat"><b>10 yrs</b><span>of seasonality, 2016–2025, graded by confidence</span></div>
+    <div class="stat"><b>15</b><span>kinds of public-record trigger behind the next-job signal</span></div>
+  </div>
+  <p class="src">Source: data.nola.gov permits 72f9-bi28 (CC0), applications 2012-01-01 to the pull on 2026-10-08, after dropping void, withdrawn, expired, denied and duplicate permits. Trades, index and triggers are our own analysis.</p>
+</div></header>
+
+<section id="catalog" class="band"><div class="wrap">
+  <div class="sec-head"><p class="eyebrow">The catalog</p><h2>What exists today.</h2><p>Each card is a dataset we can deliver now, with where it comes from and where it falls short. Anything we're still building is marked <b style="color:var(--dev)">In development</b>, below.</p></div>
+
+  <div class="cards">
+
+    <article class="card">
+      <div class="top"><span class="kind">Permits</span><span class="pill on">Available</span></div>
+      <h3>Residential permits by trade</h3>
+      <p>Every trade-related city permit, sorted into 16 trades (roofing, HVAC, electrical, generators, solar, pools, renovation and more) and counted one house per trade per month, by ZIP.</p>
+      <dl>
+        <dt>Coverage</dt>
+        <dd>New Orleans (Orleans Parish). Applications from <b>2012</b>. The city updates daily; we re-pull at least monthly. <b>Re-roofs only have their own permit type since 2025-05-15</b>: before that we count renovation permits whose description says re-roof, which undercounts (about 195 houses a year against about 1,300 under the new type). HVAC has its own type since 2015-05-01. Jefferson Parish publishes no open permit feed.</dd>
+        <dt>Fields</dt>
+        <dd>Month (application or issue), ZIP, trade, residential or commercial, houses, days from application to issue.</dd>
+        <dt>Source and license</dt>
+        <dd>City of New Orleans open data: Permits - BLDS (72f9-bi28) and Permits (rcm3-fn58), both CC0.</dd>
+        <dt>Good for</dt>
+        <dd>Sizing a trade by neighborhood, territory planning, supplier demand, timing a sales push.</dd>
+      </dl>
+      <p class="latest">September 2026: <b>134 houses</b> got a residential re-roof permit, up from 100 in August; 70115 (Uptown) led with 20. <span class="src" style="display:block;margin-top:.3rem">rcm3-fn58 + 72f9-bi28, issued in the month, one per house, pulled 2026-10-08.</span></p>
+    </article>
+
+    <article class="card">
+      <div class="top"><span class="kind">Seasonality</span><span class="pill on">Available</span></div>
+      <h3>Trade seasonality index, 10 years</h3>
+      <p>For 16 trades, how each month compares with an average month (100 = average), with a confidence grade so you know which seasons are real and which are hints.</p>
+      <dl>
+        <dt>Coverage</dt>
+        <dd>New Orleans. Permit applications 2016–2025; 2020 (COVID) and 2021 (the freeze, then Ida) left out, and the December 2022 freeze masked, leaving 8 clean years per trade. Re-run each January.</dd>
+        <dt>Fields</dt>
+        <dd>Trade, month, index by application month and by issue month, busy stretch, slowest month, confidence (high, medium, low), permits per year, median days to issue.</dd>
+        <dt>Source and license</dt>
+        <dd>Permits - BLDS (72f9-bi28, CC0); NOAA 1991–2020 normals for New Orleans International; NWS alert archive (Iowa Environmental Mesonet). Index and grades are ours.</dd>
+        <dt>Good for</dt>
+        <dd>When to staff, stock and advertise; when a supplier's reps should call on a trade.</dd>
+      </dl>
+      <p class="latest">Only <b>2 of 16 trades</b> have a high-confidence season: standby generators (Jun–Aug) and renovation (Apr–May). <span class="src" style="display:block;margin-top:.3rem">seasonality study, clean years 2016–2025, pulled 2026-10-08.</span></p>
+    </article>
+
+    <article class="card">
+      <div class="top"><span class="kind">Businesses</span><span class="pill on">Available</span></div>
+      <h3>New business licenses by category</h3>
+      <p>Newly licensed New Orleans businesses each month, grouped by kind: shops, food and drink, home services, beauty, auto, fitness, pets, lodging and the rest, and whether the address is a storefront or a home.</p>
+      <dl>
+        <dt>Coverage</dt>
+        <dd>New Orleans (Orleans Parish), counted by the license's start date. The city updates daily; we count monthly. Jefferson Parish doesn't publish its licenses as open data.</dd>
+        <dt>Fields</dt>
+        <dd>Month, category group, the city's business type, ZIP, storefront or home-based.</dd>
+        <dt>Source and license</dt>
+        <dd>data.nola.gov Active Occupational Licenses (iqay-p646, CC0), plus Occupational Business Licenses (hjcd-grvu) and license applications (abc4-h3u3): public records whose dataset pages state no license.</dd>
+        <dt>Good for</dt>
+        <dd>Anyone who sells to new businesses: accountants, insurance, sign shops, point-of-sale, suppliers, banks.</dd>
+      </dl>
+      <p class="latest">September 2026: <b>231 businesses</b> with a September start date (69 of them dated September 1), up from 129 in August; 29 were restaurants. <span class="src" style="display:block;margin-top:.3rem">hjcd-grvu, New Orleans addresses, pulled 2026-10-08.</span></p>
+    </article>
+
+    <article class="card">
+      <div class="top"><span class="kind">Signals</span><span class="pill on">Available</span></div>
+      <h3>The next-job signal, by ZIP</h3>
+      <p>Houses where a public record shows a job just happened (a re-roof, a panel upgrade, a new pool, a new home's final inspection) matched to the trade that usually comes next, and when.</p>
+      <dl>
+        <dt>Coverage</dt>
+        <dd>New Orleans. 15 kinds of trigger read from city permits and licenses. Sold as counts by ZIP and month; addresses are never sold.</dd>
+        <dt>Fields</dt>
+        <dd>Trigger, follow-on trade, the window when that job tends to come (days after the trigger), ZIP, month, houses.</dd>
+        <dt>Source and license</dt>
+        <dd>City permits (72f9-bi28, rcm3-fn58, CC0) and license records on data.nola.gov. Which trade comes next is our own map, not a city field.</dd>
+        <dt>Good for</dt>
+        <dd>Gutter, insulation, solar, fencing, landscaping and cleaning companies; suppliers sizing follow-on demand.</dd>
+      </dl>
+      <p class="latest">12 months to 2026-10-07: <b>1,243 residential re-roofs</b> citywide, about 104 a month; the busiest ZIP, 70115, averaged about 12.5. <span class="src" style="display:block;margin-top:.3rem">72f9-bi28 + rcm3-fn58, residential, one per house, pulled 2026-10-07.</span></p>
+    </article>
+
+    <article class="card">
+      <div class="top"><span class="kind">Weather</span><span class="pill on">Available</span></div>
+      <h3>Storm and weather triggers</h3>
+      <p>The weather record for Orleans Parish joined to permits: every tropical storm and hurricane warning, the alerts by month, and what each storm did to re-roof, generator and plumbing permits afterward.</p>
+      <dl>
+        <dt>Coverage</dt>
+        <dd>Orleans Parish. Tropical warnings since 2012 (13 so far); NWS alerts by month 2016–2025; NOAA 1991–2020 normals. Current alerts from the National Weather Service on each pull.</dd>
+        <dt>Fields</dt>
+        <dd>Storm, first warning date, permits in the next 60 and 120 days against the usual pace, alerts by type and month, normal heat days and freeze nights.</dd>
+        <dt>Source and license</dt>
+        <dd>National Weather Service (api.weather.gov and the Iowa Environmental Mesonet archive) and NOAA NCEI, U.S. government data; permits as above.</dd>
+        <dt>Good for</dt>
+        <dd>Storm-season planning, inventory, insurers' and lenders' market research, reporters.</dd>
+      </dl>
+      <p class="latest">Re-roof permits ran <b>2.2 times</b> the usual pace in the 60 days after Ida's first warning; across all 13 warnings the median was <b>1.2 times</b>. <span class="src" style="display:block;margin-top:.3rem">72f9-bi28 (description-matched re-roofs before 2025-05-15) + NWS warnings, 2012-01-01 to 2026-10-07.</span></p>
+    </article>
+
+  </div>
+
+  <h3 class="devhead">In development</h3>
+  <div class="cards">
+    <article class="card devcard">
+      <div class="top"><span class="kind">Inspections</span><span class="pill dev">In development</span></div>
+      <h3>Food-service inspection records</h3>
+      <p>Orleans and Jefferson. The state publishes these through a one-at-a-time lookup, not a download. A dataset waits on a bulk records file from the Louisiana Department of Health.</p>
+    </article>
+    <article class="card devcard">
+      <div class="top"><span class="kind">Contractors</span><span class="pill dev">In development</span></div>
+      <h3>Contractor license records</h3>
+      <p>License classes and renewal dates from the state contractors board. Its website terms require the board's written consent for commercial use, so this waits on the board's own roster export or a records request.</p>
+    </article>
+    <article class="card devcard">
+      <div class="top"><span class="kind">Property</span><span class="pill dev">In development</span></div>
+      <h3>Property-joined permits</h3>
+      <p>Permits joined to the parish assessor's roll (year built, last sale, lot) for questions like "re-roofs on houses built before 1950". It needs the assessor's data file, which we haven't licensed yet.</p>
+    </article>
+  </div>
+
+  <p class="also">Also public: counts from our licensed-business guide (tree and landscaping companies by town) on the <a href="../nola/data/">guide data page →</a></p>
+</div></section>
+
+<section id="proof"><div class="wrap">
+  <div class="sec-head"><p class="eyebrow">What the data says</p><h2>Ten years of permits, one picture.</h2><p>Each row is a trade; each square is how busy that month is against an average month. Red is busier, blue is quieter. The grade after each trade says how much to trust its season.</p></div>
+
+  <div class="findings">
+    <div class="finding"><div class="n">April</div><h3>Re-roofs peak in April, 49% above an average month.</h3><p>December is the slowest, 29% below. The new re-roof permit agrees: April 2026 had 180 houses, the most of any month since the type began.</p><p class="src">Index 149 (Apr) and 71 (Dec), description-matched re-roofs, a low-confidence series; 72f9-bi28 applications, clean years 2016–2025, pulled 2026-10-08.</p></div>
+    <div class="finding"><div class="n">Apr–May, Oct</div><h3>HVAC permits peak in spring and October, not summer.</h3><p>July runs below average. Summer is repair season, and repairs mostly don't pull a permit; replacements come before and after the heat.</p><p class="src">Mechanical HVAC applications: Apr 108, May 110, Oct 113, Jul 92; medium confidence; 72f9-bi28, clean years 2016–2025, pulled 2026-10-08.</p></div>
+    <div class="finding"><div class="n">8×</div><h3>Generator permits ran 8 times higher after Ida.</h3><p>714 houses applied for a standby generator in 2022, against about 86 a year in 2016–2019. It hasn't come back down: about 400 a year in 2023–2025.</p><p class="src">Permanent Generator applications by year: 86, 83, 91, 82 (2016–19); 714 (2022); 418, 433, 345 (2023–25); 72f9-bi28, pulled 2026-10-08.</p></div>
+  </div>
+
+  <figure>
+    <div class="chart"><img src="img/seasonal-index-heatmap.png" width="1760" height="1424" loading="lazy" alt="Heatmap of the New Orleans seasonal permit index for 14 trades by month, 100 = an average month. Re-roofs peak in April at 149. Standby generators run 132 to 149 from June to August and fall to 52 in December. HVAC peaks at 108 to 110 in April and May and 112 in October, with July at 92. November and December are below average for almost every trade."></div>
+    <figcaption>The seasonal index: permit applications by month, 100 = an average month, clean years 2016–2025. Trees and shutters are left off (too thin). <span class="hint">Swipe the chart sideways to see every month.</span><span class="src" style="display:block">Source: data.nola.gov 72f9-bi28 (CC0), application month, pulled 2026-10-08; autoants analysis.</span></figcaption>
+  </figure>
+
+  <figure>
+    <div class="chart"><img src="img/shock-years.png" width="1760" height="1312" loading="lazy" alt="Bar charts of monthly permit applications from 2019 to 2023 for standby generators, roofing, plumbing and HVAC, with COVID, the February 2021 freeze, Hurricane Ida and the December 2022 freeze marked. Generator applications climb after Ida to over 100 a month in mid-2022; roofing jumps to about 43 a month right after Ida."></div>
+    <figcaption>What the shocks did, 2019–2023: these months are left out of the seasonal baseline and kept as evidence of what storms and freezes do. <span class="hint">Swipe the chart sideways.</span><span class="src" style="display:block">Source: data.nola.gov 72f9-bi28 (CC0), application month, pulled 2026-10-08; autoants analysis.</span></figcaption>
+  </figure>
+
+  <p class="src">Limits: permits only count work that needs a permit. Repairs (most AC repairs, burst pipes, tree work, most gutter work) mostly don't, so their seasons show up in phone calls, not here.</p>
+</div></section>
+
+<section id="get" class="band"><div class="wrap">
+  <div class="sec-head"><p class="eyebrow">Three ways to get it</p><h2>Start free. Pay when it earns its place.</h2></div>
+  <div class="ways">
+    <div class="way"><span class="num">01</span><h3>Permits Pulled</h3>
+      <p>The free monthly read: re-roofs by ZIP, where houses are getting work, what kinds of businesses just opened, and the trade about to get busy. Two minutes.</p>
+      <div class="price"><b>Free</b><small>Monthly, by email. Unsubscribe anytime.</small></div>
+      <a class="btn btn-ghost" href="../#permit-report">Sign up for the report</a></div>
+    <div class="way"><span class="num">02</span><h3>Feeds</h3>
+      <p>A weekly file for your trade or for new businesses, counted by ZIP and category.</p>
+      <ul><li>A trade feed: permits and next-job signals for one trade</li><li>A new-business feed: new licenses by kind and ZIP</li></ul>
+      <div class="price">From <b>$49</b>/mo<small>Founding pricing.</small></div>
+      <a class="btn btn-mint" href="#ask" data-interest="Data: weekly feed">Ask about a feed</a></div>
+    <div class="way"><span class="num">03</span><h3>Custom datasets and reports</h3>
+      <p>Cut to your question. For example: every HVAC replacement in Orleans by ZIP by month since 2015, or new restaurants by neighborhood this year, with the method written down.</p>
+      <div class="price"><b>Quoted</b> per project<small>You see the scope and price before we start.</small></div>
+      <a class="btn btn-ghost" href="#ask" data-interest="Data: custom dataset or report">Ask for a quote</a></div>
+  </div>
+  <p class="who"><b>Who buys it:</b> distributors and suppliers, roll-ups and investors, insurers and lenders doing market research, proptech and software teams, researchers and reporters. For anything outside Orleans Parish, ask; Jefferson Parish has no open permit or license feed yet, so we'll tell you what's possible before quoting.</p>
+</div></section>
+
+<section id="ask"><div class="wrap">
+  <div class="ask">
+    <div class="sec-head" style="margin-bottom:0"><p class="eyebrow">Ask about data</p><h2>Tell us what you'd want counted.</h2><p>A trade, a set of ZIPs, a date range, a question. We'll reply with what the records can and can't answer, and a price. A person replies, usually the same day.</p>
+      <p class="src" style="margin-top:1.2rem">autoants · hello@autoants.com</p></div>
+    <form class="cform" id="dataForm" novalidate>
+      <label>Your name<input name="name" autocomplete="name" required></label>
+      <label>Company<input name="business" autocomplete="organization" required></label>
+      <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
+      <label><span>Email <span class="opt">(optional)</span></span><input name="email" type="email" autocomplete="email"></label>
+      <label>You are<select name="trade">
+        <option>Distributor or supplier</option><option>Contractor or trade</option><option>Investor or roll-up</option>
+        <option>Insurance</option><option>Lender</option><option>Proptech or software</option>
+        <option>Research or media</option><option>Real estate</option><option>Other</option></select></label>
+      <label>Interested in<select name="interest" id="interest">
+        <option selected>Data</option><option>Data: weekly feed</option><option>Data: custom dataset or report</option></select></label>
+      <label class="hp" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+      <label class="full">What would you want counted?<textarea name="msg" rows="3" placeholder="e.g. every HVAC replacement in Orleans by ZIP by month since 2015"></textarea></label>
+      <p class="consent full">We'll reply by phone or email about this request. Nothing you send is shared or sold. <a href="../privacy.html">Privacy</a></p>
+      <button class="btn btn-mint" type="submit">Send</button>
+      <p class="sent" id="sentNote" role="status"></p>
+    </form>
+  </div>
+</div></section>
+
+<section id="practices" class="band"><div class="wrap">
+  <div class="sec-head"><p class="eyebrow">Data practices</p><h2>Plain rules.</h2></div>
+  <div class="practices">
+    <div class="practice"><h3>Public records and our own analysis</h3><p>Everything here is built from public records (the city's permit data on data.nola.gov is published CC0) and our own analysis. Each number carries its source and the date we pulled it.</p></div>
+    <div class="practice"><h3>Counts, not people</h3><p>We sell aggregates by ZIP, month, trade and category. We don't sell homeowner names.</p></div>
+    <div class="practice"><h3>Not a consumer reporting agency</h3><p>Our data may not be used to decide anyone's credit, insurance, housing or employment (the Fair Credit Reporting Act), and we won't sell it for that.</p></div>
+    <div class="practice"><h3>Client data stays private</h3><p>We don't sell client data that identifies anyone, our clients or their customers.</p></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <a href="../" aria-label="autoants home"><img src="../brand/autoants-logo-reverse.svg" alt="autoants" style="height:22px;width:auto;display:block"></a>
+  <span>autoants · hello@autoants.com · Louisiana · <a href="../privacy.html">Privacy</a> · <a href="../services.html">Services</a> · <a href="../who-we-help.html">Who we help</a> · <a href="../nola/data/">Guide data</a></span>
+</div></footer>
+
+<script>
+  // Same form endpoint as the home page: the autoants-leads worker /lead (pings Lane, keeps a copy in KV).
+  // It needs name, business and phone; interest arrives as "Data", "Data: weekly feed" or "Data: custom dataset or report".
+  var LEAD_ENDPOINT = "https://autoants-leads.saintdell.workers.dev/lead";
+  document.querySelectorAll('[data-interest]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var sel = document.getElementById('interest'), want = a.getAttribute('data-interest');
+      if (sel) for (var i = 0; i < sel.options.length; i++) if (sel.options[i].text === want) { sel.selectedIndex = i; break; }
+    });
+  });
+  function leadSource(){
+    var r = ''; try { r = new URLSearchParams(location.search).get('ref') || ''; } catch(e) {}
+    try { if (r) sessionStorage.setItem('aa-ref', r); else r = sessionStorage.getItem('aa-ref') || ''; } catch(e) {}
+    return r.replace(/[^a-z0-9_-]/gi, '').slice(0, 40) || 'direct';
+  }
+  leadSource();
+  (function(){
+    var f = document.getElementById('dataForm'); if (!f) return;
+    var note = document.getElementById('sentNote');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (!f.name.value.trim() || !f.phone.value.trim() || !f.business.value.trim()) { f.reportValidity && f.reportValidity(); return; }
+      var d = {name:f.name.value.trim(), business:f.business.value.trim(), phone:f.phone.value.trim(), email:f.email.value.trim(),
+               trade:f.trade.value, interest:f.interest.value, msg:f.msg.value.trim(), page:'autoants.com/data', source:leadSource(),
+               website:(f.website ? f.website.value : ''), sms:'no'};
+      var btn = f.querySelector('button[type=submit]'); if (btn) btn.disabled = true;
+      var show = function(t){ note.textContent = t; note.style.display = 'block'; };
+      fetch(LEAD_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(d)})
+        .then(function(r){ if (!r.ok) throw 0; show("Got it. We'll be in touch, usually the same day."); f.reset(); })
+        .catch(function(){ show("That didn't go through. Your details are still here; please try again in a minute."); })
+        .then(function(){ if (btn) btn.disabled = false; });
+    });
+  })();
+</script>
+</body>
+</html>

@@ -84,6 +84,13 @@
 - Privacy and texting terms: https://autoants.com/privacy.html
 - The New Orleans AI Recommendation Index (monthly; which local companies an AI assistant names for each trade, facts only): https://autoants.com/ai-index/2026-10/
 
+## Data (autoants' own datasets, built from New Orleans public records)
+- [Data page](https://autoants.com/data/): the catalog, findings and how to buy. Sold as counts by ZIP, month, trade and category; no homeowner names; not a consumer reporting agency (the data may not be used for credit, insurance, housing or employment decisions)
+- Available: New Orleans residential permits by trade since 2012 (data.nola.gov, CC0; a dedicated re-roof permit only since 2025-05-15), a 10-year trade seasonality index (2016-2025, 16 trades, confidence-graded), new business licenses by category, the next-job signal by ZIP, and storm and weather history joined to permits
+- In development: food-service inspection records, contractor license records, permits joined to the assessor roll
+- Ways to get it: Permits Pulled (free monthly report), weekly trade or new-business feeds (from $49/month, founding pricing), custom datasets and reports (quoted per project)
+- Findings: re-roof permits peak in April (about 49% above an average month); HVAC permits peak in April-May and October, not summer; standby generator permits ran 8 times higher in 2022 after Hurricane Ida (714 vs about 86 a year in 2016-2019). Source: data.nola.gov 72f9-bi28, pulled 2026-10-08
+
 ## Contact
 - Contact: the form at https://autoants.com/#contact
 - Service area: Louisiana — Greater New Orleans, Baton Rouge, and the

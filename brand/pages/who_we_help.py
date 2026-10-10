@@ -94,7 +94,7 @@ STEPS = [("Reach out", "Fill out the form, or call or text. Two minutes: your na
 # text must match an <option> in the index.html contact form.
 SELL_TO = [
     ("insurance", "For insurance agents",
-     "Each month, the contractors in your parish whose liability coverage on file with the state board has expired, from public records, so you can reach them first.",
+     "Each month, the contractors in your parish whose liability coverage on file with the state board is coming up for renewal, from public records, so you can reach them first.",
      "Contractor coverage list", "Ask about the list"),
     ("restaurants", "For pest control and commercial cleaners serving restaurants",
      "Every week, the restaurants near you cited in state health inspections for the problems you fix, from the public inspection record.",
@@ -272,6 +272,7 @@ def page():
     <h2>Selling to local businesses?</h2>
     <p class="lede">Some owners don't need an assistant. They need to know who needs them this week.</p>
     <div class="sells">{sell}</div>
+    <p class="lede" style="margin:14px 0 0">Want the counts behind these lists, for your own market? <a href="data/" style="color:var(--mint);font-weight:600">See the datasets →</a></p>
     <div class="nl" id="permit-report">
       <div class="nl-copy"><div class="eyebrow">Free · once a month</div><h3>Permits Pulled</h3>
         <p>A monthly read on what New Orleans' public records say about where the work is, from the same records these lists come from: re-roofs by ZIP, where houses are getting work, and what kinds of businesses just opened. Counts only, a two-minute read.</p></div>
