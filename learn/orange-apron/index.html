@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Orange Apron: what the Home Depot story teaches a trades shop · autoants</title>
+<meta name="description" content="An illustrated, independent retelling of how Home Depot was built, nearly broken and rebuilt, in 16 short aisles. Each ends with what it means for a roofing, HVAC, plumbing, tree or electrical shop.">
+<link rel="canonical" href="https://autoants.com/learn/orange-apron/">
+<meta name="author" content="Lane Davis II">
+<meta property="og:title" content="The Orange Apron: the Home Depot story for trades owners">
+<meta property="og:description" content="Sixteen short aisles on how the big orange warehouse was built, nearly broken and rebuilt, and what a 5-truck shop can take from it.">
+<meta property="og:url" content="https://autoants.com/learn/orange-apron/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://autoants.com/learn/orange-apron/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Orange Apron, the trades-owner edition: a watercolor of a lumber aisle beside the title.">
+<meta property="article:published_time" content="2026-10-11">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="../../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/learn.css">
+<link rel="stylesheet" href="../assets/price-math.css">
+<link rel="preload" as="image" href="img/lumber_aisle_700.webp" imagesrcset="img/lumber_aisle_700.webp 700w, img/lumber_aisle.webp 1600w" imagesizes="(max-width:900px) 92vw, 34rem">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article",
+ "headline":"The Orange Apron: what the Home Depot story teaches a trades shop",
+ "description":"An illustrated, independent retelling of how Home Depot was built, nearly broken and rebuilt, with lessons for trades owners.",
+ "image":["https://autoants.com/learn/orange-apron/og.jpg"],
+ "datePublished":"2026-10-11","dateModified":"2026-10-11",
+ "mainEntityOfPage":"https://autoants.com/learn/orange-apron/",
+ "author":{"@type":"Person","name":"Lane Davis II","jobTitle":"Founder","worksFor":{"@type":"Organization","name":"autoants","url":"https://autoants.com/"}},
+ "publisher":{"@type":"Organization","name":"autoants","url":"https://autoants.com/","logo":{"@type":"ImageObject","url":"https://autoants.com/brand/apple-touch-icon.png"}},
+ "isBasedOn":{"@type":"PodcastEpisode","name":"The Home Depot","url":"https://www.acquired.fm/episodes/home-depot","partOfSeries":{"@type":"PodcastSeries","name":"Acquired","url":"https://www.acquired.fm/"}},
+ "inLanguage":"en-US"}
+</script>
+<style>
+/* The Orange Apron, trades edition. Night chrome (autoants), stone reading paper, forest/mint UI.
+   Home Depot orange (--hd) appears only inside the watercolors and charts as the subject's color, never as UI. */
+:root{
+  --paper:#ebe8e2; --paper-2:#e0dbd1; --card:#f7f5f0; --text:#0f2a1d; --graphite:#46564d; --soft:#6b776f; --rule:#cbc5b8;
+  --hd:#f96302; --lowes:#0a4f9c; --market:#7a7d82;
+  --measure:40rem; --widew:66rem;
+}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* top bar: logo, aisle progress, cart */
+.storybar .wrap{gap:.8rem}
+.aisles{flex:1;display:flex;gap:3px;min-width:0}
+.aisles a{flex:1;height:20px;min-width:5px;background:var(--surface2);border-radius:3px;position:relative;text-decoration:none}
+.aisles a span{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--mono);font-size:.6rem;font-weight:700;color:var(--muted)}
+.aisles a.done{background:var(--forest)}
+.aisles a.here{background:var(--mint)}
+.aisles a.here span{color:var(--mint-ink)}
+@media(max-width:700px){.aisles a span{display:none}.aisles a{height:8px}}
+.cartbtn{font:inherit;font-weight:800;font-size:.85rem;border:1px solid var(--line2);background:transparent;color:var(--cream);padding:.4rem .7rem;border-radius:10px;cursor:pointer;white-space:nowrap}
+.cartbtn b{display:inline-block;min-width:1.5em;padding:0 .3em;margin-left:.35em;border-radius:6px;background:var(--mint);color:var(--mint-ink);text-align:center}
+.cartbtn.bump{animation:bump .35s ease}
+@keyframes bump{40%{transform:scale(1.08)}}
+
+/* hero (night) */
+.hero{padding:2.6rem 0 2rem;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(48rem 26rem at 90% -10%,rgba(61,220,174,.10),transparent 62%);pointer-events:none}
+.hero .wrap{position:relative;display:grid;gap:1.8rem;align-items:center}
+@media(min-width:900px){.hero .wrap{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:3rem}}
+.hero h1{font-size:clamp(2.8rem,9vw,5.4rem);font-weight:800;line-height:.95;margin:.7rem 0 .9rem;letter-spacing:-.04em}
+.hero h1 span{color:var(--mint)}
+.dek{font-size:clamp(1.08rem,2.1vw,1.3rem);line-height:1.5;color:var(--cream);max-width:34rem}
+.byline{color:var(--muted);font-size:.95rem;margin:1rem 0 1.2rem}
+.byline b{color:var(--cream);font-weight:600}
+.hero-fig{margin:0}
+.hero-fig .frame{background:var(--paper);border-radius:14px;padding:.7rem}
+.hero-fig img{display:block;width:100%;height:auto;border-radius:6px}
+.hero-fig figcaption{color:var(--faint);font-size:.74rem;margin-top:.5rem;font-family:var(--mono);letter-spacing:.02em}
+.hero-fig figcaption a{color:var(--muted)}
+.bignums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);margin-top:2.2rem}
+.bignums div{padding:1rem .8rem 1rem 0;border-right:1px solid var(--line)}
+.bignums div+div{padding-left:.9rem}
+.bignums div:last-child{border-right:0}
+.bignums strong{display:block;font-weight:800;font-size:clamp(1.25rem,3.6vw,2.2rem);line-height:1.05;color:var(--mint);letter-spacing:-.02em}
+.bignums span{display:block;margin-top:.4rem;font-size:.84rem;line-height:1.35;color:var(--muted)}
+@media(max-width:560px){.bignums{grid-template-columns:1fr}.bignums div{border-right:0;border-bottom:1px solid var(--line);padding:.8rem 0!important}.bignums div:last-child{border-bottom:0}}
+.howto{margin-top:1.6rem;display:flex;gap:.9rem;align-items:flex-start;font-size:.95rem;line-height:1.5;color:var(--muted)}
+.howto b{color:var(--cream)}
+.mini-tag{flex:none;display:inline-block;width:2.1rem;height:1.35rem;border:1.5px solid var(--cream);border-top:4px solid var(--mint);border-radius:3px;margin-top:.15rem}
+
+/* stone reading paper */
+.paper{background:var(--paper);color:var(--text);padding:.5rem 0 4rem}
+.paper .col a,.paper figcaption a{color:var(--forest);text-underline-offset:.18em}
+.paper .col{max-width:var(--measure);margin:0 auto;padding:0 16px}
+.paper .wide{max-width:var(--widew);margin:0 auto;padding:0 16px}
+.paper .col p{margin:0 0 1em;font-size:1.08rem;line-height:1.65}
+.chart .sub,.chart .src{margin:0}
+.aisle{padding-top:3.4rem;scroll-margin-top:3.6rem}
+.sign{display:inline-block;position:relative;margin:1.5rem 0 1rem;background:var(--forest);color:var(--paper);padding:.5rem 1rem .55rem;border-radius:5px;box-shadow:0 8px 20px -12px rgba(15,42,29,.6);transform:rotate(-.6deg)}
+.sign::before,.sign::after{content:"";position:absolute;top:-1.5rem;width:2px;height:1.5rem;background:var(--soft)}
+.sign::before{left:18%}.sign::after{right:18%}
+.sign .n{font-family:var(--mono);font-weight:700;letter-spacing:.14em;font-size:.8rem;display:block;color:var(--mint)}
+.sign .yr{font-family:var(--mono);font-weight:500;letter-spacing:.06em;font-size:.72rem;opacity:.9}
+.aisle h2{font-size:clamp(1.8rem,4.6vw,2.6rem);font-weight:800;margin:.1em 0 .55em;color:var(--text)}
+.aisle .lede::first-letter{font-weight:800;float:left;font-size:3.6em;line-height:.85;padding:.04em .08em 0 0;color:var(--forest)}
+.clear{clear:both}
+.foryou{margin:1.4rem 0 0!important;padding:.85rem 1rem;background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--forest);border-radius:0 10px 10px 0;font-size:1.02rem!important;line-height:1.5!important}
+.foryou b{display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--forest);margin-bottom:.2rem}
+
+/* watercolors */
+figure{margin:1.8rem 0}
+figure.wc img{display:block;width:100%;height:auto}
+figure.wc.float{float:right;width:min(46%,20rem);margin:.3rem -2rem 1rem 1.5rem}
+@media(max-width:900px){figure.wc.float{float:none;width:100%;margin:1.6rem 0}}
+.paper figcaption{font-size:.86rem;line-height:1.4;color:var(--graphite);margin-top:.5rem}
+.paper figcaption .credit{display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.02em;color:var(--soft);margin-top:.2rem}
+.paper figcaption .credit a{color:var(--graphite)}
+
+/* pull quote */
+.pull{margin:2rem 0;padding:0}
+.pull q{display:block;font-weight:800;font-size:clamp(1.5rem,3.6vw,2.1rem);line-height:1.15;letter-spacing:-.02em;quotes:"\201C" "\201D"}
+.pull q::before,.pull q::after{color:var(--forest)}
+.pull cite{display:block;margin-top:.6rem;font-style:normal;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite)}
+
+/* shelf tags */
+.tags{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17.5rem),1fr));gap:.9rem;margin:1.4rem 0 .5rem}
+.tag{position:relative;background:var(--card);border:1.5px solid var(--text);border-top:7px solid var(--forest);border-radius:4px;padding:.8rem .95rem .9rem;display:flex;flex-direction:column;gap:.5rem;box-shadow:0 6px 18px -12px rgba(15,42,29,.4);min-width:0}
+.tag .sku{display:flex;justify-content:space-between;gap:.5rem;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--graphite)}
+.tag .sku .who{color:var(--forest);font-weight:700}
+.tag h4{margin:0;font-weight:800;font-size:1.06rem;line-height:1.28;letter-spacing:-.01em;text-wrap:balance}
+.paper .tag p{margin:0;font-size:.93rem;line-height:1.47;color:var(--graphite)}
+.paper .tag p.shop{color:var(--text);border-top:1px dashed var(--rule);padding-top:.5rem}
+.tag p.shop b{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--forest);margin-bottom:.15rem}
+.tag .doors{display:grid;gap:.25rem;margin-top:auto}
+.tag .door{font-weight:700;font-size:.9rem;color:var(--forest);text-decoration:none}
+.tag .door:hover{text-decoration:underline}
+.tag button{align-self:flex-start;font:inherit;font-weight:800;font-size:.8rem;padding:.42rem .75rem;border-radius:8px;border:1.5px solid var(--forest);background:transparent;color:var(--forest);cursor:pointer}
+.tag button[aria-pressed="true"]{background:var(--forest);color:var(--paper)}
+
+/* charts (on paper) */
+.chart{margin-block:2.4rem;padding-top:1.1rem;border-top:2px solid var(--text)}
+.chart header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem 1rem;align-items:flex-end;margin-bottom:.4rem}
+.chart h3{font-weight:800;font-size:1.2rem;line-height:1.25;margin:0;max-width:40rem;letter-spacing:-.01em}
+.chart .sub{color:var(--graphite);font-size:.95rem!important;margin:.25rem 0 .7rem!important;max-width:44rem}
+.chart .src{font-family:var(--mono);font-size:.66rem!important;letter-spacing:.02em;color:var(--soft)!important;margin-top:.6rem;line-height:1.5!important}
+.svgwrap{position:relative;width:100%}
+.svgwrap svg{display:block;width:100%;height:auto;overflow:visible}
+.svgwrap text{font-family:var(--sans);fill:var(--graphite);font-size:12px}
+.seg{display:inline-flex;border:1.5px solid var(--text);border-radius:8px;overflow:hidden}
+.seg button{font:inherit;font-weight:700;font-size:.78rem;padding:.38rem .7rem;border:0;background:transparent;color:var(--text);cursor:pointer}
+.seg button+button{border-left:1.5px solid var(--text)}
+.seg button[aria-pressed="true"]{background:var(--text);color:var(--paper)}
+.legend{display:flex;flex-wrap:wrap;gap:.3rem 1.1rem;font-size:.82rem;color:var(--graphite);margin-bottom:.4rem}
+.legend i{display:inline-block;width:.9rem;height:3px;vertical-align:middle;margin-right:.35rem;border-radius:2px}
+.tip{position:absolute;left:0;top:0;pointer-events:none;background:var(--card);color:var(--text);border:1px solid var(--rule);box-shadow:0 8px 20px -10px rgba(15,42,29,.4);border-radius:6px;padding:.45rem .6rem;font-size:.8rem;line-height:1.35;white-space:nowrap;opacity:0;transition:opacity .12s ease}
+.tip.on{opacity:1}
+.calc-embed{border-top:0;padding-top:0}
+.calc-embed header{margin-bottom:.8rem}
+
+/* checkout (night) */
+.checkout{padding:3.4rem 0 3rem;background:var(--night)}
+.checkout .sign{background:var(--mint);color:var(--mint-ink);transform:rotate(-.6deg)}
+.checkout .sign .n{color:var(--mint-ink)}
+.checkout .sign::before,.checkout .sign::after{background:var(--faint)}
+.checkout h2{font-size:clamp(1.8rem,4.6vw,2.6rem);font-weight:800;margin:.1em 0 .4em}
+.checkout .grid{display:grid;gap:2rem;align-items:start}
+@media(min-width:900px){.checkout .grid{grid-template-columns:minmax(0,27rem) minmax(0,1fr)}}
+.receipt{background:#fdfcf8;color:#1d1d1b;padding:1.5rem 1.3rem 1.8rem;box-shadow:0 18px 40px -22px rgba(0,0,0,.6);font-family:var(--mono);font-size:.85rem;
+  -webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 10px) no-repeat,conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) bottom/16px 10px repeat-x;
+  mask:linear-gradient(#000 0 0) top/100% calc(100% - 10px) no-repeat,conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) bottom/16px 10px repeat-x}
+.receipt .head{text-align:center;border-bottom:1px dashed #9a978f;padding-bottom:.8rem;margin-bottom:.8rem}
+.receipt .head strong{display:block;font-family:var(--sans);font-weight:800;font-size:1.45rem;letter-spacing:-.02em}
+.receipt .head span{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#5c5a55}
+.receipt ol{list-style:none;margin:0;padding:0}
+.receipt li{display:grid;grid-template-columns:2.6rem minmax(0,1fr);gap:.4rem;padding:.42rem 0;border-bottom:1px dotted #c9c6bd;line-height:1.35;font-family:var(--sans);font-size:.92rem}
+.receipt li .code{font-family:var(--mono);font-weight:700;color:var(--forest);font-size:.8rem}
+.receipt .empty{text-align:center;color:#5c5a55;padding:1rem 0;font-family:var(--sans);font-size:.95rem}
+.receipt .tot{display:flex;justify-content:space-between;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.78rem;margin-top:.9rem}
+.receipt .foot{text-align:center;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:#5c5a55;margin-top:1rem}
+.receipt .bars{height:32px;margin:1rem auto 0;width:70%;background:repeating-linear-gradient(90deg,#1d1d1b 0 2px,transparent 2px 4px,#1d1d1b 4px 5px,transparent 5px 8px,#1d1d1b 8px 11px,transparent 11px 12px)}
+.receipt-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem}
+.receipt-actions button{font:inherit;font-weight:700;font-size:.84rem;color:var(--cream);background:transparent;border:1px solid var(--line2);border-radius:9px;padding:.45rem .75rem;cursor:pointer}
+.receipt-actions button:hover{color:var(--mint)}
+#copyMsg{font-size:.84rem;color:var(--muted);margin-top:.6rem;min-height:1.3em}
+.mail h3{font-size:1.3rem;font-weight:800;margin-bottom:.4rem;letter-spacing:-.01em}
+.mail > p{color:var(--muted);margin-bottom:1rem}
+.mail .cta{margin-top:1.6rem;background:var(--surface);border:1px solid var(--line2);border-radius:16px;padding:1.2rem}
+.mail .cta h3{font-size:1.15rem}
+.mail .cta p{color:var(--muted);font-size:.95rem;margin:.3rem 0 .9rem}
+.mail .cta .row{display:flex;flex-wrap:wrap;gap:.6rem}
+
+/* end matter (paper) */
+.endnote{background:var(--paper);color:var(--text);padding:2.6rem 0 3rem;font-size:.92rem;line-height:1.55}
+.endnote .col{max-width:var(--measure);margin:0 auto;padding:0 16px}
+.endnote h3{font-family:var(--mono);text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;color:var(--forest);font-weight:700;margin:1.4rem 0 .4rem}
+.endnote h3:first-child{margin-top:0}
+.endnote ul{padding-left:1.1rem;margin:.2rem 0;color:var(--graphite)}
+.endnote li{margin:.25rem 0}
+.endnote p{color:var(--graphite);margin:0 0 .8rem}
+.endnote a{color:var(--forest)}
+</style>
+</head>
+<body>
+
+<nav class="topnav storybar" aria-label="Chapters"><div class="wrap">
+  <a class="logo" href="../../" aria-label="autoants home"><img src="../../brand/autoants-logo-reverse.svg" alt="autoants" width="98" height="26"></a>
+  <div class="aisles" id="aisleNav"></div>
+  <button class="cartbtn" id="cartBtn" type="button" aria-label="Go to your cart">Cart<b id="cartCount">0</b></button>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div>
+    <p class="eyebrow">The trades-owner edition · an illustrated retelling</p>
+    <h1>The Orange <span>Apron</span></h1>
+    <p class="dek">Two fired hardware executives, a Wall Street banker and a merchant in a velvet leisure suit built the biggest home-improvement chain in America. Sixteen short aisles on how they did it, how it nearly came apart, and what a 5-truck shop can take from it.</p>
+    <p class="byline">By <b>Lane Davis II</b>, founder, autoants · about 12 minutes</p>
+    <p class="credit-box">An independent retelling inspired by Acquired's episode <a href="https://www.acquired.fm/episodes/home-depot" target="_blank" rel="noopener">"The Home Depot"</a> (Ben Gilbert &amp; David Rosenthal, 2026). Not affiliated with Acquired or The Home Depot.</p>
+  </div>
+  <figure class="wc hero-fig"><div class="frame"><img src="img/lumber_aisle.webp" srcset="img/lumber_aisle_700.webp 700w, img/lumber_aisle.webp 1600w" sizes="(max-width:1100px) 92vw, 66rem" width="1600" height="1200" alt="A big-box lumber aisle: orange cantilever racks stacked with boards." fetchpriority="high" decoding="async"></div><figcaption><span class="credit">Watercolor after a photo by Sikander Iqbal · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Home_Depot_lumber.jpg" target="_blank" rel="noopener">source</a></span></figcaption></figure>
+</div>
+<div class="wrap">
+  <div class="bignums num" aria-label="By the numbers">
+    <div><strong>2 → 2,359</strong><span>stores, from two subleased Atlanta boxes in 1979 to fiscal 2025</span></div>
+    <div><strong>$7.0M → $164.7B</strong><span>yearly sales, first partial year to fiscal 2025</span></div>
+    <div><strong>1</strong><span>losing year in the company's history: the first one</span></div>
+  </div>
+  <div class="howto"><span class="mini-tag" aria-hidden="true"></span><p><b>How to read this.</b> Each chapter is an aisle and ends with a line for your shop. The shelf tags are the lessons, each with what it looks like in a 5-truck shop and where autoants can help. "Hosts" tags are arguments made on the episode; "Ours" are our own reading. Put the ones you want in your cart, and your receipt prints at the checkout.</p></div>
+</div></header>
+
+<main class="paper" id="story">
+
+<section class="aisle" id="a1" data-aisle="1">
+  <div class="col">
+  <div class="sign"><span class="n">AISLE 01</span><span class="yr">1929 – 1975</span></div>
+  <h2>Retail guys, not hammer guys</h2>
+  <figure class="wc float"><div class="frame"><img src="img/marcus.webp" srcset="img/marcus_700.webp 700w, img/marcus.webp 1600w" sizes="(max-width:900px) 92vw, 22rem" width="1348" height="1600" alt="Bernie Marcus, co-founder, in a 2020 interview." loading="lazy" decoding="async"></div><figcaption>Bernie Marcus in 2020, at 91.<span class="credit">Watercolor after a photo by Rabbi Pinchas Taylor (CC BY video) · <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener license">CC BY 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Bernard_Marcus.jpg" target="_blank" rel="noopener">source</a></span></figcaption></figure>
+  <p class="lede">Bernie Marcus, the son of a Newark cabinetmaker, wanted to be a psychiatrist, couldn't pay for medical school and became a pharmacist in a discount store instead. That counter taught him retail. By 1972 he ran Handy Dan, a hardware chain owned by a Los Angeles holding company, with a title and no equity.</p>
+  <p>His first hire was a young finance man, Arthur Blank, because money was the part of the business he understood least. They ran Handy Dan like sharp retailers rather than hardware men, and it became the best operator in the trade.</p>
+  <div class="clear"></div>
+  </div>
+  
+  <div class="col">
+  <p class="foryou"><b>For your shop</b> The best tradesman in town doesn&#x27;t automatically run the most profitable shop. Somebody has to own the numbers.</p>
+  <div class="tags"><article class="tag" data-id="01-2">
+      <div class="sku"><span>Aisle 01 · Lesson 2</span><span class="who">Ours</span></div>
+      <h4>Pair the merchant with a numbers partner before growth exposes the gap.</h4>
+      <p>Bernie knew money was his blind spot and hired Arthur as his finance man on day one.</p>
+      <p class="shop"><b>In a 5-truck shop, this looks like</b> the owner still prices jobs from memory while nobody watches margin per job. Put one person on the numbers every week.</p>
+      <div class="doors"><a class="door" href="../price-math/">Run your own numbers: the price-math calculator <span aria-hidden="true">→</span></a></div>
+      <button type="button" data-id="01-2" aria-pressed="false">Add to cart</button>
+    </article></div>
+  </div>
+</section>
+
+<section class="aisle" id="a2" data-aisle="2">
+  <div class="col">
+  <div class="sign"><span class="n">AISLE 02</span><span class="yr">c. 1975 – 1977</span></div>
+  <h2>The banker who bought the float</h2>
+  <figure class="wc float"><div class="frame"><img src="img/before_saw_1943.webp" srcset="img/before_saw_1943_700.webp 700w, img/before_saw_1943.webp 1600w" sizes="(max-width:900px) 92vw, 22rem" width="1600" height="1190" alt="San Augustine, Texas, 1943: a customer buying a saw across the counter of a small-town hardware store." loading="lazy" decoding="async"></div><figcaption>The world they upended: counter service at a small-town hardware store, Texas, 1943.<span class="credit">Watercolor after a photo by John Vachon, FSA/OWI · <a href="https://guides.loc.gov/p-and-p-rights-and-restrictions/rights" target="_blank" rel="noopener license">Public domain</a> · <a href="https://www.loc.gov/item/2017852510/" target="_blank" rel="noopener">source</a></span></figcaption></figure>
+  <p class="lede">Ken Langone, a Wall Street banker, asked around about who ran the best hardware stores. Everyone said Handy Dan. The small slice of it that traded publicly was priced at about two years of earnings, because investors lumped it in with a parent company headed for bankruptcy.</p>
+  <p>Langone flew out the next day, checked the numbers in person and bought close to a fifth of the company. Bernie, suspicious of a stranger from New York, brought a lawyer to lunch.</p>
+  <div class="clear"></div>
+  </div>
+  
+  <div class="col">
+  <p class="foryou"><b>For your shop</b> People price you by what they can see. If your best work never shows up in photos, reviews or search, you get priced like the shop down the street.</p>
+  
+  </div>
+</section>
+
+<section class="aisle" id="a3" data-aisle="3">
+  <div class="col">
+  <div class="sign"><span class="n">AISLE 03</span><span class="yr">1977 – 1978</span></div>
+  <h2>Kicked with a golden horseshoe</h2>
+  
+  <p class="lede">The holding company's new boss, a bankruptcy specialist, resented Langone's stake. Bernie asked Ken to sell it to keep the peace; Ken warned that the stake was his protection, then sold anyway. On April 14, 1978, Bernie, Arthur and their controller were fired, on grounds a jury later found were made up. Bernie was 48, with no savings. The next morning, over breakfast in New York, Ken told him:</p>
+  <blockquote class="pull"><q>You just got kicked in the ass with a golden horseshoe.</q><cite>Ken Langone to Bernie Marcus, April 1978, as retold on Acquired</cite></blockquote>
+  <figure class="wc float"><div class="frame"><img src="img/carpenters_1975.webp" srcset="img/carpenters_1975_700.webp 700w, img/carpenters_1975.webp 1600w" sizes="(max-width:900px) 92vw, 22rem" width="1047" height="1600" alt="Carpenters framing a new building near Helen, Georgia, June 1975, lumber stacked in the foreground." loading="lazy" decoding="async"></div><figcaption>The customer they bet on. Carpenters framing a house in north Georgia, 1975.<span class="credit">Watercolor after a photo by Al Stephenson, EPA DOCUMERICA · <a href="https://creativecommons.org/publicdomain/mark/1.0/" target="_blank" rel="noopener license">Public domain</a> · <a href="https://commons.wikimedia.org/wiki/File:CARPENTERS_AT_WORK_ON_THE_FIRST_UNIT_OF_THE_NEW_ALPINE_VILLAGE_AT_THE_OUTSKIRTS_OF_HELEN,_GEORGIA,_NEAR_ROBERTSTOWN...._-_NARA_-_557730.jpg" target="_blank" rel="noopener">source</a></span></figcaption></figure>
+  <p>Months earlier Bernie had walked through Sol Price's Price Club in San Diego, a warehouse that was itself the store, buying straight from manufacturers on thin markups. He'd been sure someone would bring that format to hardware. Now it could be him.</p>
+  <div class="clear"></div>
+  </div>
+  
+  <div class="col">
+  <p class="foryou"><b>For your shop</b> The setup that beats you probably already works in another trade or another city. Go look before someone brings it to yours.</p>
+  
+  </div>
+</section>
+
+<section class="aisle" id="a4" data-aisle="4">
+  <div class="col">
+  <div class="sign"><span class="n">AISLE 04</span><span class="yr">1978</span></div>
+  <h2>The Cadillac that cost a fortune</h2>
+  
+  <p class="lede">Ross Perot offered $2 million for 70% of the new company, then insisted Bernie give up the Cadillac he still drove from Handy Dan. To Bernie it sounded like an employer giving orders again, a week after one had thrown him out. He walked away from money he badly needed.</p>
+  <p>Langone came back with friendlier terms: outside investors got 50%, spread across dozens of individuals, and with no single lead investor the founders set the price. Home Depot was incorporated on June 29, 1978. (The Perot terms come from the founders' memoir.)</p>
+  <div class="clear"></div>
+  </div>
+  
+  <div class="col">
+  <p class="foryou"><b>For your shop</b> Watch for the one customer, lender or general contractor big enough to start running your company. Many medium customers keep you your own boss.</p>
+  
+  </div>
+</section>
+
+<section class="aisle" id="a5" data-aisle="5">
+  <div class="col">
+  <div class="sign"><span class="n">AISLE 05</span><span class="yr">1978</span></div>
+  <h2>The missing fourth founder</h2>
+  <figure class="wc float"><div class="frame"><img src="img/before_brockton_1940.webp" srcset="img/before_brockton_1940_700.webp 700w, img/before_brockton_1940.webp 1600w" sizes="(max-width:900px) 92vw, 22rem" width="1600" height="1079" alt="Brockton, Massachusetts, December 1940: a second-hand plumbing and hardware store with goods piled outside." loading="lazy" decoding="async"></div><figcaption>Stacked to the rafters: a plumbing and hardware yard in Brockton, Massachusetts, 1940.<span class="credit">Watercolor after a photo by Jack Delano, FSA · <a href="https://guides.loc.gov/p-and-p-rights-and-restrictions/rights" target="_blank" rel="noopener license">Public domain</a> · <a href="https://commons.wikimedia.org/wiki/File:Brockton,_Mass.,_Dec._1940,_second-hand_plumbing_store_LCCN2017877353.jpg" target="_blank" rel="noopener">source</a></span></figcaption></figure>
+  <p class="lede">Scouting sites, the founders found a Los Angeles warehouse, HomeCo, already doing what they planned: stacked to the ceiling, the cheapest in town and packed with customers. Its owner, Pat Farrah, was a merchandising genius.</p>
+  <p>Due diligence showed the crowds were real and the business was broke. Pat had been ignoring supplier invoices, and his true margins were far below what he believed. So the founders let HomeCo fail and hired the man as the fourth founder, running buying and displays, well away from the books.</p>
+  <div class="clear"></div>
+  </div>
+  
+  <div class="col">
+  <p class="foryou"><b>For your shop</b> A full schedule is not the same as a good business. Busy at the wrong price is how good shops go under.</p>
+  <div class="tags"><article class="tag" data-id="05-1">
+      <div class="sku"><span>Aisle 05 · Lesson 1</span><span class="who">Hosts</span></div>
+      <h4>Real demand at the wrong price is a broken business, not a great one.</h4>
+      <p>HomeCo had the crowds and the format. It also had unpaid suppliers and margins far below what its owner believed.</p>
+      <p class="shop"><b>In a 5-truck shop, this looks like</b> a full board in July and a thin bank account in August, because the big jobs were bid too low.</p>
+      <div class="doors"><a class="door" href="../price-math/">Run your own numbers: the price-math calculator <span aria-hidden="true">→</span></a></div>
+      <button type="button" data-id="05-1" aria-pressed="false">Add to cart</button>
+    </article><article class="tag" data-id="05-3">
+      <div class="sku"><span>Aisle 05 · Lesson 3</span><span class="who">Ours</span></div>
+      <h4>Fence your best person off from the work that would sink him.</h4>
+      <p>Pat ran buying and displays. Arthur and Bernie kept him away from the books, the thing that had broken HomeCo.</p>
+      <p class="shop"><b>In a 5-truck shop, this looks like</b> your best tech is answering the phone and chasing invoices between jobs. Take the phone off his plate.</p>
+      <div class="doors"><a class="door" href="../../services.html#never-miss">Never miss a job: the Office Manager <span aria-hidden="true">→</span></a></div>
+      <button type="button" data-id="05-3" aria-pressed="false">Add to cart</button>
+    </article></div>
+  </div>
+</section>
+
+<section class="aisle" id="a6" data-aisle="6">
+  <div class="col">
+  <div class="sign"><span class="n">AISLE 06</span><span class="yr">1978 – 1979</span></div>
+  <h2>Opening day in borrowed buildings</h2>
+  
+  <p class="lede">They picked Atlanta and subleased two old discount stores. Money was so thin the team stacked empty boxes and paint cans to make the shelves look full. When managers polished the floors the night before opening, Pat had them scuffed with forklifts: this was meant to feel like a place for work boots.</p>
+  <figure class="wc"><div class="frame"><img src="img/atlanta_1974.webp" srcset="img/atlanta_1974_700.webp 700w, img/atlanta_1974.webp 1600w" sizes="(max-width:1100px) 92vw, 66rem" width="1600" height="1079" alt="Downtown Atlanta street, June 1974: a double-decker bus and a yellow cab." loading="lazy" decoding="async"></div><figcaption>Downtown Atlanta in 1974, five years before the first two stores opened on the city&#x27;s edges.<span class="credit">Watercolor after a photo by Jim Pickerell, EPA DOCUMERICA · <a href="https://creativecommons.org/publicdomain/mark/1.0/" target="_blank" rel="noopener license">Public domain</a> · <a href="https://commons.wikimedia.org/wiki/File:Double_Decker_Bus_on_the_Streets_of_Atlanta,_Georgia_-_NARA_-_556792.jpg" target="_blank" rel="noopener">source</a></span></figcaption></figure>
+  <p>The first two stores opened on June 22, 1979. Thin capital set the model for good: the longest supplier terms they could get, inventory that turned fast and customers who paid on the spot. The first year lost $930,000. It was the only losing year the company would ever have.</p>
+  <div class="clear"></div>
+  </div>
+  
+  <div class="col">
+  <p class="foryou"><b>For your shop</b> Every store in one city shared the same ads. Jobs packed into a few neighborhoods share drive time, word of mouth and yard signs.</p>
+  <div class="tags"><article class="tag" data-id="06-1">
+      <div class="sku"><span>Aisle 06 · Lesson 1</span><span class="who">Hosts</span></div>
+      <h4>Saturate one area so every dollar of marketing works several times.</h4>
+      <p>A cluster of Atlanta stores let one newspaper or radio campaign feed all of them. Own a metro, then move on.</p>
+      <p class="shop"><b>In a 5-truck shop, this looks like</b> trucks spread across three parishes and yard signs nobody sees twice. Pick the ZIP codes you want and own them.</p>
+      <div class="doors"><a class="door" href="../../services.html#get-found">Get found: a page for each town you cover <span aria-hidden="true">→</span></a><a class="door" href="../../media-engine/">The Neighborhood Media Engine <span aria-hidden="true">→</span></a></div>
+      <button type="button" data-id="06-1" aria-pressed="false">Add to cart</button>
+    </article><article class="tag" data-id="06-2">
+      <div class="sku"><span>Aisle 06 · Lesson 2</span><span class="who">Hosts</span></div>
+      <h4>Make the place say what you are.</h4>
+      <p>Polished floors said department store. Forklift scuffs said this place welcomes work boots and low prices.</p>
+      <p class="shop"><b>In a 5-truck shop, this looks like</b> clean trucks, a site with your own job photos, and a Google profile that matches the work you want more of.</p>
+      <div class="doors"><a class="door" href="../../services.html#get-found">Get found <span aria-hidden="true">→</span></a></div>
+      <button type="button" data-id="06-2" aria-pressed="false">Add to cart</button>
+    </article><article class="tag" data-id="06-3">
+      <div class="sku"><span>Aisle 06 · Lesson 3</span><span class="who">Hosts</span></div>
+      <h4>When cash is thin, payment terms and fast turns are the model.</h4>
+      <p>With $2 million, the founders pushed for the longest supplier terms they could get and sold mostly for cash.</p>
+      <p class="shop"><b>In a 5-truck shop, this looks like</b> materials on the card for 30 days while the customer pays in 60. Deposits up front, and the invoice out the day the job closes.</p>
+      <div class="doors"><a class="door" href="../../services.html#never-miss">Never miss a job: invoice follow-up <span aria-hidden="true">→</span></a></div>
+      <button type="button" data-id="06-3" aria-pressed="false">Add to cart</button>
+    </article></div>
+  </div>
+</section>
+
+<section class="aisle" id="a7" data-aisle="7">
+  <div class="col">
+  <div class="sign"><span class="n">AISLE 07</span><span class="yr">1980 – 1989</span></div>
+  <h2>Going public at 20% interest</h2>
+  
+  <p class="lede">To take more empty store sites, Langone took a four-store chain public on September 22, 1981, at $12 a share, with interest rates near their all-time high. Then came the sprint: Florida, Texas, California, the Northeast.</p>
+  <p>The founders admitted they had sold suppliers a future they hadn't yet earned, and then they delivered it. Sales passed $1 billion in 1986, and in 1989 Home Depot passed Lowe's.</p>
+  <div class="clear"></div>
+  </div>
+  <div class="wide"><figure class="chart wide" id="climb" aria-label="Chart: Home Depot and Lowe's sales, 1979 to 2025">
+    <header><div><h3>Forty-seven years of sales, with the rival for scale</h3>
+      <p class="sub">Annual net sales by fiscal year. Hover or tap a year for its store count. Shaded bands mark each CEO's tenure.</p></div>
+      <div class="seg" role="group" aria-label="Scale"><button type="button" data-scale="log" aria-pressed="true">Log scale</button><button type="button" data-scale="lin" aria-pressed="false">Linear</button></div></header>
+    <div class="legend"><span><i style="background:var(--hd)"></i>Home Depot</span><span><i style="background:var(--lowes)"></i>Lowe's (from fiscal 1989)</span></div>
+    <div class="svgwrap"><svg role="img" aria-label="Line chart of annual sales, Home Depot from $7 million in 1979 to about $165 billion in 2025"></svg><div class="tip"></div></div>
+    <figcaption class="src">Sources: Home Depot annual reports (FY1979–88) and 10-K filings and SEC XBRL (FY1989–2025); Lowe's 10-K filings. Figures as originally reported. FY2006 includes HD Supply; FY2020 on includes the reacquired HD Supply; FY2024–25 include SRS and GMS.</figcaption>
+  </figure></div>
+  <div class="col">
+  <p class="foryou"><b>For your shop</b> Growth that lasts comes from doing the same thing well in more places, not from a new idea every year.</p>
+  
+  </div>
+</section>
+
+<section class="aisle" id="a8" data-aisle="8">
+  <div class="col">
+  <div class="sign"><span class="n">AISLE 08</span><span class="yr">1980s – 1990s</span></div>
+  <h2>The plumber in the orange apron</h2>
+  <figure class="wc float"><div class="frame"><img src="img/apron.webp" srcset="img/apron_700.webp 700w, img/apron.webp 1600w" sizes="(max-width:900px) 92vw, 22rem" width="1304" height="1600" alt="Close-up of an orange store apron with an &#x27;I Speak Farsi&#x27; badge (no face shown)." loading="lazy" decoding="async"></div><figcaption>The apron. Associates write their names on it, and some add the languages they speak.<span class="credit">Watercolor after a photo by جیمبو دامبلی دیمبو (Wikimedia Commons) · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Home_Depot_Farsi.jpg" target="_blank" rel="noopener">source</a></span></figcaption></figure>
+  <p class="lede">The copycats had low prices and big boxes too. What they didn't have was former plumbers, electricians and carpenters in the aisles, with orders to drop everything when a customer had a question. A homeowner who managed to paint one room came back to try drywall.</p>
+  <p>The numbers only worked at volume: a thin margin on enormous sales, bigger orders bringing better supplier prices, passed back as lower prices. And the story everyone repeated: an associate fixed a leaky faucet with a 25-cent washer instead of selling a new one, and the customer came back for a $100,000 kitchen.</p>
+  <div class="clear"></div>
+  </div>
+  <div class="wide"><figure class="chart wide calc-embed" id="margin" aria-label="Interactive: margin dollars for a trades shop">
+    <header><div><h3>Margin dollars, not margin percent: run it on your shop</h3>
+      <p class="sub">The warehouse plan was a lower markup on far more volume. Here's the same arithmetic for a trades shop. The starting numbers are an example; put in yours. Nothing you type leaves your browser.</p></div></header>
+    <div id="priceMath"></div>
+  </figure></div>
+  <div class="col">
+  <p class="foryou"><b>For your shop</b> The answered phone is the product. The homeowner who gets a quick, straight answer from you calls you again for the bigger job.</p>
+  <div class="tags"><article class="tag" data-id="08-1">
+      <div class="sku"><span>Aisle 08 · Lesson 1</span><span class="who">Hosts</span></div>
+      <h4>In specialty work, service is the product.</h4>
+      <p>Former plumbers and electricians taught customers in the aisles. The copycats hired generic retail labor, and none of them survive.</p>
+      <p class="shop"><b>In a 5-truck shop, this looks like</b> the 7:40 a.m. call that goes to voicemail while everyone is on a roof. A text back in seconds keeps the job in play.</p>
+      <div class="doors"><a class="door" href="../../services.html#never-miss">Never miss a job: the Text-Back and Responder Ants <span aria-hidden="true">→</span></a></div>
+      <button type="button" data-id="08-1" aria-pressed="false">Add to cart</button>
+    </article><article class="tag" data-id="08-2">
+      <div class="sku"><span>Aisle 08 · Lesson 2</span><span class="who">Hosts</span></div>
+      <h4>Margin dollars pay the bills, not margin percent.</h4>
+      <p>Thin margins on tens of thousands of items only worked at huge volume, and volume bought the supplier discounts that went back to customers.</p>
+      <p class="shop"><b>In a 5-truck shop, this looks like</b> cutting 5% to win a bid means doing more jobs just to stand still. Run your own numbers before the next discount.</p>
+      <div class="doors"><a class="door" href="../price-math/">Run your own numbers: the price-math calculator <span aria-hidden="true">→</span></a></div>
+      <button type="button" data-id="08-2" aria-pressed="false">Add to cart</button>
+    </article><article class="tag" data-id="08-3">
+      <div class="sku"><span>Aisle 08 · Lesson 3</span><span class="who">Hosts</span></div>
+      <h4>Give the crew a stake and show them what moves it.</h4>
+      <p>Stock for salaried and hourly staff tied floor service to the share price, and training explained how.</p>
+      <p class="shop"><b>In a 5-truck shop, this looks like</b> a crew bonus tied to reviews and callbacks, posted where the crew can see it every week.</p>
+      <div class="doors"><a class="door" href="../../services.html#never-miss">Never miss a job: the Reviewer Ant asks after every job <span aria-hidden="true">→</span></a></div>
+      <button type="button" data-id="08-3" aria-pressed="false">Add to cart</button>
+    </article><article class="tag" data-id="08-4">
+      <div class="sku"><span>Aisle 08 · Lesson 4</span><span class="who">Hosts</span></div>
+      <h4>Reward the small fix that earns the big customer.</h4>
+      <p>The associate who fixed a faucet with a 25-cent washer won the customer&#x27;s kitchen remodel later.</p>
+      <p class="shop"><b>In a 5-truck shop, this looks like</b> the tech who fixes it for $90 instead of selling a replacement. That customer calls you first for the big one, if you stay in touch.</p>
+      <div class="doors"><a class="door" href="../../services.html#next-job">Get the next job: reminders to past customers <span aria-hidden="true">→</span></a></div>
+      <button type="button" data-id="08-4" aria-pressed="false">Add to cart</button>
+    </article></div>
+  </div>
+</section>
+
+<section class="aisle" id="a9" data-aisle="9">
+  <div class="col">
+  <div class="sign"><span class="n">AISLE 09</span><span class="yr">1990 – 2000</span></div>
+  <h2>The pro desk opens, the cracks appear</h2>
+  
+  <p class="lede">By the mid-1990s Home Depot was opening stores at a furious pace and going after contractors with credit accounts, pro desks and job-site delivery. In 1997 Bernie handed the CEO job to Arthur, and the problems growth had hidden came up: an $87.5 million discrimination settlement, nine regional buying offices that wasted national buying power, and a rebuilt Lowe's gaining ground.</p>
+  <p>When Langone asked who could replace Arthur, the honest answer was nobody.</p>
+  <div class="clear"></div>
+  </div>
+  
+  <div class="col">
+  <p class="foryou"><b>For your shop</b> Growth hides mess. The shop that adds trucks without adding a system finds out at the first big hire, the first bad month or the first time the owner is out sick.</p>
+  <div class="tags"><article class="tag" data-id="09-2">
+      <div class="sku"><span>Aisle 09 · Lesson 2</span><span class="who">Hosts</span></div>
+      <h4>Fast growth hides management debt. It comes due at the handoff.</h4>
+      <p>A store every few days masked a lawsuit, scattered buying and an empty bench. All three surfaced at the first CEO change.</p>
+      <p class="shop"><b>In a 5-truck shop, this looks like</b> dispatch lives in the owner&#x27;s head and on a whiteboard. Fine at two trucks; at five, one sick day and the week falls apart.</p>
+      <div class="doors"><a class="door" href="../../services.html#larger">Operations Math: scheduling <span aria-hidden="true">→</span></a></div>
+      <button type="button" data-id="09-2" aria-pressed="false">Add to cart</button>
+    </article><article class="tag" data-id="09-3">
+      <div class="sku"><span>Aisle 09 · Lesson 3</span><span class="who">Hosts</span></div>
+      <h4>Spread out the judgment; centralize what scale rewards.</h4>
+      <p>Nine regional buying offices had sharp local instincts but wasted national buying power.</p>
+      <p class="shop"><b>In a 5-truck shop, this looks like</b> crew leads make the calls on the job, while routes, schedules and material orders get planned in one place.</p>
+      <div class="doors"><a class="door" href="../../services.html#larger">Operations Math: the Route Desk <span aria-hidden="true">→</span></a></div>
+      <button type="button" data-id="09-3" aria-pressed="false">Add to cart</button>
+    </article></div>
+  </div>
+</section>
+
+<section class="aisle" id="a10" data-aisle="10">
+  <div class="col">
+  <div class="sign"><span class="n">AISLE 10</span><span class="yr">2000 – 2006</span></div>
+  <h2>Six Sigma comes to the lumber aisle</h2>
+  <figure class="wc float"><div class="frame"><img src="img/nardelli.webp" srcset="img/nardelli_700.webp 700w, img/nardelli.webp 1600w" sizes="(max-width:900px) 92vw, 22rem" width="1120" height="1600" alt="Robert Nardelli in 2002, at the U.S. Department of Labor." loading="lazy" decoding="async"></div><figcaption>Bob Nardelli as CEO, 2002.<span class="credit">Watercolor after a photo by Neshan Naltchayan, U.S. Department of Labor · <a href="https://creativecommons.org/publicdomain/mark/1.0/" target="_blank" rel="noopener license">Public domain</a> · <a href="https://commons.wikimedia.org/wiki/File:Elaine_Chao_Meeting_With_Robert_Nardelli.jpg" target="_blank" rel="noopener">source</a></span></figcaption></figure>
+  <p class="lede">The board brought in Bob Nardelli from GE. He fixed real things: one buying office instead of nine, and modern systems. But experienced associates gave way to part-timers, and customer satisfaction fell to last among major retailers.</p>
+  <p>On paper, everything doubled. Sales went from $45.7 billion to $90.8 billion, mostly because the store count doubled while sales at existing stores went nowhere. Gross margin crept from about 30% to about 33%, and prices lost their edge. The stock told the story.</p>
+  <div class="clear"></div>
+  </div>
+  <div class="wide"><figure class="chart wide" id="nardelli" aria-label="Chart: total return during the Nardelli years">
+    <header><div><h3>Sales doubled. The stock went nowhere.</h3>
+      <p class="sub">Growth of $100 with dividends reinvested, from the day before Nardelli was named CEO (Dec 4, 2000) to the last close before his exit was announced (Dec 29, 2006).</p></div></header>
+    <div class="legend"><span><i style="background:var(--hd)"></i>Home Depot</span><span><i style="background:var(--lowes)"></i>Lowe's</span><span><i style="background:var(--market)"></i>S&amp;P 500 total return</span></div>
+    <div class="svgwrap"><svg role="img" aria-label="Line chart: Home Depot up 4.2%, Lowe's up 213.7%, S&amp;P 500 total return up 18.7% over the window"></svg><div class="tip"></div></div>
+    <figcaption class="src">Source: month-end adjusted closes from Yahoo Finance; endpoint returns computed on daily closes. Over the window: Home Depot +4.2%, Lowe's +213.7%, S&amp;P 500 total return +18.7%.</figcaption>
+  </figure></div>
+  <div class="col">
+  <p class="foryou"><b>For your shop</b> Efficiency that cuts what customers came for isn&#x27;t efficiency. A tighter route that skips the callback costs more than the miles it saved.</p>
+  <div class="tags"><article class="tag" data-id="10-1">
+      <div class="sku"><span>Aisle 10 · Lesson 1</span><span class="who">Hosts</span></div>
+      <h4>Efficiency can cut out the very thing customers came for.</h4>
+      <p>Part-timers and thinner staffing removed the expert help that defined the stores, and satisfaction fell to last.</p>
+      <p class="shop"><b>In a 5-truck shop, this looks like</b> a schedule packed so tight nobody has time to explain the work or come back for the callback.</p>
+      <div class="doors"><a class="door" href="../../services.html#larger">Operations Math: a person checks every plan <span aria-hidden="true">→</span></a></div>
+      <button type="button" data-id="10-1" aria-pressed="false">Add to cart</button>
+    </article><article class="tag" data-id="10-2">
+      <div class="sku"><span>Aisle 10 · Lesson 2</span><span class="who">Hosts</span></div>
+      <h4>More trucks can hide flat revenue per truck.</h4>
+      <p>Sales doubled mostly because the store count doubled. Sales per existing store went nowhere, and neither did the stock.</p>
+      <p class="shop"><b>In a 5-truck shop, this looks like</b> revenue up after adding a sixth truck, revenue per truck down. Watch per-truck numbers, not just the total.</p>
+      <div class="doors"><a class="door" href="../../services.html#larger">Operations Math: the Route Desk <span aria-hidden="true">→</span></a></div>
+      <button type="button" data-id="10-2" aria-pressed="false">Add to cart</button>
+    </article><article class="tag" data-id="10-4">
+      <div class="sku"><span>Aisle 10 · Lesson 4</span><span class="who">Ours</span></div>
+      <h4>Raising prices to hit a number quietly spends your reputation.</h4>
+      <p>Gross margin rose from about 30% to about 33% and never came back down. Prices went from shockingly low to merely competitive.</p>
+      <p class="shop"><b>In a 5-truck shop, this looks like</b> prices creep up every season until the regulars start getting second quotes. Know what each point of price is worth before you move it.</p>
+      <div class="doors"><a class="door" href="../price-math/">Run your own numbers: the price-math calculator <span aria-hidden="true">→</span></a></div>
+      <button type="button" data-id="10-4" aria-pressed="false">Add to cart</button>
+    </article></div>
+  </div>
+</section>
+
+<section class="aisle" id="a11" data-aisle="11">
+  <div class="col">
+  <div class="sign"><span class="n">AISLE 11</span><span class="yr">2006 – 2007</span></div>
+  <h2>Thirty minutes in Wilmington</h2>
+  
+  <p class="lede">At the May 2006 annual meeting, Nardelli took the stage alone; none of the other directors came. Each shareholder got one question and a one-minute clock, and it was over in about half an hour. Many people in that room were associates whose savings were in the stock.</p>
+  <p>In January 2007 the board pushed him out, with a departure package valued at about $210 million. Associates were reported cheering in the stores.</p>
+  <div class="clear"></div>
+  </div>
+  
+  <div class="col">
+  <p class="foryou"><b>For your shop</b> Your crew remembers how you treat them in a bad month, and they talk to your customers every day.</p>
+  
+  </div>
+</section>
+
+<section class="aisle" id="a12" data-aisle="12">
+  <div class="col">
+  <div class="sign"><span class="n">AISLE 12</span><span class="yr">2007 – 2014</span></div>
+  <h2>Stop opening stores</h2>
+  
+  <p class="lede">The board's next pick, Frank Blake, was another GE man, and Nardelli's opposite. His first call was to Bernie, and he brought back the founders' upside-down org chart: customers on top, associates next, the CEO at the bottom.</p>
+  <p>When housing collapsed, Blake stopped building stores, closed weak ones, sold the HD Supply distribution arm for $8.5 billion and bought back stock through the crash. The store count barely moved for a decade while each store got far more productive.</p>
+  <div class="clear"></div>
+  </div>
+  <div class="wide"><figure class="chart wide" id="stores" aria-label="Chart: store count and sales per store">
+    <header><div><h3>Stop opening stores. Make the ones you have better.</h3>
+      <p class="sub">Store count against sales per store, fiscal 1990–2025. Blake's tenure is shaded.</p></div></header>
+    <div class="svgwrap"><svg role="img" aria-label="Two panels: store count flat from 2007 to 2014 while sales per store climbs"></svg><div class="tip"></div></div>
+    <figcaption class="src">Source: 10-K filings. Sales per store is total net sales divided by year-end stores, so it is inflated in FY2006 by HD Supply, from FY2020 by the reacquired HD Supply and from FY2024 by SRS (dotted).</figcaption>
+  </figure></div>
+  <div class="col">
+  <p class="foryou"><b>For your shop</b> Before you buy the next truck, find out how much more the trucks you already have could do.</p>
+  <div class="tags"><article class="tag" data-id="12-2">
+      <div class="sku"><span>Aisle 12 · Lesson 2</span><span class="who">Hosts</span></div>
+      <h4>Before the next store (or truck), make the ones you have more productive.</h4>
+      <p>Blake held the store count roughly flat for over a decade, and sales per store roughly doubled.</p>
+      <p class="shop"><b>In a 5-truck shop, this looks like</b> getting more jobs out of the routes you already drive before you buy a sixth truck, hire a sixth driver and insure both.</p>
+      <div class="doors"><a class="door" href="../../services.html#larger">Operations Math: the Route and Cut Desks <span aria-hidden="true">→</span></a></div>
+      <button type="button" data-id="12-2" aria-pressed="false">Add to cart</button>
+    </article></div>
+  </div>
+</section>
+
+<section class="aisle" id="a13" data-aisle="13">
+  <div class="col">
+  <div class="sign"><span class="n">AISLE 13</span><span class="yr">2007 – 2022</span></div>
+  <h2>Out of grout on a Sunday</h2>
+  
+  <p class="lede">YouTube took away some of the apron's edge, so Blake competed on having the thing close by, right now. Home Depot built its own distribution network, then buy-online-pick-up-in-store, then flatbed centers for lumber and bulk orders.</p>
+  <figure class="wc"><div class="frame"><img src="img/aisle_natick_2014.webp" srcset="img/aisle_natick_2014_700.webp 700w, img/aisle_natick_2014.webp 1600w" sizes="(max-width:1100px) 92vw, 66rem" width="1600" height="1200" alt="A warehouse store&#x27;s long center aisle with lumber and racked stock under bright lights." loading="lazy" decoding="async"></div><figcaption>The main aisle of a Massachusetts store, 2014: a warehouse you&#x27;re allowed to walk around in.<span class="credit">Watercolor after a photo by John Phelan · <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener license">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Home_Depot,_center_aisle,_Natick_MA.jpg" target="_blank" rel="noopener">source</a></span></figcaption></figure>
+  <p>The insight: in project work, shopping online usually means picking up, not waiting for delivery. If you run out of grout halfway through a bathroom, you drive to the store now. When COVID hit, the network was ready, and sales went from $110 billion in fiscal 2019 to $157 billion in fiscal 2022.</p>
+  <div class="clear"></div>
+  </div>
+  
+  <div class="col">
+  <p class="foryou"><b>For your shop</b> The homeowner with water on the floor calls the next number if you don&#x27;t pick up. Now beats best.</p>
+  <div class="tags"><article class="tag" data-id="13-2">
+      <div class="sku"><span>Aisle 13 · Lesson 2</span><span class="who">Hosts</span></div>
+      <h4>Now beats best.</h4>
+      <p>Two-day shipping is useless when you run out of grout mid-job. Pickup in store matched how projects really happen.</p>
+      <p class="shop"><b>In a 5-truck shop, this looks like</b> the estimate that goes out the same afternoon beats the better one that goes out Thursday.</p>
+      <div class="doors"><a class="door" href="../../services.html#larger">Operations Math: the Quote Desk <span aria-hidden="true">→</span></a></div>
+      <button type="button" data-id="13-2" aria-pressed="false">Add to cart</button>
+    </article><article class="tag" data-id="13-3">
+      <div class="sku"><span>Aisle 13 · Lesson 3</span><span class="who">Hosts</span></div>
+      <h4>Build the system in the slow months; it pays off in the rush.</h4>
+      <p>Years of unglamorous distribution work looked dull until COVID. Then the network was ready.</p>
+      <p class="shop"><b>In a 5-truck shop, this looks like</b> storm week, when every phone in town rings at once. The text-back, the call list and the weather post were set up in the slow months.</p>
+      <div class="doors"><a class="door" href="../../services.html#next-job">Get the next job: weather alert campaigns <span aria-hidden="true">→</span></a></div>
+      <button type="button" data-id="13-3" aria-pressed="false">Add to cart</button>
+    </article></div>
+  </div>
+</section>
+
+<section class="aisle" id="a14" data-aisle="14">
+  <div class="col">
+  <div class="sign"><span class="n">AISLE 14</span><span class="yr">2020 – today</span></div>
+  <h2>Half pros, half weekend warriors</h2>
+  
+  <p class="lede">With the stores healthy, Home Depot went back to the idea Nardelli had tried too early. It bought back the best part of HD Supply in 2020, paid $18.25 billion in 2024 for SRS Distribution, which supplies roofers, landscapers and pool builders, and SRS bought the drywall distributor GMS in 2025.</p>
+  <p>Today roughly half of its $165 billion a year comes from pros, and house tool brands that share one battery keep customers coming back to the same shelf.</p>
+  <div class="clear"></div>
+  </div>
+  
+  <div class="col">
+  <p class="foryou"><b>For your shop</b> A maintenance plan is your battery platform. Once a customer is on it, the next job is yours to lose.</p>
+  <div class="tags"><article class="tag" data-id="14-2">
+      <div class="sku"><span>Aisle 14 · Lesson 2</span><span class="who">Hosts</span></div>
+      <h4>A platform that keeps customers coming back to the same shelf.</h4>
+      <p>Exclusive tool brands that share one battery make every next tool easiest to buy at the same store.</p>
+      <p class="shop"><b>In a 5-truck shop, this looks like</b> the yearly tune-up card that brings the customer back to you, not to whoever is on top of Google that day.</p>
+      <div class="doors"><a class="door" href="../../services.html#next-job">Get the next job: the Reminder Ant <span aria-hidden="true">→</span></a></div>
+      <button type="button" data-id="14-2" aria-pressed="false">Add to cart</button>
+    </article></div>
+  </div>
+</section>
+
+<section class="aisle" id="a15" data-aisle="15">
+  <div class="col">
+  <div class="sign"><span class="n">AISLE 15</span><span class="yr">Where they landed</span></div>
+  <h2>The return is made in the holding</h2>
+  <figure class="wc float"><div class="frame"><img src="img/blank.webp" srcset="img/blank_700.webp 700w, img/blank.webp 1600w" sizes="(max-width:900px) 92vw, 22rem" width="1472" height="1600" alt="Arthur Blank, co-founder, at a Falcons training camp in 2016." loading="lazy" decoding="async"></div><figcaption>Arthur Blank in 2016. He bought the Atlanta Falcons in 2002.<span class="credit">Watercolor after a photo by Thomson200 (Wikimedia Commons) · <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener license">CC0 1.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Arthur_Blank_2016.jpg" target="_blank" rel="noopener">source</a></span></figcaption></figure>
+  <p class="lede">Bernie Marcus died in November 2024, at 95. Arthur Blank bought the Atlanta Falcons. Ken Langone never sold a share, holding through three drops of two-thirds or more. The executives Blake trained went on to run UPS, Floor &amp; Decor and Lowe's.</p>
+  <div class="clear"></div>
+  </div>
+  
+  <div class="col">
+  <p class="foryou"><b>For your shop</b> Customers you keep compound. The second job from a customer you kept doesn&#x27;t need an ad to find you.</p>
+  
+  </div>
+</section>
+
+<section class="aisle" id="a16" data-aisle="16">
+  <div class="col">
+  <div class="sign"><span class="n">AISLE 16</span><span class="yr">The hosts' analysis</span></div>
+  <h2>Keep the values, let the tactics go</h2>
+  
+  <p class="lede">Walk a store today and almost every founding rule is gone. The aisles have numbers, the shelves are neat, buying is national and goods come through distribution centers. The hosts' read is that dropping the tactics was mostly right: a giant wins for different reasons than an upstart.</p>
+  <p>What stayed is the value underneath: help the customer get the job done.</p>
+  <div class="clear"></div>
+  </div>
+  
+  <div class="col">
+  <p class="foryou"><b>For your shop</b> How you answered the phone at one truck won&#x27;t work at five. Keep the promise; change how you keep it.</p>
+  <div class="tags"><article class="tag" data-id="16-1">
+      <div class="sku"><span>Aisle 16 · Lesson 1</span><span class="who">Hosts</span></div>
+      <h4>Keep the founding values; let the founding tactics go.</h4>
+      <p>Unnumbered aisles, regional buying, shipping straight to stores: nearly all of it was rightly dropped. A giant wins for different reasons than an upstart.</p>
+      <p class="shop"><b>In a 5-truck shop, this looks like</b> the owner&#x27;s cell number on every truck door worked at one truck. At five, keep the fast answer and hand the phone to a system.</p>
+      <div class="doors"><a class="door" href="../../services.html#never-miss">Never miss a job: the Office Manager <span aria-hidden="true">→</span></a></div>
+      <button type="button" data-id="16-1" aria-pressed="false">Add to cart</button>
+    </article><article class="tag" data-id="16-3">
+      <div class="sku"><span>Aisle 16 · Lesson 3</span><span class="who">Hosts</span></div>
+      <h4>Pick the work that comes due on its own.</h4>
+      <p>The median American home has aged from the low twenties in years to about 42. Every year, more houses need fixing.</p>
+      <p class="shop"><b>In a 5-truck shop, this looks like</b> aging roofs, water heaters and panels. Public permits show which homes just had the job before yours.</p>
+      <div class="doors"><a class="door" href="../../services.html#next-job">Get the next job: next-job postcards <span aria-hidden="true">→</span></a></div>
+      <button type="button" data-id="16-3" aria-pressed="false">Add to cart</button>
+    </article></div>
+  </div>
+</section>
+</main>
+
+<section class="checkout" id="checkout" data-aisle="17"><div class="wrap">
+  <div class="sign"><span class="n">CHECKOUT</span><span class="yr">Your lessons</span></div>
+  <h2>Your receipt</h2>
+  <div class="grid">
+    <div>
+      <div class="receipt num" id="receipt" aria-live="polite"></div>
+      <div class="receipt-actions">
+        <button type="button" id="copyBtn">Copy as text</button>
+        <button type="button" id="fillBtn">Add the top five for trades</button>
+        <button type="button" id="clearBtn">Empty the cart</button>
+      </div>
+      <p id="copyMsg" role="status"></p>
+    </div>
+    <div class="mail">
+      <h3>Email me my receipt</h3>
+      <p>We'll send your receipt to your inbox and add you to <b style="color:var(--cream)">Permits Pulled</b>, our free monthly report for New Orleans trades owners: what the city's permit records show, in a 2-minute read.</p>
+      <form class="cform" id="receiptForm" novalidate>
+        <label class="full">Email<input name="email" type="email" autocomplete="email" required></label>
+        <label class="full">I mostly…<select name="segment"><option value="trades" selected>fix or build homes</option><option value="sells-to-business">sell to local businesses</option><option value="real-estate">work in real estate</option><option value="other">something else</option></select></label>
+        <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+        <label class="check full"><input type="checkbox" name="ok" required><span>Yes, email me this receipt and send me Permits Pulled. Monthly. Unsubscribe anytime.</span></label>
+        <button class="btn btn-mint" type="submit">Email me my receipt</button>
+        <p class="sent" id="mailNote" role="status"></p>
+      </form>
+      <div class="cta">
+        <h3>See the math on your own jobs</h3>
+        <p>Free one-week side-by-side: we plan one of your real weeks and put it next to what actually happened, before you pay anything.</p>
+        <div class="row"><a class="btn btn-mint" href="../price-math/#side-by-side">Ask for the side-by-side</a><a class="btn btn-ghost" href="../price-math/">Open the calculator</a></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<footer class="endnote" aria-label="About this piece"><div class="col">
+  <h3>About this piece</h3>
+  <p>An independent, illustrated retelling written in our own words, shortened for trades owners. It isn't affiliated with Acquired or The Home Depot, and nothing here is endorsed by either. The structure and the hosts' arguments come from <a href="https://www.acquired.fm/episodes/home-depot" target="_blank" rel="noopener">Acquired, "The Home Depot"</a> (Ben Gilbert and David Rosenthal, 2026). Listen to it: the episode is far richer than any summary. The one direct quote is Ken Langone's, as retold on the episode. "For your shop" lines, the 5-truck examples and the links to autoants services are ours.</p>
+  <h3>Data</h3>
+  <ul>
+    <li>Home Depot annual reports (FY1979–88), 10-K filings and SEC XBRL company facts (FY1989–2025); Lowe's 10-K filings (FY1989–2025).</li>
+    <li>Stock prices: Yahoo Finance adjusted month-end closes for HD, LOW and the S&amp;P 500 total return index, downloaded October 11, 2026.</li>
+    <li>Where sources disagree, we used filings over press accounts. Founding-era stories (the Perot terms, the scuffed floors) come from the founders' memoir and company lore, and are told as such.</li>
+  </ul>
+  <h3>Illustrations</h3>
+  <p>Watercolor renderings made with OpenCV from public-domain and openly licensed photographs. The three illustrations adapted from CC BY-SA photographs (the lumber aisle, the apron and the main aisle) are shared under the same licenses, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a> and <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener license">CC BY-SA 3.0</a>, with their sources linked below.</p>
+  <ul>
+    <li>Illustration after a photograph by Sikander Iqbal, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/); modified. <a href="https://commons.wikimedia.org/wiki/File:Home_Depot_lumber.jpg" target="_blank" rel="noopener">Source</a>.</li>
+    <li>Illustration after a photograph by Rabbi Pinchas Taylor (YouTube video, CC BY), CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/); modified. <a href="https://commons.wikimedia.org/wiki/File:Bernard_Marcus.jpg" target="_blank" rel="noopener">Source</a>.</li>
+    <li>Illustration after a photograph by John Vachon, Farm Security Administration / Office of War Information, Library of Congress (https://www.loc.gov/item/2017852510/); public domain; modified. <a href="https://www.loc.gov/item/2017852510/" target="_blank" rel="noopener">Source</a>.</li>
+    <li>Illustration after a photograph by Al Stephenson, EPA DOCUMERICA project (NARA 557730), Public domain (US federal government work, PD-USGov-EPA); modified. <a href="https://commons.wikimedia.org/wiki/File:CARPENTERS_AT_WORK_ON_THE_FIRST_UNIT_OF_THE_NEW_ALPINE_VILLAGE_AT_THE_OUTSKIRTS_OF_HELEN,_GEORGIA,_NEAR_ROBERTSTOWN...._-_NARA_-_557730.jpg" target="_blank" rel="noopener">Source</a>.</li>
+    <li>Illustration after a photograph by Jack Delano, Farm Security Administration, Library of Congress (https://www.loc.gov/item/2017877353/); public domain; modified. <a href="https://commons.wikimedia.org/wiki/File:Brockton,_Mass.,_Dec._1940,_second-hand_plumbing_store_LCCN2017877353.jpg" target="_blank" rel="noopener">Source</a>.</li>
+    <li>Illustration after a photograph by Jim Pickerell, EPA DOCUMERICA project (NARA 556792), Public domain (US federal government work, PD-USGov-EPA); modified. <a href="https://commons.wikimedia.org/wiki/File:Double_Decker_Bus_on_the_Streets_of_Atlanta,_Georgia_-_NARA_-_556792.jpg" target="_blank" rel="noopener">Source</a>.</li>
+    <li>Illustration after a photograph by جیمبو دامبلی دیمبو (Wikimedia Commons user), CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/); modified. <a href="https://commons.wikimedia.org/wiki/File:Home_Depot_Farsi.jpg" target="_blank" rel="noopener">Source</a>.</li>
+    <li>Illustration after a photograph by Neshan Naltchayan, U.S. Department of Labor, Public domain (US federal government work, PD-USGov); modified. <a href="https://commons.wikimedia.org/wiki/File:Elaine_Chao_Meeting_With_Robert_Nardelli.jpg" target="_blank" rel="noopener">Source</a>.</li>
+    <li>Illustration after a photograph by John Phelan, CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/); modified. <a href="https://commons.wikimedia.org/wiki/File:Home_Depot,_center_aisle,_Natick_MA.jpg" target="_blank" rel="noopener">Source</a>.</li>
+    <li>Illustration after a photograph by Thomson200 (Wikimedia Commons), CC0 1.0; modified. <a href="https://commons.wikimedia.org/wiki/File:Arthur_Blank_2016.jpg" target="_blank" rel="noopener">Source</a>.</li>
+  </ul>
+</div></footer>
+
+<footer class="sitefoot"><div class="wrap">
+  <p class="credit-box">An independent retelling inspired by Acquired's episode <a href="https://www.acquired.fm/episodes/home-depot" target="_blank" rel="noopener">"The Home Depot"</a> (Ben Gilbert &amp; David Rosenthal, 2026). Not affiliated with Acquired or The Home Depot.</p>
+  <div class="row">
+    <a href="../../" aria-label="autoants home"><img src="../../brand/autoants-logo-reverse.svg" alt="autoants" width="83" height="22"></a>
+    <span>Lane Davis II, founder, autoants · hello@autoants.com · Louisiana · <a href="../">Learn</a> · <a href="../price-math/">Price math</a> · <a href="../../services.html">Services</a> · <a href="../../privacy.html">Privacy</a></span>
+  </div>
+</div></footer>
+
+<script>window.OA = { codes: ["01-2", "05-1", "05-3", "06-1", "06-2", "06-3", "08-1", "08-2", "08-3", "08-4", "09-2", "09-3", "10-1", "10-2", "10-4", "12-2", "13-2", "13-3", "14-2", "16-1", "16-3"], top: ["08-1", "08-2", "12-2", "13-2", "16-1"] };</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" defer></script>
+<script src="data.js" defer></script>
+<script src="../assets/price-math.js" defer></script>
+<script src="story.js" defer></script>
+</body>
+</html>
