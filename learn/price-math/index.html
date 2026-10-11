@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Margin dollars, not margin percent · Price math for trades · autoants</title>
+<meta name="description" content="A free calculator for roofing, HVAC, plumbing, tree and electrical shops: put in your own numbers and see what a price cut, a faster quote or a caught call does to the margin dollars you keep each month.">
+<link rel="canonical" href="https://autoants.com/learn/price-math/">
+<meta property="og:title" content="Margin dollars, not margin percent">
+<meta property="og:description" content="Your numbers, your guesses: what a price cut, a faster quote or a caught call does to the dollars a trades shop keeps each month.">
+<meta property="og:url" content="https://autoants.com/learn/price-math/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://autoants.com/learn/price-math/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Margin dollars, not margin percent. A price calculator for trades owners, by autoants.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="../../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/learn.css">
+<link rel="stylesheet" href="../assets/price-math.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Price math for trades owners","url":"https://autoants.com/learn/price-math/",
+ "description":"A margin-dollars calculator for trades shops. Inputs stay in the browser.","applicationCategory":"BusinessApplication","operatingSystem":"Any",
+ "isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+ "publisher":{"@type":"Organization","name":"autoants","url":"https://autoants.com/","logo":{"@type":"ImageObject","url":"https://autoants.com/brand/apple-touch-icon.png"}}}
+</script>
+<style>
+  header.hero{position:relative;padding:3.2rem 0 2rem;overflow:hidden}
+  header.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(50rem 26rem at 90% -10%,rgba(61,220,174,.12),transparent 62%);pointer-events:none}
+  header.hero .wrap{position:relative}
+  header.hero h1{font-size:clamp(2.2rem,6.4vw,4rem);font-weight:800;margin:.8rem 0 1rem;max-width:15ch}
+  header.hero h1 span{color:var(--mint)}
+  .lede{font-size:clamp(1.05rem,2vw,1.2rem);color:var(--muted);max-width:42rem}
+  .lede b{color:var(--cream);font-weight:600}
+  .trades{margin-top:1rem;font-size:.92rem;color:var(--faint)}
+  section{padding:2.6rem 0}
+  .band{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .sec-head{max-width:44rem;margin-bottom:1.6rem}
+  .sec-head h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;margin:.5rem 0 .6rem}
+  .sec-head p{color:var(--muted)}
+  .rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:1rem}
+  .rule{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--mint);border-radius:14px;padding:1.1rem 1.15rem}
+  .rule h3{font-size:1.1rem;font-weight:800;margin-bottom:.4rem;letter-spacing:-.01em;line-height:1.25}
+  .rule p{color:var(--muted);font-size:.95rem}
+  .rule code{font-family:var(--mono);font-size:.82rem;color:var(--cream);background:var(--night);border-radius:6px;padding:.1rem .35rem;white-space:normal}
+  .ask{display:grid;gap:2rem;align-items:start}
+  @media(min-width:900px){.ask{grid-template-columns:.9fr 1.1fr}}
+  .ask ul{margin:.9rem 0 0 1.1rem;color:var(--muted);font-size:.97rem}
+  .ask li{margin:.3rem 0}
+  .ask .fine{margin-top:1rem;font-size:.86rem;color:var(--faint)}
+  .story-link{display:flex;gap:1rem;align-items:center;margin-top:1.4rem;padding:1rem;border:1px solid var(--line2);border-radius:14px;text-decoration:none;background:var(--surface)}
+  .story-link img{width:84px;height:63px;object-fit:cover;border-radius:8px;flex:none;background:var(--stone)}
+  .story-link b{display:block;color:var(--cream)}
+  .story-link span{color:var(--muted);font-size:.9rem}
+  .story-link:hover b{color:var(--mint)}
+</style>
+</head>
+<body>
+
+<nav class="topnav" aria-label="Site"><div class="wrap">
+  <a class="logo" href="../../" aria-label="autoants home"><img src="../../brand/autoants-logo-reverse.svg" alt="autoants" width="98" height="26"></a>
+  <div class="links"><a href="../">Learn</a><a href="../orange-apron/">The Orange Apron</a><a href="../../services.html">Services</a></div>
+  <a class="btn btn-mint" href="#side-by-side">Free side-by-side</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <p class="eyebrow">Price math · for trades owners</p>
+  <h1>Margin dollars, <span>not margin percent.</span></h1>
+  <p class="lede">Your bank account doesn't pay you in percent. It pays you in <b>the dollars left after each job covers its materials and labor</b>, times the number of jobs. Put in your own numbers and see what a price cut, a faster quote or a caught call does to those dollars.</p>
+  <p class="trades">For roofing, HVAC, plumbing, tree and electrical shops. Your numbers stay in your browser; nothing is sent anywhere.</p>
+</div></header>
+
+<section id="calculator" style="padding-top:.6rem"><div class="wrap">
+  <div id="priceMath"><noscript><p style="color:var(--muted)">The calculator needs JavaScript. The math is spelled out below.</p></noscript></div>
+</div></section>
+
+<section class="band" id="how"><div class="wrap">
+  <div class="sec-head"><p class="eyebrow">How the math works</p><h2>Three lines of arithmetic.</h2><p>No industry averages, no outside statistics. Just your numbers run through these.</p></div>
+  <div class="rules">
+    <div class="rule"><h3>Margin dollars pay the bills</h3><p><code>jobs × average job × gross margin</code>. That's what's left each month for overhead and profit after every job pays for its own materials and labor.</p></div>
+    <div class="rule"><h3>A discount comes out of the margin</h3><p>Cut the price 5% and your cost per job doesn't move, so the whole 5% comes off your margin. On a 45% margin you keep 40 cents where you kept 45, and you need 45 ÷ 40 = 1.125 times the jobs to stand still.</p></div>
+    <div class="rule"><h3>Break-even is a job count</h3><p><code>overhead ÷ margin per job</code>. Every job past that line is profit. A raise lowers the line; a cut raises it.</p></div>
+  </div>
+</div></section>
+
+<section id="side-by-side"><div class="wrap">
+  <div class="ask">
+    <div>
+      <p class="eyebrow">Operations Math by autoants</p>
+      <h2 style="font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;margin:.5rem 0 .7rem">See it on your own jobs: free <span style="white-space:nowrap">one-week</span> side-by-side.</h2>
+      <p style="color:var(--muted)">Send us one normal week: the jobs, the quotes, the routes. We plan that same week our way and put it next to what actually happened, so you can see the difference on your own work before you pay anything.</p>
+      <ul>
+        <li>One past week of your own data, nothing invented.</li>
+        <li>A person checks every plan. We don't promise savings; we show you the side-by-side and you decide.</li>
+        <li>Your data stays confidential and is never shared or sold.</li>
+      </ul>
+      <p class="fine">If the side-by-side is worth it to you, the paid pilot is $1,500 for 30 days live, credited to your first month. Monthly plans start at $750 for small shops, month to month.</p>
+      <a class="story-link" href="../orange-apron/">
+        <img src="../orange-apron/img/lumber_aisle_700.webp" alt="" width="84" height="63" loading="lazy" decoding="async">
+        <span><b>Read the story behind it: The Orange Apron →</b>How a chain of warehouse stores made thin margins pay, and what it means for a 5-truck shop.</span>
+      </a>
+    </div>
+    <form class="cform" id="sideForm" novalidate>
+      <label>Your name<input name="name" autocomplete="name" required></label>
+      <label>Business<input name="business" autocomplete="organization" required></label>
+      <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
+      <label><span>Email <span class="opt">(optional)</span></span><input name="email" type="email" autocomplete="email"></label>
+      <label class="full">Your trade<select name="trade"><option>Roofing</option><option>HVAC</option><option>Plumbing</option><option>Tree service</option><option>Electrical</option><option>Other trade</option></select></label>
+      <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+      <label class="full"><span>What does a normal week look like? <span class="opt">(optional)</span></span><textarea name="msg" rows="2" maxlength="500" placeholder="e.g. 4 trucks, about 40 jobs a week, quotes on paper"></textarea></label>
+      <label class="check full"><input type="checkbox" name="withCalc" id="withCalc"><span>Send my calculator numbers with this request. <span class="opt">Leave it unticked and they stay in your browser.</span></span></label>
+      <p class="consent full">We'll reply by phone or email about this request. Nothing you send is shared or sold. <a href="../../privacy.html">Privacy</a></p>
+      <button class="btn btn-mint" type="submit">Ask for the side-by-side</button>
+      <p class="sent" id="sentNote" role="status"></p>
+    </form>
+  </div>
+</div></section>
+
+<footer class="sitefoot"><div class="wrap">
+  <div class="row">
+    <a href="../../" aria-label="autoants home"><img src="../../brand/autoants-logo-reverse.svg" alt="autoants" width="83" height="22"></a>
+    <span>autoants · hello@autoants.com · Louisiana · <a href="../">Learn</a> · <a href="../../services.html">Services</a> · <a href="../../data/">Data</a> · <a href="../../privacy.html">Privacy</a></span>
+  </div>
+  <p>Built by Lane Davis II, founder, autoants. The calculator runs entirely in your browser; the numbers you type are not stored or sent unless you tick the box on the form above.</p>
+</div></footer>
+
+<script src="../assets/price-math.js"></script>
+<script>
+  var calc = window.PriceMath.mount(document.getElementById("priceMath"), { syncUrl: true });
+
+  // Same endpoint as the rest of the site: the autoants-leads worker /lead (keeps a copy, pings Lane). Needs name, business, phone.
+  var LEAD_ENDPOINT = "https://autoants-leads.saintdell.workers.dev/lead";
+  function leadSource(){
+    var r = ''; try { r = new URLSearchParams(location.search).get('ref') || ''; } catch(e) {}
+    try { if (r) sessionStorage.setItem('aa-ref', r); else r = sessionStorage.getItem('aa-ref') || ''; } catch(e) {}
+    return r.replace(/[^a-z0-9_-]/gi, '').slice(0, 40) || 'price-math';
+  }
+  (function(){
+    var f = document.getElementById('sideForm'), note = document.getElementById('sentNote');
+    function show(t, ok){ note.textContent = t; note.className = 'sent ' + (ok ? 'ok' : 'err'); }
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (!f.name.value.trim() || !f.business.value.trim() || (f.phone.value.match(/\d/g) || []).length < 7) {
+        show("Please add your name, business and a phone number we can reach.", false); return;
+      }
+      var parts = [];
+      if (f.msg.value.trim()) parts.push("Normal week: " + f.msg.value.trim());
+      if (f.withCalc.checked) parts.push(calc.summary()); // only when they opt in
+      var d = {name:f.name.value.trim(), business:f.business.value.trim(), phone:f.phone.value.trim(), email:f.email.value.trim(),
+               trade:f.trade.value, interest:'Operations Math side-by-side', msg:parts.join(' | ').slice(0, 1000),
+               page:'autoants.com/learn/price-math', source:leadSource(), website:(f.website ? f.website.value : ''), sms:'no'};
+      var btn = f.querySelector('button[type=submit]'); btn.disabled = true;
+      fetch(LEAD_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(d)})
+        .then(function(r){ if (r.status !== 200) throw 0; show("Got it. A person will reach out, usually the same day.", true); f.reset(); })
+        .catch(function(){ show("That didn't go through. Your details are still here; please try again in a minute.", false); })
+        .then(function(){ btn.disabled = false; });
+    });
+  })();
+</script>
+</body>
+</html>

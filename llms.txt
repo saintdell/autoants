@@ -122,3 +122,7 @@
 - [HVAC in Greater New Orleans](https://autoants.com/nola/hvac/): Louisiana license rules, cited; listings when the public data arrives
 - [Plumbing in Greater New Orleans](https://autoants.com/nola/plumbing/): Louisiana license rules, cited; listings when the public data arrives
 - [Remodeling in Greater New Orleans](https://autoants.com/nola/remodeling/): Louisiana license rules, cited; listings when the public data arrives
+
+## Learn (free tools and reads for trades owners)
+- [Price math](https://autoants.com/learn/price-math/): a margin-dollars calculator; inputs stay in the browser
+- [The Orange Apron](https://autoants.com/learn/orange-apron/): an independent, illustrated retelling of the Home Depot story for trades owners, inspired by the Acquired episode; not affiliated with Acquired or The Home Depot

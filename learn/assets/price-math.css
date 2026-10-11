@@ -1,0 +1,60 @@
+/* Price math calculator (learn/assets/price-math.js). Always a night card, so it reads the same on the
+   dark calculator page and inside the stone story page. Motion: none needed; no `transition: all`. */
+.pm{--pm-bg:var(--surface,#14261e);--pm-bg2:var(--night,#0b1712);--pm-line:rgba(244,241,232,.12);--pm-line2:rgba(244,241,232,.2);
+  --pm-text:#f4f1e8;--pm-muted:#a3b0a8;--pm-faint:#7d8a83;--pm-mint:#3ddcae;--pm-stone:#ebe8e2;
+  background:var(--pm-bg);color:var(--pm-text);border:1px solid var(--pm-line2);border-radius:18px;padding:1.1rem;
+  font-family:'Onest',-apple-system,system-ui,sans-serif;line-height:1.5;text-align:left}
+@media(min-width:720px){.pm{padding:1.6rem}}
+.pm *{box-sizing:border-box}
+.pm-grid{display:grid;gap:1.2rem}
+@media(min-width:900px){.pm-grid{grid-template-columns:1fr 1fr;gap:1.6rem}}
+.pm fieldset{border:0;margin:0;padding:0;min-width:0}
+.pm legend{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pm-mint);margin-bottom:.7rem;padding:0}
+.pm-fields{display:grid;grid-template-columns:1fr 1fr;gap:.7rem .8rem}
+.pm-field{display:grid;gap:.3rem;min-width:0;align-content:end}
+.pm-field label{font-size:.84rem;font-weight:600;color:var(--pm-muted);line-height:1.3}
+.pm-in{display:flex;align-items:center;background:var(--pm-bg2);border:1px solid var(--pm-line2);border-radius:10px;min-width:0}
+.pm-in:focus-within{outline:2px solid var(--pm-mint);outline-offset:1px;border-color:transparent}
+.pm-in span{padding:0 0 0 .7rem;color:var(--pm-faint);font-weight:600;font-size:.95rem}
+.pm-in span.after{padding:0 .7rem 0 0}
+.pm-in input{font:inherit;font-size:16px;font-weight:600;color:var(--pm-text);background:transparent;border:0;padding:.6rem .7rem;width:100%;min-width:0;font-variant-numeric:tabular-nums}
+.pm-in input:focus{outline:none}
+.pm-lever{border-top:1px solid var(--pm-line);padding:.85rem 0 .2rem}
+.pm-lever:first-of-type{border-top:0;padding-top:0}
+.pm-lever h4{font-size:1rem;font-weight:800;margin:0 0 .15rem;letter-spacing:-.01em}
+.pm-lever h4 b{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--pm-mint);margin-right:.4rem;letter-spacing:.1em}
+.pm-lever .hint{font-size:.84rem;color:var(--pm-muted);margin:0 0 .45rem}
+.pm-range{display:grid;grid-template-columns:1fr auto;gap:.2rem .8rem;align-items:center;margin-bottom:.45rem}
+.pm-range label{grid-column:1/-1;font-size:.84rem;font-weight:600;color:var(--pm-muted)}
+.pm-range label em{font-style:normal;font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--pm-faint);border:1px dashed var(--pm-line2);border-radius:5px;padding:.05rem .35rem;margin-left:.35rem;white-space:nowrap}
+.pm-range input[type=range]{width:100%;accent-color:var(--pm-mint);min-height:28px}
+.pm-range output{font-weight:800;font-variant-numeric:tabular-nums;min-width:4.2em;text-align:right;color:var(--pm-mint)}
+.pm-keep{font-size:.88rem;color:var(--pm-text);background:var(--pm-bg2);border-radius:10px;padding:.55rem .7rem;margin:.1rem 0 .3rem}
+.pm-keep b{color:var(--pm-mint)}
+.pm-out{margin-top:1.4rem;border-top:1px solid var(--pm-line2);padding-top:1.2rem;display:grid;gap:1.1rem}
+@media(min-width:900px){.pm-out{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:start}}
+.pm-from{font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pm-mint);margin:0 0 .5rem}
+.pm-ledger{width:100%;border-collapse:collapse;font-size:.9rem;font-variant-numeric:tabular-nums}
+.pm-ledger th,.pm-ledger td{padding:.42rem .25rem;border-bottom:1px solid var(--pm-line);text-align:right;white-space:nowrap}
+.pm-ledger th:first-child,.pm-ledger td:first-child{text-align:left;white-space:normal}
+.pm-ledger thead th{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--pm-faint);font-weight:700;border-bottom:1px solid var(--pm-line2)}
+.pm-ledger tr.key td{font-weight:800;color:var(--pm-text);font-size:.98rem}
+.pm-ledger tr.key td:nth-child(3){color:var(--pm-mint)}
+.pm-ledger td.up{color:var(--pm-mint)}
+.pm-ledger td.down{color:#f2b8a2}
+.pm-verdict{font-size:.98rem;line-height:1.5;border-left:3px solid var(--pm-mint);background:var(--pm-bg2);border-radius:0 10px 10px 0;padding:.7rem .9rem;margin-top:.8rem}
+.pm-verdict b{color:var(--pm-mint)}
+.pm-chart h4{font-size:.98rem;font-weight:800;margin:0 0 .2rem}
+.pm-chart p{font-size:.82rem;color:var(--pm-muted);margin:0 0 .4rem}
+.pm-svg{width:100%;min-height:240px}
+.pm-svg svg{display:block;width:100%;height:auto;overflow:visible}
+.pm-svg text{font-family:'Onest',system-ui,sans-serif;font-size:11.5px;fill:var(--pm-muted)}
+.pm-svg text.v{fill:var(--pm-text);font-weight:700}
+.pm-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.9rem;align-items:center}
+.pm-actions button,.pm-actions a{font:inherit;font-size:.84rem;font-weight:700;color:var(--pm-text);background:transparent;border:1px solid var(--pm-line2);border-radius:9px;padding:.45rem .75rem;cursor:pointer;text-decoration:none}
+.pm-actions button:hover,.pm-actions a:hover{color:var(--pm-mint)}
+.pm-actions .msg{font-size:.82rem;color:var(--pm-muted)}
+.pm-note{font-size:.8rem;color:var(--pm-faint);line-height:1.5;margin-top:.9rem}
+@media(max-width:420px){.pm{padding:.9rem}.pm-fields{gap:.6rem}.pm-ledger{font-size:.8rem}.pm-ledger tr.key td{font-size:.86rem}.pm-ledger th,.pm-ledger td{padding:.38rem .12rem}}
+.pm-chart p.pm-ohl{display:flex;align-items:center;gap:.45rem;font-size:.8rem;font-weight:700;color:var(--pm-mint);margin:.1rem 0 .2rem}
+.pm-ohl i{display:inline-block;width:1.4rem;border-top:2px dashed var(--pm-mint)}
