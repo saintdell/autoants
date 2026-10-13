@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Receptionist Ant · autoants demo</title>
+<meta name="description" content="When nobody can pick up, it answers, says it&#x27;s an AI, takes down the job and texts the owner. The customer hears yes only after the owner replies Y.">
+<link rel="icon" href="/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&display=swap">
+<style>
+:root{
+  --night:#0b1712; --forest:#0f5132; --mint:#3ddcae; --stone:#ebe8e2; --deep:#0f2a1d;
+  --ground:#f3f1ec; --card:#ffffff; --ink:#0f2a1d; --muted:#4d5f55; --line:#d7d3ca; --soft:#e4f0ea;
+  --accent:#0f5132; --on-accent:#ffffff; --hi:#3ddcae; --hi-soft:#d3f5e8; --hi-ink:#0f5132;
+  --flag-bg:#0f2a1d; --flag-ink:#ffffff; --phone:#ffffff; --bubble-in:#e8ebe9; --bubble-out:#0f5132; --bubble-out-ink:#ffffff;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --muted:#a3b5aa; --line:#27392f; --soft:#17291f;
+    --accent:#3ddcae; --on-accent:#0b1712; --hi-soft:#123528; --hi-ink:#3ddcae;
+    --flag-bg:#3ddcae; --flag-ink:#0b1712; --phone:#0f1d16; --bubble-in:#22332a; --bubble-out:#3ddcae; --bubble-out-ink:#0b1712;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --muted:#a3b5aa; --line:#27392f; --soft:#17291f;
+  --accent:#3ddcae; --on-accent:#0b1712; --hi-soft:#123528; --hi-ink:#3ddcae;
+  --flag-bg:#3ddcae; --flag-ink:#0b1712; --phone:#0f1d16; --bubble-in:#22332a; --bubble-out:#3ddcae; --bubble-out-ink:#0b1712;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html,body{margin:0;background:var(--ground);color:var(--ink);font:500 16px/1.5 Onest,system-ui,-apple-system,sans-serif}
+main{max-width:640px;margin:0 auto;padding:12px 16px 56px;display:flex;flex-direction:column;gap:16px}
+a{color:var(--hi-ink)}
+.banner{margin:0;background:var(--hi-soft);color:var(--hi-ink);border-radius:12px;padding:10px 14px;font-size:14px;font-weight:700;display:flex;gap:8px;align-items:center}
+.banner::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--hi);flex:none}
+.back{font-size:15px;font-weight:700;text-decoration:none;align-self:flex-start;padding:6px 0}
+.back:hover{text-decoration:underline}
+header{display:flex;flex-direction:column;gap:6px}
+.eyebrow{margin:0;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{margin:0;font-size:clamp(28px,7vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.05;text-wrap:balance}
+.lede{margin:0;font-size:18px;color:var(--ink);max-width:56ch;text-wrap:pretty}
+h2{margin:0;font-size:19px;font-weight:800;letter-spacing:-.01em}
+h3{margin:0;font-size:16px;font-weight:800}
+p{margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+.tiny{font-size:12.5px}
+.num{font-variant-numeric:tabular-nums}
+button{font:inherit;font-weight:700;border-radius:12px;min-height:48px;padding:0 16px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;touch-action:manipulation}
+button.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+button:disabled{opacity:.45;cursor:not-allowed}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row>button{flex:1 1 140px}
+.pill{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:700;background:var(--soft);color:var(--ink);white-space:nowrap}
+.pill.flag{background:var(--flag-bg);color:var(--flag-ink)}
+.pill.ok{background:var(--hi-soft);color:var(--hi-ink)}
+.sample-tag{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px dashed var(--line);border-radius:6px;padding:2px 6px;align-self:flex-start}
+/* tap-through steps */
+.steps{display:flex;flex-direction:column;gap:12px}
+.dots{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.dots button{min-height:32px;padding:0 10px;border-radius:999px;font-size:13px}
+.dots button[aria-current="step"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.step[hidden]{display:none}
+.step{display:flex;flex-direction:column;gap:12px;animation:in .25s ease-out}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.step{animation:none}}
+.nav{display:flex;gap:10px}
+.nav button{flex:1}
+/* phone frame */
+.phone{background:var(--phone);border:1px solid var(--line);border-radius:26px;padding:14px 12px;display:flex;flex-direction:column;gap:8px;box-shadow:0 1px 0 var(--line);min-width:0}
+.phone .top{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);padding:0 4px 4px;border-bottom:1px solid var(--line)}
+.bubble{max-width:86%;padding:9px 12px;border-radius:16px;font-size:15px;line-height:1.4;white-space:pre-wrap;overflow-wrap:anywhere}
+.bubble.in{background:var(--bubble-in);color:var(--ink);align-self:flex-start;border-bottom-left-radius:5px}
+.bubble.out{background:var(--bubble-out);color:var(--bubble-out-ink);align-self:flex-end;border-bottom-right-radius:5px}
+.sys{align-self:center;font-size:12.5px;color:var(--muted);text-align:center}
+/* facts */
+.facts{display:flex;flex-direction:column;gap:10px}
+.facts p{font-size:15.5px}
+.facts b{font-weight:800}
+.never{border-left:4px solid var(--hi);padding-left:12px}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{text-align:left;padding:8px 6px;border-top:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;border-top:0}
+.scroll-x{overflow-x:auto;-webkit-overflow-scrolling:touch}
+footer{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:14px}
+
+/* page */
+.player{display:flex;align-items:center;gap:12px}
+.play{width:56px;height:56px;min-height:56px;border-radius:50%;padding:0;background:var(--accent);border-color:var(--accent);color:var(--on-accent);display:grid;place-items:center;flex:none}
+.play svg{width:22px;height:22px}
+.bar{flex:1;display:flex;flex-direction:column;gap:6px;min-width:0}
+.track{height:8px;border-radius:99px;background:var(--soft);position:relative;cursor:pointer;touch-action:none}
+.track i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:var(--hi);width:0}
+.times{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.transcript{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;max-height:420px;overflow-y:auto;scroll-behavior:smooth}
+.transcript li{display:grid;grid-template-columns:62px 1fr;gap:8px;padding:8px 10px;border-radius:12px;cursor:pointer;color:var(--muted);transition:background .2s,color .2s}
+.transcript li b{font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding-top:2px}
+.transcript li.agent b{color:var(--hi-ink)}
+.transcript li.on{background:var(--hi-soft);color:var(--ink)}
+.transcript li.done{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.transcript{scroll-behavior:auto}.transcript li{transition:none}}
+.callnote{display:flex;flex-wrap:wrap;gap:6px}
+.two{display:grid;grid-template-columns:1fr;gap:12px}
+@media (min-width:560px){.two{grid-template-columns:1fr 1fr}}
+.reply{display:flex;flex-direction:column;gap:8px}
+.wait{border:1px dashed var(--line);border-radius:14px;padding:12px;font-size:14px;color:var(--muted);text-align:center}
+#choices button{flex-basis:100%}
+.transcript li{grid-template-columns:54px 1fr}
+
+</style>
+</head>
+<body>
+<main>
+  <p class="banner">Demo with sample data. Not a real customer.</p>
+  <a class="back" href="/demo/">&larr; All demos</a>
+  <header>
+    <p class="eyebrow">autoants &middot; demo room</p>
+    <h1>Receptionist Ant</h1>
+    <p class="lede">When nobody can pick up, it answers, says it&#x27;s an AI, takes down the job and texts the owner. The customer hears yes only after the owner replies Y.</p>
+  </header>
+  <section class="card steps" aria-label="Demo">
+    <div class="step" data-title="The call">
+      <h2>A caller reaches the line after hours</h2>
+      <p class="muted small">Press play. The line being said lights up. Tap any line to jump to it.</p>
+      <div class="player">
+        <button class="play" id="play" type="button" aria-label="Play the sample call">
+          <svg id="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 4.5v15l13-7.5z"/></svg>
+        </button>
+        <div class="bar">
+          <div class="track" id="track" role="slider" aria-label="Call position" aria-valuemin="0" aria-valuemax="89" aria-valuenow="0" tabindex="0"><i id="fill"></i></div>
+          <div class="times"><span id="now">0:00</span><span id="dur">1:29</span></div>
+        </div>
+      </div>
+      <audio id="audio" src="call.mp3" preload="metadata"></audio>
+      <ol class="transcript" id="lines" aria-label="Transcript"></ol>
+      <div class="callnote">
+        <span class="pill ok">Says it's an AI, first sentence</span>
+        <span class="pill ok">Says the call is recorded</span>
+        <span class="pill ok">Gas smell: 911 line first</span>
+        <span class="pill ok">No price, no promise</span>
+      </div>
+    </div>
+
+    <div class="step" data-title="Owner approves">
+      <h2>Marcus approves before Dan hears yes</h2>
+      <p class="muted small">The call ends. Marcus gets one text with a four-character code. Nothing goes to the customer until he answers.</p>
+      <div class="two">
+        <div class="phone" aria-label="Marcus's phone">
+          <div class="top"><span>Marcus (owner)</span><span>9:42 PM</span></div>
+          <div class="bubble in" id="req">URGENT Sample Foundation Repair: new job request A7Q4
+Dan · Foundation inspection. Floors sloping, 2 doors sticking. Smelled gas near the stove: told to get out and call 911.
+4100 Example St, New Orleans
+Wants: Tue 2 PM
+Call: (504) 555-0142
+Reply  Y A7Q4 Tue 2 PM  to confirm, or  N A7Q4  to pass.</div>
+          <div id="thread" class="reply" aria-live="polite"></div>
+          <div class="row" id="choices">
+            <button class="primary" type="button" id="yes">Reply: Y A7Q4 Tue 2 PM</button>
+            <button type="button" id="no">Reply: N A7Q4</button>
+          </div>
+        </div>
+        <div class="phone" aria-label="Dan's phone">
+          <div class="top"><span>Dan (customer)</span><span>said yes to texts</span></div>
+          <div id="cust" aria-live="polite"><p class="wait">Nothing sent yet. Dan hears yes only after Marcus replies Y.</p></div>
+        </div>
+      </div>
+      <button type="button" id="reset">Reset the texts</button>
+    </div>
+  </section>
+
+  <section class="card facts" aria-label="The rules and the price">
+    <p class="never"><b>What it never does:</b> Quotes a price, promises an arrival time, diagnoses the problem, takes a card or dials out. It never tells a customer a visit is confirmed until the owner approves it.</p>
+    <p><b>Price:</b> $500 go-live; $900/mo including 581 minutes, then $0.43/min.</p>
+  </section>
+  <footer>
+    <p>Sample Foundation Repair, Marcus and Dan are made up, and so is every phone number (555). The voices are text-to-speech stand-ins we made for this demo, so a live line won&#x27;t sound exactly like this.</p>
+    <p><a href="/demo/">Back to all demos</a></p>
+  </footer>
+</main>
+<script>
+// tap-through: every .steps block gets dots + Back/Next
+document.querySelectorAll(".steps").forEach(function(box){
+  var steps=[].slice.call(box.querySelectorAll(":scope > .step")), cur=0;
+  var dots=document.createElement("div"); dots.className="dots"; dots.setAttribute("aria-label","Steps");
+  steps.forEach(function(s,i){var b=document.createElement("button");b.type="button";b.textContent=(i+1)+". "+(s.dataset.title||"Step");b.onclick=function(){go(i,true)};dots.appendChild(b)});
+  var nav=document.createElement("div"); nav.className="nav";
+  var back=document.createElement("button"); back.type="button"; back.textContent="Back";
+  var next=document.createElement("button"); next.type="button"; next.className="primary";
+  nav.appendChild(back); nav.appendChild(next);
+  box.insertBefore(dots,box.firstChild); box.appendChild(nav);
+  function go(i,focus){cur=Math.max(0,Math.min(steps.length-1,i));
+    steps.forEach(function(s,j){s.hidden=j!==cur});
+    [].forEach.call(dots.children,function(d,j){d.toggleAttribute("aria-current",j===cur);if(j===cur)d.setAttribute("aria-current","step")});
+    back.disabled=cur===0; next.textContent=cur===steps.length-1?"Start over":"Next";next.setAttribute("aria-label",cur===steps.length-1?"Start over":"Next: "+(steps[cur+1].dataset.title||"next step"));
+    box.dispatchEvent(new CustomEvent("step",{detail:cur}));
+    if(focus){var h=steps[cur].querySelector("h2");if(h){h.tabIndex=-1;h.focus({preventScroll:true})}box.scrollIntoView({block:"start",behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth"})}}
+  back.onclick=function(){go(cur-1,true)};
+  next.onclick=function(){go(cur===steps.length-1?0:cur+1,true)};
+  box.go=go; go(0,false);
+});
+
+</script>
+<script>var CALL={"seconds":88.85,"lines":[{"who":"agent","text":"Thanks for calling Sample Foundation Repair. I'm an AI assistant, and this call is recorded. I can take down your job request, and Marcus reviews every request personally. What's going on?","start":0.4,"end":12.7},{"who":"caller","text":"Hi. My floors started sloping toward the back of the house, and two doors are sticking.","start":13.15,"end":18.9},{"who":"agent","text":"I'm sorry you're dealing with that. Can I get your name, the address, and a good number for you?","start":19.25,"end":24.32},{"who":"caller","text":"It's Dan. 4100 Example Street, Uptown, in New Orleans. My number's 504-555-0142.","start":24.77,"end":34.3},{"who":"agent","text":"Thanks, Dan. That's 504-555-0142. Is anything else going on with the house?","start":34.65,"end":41.4},{"who":"caller","text":"Well, since the floor shifted, I sometimes smell gas near the stove.","start":41.85,"end":46.7},{"who":"agent","text":"If you smell gas or see sparking or a collapse, please get everyone out of the house and call 911 first. Are you somewhere safe right now?","start":47.05,"end":55.93},{"who":"caller","text":"Yeah, we're stepping outside now. I'll call them.","start":56.38,"end":59.75},{"who":"agent","text":"I've marked this urgent for Marcus. For the foundation, he could come take a look Tuesday at 2 PM or Wednesday at 10 AM. Which works better?","start":60.1,"end":69.2},{"who":"caller","text":"Tuesday at two.","start":69.65,"end":71.43},{"who":"agent","text":"I have you down for Tuesday at 2 PM. Marcus confirms every visit by text, so watch for that. Is it okay to text you at this number about this job?","start":71.78,"end":81.58},{"who":"caller","text":"Yes, that's fine.","start":82.03,"end":83.9},{"who":"agent","text":"Thanks, Dan. Please stay outside until the gas is checked. Goodbye.","start":84.25,"end":88.55}]};
+(function(){
+  var a=document.getElementById("audio"), list=document.getElementById("lines"), fill=document.getElementById("fill"), track=document.getElementById("track");
+  var play=document.getElementById("play"), ico=document.getElementById("ico"), now=document.getElementById("now"), dur=document.getElementById("dur");
+  var fmt=function(s){s=Math.max(0,Math.round(s));return Math.floor(s/60)+":"+String(s%60).padStart(2,"0")};
+  dur.textContent=fmt(CALL.seconds);
+  var items=CALL.lines.map(function(l){var li=document.createElement("li");li.className=l.who;li.tabIndex=0;
+    li.innerHTML="<b></b><span></span>";li.querySelector("b").textContent=l.who==="agent"?"AI":"Caller";li.querySelector("span").textContent=l.text;
+    var seek=function(){a.currentTime=l.start+0.01;if(a.paused)a.play()};li.onclick=seek;li.onkeydown=function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();seek()}};
+    list.appendChild(li);return li});
+  var last=-1;
+  function tick(){var t=a.currentTime, idx=-1;
+    CALL.lines.forEach(function(l,i){if(t>=l.start-0.05)idx=i});
+    if(idx>=0&&t>CALL.lines[idx].end+0.4&&idx===CALL.lines.length-1)idx=-1;
+    items.forEach(function(li,i){li.classList.toggle("on",i===idx);li.classList.toggle("done",i<idx)});
+    if(idx!==last&&idx>=0){var li=items[idx];list.scrollTop=li.offsetTop-list.offsetTop-list.clientHeight/3}
+    last=idx; var d=a.duration||CALL.seconds; fill.style.width=(100*t/d)+"%"; now.textContent=fmt(t); track.setAttribute("aria-valuenow",Math.round(t));
+    if(!a.paused)requestAnimationFrame(tick)}
+  function setIcon(){var p=a.paused;ico.innerHTML=p?'<path fill="currentColor" d="M7 4.5v15l13-7.5z"/>':'<path fill="currentColor" d="M6 4h4v16H6zM14 4h4v16h-4z"/>';play.setAttribute("aria-label",p?"Play the sample call":"Pause")}
+  play.onclick=function(){a.paused?a.play():a.pause()};
+  a.addEventListener("play",function(){setIcon();tick()});a.addEventListener("pause",setIcon);a.addEventListener("ended",function(){setIcon();tick()});a.addEventListener("seeked",tick);
+  function seekAt(x){var r=track.getBoundingClientRect();a.currentTime=Math.max(0,Math.min(1,(x-r.left)/r.width))*(a.duration||CALL.seconds);tick()}
+  track.addEventListener("pointerdown",function(e){seekAt(e.clientX)});
+  track.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){a.currentTime+=5;tick()}if(e.key==="ArrowLeft"){a.currentTime-=5;tick()}});
+  document.querySelector(".steps").addEventListener("step",function(e){if(e.detail!==0&&!a.paused)a.pause()});
+
+  var thread=document.getElementById("thread"), cust=document.getElementById("cust"), choices=document.getElementById("choices");
+  function bubble(where,cls,text){var b=document.createElement("div");b.className="bubble "+cls;b.textContent=text;where.appendChild(b);return b}
+  function sys(where,text){var p=document.createElement("p");p.className="sys";p.textContent=text;where.appendChild(p)}
+  document.getElementById("yes").onclick=function(){choices.hidden=true;bubble(thread,"out","Y A7Q4 Tue 2 PM");
+    setTimeout(function(){bubble(thread,"in","Confirmed A7Q4 for Tue 2 PM. The customer was texted.");
+      cust.innerHTML="";bubble(cust,"in","Hi Dan, Sample Foundation Repair confirmed your visit: Tue 2 PM. Reply here or call this number with any questions. Reply STOP to opt out.");sys(cust,"Sent only because Marcus replied Y.")},500)};
+  document.getElementById("no").onclick=function(){choices.hidden=true;bubble(thread,"out","N A7Q4");
+    setTimeout(function(){bubble(thread,"in","Marked A7Q4 as passed. The customer was NOT texted. Call them if you want to explain: (504) 555-0142.");
+      cust.innerHTML='<p class="wait">Nothing sent. A pass never texts the customer.</p>'},500)};
+  document.getElementById("reset").onclick=function(){thread.innerHTML="";choices.hidden=false;cust.innerHTML='<p class="wait">Nothing sent yet. Dan hears yes only after Marcus replies Y.</p>'};
+})();
+</script>
+</body>
+</html>

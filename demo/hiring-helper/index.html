@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Hiring Helper · autoants demo</title>
+<meta name="description" content="It writes an honest job ad and a job page Google can show, collects short applications, and offers interview times. The owner makes every hiring decision.">
+<link rel="icon" href="/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&display=swap">
+<style>
+:root{
+  --night:#0b1712; --forest:#0f5132; --mint:#3ddcae; --stone:#ebe8e2; --deep:#0f2a1d;
+  --ground:#f3f1ec; --card:#ffffff; --ink:#0f2a1d; --muted:#4d5f55; --line:#d7d3ca; --soft:#e4f0ea;
+  --accent:#0f5132; --on-accent:#ffffff; --hi:#3ddcae; --hi-soft:#d3f5e8; --hi-ink:#0f5132;
+  --flag-bg:#0f2a1d; --flag-ink:#ffffff; --phone:#ffffff; --bubble-in:#e8ebe9; --bubble-out:#0f5132; --bubble-out-ink:#ffffff;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --muted:#a3b5aa; --line:#27392f; --soft:#17291f;
+    --accent:#3ddcae; --on-accent:#0b1712; --hi-soft:#123528; --hi-ink:#3ddcae;
+    --flag-bg:#3ddcae; --flag-ink:#0b1712; --phone:#0f1d16; --bubble-in:#22332a; --bubble-out:#3ddcae; --bubble-out-ink:#0b1712;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --muted:#a3b5aa; --line:#27392f; --soft:#17291f;
+  --accent:#3ddcae; --on-accent:#0b1712; --hi-soft:#123528; --hi-ink:#3ddcae;
+  --flag-bg:#3ddcae; --flag-ink:#0b1712; --phone:#0f1d16; --bubble-in:#22332a; --bubble-out:#3ddcae; --bubble-out-ink:#0b1712;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html,body{margin:0;background:var(--ground);color:var(--ink);font:500 16px/1.5 Onest,system-ui,-apple-system,sans-serif}
+main{max-width:640px;margin:0 auto;padding:12px 16px 56px;display:flex;flex-direction:column;gap:16px}
+a{color:var(--hi-ink)}
+.banner{margin:0;background:var(--hi-soft);color:var(--hi-ink);border-radius:12px;padding:10px 14px;font-size:14px;font-weight:700;display:flex;gap:8px;align-items:center}
+.banner::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--hi);flex:none}
+.back{font-size:15px;font-weight:700;text-decoration:none;align-self:flex-start;padding:6px 0}
+.back:hover{text-decoration:underline}
+header{display:flex;flex-direction:column;gap:6px}
+.eyebrow{margin:0;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{margin:0;font-size:clamp(28px,7vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.05;text-wrap:balance}
+.lede{margin:0;font-size:18px;color:var(--ink);max-width:56ch;text-wrap:pretty}
+h2{margin:0;font-size:19px;font-weight:800;letter-spacing:-.01em}
+h3{margin:0;font-size:16px;font-weight:800}
+p{margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+.tiny{font-size:12.5px}
+.num{font-variant-numeric:tabular-nums}
+button{font:inherit;font-weight:700;border-radius:12px;min-height:48px;padding:0 16px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;touch-action:manipulation}
+button.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+button:disabled{opacity:.45;cursor:not-allowed}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row>button{flex:1 1 140px}
+.pill{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:700;background:var(--soft);color:var(--ink);white-space:nowrap}
+.pill.flag{background:var(--flag-bg);color:var(--flag-ink)}
+.pill.ok{background:var(--hi-soft);color:var(--hi-ink)}
+.sample-tag{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px dashed var(--line);border-radius:6px;padding:2px 6px;align-self:flex-start}
+/* tap-through steps */
+.steps{display:flex;flex-direction:column;gap:12px}
+.dots{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.dots button{min-height:32px;padding:0 10px;border-radius:999px;font-size:13px}
+.dots button[aria-current="step"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.step[hidden]{display:none}
+.step{display:flex;flex-direction:column;gap:12px;animation:in .25s ease-out}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.step{animation:none}}
+.nav{display:flex;gap:10px}
+.nav button{flex:1}
+/* phone frame */
+.phone{background:var(--phone);border:1px solid var(--line);border-radius:26px;padding:14px 12px;display:flex;flex-direction:column;gap:8px;box-shadow:0 1px 0 var(--line);min-width:0}
+.phone .top{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);padding:0 4px 4px;border-bottom:1px solid var(--line)}
+.bubble{max-width:86%;padding:9px 12px;border-radius:16px;font-size:15px;line-height:1.4;white-space:pre-wrap;overflow-wrap:anywhere}
+.bubble.in{background:var(--bubble-in);color:var(--ink);align-self:flex-start;border-bottom-left-radius:5px}
+.bubble.out{background:var(--bubble-out);color:var(--bubble-out-ink);align-self:flex-end;border-bottom-right-radius:5px}
+.sys{align-self:center;font-size:12.5px;color:var(--muted);text-align:center}
+/* facts */
+.facts{display:flex;flex-direction:column;gap:10px}
+.facts p{font-size:15.5px}
+.facts b{font-weight:800}
+.never{border-left:4px solid var(--hi);padding-left:12px}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{text-align:left;padding:8px 6px;border-top:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;border-top:0}
+.scroll-x{overflow-x:auto;-webkit-overflow-scrolling:touch}
+footer{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:14px}
+
+/* page */
+.hard{background:var(--flag-bg);color:var(--flag-ink);border-radius:14px;padding:12px 14px;font-weight:700;font-size:15px}
+.ad{background:var(--soft);border-radius:12px;padding:12px;font-size:14px;display:flex;flex-direction:column;gap:6px}
+.ad ul{margin:0;padding-left:18px}
+.jp{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.jp .bar{background:#1f4e79;color:#fff;padding:10px 12px;font-weight:800;font-size:14px}
+.jp .body{padding:12px;display:flex;flex-direction:column;gap:6px;font-size:14px}
+form{display:flex;flex-direction:column;gap:12px}
+form label.f{display:flex;flex-direction:column;gap:5px;font-size:14px;font-weight:700;color:var(--muted)}
+form input[type=text],form input[type=tel],form input[type=email],form textarea,form select{font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px;min-height:46px;width:100%}
+form fieldset{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:0;display:flex;flex-direction:column;gap:6px}
+form legend{font-size:14px;font-weight:700;padding:0 4px}
+.yn{display:flex;gap:16px}.yn label,.ck{display:flex;gap:6px;align-items:center;font-size:15px}
+.yn input,.ck input{width:20px;height:20px;accent-color:var(--accent)}
+.apps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.apps li{border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:4px;font-size:14px}
+.apps li .n{font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.04em}
+.apps details summary{cursor:pointer;font-weight:700;font-size:13.5px;color:var(--hi-ink)}
+.apps dl{margin:6px 0 0;display:grid;grid-template-columns:1fr;gap:2px}
+.apps dt{font-weight:700;font-size:12.5px;color:var(--muted)}.apps dd{margin:0 0 4px}
+
+</style>
+</head>
+<body>
+<main>
+  <p class="banner">Demo with sample data. Not a real customer.</p>
+  <a class="back" href="/demo/">&larr; All demos</a>
+  <header>
+    <p class="eyebrow">autoants &middot; demo room</p>
+    <h1>Hiring Helper</h1>
+    <p class="lede">It writes an honest job ad and a job page Google can show, collects short applications, and offers interview times. The owner makes every hiring decision.</p>
+  </header>
+  <p class="hard">The hard line: it never ranks, scores or filters applicants. Every application reaches the owner complete, in the order it arrived. The owner decides.</p>
+  <section class="card steps" aria-label="Demo">
+    <div class="step" data-title="Job ad">
+      <h2>The ad, from a 20-minute intake call</h2>
+      <div class="ad">
+        <b>HVAC Service Technician</b>
+        <span>Sample Air Co · New Orleans, LA · Full-time</span>
+        <span><b>Pay: $22-$30 an hour</b></span>
+        <span>Monday to Friday, 7:30 AM to 4:30 PM, plus one on-call weekend a month in season</span>
+        <b>You need</b>
+        <ul><li>EPA Section 608 certification (Type II or Universal)</li><li>A valid driver's license (you'll drive a company van; we check the driving record after a job offer)</li><li>About 2 years of residential HVAC service work, or trade school plus 1 year</li></ul>
+        <b>Nice to have (not required, so apply anyway)</b>
+        <ul><li>NATE certification</li><li>Heat pump and ductless mini-split experience</li></ul>
+        <span class="tiny muted">Sample Air Co is an equal opportunity employer. We provide reasonable accommodation to apply, interview or do the job.</span>
+      </div>
+      <p class="small"><span class="pill ok">Wording check: clean</span></p>
+      <p class="small muted">Before it's built, a wording check stops age words, gendered titles, health assumptions and pay-history questions, and flags record bans and lifting rules for the owner to decide. A real pay range is required. It's a wording check, not legal advice.</p>
+    </div>
+
+    <div class="step" data-title="Job page">
+      <h2>The job page on the owner's site</h2>
+      <div class="jp"><div class="bar">SAMPLE AIR CO · Careers</div><div class="body">
+        <b style="font-size:17px">HVAC Service Technician</b>
+        <span>$22-$30 an hour · Full-time · New Orleans</span>
+        <span class="muted">Run 4 to 7 service and maintenance calls a day. You drive a stocked company van.</span>
+        <span>Apply on this page: about 5 minutes, no resume needed.</span>
+        <button class="primary" type="button" id="toapply">Apply</button>
+      </div></div>
+      <p class="small muted">The page carries Google's job markup, so it can show up in Google's job search. The owner (or we, on his account) pastes the same ad on Indeed and Facebook.</p>
+    </div>
+
+    <div class="step" data-title="Apply">
+      <h2>The short apply form</h2>
+      <p class="small"><b>No uploads, photos, videos or recordings.</b> <span class="muted">The form can't take them.</span></p>
+      <form id="apply" novalidate>
+        <label class="f">Name<input type="text" name="name" autocomplete="off"></label>
+        <label class="f">Phone<input type="tel" name="phone" autocomplete="off" placeholder="(504) 555-0123"></label>
+        <label class="f">Email (optional)<input type="email" name="email" autocomplete="off"></label>
+        <fieldset><legend>Best way to reach you</legend><div class="yn"><label><input type="radio" name="pref" checked> Text</label><label><input type="radio" name="pref"> Call</label><label><input type="radio" name="pref"> Email</label></div>
+          <label class="ck"><input type="checkbox"> OK to text me about this job</label></fieldset>
+        <fieldset><legend>Do you hold an EPA Section 608 certification (Type II or Universal)?</legend><div class="yn"><label><input type="radio" name="q1"> Yes</label><label><input type="radio" name="q1"> No</label></div></fieldset>
+        <fieldset><legend>Do you have a valid driver's license?</legend><div class="yn"><label><input type="radio" name="q2"> Yes</label><label><input type="radio" name="q2"> No</label></div></fieldset>
+        <fieldset><legend>Can you take one on-call weekend a month from May through September?</legend><div class="yn"><label><input type="radio" name="q3"> Yes</label><label><input type="radio" name="q3"> No</label></div></fieldset>
+        <label class="f">How long have you done residential HVAC service, and where?<textarea rows="2"></textarea></label>
+        <label class="f">Tell us about a service call where the first fix didn't work. What did you do next?<textarea rows="3"></textarea></label>
+        <label class="f">When could you start?<input type="text" autocomplete="off"></label>
+        <button class="primary" type="submit">Send application</button>
+      </form>
+      <div id="thanks" aria-live="polite"></div>
+    </div>
+
+    <div class="step" data-title="Interviews">
+      <h2>Mike reads them in the order they came in</h2>
+      <p class="small muted">No ranking, no scores, no hidden filter. Mike picks who to meet; the helper drafts three interview times from his open hours.</p>
+      <ul class="apps" id="apps"></ul>
+      <div id="offer" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="card facts" aria-label="The rules and the price">
+    <p class="never"><b>What it never does:</b> Ranks, scores or filters applicants. Every application reaches the owner complete, in the order it arrived. No photos, videos or recordings, and no personality scoring.</p>
+    <p><b>Price:</b> No set price yet; priced with you.</p>
+  </section>
+  <footer>
+    <p>Sample Air Co, Mike and the applicants are made up. This page doesn&#x27;t send or store anything you type.</p>
+    <p><a href="/demo/">Back to all demos</a></p>
+  </footer>
+</main>
+<script>
+// tap-through: every .steps block gets dots + Back/Next
+document.querySelectorAll(".steps").forEach(function(box){
+  var steps=[].slice.call(box.querySelectorAll(":scope > .step")), cur=0;
+  var dots=document.createElement("div"); dots.className="dots"; dots.setAttribute("aria-label","Steps");
+  steps.forEach(function(s,i){var b=document.createElement("button");b.type="button";b.textContent=(i+1)+". "+(s.dataset.title||"Step");b.onclick=function(){go(i,true)};dots.appendChild(b)});
+  var nav=document.createElement("div"); nav.className="nav";
+  var back=document.createElement("button"); back.type="button"; back.textContent="Back";
+  var next=document.createElement("button"); next.type="button"; next.className="primary";
+  nav.appendChild(back); nav.appendChild(next);
+  box.insertBefore(dots,box.firstChild); box.appendChild(nav);
+  function go(i,focus){cur=Math.max(0,Math.min(steps.length-1,i));
+    steps.forEach(function(s,j){s.hidden=j!==cur});
+    [].forEach.call(dots.children,function(d,j){d.toggleAttribute("aria-current",j===cur);if(j===cur)d.setAttribute("aria-current","step")});
+    back.disabled=cur===0; next.textContent=cur===steps.length-1?"Start over":"Next";next.setAttribute("aria-label",cur===steps.length-1?"Start over":"Next: "+(steps[cur+1].dataset.title||"next step"));
+    box.dispatchEvent(new CustomEvent("step",{detail:cur}));
+    if(focus){var h=steps[cur].querySelector("h2");if(h){h.tabIndex=-1;h.focus({preventScroll:true})}box.scrollIntoView({block:"start",behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth"})}}
+  back.onclick=function(){go(cur-1,true)};
+  next.onclick=function(){go(cur===steps.length-1?0:cur+1,true)};
+  box.go=go; go(0,false);
+});
+
+</script>
+<script>(function(){
+var A=[{n:1,name:"Dana Example",when:"Mon Oct 5, 9:02 AM",pref:"text · OK to text",start:"two weeks",a:["Yes","Yes","Yes","4 years, residential, at a shop in Kenner","Replaced a capacitor, unit died again next day. Went back, found a weak contactor and a loose wire at the disconnect. Told the homeowner and didn't charge for the second trip."]},
+ {n:2,name:"Sam Placeholder",when:"Mon Oct 5, 10:40 AM",pref:"email · not OK'd for texts",start:"right away",a:["Yes","Yes","No","1 year as a helper","Haven't run my own calls yet."]},
+ {n:3,name:"Pat Testcase",when:"Mon Oct 5, 12:15 PM",pref:"call · not OK'd for texts",start:"after Nov 1",a:["No","Yes","Yes","8 years commercial refrigeration","Walk-in cooler kept icing; first fix was defrost timer, real cause was a bad door gasket."]}];
+var Q=["EPA 608?","Driver's license?","On-call weekend?","Experience","First fix didn't work"];
+var ul=document.getElementById("apps");
+A.forEach(function(p){var li=document.createElement("li");
+  li.innerHTML='<span class="n"></span><b></b><span class="muted small"></span><details><summary>Full answers</summary><dl></dl></details><button type="button">Offer interview times</button>';
+  li.querySelector(".n").textContent="#"+p.n+" in the order received · "+p.when;li.querySelector("b").textContent=p.name;
+  li.querySelector(".muted").textContent="Prefers "+p.pref+" · can start "+p.start;
+  var dl=li.querySelector("dl");Q.forEach(function(q,i){var dt=document.createElement("dt"),dd=document.createElement("dd");dt.textContent=q;dd.textContent=p.a[i];dl.appendChild(dt);dl.appendChild(dd)});
+  li.querySelector("button").onclick=function(){var first=p.name.split(" ")[0],o=document.getElementById("offer");
+    var txt="Hi "+first+", it's Mike at Sample Air Co. Thanks for applying for HVAC Service Technician. Can you come in for a 30-minute interview at our shop, 100 Example St? I have Tue 3:00 PM, Wed 3:45 PM or Thu 4:30 PM. Which works?";
+    o.innerHTML='<div class="phone"><div class="top"><span>Draft to '+first+'</span><span>Mike sends it</span></div><div class="bubble out"></div><p class="sys"></p></div>';
+    o.querySelector(".bubble").textContent=txt;o.querySelector(".sys").textContent=p.pref.indexOf("OK to text")>=0?"OK'd for texts: Mike can text it.":"Didn't OK texts: Mike emails it or calls.";
+    o.scrollIntoView({block:"nearest"})};
+  ul.appendChild(li)});
+document.getElementById("apply").onsubmit=function(e){e.preventDefault();var n=(this.querySelector("[name=name]").value||"").trim().split(" ")[0]||"there";
+  document.getElementById("thanks").innerHTML='<div class="phone"><div class="top"><span>What the applicant sees</span><span>same for everyone</span></div><div class="bubble in"></div><p class="sys">Demo only: nothing was sent or saved.</p></div>';
+  document.querySelector("#thanks .bubble").textContent="Thanks, "+n+"! We got your application for HVAC Service Technician at Sample Air Co. Mike reads every application, in the order it comes in. If we'd like to meet, we'll reach out within 3 business days with a few interview times to pick from. Either way, you'll hear back from us."};
+document.getElementById("toapply").onclick=function(){document.querySelector(".steps").go(2,true)};
+})();
+</script>
+</body>
+</html>

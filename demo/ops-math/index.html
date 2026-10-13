@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Operations Math side-by-side · autoants demo</title>
+<meta name="description" content="We plan one past week of a crew&#x27;s routes and show it next to the way they actually ran it. Their dispatcher decides what to keep.">
+<link rel="icon" href="/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&display=swap">
+<style>
+:root{
+  --night:#0b1712; --forest:#0f5132; --mint:#3ddcae; --stone:#ebe8e2; --deep:#0f2a1d;
+  --ground:#f3f1ec; --card:#ffffff; --ink:#0f2a1d; --muted:#4d5f55; --line:#d7d3ca; --soft:#e4f0ea;
+  --accent:#0f5132; --on-accent:#ffffff; --hi:#3ddcae; --hi-soft:#d3f5e8; --hi-ink:#0f5132;
+  --flag-bg:#0f2a1d; --flag-ink:#ffffff; --phone:#ffffff; --bubble-in:#e8ebe9; --bubble-out:#0f5132; --bubble-out-ink:#ffffff;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --muted:#a3b5aa; --line:#27392f; --soft:#17291f;
+    --accent:#3ddcae; --on-accent:#0b1712; --hi-soft:#123528; --hi-ink:#3ddcae;
+    --flag-bg:#3ddcae; --flag-ink:#0b1712; --phone:#0f1d16; --bubble-in:#22332a; --bubble-out:#3ddcae; --bubble-out-ink:#0b1712;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --muted:#a3b5aa; --line:#27392f; --soft:#17291f;
+  --accent:#3ddcae; --on-accent:#0b1712; --hi-soft:#123528; --hi-ink:#3ddcae;
+  --flag-bg:#3ddcae; --flag-ink:#0b1712; --phone:#0f1d16; --bubble-in:#22332a; --bubble-out:#3ddcae; --bubble-out-ink:#0b1712;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html,body{margin:0;background:var(--ground);color:var(--ink);font:500 16px/1.5 Onest,system-ui,-apple-system,sans-serif}
+main{max-width:640px;margin:0 auto;padding:12px 16px 56px;display:flex;flex-direction:column;gap:16px}
+a{color:var(--hi-ink)}
+.banner{margin:0;background:var(--hi-soft);color:var(--hi-ink);border-radius:12px;padding:10px 14px;font-size:14px;font-weight:700;display:flex;gap:8px;align-items:center}
+.banner::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--hi);flex:none}
+.back{font-size:15px;font-weight:700;text-decoration:none;align-self:flex-start;padding:6px 0}
+.back:hover{text-decoration:underline}
+header{display:flex;flex-direction:column;gap:6px}
+.eyebrow{margin:0;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{margin:0;font-size:clamp(28px,7vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.05;text-wrap:balance}
+.lede{margin:0;font-size:18px;color:var(--ink);max-width:56ch;text-wrap:pretty}
+h2{margin:0;font-size:19px;font-weight:800;letter-spacing:-.01em}
+h3{margin:0;font-size:16px;font-weight:800}
+p{margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+.tiny{font-size:12.5px}
+.num{font-variant-numeric:tabular-nums}
+button{font:inherit;font-weight:700;border-radius:12px;min-height:48px;padding:0 16px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;touch-action:manipulation}
+button.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+button:disabled{opacity:.45;cursor:not-allowed}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row>button{flex:1 1 140px}
+.pill{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:700;background:var(--soft);color:var(--ink);white-space:nowrap}
+.pill.flag{background:var(--flag-bg);color:var(--flag-ink)}
+.pill.ok{background:var(--hi-soft);color:var(--hi-ink)}
+.sample-tag{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px dashed var(--line);border-radius:6px;padding:2px 6px;align-self:flex-start}
+/* tap-through steps */
+.steps{display:flex;flex-direction:column;gap:12px}
+.dots{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.dots button{min-height:32px;padding:0 10px;border-radius:999px;font-size:13px}
+.dots button[aria-current="step"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.step[hidden]{display:none}
+.step{display:flex;flex-direction:column;gap:12px;animation:in .25s ease-out}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.step{animation:none}}
+.nav{display:flex;gap:10px}
+.nav button{flex:1}
+/* phone frame */
+.phone{background:var(--phone);border:1px solid var(--line);border-radius:26px;padding:14px 12px;display:flex;flex-direction:column;gap:8px;box-shadow:0 1px 0 var(--line);min-width:0}
+.phone .top{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);padding:0 4px 4px;border-bottom:1px solid var(--line)}
+.bubble{max-width:86%;padding:9px 12px;border-radius:16px;font-size:15px;line-height:1.4;white-space:pre-wrap;overflow-wrap:anywhere}
+.bubble.in{background:var(--bubble-in);color:var(--ink);align-self:flex-start;border-bottom-left-radius:5px}
+.bubble.out{background:var(--bubble-out);color:var(--bubble-out-ink);align-self:flex-end;border-bottom-right-radius:5px}
+.sys{align-self:center;font-size:12.5px;color:var(--muted);text-align:center}
+/* facts */
+.facts{display:flex;flex-direction:column;gap:10px}
+.facts p{font-size:15.5px}
+.facts b{font-weight:800}
+.never{border-left:4px solid var(--hi);padding-left:12px}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{text-align:left;padding:8px 6px;border-top:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;border-top:0}
+.scroll-x{overflow-x:auto;-webkit-overflow-scrolling:touch}
+footer{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:14px}
+
+/* page */
+:root{--t1:#0f5132;--t2:#2563eb;--t3:#7c3aed;--t4:#0e7490;--t5:#475569}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--t1:#3ddcae;--t2:#60a5fa;--t3:#a78bfa;--t4:#22d3ee;--t5:#cbd5e1}}
+:root[data-theme="dark"]{--t1:#3ddcae;--t2:#60a5fa;--t3:#a78bfa;--t4:#22d3ee;--t5:#cbd5e1}
+.seg{display:inline-flex;background:var(--ground);border:1px solid var(--line);border-radius:999px;padding:3px;align-self:flex-start}
+.seg button{border:0;background:transparent;min-height:40px;border-radius:999px;font-size:15px}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+.rmap{width:100%;height:auto;display:block;background:var(--soft);border-radius:14px}
+.rmap .area{font:700 9px Onest,system-ui,sans-serif;fill:var(--muted);letter-spacing:.08em}
+.rmap polyline{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round;opacity:.9}
+.rmap circle{stroke:var(--card);stroke-width:1}
+.big{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.big div{background:var(--soft);border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:2px}
+.big b{font-size:26px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.05}
+.big span{font-size:13px;color:var(--muted)}
+.keys{display:flex;flex-wrap:wrap;gap:10px;font-size:13px;color:var(--muted)}
+.keys i{display:inline-block;width:14px;height:4px;border-radius:2px;vertical-align:middle;margin-right:5px}
+.cmp td:not(:first-child),.cmp th:not(:first-child){text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+</style>
+</head>
+<body>
+<main>
+  <p class="banner">Demo with sample data. Not a real customer.</p>
+  <a class="back" href="/demo/">&larr; All demos</a>
+  <header>
+    <p class="eyebrow">autoants &middot; demo room</p>
+    <h1>Operations Math: free side-by-side</h1>
+    <p class="lede">We plan one past week of a crew&#x27;s routes and show it next to the way they actually ran it. Their dispatcher decides what to keep.</p>
+  </header>
+  <section class="card steps" aria-label="Demo">
+    <div class="step" data-title="The day">
+      <h2>One day for a sample HVAC company</h2>
+      <p class="small muted">5 techs, 25 service calls across Kenner, Metairie, New Orleans and Gretna, each with the customer's time window. Toggle between the way they ran it and the plan.</p>
+      <div class="seg" role="group" aria-label="Which plan"><button type="button" aria-pressed="true" data-v="given">Their way</button><button type="button" aria-pressed="false" data-v="opt">Optimized</button></div>
+      <svg class="rmap" id="rmap" viewBox="0 0 360 290" role="img" aria-label="Map drawing of 25 service calls and each tech's route"></svg>
+      <div class="keys" id="keys"></div>
+      <div class="big"><div><b id="dm">647</b><span>drive minutes, all techs (modeled)</span></div><div><b id="ml">258.8</b><span>miles (modeled)</span></div></div>
+    </div>
+    <div class="step" data-title="Side by side">
+      <h2>The same 25 calls, side by side</h2>
+      <span class="sample-tag">Sample company · modeled</span>
+      <div class="scroll-x"><table class="cmp"><thead><tr><th></th><th>Their way</th><th>Plan</th></tr></thead><tbody>
+        <tr><td>Drive minutes</td><td>647</td><td>346</td></tr>
+        <tr><td>Miles</td><td>258.8</td><td>138.5</td></tr>
+        <tr><td>Overtime hours</td><td>6.2</td><td>0.2</td></tr>
+        <tr><td>Late arrivals</td><td>3</td><td>0</td></tr>
+        <tr><td>Techs used</td><td>5</td><td>5</td></tr>
+      </tbody></table></div>
+      <p class="small"><b>On this sample day, the plan drives about 300 fewer minutes.</b> That's a sample, not a promise: your own week is the only number that counts, and it's labeled modeled until it's measured on your records.</p>
+      <p class="small muted">Their dispatcher approves every plan. He knows the exceptions: the customer who has to be first, the gate code, the shop that closes early.</p>
+    </div>
+  </section>
+
+  <section class="card facts" aria-label="The rules and the price">
+    <p class="never"><b>What it never does:</b> Promises savings. Every number is modeled until it&#x27;s measured on your own records, and your dispatcher approves every plan.</p>
+    <p><b>Price:</b> Free side-by-side on one past week; $1,500 30-day pilot (credited to month one); then $750/mo, up to $2,500 to $10,000/mo by the size of the operation.</p>
+  </section>
+  <footer>
+    <p>Sample company: a made-up HVAC shop with 5 techs and 25 calls on one day. Minutes and miles are modeled from straight-line distance, not road data.</p>
+    <p><a href="/demo/">Back to all demos</a></p>
+  </footer>
+</main>
+<script>
+// tap-through: every .steps block gets dots + Back/Next
+document.querySelectorAll(".steps").forEach(function(box){
+  var steps=[].slice.call(box.querySelectorAll(":scope > .step")), cur=0;
+  var dots=document.createElement("div"); dots.className="dots"; dots.setAttribute("aria-label","Steps");
+  steps.forEach(function(s,i){var b=document.createElement("button");b.type="button";b.textContent=(i+1)+". "+(s.dataset.title||"Step");b.onclick=function(){go(i,true)};dots.appendChild(b)});
+  var nav=document.createElement("div"); nav.className="nav";
+  var back=document.createElement("button"); back.type="button"; back.textContent="Back";
+  var next=document.createElement("button"); next.type="button"; next.className="primary";
+  nav.appendChild(back); nav.appendChild(next);
+  box.insertBefore(dots,box.firstChild); box.appendChild(nav);
+  function go(i,focus){cur=Math.max(0,Math.min(steps.length-1,i));
+    steps.forEach(function(s,j){s.hidden=j!==cur});
+    [].forEach.call(dots.children,function(d,j){d.toggleAttribute("aria-current",j===cur);if(j===cur)d.setAttribute("aria-current","step")});
+    back.disabled=cur===0; next.textContent=cur===steps.length-1?"Start over":"Next";next.setAttribute("aria-label",cur===steps.length-1?"Start over":"Next: "+(steps[cur+1].dataset.title||"next step"));
+    box.dispatchEvent(new CustomEvent("step",{detail:cur}));
+    if(focus){var h=steps[cur].querySelector("h2");if(h){h.tabIndex=-1;h.focus({preventScroll:true})}box.scrollIntoView({block:"start",behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth"})}}
+  back.onclick=function(){go(cur-1,true)};
+  next.onclick=function(){go(cur===steps.length-1?0:cur+1,true)};
+  box.go=go; go(0,false);
+});
+
+</script>
+<script>var RD={"stops":{"H01":[30.0059,-90.2374,"Kenner"],"H02":[29.8921,-90.0402,"Gretna"],"H03":[29.8821,-90.0652,"Gretna"],"H04":[30.0027,-90.1779,"Metairie"],"H05":[29.9706,-90.1107,"New Orleans"],"H06":[30.0072,-90.1407,"Metairie"],"H07":[29.9985,-90.1314,"Metairie"],"H08":[30.0245,-90.2448,"Kenner"],"H09":[30.0073,-90.1469,"Metairie"],"H10":[29.9902,-90.1675,"Metairie"],"H11":[29.9806,-90.1407,"Metairie"],"H12":[29.9971,-90.1307,"Metairie"],"H13":[30.0103,-90.2433,"Kenner"],"H14":[30.0103,-90.2449,"Kenner"],"H15":[30.0046,-90.2338,"Kenner"],"H16":[29.953,-90.0746,"New Orleans"],"H17":[29.9515,-90.0781,"New Orleans"],"H18":[30.0033,-90.1342,"Metairie"],"H19":[29.9976,-90.1927,"Metairie"],"H20":[29.9521,-90.0701,"New Orleans"],"H21":[29.9827,-90.0759,"New Orleans"],"H22":[29.8884,-90.0377,"Gretna"],"H23":[29.8915,-90.0598,"Gretna"],"H24":[29.9542,-90.0683,"New Orleans"],"H25":[29.9578,-90.0721,"New Orleans"]},"sites":{"SHOP":[29.944,-90.204],"WB":[29.893,-90.05]},"yard":{"TECH-A":"SHOP","TECH-B":"SHOP","TECH-C":"SHOP","TECH-D":"WB","TECH-E":"SHOP"},"given":{"TECH-A":["H01","H15","H22","H10","H18"],"TECH-B":["H02","H16","H23","H11","H20"],"TECH-C":["H03","H08","H19","H24","H25","H12"],"TECH-D":["H05","H13","H09","H04"],"TECH-E":["H14","H21","H07","H17","H06"]},"opt":{"TECH-A":["H15","H13","H14","H10","H04"],"TECH-B":["H21","H16","H17"],"TECH-C":["H08","H01","H19","H11","H12"],"TECH-D":["H24","H05","H09","H18","H07","H20"],"TECH-E":["H03","H23","H22","H02","H25","H06"]},"gm":{"TECH-A":[127,50.9],"TECH-B":[135,54.0],"TECH-C":[155,62.2],"TECH-D":[112,45.0],"TECH-E":[117,46.8]},"om":{"TECH-A":[53,21.1],"TECH-B":[61,24.3],"TECH-C":[69,27.7],"TECH-D":[70,28.1],"TECH-E":[94,37.5]}};
+(function(){ // SAMPLE: tle-main/products/route-desk demo HVAC day (fictional). Straight lines between stops, not roads.
+var svg=document.getElementById("rmap"),NS="http://www.w3.org/2000/svg",T=["TECH-A","TECH-B","TECH-C","TECH-D","TECH-E"];
+var lon0=-90.262,lon1=-90.018,lat0=29.872,lat1=30.036;
+function xy(lat,lon){return[(10+340*(lon-lon0)/(lon1-lon0)).toFixed(1),(280-270*(lat-lat0)/(lat1-lat0)).toFixed(1)]}
+function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);(p||svg).appendChild(e);return e}
+[["KENNER",30.033,-90.255],["METAIRIE",30.022,-90.18],["NEW ORLEANS",29.995,-90.09],["GRETNA",29.875,-90.075]].forEach(function(a){var p=xy(a[1],a[2]);el("text",{x:p[0],y:p[1],"class":"area"}).textContent=a[0]});
+var g=el("g",{});
+function draw(v){g.innerHTML="";var R=RD[v];
+  T.forEach(function(t,i){var y=RD.sites[RD.yard[t]],pts=[xy(y[0],y[1])];R[t].forEach(function(id){var s=RD.stops[id];pts.push(xy(s[0],s[1]))});pts.push(xy(y[0],y[1]));
+    el("polyline",{points:pts.map(function(p){return p.join(",")}).join(" "),style:"stroke:var(--t"+(i+1)+")"},g);
+    R[t].forEach(function(id){var s=RD.stops[id],p=xy(s[0],s[1]);el("circle",{cx:p[0],cy:p[1],r:4,style:"fill:var(--t"+(i+1)+")"},g)})});
+  Object.keys(RD.sites).forEach(function(k){var p=xy(RD.sites[k][0],RD.sites[k][1]);el("rect",{x:p[0]-5,y:p[1]-5,width:10,height:10,rx:2,style:"fill:var(--ink)"},g)});
+  var tot=v==="given"?[647,"258.8"]:[346,"138.5"];  // plan.json totals (unrounded sums)
+  document.getElementById("dm").textContent=tot[0];document.getElementById("ml").textContent=tot[1];
+  document.querySelectorAll(".seg button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.v===v?"true":"false")})}
+document.querySelectorAll(".seg button").forEach(function(b){b.onclick=function(){draw(b.dataset.v)}});
+var k=document.getElementById("keys");T.forEach(function(t,i){var s=document.createElement("span");s.innerHTML='<i style="background:var(--t'+(i+1)+')"></i>Tech '+t.slice(-1);k.appendChild(s)});
+var s=document.createElement("span");s.innerHTML='<i style="background:var(--ink);width:8px;height:8px"></i>shop / home base';k.appendChild(s);
+draw("given");
+})();
+</script>
+</body>
+</html>

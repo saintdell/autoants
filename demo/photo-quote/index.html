@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Photo Quote · autoants demo</title>
+<meta name="description" content="A homeowner sends a photo and answers three questions, then gets a price range from the owner&#x27;s own price table and an offer to book the inspection.">
+<link rel="icon" href="/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&display=swap">
+<style>
+:root{
+  --night:#0b1712; --forest:#0f5132; --mint:#3ddcae; --stone:#ebe8e2; --deep:#0f2a1d;
+  --ground:#f3f1ec; --card:#ffffff; --ink:#0f2a1d; --muted:#4d5f55; --line:#d7d3ca; --soft:#e4f0ea;
+  --accent:#0f5132; --on-accent:#ffffff; --hi:#3ddcae; --hi-soft:#d3f5e8; --hi-ink:#0f5132;
+  --flag-bg:#0f2a1d; --flag-ink:#ffffff; --phone:#ffffff; --bubble-in:#e8ebe9; --bubble-out:#0f5132; --bubble-out-ink:#ffffff;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --muted:#a3b5aa; --line:#27392f; --soft:#17291f;
+    --accent:#3ddcae; --on-accent:#0b1712; --hi-soft:#123528; --hi-ink:#3ddcae;
+    --flag-bg:#3ddcae; --flag-ink:#0b1712; --phone:#0f1d16; --bubble-in:#22332a; --bubble-out:#3ddcae; --bubble-out-ink:#0b1712;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --muted:#a3b5aa; --line:#27392f; --soft:#17291f;
+  --accent:#3ddcae; --on-accent:#0b1712; --hi-soft:#123528; --hi-ink:#3ddcae;
+  --flag-bg:#3ddcae; --flag-ink:#0b1712; --phone:#0f1d16; --bubble-in:#22332a; --bubble-out:#3ddcae; --bubble-out-ink:#0b1712;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html,body{margin:0;background:var(--ground);color:var(--ink);font:500 16px/1.5 Onest,system-ui,-apple-system,sans-serif}
+main{max-width:640px;margin:0 auto;padding:12px 16px 56px;display:flex;flex-direction:column;gap:16px}
+a{color:var(--hi-ink)}
+.banner{margin:0;background:var(--hi-soft);color:var(--hi-ink);border-radius:12px;padding:10px 14px;font-size:14px;font-weight:700;display:flex;gap:8px;align-items:center}
+.banner::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--hi);flex:none}
+.back{font-size:15px;font-weight:700;text-decoration:none;align-self:flex-start;padding:6px 0}
+.back:hover{text-decoration:underline}
+header{display:flex;flex-direction:column;gap:6px}
+.eyebrow{margin:0;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{margin:0;font-size:clamp(28px,7vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.05;text-wrap:balance}
+.lede{margin:0;font-size:18px;color:var(--ink);max-width:56ch;text-wrap:pretty}
+h2{margin:0;font-size:19px;font-weight:800;letter-spacing:-.01em}
+h3{margin:0;font-size:16px;font-weight:800}
+p{margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+.tiny{font-size:12.5px}
+.num{font-variant-numeric:tabular-nums}
+button{font:inherit;font-weight:700;border-radius:12px;min-height:48px;padding:0 16px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;touch-action:manipulation}
+button.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+button:disabled{opacity:.45;cursor:not-allowed}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row>button{flex:1 1 140px}
+.pill{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:700;background:var(--soft);color:var(--ink);white-space:nowrap}
+.pill.flag{background:var(--flag-bg);color:var(--flag-ink)}
+.pill.ok{background:var(--hi-soft);color:var(--hi-ink)}
+.sample-tag{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px dashed var(--line);border-radius:6px;padding:2px 6px;align-self:flex-start}
+/* tap-through steps */
+.steps{display:flex;flex-direction:column;gap:12px}
+.dots{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.dots button{min-height:32px;padding:0 10px;border-radius:999px;font-size:13px}
+.dots button[aria-current="step"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.step[hidden]{display:none}
+.step{display:flex;flex-direction:column;gap:12px;animation:in .25s ease-out}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.step{animation:none}}
+.nav{display:flex;gap:10px}
+.nav button{flex:1}
+/* phone frame */
+.phone{background:var(--phone);border:1px solid var(--line);border-radius:26px;padding:14px 12px;display:flex;flex-direction:column;gap:8px;box-shadow:0 1px 0 var(--line);min-width:0}
+.phone .top{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);padding:0 4px 4px;border-bottom:1px solid var(--line)}
+.bubble{max-width:86%;padding:9px 12px;border-radius:16px;font-size:15px;line-height:1.4;white-space:pre-wrap;overflow-wrap:anywhere}
+.bubble.in{background:var(--bubble-in);color:var(--ink);align-self:flex-start;border-bottom-left-radius:5px}
+.bubble.out{background:var(--bubble-out);color:var(--bubble-out-ink);align-self:flex-end;border-bottom-right-radius:5px}
+.sys{align-self:center;font-size:12.5px;color:var(--muted);text-align:center}
+/* facts */
+.facts{display:flex;flex-direction:column;gap:10px}
+.facts p{font-size:15.5px}
+.facts b{font-weight:800}
+.never{border-left:4px solid var(--hi);padding-left:12px}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{text-align:left;padding:8px 6px;border-top:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;border-top:0}
+.scroll-x{overflow-x:auto;-webkit-overflow-scrolling:touch}
+footer{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:14px}
+
+/* page */
+.photo{width:100%;height:auto;border-radius:14px;display:block}
+.drop{border:2px dashed var(--line);border-radius:16px;padding:22px 14px;text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center}
+.q{display:flex;flex-direction:column;gap:8px;border:0;margin:0;padding:0}
+.q legend{font-weight:800;font-size:16px;padding:0;margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips label{border:1px solid var(--line);border-radius:999px;padding:10px 14px;cursor:pointer;font-size:15px;background:var(--card);min-height:44px;display:flex;align-items:center}
+.chips input:checked+label{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:700}
+.chips input:focus-visible+label{outline:3px solid var(--hi);outline-offset:2px}
+.range{font-size:clamp(32px,9vw,44px);font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1.05}
+.label{display:inline-block;background:var(--hi-soft);color:var(--hi-ink);border-radius:8px;padding:4px 10px;font-weight:800;font-size:14px;align-self:flex-start}
+.slots{display:grid;grid-template-columns:1fr;gap:8px}
+.slots button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.math td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.visit{background:var(--soft);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:6px}
+
+</style>
+</head>
+<body>
+<main>
+  <p class="banner">Demo with sample data. Not a real customer.</p>
+  <a class="back" href="/demo/">&larr; All demos</a>
+  <header>
+    <p class="eyebrow">autoants &middot; demo room</p>
+    <h1>Photo Quote</h1>
+    <p class="lede">A homeowner sends a photo and answers three questions, then gets a price range from the owner&#x27;s own price table and an offer to book the inspection.</p>
+  </header>
+  <section class="card steps" aria-label="Demo">
+    <div class="step" data-title="Photo">
+      <h2>On the owner's website: "Floors sloping? Send a photo."</h2>
+      <div class="drop" id="drop">
+        <p class="muted small">The homeowner taps to add a photo from their phone. In this demo, use the sample.</p>
+        <button class="primary" type="button" id="addphoto">Add the sample photo</button>
+      </div>
+      <div id="photobox" hidden><svg class="photo" viewBox="0 0 320 220" role="img" aria-label="Sample photo, a drawing: brick piers under a raised house, one pier leaning with a crack">
+  <rect width="320" height="220" fill="#2b3a33"/>
+  <rect x="0" y="0" width="320" height="56" fill="#6e5f50"/>
+  <rect x="0" y="50" width="320" height="10" fill="#4e443a"/>
+  <path d="M0 60 L320 60 L320 66 L0 72 Z" fill="#3a332c"/>
+  <rect x="0" y="160" width="320" height="60" fill="#55606a"/>
+  <g fill="#8a5a44" stroke="#5b3a2c" stroke-width="1">
+    <rect x="34" y="70" width="34" height="92"/>
+    <rect x="144" y="74" width="34" height="88"/>
+    <g transform="rotate(5 270 162)"><rect x="252" y="78" width="34" height="86"/></g>
+  </g>
+  <g stroke="#5b3a2c" stroke-width="1" opacity=".8">
+    <path d="M34 92h34M34 115h34M34 138h34M144 96h34M144 118h34M144 140h34"/>
+  </g>
+  <path d="M262 84 l8 18 -6 12 10 16 -4 14 6 14" stroke="#111" stroke-width="2.5" fill="none"/>
+  <rect x="8" y="190" width="104" height="22" rx="4" fill="rgba(0,0,0,.55)"/>
+  <text x="16" y="205" fill="#fff" font-size="11" font-family="Onest, system-ui, sans-serif" font-weight="700">SAMPLE PHOTO</text>
+</svg>
+<p class="muted small" style="margin-top:8px">Your photo goes to the estimator. It isn't used to work out this range; your answers are.</p></div>
+    </div>
+
+    <div class="step" data-title="3 questions">
+      <h2>Three questions</h2>
+      <fieldset class="q"><legend>What does your house sit on?</legend><div class="chips" data-q="house_type"></div></fieldset>
+      <fieldset class="q"><legend>What are you seeing? <span class="muted small">Pick all that fit.</span></legend><div class="chips" data-q="symptoms"></div></fieldset>
+      <fieldset class="q"><legend>About how big is the house?</legend><div class="chips" data-q="size"></div></fieldset>
+    </div>
+
+    <div class="step" data-title="Price range">
+      <h2>The range, from the owner's own table</h2>
+      <div id="result" aria-live="polite"></div>
+      <details><summary class="small" style="cursor:pointer;font-weight:700">How this range was worked out</summary><table class="math" id="math"></table>
+        <p class="tiny muted" style="margin-top:6px">The demo uses the first three questions of the sample table. The real widget also asks when the house was last leveled.</p></details>
+    </div>
+
+    <div class="step" data-title="Book">
+      <h2>Book the inspection</h2>
+      <p class="small">Inspections are $150, credited to the job if you go ahead. <span class="muted">(sample amount; the owner sets his own)</span></p>
+      <div class="slots" id="slots">
+        <button type="button">Tue 2:00 PM</button><button type="button">Wed 10:00 AM</button><button type="button">Thu 9:00 AM</button>
+      </div>
+      <div id="booked" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="card facts" aria-label="The rules and the price">
+    <p class="never"><b>What it never does:</b> Lets a model set the price or reads the price off the photo. The range comes only from the owner&#x27;s table, it&#x27;s always labeled an estimate confirmed on site, and anything outside the table goes to a visit instead of a guess.</p>
+    <p><b>Price:</b> One of the funnels in the Booked Jobs Kit: $2,500 setup + $750/mo; founding (first 3 clients) $1,500 setup; cancel anytime after 90 days.</p>
+  </section>
+  <footer>
+    <p>Sample Foundation Repair is made up. The prices come from a sample table with placeholder numbers; a real owner replaces every one before it goes live. The photo is a drawing, not a real house.</p>
+    <p><a href="/demo/">Back to all demos</a></p>
+  </footer>
+</main>
+<script>
+// tap-through: every .steps block gets dots + Back/Next
+document.querySelectorAll(".steps").forEach(function(box){
+  var steps=[].slice.call(box.querySelectorAll(":scope > .step")), cur=0;
+  var dots=document.createElement("div"); dots.className="dots"; dots.setAttribute("aria-label","Steps");
+  steps.forEach(function(s,i){var b=document.createElement("button");b.type="button";b.textContent=(i+1)+". "+(s.dataset.title||"Step");b.onclick=function(){go(i,true)};dots.appendChild(b)});
+  var nav=document.createElement("div"); nav.className="nav";
+  var back=document.createElement("button"); back.type="button"; back.textContent="Back";
+  var next=document.createElement("button"); next.type="button"; next.className="primary";
+  nav.appendChild(back); nav.appendChild(next);
+  box.insertBefore(dots,box.firstChild); box.appendChild(nav);
+  function go(i,focus){cur=Math.max(0,Math.min(steps.length-1,i));
+    steps.forEach(function(s,j){s.hidden=j!==cur});
+    [].forEach.call(dots.children,function(d,j){d.toggleAttribute("aria-current",j===cur);if(j===cur)d.setAttribute("aria-current","step")});
+    back.disabled=cur===0; next.textContent=cur===steps.length-1?"Start over":"Next";next.setAttribute("aria-label",cur===steps.length-1?"Start over":"Next: "+(steps[cur+1].dataset.title||"next step"));
+    box.dispatchEvent(new CustomEvent("step",{detail:cur}));
+    if(focus){var h=steps[cur].querySelector("h2");if(h){h.tabIndex=-1;h.focus({preventScroll:true})}box.scrollIntoView({block:"start",behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth"})}}
+  back.onclick=function(){go(cur-1,true)};
+  next.onclick=function(){go(cur===steps.length-1?0:cur+1,true)};
+  box.go=go; go(0,false);
+});
+
+</script>
+<script>(function(){
+// SAMPLE table: tle-main/products/photo-quote/tables/foundation.sample.json (placeholder numbers), first 3 questions.
+var T={version:"foundation-sample-1",round_to:250,minimum:2500,valid_days:30,terms:"The estimator checks the piers, beams or slab in person before any price is final.",
+ q:{house_type:{type:"single",opts:[["pier-and-beam","Pier and beam"],["raised","Raised"],["slab","Slab"],["not-sure","Not sure"]]},
+    symptoms:{type:"multi",opts:[["sloping-floors","Sloping or bouncy floors"],["sticking-doors","Doors or windows that stick"],["cracks","Cracks in walls, brick or the slab"],["gaps","Gaps at baseboards, trim or the ceiling"],["something-else","Something else"]]},
+    size:{type:"single",opts:[["under-1200","Under 1,200 sq ft"],["1200-2000","1,200 to 2,000 sq ft"],["2000-3000","2,000 to 3,000 sq ft"],["over-3000","Over 3,000 sq ft"],["not-sure","Not sure"]]}},
+ base:{"pier-and-beam":{"under-1200":[3500,6000],"1200-2000":[5000,8500],"2000-3000":[7000,12000],"over-3000":[9500,16000]},
+       "raised":{"under-1200":[4500,7500],"1200-2000":[6000,10500],"2000-3000":[8500,14500],"over-3000":[11000,19000]},
+       "slab":{"under-1200":[6000,12000],"1200-2000":[8500,17000],"2000-3000":[12000,24000],"over-3000":null}},
+ adders:{symptoms:{"sloping-floors":[500,1500],"sticking-doors":[0,500],"cracks":[750,2500],"gaps":[250,1000]}},
+ visit:[[{house_type:"not-sure"},"The estimator needs to see what the house sits on."],[{size:"not-sure"},"The estimator measures the house at the visit."],[{symptoms:"something-else"},"Something other than the usual signs: the estimator looks first."]]};
+var A={house_type:"pier-and-beam",symptoms:["sloping-floors","sticking-doors"],size:"1200-2000"};
+var money=function(n){return "$"+Math.round(n).toLocaleString("en-US")};
+var picked=function(v){return Array.isArray(v)?v:(v?[v]:[])};
+document.querySelectorAll(".chips").forEach(function(box){var id=box.dataset.q,q=T.q[id];
+  q.opts.forEach(function(o,i){var inp=document.createElement("input");inp.type=q.type==="multi"?"checkbox":"radio";inp.name=id;inp.value=o[0];inp.id=id+i;
+    inp.checked=picked(A[id]).indexOf(o[0])>=0;var lab=document.createElement("label");lab.htmlFor=inp.id;lab.textContent=o[1];
+    inp.onchange=function(){A[id]=q.type==="multi"?[].slice.call(box.querySelectorAll("input:checked")).map(function(x){return x.value}):inp.value;render()};
+    box.appendChild(inp);box.appendChild(lab)})});
+function rangeFor(){var reasons=[];
+  if(!A.house_type)reasons.push('No answer for "What does your house sit on?".');
+  if(!A.size)reasons.push('No answer for "About how big is the house?".');
+  T.visit.forEach(function(r){var k=Object.keys(r[0])[0];if(picked(A[k]).indexOf(r[0][k])>=0)reasons.push(r[1])});
+  if(reasons.length)return{visit:reasons};
+  var cell=(T.base[A.house_type]||{})[A.size];if(!cell)return{visit:["These answers are outside this price table."]};
+  var rows=[["Base: "+lab("house_type",A.house_type)+", "+lab("size",A.size),cell]],lo=cell[0],hi=cell[1];
+  picked(A.symptoms).forEach(function(s){var a=T.adders.symptoms[s];lo+=a[0];hi+=a[1];rows.push(["+ "+lab("symptoms",s),a])});
+  lo=Math.max(lo,T.minimum);hi=Math.max(hi,lo);var low=Math.floor(lo/T.round_to)*T.round_to,high=Math.ceil(hi/T.round_to)*T.round_to;if(high<=low)high=low+T.round_to;
+  return{low:low,high:high,rows:rows}}
+function lab(q,v){var o=T.q[q].opts.filter(function(x){return x[0]===v})[0];return o?o[1]:v}
+function render(){var r=rangeFor(),el=document.getElementById("result"),m=document.getElementById("math");
+  if(r.visit){el.innerHTML='<div class="visit"><h3>We\'ll need to see it</h3><p class="small">This one needs a quick look in person before we can price it.</p><ul class="small" style="margin:0;padding-left:18px"></ul></div>';
+    var ul=el.querySelector("ul");r.visit.forEach(function(x){var li=document.createElement("li");li.textContent=x;ul.appendChild(li)});m.innerHTML="";return}
+  el.innerHTML='<div style="display:flex;flex-direction:column;gap:8px"><span class="label">Estimate from your answers, confirmed on site</span><div class="range"></div><p class="small muted"></p><span class="sample-tag">Sample price table</span></div>';
+  el.querySelector(".range").textContent=money(r.low)+" to "+money(r.high);
+  el.querySelector("p").textContent=T.terms+" Good for "+T.valid_days+" days.";
+  m.innerHTML="";r.rows.forEach(function(x){var tr=document.createElement("tr");tr.innerHTML="<td></td><td></td>";tr.children[0].textContent=x[0];tr.children[1].textContent=money(x[1][0])+" to "+money(x[1][1]);m.appendChild(tr)});
+  var tr=document.createElement("tr");tr.innerHTML="<td><b>Rounded to the nearest $250</b></td><td><b></b></td>";tr.querySelector("td:last-child b").textContent=money(r.low)+" to "+money(r.high);m.appendChild(tr)}
+document.getElementById("addphoto").onclick=function(){document.getElementById("drop").hidden=true;document.getElementById("photobox").hidden=false};
+document.querySelectorAll("#slots button").forEach(function(b){b.onclick=function(){
+  document.querySelectorAll("#slots button").forEach(function(x){x.setAttribute("aria-pressed","false")});b.setAttribute("aria-pressed","true");
+  var r=rangeFor(),d=document.getElementById("booked");
+  d.innerHTML='<div class="visit"><h3>Request sent for <span></span></h3><p class="small">Marcus confirms every visit by text, so watch for that.</p><p class="small muted">Marcus gets one file: the photo, the answers, the range and which version of his table priced it.</p></div>';
+  d.querySelector("h3 span").textContent=b.textContent}});
+render();
+})();
+</script>
+</body>
+</html>
