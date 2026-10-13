@@ -1,0 +1,90 @@
+/* autoants trust pages (/prices/, /never/, /setup/, /works-with/, /rules/, /your-data/, /terms/, /about-lane/)
+   and the /cards/ answer cards. Phone first, light and dark.
+   Brand: night #0b1712, forest #0f5132, mint #3ddcae, stone #ebe8e2, ink #0f2a1d. Onest. No gold or warm accents. */
+:root{
+  --forest:#0f5132; --mint:#3ddcae; --stone:#ebe8e2; --night:#0b1712; --ink-brand:#0f2a1d;
+  --ground:#f5f3ee; --card:#ffffff; --ink:#0f2a1d; --muted:#4f5e55; --line:#d9d5cc; --soft:#e7efe9;
+  --accent:var(--forest); --on-accent:#ffffff; --accent-ink:var(--forest);
+  --draft-bg:#dff3ea; --draft-ink:#0b3d26; --draft-line:#a9dcc6;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --muted:#a3b5a9; --line:#26372d; --soft:#17291f;
+    --accent:#3ddcae; --on-accent:#0b1712; --accent-ink:#3ddcae;
+    --draft-bg:#123326; --draft-ink:#bff0dc; --draft-line:#1f5a42;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --muted:#a3b5a9; --line:#26372d; --soft:#17291f;
+  --accent:#3ddcae; --on-accent:#0b1712; --accent-ink:#3ddcae;
+  --draft-bg:#123326; --draft-ink:#bff0dc; --draft-line:#1f5a42;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html,body{margin:0;background:var(--ground);color:var(--ink);font:500 17px/1.5 Onest,system-ui,-apple-system,sans-serif}
+a{color:var(--accent-ink);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--mint);outline-offset:2px}
+.wrap{max-width:680px;margin:0 auto;padding:0 16px 56px}
+.top{display:flex;align-items:center;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.top .logo{display:block;line-height:0}
+.top .logo img{height:24px;width:auto}
+.top .sp{margin-left:auto}
+.top a.ghost{color:var(--muted);text-decoration:none;font-weight:700;font-size:15px;padding:8px 0}
+.logo .on-dark{display:none}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .logo .on-light{display:none} :root:not([data-theme="light"]) .logo .on-dark{display:block} }
+:root[data-theme="dark"] .logo .on-light{display:none} :root[data-theme="dark"] .logo .on-dark{display:block}
+
+.eyebrow{font:700 12px/1.2 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);margin:32px 0 0}
+h1{font-weight:800;font-size:clamp(30px,8vw,42px);line-height:1.06;letter-spacing:-.03em;margin:8px 0 10px;text-wrap:balance}
+.lede{font-size:19px;color:var(--muted);margin:0 0 8px;max-width:58ch}
+h2{font-weight:800;font-size:22px;letter-spacing:-.02em;line-height:1.2;margin:34px 0 10px;text-wrap:balance}
+h3{font-weight:800;font-size:18px;margin:0 0 4px}
+p,li{max-width:62ch}
+p{margin:0 0 12px}
+ul,ol{padding-left:1.2em;margin:0 0 12px}
+li{margin:.35em 0}
+.muted{color:var(--muted)}
+small,.small{font-size:14px;color:var(--muted)}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:0 0 12px}
+.card p:last-child,.card ul:last-child{margin-bottom:0}
+
+.draft{background:var(--draft-bg);color:var(--draft-ink);border:1px solid var(--draft-line);border-radius:12px;padding:10px 14px;font-size:15px;font-weight:700;margin:16px 0}
+.tag{display:inline-block;font:700 11px/1.4 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:2px 8px;vertical-align:2px;white-space:nowrap}
+.tag.draft-tag{background:var(--draft-bg);color:var(--draft-ink);border:1px solid var(--draft-line)}
+.tag.built{background:var(--soft);color:var(--accent-ink);border:1px solid var(--line)}
+.tag.notyet{background:transparent;color:var(--muted);border:1px dashed var(--muted)}
+
+/* price rows */
+.prices{list-style:none;padding:0;margin:0 0 12px;display:flex;flex-direction:column;gap:10px}
+.prices li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:0;max-width:none}
+.prices .name{font-weight:800;font-size:18px;display:block}
+.prices .amt{display:block;font-weight:800;color:var(--accent-ink);font-size:17px;margin:2px 0 4px;overflow-wrap:anywhere}
+.prices .what{display:block;color:var(--muted);font-size:15px}
+.promise{border-left:4px solid var(--accent);background:var(--soft);border-radius:0 12px 12px 0;padding:12px 14px;margin:12px 0;font-weight:700}
+
+/* day-by-day */
+.days{list-style:none;padding:0;margin:0 0 12px;display:flex;flex-direction:column;gap:10px}
+.days li{display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:0;max-width:none}
+.days .d{font:700 13px/1.3 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink)}
+.days p{margin:0 0 6px}
+.days .you{font-size:15px;color:var(--muted);margin:0}
+
+/* never list */
+.never{list-style:none;padding:0;margin:0 0 12px;display:flex;flex-direction:column;gap:10px}
+.never li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:0;max-width:none}
+.never .name{font-weight:800;display:block}
+.never .does{display:block;font-size:15px;color:var(--muted);margin:2px 0 6px}
+.never .no{display:block;font-size:16px}
+.never .no b{color:var(--accent-ink)}
+
+.more{margin-top:40px;padding-top:20px;border-top:1px solid var(--line)}
+.more ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.more li{margin:0}
+.more a{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:8px 14px;text-decoration:none;font-weight:700;font-size:15px;background:var(--card)}
+.more a[aria-current="page"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.foot{margin-top:28px;font-size:14px;color:var(--muted)}
+.foot a{color:inherit}
+
+.photo{display:grid;place-items:center;width:140px;height:140px;border-radius:50%;border:2px dashed var(--muted);color:var(--muted);font:700 14px "JetBrains Mono",ui-monospace,monospace;margin:20px 0 8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border-radius:12px;background:var(--accent);color:var(--on-accent);font-weight:800;text-decoration:none}
