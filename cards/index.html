@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Answer cards · autoants</title>
+<meta name="description" content="Lane's one-tap answer cards: what to say and what to show when an owner asks a question face to face.">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&family=JetBrains+Mono:wght@700&display=swap">
+<link rel="stylesheet" href="/assets/trust.css">
+<style>
+  .wrap{max-width:560px}
+  .intro{margin:18px 0 14px}
+  .intro h1{font-size:28px;margin:0 0 4px}
+  .intro p{margin:0;color:var(--muted);font-size:15px}
+  .deck{display:flex;flex-direction:column;gap:10px}
+  details{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  details[open]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+  summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;min-height:64px;padding:14px 16px;font-weight:800;font-size:19px;line-height:1.25;letter-spacing:-.01em;-webkit-tap-highlight-color:transparent}
+  summary::-webkit-details-marker{display:none}
+  summary .n{flex:0 0 auto;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--soft);color:var(--accent-ink);font:700 13px "JetBrains Mono",ui-monospace,monospace}
+  summary .q{flex:1 1 auto;min-width:0}
+  summary .chev{flex:0 0 auto;color:var(--muted);transition:transform .2s ease}
+  details[open] summary .chev{transform:rotate(90deg)}
+  .body{padding:0 16px 16px;display:flex;flex-direction:column;gap:12px}
+  .lbl{font:700 11px/1.2 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+  .say p{margin:0 0 6px;font-size:18px;line-height:1.45;max-width:none}
+  .say p:last-child{margin:0}
+  .say p.lbl{font-size:11px;line-height:1.2;margin:0 0 6px}
+  .show{display:flex;flex-direction:column;gap:8px}
+  .show a{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:52px;padding:10px 16px;border-radius:12px;background:var(--accent);color:var(--on-accent);font-weight:800;font-size:17px;text-decoration:none}
+  .show a.alt{background:var(--soft);color:var(--accent-ink);border:1px solid var(--line)}
+  .show a span{font-weight:500;font-size:14px;opacity:.85;overflow-wrap:anywhere;text-align:right}
+  @media (prefers-reduced-motion: reduce){summary .chev{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="top" aria-label="Site">
+    <a class="logo" href="/" aria-label="autoants home"><img class="on-light" src="/brand/autoants-logo.svg" alt="autoants"><img class="on-dark" src="/brand/autoants-logo-reverse.svg" alt="autoants"></a>
+    <span class="sp"></span>
+    <a class="ghost" href="/prices/">Prices</a>
+  </nav>
+
+  <header class="intro">
+    <h1>Answer cards</h1>
+    <p>Tap the question. Say the two lines. Show the link.</p>
+  </header>
+
+  <main class="deck" id="main">
+    <details name="cards" id="c1">
+      <summary><span class="n">1</span><span class="q">&ldquo;How much?&rdquo;</span><span class="chev" aria-hidden="true">&#x203A;</span></summary>
+      <div class="body">
+        <div class="say"><p class="lbl">Say</p>
+          <p>One assistant on your phone is $500, one time, live within 7 days of your go or the $500 back.</p>
+          <p>The monthly plans run from $99 for site upkeep to $750 setup plus $500 a month for the whole front desk, the same for every shop.</p>
+        </div>
+        <div class="show"><p class="lbl">Show</p>
+          <a href="/prices/">Every price <span>/prices/</span></a>
+          <a class="alt" href="/#roi">Slide your own numbers <span>calculator</span></a>
+        </div>
+      </div>
+    </details>
+
+    <details name="cards" id="c2">
+      <summary><span class="n">2</span><span class="q">&ldquo;Will it sound like a robot?&rdquo;</span><span class="chev" aria-hidden="true">&#x203A;</span></summary>
+      <div class="body">
+        <div class="say"><p class="lbl">Say</p>
+          <p>It tells callers it's an AI in its first sentence, on purpose, and anyone who wants a person goes straight to you.</p>
+          <p>It uses your words, not mine. Here, listen to one.</p>
+        </div>
+        <div class="show"><p class="lbl">Show</p>
+          <a href="/demo/receptionist/">The receptionist <span>/demo/receptionist/</span></a>
+          <a class="alt" href="/demo/text-back/">The text-back <span>/demo/text-back/</span></a>
+        </div>
+      </div>
+    </details>
+
+    <details name="cards" id="c3">
+      <summary><span class="n">3</span><span class="q">&ldquo;I already use Jobber / Housecall Pro / ServiceTitan.&rdquo;</span><span class="chev" aria-hidden="true">&#x203A;</span></summary>
+      <div class="body">
+        <div class="say"><p class="lbl">Say</p>
+          <p>Keep it. This works next to what you already use, and you don't switch anything.</p>
+          <p>Today it reads your Jobber calendar (Housecall Pro through Google) and your job-list export; a live two-way connection isn't built yet, so I won't promise one.</p>
+        </div>
+        <div class="show"><p class="lbl">Show</p>
+          <a href="/works-with/">What it connects to <span>/works-with/</span></a>
+        </div>
+      </div>
+    </details>
+
+    <details name="cards" id="c4">
+      <summary><span class="n">4</span><span class="q">&ldquo;What if it messes up?&rdquo;</span><span class="chev" aria-hidden="true">&#x203A;</span></summary>
+      <div class="body">
+        <div class="say"><p class="lbl">Say</p>
+          <p>It's built so it can't promise anything: no prices, no arrival times, no diagnosis, and you approve its wording before it goes live.</p>
+          <p>If anything looks wrong, you turn off call forwarding yourself, then you call me.</p>
+        </div>
+        <div class="show"><p class="lbl">Show</p>
+          <a href="/never/">What it never does <span>/never/</span></a>
+        </div>
+      </div>
+    </details>
+
+    <details name="cards" id="c5">
+      <summary><span class="n">5</span><span class="q">&ldquo;I don't have time to set it up.&rdquo;</span><span class="chev" aria-hidden="true">&#x203A;</span></summary>
+      <div class="body">
+        <div class="say"><p class="lbl">Say</p>
+          <p>One setup call, 30 to 40 minutes, then you approve the wording. I do the rest.</p>
+          <p>After that it runs on its own, and the jobs come to your phone.</p>
+        </div>
+        <div class="show"><p class="lbl">Show</p>
+          <a href="/setup/">The setup week <span>/setup/</span></a>
+        </div>
+      </div>
+    </details>
+
+    <details name="cards" id="c6">
+      <summary><span class="n">6</span><span class="q">&ldquo;Is it legal?&rdquo;</span><span class="chev" aria-hidden="true">&#x203A;</span></summary>
+      <div class="body">
+        <div class="say"><p class="lbl">Say</p>
+          <p>Texts only go to people who contacted you first or said yes, every one names your business and takes STOP, and the phone line says it's AI up front.</p>
+          <p>I can't give you legal advice; this is how we run it.</p>
+        </div>
+        <div class="show"><p class="lbl">Show</p>
+          <a href="/rules/">Texts and calls <span>/rules/</span></a>
+        </div>
+      </div>
+    </details>
+
+    <details name="cards" id="c7">
+      <summary><span class="n">7</span><span class="q">&ldquo;What about my customer data?&rdquo;</span><span class="chev" aria-hidden="true">&#x203A;</span></summary>
+      <div class="body">
+        <div class="say"><p class="lbl">Say</p>
+          <p>Your customer list is yours. I use it only to run your setup; I don't sell it, share it with other clients, or market to your customers.</p>
+          <p>If you stop, you get everything back.</p>
+        </div>
+        <div class="show"><p class="lbl">Show</p>
+          <a href="/your-data/">Your data <span>/your-data/</span></a>
+          <a class="alt" href="/privacy.html">Website privacy <span>/privacy.html</span></a>
+        </div>
+      </div>
+    </details>
+
+    <details name="cards" id="c8">
+      <summary><span class="n">8</span><span class="q">&ldquo;Am I locked in?&rdquo;</span><span class="chev" aria-hidden="true">&#x203A;</span></summary>
+      <div class="body">
+        <div class="say"><p class="lbl">Say</p>
+          <p>No long contract: the monthly plans cancel anytime after the first 90 days.</p>
+          <p>Your domain, your Google profile and your customers' info stay yours either way.</p>
+        </div>
+        <div class="show"><p class="lbl">Show</p>
+          <a href="/terms/">The terms, plain <span>/terms/</span></a>
+        </div>
+      </div>
+    </details>
+
+    <details name="cards" id="c9">
+      <summary><span class="n">9</span><span class="q">&ldquo;Who are you?&rdquo;</span><span class="chev" aria-hidden="true">&#x203A;</span></summary>
+      <div class="body">
+        <div class="say"><p class="lbl">Say</p>
+          <p>I'm Lane Davis II, and autoants is my company. I'm local, in New Orleans.</p>
+          <p>You deal with me directly, not a call center.</p>
+        </div>
+        <div class="show"><p class="lbl">Show</p>
+          <a href="/about-lane/">About Lane <span>/about-lane/</span></a>
+        </div>
+      </div>
+    </details>
+
+    <details name="cards" id="c10">
+      <summary><span class="n">10</span><span class="q">&ldquo;Does it work for my trade?&rdquo;</span><span class="chev" aria-hidden="true">&#x203A;</span></summary>
+      <div class="body">
+        <div class="say"><p class="lbl">Say</p>
+          <p>Tell me your trade and I'll show you the demo for it.</p>
+          <p>If there isn't one yet, I'll say so, and I won't promise what I haven't built.</p>
+        </div>
+        <div class="show"><p class="lbl">Show</p>
+          <a href="/demo/">Trade demos <span>/demo/</span></a>
+          <a class="alt" href="/who-we-help.html">Who we help <span>/who-we-help.html</span></a>
+        </div>
+      </div>
+    </details>
+  </main>
+</div>
+<script>
+  // One card open at a time, for browsers that ignore <details name>.
+  document.querySelectorAll('details[name="cards"]').forEach(function (d) {
+    d.addEventListener('toggle', function () {
+      if (!d.open) return;
+      document.querySelectorAll('details[name="cards"]').forEach(function (o) { if (o !== d) o.open = false; });
+      var r = d.getBoundingClientRect();
+      if (r.top < 0) d.scrollIntoView({ block: 'start' });
+    });
+  });
+  // #c1 to #c10 opens that card, so a card can be linked or saved to the home screen.
+  var t = location.hash && document.getElementById(location.hash.slice(1));
+  if (t && t.tagName === 'DETAILS') t.open = true;
+</script>
+</body>
+</html>
