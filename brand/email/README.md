@@ -2,7 +2,7 @@
 
 **The mailbox:** lane@autoants.com on Google Workspace Business Starter. Setup sheet: `autoants-mailbox-setup.md` (DNS: SPF, DKIM, DMARC). Until it exists, the site footer and JSON-LD keep lane@blundellcore.com, so nothing bounces.
 
-**Sending inboxes for outreach** (approved 2026-10-11): lane@getautoants.com, a second named getautoants.com inbox [FILL: address], and lane@autoantshq.com. All of them, plus lane@autoants.com, get the same profile photo.
+**Sending inboxes for outreach** (approved 2026-10-11): lane@getautoants.com, a second named getautoants.com inbox [FILL: address], and lane@tryautoants.com (autoantshq.com was dropped 2026-10-12). All of them, plus lane@autoants.com, get the same profile photo.
 
 ## Which file goes where
 
@@ -11,6 +11,7 @@
 | Google profile photo of every inbox above | `avatar-512.png` (or `avatar-1024.png`) | Forest ground, stone antennae: the ant that reads best at 40 px. `avatar-stone-*.png` is the light variant, kept as a spare. |
 | Signature on replies, clients, partners | `signature-anim.html` (uses `ant-anim.gif`) | The ant springs its antennae and blinks, then holds still for 2.8 s. |
 | The same, without the animation | `signature.html` (uses `sig-logo.png`) or `signature.txt` | The October 1 wordmark signature, unchanged. |
+| Branded emails after first contact (booking, onboarding, proposal, billing, monthly report, newsletter) | `~/tle-main/brand/email-templates/` (header uses `newsletter-logo.png`) | Rendered with `render.py`; setup steps for Kit, Stripe, Gmail and Cal.com are in its README. |
 | Cold first touch and its one follow-up | **No signature file, no images.** The playbook's plain-text CAN-SPAM footer (`channel.email.footer`), added by the send queue | Plain text with no images and no links is what lands in the inbox from a new domain. A GIF in a cold email is a spam signal. The profile photo is fine there: it is not in the message. |
 
 **Files:**
@@ -35,13 +36,13 @@ So the motion lives in the message body, which is the signature. The round icon 
 
 ## Set the profile photo for each inbox
 
-Do this once per inbox: lane@getautoants.com, the second getautoants.com inbox, lane@autoantshq.com and lane@autoants.com.
+Do this once per inbox: lane@getautoants.com, the second getautoants.com inbox, lane@tryautoants.com and lane@autoants.com.
 
 1. Sign in to the inbox's Google account. Go to myaccount.google.com, then **Personal info**, then **Profile picture**. Upload `avatar-512.png`. If Google offers a crop, keep the whole square: the circle already has the margin built in.
 2. If the photo can't be changed, the Workspace admin has locked profile editing. Use one of these:
    - **Fix the setting.** In the Admin console (admin.google.com), go to **Directory → Users**. Click **More options** at the top right and choose **Allow users to edit profile**. Tick **Photo** and save.
    - **Set it as admin.** In the Admin console, go to **Directory → Users**, click the user's name, click the avatar, then **Change photo**, and upload the file.
-3. Each domain (getautoants.com, autoantshq.com, autoants.com) is its own Workspace or secondary domain, so repeat the steps in whichever Admin console owns that inbox.
+3. Each domain (getautoants.com, tryautoants.com, autoants.com) is its own Workspace or secondary domain, so repeat the steps in whichever Admin console owns that inbox.
 4. Check it by sending from the inbox to an outside Gmail address. Google caches photos, so a new one can take up to a day to show to other people.
 
 Source for the Admin console steps: Google Workspace Admin Help, ["Add or change a user's profile photo"](https://knowledge.workspace.google.com/admin/users/add-or-change-a-users-profile-photo) and ["Allow Directory users to change their profile and photo"](https://knowledge.workspace.google.com/admin/users/allow-directory-users-to-change-their-profile-and-photo). Checked 2026-10-11.
