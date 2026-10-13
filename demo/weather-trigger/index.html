@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Weather Trigger Ant · autoants demo</title>
+<meta name="description" content="When the National Weather Service forecast crosses the owner&#x27;s line (a freeze warning, for a plumber), it gets the owner&#x27;s campaign ready and waits for his approval.">
+<link rel="icon" href="/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&display=swap">
+<style>
+:root{
+  --night:#0b1712; --forest:#0f5132; --mint:#3ddcae; --stone:#ebe8e2; --deep:#0f2a1d;
+  --ground:#f3f1ec; --card:#ffffff; --ink:#0f2a1d; --muted:#4d5f55; --line:#d7d3ca; --soft:#e4f0ea;
+  --accent:#0f5132; --on-accent:#ffffff; --hi:#3ddcae; --hi-soft:#d3f5e8; --hi-ink:#0f5132;
+  --flag-bg:#0f2a1d; --flag-ink:#ffffff; --phone:#ffffff; --bubble-in:#e8ebe9; --bubble-out:#0f5132; --bubble-out-ink:#ffffff;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --muted:#a3b5aa; --line:#27392f; --soft:#17291f;
+    --accent:#3ddcae; --on-accent:#0b1712; --hi-soft:#123528; --hi-ink:#3ddcae;
+    --flag-bg:#3ddcae; --flag-ink:#0b1712; --phone:#0f1d16; --bubble-in:#22332a; --bubble-out:#3ddcae; --bubble-out-ink:#0b1712;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --muted:#a3b5aa; --line:#27392f; --soft:#17291f;
+  --accent:#3ddcae; --on-accent:#0b1712; --hi-soft:#123528; --hi-ink:#3ddcae;
+  --flag-bg:#3ddcae; --flag-ink:#0b1712; --phone:#0f1d16; --bubble-in:#22332a; --bubble-out:#3ddcae; --bubble-out-ink:#0b1712;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html,body{margin:0;background:var(--ground);color:var(--ink);font:500 16px/1.5 Onest,system-ui,-apple-system,sans-serif}
+main{max-width:640px;margin:0 auto;padding:12px 16px 56px;display:flex;flex-direction:column;gap:16px}
+a{color:var(--hi-ink)}
+.banner{margin:0;background:var(--hi-soft);color:var(--hi-ink);border-radius:12px;padding:10px 14px;font-size:14px;font-weight:700;display:flex;gap:8px;align-items:center}
+.banner::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--hi);flex:none}
+.back{font-size:15px;font-weight:700;text-decoration:none;align-self:flex-start;padding:6px 0}
+.back:hover{text-decoration:underline}
+header{display:flex;flex-direction:column;gap:6px}
+.eyebrow{margin:0;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{margin:0;font-size:clamp(28px,7vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.05;text-wrap:balance}
+.lede{margin:0;font-size:18px;color:var(--ink);max-width:56ch;text-wrap:pretty}
+h2{margin:0;font-size:19px;font-weight:800;letter-spacing:-.01em}
+h3{margin:0;font-size:16px;font-weight:800}
+p{margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+.tiny{font-size:12.5px}
+.num{font-variant-numeric:tabular-nums}
+button{font:inherit;font-weight:700;border-radius:12px;min-height:48px;padding:0 16px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;touch-action:manipulation}
+button.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+button:disabled{opacity:.45;cursor:not-allowed}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row>button{flex:1 1 140px}
+.pill{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:700;background:var(--soft);color:var(--ink);white-space:nowrap}
+.pill.flag{background:var(--flag-bg);color:var(--flag-ink)}
+.pill.ok{background:var(--hi-soft);color:var(--hi-ink)}
+.sample-tag{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px dashed var(--line);border-radius:6px;padding:2px 6px;align-self:flex-start}
+/* tap-through steps */
+.steps{display:flex;flex-direction:column;gap:12px}
+.dots{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.dots button{min-height:32px;padding:0 10px;border-radius:999px;font-size:13px}
+.dots button[aria-current="step"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.step[hidden]{display:none}
+.step{display:flex;flex-direction:column;gap:12px;animation:in .25s ease-out}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.step{animation:none}}
+.nav{display:flex;gap:10px}
+.nav button{flex:1}
+/* phone frame */
+.phone{background:var(--phone);border:1px solid var(--line);border-radius:26px;padding:14px 12px;display:flex;flex-direction:column;gap:8px;box-shadow:0 1px 0 var(--line);min-width:0}
+.phone .top{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);padding:0 4px 4px;border-bottom:1px solid var(--line)}
+.bubble{max-width:86%;padding:9px 12px;border-radius:16px;font-size:15px;line-height:1.4;white-space:pre-wrap;overflow-wrap:anywhere}
+.bubble.in{background:var(--bubble-in);color:var(--ink);align-self:flex-start;border-bottom-left-radius:5px}
+.bubble.out{background:var(--bubble-out);color:var(--bubble-out-ink);align-self:flex-end;border-bottom-right-radius:5px}
+.sys{align-self:center;font-size:12.5px;color:var(--muted);text-align:center}
+/* facts */
+.facts{display:flex;flex-direction:column;gap:10px}
+.facts p{font-size:15.5px}
+.facts b{font-weight:800}
+.never{border-left:4px solid var(--hi);padding-left:12px}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{text-align:left;padding:8px 6px;border-top:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;border-top:0}
+.scroll-x{overflow-x:auto;-webkit-overflow-scrolling:touch}
+footer{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:14px}
+
+/* page */
+.alert{border:2px solid var(--ink);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:6px}
+.alert .ev{font-size:22px;font-weight:800;letter-spacing:-.02em}
+.sim{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:14.5px}
+.checks li::before{content:"\2713";color:var(--hi-ink);font-weight:800;margin-right:8px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tabs button{min-height:40px;font-size:14px;border-radius:999px}
+.tabs button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.wxcard{aspect-ratio:4/5;background:#142A4F;color:#F1F5F8;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px;max-width:360px;width:100%;align-self:center}
+.wxcard .k{color:#5CC8E0;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.wxcard .h{font-size:24px;font-weight:800;line-height:1.1;letter-spacing:-.02em}
+.wxcard ul{margin:0;padding-left:18px;font-size:13.5px;display:flex;flex-direction:column;gap:5px}
+.wxcard .biz{margin-top:auto;display:flex;justify-content:space-between;align-items:end;gap:8px;border-top:1px solid rgba(241,245,248,.25);padding-top:8px}
+.wxcard .biz b{font-size:15px}.wxcard .biz span{font-size:15px;font-weight:800;color:#5CC8E0}
+.wxcard .src{font-size:9.5px;line-height:1.3;opacity:.8}
+.text{background:var(--soft);border-radius:12px;padding:12px;font-size:14.5px;white-space:pre-wrap;overflow-wrap:anywhere}
+.meta{font-size:13px;color:var(--muted)}
+.status{display:flex;flex-direction:column;gap:8px;border:1px dashed var(--line);border-radius:14px;padding:14px}
+
+</style>
+</head>
+<body>
+<main>
+  <p class="banner">Demo with sample data. Not a real customer.</p>
+  <a class="back" href="/demo/">&larr; All demos</a>
+  <header>
+    <p class="eyebrow">autoants &middot; demo room</p>
+    <h1>Weather Trigger Ant</h1>
+    <p class="lede">When the National Weather Service forecast crosses the owner&#x27;s line (a freeze warning, for a plumber), it gets the owner&#x27;s campaign ready and waits for his approval.</p>
+  </header>
+  <section class="card steps" aria-label="Demo">
+    <div class="step" data-title="Forecast">
+      <h2>Wednesday afternoon, a freeze warning comes out</h2>
+      <div class="alert">
+        <span class="sim">Simulated for this demo</span>
+        <span class="ev">Freeze Warning</span>
+        <p class="small">Orleans and Jefferson parishes, starting Thursday night.</p>
+        <p class="tiny muted">SIMULATED for a demo, not a real alert. Source: National Weather Service New Orleans, Freeze Warning issued Wed Jan 13 at 2:41 PM for Orleans and Jefferson parishes (weather.gov/lix).</p>
+      </div>
+      <h3>Does it fit Sample Plumbing Co.?</h3>
+      <ul class="checks">
+        <li>Trade: plumbing has a freeze rule (protect your pipes)</li>
+        <li>Area: the warning covers Orleans and Jefferson, where they work</li>
+        <li>Season: November to March</li>
+        <li>Not repeated: no freeze campaign in the last 7 days</li>
+      </ul>
+      <p class="small">So it prepares the campaign and sends one ping: <b>"Freeze Warning Thursday night: 1 client campaign ready to approve."</b></p>
+    </div>
+
+    <div class="step" data-title="Campaign">
+      <h2>The campaign, ready and waiting</h2>
+      <div class="tabs" role="tablist" aria-label="Campaign pieces">
+        <button role="tab" aria-selected="true" data-tab="card" type="button">Social card</button>
+        <button role="tab" aria-selected="false" data-tab="caption" type="button">Caption</button>
+        <button role="tab" aria-selected="false" data-tab="gbp" type="button">Google post</button>
+        <button role="tab" aria-selected="false" data-tab="email" type="button">Email</button>
+      </div>
+      <div data-panel="card" role="tabpanel">
+        <div class="wxcard">
+          <span class="k">Cold night ahead</span>
+          <span class="h">Give your pipes a coat before Thursday night.</span>
+          <ul><li>Wrap pipes under a raised house, in the attic and on outside walls.</li><li>Let a faucet drip and open the cabinet doors under sinks.</li><li>Unhook garden hoses and shut off the outside faucets.</li><li>Keep the heat on, even if you're leaving town.</li></ul>
+          <div class="biz"><b>Sample Plumbing Co.</b><span>504.555.0178</span></div>
+          <p class="src">LA Lic. Master Plumber · LMP 0000 (sample) · 1200 Example Blvd, Kenner (sample)<br>SIMULATED for a demo, not a real alert. Source: National Weather Service New Orleans, Freeze Warning issued Wed Jan 13 at 2:41 PM for Orleans and Jefferson parishes (weather.gov/lix).</p>
+        </div>
+      </div>
+      <div data-panel="caption" role="tabpanel" hidden><p class="meta">Facebook and Instagram, with the card</p><div class="text">The National Weather Service has issued a Freeze Warning for Orleans and Jefferson parishes, starting Thursday night. A few minutes now can prevent a burst pipe:
+• Wrap exposed pipes: under a raised house, in the attic, on outside walls.
+• Let a faucet drip and open the cabinet doors under sinks.
+• Unhook garden hoses and shut off the outside faucets.
+• Keep the heat on, even if you're leaving town.
+If a pipe does burst, shut off the main first, then call Sample Plumbing Co. at 504.555.0178.
+LA Lic. Master Plumber · LMP 0000 (sample) · 1200 Example Blvd, Kenner (sample)
+
+SIMULATED for a demo, not a real alert. Source: National Weather Service New Orleans, Freeze Warning issued Wed Jan 13 at 2:41 PM for Orleans and Jefferson parishes (weather.gov/lix).
+#FreezePrep #PlumbingTips</div></div>
+      <div data-panel="gbp" role="tabpanel" hidden><p class="meta">Google Business Profile post (no phone in the text; the profile has a Call button)</p><div class="text">The National Weather Service has issued a Freeze Warning for Orleans and Jefferson parishes, starting Thursday night. Before a cold night: wrap exposed pipes, let a faucet drip, open the cabinet doors under sinks, unhook garden hoses and keep the heat on. If a pipe bursts, shut off the main first, then give us a call.
+
+SIMULATED for a demo, not a real alert. Source: National Weather Service New Orleans, Freeze Warning issued Wed Jan 13 at 2:41 PM for Orleans and Jefferson parishes (weather.gov/lix).</div></div>
+      <div data-panel="email" role="tabpanel" hidden><p class="meta">Draft to Sample Plumbing's own past customers: a job in the last 3 years, an email on file, not opted out</p><div class="text"><b>Subject: Before Thursday night: keeping your pipes safe</b>
+
+Hi {first name},
+
+The National Weather Service has issued a Freeze Warning for Orleans and Jefferson parishes, starting Thursday night. Here's what we tell our own customers to do before a cold night:
+
+- Wrap pipes under a raised house, in the attic and on outside walls.
+- Let a faucet drip and open the cabinet doors under the sinks.
+- Unhook garden hoses and shut off the outside faucets.
+- Keep the heat on, even if you're leaving town.
+
+If a pipe bursts, shut off the main water valve first, then call us at 504.555.0178.
+
+SIMULATED for a demo, not a real alert. Source: National Weather Service New Orleans, Freeze Warning issued Wed Jan 13 at 2:41 PM for Orleans and Jefferson parishes (weather.gov/lix).
+—
+Sample Plumbing Co. · PO Box 0000 (sample), Kenner, LA 70062
+Don't want these? Reply "unsubscribe" and we'll take you off the list.</div></div>
+    </div>
+
+    <div class="step" data-title="Approve">
+      <h2>Nothing goes out until the owner says yes</h2>
+      <div class="status" id="status" aria-live="polite">
+        <span class="pill" id="pill">Waiting for approval</span>
+        <p class="small" id="msg">The card, the caption, the Google post and the email drafts are locked together. If any word changes after this, it has to be approved again.</p>
+      </div>
+      <div class="row"><button class="primary" type="button" id="ok">Approve</button><button type="button" id="no">Pass</button></div>
+    </div>
+  </section>
+
+  <section class="card facts" aria-label="The rules and the price">
+    <p class="never"><b>What it never does:</b> Posts or sends anything itself, leaves out the Weather Service citation, calls a watch a warning, or uses fear or fake urgency. Emails go only to the owner&#x27;s own past customers.</p>
+    <p><b>Price:</b> Included in the Social engine ($400/mo); $99/mo standalone; $49/mo inside the Office Manager.</p>
+  </section>
+  <footer>
+    <p>Sample Plumbing Co. and its customers are made up. The freeze warning on this page is simulated for the demo; it is not a real alert.</p>
+    <p><a href="/demo/">Back to all demos</a></p>
+  </footer>
+</main>
+<script>
+// tap-through: every .steps block gets dots + Back/Next
+document.querySelectorAll(".steps").forEach(function(box){
+  var steps=[].slice.call(box.querySelectorAll(":scope > .step")), cur=0;
+  var dots=document.createElement("div"); dots.className="dots"; dots.setAttribute("aria-label","Steps");
+  steps.forEach(function(s,i){var b=document.createElement("button");b.type="button";b.textContent=(i+1)+". "+(s.dataset.title||"Step");b.onclick=function(){go(i,true)};dots.appendChild(b)});
+  var nav=document.createElement("div"); nav.className="nav";
+  var back=document.createElement("button"); back.type="button"; back.textContent="Back";
+  var next=document.createElement("button"); next.type="button"; next.className="primary";
+  nav.appendChild(back); nav.appendChild(next);
+  box.insertBefore(dots,box.firstChild); box.appendChild(nav);
+  function go(i,focus){cur=Math.max(0,Math.min(steps.length-1,i));
+    steps.forEach(function(s,j){s.hidden=j!==cur});
+    [].forEach.call(dots.children,function(d,j){d.toggleAttribute("aria-current",j===cur);if(j===cur)d.setAttribute("aria-current","step")});
+    back.disabled=cur===0; next.textContent=cur===steps.length-1?"Start over":"Next";next.setAttribute("aria-label",cur===steps.length-1?"Start over":"Next: "+(steps[cur+1].dataset.title||"next step"));
+    box.dispatchEvent(new CustomEvent("step",{detail:cur}));
+    if(focus){var h=steps[cur].querySelector("h2");if(h){h.tabIndex=-1;h.focus({preventScroll:true})}box.scrollIntoView({block:"start",behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth"})}}
+  back.onclick=function(){go(cur-1,true)};
+  next.onclick=function(){go(cur===steps.length-1?0:cur+1,true)};
+  box.go=go; go(0,false);
+});
+
+</script>
+<script>(function(){
+var tabs=document.querySelectorAll("[data-tab]");
+tabs.forEach(function(t){t.onclick=function(){tabs.forEach(function(x){x.setAttribute("aria-selected",x===t?"true":"false")});
+  document.querySelectorAll("[data-panel]").forEach(function(p){p.hidden=p.dataset.panel!==t.dataset.tab})}});
+var pill=document.getElementById("pill"),msg=document.getElementById("msg");
+document.getElementById("ok").onclick=function(){pill.className="pill ok";pill.textContent="Approved by the owner";
+  msg.textContent="autoants still posts and sends nothing. The owner (or someone he gave page access) posts the card and the Google post, and the email goes out from his own email account."};
+document.getElementById("no").onclick=function(){pill.className="pill";pill.textContent="Passed";
+  msg.textContent="Nothing is posted or sent. The campaign is set aside, and the next freeze can bring a new one after the 7-day gap."};
+})();
+</script>
+</body>
+</html>

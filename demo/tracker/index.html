@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Tracker Ant · autoants demo</title>
+<meta name="description" content="Each kind of marketing gets its own phone number or QR code, so once a month the owner sees which ones brought calls and jobs.">
+<link rel="icon" href="/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&display=swap">
+<style>
+:root{
+  --night:#0b1712; --forest:#0f5132; --mint:#3ddcae; --stone:#ebe8e2; --deep:#0f2a1d;
+  --ground:#f3f1ec; --card:#ffffff; --ink:#0f2a1d; --muted:#4d5f55; --line:#d7d3ca; --soft:#e4f0ea;
+  --accent:#0f5132; --on-accent:#ffffff; --hi:#3ddcae; --hi-soft:#d3f5e8; --hi-ink:#0f5132;
+  --flag-bg:#0f2a1d; --flag-ink:#ffffff; --phone:#ffffff; --bubble-in:#e8ebe9; --bubble-out:#0f5132; --bubble-out-ink:#ffffff;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --muted:#a3b5aa; --line:#27392f; --soft:#17291f;
+    --accent:#3ddcae; --on-accent:#0b1712; --hi-soft:#123528; --hi-ink:#3ddcae;
+    --flag-bg:#3ddcae; --flag-ink:#0b1712; --phone:#0f1d16; --bubble-in:#22332a; --bubble-out:#3ddcae; --bubble-out-ink:#0b1712;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --muted:#a3b5aa; --line:#27392f; --soft:#17291f;
+  --accent:#3ddcae; --on-accent:#0b1712; --hi-soft:#123528; --hi-ink:#3ddcae;
+  --flag-bg:#3ddcae; --flag-ink:#0b1712; --phone:#0f1d16; --bubble-in:#22332a; --bubble-out:#3ddcae; --bubble-out-ink:#0b1712;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html,body{margin:0;background:var(--ground);color:var(--ink);font:500 16px/1.5 Onest,system-ui,-apple-system,sans-serif}
+main{max-width:640px;margin:0 auto;padding:12px 16px 56px;display:flex;flex-direction:column;gap:16px}
+a{color:var(--hi-ink)}
+.banner{margin:0;background:var(--hi-soft);color:var(--hi-ink);border-radius:12px;padding:10px 14px;font-size:14px;font-weight:700;display:flex;gap:8px;align-items:center}
+.banner::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--hi);flex:none}
+.back{font-size:15px;font-weight:700;text-decoration:none;align-self:flex-start;padding:6px 0}
+.back:hover{text-decoration:underline}
+header{display:flex;flex-direction:column;gap:6px}
+.eyebrow{margin:0;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{margin:0;font-size:clamp(28px,7vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.05;text-wrap:balance}
+.lede{margin:0;font-size:18px;color:var(--ink);max-width:56ch;text-wrap:pretty}
+h2{margin:0;font-size:19px;font-weight:800;letter-spacing:-.01em}
+h3{margin:0;font-size:16px;font-weight:800}
+p{margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+.tiny{font-size:12.5px}
+.num{font-variant-numeric:tabular-nums}
+button{font:inherit;font-weight:700;border-radius:12px;min-height:48px;padding:0 16px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;touch-action:manipulation}
+button.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+button:disabled{opacity:.45;cursor:not-allowed}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row>button{flex:1 1 140px}
+.pill{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:700;background:var(--soft);color:var(--ink);white-space:nowrap}
+.pill.flag{background:var(--flag-bg);color:var(--flag-ink)}
+.pill.ok{background:var(--hi-soft);color:var(--hi-ink)}
+.sample-tag{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px dashed var(--line);border-radius:6px;padding:2px 6px;align-self:flex-start}
+/* tap-through steps */
+.steps{display:flex;flex-direction:column;gap:12px}
+.dots{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.dots button{min-height:32px;padding:0 10px;border-radius:999px;font-size:13px}
+.dots button[aria-current="step"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.step[hidden]{display:none}
+.step{display:flex;flex-direction:column;gap:12px;animation:in .25s ease-out}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.step{animation:none}}
+.nav{display:flex;gap:10px}
+.nav button{flex:1}
+/* phone frame */
+.phone{background:var(--phone);border:1px solid var(--line);border-radius:26px;padding:14px 12px;display:flex;flex-direction:column;gap:8px;box-shadow:0 1px 0 var(--line);min-width:0}
+.phone .top{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);padding:0 4px 4px;border-bottom:1px solid var(--line)}
+.bubble{max-width:86%;padding:9px 12px;border-radius:16px;font-size:15px;line-height:1.4;white-space:pre-wrap;overflow-wrap:anywhere}
+.bubble.in{background:var(--bubble-in);color:var(--ink);align-self:flex-start;border-bottom-left-radius:5px}
+.bubble.out{background:var(--bubble-out);color:var(--bubble-out-ink);align-self:flex-end;border-bottom-right-radius:5px}
+.sys{align-self:center;font-size:12.5px;color:var(--muted);text-align:center}
+/* facts */
+.facts{display:flex;flex-direction:column;gap:10px}
+.facts p{font-size:15.5px}
+.facts b{font-weight:800}
+.never{border-left:4px solid var(--hi);padding-left:12px}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{text-align:left;padding:8px 6px;border-top:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;border-top:0}
+.scroll-x{overflow-x:auto;-webkit-overflow-scrolling:touch}
+footer{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:14px}
+
+/* page */
+.nums td:last-child{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+.chart{display:flex;flex-direction:column;gap:10px}
+.chart .r{display:grid;grid-template-columns:1fr;gap:4px}
+.chart .top{display:flex;justify-content:space-between;gap:8px;font-size:14px}
+.chart .top b{font-weight:700}
+.chart .top span{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.chart .bar{height:14px;border-radius:4px;background:var(--soft);overflow:hidden}
+.chart .bar i{display:block;height:100%;background:var(--accent);border-radius:4px 0 0 4px;transform-origin:left;animation:grow .6s ease-out both}
+@keyframes grow{from{transform:scaleX(0)}to{transform:none}}
+@media (prefers-reduced-motion:reduce){.chart .bar i{animation:none}}
+.chart .r.unk .bar i{background:repeating-linear-gradient(45deg,var(--muted) 0 3px,transparent 3px 6px)}
+.match{display:flex;flex-direction:column;gap:8px}
+.match div{border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:14.5px}
+
+</style>
+</head>
+<body>
+<main>
+  <p class="banner">Demo with sample data. Not a real customer.</p>
+  <a class="back" href="/demo/">&larr; All demos</a>
+  <header>
+    <p class="eyebrow">autoants &middot; demo room</p>
+    <h1>Tracker Ant</h1>
+    <p class="lede">Each kind of marketing gets its own phone number or QR code, so once a month the owner sees which ones brought calls and jobs.</p>
+  </header>
+  <section class="card steps" aria-label="Demo">
+    <div class="step" data-title="Numbers">
+      <h2>One number per kind of marketing</h2>
+      <p class="small muted">Each forwards to the owner's own phone, and the caller's number shows as usual. Printed pieces get their own QR code too.</p>
+      <table class="nums"><thead><tr><th>Where it's printed or listed</th><th>Tracking number</th></tr></thead><tbody>
+        <tr><td>Google profile</td><td>(504) 555-0161</td></tr>
+        <tr><td>Google Local Services ads</td><td>(504) 555-0162</td></tr>
+        <tr><td>Door hangers</td><td>(504) 555-0164</td></tr>
+        <tr><td>Truck</td><td>(504) 555-0165</td></tr>
+        <tr><td>Yard signs</td><td>(504) 555-0166</td></tr>
+        <tr><td>Facebook ads</td><td>(504) 555-0163</td></tr>
+      </tbody></table>
+      <p class="small muted">Recording is off unless the owner asks for it, and then every caller hears that the call may be recorded before it rings.</p>
+    </div>
+    <div class="step" data-title="The chart">
+      <h2>September: which marketing brought calls</h2>
+      <span class="sample-tag">Sample numbers</span>
+      <div class="chart" id="chart" role="img" aria-label="Bar chart of sample calls by channel"></div>
+      <p class="small muted">Jobs are matched to the owner's own job list: the first call, scan or form from that customer in the 60 days before the job.</p>
+    </div>
+    <div class="step" data-title="Source unknown">
+      <h2>What it can't trace, it says so</h2>
+      <div class="match">
+        <div><b>6 jobs, source unknown.</b> They're on the owner's job list, but no tracked call, scan or form came first. They stay unknown; nothing guesses a channel for them.</div>
+        <div><b>One question, by text, only to customers who said yes to texts:</b> "How did you hear about us?" Their answer fills the gap next month.</div>
+        <div><b>One page a month</b> in plain words: calls, jobs, and what each paid channel cost per job, using the costs the owner gives us.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card facts" aria-label="The rules and the price">
+    <p class="never"><b>What it never does:</b> Buys phone numbers on its own, records a call without telling the caller, guesses a source for a job it can&#x27;t trace (that job is listed as source unknown), or estimates a number.</p>
+    <p><b>Price:</b> $150/mo; included in the Office Manager. Phone numbers and minutes are on your own account.</p>
+  </section>
+  <footer>
+    <p>Sample Tree Service is made up, and so is every number on this page: calls, jobs and phone numbers.</p>
+    <p><a href="/demo/">Back to all demos</a></p>
+  </footer>
+</main>
+<script>
+// tap-through: every .steps block gets dots + Back/Next
+document.querySelectorAll(".steps").forEach(function(box){
+  var steps=[].slice.call(box.querySelectorAll(":scope > .step")), cur=0;
+  var dots=document.createElement("div"); dots.className="dots"; dots.setAttribute("aria-label","Steps");
+  steps.forEach(function(s,i){var b=document.createElement("button");b.type="button";b.textContent=(i+1)+". "+(s.dataset.title||"Step");b.onclick=function(){go(i,true)};dots.appendChild(b)});
+  var nav=document.createElement("div"); nav.className="nav";
+  var back=document.createElement("button"); back.type="button"; back.textContent="Back";
+  var next=document.createElement("button"); next.type="button"; next.className="primary";
+  nav.appendChild(back); nav.appendChild(next);
+  box.insertBefore(dots,box.firstChild); box.appendChild(nav);
+  function go(i,focus){cur=Math.max(0,Math.min(steps.length-1,i));
+    steps.forEach(function(s,j){s.hidden=j!==cur});
+    [].forEach.call(dots.children,function(d,j){d.toggleAttribute("aria-current",j===cur);if(j===cur)d.setAttribute("aria-current","step")});
+    back.disabled=cur===0; next.textContent=cur===steps.length-1?"Start over":"Next";next.setAttribute("aria-label",cur===steps.length-1?"Start over":"Next: "+(steps[cur+1].dataset.title||"next step"));
+    box.dispatchEvent(new CustomEvent("step",{detail:cur}));
+    if(focus){var h=steps[cur].querySelector("h2");if(h){h.tabIndex=-1;h.focus({preventScroll:true})}box.scrollIntoView({block:"start",behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth"})}}
+  back.onclick=function(){go(cur-1,true)};
+  next.onclick=function(){go(cur===steps.length-1?0:cur+1,true)};
+  box.go=go; go(0,false);
+});
+
+</script>
+<script>(function(){ // SAMPLE data: tle-main/products/tracker-ant sample month (made up)
+var D=[["Google profile",29,7],["Google Local Services ads",19,5],["Door hangers",9,5],["Website",6,2],["Facebook ads",6,1],["Truck",5,1],["Yard signs",3,1],["Friends and neighbors",0,1],["Source unknown",0,6]];
+var max=29,c=document.getElementById("chart");
+D.forEach(function(d){var r=document.createElement("div");r.className="r"+(d[0]==="Source unknown"?" unk":"");
+  r.innerHTML='<div class="top"><b></b><span></span></div><div class="bar"><i></i></div>';
+  r.querySelector("b").textContent=d[0];r.querySelector("span").textContent=d[1]+" calls · "+d[2]+(d[2]===1?" job":" jobs");
+  r.querySelector("i").style.width=(100*d[1]/max)+"%";c.appendChild(r)});
+var t=document.createElement("p");t.className="small";t.innerHTML="<b>Total:</b> 77 calls, 29 jobs (23 traced to a channel, 6 source unknown).";c.appendChild(t);
+})();
+</script>
+</body>
+</html>
