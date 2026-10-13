@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Reminders demo · autoants</title>
+<meta name="description" content="Demo of the Reminder Ant: a day-before appointment reminder, and a win-back only to past customers with written consent.">
+<link rel="icon" href="/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/demo/demo.css">
+</head>
+<body>
+<main class="wrap">
+  <p class="banner">Demo with sample data. Not a real customer.</p>
+  <a class="back" href="/demo/">&larr; All demos</a>
+  <header>
+    <div class="label">Never miss a job</div>
+    <h1>Reminders</h1>
+    <p class="lede">Booked customers get a reminder the day before. Past customers who said yes in writing can get a check-in when it&#x27;s been a while.</p>
+  </header>
+  <div class="grid2">
+    <div id="phone"></div>
+    <section class="card facts" aria-labelledby="facts-h">
+      <h2 id="facts-h">What it never does</h2>
+      <p>Texts anyone without a consent record.</p>
+      <h2>Price</h2>
+      <p class="price">$500 one time to go live as a single Ant. Appointment reminders also come with the Scheduler in the Office Manager plan: $750 setup + $500/mo.</p>
+      <p class="status"><strong>Where it stands:</strong> Appointment reminders are built, in practice mode (they need the texting registration, Twilio and 10DLC). The win-back consent check is built; win-back texts are drafts a person sends.</p>
+    </section>
+  </div>
+  <footer>Every name, number, time and message on this page is sample data. Set up by autoants.</footer>
+</main>
+<script src="/demo/phone.js"></script>
+<script>
+(function(){
+var P = window.DemoPhone, B = "Sample Air & Heat";
+var tm = P.day(1); var full = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][tm.getDay()];
+P.mount(document.getElementById("phone"), {
+title: B, subtitle: "Dana's phone (customer)", avatar: "SA", me: "customer",
+intro: "Part 1: Dana has a tune-up booked for tomorrow.",
+events: [
+ {t:"chip", text:"Part 1 \u00b7 The day before, 5:00 PM", say:"The day before, at 5:00 PM."},
+ {t:"text", from:"business", text:"Sample Air & Heat: Hi Dana, a reminder that your AC tune-up is tomorrow, " + full + ", arrival window 9:00 AM to 11:00 AM. Reply C to confirm or R to reschedule. Reply STOP to opt out.", say:"One reminder, with the arrival window."},
+ {t:"text", from:"customer", text:"C"},
+ {t:"chip", text:"Marked confirmed. An R would go to Sam to sort out.", say:"Her C marks the job confirmed."},
+ {t:"view", title:"Sample Air & Heat Ants", subtitle:"Sam's phone (owner)", avatar:"A", me:"owner", chip:"Part 2 \u00b7 Win-back, on Sam's phone"},
+ {t:"card", k:"Consent check \u00b7 sample list of 5", title:"2 of 5 may get a text", text:"Yes: Luis, written OK on the service form\nYes: Mia, written OK on the website\nNo: Pat, said OK out loud only\nNo: Kim, no consent record\nNo: Ray, replied STOP last year (off for good)", note:"Only written consent counts.", say:"Part 2: before any win-back, it checks consent. Only 2 of these 5 qualify."},
+ {t:"draft", title:"Check-in to Luis", text:"Hey Luis \u2014 Sam at Sample Air & Heat. It's been a while. If you want to come back, reply and I'll sort it out. If not, no hard feelings. Reply STOP to opt out.", note:"A person sends it, between 8 AM and 9 PM.", say:"A short, no-pressure draft for each one who said yes."},
+ {t:"action", buttons:[{label:"Approve and send", say:"Sam approves it."},{label:"Not now", ghost:true, say:"Sam holds it. Nothing is sent."}]},
+ {t:"view", title:B, subtitle:"Luis's phone (past customer)", avatar:"SA", me:"customer", chip:"Luis's phone"},
+ {t:"text", from:"business", text:"Hey Luis \u2014 Sam at Sample Air & Heat. It's been a while. If you want to come back, reply and I'll sort it out. If not, no hard feelings. Reply STOP to opt out.", say:"Luis gets one text. Pat, Kim and Ray get nothing."}
+]
+});
+})();
+</script>
+</body>
+</html>

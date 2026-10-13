@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Quote follow-up demo · autoants</title>
+<meta name="description" content="Demo of the quote follow-up Ant: a quiet quote gets a check-in the owner approves, and a reply stops it.">
+<link rel="icon" href="/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/demo/demo.css">
+</head>
+<body>
+<main class="wrap">
+  <p class="banner">Demo with sample data. Not a real customer.</p>
+  <a class="back" href="/demo/">&larr; All demos</a>
+  <header>
+    <div class="label">Never miss a job</div>
+    <h1>Quote follow-up</h1>
+    <p class="lede">When a quote goes quiet, it drafts a short check-in. It sends only after you say OK, and stops the moment the customer replies.</p>
+  </header>
+  <div class="grid2">
+    <div id="phone"></div>
+    <section class="card facts" aria-labelledby="facts-h">
+      <h2 id="facts-h">What it never does</h2>
+      <p>Sends without your OK.</p>
+      <h2>Price</h2>
+      <p class="price">Part of the Office Manager plan: $750 setup + $500/mo.</p>
+      <h2>The rules it keeps</h2>
+      <ul class="plain"><li>Two check-ins at most (day 2 and day 7), then nothing.</li><li>No prices, discounts or deadlines in a check-in. The price stays in the quote.</li><li>Any reply, a booking, a no or a STOP ends it for good.</li></ul>
+      <p class="status"><strong>Where it stands:</strong> Built, in practice mode (nothing sends yet). It needs the texting registration (Twilio and 10DLC) first.</p>
+    </section>
+  </div>
+  <footer>Every name, number, time and message on this page is sample data. Set up by autoants.</footer>
+</main>
+<script src="/demo/phone.js"></script>
+<script>
+(function(){
+var P = window.DemoPhone, B = "Sample Air & Heat";
+
+P.mount(document.getElementById("phone"), {
+title: "Sample Air & Heat Ants", subtitle: "Sam's phone (owner)", avatar: "A", me: "owner",
+intro: "Sam sent Dana a quote for an AC tune-up. Two days, no reply.",
+events: [
+ {t:"card", k:"Quote Q-1042", title:"Dana · AC tune-up", text:"Sent 2 days ago. No reply yet.", say:"The quote went quiet."},
+ {t:"draft", title:"Check-in to Dana (day 2)", text:"Hi Dana, it's Sam at Sample Air & Heat. Checking that the quote for your AC tune-up came through. Any questions, just reply here. Reply STOP to opt out.", note:"No prices or deadlines in a follow-up. It goes only with your OK.", say:"A short check-in is drafted."},
+ {t:"action", buttons:[{label:"OK, send it", say:"Sam says OK."},{label:"Skip this one", ghost:true, say:"Sam skips it. Nothing is sent."}]},
+ {t:"view", title:B, subtitle:"Dana's phone (customer)", avatar:"SA", me:"customer", chip:"Dana's phone"},
+ {t:"text", from:"business", text:"Hi Dana, it's Sam at Sample Air & Heat. Checking that the quote for your AC tune-up came through. Any questions, just reply here. Reply STOP to opt out."},
+ {t:"typing", from:"customer"},
+ {t:"text", from:"customer", text:"Yes got it. Can you do Thursday instead of Friday?", say:"Dana replies."},
+ {t:"view", title:"Sample Air & Heat Ants", subtitle:"Sam's phone (owner)", avatar:"A", me:"owner", chip:"Sam's phone"},
+ {t:"notify", k:"Text to the owner", tag:"Quote follow-up", title:"Sample Air & Heat Ants", text:"Sample Air & Heat Ants: Dana (\u20260134) replied about the AC tune-up quote: \"Yes got it. Can you do Thursday instead of Friday?\" (reply to an Ant). Reply to them yourself. Reply STOP to stop these.", say:"Her reply goes to Sam. He answers her himself."},
+ {t:"chip", text:"Follow-up stopped. The day-7 text will not go out.", say:"Her reply stopped the follow-up for good."}
+]
+});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Scheduler demo · autoants</title>
+<meta name="description" content="Demo of the Scheduler Ant: three open times from the owner&#x27;s calendar, and nothing is booked until the owner confirms.">
+<link rel="icon" href="/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/demo/demo.css">
+</head>
+<body>
+<main class="wrap">
+  <p class="banner">Demo with sample data. Not a real customer.</p>
+  <a class="back" href="/demo/">&larr; All demos</a>
+  <header>
+    <div class="label">Never miss a job</div>
+    <h1>Scheduler</h1>
+    <p class="lede">When a customer asks for a time, it offers three open times from your calendar. Nothing is booked until you confirm.</p>
+  </header>
+  <div class="grid2">
+    <div id="phone"></div>
+    <section class="card facts" aria-labelledby="facts-h">
+      <h2 id="facts-h">What it never does</h2>
+      <p>Sends a text or writes to your calendar on its own.</p>
+      <h2>Price</h2>
+      <p class="price">$500 one time to go live as a single Ant, or part of the Office Manager plan: $750 setup + $500/mo.</p>
+      <h2>Where the times come from</h2>
+      <p>Your own calendar, read-only: your hours, travel and job buffers, notice and days off. You add the booking to your calendar yourself.</p>
+      <p class="status"><strong>Where it stands:</strong> Built as drafts. It reads your calendar read-only (live calendar built 2026-10-12). If your calendar can&#x27;t be read, it offers no times and says to call.</p>
+    </section>
+  </div>
+  <footer>Every name, number, time and message on this page is sample data. Set up by autoants.</footer>
+</main>
+<script src="/demo/phone.js"></script>
+<script>
+(function(){
+var P = window.DemoPhone, B = "Sample Air & Heat";
+var d1 = P.day(1), d2 = P.day(2), d3 = P.day(3);
+if (d2.getDay() === d1.getDay()) d2 = P.day(3);
+while (d3 <= d2) d3.setDate(d3.getDate() + 1);
+if (d3.getDay() === 0) d3.setDate(d3.getDate() + 1);
+var t1 = P.short(d1) + " at 12:30 PM", t2 = P.short(d2) + " at 12:00 PM", t3 = P.short(d3) + " at 8:00 AM";
+var offer = "Hi Dana, it's Sam at Sample Air & Heat. For the estimate, I can come by " + t1 + ", " + t2 + " or " + t3 + ". Which works? Reply STOP to opt out.";
+P.mount(document.getElementById("phone"), {
+title: B, subtitle: "Dana's phone (customer)", avatar: "SA", me: "customer",
+intro: "Dana wants someone to look at her AC.",
+events: [
+ {t:"text", from:"customer", text:"Can someone come look at my AC this week?", say:"Dana asks for a time."},
+ {t:"view", title:"Sample Air & Heat Ants", subtitle:"Sam's phone (owner)", avatar:"A", me:"owner", chip:"Sam's phone"},
+ {t:"draft", title:"Offer to Dana", text:offer, note:"Three open times, read from your calendar. Nothing goes out until you approve.", say:"Three real openings from Sam's calendar, in a draft."},
+ {t:"action", buttons:[{label:"Approve and send", say:"Sam approves the offer."},{label:"Edit first", ghost:true, say:"Sam edits, then sends."}]},
+ {t:"view", title:B, subtitle:"Dana's phone (customer)", avatar:"SA", me:"customer", chip:"Dana's phone"},
+ {t:"text", from:"business", text:offer},
+ {t:"action", choice:true, say:"Dana picks one. Tap a time.", buttons:[{label:t1},{label:t2},{label:t3}]},
+ {t:"text", from:"customer", text:"{pick} works for me", say:"Dana picks {pick}. It is not booked yet."},
+ {t:"view", title:"Sample Air & Heat Ants", subtitle:"Sam's phone (owner)", avatar:"A", me:"owner", chip:"Sam's phone"},
+ {t:"draft", title:"Confirm Dana for {pick}?", text:"You're booked, Dana: {pick} for the estimate. I'll text before I head over. If anything changes, just reply here. - Sam", note:"Booked: Dana (estimate, (504) 555-0134) {pick}. A calendar file is ready for you to add."},
+ {t:"action", buttons:[{label:"Confirm", say:"Sam confirms. Only now is it booked."},{label:"Call her instead", ghost:true, say:"Sam would rather call. Nothing is sent."}]},
+ {t:"view", title:B, subtitle:"Dana's phone (customer)", avatar:"SA", me:"customer", chip:"Dana's phone"},
+ {t:"text", from:"business", text:"You're booked, Dana: {pick} for the estimate. I'll text before I head over. If anything changes, just reply here. - Sam", say:"Dana hears yes only after Sam said yes."}
+]
+});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Booking Box demo · autoants</title>
+<meta name="description" content="Demo of the Booking Box: an honest next-available time over the booking button a trade already has, with its full and call-for-times states.">
+<link rel="icon" href="/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/demo/demo.css">
+<style>
+/* The sample homepage keeps a fixed light "website" look in both themes, like a real site would. */
+.site{flex:1;overflow-y:auto;background:#f4f4f2;color:#141414;position:relative;display:flex;flex-direction:column}
+.site .top{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#fff;border-bottom:1px solid #e3e3e0}
+.site .logo{font-weight:800;font-size:16px;letter-spacing:-.01em;color:#123a6b}
+.site .logo small{display:block;font-size:11px;font-weight:700;color:#5b6470;letter-spacing:0}
+.site .burger{width:22px;height:14px;border-top:2px solid #333;border-bottom:2px solid #333;position:relative}
+.site .burger::after{content:"";position:absolute;left:0;right:0;top:4px;border-top:2px solid #333}
+.site .hero{background:linear-gradient(160deg,#1e4f86,#0f2f57);color:#fff;padding:26px 16px 120px;position:relative}
+.site .hero h3{margin:0;font-size:24px;line-height:1.15;font-weight:800}
+.site .hero p{margin:8px 0 0;font-size:14px;opacity:.9}
+.site .call{display:block;margin:14px 0 0;background:#e8eef6;color:#123a6b;border-radius:10px;text-align:center;font-weight:800;padding:12px;font-size:15px}
+.site .below{padding:120px 16px 20px;font-size:13px;color:#5b6470;display:flex;flex-direction:column;gap:8px}
+.site .below .ghostline{height:10px;border-radius:5px;background:#dfdfdb}
+.site .below .ghostline.s{width:60%}
+.site .far{margin-top:6px;font-size:13px;color:#5b6470}
+.box{position:absolute;left:12px;right:12px;top:200px;background:#fff;color:#111;border-radius:16px;padding:12px 14px;box-shadow:0 8px 28px rgba(0,0,0,.28),0 0 0 1px rgba(0,0,0,.06);display:flex;flex-direction:column;gap:8px}
+.box .pill{position:absolute;right:10px;top:-10px;background:#0b1712;color:#fff;font-size:11px;font-weight:800;letter-spacing:.12em;border-radius:999px;padding:3px 9px}
+.box .line{font-size:21px;font-weight:800;letter-spacing:-.02em;line-height:1.15;color:#111}
+.box .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#0f7a4a;margin-right:6px;vertical-align:2px}
+.box .dot.off{background:#7a7f86}
+.box .go{display:block;width:100%;font:inherit;font-weight:800;font-size:17px;border:0;border-radius:12px;min-height:50px;background:#1d5fae;color:#fff;cursor:pointer}
+.box .go.alt{background:#e8eef6;color:#123a6b}
+.sheet{position:absolute;left:0;right:0;bottom:0;background:#fff;color:#111;border-radius:18px 18px 0 0;box-shadow:0 -10px 30px rgba(0,0,0,.25);padding:14px 14px 18px;display:flex;flex-direction:column;gap:8px}
+.sheet h4{margin:0;font-size:16px;font-weight:800}
+.sheet p{margin:0;font-size:13px;color:#4d5560}
+.sheet .slot{font:inherit;font-weight:800;font-size:16px;border:1.5px solid #1d5fae;color:#1d5fae;background:#fff;border-radius:12px;min-height:48px;cursor:pointer}
+.sheet .slot[aria-pressed="true"]{background:#1d5fae;color:#fff}
+.sheet .done{background:#e6f4ec;color:#0b3d26;border-radius:10px;padding:10px;font-size:14px;font-weight:700}
+.sheet .x{position:absolute;right:10px;top:8px;font:inherit;font-size:20px;border:0;background:none;color:#555;cursor:pointer;min-width:40px;min-height:40px}
+.pickers{display:flex;flex-direction:column;gap:10px;width:100%;max-width:360px}
+.pickers .label{margin-bottom:-4px}
+.states{width:100%;margin:0}
+.states dt{font-weight:800;margin-top:8px}
+.states dd{margin:2px 0 0;font-size:15px}
+[hidden]{display:none !important}
+@media (prefers-reduced-motion:no-preference){ .sheet{animation:up .22s ease-out} @keyframes up{from{transform:translateY(30px);opacity:0}to{transform:none;opacity:1}} }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="banner">Demo with sample data. Not a real customer.</p>
+  <a class="back" href="/demo/">&larr; All demos</a>
+  <header>
+    <div class="label">Never miss a job</div>
+    <h1>Booking Box</h1>
+    <p class="lede">On your phone homepage, an honest &ldquo;next available&rdquo; time sits right on top of the booking button you already have.</p>
+  </header>
+
+  <div class="grid2">
+    <div class="stage">
+      <div class="pickers">
+        <div class="label" id="v-l">Show</div>
+        <div class="seg" role="group" aria-labelledby="v-l">
+          <button type="button" data-view="before" aria-pressed="false">Before</button>
+          <button type="button" data-view="after" aria-pressed="true">With the box</button>
+        </div>
+        <div class="label" id="s-l">Your calendar says</div>
+        <div class="seg" role="group" aria-labelledby="s-l" id="stateSeg">
+          <button type="button" data-state="open" aria-pressed="true">Open time</button>
+          <button type="button" data-state="full" aria-pressed="false">Booked up</button>
+          <button type="button" data-state="call" aria-pressed="false">Can't read it</button>
+        </div>
+      </div>
+      <div class="phone" role="group" aria-label="Sample homepage on a phone">
+        <div class="screen">
+          <div class="bar"><span>9:41</span><span class="dots" aria-hidden="true">&#9679;&#9679;&#9679;</span></div>
+          <div class="site" id="site">
+            <div class="top"><div class="logo">Sample Air &amp; Heat<small>Heating and cooling</small></div><div class="burger" aria-hidden="true"></div></div>
+            <div class="hero">
+              <h3>AC out? We fix heating and cooling.</h3>
+              <p>Family-run. Repairs, tune-ups and installs.</p>
+              <span class="call">Call (504) 555-0100</span>
+            </div>
+            <div class="below">
+              <div class="ghostline"></div><div class="ghostline s"></div><div class="ghostline"></div>
+              <p class="far" id="far">Book online: the link is far down this page.</p>
+            </div>
+            <div class="box" id="box">
+              <span class="pill">SAMPLE</span>
+              <div class="line" id="boxLine"></div>
+              <button type="button" class="go" id="boxBtn"></button>
+            </div>
+            <div class="sheet" id="sheet" hidden role="dialog" aria-labelledby="sheet-h">
+              <button type="button" class="x" id="sheetX" aria-label="Close">&times;</button>
+              <h4 id="sheet-h">Pick a time</h4>
+              <p>This is the online booking you already pay for (ServiceTitan, Housecall Pro or Jobber). The box only points to it.</p>
+              <div id="slots" style="display:flex;flex-direction:column;gap:8px"></div>
+              <div class="done" id="done" hidden></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="caption" id="cap" aria-live="polite"></p>
+    </div>
+
+    <section class="card facts" aria-labelledby="facts-h">
+      <h2 id="facts-h">The three things the box can say</h2>
+      <dl class="states">
+        <dt>An open time</dt>
+        <dd>&ldquo;Next available: &hellip;&rdquo;, the earliest time that fits your hours, travel and job buffers, read from your own calendar.</dd>
+        <dt>Booked up</dt>
+        <dd>&ldquo;Booked up for the next 14 days. Call us.&rdquo; when nothing is open (14 days is a setting).</dd>
+        <dt>Can't read your calendar</dt>
+        <dd>&ldquo;Call for times&rdquo; when the calendar link fails, goes stale or has something it can't read. It never guesses.</dd>
+      </dl>
+      <h2>What it never does</h2>
+      <p>Shows a time your crew won't honor, or guesses when it can't read your calendar. It only reads your calendar; it never writes to it.</p>
+      <h2>Price</h2>
+      <p class="price">$500 one time. A $99/mo option (switch it to full or open by text, plus a monthly count of bookings from the box) is proposed, not set.</p>
+      <p class="status"><strong>Where it stands:</strong> the calendar reader is built (read-only, 2026-10-12). The box itself gets built for the first business that says yes.</p>
+    </section>
+  </div>
+  <footer>Every name, number and time on this page is sample data. Set up by autoants.</footer>
+</main>
+<script src="/demo/phone.js"></script>
+<script>
+(function(){
+  var P = window.DemoPhone;
+  var tue = P.nextDow(2, 1);
+  function boxText(d){ // mirrors scripts/live_calendar.py box_text()
+    var t = new Date(); t.setHours(12,0,0,0);
+    var tm = new Date(t); tm.setDate(t.getDate() + 1);
+    if (d.toDateString() === tm.toDateString()) return "Tomorrow 2:00 PM";
+    return P.DOW[d.getDay()] + " " + (d.getMonth()+1) + "/" + d.getDate() + ", 2:00 PM";
+  }
+  var wed = new Date(tue); wed.setDate(tue.getDate() + 1);
+  var thu = new Date(tue); thu.setDate(tue.getDate() + 2);
+  var SLOTS = [P.short(tue) + " at 2:00 PM", P.short(wed) + " at 9:00 AM", P.short(thu) + " at 1:30 PM"];
+  var STATES = {
+    open: {line: "Next available: " + boxText(tue), btn: "Book Online →", alt: false, dot: true,
+           cap: "The real next opening from the owner's calendar. Tap Book Online."},
+    full: {line: "Booked up for the next 14 days. Call us.", btn: "Call (504) 555-0100", alt: true, dot: false,
+           cap: "Nothing open in the next 14 days, so the box says so."},
+    call: {line: "Call for times", btn: "Call (504) 555-0100", alt: true, dot: false,
+           cap: "The calendar couldn't be read, so the box shows no time at all."}
+  };
+  var view = "after", state = "open";
+  var $ = function(id){ return document.getElementById(id); };
+  function render(){
+    document.querySelectorAll("[data-view]").forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.view === view)); });
+    document.querySelectorAll("[data-state]").forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.state === state)); b.disabled = view !== "after"; });
+    $("box").hidden = view !== "after";
+    $("far").hidden = view === "after";
+    $("sheet").hidden = true;
+    var s = STATES[state];
+    $("boxLine").innerHTML = "";
+    var dot = document.createElement("span"); dot.className = "dot" + (s.dot ? "" : " off"); dot.setAttribute("aria-hidden","true");
+    $("boxLine").appendChild(dot);
+    $("boxLine").appendChild(document.createTextNode(s.line));
+    $("boxBtn").textContent = s.btn;
+    $("boxBtn").className = "go" + (s.alt ? " alt" : "");
+    $("cap").textContent = view === "before"
+      ? "Before: no time on the first screen, and the booking link is far down the page."
+      : s.cap;
+  }
+  function openSheet(){
+    var wrap = $("slots"); wrap.innerHTML = ""; $("done").hidden = true;
+    SLOTS.forEach(function(t){
+      var b = document.createElement("button"); b.type = "button"; b.className = "slot"; b.textContent = t; b.setAttribute("aria-pressed","false");
+      b.onclick = function(){
+        wrap.querySelectorAll(".slot").forEach(function(x){ x.setAttribute("aria-pressed", String(x === b)); });
+        $("done").hidden = false;
+        $("done").textContent = "You picked " + t + ". From here your booking system takes over, the same as today.";
+        $("cap").textContent = "The customer picks a time in the scheduler you already have.";
+      };
+      wrap.appendChild(b);
+    });
+    $("sheet").hidden = false;
+    $("cap").textContent = "Three open times, from the same calendar.";
+    var first = wrap.querySelector(".slot"); if (first) first.focus();
+  }
+  document.querySelectorAll("[data-view]").forEach(function(b){ b.onclick = function(){ view = b.dataset.view; render(); }; });
+  document.querySelectorAll("[data-state]").forEach(function(b){ b.onclick = function(){ state = b.dataset.state; render(); }; });
+  $("boxBtn").onclick = function(){
+    if (state === "open") openSheet();
+    else $("cap").textContent = "This would call the shop's own number. (Demo: no call is placed.)";
+  };
+  $("sheetX").onclick = function(){ $("sheet").hidden = true; $("boxBtn").focus(); render(); };
+  render();
+  if (/[?&]all\b/.test(location.search)) openSheet();
+})();
+</script>
+</body>
+</html>

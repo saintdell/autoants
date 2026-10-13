@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Morning text demo · autoants</title>
+<meta name="description" content="Demo of the morning owner text: one text at 7 AM about yesterday, counts only, with sample numbers.">
+<link rel="icon" href="/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/demo/demo.css">
+</head>
+<body>
+<main class="wrap">
+  <p class="banner">Demo with sample data. Not a real customer.</p>
+  <a class="back" href="/demo/">&larr; All demos</a>
+  <header>
+    <div class="label">Office tools</div>
+    <h1>Morning text</h1>
+    <p class="lede">Every morning at 7, you get one text about yesterday: missed calls caught, new leads, quotes waiting and reviews asked for.</p>
+  </header>
+  <div class="grid2">
+    <div id="phone"></div>
+    <section class="card facts" aria-labelledby="facts-h">
+      <h2 id="facts-h">What it never does</h2>
+      <p>Names a customer, or says 0 for something it doesn&#x27;t track.</p>
+      <h2>Price</h2>
+      <p class="price">No separate price is set for it yet.</p>
+      <h2>What it counts</h2>
+      <p>Only what the Ants log: missed calls and whether they got a text, new leads, quotes still waiting, review asks. Anything it can't see says &ldquo;not tracked&rdquo;, so a quiet day never looks like a blind spot.</p>
+      <p class="status"><strong>Where it stands:</strong> Built, in practice mode. It needs the texting number and your OK to get texts from it.</p>
+    </section>
+  </div>
+  <footer>Every name, number, time and message on this page is sample data. Set up by autoants.</footer>
+</main>
+<script src="/demo/phone.js"></script>
+<script>
+(function(){
+var P = window.DemoPhone, B = "Sample Air & Heat";
+var y = new Date(); y.setDate(y.getDate() - 1); var yd = P.long(y);
+P.mount(document.getElementById("phone"), {
+title: "Sample Air & Heat Ants", subtitle: "Sam's phone (owner)", avatar: "A", me: "owner",
+intro: "7:00 AM on Sam's phone.",
+events: [
+ {t:"chip", text:"7:00 AM", say:"7:00 AM. One text, before the first job."},
+ {t:"notify", k:"Sample numbers", tag:"Morning text", title:"Sample Air & Heat Ants", text:"Sample Air & Heat morning report for " + yd + ". Missed calls caught: 2 of 2. New leads: 3. Quotes waiting: 2. Reviews requested: 1. Reply STOP to stop these.", say:"Yesterday in one text. These numbers are samples."},
+ {t:"chip", text:"Before quotes are hooked up, the same text says:", say:"If it can't see something, it says so."},
+ {t:"notify", k:"Sample numbers", tag:"Morning text", title:"Sample Air & Heat Ants", text:"Sample Air & Heat morning report for " + yd + ". Missed calls caught: 2 of 2. New leads: 3. Quotes waiting: not tracked. Reviews requested: 1. Reply STOP to stop these.", say:"\u201cNot tracked\u201d, never a made-up 0."},
+ {t:"chip", text:"Counts only. No customer names, numbers or words.", say:"Counts only. No customer names."}
+]
+});
+})();
+</script>
+</body>
+</html>

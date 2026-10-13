@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Website chat demo · autoants</title>
+<meta name="description" content="Demo of a website chat that says it&#x27;s an AI, answers from the business&#x27;s own facts, and asks before texting.">
+<link rel="icon" href="/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/demo/demo.css">
+</head>
+<body>
+<main class="wrap">
+  <p class="banner">Demo with sample data. Not a real customer.</p>
+  <a class="back" href="/demo/">&larr; All demos</a>
+  <header>
+    <div class="label">Get found</div>
+    <h1>Website chat</h1>
+    <p class="lede">A chat on your website answers questions from your own facts, says it&#x27;s an AI, and passes leads to you.</p>
+  </header>
+  <div class="grid2">
+    <div id="phone"></div>
+    <section class="card facts" aria-labelledby="facts-h">
+      <h2 id="facts-h">What it never does</h2>
+      <p>Makes up prices, times, results or promises; books a time or takes payment itself; asks for card numbers or other private details.</p>
+      <h2>Price</h2>
+      <p class="price">Included in the Search plan ($500/mo + $250 setup) and the Booked Jobs Kit.</p>
+      <h2>What it answers from (sample facts)</h2>
+      <ul class="plain"><li>Same-day visits when the schedule has room; the office confirms the time.</li><li>Heating and cooling repair, tune-ups and installs.</li><li>Hours: Mon&ndash;Sat, 7 AM to 6 PM.</li></ul>
+      <p class="status"><strong>Where it stands:</strong> Built for autoants&#x27; own site; it switches on there only after it passes its go-live check. For a client, it answers only from that business&#x27;s own pages.</p>
+    </section>
+  </div>
+  <footer>Every name, number, time and message on this page is sample data. Set up by autoants.</footer>
+</main>
+<script src="/demo/phone.js"></script>
+<script>
+(function(){
+var P = window.DemoPhone, B = "Sample Air & Heat";
+
+P.mount(document.getElementById("phone"), {
+skin: "web", web: {name: B, line: "sampleairheat.example \u00b7 sample website"},
+title: B, subtitle: "AI assistant", avatar: "AI", me: "customer", label: "Sample website chat on a phone",
+intro: "Dana is on Sample Air & Heat's website and opens the chat.",
+events: [
+ {t:"chip", text:"Messages are answered by an AI and sent to Sample Air & Heat. Don't share sensitive info.", say:"The chat says up front that it's an AI."},
+ {t:"text", from:"ai", label:"AI assistant", text:"Hi, I'm Sample Air & Heat's AI assistant. Ask me about our services, hours, or how to get a visit set up."},
+ {t:"text", from:"customer", text:"do you do same-day?", say:"Dana asks about same-day service."},
+ {t:"typing", from:"ai"},
+ {t:"text", from:"ai", label:"AI assistant", text:"Sometimes, yes. When the schedule has room, a tech can come the same day, and the office confirms the time. I can't book it myself, but I can have Sam text you. What's your name and number?", say:"It answers only from the business's own facts, and doesn't promise a time."},
+ {t:"text", from:"customer", text:"Dana, 504-555-0134"},
+ {t:"text", from:"ai", label:"AI assistant", text:"OK to text you about this? Reply STOP anytime.", say:"Before passing on a phone number, it asks if texting is OK."},
+ {t:"text", from:"customer", text:"yes"},
+ {t:"text", from:"ai", label:"AI assistant", text:"Thanks, Dana. I've passed this to Sam, and he'll text you about a time."},
+ {t:"view", title:"Sample Air & Heat Ants", subtitle:"Sam's phone (owner)", avatar:"A", me:"owner", chip:"Sam's phone"},
+ {t:"notify", k:"New lead", tag:"Website chat", title:"Dana, (504) 555-0134", text:"Said yes to texts.\nAsked: same-day service?", say:"The lead comes to Sam. He follows up himself."}
+]
+});
+})();
+</script>
+</body>
+</html>

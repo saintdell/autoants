@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Text-Back demo · autoants</title>
+<meta name="description" content="Demo of the Text-Back Ant: a missed call gets one text naming the business, and the reply goes to the owner.">
+<link rel="icon" href="/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/demo/demo.css">
+</head>
+<body>
+<main class="wrap">
+  <p class="banner">Demo with sample data. Not a real customer.</p>
+  <a class="back" href="/demo/">&larr; All demos</a>
+  <header>
+    <div class="label">Never miss a job</div>
+    <h1>Text-Back</h1>
+    <p class="lede">When a call rings out, the caller gets one text from your business within seconds, and their reply comes to your phone.</p>
+  </header>
+  <div class="grid2">
+    <div id="phone"></div>
+    <section class="card facts" aria-labelledby="facts-h">
+      <h2 id="facts-h">What it never does</h2>
+      <p>Texts a call you answered, or texts the same caller again inside 12 hours.</p>
+      <h2>Price</h2>
+      <p class="price">$500 one time to go live as a single Ant, or part of the Office Manager plan: $750 setup + $500/mo.</p>
+      <p class="status"><strong>Where it stands:</strong> Built, not live for any business yet. It needs the texting registration (Twilio and 10DLC) first.</p>
+    </section>
+  </div>
+  <footer>Every name, number, time and message on this page is sample data. Set up by autoants.</footer>
+</main>
+<script src="/demo/phone.js"></script>
+<script>
+(function(){
+var P = window.DemoPhone, B = "Sample Air & Heat";
+
+P.mount(document.getElementById("phone"), {
+title: B, subtitle: "Dana's phone (customer)", avatar: "SA", me: "customer",
+intro: "Dana's AC quit. She calls Sample Air & Heat.",
+events: [
+ {t:"call", k:"Calling", title:B, text:"(504) 555-0100 · ringing", say:"Dana calls. The crew is on a job and nobody can pick up."},
+ {t:"missed", k:"Call ended", title:"No answer", text:"It rang out."},
+ {t:"typing", from:"business", say:"Within seconds, the Text-Back Ant sends one text."},
+ {t:"text", from:"business", text:"Hey there \u2014 Sam at Sample Air & Heat, sorry we missed you. We're on a call right now. Is it not cooling, not running, or leaking? Tell me that and your cross streets and I'll text you a window today. Reply STOP to opt out.", say:"One text. It names the business and carries STOP."},
+ {t:"typing", from:"customer"},
+ {t:"text", from:"customer", text:"Not cooling at all. Upstairs unit. Magazine and Napoleon.", say:"Dana answers."},
+ {t:"view", title:"Sample Air & Heat Ants", subtitle:"Sam's phone (owner)", avatar:"A", me:"owner", chip:"Now on Sam's phone"},
+ {t:"notify", k:"Text to the owner", tag:"Text-Back", title:"Sample Air & Heat Ants", text:"Sample Air & Heat Ants: A caller ((504) 555-0134) replied about the missed-call text: \"Not cooling at all. Upstairs unit. Magazine and Napoleon.\" (replied to Text-Back). Reply to them yourself. Reply STOP to stop these.", say:"Her reply comes to Sam, tagged Text-Back. Sam answers her himself."},
+ {t:"chip", text:"If Dana calls again within 12 hours: no second text.", say:"It never texts a call you answered, and never texts the same caller twice in 12 hours."}
+]
+});
+})();
+</script>
+</body>
+</html>

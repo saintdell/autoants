@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Responder demo · autoants</title>
+<meta name="description" content="Demo of the Responder Ant: a web form comes in and a reply draft is ready for the owner within seconds.">
+<link rel="icon" href="/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/demo/demo.css">
+</head>
+<body>
+<main class="wrap">
+  <p class="banner">Demo with sample data. Not a real customer.</p>
+  <a class="back" href="/demo/">&larr; All demos</a>
+  <header>
+    <div class="label">Never miss a job</div>
+    <h1>Responder</h1>
+    <p class="lede">When someone fills out your website form, a reply is drafted within seconds, and you send it with one tap.</p>
+  </header>
+  <div class="grid2">
+    <div id="phone"></div>
+    <section class="card facts" aria-labelledby="facts-h">
+      <h2 id="facts-h">What it never does</h2>
+      <p>Writes to anyone who didn&#x27;t contact you first.</p>
+      <h2>Price</h2>
+      <p class="price">$500 one time to go live as a single Ant, or part of the Office Manager plan: $750 setup + $500/mo.</p>
+      <p class="status"><strong>Where it stands:</strong> Built as drafts: you approve every reply before it goes. It runs today on autoants&#x27; own form. Sending without your tap is not built.</p>
+    </section>
+  </div>
+  <footer>Every name, number, time and message on this page is sample data. Set up by autoants.</footer>
+</main>
+<script src="/demo/phone.js"></script>
+<script>
+(function(){
+var P = window.DemoPhone, B = "Sample Air & Heat";
+
+P.mount(document.getElementById("phone"), {
+title: "sampleairheat.example", subtitle: "Dana on your website", avatar: "W", me: "customer",
+intro: "8:12 PM. Dana finds Sample Air & Heat's website.",
+events: [
+ {t:"card", k:"Quote request form", title:"Request a quote", text:"Name: Dana\nPhone: (504) 555-0134\nWhat's going on: AC out upstairs, house is 1998", note:"Submitted 8:12 PM", say:"Dana sends the quote form after hours."},
+ {t:"view", title:"Sample Air & Heat Ants", subtitle:"Sam's phone (owner)", avatar:"A", me:"owner", chip:"Seconds later, on Sam's phone"},
+ {t:"notify", k:"New lead", tag:"Responder", title:"Form: Dana, (504) 555-0134", text:"AC out upstairs, house is 1998"},
+ {t:"draft", title:"Reply to Dana", text:"Hey Dana \u2014 Sam at Sample Air & Heat. Got your request. You said: AC out upstairs, house is 1998. Give me a good time to call and I'll confirm a price before we come out. Reply STOP to opt out.", note:"Built from your approved wording and what Dana wrote. Nothing goes out until you tap.", say:"A reply is ready in seconds, in Sam's own approved wording."},
+ {t:"action", buttons:[{label:"Approve and send", say:"Sam taps Approve. The reply goes to Dana."},{label:"Edit first", ghost:true, say:"Sam edits a word, then sends it."}]},
+ {t:"view", title:B, subtitle:"Dana's phone (customer)", avatar:"SA", me:"customer", chip:"Dana's phone, 8:13 PM"},
+ {t:"text", from:"business", text:"Hey Dana \u2014 Sam at Sample Air & Heat. Got your request. You said: AC out upstairs, house is 1998. Give me a good time to call and I'll confirm a price before we come out. Reply STOP to opt out.", say:"Dana hears back the same evening, from the business by name."},
+ {t:"chip", text:"Today: it drafts, you send.", say:"It only answers people who contacted you first."}
+]
+});
+})();
+</script>
+</body>
+</html>
