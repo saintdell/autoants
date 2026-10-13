@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Made for Paternostro&#x27;s Air Conditioning &amp; Heating | autoants</title>
+<meta name="description" content="A page autoants made for Paternostro&#x27;s Air Conditioning &amp; Heating.">
+<link rel="icon" href="/brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--night:#0b1712;--forest:#0f5132;--mint:#3ddcae;--stone:#ebe8e2;--ink-brand:#0f2a1d;
+  --bg:#f5f3ee;--card:#fff;--ink:#0f2a1d;--muted:#4f5e55;--line:#d9d5cc;--soft:#e4efe9;
+  --accent:#0f5132;--on-accent:#fff;--accent-ink:#0f5132;--hero:#0b1712;--hero-ink:#f5f3ee;--hero-muted:#a9c2b4;
+  --field:#fff;--result:#e4f5ee}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0b1712;--card:#13211a;--ink:#e6ece7;--muted:#a3b5a9;--line:#26372d;--soft:#17291f;
+  --accent:#3ddcae;--on-accent:#0b1712;--accent-ink:#3ddcae;--hero:#0f2a1d;--hero-ink:#eef3ef;--hero-muted:#a3b5a9;
+  --field:#0f1c16;--result:#123326}}
+:root[data-theme="dark"]{--bg:#0b1712;--card:#13211a;--ink:#e6ece7;--muted:#a3b5a9;--line:#26372d;--soft:#17291f;
+  --accent:#3ddcae;--on-accent:#0b1712;--accent-ink:#3ddcae;--hero:#0f2a1d;--hero-ink:#eef3ef;--hero-muted:#a3b5a9;
+  --field:#0f1c16;--result:#123326}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.5 Onest,system-ui,-apple-system,sans-serif;overflow-wrap:break-word}
+a{color:var(--accent-ink)}
+:focus-visible{outline:3px solid var(--mint);outline-offset:2px}
+.wrap{max-width:600px;margin:0 auto;padding:0 16px}
+.hero{background:var(--hero);color:var(--hero-ink);padding:20px 0 28px}
+.logo{display:block;height:24px;width:auto}
+.label{font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mint);margin:22px 0 6px}
+h1{font-size:clamp(30px,8.5vw,42px);line-height:1.05;letter-spacing:-.03em;margin:0;font-weight:800;text-wrap:balance}
+.hero p{color:var(--hero-muted);margin:12px 0 0;font-size:15px}
+section{padding:28px 0 4px}
+h2{font-size:24px;line-height:1.15;letter-spacing:-.02em;margin:0 0 10px;font-weight:800;text-wrap:balance}
+.lede{margin:0 0 14px;color:var(--muted)}
+.fact{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--mint);border-radius:12px;padding:12px 14px;margin:0 0 16px}
+.fact b{display:block;font-size:13px;color:var(--muted);font-weight:600;margin-bottom:2px}
+.toggle{display:grid;grid-template-columns:1fr 1fr;background:var(--soft);border-radius:999px;padding:4px;margin:0 auto 14px;max-width:340px}
+input.view{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px}
+.toggle label{text-align:center;padding:9px 6px;border-radius:999px;font-weight:700;font-size:15px;cursor:pointer;color:var(--muted)}
+#v-today:checked~.toggle label[for=v-today],#v-box:checked~.toggle label[for=v-box]{background:var(--accent);color:var(--on-accent)}
+.phone{max-width:300px;margin:0 auto;border:8px solid var(--night);border-radius:28px;overflow:hidden;background:#fff;box-shadow:0 10px 30px rgba(11,23,18,.18)}
+.phone img{display:block;width:100%;height:auto}
+.phone .shot-box{display:none}
+#v-box:checked~.phone .shot-today{display:none}
+#v-box:checked~.phone .shot-box{display:block}
+.cap{font-size:14px;color:var(--muted);margin:12px 0 0;text-align:center}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:0 0 12px}
+.card h3{margin:0 0 6px;font-size:19px;font-weight:800;letter-spacing:-.01em}
+.card p{margin:0 0 8px}
+.never{font-size:15px;color:var(--muted)}
+.price{font-weight:700}
+.go{display:inline-block;font-weight:700;text-decoration:none;padding:6px 0}
+.go:hover{text-decoration:underline}
+.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.calc label{display:block;font-weight:600;font-size:15px;margin:0 0 4px}
+.calc .row{margin:0 0 14px}
+.calc input{width:100%;font:inherit;font-size:18px;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--field);color:var(--ink)}
+.calc input:focus{border-color:var(--accent);outline:none}
+.out{background:var(--result);border-radius:12px;padding:14px;margin-top:4px}
+.out .big{font-size:28px;font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.out p{margin:4px 0 0;font-size:15px}
+.note{font-size:14px;color:var(--muted);margin:10px 0 0}
+.cta{display:block;text-align:center;background:var(--accent);color:var(--on-accent);font-weight:800;font-size:19px;padding:16px;border-radius:14px;text-decoration:none;margin:4px 0 12px}
+.cta:hover{filter:brightness(1.06)}
+.mail{text-align:center;margin:0}
+footer{margin-top:36px;padding:22px 0 40px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+footer p{margin:0 0 8px}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+  <img class="logo" src="/brand/autoants-logo-reverse.svg" alt="autoants" width="114" height="24">
+  <p class="label">Made for</p>
+  <h1>Paternostro&#x27;s Air Conditioning &amp; Heating</h1>
+  <p>Facts checked Oct 12, 2026 · page made Oct 13, 2026 by Lane Davis II, founder, autoants</p>
+</div></header>
+<main class="wrap">
+
+<section id="homepage">
+  <h2>Your phone homepage today vs. with the box</h2>
+  <div class="fact"><b>Checked Oct 12, 2026, on an iPhone-size screen (bracrepair.com)</b>The button on this screen says &#x27;Stay Cool&#x27;; &#x27;Schedule An Appointment&#x27; sits just below it and opens the contact page.</div>
+  <input class="view" type="radio" name="v" id="v-today" checked><input class="view" type="radio" name="v" id="v-box">
+  <div class="toggle" role="radiogroup" aria-label="Which screen">
+    <label for="v-today">Today</label><label for="v-box">With the box</label>
+  </div>
+  <div class="phone">
+    <img class="shot-today" src="before.jpg" width="390" height="844" alt="Paternostro&#x27;s Air Conditioning &amp; Heating homepage on a phone, Oct 12, 2026">
+    <img class="shot-box" src="after.jpg" width="390" height="844" alt="The same screen with a sample Next available box" loading="lazy">
+  </div>
+  <p class="cap">The box is a sample. The time reads [FILL] until you set the rule that picks it.</p>
+</section>
+<section id="assistants">
+  <h2>Three assistants that fit an HVAC company</h2>
+  <p class="lede">Each one does one job. You approve what it says before it says anything.</p>
+  <div class="card"><h3>Booking Box</h3><p>A small box on your phone homepage: “Next available” with your next open time, over a Book button into the scheduler you already use. You set the rule that picks the time.</p><p class="never">Never shows a time your crew won’t honor. Until you set the rule, it says “Same-day when available”, and you can switch it to tomorrow by texting FULL.</p><p class="price">$500 one time</p><a class="go" href="/demo/booking-box/">See it work &rarr;</a></div>
+<div class="card"><h3>Text-Back</h3><p>When you can’t pick up, the caller gets one text from your business name within seconds, and their reply comes to you.</p><p class="never">Never texts a call you answered, and never texts the same caller twice inside 12 hours.</p><p class="price">$500 one time to go live</p><a class="go" href="/demo/text-back/">See it work &rarr;</a></div>
+<div class="card"><h3>Receptionist</h3><p>Answers the calls nobody can get to, says it’s an AI in its first sentence, takes down the job and texts it to you. Emergencies go straight to your on-call number.</p><p class="never">Never quotes a price, promises an arrival time, diagnoses, or takes a card.</p><p class="price">$500 to go live, then $900 a month with 581 minutes included ($0.43 a minute after)</p><a class="go" href="/demo/receptionist/">See it work &rarr;</a></div>
+</section>
+<section id="calculator">
+  <h2>What missed calls cost you</h2>
+  <p class="lede">Put in your own numbers. Nothing here is filled in for you, and nothing is an industry figure.</p>
+  <form class="calc" onsubmit="return false" autocomplete="off">
+    <div class="row"><label for="c-calls">Calls a week</label><input id="c-calls" inputmode="decimal" placeholder="your number"></div>
+    <div class="row"><label for="c-miss">Share of those you miss (%)</label><input id="c-miss" inputmode="decimal" placeholder="your %"></div>
+    <div class="row"><label for="c-book">Share of missed calls that would have booked (%)</label><input id="c-book" inputmode="decimal" placeholder="your %"></div>
+    <div class="row"><label for="c-job">Your average job ($)</label><input id="c-job" inputmode="decimal" placeholder="your $"></div>
+    <div class="out" id="c-out" hidden aria-live="polite"><div class="big" id="c-big"></div><p id="c-detail"></p></div>
+    <p class="note">This is your estimate from your numbers, not a promise.</p>
+  </form>
+</section>
+<section id="book-lane">
+  <h2>Want to talk it through?</h2>
+  <a class="cta" id="book" href="[CAL_LINK]" data-subject="15 minutes for Paternostro&#x27;s Air Conditioning &amp; Heating">Book 15 minutes with Lane</a>
+  <p class="mail">Or write to <a href="mailto:hello@autoants.com">hello@autoants.com</a></p>
+</section>
+<footer>
+  <p><b>autoants · New Orleans</b></p>
+  <p>Privacy: we built this page from public information about your business: your homepage as it looked on Oct 12, 2026 and your public business listings. It isn’t listed anywhere on autoants.com, and search engines are asked not to index it. Ask and we delete it: <a href="mailto:hello@autoants.com">hello@autoants.com</a>.</p>
+</footer>
+</main>
+<script>
+(function(){
+  var ids=['c-calls','c-miss','c-book','c-job'],out=document.getElementById('c-out');
+  function num(id){var v=document.getElementById(id).value.replace(/[$,%\s]/g,'');return v===''?NaN:Number(v);}
+  function money(n){return '$'+Math.round(n).toLocaleString('en-US');}
+  function run(){
+    var c=num('c-calls'),m=num('c-miss'),b=num('c-book'),j=num('c-job');
+    if([c,m,b,j].some(function(x){return isNaN(x)||x<0;})||m>100||b>100){out.hidden=true;return;}
+    var missedWeek=c*m/100,jobsMonth=missedWeek*b/100*52/12,perMonth=jobsMonth*j;
+    document.getElementById('c-big').textContent=money(perMonth)+' a month';
+    document.getElementById('c-detail').textContent='About '+missedWeek.toFixed(1)+' missed calls a week, and about '+
+      jobsMonth.toFixed(1)+' of them a month that would have booked, at '+money(j)+' each.';
+    out.hidden=false;
+  }
+  ids.forEach(function(id){document.getElementById(id).addEventListener('input',run);});
+  var cta=document.getElementById('book');
+  if(cta&&cta.getAttribute('href')==='[CAL_LINK]'){cta.setAttribute('href','mailto:hello@autoants.com?subject='+encodeURIComponent(cta.dataset.subject));}
+})();
+</script>
+</body>
+</html>
