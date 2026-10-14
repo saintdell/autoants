@@ -1,0 +1,96 @@
+/* autoants walk-in kit (2026-10-14): tabs, the personalized Text-Back player and the Google card on
+   the personal pages under /for/. Reads the page's own tokens (--card, --line, --muted, --accent...).
+   The player rules are /demo/demo.css scoped under .kd so they never touch the rest of the page. */
+.kd{
+  --bubble-out:#0f5132;--bubble-out-ink:#fff;--bubble-in:#ebe8e2;--bubble-in-ink:#0f2a1d;
+  --screen:#fff;--bezel:#0b1712;--chip:#eef2ef;--draft:#f1f7f3;--draft-line:#7cc7a8;
+  --shadow:0 10px 30px rgba(11,23,18,.16)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .kd{
+  --bubble-out:#3ddcae;--bubble-out-ink:#0b1712;--bubble-in:#22352b;--bubble-in-ink:#e6ece7;
+  --screen:#0f1c16;--bezel:#000;--chip:#1a2c23;--draft:#132a20;--draft-line:#2f8c69;--shadow:0 10px 30px rgba(0,0,0,.5)}}
+:root[data-theme="dark"] .kd{
+  --bubble-out:#3ddcae;--bubble-out-ink:#0b1712;--bubble-in:#22352b;--bubble-in-ink:#e6ece7;
+  --screen:#0f1c16;--bezel:#000;--chip:#1a2c23;--draft:#132a20;--draft-line:#2f8c69;--shadow:0 10px 30px rgba(0,0,0,.5)}
+[hidden]{display:none!important}
+
+/* ---------- tabs ---------- */
+.kit{padding:0}
+.kit-tabs{position:sticky;top:0;z-index:5;display:grid;grid-template-columns:repeat(3,1fr);gap:4px;
+  background:var(--soft);border-radius:999px;padding:4px;margin:16px 0 4px;box-shadow:0 0 0 6px var(--bg)}
+.kit-tabs a{display:flex;align-items:center;justify-content:center;text-align:center;min-height:44px;padding:6px 4px;
+  border-radius:999px;font-weight:700;font-size:15px;line-height:1.15;text-decoration:none;color:var(--muted)}
+.kit-tabs a[aria-selected="true"]{background:var(--accent);color:var(--on-accent)}
+.kit-panel{padding:20px 0 4px;scroll-margin-top:64px}
+.kit-panel h2{margin-bottom:8px}
+.kit-tag{display:inline-block;background:var(--soft);color:var(--accent-ink);border:1px solid var(--line);border-radius:8px;
+  font-size:13px;font-weight:700;padding:4px 10px;margin:0 0 12px}
+
+/* ---------- your site ---------- */
+.ba{display:block;margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
+.ba img{display:block;width:100%;height:auto}
+.ba-cap{font-size:14px;color:var(--muted);margin:10px 0 0}
+.coming{background:var(--card);border:1.5px dashed var(--line);border-radius:14px;padding:28px 16px;text-align:center}
+.coming b{display:block;font-size:19px;font-weight:800;margin-bottom:4px}
+.coming p{margin:0;color:var(--muted);font-size:15px}
+
+/* ---------- google ---------- */
+.gcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:6px 14px}
+.grow{display:grid;grid-template-columns:2.2em minmax(0,1fr) auto;gap:4px 10px;align-items:baseline;padding:11px 0;border-top:1px solid var(--line)}
+.grow:first-child{border-top:0}
+.grow .rk{font-weight:800;color:var(--muted);font-variant-numeric:tabular-nums}
+.grow .nm{font-weight:700;min-width:0}
+.grow .nm small{display:block;font-weight:400;font-size:13px;color:var(--muted)}
+.grow .ct{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.grow .ct b{display:block;font-size:18px;font-weight:800}
+.grow .ct small{font-size:13px;color:var(--muted)}
+.grow.you{background:var(--result);margin:0 -14px;padding:11px 14px;border-top-color:transparent}
+.grow.you + .grow{border-top-color:transparent}
+.gsrc{font-size:14px;color:var(--muted);margin:10px 0 0}
+.gline{font-weight:700;margin:14px 0 0}
+
+/* ---------- Text-Back player (from /demo/demo.css, scoped) ---------- */
+.kd .stage{display:flex;flex-direction:column;align-items:center;gap:10px;min-width:0}
+.kd .phone{width:100%;max-width:360px;background:var(--bezel);border-radius:34px;padding:10px;box-shadow:var(--shadow);border:0;margin:0}
+.kd .phone .screen{background:var(--screen);border-radius:26px;overflow:hidden;display:flex;flex-direction:column;height:min(520px,64vh);min-height:420px;position:relative}
+.kd .phone .bar{display:flex;justify-content:space-between;align-items:center;padding:8px 18px 4px;font-size:12px;font-weight:700;color:var(--ink)}
+.kd .phone .bar .dots{letter-spacing:2px}
+.kd .phone .head{display:flex;align-items:center;gap:10px;padding:6px 14px 10px;border-bottom:1px solid var(--line)}
+.kd .phone .avatar{width:34px;height:34px;border-radius:50%;background:var(--forest);color:#fff;display:grid;place-items:center;font-weight:800;font-size:14px;flex:none}
+.kd .phone .who{min-width:0}
+.kd .phone .who b{display:block;font-size:15px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kd .phone .who small{display:block;font-size:12px;color:var(--muted)}
+.kd .phone .log{flex:1;overflow-y:auto;padding:12px 10px 16px;display:flex;flex-direction:column;gap:8px;scroll-behavior:smooth}
+.kd .phone .empty{margin:auto;text-align:center;color:var(--muted);font-size:14px;padding:0 20px}
+.kd .msg{max-width:84%;padding:8px 12px;border-radius:18px;font-size:15px;line-height:1.35;white-space:pre-wrap;overflow-wrap:anywhere}
+.kd .msg.in{align-self:flex-start;background:var(--bubble-in);color:var(--bubble-in-ink);border-bottom-left-radius:6px}
+.kd .msg.out{align-self:flex-end;background:var(--bubble-out);color:var(--bubble-out-ink);border-bottom-right-radius:6px}
+.kd .msg .from{display:block;font-size:11px;font-weight:800;opacity:.8;margin-bottom:2px;letter-spacing:.02em}
+.kd .phone .log .past{opacity:.6}
+.kd .chipline{align-self:center;background:var(--chip);color:var(--muted);font-size:12px;font-weight:700;border-radius:999px;padding:4px 10px;text-align:center;max-width:92%}
+.kd .event{align-self:stretch;border:1px solid var(--line);background:var(--card);border-radius:14px;padding:10px 12px;font-size:14px;display:flex;flex-direction:column;gap:4px}
+.kd .event .k{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.kd .event b{font-size:15px}
+.kd .event.call b::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--accent);margin-right:6px;vertical-align:1px}
+.kd .event.missed b::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;border:2px solid var(--muted);margin-right:6px;vertical-align:0}
+.kd .event.notify{background:var(--soft);border-color:var(--draft-line)}
+.kd .event .body{white-space:pre-wrap;overflow-wrap:anywhere}
+.kd .event .tag{align-self:flex-start;background:var(--accent);color:var(--on-accent);font-size:11px;font-weight:800;border-radius:6px;padding:2px 6px;letter-spacing:.04em}
+.kd .typing{align-self:flex-start;background:var(--bubble-in);border-radius:18px;padding:10px 14px;display:flex;gap:4px}
+.kd .typing.out{align-self:flex-end;background:var(--bubble-out)}
+.kd .typing i{width:7px;height:7px;border-radius:50%;background:currentColor;color:var(--bubble-in-ink);opacity:.5;animation:kd-blink 1s infinite}
+.kd .typing.out i{color:var(--bubble-out-ink)}
+.kd .typing i:nth-child(2){animation-delay:.15s}.kd .typing i:nth-child(3){animation-delay:.3s}
+@keyframes kd-blink{50%{opacity:1}}
+.kd .pop{animation:kd-pop .22s ease-out}
+@keyframes kd-pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.kd .controls{display:flex;gap:8px;width:100%;max-width:360px}
+.kd .btn{flex:1;font:inherit;font-weight:700;border-radius:12px;min-height:48px;padding:0 12px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.kd .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.kd .btn:disabled{opacity:.45;cursor:not-allowed}
+.kd .caption{width:100%;max-width:360px;min-height:2.9em;margin:0;font-size:15px;text-align:center;color:var(--ink)}
+.kd .progress{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:reduce){
+  .kd .pop{animation:none}
+  .kd .typing i{animation:none;opacity:.8}
+  .kd .phone .log{scroll-behavior:auto}
+}

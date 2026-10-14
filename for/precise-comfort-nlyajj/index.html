@@ -39,15 +39,6 @@ h2{font-size:24px;line-height:1.15;letter-spacing:-.02em;margin:0 0 10px;font-we
 .lede{margin:0 0 14px;color:var(--muted)}
 .fact{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--mint);border-radius:12px;padding:12px 14px;margin:0 0 16px}
 .fact b{display:block;font-size:13px;color:var(--muted);font-weight:600;margin-bottom:2px}
-.toggle{display:grid;grid-template-columns:1fr 1fr;background:var(--soft);border-radius:999px;padding:4px;margin:0 auto 14px;max-width:340px}
-input.view{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px}
-.toggle label{text-align:center;padding:9px 6px;border-radius:999px;font-weight:700;font-size:15px;cursor:pointer;color:var(--muted)}
-#v-today:checked~.toggle label[for=v-today],#v-box:checked~.toggle label[for=v-box]{background:var(--accent);color:var(--on-accent)}
-.phone{max-width:300px;margin:0 auto;border:8px solid var(--night);border-radius:28px;overflow:hidden;background:#fff;box-shadow:0 10px 30px rgba(11,23,18,.18)}
-.phone img{display:block;width:100%;height:auto}
-.phone .shot-box{display:none}
-#v-box:checked~.phone .shot-today{display:none}
-#v-box:checked~.phone .shot-box{display:block}
 .cap{font-size:14px;color:var(--muted);margin:12px 0 0;text-align:center}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:0 0 12px}
 .card h3{margin:0 0 6px;font-size:19px;font-weight:800;letter-spacing:-.01em}
@@ -71,6 +62,7 @@ input.view{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px}
 footer{margin-top:36px;padding:22px 0 40px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
 footer p{margin:0 0 8px}
 </style>
+<link rel="stylesheet" href="/for/kit/kit.css">
 </head>
 <body>
 <header class="hero"><div class="wrap">
@@ -80,20 +72,34 @@ footer p{margin:0 0 8px}
   <p>Facts checked Oct 12, 2026 · page made Oct 13, 2026 by Lane Davis II, founder, autoants</p>
 </div></header>
 <main class="wrap">
-
-<section id="homepage">
-  <h2>Your phone homepage today vs. with the box</h2>
-  <div class="fact"><b>Checked Oct 12, 2026, on an iPhone-size screen (precisecomfort.net)</b>REQUEST SERVICE is right up top; the only promise on this screen is 24/7 service for Comfort Club members.</div>
-  <input class="view" type="radio" name="v" id="v-today" checked><input class="view" type="radio" name="v" id="v-box">
-  <div class="toggle" role="radiogroup" aria-label="Which screen">
-    <label for="v-today">Today</label><label for="v-box">With the box</label>
-  </div>
-  <div class="phone">
-    <img class="shot-today" src="before.jpg" width="390" height="844" alt="Precise Comfort and Climate Specialists homepage on a phone, Oct 12, 2026">
-    <img class="shot-box" src="after.jpg" width="390" height="844" alt="The same screen with a sample Next available box" loading="lazy">
-  </div>
-  <p class="cap">The box is a sample. The time reads [FILL] until you set the rule that picks it.</p>
+<!-- kit:start -->
+<section class="kit" aria-label="Show me">
+<nav class="kit-tabs" role="tablist" aria-label="What to show">
+  <a href="#site" role="tab" id="t-site" aria-controls="site" aria-selected="true">Your site</a>
+  <a href="#missed" role="tab" id="t-missed" aria-controls="missed" aria-selected="false">Missed call</a>
+  <a href="#google" role="tab" id="t-google" aria-controls="google" aria-selected="false">Google</a>
+</nav>
+<div class="kit-panel" id="site" role="tabpanel" aria-labelledby="t-site">
+  <h2>Your site today vs. fixed</h2>
+  <div class="fact" hidden><b>Checked Oct 12, 2026, on an iPhone-size screen (precisecomfort.net)</b>REQUEST SERVICE is right up top; the only promise on this screen is 24/7 service for Comfort Club members.</div>
+  <a class="ba" href="before-after.png"><img src="before-after.png" width="1960" height="2616" alt="Precise Comfort and Climate Specialists homepage on a phone today, next to the same screen with a sample Booking Box"></a>
+  <p class="ba-cap">Left: your homepage on a phone today. Right: a concept preview, not your live site. Tap the picture to zoom in.</p>
+</div>
+<div class="kit-panel" id="missed" role="tabpanel" aria-labelledby="t-missed">
+  <h2>Watch a missed call get texted back</h2>
+  <p class="kit-tag">Demo with your business name — not live yet.</p>
+  <div id="kd-phone" class="kd"></div>
+</div>
+<div class="kit-panel" id="google" role="tabpanel" aria-labelledby="t-google">
+  <h2>You vs. the most-reviewed shops on Google</h2>
+  <p class="lede">Google Maps search “ac repair New Orleans”: your review count next to the three shops with the most reviews in that search.</p>
+  <div class="gcard"><div class="grow"><span class="rk">1.</span><span class="nm">Most-reviewed shop <small>name not recorded</small></span><span class="ct"><b>6,791</b><small>reviews · stars not checked</small></span></div><div class="grow"><span class="rk">2.</span><span class="nm">Second most <small>name not recorded</small></span><span class="ct"><b>2,257</b><small>reviews · stars not checked</small></span></div><div class="grow"><span class="rk">3.</span><span class="nm">Third most <small>name not recorded</small></span><span class="ct"><b>1,265</b><small>reviews · stars not checked</small></span></div><div class="grow you"><span class="rk">You</span><span class="nm">Precise Comfort and Climate Specialists <small>your listing</small></span><span class="ct"><b>130</b><small>reviews · stars not checked</small></span></div></div>
+  <p class="gsrc">As of Oct 1, 2026. Source: public Google Maps listings, read by hand on Google Maps. Counts change every day; the live listing is the final word.</p>
+  <p class="gline">Most of a review gap is just asking every customer.</p>
+</div>
 </section>
+<!-- kit:end -->
+
 <section id="assistants">
   <h2>Three assistants that fit an HVAC company</h2>
   <p class="lede">Each one does one job. You approve what it says before it says anything.</p>
@@ -119,7 +125,7 @@ footer p{margin:0 0 8px}
   <p class="mail">Or write to <a href="mailto:hello@autoants.com">hello@autoants.com</a></p>
 </section>
 <footer>
-  <p><b>autoants · New Orleans</b></p>
+  <p><b>autoants · <a href="mailto:hello@autoants.com">hello@autoants.com</a></b></p>
   <p>Privacy: we built this page from public information about your business: your homepage as it looked on Oct 12, 2026 and your public business listings. It isn’t listed anywhere on autoants.com, and search engines are asked not to index it. Ask and we delete it: <a href="mailto:hello@autoants.com">hello@autoants.com</a>.</p>
 </footer>
 </main>
@@ -142,5 +148,51 @@ footer p{margin:0 0 8px}
   if(cta&&cta.getAttribute('href')==='[CAL_LINK]'){cta.setAttribute('href','mailto:hello@autoants.com?subject='+encodeURIComponent(cta.dataset.subject));}
 })();
 </script>
+<!-- kitjs:start -->
+<script src="/for/kit/phone.js"></script>
+<script>
+(function(){
+  var cfg = {"title": "Precise Comfort and Climate Specialists", "subtitle": "A customer's phone", "avatar": "PC", "me": "customer", "label": "Demo phone screen: a missed call to Precise Comfort and Climate Specialists gets texted back", "intro": "A homeowner calls Precise Comfort and Climate Specialists while your crew is out on jobs.", "empty": "Tap Play to watch it (about 15 seconds).", "events": [{"t": "call", "k": "Calling", "title": "Precise Comfort and Climate Specialists", "text": "Ringing…", "say": "A homeowner calls. Everyone’s on a job, so nobody picks up."}, {"t": "missed", "k": "Call ended", "title": "No answer", "text": "It rang out."}, {"t": "typing", "from": "business", "say": "Within seconds, the caller gets one text from Precise Comfort and Climate Specialists."}, {"t": "text", "from": "business", "text": "Hi, this is Precise Comfort and Climate Specialists, sorry we missed your call — our team is with another customer. What can we help you with today? Reply STOP to opt out.", "say": "One text, in your business name, with a STOP line."}, {"t": "typing", "from": "customer"}, {"t": "text", "from": "customer", "text": "AC is blowing warm air upstairs. Can someone come look at it this week?", "say": "The caller answers."}, {"t": "view", "title": "Precise Comfort and Climate Specialists", "subtitle": "Your phone", "avatar": "PC", "me": "owner", "chip": "Now on your phone"}, {"t": "notify", "k": "Text to you", "tag": "Text-Back", "title": "Precise Comfort and Climate Specialists", "text": "A caller at (504) 555-0134 replied to the missed-call text: “AC is blowing warm air upstairs. Can someone come look at it this week?” Call or text them back.", "say": "Their reply comes straight to you, and you answer them yourself."}, {"t": "chip", "text": "Never texts a call you answered, or the same caller twice in 12 hours.", "say": "It never texts a call you answered, and never texts the same caller twice in 12 hours."}]};
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var nav = document.querySelector('.kit-tabs');
+  var tabs = [].slice.call(nav.querySelectorAll('a'));
+  var panels = tabs.map(function(a){ return document.getElementById(a.getAttribute('aria-controls')); });
+  var root = document.getElementById('kd-phone'), played = false;
+  if (window.DemoPhone && root) window.DemoPhone.mount(root, cfg);
+  function play(){
+    if (played || !root) return;
+    played = true;
+    var b = root.querySelector('.controls .btn.primary');
+    if (b && !/[?&]all\b/.test(location.search)) setTimeout(function(){ b.click(); }, 450);
+  }
+  function show(i, scroll){
+    tabs.forEach(function(t, j){
+      var on = i === j;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      panels[j].hidden = !on;
+    });
+    if (panels[i].id === 'missed') play();
+    if (scroll) {
+      var y = nav.parentNode.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({top: y, behavior: reduce ? 'auto' : 'smooth'});
+    }
+    try { history.replaceState(null, '', '#' + panels[i].id); } catch (e) {}
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(e){ e.preventDefault(); show(i, true); });
+    t.addEventListener('keydown', function(e){
+      var k = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!k) return;
+      e.preventDefault();
+      var n = (i + k + tabs.length) % tabs.length;
+      show(n, false); tabs[n].focus();
+    });
+  });
+  var start = panels.map(function(p){ return '#' + p.id; }).indexOf(location.hash);
+  show(start < 0 ? 0 : start, false);
+})();
+</script>
+<!-- kitjs:end -->
 </body>
 </html>
