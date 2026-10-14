@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="autoants texts back every missed call in seconds, answers and books new leads, and asks happy customers for reviews. For New Orleans and Louisiana businesses.">
+<meta name="description" content="autoants is a local marketing agency for home-service trades: your Google profile and map listing fixed, a review ask after every job, your real jobs posted, and cards mailed from city permit data. A missed call still gets a text back.">
 <meta property="og:title" content="autoants — automated assistants for local businesses">
 <meta property="og:description" content="Every missed call texted back in seconds, every lead booked, every happy customer asked for a review. For local businesses. Free site preview; live in 7 days or your setup fee back.">
 <meta property="og:url" content="https://autoants.com/">
@@ -17,11 +17,11 @@
 <meta name="theme-color" content="#0b1712">
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
-<title>Missed-call text-back &amp; AI answering in New Orleans · autoants</title>
+<title>Local marketing for the trades in New Orleans · autoants</title>
 <link rel="canonical" href="https://autoants.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#0b1712; --bg2:#0f1f18; --surface:#14261e; --surface2:#1a2f25;
@@ -29,8 +29,8 @@
     --amber:#3ddcae; --amber-deep:#22b892; --amber-ink:#062a1d;
     --line:rgba(244,241,232,.10); --line2:rgba(244,241,232,.16);
     --ok:#7bc96a;
-    --disp:'Archivo',-apple-system,system-ui,sans-serif;
-    --body:'Inter',-apple-system,system-ui,sans-serif;
+    --disp:'Onest',-apple-system,system-ui,sans-serif;
+    --body:'Onest',-apple-system,system-ui,sans-serif;
     --mono:'JetBrains Mono',ui-monospace,monospace;
     --wrap:76rem;
   }
@@ -92,6 +92,19 @@
   .task .txt b{font-weight:700}
   .task .sub{font-family:var(--mono);font-size:.68rem;color:var(--faint);margin-top:.15rem}
   .task.proc .txt .sub{color:var(--amber)}
+
+  /* ---- draft 2026-10-14: "a month of marketing" panel (home-growth-draft) ---- */
+  .gp-list{display:flex;flex-direction:column;gap:.5rem}
+  .gp-row{display:grid;grid-template-columns:5.6rem 1fr;gap:.2rem .8rem;align-items:start;background:rgba(244,241,232,.03);border:1px solid var(--line);border-radius:11px;padding:.7rem .8rem}
+  .gp-row .k{font-family:var(--mono);font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);padding-top:.15rem}
+  .gp-row .txt{font-size:.88rem;line-height:1.35}.gp-row .txt b{font-weight:700}
+  .gp-row .sub{font-family:var(--mono);font-size:.68rem;color:var(--faint);margin-top:.15rem}
+  .gp-net{margin-top:.35rem;padding-top:.75rem;border-top:1px dashed var(--line2)}
+  .gp-net .lbl{font-family:var(--mono);font-size:.64rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 .45rem .2rem}
+  .gp-net .gp-row{border-style:dashed;background:transparent}
+  .gp-net .gp-row .k{color:var(--muted)}
+  .gp-foot{margin:.8rem .2rem 0;font-size:.8rem;color:var(--muted)}.gp-foot b{color:var(--ink)}
+  @media(max-width:420px){.gp-row{grid-template-columns:1fr}.gp-row .k{padding-top:0}}
 
   section{padding:4.8rem 0;position:relative}
   .band{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -280,23 +293,33 @@
   <div class="navlinks">
     <a href="#offerings">What we do</a><a href="work/">The video audit</a><a href="services.html">Services</a><a href="who-we-help.html">Who we help</a><a href="#roi">ROI calculator</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
   </div>
-  <a class="btn btn-amber" href="#contact" data-interest="Free site preview" style="padding:.6rem 1.1rem;font-size:.9rem">Free site preview</a>
+  <a class="btn btn-amber" href="#contact" data-interest="Video audit" style="padding:.6rem 1.1rem;font-size:.9rem">Free video audit</a>
 </div></nav>
 
 <header id="top"><div class="wrap"><div class="hero-grid">
   <div>
-    <p class="eyebrow">Get found · Never miss a job · Get the next job</p>
-    <h1><span style="color:var(--ink)">Auto</span>mated assist<span style="color:var(--ink)">ants</span> <span class="amb">for local businesses.</span></h1>
-    <p class="lede"><b>Get found on Google and in AI answers.</b> Every call and lead answered and booked. The next job from the neighbors, your past customers and your own real work. And before you pay a dime, a video about your business or a preview of your new site. All while you're busy with customers.</p>
+    <p class="eyebrow">Local marketing for the trades · New Orleans</p>
+    <h1>Get found. Get picked. <span class="amb">Get the next job.</span></h1>
+    <p class="lede"><b>autoants is a local marketing agency for home-service trades.</b> We fix your Google profile and map listing, ask every customer for a review, post your real jobs for you, and mail your card to homes where a city permit shows the job before yours just happened. <b>And none slip away:</b> a call you miss still gets a text back with your business name.</p>
     <div class="cta-row">
-      <a class="btn btn-amber" href="#contact" data-interest="Free site preview">Get your free site preview →</a>
+      <a class="btn btn-amber" href="#contact" data-interest="Video audit">Get your free video audit →</a>
       <a class="btn btn-ghost" href="#contact" data-interest="15-minute call" data-call>Book a 15-minute call</a>
     </div>
-    <div class="trust"><span><b>◆</b> No contract to start</span><span><b>◆</b> You see it before you pay</span><span><b>◆</b> Live in 7 days or your setup fee back</span></div>
+    <div class="trust"><span><b>◆</b> Month to month after 90 days</span><span><b>◆</b> You approve every post, page and card</span><span><b>◆</b> Your profile, site and lists stay yours</span></div>
   </div>
-  <div class="dispatch">
-    <div class="dhead"><svg class="ant"><use href="#ant"/></svg><span class="t">AutoAnt Dispatch</span><span class="live-dot"><i></i>EXAMPLE</span></div>
-    <div id="feed"></div>
+  <div class="dispatch" aria-label="Example: one month of marketing for one shop">
+    <div class="dhead"><svg class="ant"><use href="#ant"/></svg><span class="t">A month of marketing</span><span class="live-dot" style="color:var(--muted)">EXAMPLE</span></div>
+    <div class="gp-list">
+      <div class="gp-row"><span class="k">Get found</span><div class="txt"><b>Google profile fixed</b><div class="sub">services, hours and photos; listings matched on Apple, Bing and Yelp</div></div></div>
+      <div class="gp-row"><span class="k">Get found</span><div class="txt"><b>New page: gutter cleaning in Lakeview</b><div class="sub">answers what people ask Google and ChatGPT</div></div></div>
+      <div class="gp-row"><span class="k">Reviews</span><div class="txt"><b>Job #1182 finished</b><div class="sub">the same review ask sent to the customer</div></div></div>
+      <div class="gp-row"><span class="k">Content</span><div class="txt"><b>This week's posts: 3 drafts</b><div class="sub">from your own job photos, approved by text</div></div></div>
+      <div class="gp-row"><span class="k">Next job</span><div class="txt"><b>Postcards to homes with a new roof this month</b><div class="sub">from city permit data; each card has its own code</div></div></div>
+      <div class="gp-net"><p class="lbl">And none slip away</p>
+        <div class="gp-row"><span class="k">Safety net</span><div class="txt"><b>Missed call at 2:14 pm</b><div class="sub">texted back with your business name</div></div></div>
+      </div>
+    </div>
+    <p class="gp-foot"><b>Every month, one page:</b> calls and forms by where they came from, reviews added, card scans, and the jobs you tell us you booked.</p>
   </div>
 </div></div></header>
 
@@ -498,7 +521,7 @@
   </div>
 </div></section>
 
-<div class="mbar"><a class="btn btn-amber" href="#contact" data-interest="Free site preview">Free preview</a><a class="btn btn-ghost" href="#contact" data-interest="15-minute call" data-call>15-min call</a></div>
+<div class="mbar"><a class="btn btn-amber" href="#contact" data-interest="Video audit">Free video audit</a><a class="btn btn-ghost" href="#contact" data-interest="15-minute call" data-call>15-min call</a></div>
 
 <section class="final"><div class="wrap">
   <h2>Let's find the money<br>you're leaving on the table.</h2>
