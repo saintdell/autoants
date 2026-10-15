@@ -119,7 +119,7 @@ footer{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:
 .sheetline{font-size:14.5px;background:var(--soft);border-radius:10px;padding:10px 12px}
 .open{display:flex;align-items:center;justify-content:center;text-decoration:none;font-weight:700;border-radius:12px;min-height:48px;padding:0 16px;background:var(--accent);color:var(--on-accent)}
 
-</style>
+.packs{display:grid;grid-template-columns:1fr 1fr;gap:8px}@media(max-width:520px){.packs{grid-template-columns:1fr}}</style>
 </head>
 <body>
 <main>
@@ -152,8 +152,8 @@ footer{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:
       <p class="small"><span class="pill flag">Draft until a licensed tech checks it for this shop</span></p>
       <ol class="stops"><li>Breaker off at the panel</li><li>Outdoor disconnect off</li><li>Verify with your meter</li><li>Capacitor: stored charge</li><li>Refrigerant: EPA 608 only</li><li>Gas shutoff and carbon monoxide</li><li>Attic heat and ladders</li></ol>
       <p class="small">Lock and tag it per <span class="fill">the lockout rule below (your lock, your tag, only you take it off)</span>.</p>
-      <p class="small muted">The HVAC pack has a tap-a-part drawing of a split system with a gas furnace, the safety stops in order, and the five checks before a tech calls the office. Highlighted words are the shop&rsquo;s own rules. The plumbing pack does the same for a gas water heater: the shutoffs, the relief valve and its line, the gas and the vent, the drain pan, and a sink trap and cleanout. Electrical comes next.</p>
-      <a class="open" href="/demo/onboarding/sample-course.html">Open the HVAC sample course</a> <a class="open" style="margin-top:8px" href="/demo/onboarding/plumbing-course.html">Open the plumbing sample course</a>
+      <p class="small muted">The HVAC pack has a tap-a-part drawing of a split system with a gas furnace, the safety stops in order, and the five checks before a tech calls the office. Highlighted words are the shop&rsquo;s own rules. Six packs so far, each with its own tap-a-part drawing, safety stops in order and checks before calling the office: central AC with a gas furnace, ductless mini-split, gas tank and tankless water heaters, the electrical service and panel, and a shingle roof. Every one stays a draft until a licensed reviewer of that trade checks it for the shop.</p>
+      <div class="packs"><a class="open" href="/demo/onboarding/sample-course.html">HVAC: central AC with a gas furnace</a><a class="open" href="/demo/onboarding/minisplit-course.html">HVAC: ductless mini-split</a><a class="open" href="/demo/onboarding/plumbing-course.html">Plumbing: gas water heater</a><a class="open" href="/demo/onboarding/tankless-course.html">Plumbing: tankless water heater</a><a class="open" href="/demo/onboarding/electrical-course.html">Electrical: service and panel</a><a class="open" href="/demo/onboarding/roofing-course.html">Roofing: shingle roof</a></div>
     </div>
 
     <div class="step" data-title="Check yourself">
