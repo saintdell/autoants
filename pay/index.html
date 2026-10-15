@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pay autoants</title>
+<meta name="description" content="Pay an autoants invoice or start a plan. Checkout is hosted by Stripe; autoants never sees your card details.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pay.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <nav aria-label="Site">
+    <a class="logo" href="../" aria-label="autoants home"><img src="../brand/autoants-logo-reverse.svg" alt="autoants"></a>
+    <span class="sp"></span>
+    <a class="ghost" href="../services.html">Services</a>
+    <a class="ghost" href="mailto:hello@autoants.com">Email us</a>
+  </nav>
+  <p class="draft" id="draft-banner" hidden><b>Draft preview.</b> <span id="draft-count"></span> The Pay buttons point at placeholders and won't take a payment.</p>
+
+  <main id="main">
+  <header class="hero">
+    <p class="eyebrow">Payments</p>
+    <h1>Pay <em>autoants</em></h1>
+    <p class="sub">Two ways to pay. Either way, checkout runs on Stripe, our payment processor. Your card details go to Stripe, never to autoants.com, and we never see them.</p>
+    <div class="paths">
+      <a class="path" href="#invoice"><span class="n">01</span><span class="t">Pay an invoice or quote</span><span class="d">We sent you a custom quote or an invoice by email.</span></a>
+      <a class="path" href="#plans"><span class="n">02</span><span class="t">Start a plan</span><span class="d">The assessment, a website, the Office Manager, search, social, an explainer.</span></a>
+    </div>
+  </header>
+
+  <section id="invoice" aria-labelledby="invoice-h">
+    <h2 class="sec" id="invoice-h">Pay an invoice or quote</h2>
+    <p class="sec-lede">Custom work, bigger projects and anything we quoted for you by hand gets its own invoice. You pay it on a page Stripe hosts, not on this one.</p>
+    <ol class="steps">
+      <li><b>Find our email</b>The invoice comes from Stripe on behalf of AutoAnts, LLC, with the amount, what it covers and the due date.</li>
+      <li><b>Open "Pay this invoice"</b>The page that opens is on <span style="font-family:var(--mono)">invoice.stripe.com</span>. Pay by card, or by bank transfer if the invoice offers it.</li>
+      <li><b>Get your receipt</b>Stripe emails a receipt the moment it goes through. Keep it for your books.</li>
+    </ol>
+    <div class="callout"><b>Can't find it, or the amount looks wrong?</b> Don't pay it. Email <a href="mailto:hello@autoants.com">hello@autoants.com</a> and we'll resend or fix it. We never ask for card numbers by email, text or phone.</div>
+  </section>
+
+  <section id="plans" aria-labelledby="plans-h">
+    <h2 class="sec" id="plans-h">Start a plan</h2>
+    <p class="sec-lede">The same prices as on our <a href="../services.html">services page</a>. Pick one, read the agreement, and pay on Stripe's checkout.</p>
+
+    <div class="gate" id="gate">
+      <label class="check" for="agree">
+        <input type="checkbox" id="agree" name="agree" aria-describedby="gate-terms gate-status">
+        <span>I've read and agree to the <a href="../terms/" target="_blank" rel="noopener">autoants service agreement<span class="sr"> (opens in a new tab)</span></a></span>
+      </label>
+      <ul class="terms-lines" id="gate-terms">
+        <li><b>The 7-day promise (go-live):</b> once you say go and send us what we need, your website is live within 7 days, or the setup fee for it is refunded.</li>
+        <li><b>Monthly plans:</b> billed in advance on the same day each month. Cancel any time after the first 90 days, effective the end of the paid month.</li>
+        <li><b>Setup fees</b> are due when you say go.</li>
+      </ul>
+      <p class="gate-status" id="gate-status" role="status" aria-live="polite">The Pay buttons stay off until you tick the box.</p>
+      <noscript><p class="gate-status">The Pay buttons need JavaScript. Email hello@autoants.com and we'll send you a payment link instead.</p></noscript>
+    </div>
+
+    <p class="founding"><b>Founding-client pricing.</b> These are founding rates for our first clients, and a founding rate stays the same for as long as you keep that service. The search plan has five founding seats.</p>
+
+    <h3 class="group-title">Start here</h3>
+    <div class="offers">
+      <article class="offer" aria-labelledby="o-assessment">
+        <p class="tag">One-time</p>
+        <h3 id="o-assessment">The assessment</h3>
+        <div class="price">$500 <small>flat</small></div>
+        <div class="today">Due today: <b>$500</b></div>
+        <ul>
+          <li>A recorded 45-minute interview about how your week actually runs</li>
+          <li>A bound, printed report with its own report number: what to automate first and what each fix is worth</li>
+          <li>3–7 ready-made AI tools you could set up yourself</li>
+          <li>Yours to keep, even if you never hire us</li>
+        </ul>
+        <p class="note"><b>Credited toward your setup</b> if you continue within 30 days. When you do, we send the setup as an invoice with the $500 taken off, and if your setup is less than $500 (Search's is $250), the rest comes off your first month. Don't use the buttons below for it.</p>
+        <a class="pay" data-offer="assessment" href="#gate" aria-disabled="true"><span class="lbl">Pay $500</span><span class="sr"> for the assessment</span> <span class="lock" aria-hidden="true">tick the agreement box first</span></a>
+      </article>
+
+      <article class="offer" aria-labelledby="o-golive">
+        <p class="tag">One-time · go-live</p>
+        <h3 id="o-golive">Ready-Launch</h3>
+        <div class="price">$500 <small>one-time</small></div>
+        <div class="today">Due today: <b>$500</b></div>
+        <p class="d">A real site on your own domain: content, Google Business Profile, click-to-call.</p>
+        <ul>
+          <li>Live within 7 days of your go, or your setup fee back</li>
+          <li>Mobile-first + click-to-call</li>
+          <li>Google Business Profile set up</li>
+        </ul>
+        <a class="pay" data-offer="go_live" href="#gate" aria-disabled="true"><span class="lbl">Pay $500</span><span class="sr"> for Ready-Launch</span> <span class="lock" aria-hidden="true">tick the agreement box first</span></a>
+      </article>
+    </div>
+
+    <h3 class="group-title">Monthly plans</h3>
+    <div class="offers">
+      <article class="offer feat" aria-labelledby="o-om">
+        <p class="tag">Monthly · recommended</p>
+        <h3 id="o-om">Office Manager</h3>
+        <div class="price">$500<small>/mo + $750 setup</small></div>
+        <div class="today">Due today: <b>$1,250</b> ($750 setup + first month). Then $500 a month.</div>
+        <p class="d">The recurring stack that captures and books the work you're missing now.</p>
+        <ul>
+          <li>Missed-call text-back</li>
+          <li>Speed-to-lead + follow-up</li>
+          <li>Reviews + booking</li>
+          <li>Add the AI receptionist anytime</li>
+        </ul>
+        <a class="pay" data-offer="office_manager" href="#gate" aria-disabled="true"><span class="lbl">Start: $1,250 today</span><span class="sr"> for the Office Manager</span> <span class="lock" aria-hidden="true">tick the agreement box first</span></a>
+      </article>
+
+      <article class="offer" aria-labelledby="o-search">
+        <p class="tag">Monthly · founding</p>
+        <h3 id="o-search">Search optimization</h3>
+        <div class="price">$500<small>/mo + $250 setup · founding</small></div>
+        <div class="today">Due today: <b>$750</b> ($250 setup + first month). Then $500 a month.</div>
+        <p class="d">Get found everywhere a customer, or an AI, looks.</p>
+        <ul>
+          <li>Map ranking checked before and after</li>
+          <li>Google profile fixed and kept current</li>
+          <li>A page for each service and town you cover</li>
+          <li>Listings matched everywhere</li>
+          <li>AI answers checked monthly, plus a page written for AI assistants</li>
+          <li>A one-line report every week, a call every month</li>
+          <li>You keep every page and listing</li>
+        </ul>
+        <p class="note"><b>Five founding seats.</b> Email <a href="mailto:hello@autoants.com?subject=Search%20plan%3A%20is%20a%20founding%20seat%20open%3F">hello@autoants.com</a> to check one is still open before you pay.</p>
+        <a class="pay" data-offer="search_plan" href="#gate" aria-disabled="true"><span class="lbl">Start: $750 today</span><span class="sr"> for Search optimization</span> <span class="lock" aria-hidden="true">tick the agreement box first</span></a>
+      </article>
+
+      <article class="offer" aria-labelledby="o-care">
+        <p class="tag">Monthly</p>
+        <h3 id="o-care">Site Care</h3>
+        <div class="price">$99<small>/mo</small></div>
+        <div class="today">Due today: <b>$99</b>. Then $99 a month.</div>
+        <p class="d">The light option, if you just want the site kept up.</p>
+        <ul>
+          <li>Website hosting and edits</li>
+          <li>Google profile kept current</li>
+        </ul>
+        <a class="pay" data-offer="site_care" href="#gate" aria-disabled="true"><span class="lbl">Start: $99 today</span><span class="sr"> for Site Care</span> <span class="lock" aria-hidden="true">tick the agreement box first</span></a>
+      </article>
+
+      <article class="offer" aria-labelledby="o-social">
+        <p class="tag">Monthly · founding</p>
+        <h3 id="o-social">Social media engine</h3>
+        <div class="price">$400<small>/mo · founding</small></div>
+        <div class="today">Due today: <b>$400</b>. Then $400 a month.</div>
+        <p class="d">A full week of posts made from your real jobs, every week.</p>
+        <ul>
+          <li>Before/after clips from your jobs</li>
+          <li>Google, Facebook, Instagram, Nextdoor</li>
+          <li>Approve everything by text</li>
+        </ul>
+        <a class="pay" data-offer="social_engine" href="#gate" aria-disabled="true"><span class="lbl">Start: $400 today</span><span class="sr"> for the social media engine</span> <span class="lock" aria-hidden="true">tick the agreement box first</span></a>
+      </article>
+
+      <article class="offer" aria-labelledby="o-shorts">
+        <p class="tag">Monthly add-on</p>
+        <h3 id="o-shorts">Animated Shorts add-on</h3>
+        <div class="price">+$250<small>/mo</small></div>
+        <div class="today">Due today: <b>$250</b>. Then $250 a month.</div>
+        <p class="d">4 short animated videos a month in your name, made from your own logo and photos.</p>
+        <ul>
+          <li>Only with the social media engine</li>
+          <li>One business per trade per town</li>
+        </ul>
+        <p class="note"><b>Check your town first.</b> Email <a href="mailto:hello@autoants.com?subject=Shorts%20add-on%3A%20is%20my%20town%20open%3F">hello@autoants.com</a> to make sure your trade and town are open before you pay.</p>
+        <a class="pay" data-offer="shorts_addon" href="#gate" aria-disabled="true"><span class="lbl">Add: $250 today</span><span class="sr"> for the animated Shorts add-on</span> <span class="lock" aria-hidden="true">tick the agreement box first</span></a>
+      </article>
+    </div>
+    <p class="plan-note">Every monthly plan includes a 60-second recap video of your month: what we did, counted from our own logs.</p>
+
+    <h3 class="group-title">One-off</h3>
+    <div class="offers">
+      <article class="offer" aria-labelledby="o-explainer">
+        <p class="tag">One-off</p>
+        <h3 id="o-explainer">Your 60-second explainer video</h3>
+        <div class="price">$750 <small>flat</small></div>
+        <div class="today">Due today: <b>$750</b></div>
+        <ul>
+          <li>Explains the service you most want to sell</li>
+          <li>For the top of your homepage and your Google Business Profile</li>
+          <li>A wide and a vertical version, one round of changes</li>
+          <li>Your own logo and photos only, and a clearly labeled AI voice</li>
+        </ul>
+        <a class="pay" data-offer="explainer" href="#gate" aria-disabled="true"><span class="lbl">Pay $750</span><span class="sr"> for the explainer video</span> <span class="lock" aria-hidden="true">tick the agreement box first</span></a>
+      </article>
+    </div>
+  </section>
+  </main>
+
+  <footer>
+    <p class="q">Questions? <a href="mailto:hello@autoants.com">hello@autoants.com</a></p>
+    <p>Payments are processed by Stripe. autoants never sees or stores your card number.</p>
+    <p>autoants, short for automated assistants. AutoAnts, LLC. Commercial services only.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var box = document.getElementById('agree');
+  var gate = document.getElementById('gate');
+  var status = document.getElementById('gate-status');
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('a.pay'));
+  var links = null, loadFailed = false;
+
+  function setStatus(text, on) {
+    status.textContent = text;
+    status.classList.toggle('on', !!on);
+  }
+
+  function render(announce) {
+    var agreed = box.checked;
+    buttons.forEach(function (a) {
+      var url = links && links[a.dataset.offer];
+      if (agreed && url) {
+        a.href = url;
+        a.removeAttribute('aria-disabled');
+      } else {
+        a.href = '#gate';
+        a.setAttribute('aria-disabled', 'true');
+      }
+    });
+    if (!announce) return;
+    if (!agreed) setStatus('The Pay buttons stay off until you tick the box.', false);
+    else if (loadFailed) setStatus('The payment links did not load. Email hello@autoants.com and we will send one.', false);
+    else if (!links) setStatus('Loading the payment links...', false);
+    else setStatus('Thanks. The Pay buttons are on.', true);
+  }
+
+  buttons.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (a.getAttribute('aria-disabled') !== 'true') return;
+      e.preventDefault();
+      gate.classList.remove('need'); void gate.offsetWidth; gate.classList.add('need');
+      gate.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      box.focus({ preventScroll: true });
+      if (!box.checked) setStatus('Tick the agreement box first, then press Pay again.', false);
+    });
+  });
+
+  box.addEventListener('change', function () { render(true); });
+  // Browsers can restore a ticked box on Back; re-sync the buttons when that happens.
+  window.addEventListener('pageshow', function () { render(true); });
+
+  fetch('links.json', { cache: 'no-store' })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (j) {
+      links = j.offers || {};
+      var pending = Object.keys(links).filter(function (k) { return links[k].indexOf('REPLACE_') !== -1; });
+      if (pending.length) {
+        document.getElementById('draft-count').textContent = pending.length + ' of ' + Object.keys(links).length + ' payment links are not set up yet.';
+        document.getElementById('draft-banner').hidden = false;
+      }
+      render(true);
+    })
+    .catch(function () { loadFailed = true; render(true); });
+
+  render(false);
+})();
+</script>
+</body>
+</html>
