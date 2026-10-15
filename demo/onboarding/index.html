@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Onboarding Ant · autoants demo</title>
+<meta name="description" content="A new tech learns how your shop works on his phone, in your words, and your lead tech signs off each part. Company orientation, not certification.">
+<link rel="icon" href="/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&display=swap">
+<style>
+:root{
+  --night:#0b1712; --forest:#0f5132; --mint:#3ddcae; --stone:#ebe8e2; --deep:#0f2a1d;
+  --ground:#f3f1ec; --card:#ffffff; --ink:#0f2a1d; --muted:#4d5f55; --line:#d7d3ca; --soft:#e4f0ea;
+  --accent:#0f5132; --on-accent:#ffffff; --hi:#3ddcae; --hi-soft:#d3f5e8; --hi-ink:#0f5132;
+  --flag-bg:#0f2a1d; --flag-ink:#ffffff; --phone:#ffffff; --bubble-in:#e8ebe9; --bubble-out:#0f5132; --bubble-out-ink:#ffffff;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --muted:#a3b5aa; --line:#27392f; --soft:#17291f;
+    --accent:#3ddcae; --on-accent:#0b1712; --hi-soft:#123528; --hi-ink:#3ddcae;
+    --flag-bg:#3ddcae; --flag-ink:#0b1712; --phone:#0f1d16; --bubble-in:#22332a; --bubble-out:#3ddcae; --bubble-out-ink:#0b1712;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --muted:#a3b5aa; --line:#27392f; --soft:#17291f;
+  --accent:#3ddcae; --on-accent:#0b1712; --hi-soft:#123528; --hi-ink:#3ddcae;
+  --flag-bg:#3ddcae; --flag-ink:#0b1712; --phone:#0f1d16; --bubble-in:#22332a; --bubble-out:#3ddcae; --bubble-out-ink:#0b1712;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html,body{margin:0;background:var(--ground);color:var(--ink);font:500 16px/1.5 Onest,system-ui,-apple-system,sans-serif}
+main{max-width:640px;margin:0 auto;padding:12px 16px 56px;display:flex;flex-direction:column;gap:16px}
+a{color:var(--hi-ink)}
+.banner{margin:0;background:var(--hi-soft);color:var(--hi-ink);border-radius:12px;padding:10px 14px;font-size:14px;font-weight:700;display:flex;gap:8px;align-items:center}
+.banner::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--hi);flex:none}
+.back{font-size:15px;font-weight:700;text-decoration:none;align-self:flex-start;padding:6px 0}
+.back:hover{text-decoration:underline}
+header{display:flex;flex-direction:column;gap:6px}
+.eyebrow{margin:0;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{margin:0;font-size:clamp(28px,7vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.05;text-wrap:balance}
+.lede{margin:0;font-size:18px;color:var(--ink);max-width:56ch;text-wrap:pretty}
+h2{margin:0;font-size:19px;font-weight:800;letter-spacing:-.01em}
+h3{margin:0;font-size:16px;font-weight:800}
+p{margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+.tiny{font-size:12.5px}
+.num{font-variant-numeric:tabular-nums}
+button{font:inherit;font-weight:700;border-radius:12px;min-height:48px;padding:0 16px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;touch-action:manipulation}
+button.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+button:disabled{opacity:.45;cursor:not-allowed}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row>button{flex:1 1 140px}
+.pill{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:700;background:var(--soft);color:var(--ink);white-space:nowrap}
+.pill.flag{background:var(--flag-bg);color:var(--flag-ink)}
+.pill.ok{background:var(--hi-soft);color:var(--hi-ink)}
+.sample-tag{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px dashed var(--line);border-radius:6px;padding:2px 6px;align-self:flex-start}
+/* tap-through steps */
+.steps{display:flex;flex-direction:column;gap:12px}
+.dots{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.dots button{min-height:32px;padding:0 10px;border-radius:999px;font-size:13px}
+.dots button[aria-current="step"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.step[hidden]{display:none}
+.step{display:flex;flex-direction:column;gap:12px;animation:in .25s ease-out}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.step{animation:none}}
+.nav{display:flex;gap:10px}
+.nav button{flex:1}
+/* phone frame */
+.phone{background:var(--phone);border:1px solid var(--line);border-radius:26px;padding:14px 12px;display:flex;flex-direction:column;gap:8px;box-shadow:0 1px 0 var(--line);min-width:0}
+.phone .top{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);padding:0 4px 4px;border-bottom:1px solid var(--line)}
+.bubble{max-width:86%;padding:9px 12px;border-radius:16px;font-size:15px;line-height:1.4;white-space:pre-wrap;overflow-wrap:anywhere}
+.bubble.in{background:var(--bubble-in);color:var(--ink);align-self:flex-start;border-bottom-left-radius:5px}
+.bubble.out{background:var(--bubble-out);color:var(--bubble-out-ink);align-self:flex-end;border-bottom-right-radius:5px}
+.sys{align-self:center;font-size:12.5px;color:var(--muted);text-align:center}
+/* facts */
+.facts{display:flex;flex-direction:column;gap:10px}
+.facts p{font-size:15.5px}
+.facts b{font-weight:800}
+.never{border-left:4px solid var(--hi);padding-left:12px}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{text-align:left;padding:8px 6px;border-top:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;border-top:0}
+.scroll-x{overflow-x:auto;-webkit-overflow-scrolling:touch}
+footer{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:14px}
+
+/* page */
+.hard{background:var(--flag-bg);color:var(--flag-ink);border-radius:14px;padding:12px 14px;font-weight:700;font-size:15px}
+.shot{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--ground)}
+.shot .bar{background:var(--deep);color:#fff;font-size:12.5px;font-weight:700;padding:8px 12px;line-height:1.35}
+.shot .body{padding:12px;display:flex;flex-direction:column;gap:10px;font-size:14.5px}
+.shot h3{font-size:15px}
+.shot ol,.shot ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.fill{background:var(--hi-soft);color:var(--hi-ink);border-radius:5px;padding:0 4px}
+.missing{background:#fde7c8;color:#5c3b00;border:1px dashed currentColor;border-radius:5px;padding:0 4px;font-weight:700}
+.who{list-style:none;padding:0!important}
+.who li{display:flex;flex-direction:column;border-top:1px solid var(--line);padding-top:6px}
+.who li:first-child{border-top:0;padding-top:0}
+.ck{display:flex;gap:8px;align-items:flex-start;font-size:15px}
+.ck input{width:20px;height:20px;flex:none;margin-top:1px;accent-color:var(--accent)}
+.stops{list-style:none;padding:0!important;counter-reset:s}
+.stops li{counter-increment:s;display:flex;gap:10px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--card);font-weight:700}
+.stops li::before{content:counter(s);display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--soft);font-size:12.5px;flex:none}
+.opt{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:9px 10px;cursor:pointer;font-size:15px;background:var(--card)}
+.opt input{width:20px;height:20px;flex:none;margin:1px 0 0;accent-color:var(--accent)}
+.opt.right{border-color:var(--accent);background:var(--hi-soft)}
+.fb{font-size:14.5px;background:var(--soft);border-radius:10px;padding:8px 10px}
+.so{display:flex;flex-direction:column;gap:8px}
+.so label.f{display:flex;flex-direction:column;gap:5px;font-size:14px;font-weight:700;color:var(--muted)}
+.so input[type=text],.so input[type=date]{font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px;min-height:46px;width:100%;min-width:0}
+.sheetline{font-size:14.5px;background:var(--soft);border-radius:10px;padding:10px 12px}
+.open{display:flex;align-items:center;justify-content:center;text-decoration:none;font-weight:700;border-radius:12px;min-height:48px;padding:0 16px;background:var(--accent);color:var(--on-accent)}
+
+</style>
+</head>
+<body>
+<main>
+  <p class="banner">Demo with sample data. Not a real customer.</p>
+  <a class="back" href="/demo/">&larr; All demos</a>
+  <header>
+    <p class="eyebrow">autoants &middot; demo room</p>
+    <h1>Onboarding Ant</h1>
+    <p class="lede">Your new tech opens one page on his phone and learns how your shop works, in your words: your rules, who to call, how a call gets booked, the truck checklist, the system and the safety stops. Your lead tech signs off each part.</p>
+  </header>
+  <p class="hard">Company orientation, not certification or safety training. Nothing technical reaches your techs until a licensed tech has checked every step for your shop. Nobody is scored or ranked.</p>
+  <section class="card steps" aria-label="Demo">
+    <div class="step" data-title="Your company">
+      <h2>Your shop, in your words</h2>
+      <div class="shot"><div class="bar">Sample Heating &amp; Air &middot; company orientation</div><div class="body">
+        <h3>Mike&rsquo;s rules</h3>
+        <ol><li>Shoe covers on before you step inside. Every house, every time.</li><li>If you didn&rsquo;t take a picture, it didn&rsquo;t happen. Before and after, every unit.</li><li>Never guess a price. It comes off the flat-rate book on the tablet.</li></ol>
+        <h3>Who to call</h3>
+        <ul class="who"><li><b>Dana &middot; Office manager</b><span class="small muted">a schedule change, a parts order, or a customer&rsquo;s bill</span></li><li><b>Ray &middot; Lead tech</b><span class="small muted">a technical question on a job, or anything on the stop-and-call list</span></li><li><b>Mike &middot; Owner</b><span class="small muted">an injury, damage at a customer&rsquo;s house, or an upset customer</span></li></ul>
+        <h3>The truck checklist</h3>
+        <label class="ck"><input type="checkbox"> Tablet charged and logged in</label>
+        <label class="ck"><input type="checkbox"> Filters in the sizes on the restock list</label>
+        <label class="ck"><input type="checkbox"> Ladder strapped in, spreaders working</label>
+      </div></div>
+      <p class="small muted">From a 30 to 45 minute call with the owner: his rules, what he expects on a job, dress, schedule, who to call, how a call becomes a booked job, and the truck checklist. Anything he hasn&rsquo;t answered yet shows on the page as <span class="missing">not filled in yet</span>, never as a blank.</p>
+    </div>
+
+    <div class="step" data-title="The system">
+      <h2>The system and the safety stops</h2>
+      <p class="small"><span class="pill flag">Draft until a licensed tech checks it for this shop</span></p>
+      <ol class="stops"><li>Breaker off at the panel</li><li>Outdoor disconnect off</li><li>Verify with your meter</li><li>Capacitor: stored charge</li><li>Refrigerant: EPA 608 only</li><li>Gas shutoff and carbon monoxide</li><li>Attic heat and ladders</li></ol>
+      <p class="small">Lock and tag it per <span class="fill">the lockout rule below (your lock, your tag, only you take it off)</span>.</p>
+      <p class="small muted">The HVAC pack has a tap-a-part drawing of a split system with a gas furnace, the safety stops in order, and the five checks before a tech calls the office. Highlighted words are the shop&rsquo;s own rules. Plumbing and electrical packs come next.</p>
+      <a class="open" href="/demo/onboarding/sample-course.html">Open the full sample course</a>
+    </div>
+
+    <div class="step" data-title="Check yourself">
+      <h2>A short quiz from the shop&rsquo;s own facts</h2>
+      <fieldset class="q" data-answer="1" style="border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:6px">
+        <legend style="font-weight:700;margin-bottom:6px">A customer asks what the repair costs before you&rsquo;ve found the problem. What do you say?</legend>
+        <label class="opt"><input type="radio" name="dq" value="0"><span>Give a ballpark from memory</span></label>
+        <label class="opt"><input type="radio" name="dq" value="1"><span>&ldquo;Let me find the problem first, then I&rsquo;ll show you the price from our book before I start.&rdquo;</span></label>
+        <label class="opt"><input type="radio" name="dq" value="2"><span>Tell them to call Dana</span></label>
+        <p class="fb" id="fb" hidden aria-live="polite"></p>
+      </fieldset>
+      <p class="small muted">Tap an answer and it shows the shop&rsquo;s answer. No totals, no pass mark, nothing saved, and no AI reads anyone&rsquo;s answers.</p>
+    </div>
+
+    <div class="step" data-title="Sign-off">
+      <h2>The lead tech signs off each part</h2>
+      <div class="so">
+        <b>Your company</b>
+        <label class="ck"><input type="checkbox" id="w"> Watched: went through it with the lead tech</label>
+        <label class="ck"><input type="checkbox" id="u"> Understood: talked through the questions</label>
+        <label class="f">Signed off by<input type="text" id="by" placeholder="Ray (lead tech)" autocomplete="off"></label>
+        <label class="f">On<input type="date" id="on"></label>
+        <p class="sheetline" id="line" aria-live="polite"></p>
+      </div>
+      <p class="small muted">The ticks stay on that phone, and the owner prints the sign-off sheet for the file. In this demo nothing is kept.</p>
+    </div>
+  </section>
+
+  <section class="card facts" aria-label="The rules and the price">
+    <p class="never"><b>What it never does:</b> Scores, ranks or grades anyone. Calls itself certification or safety training (EPA 608 and licenses come from the real programs). Reaches your techs before a licensed tech has checked the technical steps for your shop.</p>
+    <p><b>Price:</b> No set price yet; priced with you.</p>
+  </section>
+  <footer>
+    <p>Sample Heating &amp; Air, Mike, Dana and Ray are made up. This page doesn&#x27;t send or store anything you type.</p>
+    <p><a href="/demo/">Back to all demos</a></p>
+  </footer>
+</main>
+<script>
+// tap-through: every .steps block gets dots + Back/Next
+document.querySelectorAll(".steps").forEach(function(box){
+  var steps=[].slice.call(box.querySelectorAll(":scope > .step")), cur=0;
+  var dots=document.createElement("div"); dots.className="dots"; dots.setAttribute("aria-label","Steps");
+  steps.forEach(function(s,i){var b=document.createElement("button");b.type="button";b.textContent=(i+1)+". "+(s.dataset.title||"Step");b.onclick=function(){go(i,true)};dots.appendChild(b)});
+  var nav=document.createElement("div"); nav.className="nav";
+  var back=document.createElement("button"); back.type="button"; back.textContent="Back";
+  var next=document.createElement("button"); next.type="button"; next.className="primary";
+  nav.appendChild(back); nav.appendChild(next);
+  box.insertBefore(dots,box.firstChild); box.appendChild(nav);
+  function go(i,focus){cur=Math.max(0,Math.min(steps.length-1,i));
+    steps.forEach(function(s,j){s.hidden=j!==cur});
+    [].forEach.call(dots.children,function(d,j){d.toggleAttribute("aria-current",j===cur);if(j===cur)d.setAttribute("aria-current","step")});
+    back.disabled=cur===0; next.textContent=cur===steps.length-1?"Start over":"Next";next.setAttribute("aria-label",cur===steps.length-1?"Start over":"Next: "+(steps[cur+1].dataset.title||"next step"));
+    box.dispatchEvent(new CustomEvent("step",{detail:cur}));
+    if(focus){var h=steps[cur].querySelector("h2");if(h){h.tabIndex=-1;h.focus({preventScroll:true})}box.scrollIntoView({block:"start",behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth"})}}
+  back.onclick=function(){go(cur-1,true)};
+  next.onclick=function(){go(cur===steps.length-1?0:cur+1,true)};
+  box.go=go; go(0,false);
+});
+
+</script>
+<script>(function(){
+var q=document.querySelector(".q"),a=q.getAttribute("data-answer"),fb=document.getElementById("fb");
+[].forEach.call(q.querySelectorAll("input"),function(i){i.onchange=function(){
+  [].forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.toggle("right",o.querySelector("input").value===a)});
+  fb.hidden=false;fb.textContent=(i.value===a?"That's the shop's answer. ":"The shop's answer: the price comes from the book, after you find the problem. ")+"Mike's rule: never guess a price."}});
+var w=document.getElementById("w"),u=document.getElementById("u"),by=document.getElementById("by"),on=document.getElementById("on"),line=document.getElementById("line");
+function upd(){line.textContent="Your company: watched "+(w.checked?"yes":"no")+", understood "+(u.checked?"yes":"no")+", signed off by "+(by.value||"____")+" on "+(on.value||"____")}
+[w,u,by,on].forEach(function(e){e.oninput=e.onchange=upd});upd();
+})();
+</script>
+</body>
+</html>
