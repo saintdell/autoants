@@ -19,6 +19,24 @@
 - AI-search visibility (GEO) for local businesses: measuring whether
   ChatGPT/Claude/Perplexity recommend a business, then fixing the
   legitimate signals those answers draw on
+- Three packages, each including the one before (founding price for the first
+  3 shops on each, then the regular price; 90-day minimum, then month to month,
+  cancel by email; the business owns every account, page, listing and list;
+  postcards $1.30 a card; texts and numbers on the business's own Twilio
+  account):
+  - The Office Manager (never miss a job): $750 setup + $500/month, then
+    $1,500 setup + $750/month
+  - Growth (get found): the Office Manager plus the Search plan work (Google
+    profile, listings, 2 new service-and-town or AI-answer pages a month, a
+    monthly AI-answer check), the social engine twice a month, review replies
+    drafted weekly, and the citywide Next Job Mailer trade bundle; $1,500/month,
+    then $1,750/month; $1,000 setup; a 30-minute call monthly
+  - Pro (get the next job): everything in Growth plus the weekly social engine
+    with Animated Shorts, 4 new pages a month, the Anniversary Mailer, the
+    Neighbor Hanger, the Booking Box and replies to website and
+    Facebook/Instagram inquiries; $2,500/month, then $3,000/month; $1,500
+    setup; a 30-minute call every two weeks
+  Everything else is also sold on its own:
 - Site Care: $100/month keeps the site, listings, and content current
 - Search plan: $500/month + $250 setup (founding rate, 5 seats; then $750/month
   + $500 setup): Google profile,
@@ -26,14 +44,14 @@
   monthly; setup includes a site rebuild of up to 5 pages when the old site is
   costing calls
 - The Office Manager: $750 setup + $500/month (founding rate for the first 3
-  shops; then $1,500 setup + $500/month) adds
+  shops; then $1,500 setup + $750/month) adds
   missed-call text-back, speed-to-lead, booking and quote follow-up, and
   review requests
-- Social media engine: $400/month (founding rate for the first 3 shops; then
-  $600/month), a full week of posts made
+- Social media engine: $750/month (founding rate for the first 3 shops; then
+  $1,000/month), a full week of posts made
   from the business's real jobs, every week, approved by the owner by text
-- Animated Shorts add-on: $250/month on top of the social media engine (first 3
-  shops; then $350/month), 4
+- Animated Shorts add-on: $350/month on top of the social media engine (first 3
+  shops; then $500/month), 4
   animated Shorts a month in the business's name, made from its own logo and
   photos. One business per trade per town
 - Explainer video: $750 flat, one time (first 3 shops; then $1,000). One 60-second animated video about one
