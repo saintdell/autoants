@@ -1,4 +1,5 @@
-"""Footer logo with twinkling antenna tips, and a smaller-ant profile photo (Lane, 2026-10-15).
+"""Smaller-ant profile photo (Lane, 2026-10-15). The twinkling footer GIF it also makes was rejected by Lane the same day
+("I don't like the twinkle"): the footer uses the still workspace-logo-320x132.png; don't commit footer-twinkle.gif.
 
     uv run --with pillow python brand/email/build_footer_twinkle.py
 
