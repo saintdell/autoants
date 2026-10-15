@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <title>Invoice Follow-up · autoants demo</title>
-<meta name="description" content="When an invoice goes past due, it drafts a polite reminder with the owner&#x27;s own payment link. The owner reads it and sends it.">
+<meta name="description" content="Polite payment reminders for a shop&#x27;s own invoices, in the shop&#x27;s name, with the owner&#x27;s own pay link. The owner approves the wording once; every reminder stops when the invoice is paid, the customer replies, or they text STOP.">
 <link rel="icon" href="/brand/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -114,20 +114,19 @@ footer{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:
   <header>
     <p class="eyebrow">autoants &middot; demo room</p>
     <h1>Invoice Follow-up</h1>
-    <p class="lede">When an invoice goes past due, it drafts a polite reminder with the owner&#x27;s own payment link. The owner reads it and sends it.</p>
+    <p class="lede">Polite reminders for your own unpaid invoices, in your shop&#x27;s name, with your own pay link. You approve the wording once. Every reminder stops the moment the invoice is paid, the customer replies, or they text STOP.</p>
   </header>
   <section class="card steps" aria-label="Demo">
     <div class="step" data-title="Overdue">
       <h2>Sample Tree Service's open invoices</h2>
-      <p class="small muted">Reminders start at 7 days past due: friendly at 7, firmer at 14, final at 30. Tap one to see its draft.</p>
+      <p class="small muted">On a schedule you pick. This sample: a note on the due date, a reminder a week later, a check-in a week after that, then the invoice comes to you to call. Tap one to see its message.</p>
       <ul class="inv" id="inv"></ul>
     </div>
     <div class="step" data-title="Draft">
-      <h2>The reminder, drafted</h2>
-      <div class="phone"><div class="top"><span>To <span id="to"></span></span><span>draft</span></div><div class="bubble out" id="draft"></div></div>
-      <div class="row"><button class="primary" type="button" id="send">Send from my phone</button></div>
+      <h2>The reminder, in your words</h2>
+      <div class="phone"><div class="top"><span>To <span id="to"></span></span><span>text</span></div><div class="bubble out" id="draft"></div></div>
       <p class="small" id="out" aria-live="polite"></p>
-      <p class="small muted">The owner reads every reminder before it goes. A wrong "you owe us" to someone who already paid costs more than the invoice.</p>
+      <p class="small muted"><b>What stops it:</b> the invoice shows paid in your job software; the customer replies (the reply comes to you, and nothing more goes out); they text STOP. Texts go only to numbers customers gave you for the job, never before 8 a.m. or after 9 p.m.</p>
     </div>
     <div class="step" data-title="The money">
       <h2>Where the money goes</h2>
@@ -142,7 +141,9 @@ footer{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:
 
   <section class="card facts" aria-label="The rules and the price">
     <p class="never"><b>What it never does:</b> Touches money. It never holds, moves or collects a payment: every reminder links to the owner&#x27;s own payment page, and anything marked paid is skipped.</p>
-    <p><b>Price:</b> No list price yet; priced with you.</p>
+    <p class="never"><b>And never:</b> uses any name but your shop&#x27;s, mentions late fees, credit reports or lawyers, or texts anyone about someone else&#x27;s bill.</p>
+    <p><b>Every Monday:</b> one line with your money after the job: what&#x27;s open by age, days from job done to invoice, and days from invoice to paid.</p>
+    <p><b>Price:</b> $500 to go live on its own, or included in the Office Manager ($750 setup + $500/mo). See <a href="/prices/">all prices</a>.</p>
   </section>
   <footer>
     <p>Sample Tree Service and its customers are made up. The payment links go nowhere.</p>
@@ -173,23 +174,25 @@ document.querySelectorAll(".steps").forEach(function(box){
 
 </script>
 <script>(function(){
-var BIZ="Sample Tree Service";
-var R=[{inv:"1035",who:"R. Sample",amt:450,over:33},{inv:"1039",who:"M. Example",amt:1200,over:16},{inv:"1042",who:"Demo Builders LLC",amt:850,over:9},{inv:"1044",who:"K. Placeholder",amt:300,over:2},{inv:"1030",who:"T. Test",amt:600,over:20,paid:true}];
-function tier(o){return o>=30?"final":o>=14?"firm":o>=7?"gentle":null}
-function msg(r){var link="pay.example.com/sample-tree/"+r.inv,t=tier(r.over);  // wording: tle-main/scripts/invoice_followup.py
-  if(t==="gentle")return "Hi "+r.who+", friendly reminder from "+BIZ+" — invoice #"+r.inv+" for $"+r.amt+" is now "+r.over+" days past due. You can pay quickly here: "+link+". Thanks so much!";
-  if(t==="firm")return "Hi "+r.who+", following up from "+BIZ+" on invoice #"+r.inv+" ($"+r.amt+"), now "+r.over+" days overdue. Please settle at your earliest convenience: "+link+". Let us know if there's an issue.";
-  return "Hi "+r.who+", final notice from "+BIZ+" on invoice #"+r.inv+" for $"+r.amt+", "+r.over+" days past due. Please pay here to keep your account in good standing: "+link+". Reach out if you need to arrange something."}
+var BIZ="Sample Tree Service",OWNER="Sam",PHONE="(504) 555-0100";
+var R=[{inv:"1035",who:"Robin Sample",first:"Robin",amt:450,due:"Sep 22",over:23},{inv:"1039",who:"Marcus Example",first:"Marcus",amt:1200,due:"Sep 30",over:15},{inv:"1042",who:"Dana at Demo Builders",first:"Dana",amt:850,due:"Oct 7",over:8},{inv:"1044",who:"Kim Placeholder",first:"Kim",amt:300,due:"Oct 15",over:0},{inv:"1030",who:"Terry Test",first:"Terry",amt:600,due:"Sep 25",over:20,paid:true}];
+// the same three steps and wording as products/collections-ant (col_due, col_d7, col_d14); a week after the last step, the owner calls
+function tier(o){return o>=21?"call":o>=14?"d14":o>=7?"d7":o>=0?"due":null}
+function money(n){return "$"+n.toLocaleString("en-US")}
+function msg(r){var link="pay.example.com/sample-tree/"+r.inv,t=tier(r.over),hi=BIZ+": Hi "+r.first+", ",end=" Reply STOP to opt out.";
+  if(t==="due")return hi+"a friendly note that invoice "+r.inv+" for "+money(r.amt)+", due "+r.due+", is open. Pay here: "+link+" Questions? Reply to reach "+OWNER+", or call "+PHONE+"."+end;
+  if(t==="d7")return hi+"a reminder that invoice "+r.inv+" for "+money(r.amt)+" was due "+r.due+". Pay here: "+link+" If something about it looks wrong, reply to reach "+OWNER+", or call "+PHONE+"."+end;
+  if(t==="d14")return hi+"checking in on invoice "+r.inv+" for "+money(r.amt)+" (due "+r.due+"). Pay here: "+link+" If another way to pay would help, reply to reach "+OWNER+", or call "+PHONE+"."+end;
+  return "No more texts. This one is on "+OWNER+"'s list to call: three reminders went out and it's still open. A person handles it from here."}
 var ul=document.getElementById("inv"),sel=R[2];
 R.forEach(function(r){var li=document.createElement("li"),b=document.createElement("button");b.type="button";
-  var t=tier(r.over),note=r.paid?"Paid: skipped":t?(t==="gentle"?"Friendly reminder":t==="firm"?"Firmer reminder":"Final notice")+" ready":"Not yet: "+r.over+" days";
-  b.innerHTML="<b></b><span class='amt'></span><small></small><small></small>";b.children[0].textContent="#"+r.inv+" · "+r.who;b.children[1].textContent="$"+r.amt.toLocaleString("en-US");
-  b.children[2].textContent=r.paid?"marked paid":r.over+" days past due";b.children[3].textContent=note;
-  if(r.paid||!t)b.disabled=true;b.setAttribute("aria-pressed",r===sel?"true":"false");
+  var t=tier(r.over),note=r.paid?"Paid: reminders stopped":t==="due"?"Due today: friendly note":t==="d7"?"A week past due: reminder":t==="d14"?"Two weeks: check-in":t==="call"?"On the owner's call list":"";
+  b.innerHTML="<b></b><span class='amt'></span><small></small><small></small>";b.children[0].textContent="#"+r.inv+" · "+r.who;b.children[1].textContent=money(r.amt);
+  b.children[2].textContent=r.paid?"marked paid":(r.over?r.over+" days past due":"due today");b.children[3].textContent=note;
+  if(r.paid)b.disabled=true;b.setAttribute("aria-pressed",r===sel?"true":"false");
   b.onclick=function(){sel=r;ul.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});show();document.querySelector(".steps").go(1,true)};
   li.appendChild(b);ul.appendChild(li)});
-function show(){document.getElementById("to").textContent=sel.who;document.getElementById("draft").textContent=msg(sel);document.getElementById("out").textContent=""}
-document.getElementById("send").onclick=function(){document.getElementById("out").textContent="In the real one, this opens the owner's own Messages app with the text filled in, and he presses send."};
+function show(){document.getElementById("to").textContent=sel.who;document.getElementById("draft").textContent=msg(sel);document.getElementById("out").textContent=tier(sel.over)==="call"?"":"Sent at 10:00 on its day, from the shop's own texting number."}
 show();
 })();
 </script>
