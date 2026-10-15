@@ -19,20 +19,24 @@
 - AI-search visibility (GEO) for local businesses: measuring whether
   ChatGPT/Claude/Perplexity recommend a business, then fixing the
   legitimate signals those answers draw on
-- Site Care: $99/month keeps the site, listings, and content current
-- Search plan: $500/month + $250 setup (founding rate, 5 seats): Google profile,
+- Site Care: $100/month keeps the site, listings, and content current
+- Search plan: $500/month + $250 setup (founding rate, 5 seats; then $750/month
+  + $500 setup): Google profile,
   map ranking, listings, a page for each service and town, and AI answers checked
   monthly; setup includes a site rebuild of up to 5 pages when the old site is
   costing calls
-- The Office Manager: $750 setup + $500/month (founding rate) adds
+- The Office Manager: $750 setup + $500/month (founding rate for the first 3
+  shops; then $1,500 setup + $500/month) adds
   missed-call text-back, speed-to-lead, booking and quote follow-up, and
   review requests
-- Social media engine: $400/month (founding rate), a full week of posts made
+- Social media engine: $400/month (founding rate for the first 3 shops; then
+  $600/month), a full week of posts made
   from the business's real jobs, every week, approved by the owner by text
-- Animated Shorts add-on: $250/month on top of the social media engine, 4
+- Animated Shorts add-on: $250/month on top of the social media engine (first 3
+  shops; then $350/month), 4
   animated Shorts a month in the business's name, made from its own logo and
   photos. One business per trade per town
-- Explainer video: $750 flat, one time. One 60-second animated video about one
+- Explainer video: $750 flat, one time (first 3 shops; then $1,000). One 60-second animated video about one
   service, in wide (homepage) and vertical (Google Business Profile) versions,
   one round of changes, the business's own logo and photos, a labeled AI voice
 - Every monthly plan includes a 60-second recap video of the month's work
@@ -40,7 +44,8 @@
   written report on what to automate first, what each fix is worth in the
   owner's own numbers, which fixes they can do themselves, and 3-7
   ready-made AI tools they could set up alone in under 30 minutes. Credited
-  toward setup if they continue. A free 15-minute call comes first.
+  toward setup if they continue. Founding price; $1,000 after two reference
+  clients. A free 15-minute call comes first.
 
 ## The assistants ("Ants", one job each; the owner approves what goes to customers)
 - Text-Back Ant: texts back a missed call within seconds
@@ -88,7 +93,7 @@
 - [Data page](https://autoants.com/data/): the catalog, findings and how to buy. Sold as counts by ZIP, month, trade and category; no homeowner names; not a consumer reporting agency (the data may not be used for credit, insurance, housing or employment decisions)
 - Available: New Orleans residential permits by trade since 2012 (data.nola.gov, CC0; a dedicated re-roof permit only since 2025-05-15), a 10-year trade seasonality index (2016-2025, 16 trades, confidence-graded), new business licenses by category, the next-job signal by ZIP, and storm and weather history joined to permits
 - In development: food-service inspection records, contractor license records, permits joined to the assessor roll
-- Ways to get it: Permits Pulled (free monthly report), weekly trade or new-business feeds (from $49/month, founding pricing), custom datasets and reports (quoted per project)
+- Ways to get it: Permits Pulled (free monthly report), weekly trade or new-business feeds (from $50/month, founding pricing), custom datasets and reports (quoted per project)
 - Findings: re-roof permits peak in April (about 49% above an average month); HVAC permits peak in April-May and October, not summer; standby generator permits ran 8 times higher in 2022 after Hurricane Ida (714 vs about 86 a year in 2016-2019). Source: data.nola.gov 72f9-bi28, pulled 2026-10-08
 
 ## Contact
