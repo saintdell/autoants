@@ -1,0 +1,14 @@
+{
+  "_readme": "The only place payment links live. Paste each Stripe Payment Link (https://buy.stripe.com/...) over its REPLACE_ placeholder, then run: python3 pay/check_links.py. It fails while any REPLACE_ remains. Setup steps: tle-main/docs/launch/stripe-setup.md",
+  "offers": {
+    "assessment": "https://book.stripe.com/7sY3cv7xafqE2QFbSVaIM00",
+    "go_live": "https://buy.stripe.com/REPLACE_go_live",
+    "office_manager": "https://buy.stripe.com/REPLACE_office_manager",
+    "search_plan": "https://buy.stripe.com/REPLACE_search_plan",
+    "site_care": "https://buy.stripe.com/REPLACE_site_care",
+    "social_engine": "https://buy.stripe.com/REPLACE_social_engine",
+    "shorts_addon": "https://buy.stripe.com/REPLACE_shorts_addon",
+    "explainer": "https://buy.stripe.com/REPLACE_explainer"
+  },
+  "kickoff_call": "https://cal.com/REPLACE_kickoff"
+}

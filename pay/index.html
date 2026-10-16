@@ -75,8 +75,9 @@
         <div class="price">$500 <small>flat</small></div>
         <div class="today">Due today: <b>$500</b></div>
         <ul>
-          <li>A recorded 45-minute interview about how your week actually runs</li>
-          <li>A bound, printed report with its own report number: what to automate first and what each fix is worth</li>
+          <li>A 45-minute interview about how your business runs, from the first call to getting paid</li>
+          <li>A bound, printed report with its own report number: what to fix first, and what to leave alone</li>
+          <li>A 30-minute walkthrough of what we found</li>
           <li>3–7 ready-made AI tools you could set up yourself</li>
           <li>Yours to keep, even if you never hire us</li>
         </ul>
@@ -254,12 +255,23 @@
   fetch('links.json', { cache: 'no-store' })
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (j) {
-      links = j.offers || {};
-      var pending = Object.keys(links).filter(function (k) { return links[k].indexOf('REPLACE_') !== -1; });
-      if (pending.length) {
-        document.getElementById('draft-count').textContent = pending.length + ' of ' + Object.keys(links).length + ' payment links are not set up yet.';
-        document.getElementById('draft-banner').hidden = false;
-      }
+      // Only offers with a live Stripe link are shown (Lane, 2026-10-16: "publish the pay page with just the
+      // assessment"). An offer whose link is still a REPLACE_ placeholder is hidden, and so is a group left empty.
+      var all = j.offers || {};
+      links = {};
+      Object.keys(all).forEach(function (k) { if (all[k].indexOf('REPLACE_') === -1) links[k] = all[k]; });
+      buttons.forEach(function (a) {
+        if (links[a.dataset.offer]) return;
+        var card = a.closest('article');
+        if (card) card.style.display = 'none';
+      });
+      Array.prototype.forEach.call(document.querySelectorAll('.offers'), function (g) {
+        var shown = Array.prototype.some.call(g.querySelectorAll('article'), function (c) { return c.style.display !== 'none'; });
+        if (shown) return;
+        g.style.display = 'none';
+        var t = g.previousElementSibling;
+        if (t && t.classList.contains('group-title')) t.style.display = 'none';
+      });
       render(true);
     })
     .catch(function () { loadFailed = true; render(true); });
