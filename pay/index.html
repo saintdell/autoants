@@ -32,7 +32,7 @@
     <p class="sub">Two ways to pay. Either way, checkout runs on Stripe, our payment processor. Your card details go to Stripe, never to autoants.com, and we never see them.</p>
     <div class="paths">
       <a class="path" href="#invoice"><span class="n">01</span><span class="t">Pay an invoice or quote</span><span class="d">We sent you a custom quote or an invoice by email.</span></a>
-      <a class="path" href="#plans"><span class="n">02</span><span class="t">Start a plan</span><span class="d">The assessment, a website, the Office Manager, search, social, an explainer.</span></a>
+      <a class="path" href="#plans"><span class="n">02</span><span class="t">Start a plan</span><span class="d">The assessment, Try one, or a monthly plan.</span></a>
     </div>
   </header>
 
@@ -57,7 +57,7 @@
         <span>I've read and agree to the <a href="../terms/" target="_blank" rel="noopener">autoants service agreement<span class="sr"> (opens in a new tab)</span></a></span>
       </label>
       <ul class="terms-lines" id="gate-terms">
-        <li><b>The 7-day promise (go-live):</b> once you say go and send us what we need, your website is live within 7 days, or the setup fee for it is refunded.</li>
+        <li><b>The 7-day promise (Try one):</b> once you say go and send us what we need, your first assistant is live within 7 days (for anything that texts, counted from the carriers&rsquo; approval), or the $500 back.</li>
         <li><b>Monthly plans:</b> billed in advance on the same day each month. Cancel any time after the first 90 days, effective the end of the paid month.</li>
         <li><b>Setup fees</b> are due when you say go.</li>
       </ul>
@@ -65,7 +65,7 @@
       <noscript><p class="gate-status">The Pay buttons need JavaScript. Email hello@autoants.com and we'll send you a payment link instead.</p></noscript>
     </div>
 
-    <p class="founding"><b>Founding-client pricing.</b> These are founding rates for our first clients, and a founding rate stays the same for as long as you keep that service. The search plan has five founding seats (then $750/mo + $500 setup); the other founding rates are for the first 3 shops, and every one says what follows on <a href="/prices/">the prices page</a>.</p>
+    <p class="founding"><b>Prices for our first 3 shops.</b> These prices are for our first 3 shops on each plan, and yours stays the same for as long as you keep that service. What follows is on <a href="/prices/#details">the prices page</a>.</p>
 
     <h3 class="group-title">Start here</h3>
     <div class="offers">
@@ -81,118 +81,71 @@
           <li>3–7 ready-made AI tools you could set up yourself</li>
           <li>Yours to keep, even if you never hire us</li>
         </ul>
-        <p class="note"><b>Credited toward your setup</b> if you continue within 30 days. When you do, we send the setup as an invoice with the $500 taken off, and if your setup is less than $500 (Search's is $250), the rest comes off your first month. Don't use the buttons below for it.</p>
+        <p class="note"><b>Credited toward your setup</b> if you continue within 30 days. When you do, we send the setup as an invoice with the $500 taken off, and if your setup is less than $500, the rest comes off your first month. Don't use the buttons below for it.</p>
         <a class="pay" data-offer="assessment" href="#gate" aria-disabled="true"><span class="lbl">Pay $500</span><span class="sr"> for the assessment</span> <span class="lock" aria-hidden="true">tick the agreement box first</span></a>
       </article>
 
       <article class="offer" aria-labelledby="o-golive">
-        <p class="tag">One-time · go-live</p>
-        <h3 id="o-golive">Ready-Launch</h3>
-        <div class="price">$500 <small>one-time</small></div>
+        <p class="tag">One-time</p>
+        <h3 id="o-golive">Try one</h3>
+        <div class="price">$500 <small>once</small></div>
         <div class="today">Due today: <b>$500</b></div>
-        <p class="d">A real site on your own domain: content, Google Business Profile, click-to-call.</p>
+        <p class="d">One assistant on your phone, live within 7 days or your $500 back. Most shops start with texting back every missed call.</p>
         <ul>
-          <li>Live within 7 days of your go, or your setup fee back</li>
-          <li>Mobile-first + click-to-call</li>
-          <li>Google Business Profile set up</li>
+          <li>Or pick another: website-form answers, booking and reminders, the review ask, service-due or invoice reminders, or a &ldquo;book now&rdquo; box on your site</li>
+          <li>Texts run on your own phone-and-text account (Twilio)</li>
+          <li>Price for our first 3 shops; then $750</li>
         </ul>
-        <a class="pay" data-offer="go_live" href="#gate" aria-disabled="true"><span class="lbl">Pay $500</span><span class="sr"> for Ready-Launch</span> <span class="lock" aria-hidden="true">tick the agreement box first</span></a>
+        <a class="pay" data-offer="go_live" href="#gate" aria-disabled="true"><span class="lbl">Pay $500</span><span class="sr"> for Try one</span> <span class="lock" aria-hidden="true">tick the agreement box first</span></a>
       </article>
     </div>
 
     <h3 class="group-title">Monthly plans</h3>
     <div class="offers">
-      <article class="offer feat" aria-labelledby="o-om">
-        <p class="tag">Monthly · recommended</p>
-        <h3 id="o-om">Office Manager</h3>
-        <div class="price">$500<small>/mo + $750 setup</small></div>
-        <div class="today">Due today: <b>$1,250</b> ($750 setup + first month). Then $500 a month.</div>
-        <p class="d">The recurring stack that captures and books the work you're missing now.</p>
+      <article class="offer feat" aria-labelledby="o-growth">
+        <p class="tag">Monthly · most shops</p>
+        <h3 id="o-growth">Get found and never miss a job</h3>
+        <div class="price">$1,250<small> a month + $1,000 setup</small></div>
+        <div class="today">Due today: <b>$2,250</b> ($1,000 setup + first month). Then $1,250 a month.</div>
+        <p class="d">We answer the calls you miss and get you found on Google.</p>
         <ul>
-          <li>Missed-call text-back</li>
-          <li>Speed-to-lead + follow-up</li>
-          <li>Reviews + booking</li>
-          <li>Add the AI receptionist anytime</li>
+          <li>Missed calls answered, quotes followed up, appointments booked and reminded, reviews requested</li>
+          <li>Your Google profile kept right and posted to every week, your listings kept right, 2 new pages a month</li>
+          <li>What AI answers say about you, checked every month</li>
+          <li>Review replies drafted; your website kept up</li>
         </ul>
-        <a class="pay" data-offer="office_manager" href="#gate" aria-disabled="true"><span class="lbl">Start: $1,250 today</span><span class="sr"> for the Office Manager</span> <span class="lock" aria-hidden="true">tick the agreement box first</span></a>
+        <p class="note">Price for our first 3 shops; then $1,750 a month. That&rsquo;s $250 a month less than the two bought one at a time.</p>
+        <a class="pay" data-offer="growth" href="#gate" aria-disabled="true"><span class="lbl">Start: $2,250 today</span><span class="sr"> for Get found and never miss a job</span> <span class="lock" aria-hidden="true">tick the agreement box first</span></a>
       </article>
 
-      <article class="offer" aria-labelledby="o-search">
-        <p class="tag">Monthly · founding</p>
-        <h3 id="o-search">Search optimization</h3>
-        <div class="price">$500<small>/mo + $250 setup · founding</small></div>
-        <div class="today">Due today: <b>$750</b> ($250 setup + first month). Then $500 a month.</div>
-        <p class="d">Get found everywhere a customer, or an AI, looks.</p>
-        <ul>
-          <li>Map ranking checked before and after</li>
-          <li>Google profile fixed and kept current</li>
-          <li>A page for each service and town you cover</li>
-          <li>Listings matched everywhere</li>
-          <li>AI answers checked monthly, plus a page written for AI assistants</li>
-          <li>A one-line report every week, a call every month</li>
-          <li>You keep every page and listing</li>
-        </ul>
-        <p class="note"><b>Five founding seats.</b> Email <a href="mailto:hello@autoants.com?subject=Search%20plan%3A%20is%20a%20founding%20seat%20open%3F">hello@autoants.com</a> to check one is still open before you pay.</p>
-        <a class="pay" data-offer="search_plan" href="#gate" aria-disabled="true"><span class="lbl">Start: $750 today</span><span class="sr"> for Search optimization</span> <span class="lock" aria-hidden="true">tick the agreement box first</span></a>
+      <article class="offer" aria-labelledby="o-om">
+        <p class="tag">Monthly · one fix</p>
+        <h3 id="o-om">Never miss a job</h3>
+        <div class="price">$750<small> a month + $750 setup</small></div>
+        <div class="today">Due today: <b>$1,500</b> ($750 setup + first month). Then $750 a month.</div>
+        <p class="d">Just the calls: missed calls answered, quotes followed up, appointments booked and reminded, reviews requested, Facebook and Instagram messages answered, plus a &ldquo;book now&rdquo; box on your site.</p>
+        <p class="note">Price for our first 3 shops; then $1,000 a month. Paying per job instead ($250 a month + $25 a job, never more than $750)? We send that as an invoice.</p>
+        <a class="pay" data-offer="office_manager" href="#gate" aria-disabled="true"><span class="lbl">Start: $1,500 today</span><span class="sr"> for Never miss a job</span> <span class="lock" aria-hidden="true">tick the agreement box first</span></a>
       </article>
 
-      <article class="offer" aria-labelledby="o-care">
-        <p class="tag">Monthly</p>
-        <h3 id="o-care">Site Care</h3>
-        <div class="price">$100<small>/mo</small></div>
-        <div class="today">Due today: <b>$100</b>. Then $100 a month.</div>
-        <p class="d">The light option, if you just want the site kept up.</p>
-        <ul>
-          <li>Website hosting and edits</li>
-          <li>Google profile kept current</li>
-        </ul>
-        <a class="pay" data-offer="site_care" href="#gate" aria-disabled="true"><span class="lbl">Start: $100 today</span><span class="sr"> for Site Care</span> <span class="lock" aria-hidden="true">tick the agreement box first</span></a>
+      <article class="offer" aria-labelledby="o-found">
+        <p class="tag">Monthly · one fix</p>
+        <h3 id="o-found">Get found</h3>
+        <div class="price">$750<small> a month + $250 setup</small></div>
+        <div class="today">Due today: <b>$1,000</b> ($250 setup + first month). Then $750 a month.</div>
+        <p class="d">Just Google: your Google profile kept right and posted to every week, your listings kept right, 2 new pages a month, what AI answers say about you checked every month, review replies drafted, and your website kept up.</p>
+        <p class="note">Price for our first 3 shops; then $1,000 a month.</p>
+        <a class="pay" data-offer="search_plan" href="#gate" aria-disabled="true"><span class="lbl">Start: $1,000 today</span><span class="sr"> for Get found</span> <span class="lock" aria-hidden="true">tick the agreement box first</span></a>
       </article>
 
-      <article class="offer" aria-labelledby="o-social">
-        <p class="tag">Monthly · founding</p>
-        <h3 id="o-social">Social media engine</h3>
-        <div class="price">$750<small>/mo · founding</small></div>
-        <div class="today">Due today: <b>$750</b>. Then $750 a month.</div>
-        <p class="d">A full week of posts made from your real jobs, every week.</p>
-        <ul>
-          <li>Before/after clips from your jobs</li>
-          <li>Google, Facebook, Instagram, Nextdoor</li>
-          <li>Approve everything by text</li>
-        </ul>
-        <a class="pay" data-offer="social_engine" href="#gate" aria-disabled="true"><span class="lbl">Start: $750 today</span><span class="sr"> for the social media engine</span> <span class="lock" aria-hidden="true">tick the agreement box first</span></a>
-      </article>
-
-      <article class="offer" aria-labelledby="o-shorts">
-        <p class="tag">Monthly add-on</p>
-        <h3 id="o-shorts">Animated Shorts add-on</h3>
-        <div class="price">+$350<small>/mo · founding</small></div>
-        <div class="today">Due today: <b>$350</b>. Then $350 a month.</div>
-        <p class="d">4 short animated videos a month in your name, made from your own logo and photos.</p>
-        <ul>
-          <li>Only with the social media engine</li>
-          <li>One business per trade per town</li>
-        </ul>
-        <p class="note"><b>Check your town first.</b> Email <a href="mailto:hello@autoants.com?subject=Shorts%20add-on%3A%20is%20my%20town%20open%3F">hello@autoants.com</a> to make sure your trade and town are open before you pay.</p>
-        <a class="pay" data-offer="shorts_addon" href="#gate" aria-disabled="true"><span class="lbl">Add: $350 today</span><span class="sr"> for the animated Shorts add-on</span> <span class="lock" aria-hidden="true">tick the agreement box first</span></a>
-      </article>
-    </div>
-    <p class="plan-note">Every monthly plan includes a 60-second recap video of your month: what we did, counted from our own logs.</p>
-
-    <h3 class="group-title">One-off</h3>
-    <div class="offers">
-      <article class="offer" aria-labelledby="o-explainer">
-        <p class="tag">One-off</p>
-        <h3 id="o-explainer">Your 60-second explainer video</h3>
-        <div class="price">$750 <small>flat</small></div>
-        <div class="today">Due today: <b>$750</b></div>
-        <ul>
-          <li>Explains the service you most want to sell</li>
-          <li>For the top of your homepage and your Google Business Profile</li>
-          <li>A wide and a vertical version, one round of changes</li>
-          <li>Your own logo and photos only, and a clearly labeled AI voice</li>
-        </ul>
-        <a class="pay" data-offer="explainer" href="#gate" aria-disabled="true"><span class="lbl">Pay $750</span><span class="sr"> for the explainer video</span> <span class="lock" aria-hidden="true">tick the agreement box first</span></a>
+      <article class="offer" aria-labelledby="o-pro">
+        <p class="tag">Monthly · with the add-on</p>
+        <h3 id="o-pro">Both, plus Get the next job</h3>
+        <div class="price">$2,500<small> a month + $1,500 setup</small></div>
+        <div class="today">Due today: <b>$4,000</b> ($1,500 setup + first month). Then $2,500 a month.</div>
+        <p class="d">Get found and never miss a job, plus social and marketing: weekly posts and short videos from your real jobs, postcards to the neighbors ($1.30 a card), door hangers around every job, and postcards to past customers.</p>
+        <p class="note">Price for our first 3 shops; then $3,000 a month.</p>
+        <a class="pay" data-offer="pro" href="#gate" aria-disabled="true"><span class="lbl">Start: $4,000 today</span><span class="sr"> for both, plus Get the next job</span> <span class="lock" aria-hidden="true">tick the agreement box first</span></a>
       </article>
     </div>
   </section>

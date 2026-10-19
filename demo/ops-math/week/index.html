@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>One week, three desks · Operations Math demo · autoants</title>
+<meta name="description" content="Operations Math side-by-side on three made-up weeks: deliveries (Route Desk), cut lists (Cut Desk) and shifts (Shift Desk), with what didn't get better said first.">
+<link rel="icon" href="/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/demo/demo.css">
+</head>
+<body>
+<!-- SAMPLE: the three SAMPLE weeks in tle-main/products/opsmath-sidebyside/out (demo, demo-cut, demo-shift), run
+     2026-10-10/13. The sample reports carry placeholder company names; this page names none of them. -->
+<main class="wrap">
+  <p class="banner">Demo with sample data: three made-up companies and three made-up weeks, not real customers.</p>
+  <a class="back" href="/demo/">&larr; All demos</a>
+  <header>
+    <div class="label">Operations Math</div>
+    <h1>One week, three desks</h1>
+    <p class="lede">We take one normal past week, plan it again under your own rules, and show it next to what you actually did. What didn't get better is said first.</p>
+  </header>
+  <div class="seg" role="group" aria-label="Which desk">
+    <button type="button" aria-pressed="true" data-d="route">Routes</button>
+    <button type="button" aria-pressed="false" data-d="cut">Cut lists</button>
+    <button type="button" aria-pressed="false" data-d="shift">Shifts</button>
+  </div>
+
+  <section class="card desk" id="route" aria-labelledby="route-h">
+    <span class="sampletag">Route Desk &middot; made-up delivery and install company</span>
+    <h2 id="route-h">101 delivery and install jobs, 5 days</h2>
+    <p class="note">4 days had a record of which crew ran each job, in what order; those are compared. Both columns are scored the same way, with the same crews, windows and install times.</p>
+    <p><b>Said first, what didn't get better:</b> on Wednesday and Thursday the plan drove more miles (+14 and +13) to keep customers' time windows.</p>
+    <table class="tbl">
+      <thead><tr><th>4 days</th><th class="n">As run</th><th class="n">Plan</th></tr></thead>
+      <tbody>
+        <tr><td>Late arrivals</td><td class="n">6</td><td class="n good">0</td></tr>
+        <tr><td>Minutes late, all jobs</td><td class="n">422</td><td class="n good">0</td></tr>
+        <tr><td>Overtime hours</td><td class="n">9.4</td><td class="n good">0.4</td></tr>
+        <tr><td>Miles driven</td><td class="n">813</td><td class="n good">724</td></tr>
+        <tr><td>Drive hours</td><td class="n">27.1</td><td class="n good">24.1</td></tr>
+        <tr><td>Truck-days used</td><td class="n">19</td><td class="n good">16</td></tr>
+        <tr><td>Rule breaks (yours, written down)</td><td class="n">4</td><td class="n good">0</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Road times are modeled, not measured. Friday had no record of who ran what, so it's shown as a plan only and left out of the totals.</p>
+  </section>
+
+  <section class="card desk" id="cut" aria-labelledby="cut-h" hidden>
+    <span class="sampletag">Cut Desk &middot; made-up fab shop</span>
+    <h2 id="cut-h">581 parts on 22 work orders, 5 materials</h2>
+    <p class="note">4 days had the shop's records of how each part was cut; those are compared, measured against modeled.</p>
+    <p><b>Said first, what didn't get better:</b> the plan pulls more stock pieces (54 to 59). Most of the extra are short pieces from the remnant rack, and each one is another pick and another setup at the saw.</p>
+    <table class="tbl">
+      <thead><tr><th>4 days</th><th class="n">As cut</th><th class="n">Plan</th></tr></thead>
+      <tbody>
+        <tr><td>Stock pieces pulled</td><td class="n">54</td><td class="n worse">59</td></tr>
+        <tr><td>New stock pieces (not from the rack)</td><td class="n">54</td><td class="n good">39</td></tr>
+        <tr><td>Sheet scrap</td><td class="n">34.4%</td><td class="n good">16.7%</td></tr>
+        <tr><td>Material used, lb</td><td class="n">8,582</td><td class="n good">7,848</td></tr>
+        <tr><td>Stock cost</td><td class="n">$12,472</td><td class="n good">$9,709</td></tr>
+      </tbody>
+    </table>
+    <p class="note">The shop's column is its own records; the plan's column is modeled under its kerf, grain, saw and remnant rules.</p>
+  </section>
+
+  <section class="card desk" id="shift" aria-labelledby="shift-h" hidden>
+    <span class="sampletag">Shift Desk &middot; made-up restaurant group</span>
+    <h2 id="shift-h">24 people, 76 shifts, one week</h2>
+    <p class="note">The as-run column is the group's own time punches. The plan covers the same need under labor law and the rules the managers stated. People appear only as coded ids.</p>
+    <p><b>Said first, what didn't get better:</b> labor cost is $50 higher on the plan, because it schedules enough people for the hours that ran short; weekend shifts are a little less even; the number of people over 40 hours didn't move.</p>
+    <table class="tbl">
+      <thead><tr><th>The week</th><th class="n">As run</th><th class="n">Plan</th></tr></thead>
+      <tbody>
+        <tr><td>Overtime hours</td><td class="n">21.8</td><td class="n good">16.0</td></tr>
+        <tr><td>Overtime premium</td><td class="n">$205</td><td class="n good">$137</td></tr>
+        <tr><td>Labor cost</td><td class="n">$8,117</td><td class="n worse">$8,167</td></tr>
+        <tr><td>Short-staffed person-hours</td><td class="n">23.9</td><td class="n good">0</td></tr>
+        <tr><td>Rule violations</td><td class="n">19</td><td class="n good">0</td></tr>
+      </tbody>
+    </table>
+    <p class="note">A manager approves every schedule. Nothing here rates any person.</p>
+  </section>
+
+  <section class="card facts" aria-labelledby="f-h">
+    <h2 id="f-h">What you send, what you get</h2>
+    <ul class="plain">
+      <li><b>You send</b> one normal week from the system you already use (an export, or a photo of the board), and who ran what.</li>
+      <li><b>We watch</b> your planner build one day, so the unwritten rules get written down.</li>
+      <li><b>You get</b> a report: your week and the plan, day by day, every number labeled measured or modeled.</li>
+    </ul>
+    <h2>What it never does</h2>
+    <p>Promises savings. Every plan number is modeled until it's measured on your own records, and your dispatcher, foreman or manager approves every plan.</p>
+    <h2>Price</h2>
+    <p class="price">Operations Math by autoants, its own line: a $1,500 30-day pilot (credited to month one), then priced by the size of the operation, from $750/mo.</p>
+    <p class="note">See <a href="/demo/ops-math/">one day of routes on a map</a>.</p>
+  </section>
+  <footer>Three made-up companies and three made-up weeks. Their numbers come from our own sample runs, not from any real business. Set up by autoants.</footer>
+</main>
+<script>
+(function(){
+  var btns=[].slice.call(document.querySelectorAll(".seg button")), desks=[].slice.call(document.querySelectorAll(".desk"));
+  btns.forEach(function(b){b.addEventListener("click",function(){
+    btns.forEach(function(x){x.setAttribute("aria-pressed",String(x===b))});
+    desks.forEach(function(d){d.hidden=d.id!==b.dataset.d});
+  })});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>A whole day with Never miss a job · autoants demo</title>
+<meta name="description" content="One made-up shop, one day: a missed call texted back, a web form answered, a visit booked, a review ask, the tracker and the monthly report.">
+<link rel="icon" href="/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/demo/demo.css">
+</head>
+<body>
+<main class="wrap">
+  <p class="banner">Demo with sample data: Sample Heating &amp; Air is a made-up shop, not a real customer.</p>
+  <a class="back" href="/demo/">&larr; All demos</a>
+  <header>
+    <div class="label">Never miss a job</div>
+    <h1>A whole day</h1>
+    <p class="lede">Sam runs a made-up HVAC shop and spends the day on jobs. Here is everything Never miss a job does around him, from the first missed call to the monthly report.</p>
+  </header>
+  <div class="grid2">
+    <div id="phone"></div>
+    <section class="card facts" aria-labelledby="facts-h">
+      <h2 id="facts-h">The day, in order</h2>
+      <ul class="plain">
+        <li><a href="/demo/text-back/">Text-Back</a>: a missed call gets one text.</li>
+        <li><a href="/demo/responder/">Responder</a>: a web form gets a drafted reply.</li>
+        <li><a href="/demo/scheduler/">Scheduler</a>: three open times; booked when Sam confirms.</li>
+        <li><a href="/demo/review-ask/">Review ask</a>: after the paid job.</li>
+        <li><a href="/demo/tracker/">Tracker</a>: where today's calls came from.</li>
+        <li><a href="/demo/monthly-report/">Monthly report</a>: the month on one page.</li>
+      </ul>
+      <h2>What it never does</h2>
+      <p>Sends wording Sam hasn't approved, books a visit before he confirms, texts a call he answered, or asks the same customer for a review twice.</p>
+      <h2>Price</h2>
+      <p class="price">Never miss a job: $750 a month + $750 setup, or $1,250 a month with Get found. 90 days, then month to month. Texts run on your own account.</p>
+    </section>
+  </div>
+  <footer>Sample Heating &amp; Air, Sam, Dana and Ray are made up, and so is every number, time and message (555 numbers). Set up by autoants.</footer>
+</main>
+<script src="/demo/phone.js"></script>
+<script>
+(function(){
+var P = window.DemoPhone, B = "Sample Heating & Air", A = "Sample Heating & Air Ants";
+var visit = P.short(P.day(2, {noSat:true}));
+
+P.mount(document.getElementById("phone"), {
+title: B, subtitle: "Dana's phone (customer)", avatar: "SH", me: "customer",
+intro: "8:05 AM. Sam is on a job in Metairie. Dana's AC quits and she calls the shop.",
+events: [
+ {t:"chip", text:"8:05 AM · Text-Back", say:"8:05 AM. Dana calls; the crew is on a job and nobody can pick up."},
+ {t:"call", k:"Calling", title:B, text:"(504) 555-0100 · ringing"},
+ {t:"missed", k:"Call ended", title:"No answer", text:"It rang out."},
+ {t:"typing", from:"business"},
+ {t:"text", from:"business", text:"Hi, this is Sam at Sample Heating & Air. Sorry we missed you, we're on a job. Is it not cooling, not running, or leaking? Tell me that and your cross streets and I'll text you a time. Reply STOP to opt out.", say:"One text, in Sam's own approved words, naming the shop."},
+ {t:"typing", from:"customer"},
+ {t:"text", from:"customer", text:"Not cooling. Upstairs unit. Banks and Carrollton.", say:"Dana answers."},
+ {t:"view", title:A, subtitle:"Sam's phone (owner)", avatar:"A", me:"owner", chip:"Now on Sam's phone"},
+ {t:"notify", k:"Text to Sam", tag:"Text-Back", title:A, text:"Dana ((504) 555-0134) replied to the missed-call text: \"Not cooling. Upstairs unit. Banks and Carrollton.\"", say:"Her reply comes to Sam, tagged Text-Back. He texts her a window himself between jobs."},
+ {t:"chip", text:"10:20 AM · Responder", say:"10:20 AM. A web form comes in from Ray."},
+ {t:"card", k:"Website form", title:"Ray, Gentilly", text:"\"My system is 15 years old and the bills keep going up. Can someone look at replacing it?\""},
+ {t:"draft", title:"Reply to Ray, drafted from your approved answers", text:"Hi Ray, this is Sam at Sample Heating & Air. Thanks for reaching out. A replacement starts with a visit to look at the system and the house. I can send you three times for that visit. Reply STOP to opt out.", note:"Nothing sends until you tap Approve.", say:"The Responder drafts a reply from answers Sam approved at setup."},
+ {t:"action", buttons:[{label:"Approve and send", say:"Sam approves it. It goes to Ray in seconds."},{label:"Edit", ghost:true, say:"Sam could edit it first; it still waits for him."}]},
+ {t:"chip", text:"10:22 AM · Scheduler", say:"The Scheduler reads Sam's calendar and offers three open times."},
+ {t:"notify", k:"Text to Sam", tag:"Scheduler", title:A, text:"Ray picked " + visit + " at 9:00 AM for the replacement look. Confirm?", say:"Ray picks one. Nothing is booked yet."},
+ {t:"action", buttons:[{label:"Confirm the visit", say:"Sam confirms. Now it's on the calendar, and Ray gets a confirmation."},{label:"Pick another time", ghost:true}]},
+ {t:"chip", text:"4:30 PM · Review ask", say:"4:30 PM. A job from this morning is marked paid."},
+ {t:"notify", k:"Text to Sam", tag:"Review ask", title:A, text:"The Lakeview tune-up is marked paid. Send the review ask?", say:"After a paid job, the review ask is one tap."},
+ {t:"action", buttons:[{label:"Send it", say:"Same polite ask, same wording, for every paid job."},{label:"Not this one", ghost:true}]},
+ {t:"chip", text:"5:00 PM · Tracker", say:"5:00 PM. The Tracker matches today's calls to where each caller found the shop."},
+ {t:"card", k:"Tracker · today", title:"7 calls, 2 visits booked", text:"Google profile 3 · Local Services ads 2 · Truck 1 · Source unknown 1\nBooked: Ray (website form) and one Google profile caller. You confirmed both.", note:"Sample numbers."},
+ {t:"chip", text:"Nov 5 · Monthly report", say:"Once a month, the whole month on one page, and on the results page."},
+ {t:"card", k:"Monthly report", title:"October at Sample Heating & Air", text:"Missed calls texted back: 18 of 20\nJobs booked from them (you confirmed): 4\nInvoiced on those jobs: $3,120\nGoogle reviews: 38 → 44\nNot tracked yet: website visits (analytics not on)", note:"Made-up numbers to show the layout."},
+ {t:"chip", text:"Every step used wording Sam approved, or waited for his tap.", say:"That's one day. Every message used wording Sam approved, or waited for his tap."}
+]
+});
+})();
+</script>
+</body>
+</html>

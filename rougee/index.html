@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html data-layout="editorial" lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mike Rougee Air Conditioning &amp; Heating — AC Repair, Heating &amp; Installation in Kenner and surrounding areas. Call or text for a fast quote.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mike Rougee Air Conditioning &amp; Heating — AC Repair, Heating &amp; Installation | Kenner, LA">
+<meta property="og:description" content="Mike Rougee Air Conditioning &amp; Heating — AC Repair, Heating &amp; Installation in Kenner and surrounding areas. Call or text for a fast quote.">
+<meta property="og:site_name" content="Mike Rougee Air Conditioning &amp; Heating">
+<meta name="twitter:card" content="summary">
+<!-- ============================================================
+     TRADE SITE TEMPLATE — per-prospect customization
+     Edit ONLY the CONFIG block below + the CSS variables.
+     Everything else populates from data-* attributes via JS.
+     ============================================================ -->
+<script>
+const BIZ = {
+  name: "Mike Rougee Air Conditioning & Heating",
+  phone: "(504) 441-6453",
+  phoneRaw: "+15044416453",
+  city: "Kenner",
+  serviceArea: "Kenner and surrounding areas",
+  yearsInBusiness: "licensed since 1997",
+  rating: "", reviewCount: "", licensed: true,
+};
+</script>
+<title>Mike Rougee Air Conditioning &amp; Heating — AC Repair, Heating &amp; Installation | Kenner, LA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Restyle per prospect: swap these and the whole site rethemes */
+    --brand:      #2a2e33;   /* palette: charcoal-safety */
+    --accent:     #c2410c;
+    --brand-dark: #1d1f23;
+    --bg:         #f4f3f1;
+    --ink:        #1f2226;
+    --card:       #ffffff;
+    --muted:      #5d6168;
+  }
+  @supports (color: color-mix(in srgb, red, black)) {
+    :root { --brand-dark: color-mix(in srgb, var(--brand) 68%, black); }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: Inter, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; }
+  a { color: inherit; }
+  h1, h2, h3 { font-family: Archivo, Inter, -apple-system, sans-serif; }
+
+  /* ---- Sticky emergency bar ---- */
+  .storm-bar { position: sticky; top: 0; z-index: 50; background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 80%, black)); color: #fff; text-align: center; padding: .6rem 1rem; font-weight: 700; font-size: .95rem; letter-spacing: .01em; box-shadow: 0 2px 10px rgba(0,0,0,.2); }
+  @supports not (color: color-mix(in srgb, red, black)) { .storm-bar { background: var(--accent); } }
+  .storm-bar a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+
+  /* ---- Hero ---- */
+  header { position: relative; overflow: hidden; color: #fff; padding: 5.5rem 1.25rem 6rem; text-align: center;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,.55) 45%, rgba(6,12,8,.86) 100%),
+      url("assets/hero.jpg");
+    background-size: cover; background-position: center 30%; }
+  header .badge-row { display: flex; gap: .5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; position: relative; }
+  .badge { background: rgba(255,255,255,.12); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,.35); border-radius: 999px; padding: .35rem 1rem; font-size: .8rem; font-weight: 700; letter-spacing: .02em; }
+  header h1 { font-size: clamp(2.1rem, 6vw, 3.4rem); font-weight: 900; line-height: 1.08; margin-bottom: .9rem; text-shadow: 0 2px 18px rgba(0,0,0,.35); letter-spacing: -.01em; position: relative; }
+  header p.sub { font-size: clamp(1.05rem, 2.5vw, 1.25rem); opacity: .94; max-width: 36rem; margin: 0 auto 2rem; position: relative; }
+  .cta-row { display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap; position: relative; }
+  .btn { display: inline-block; padding: 1rem 1.8rem; border-radius: 12px; font-weight: 800; font-size: 1.05rem; text-decoration: none; letter-spacing: .01em; transition: transform .15s ease, box-shadow .15s ease; }
+  .btn:active { transform: scale(.98); }
+  .btn-call { background: var(--accent); color: #fff; box-shadow: 0 8px 24px rgba(0,0,0,.35); }
+  .btn-quote { background: rgba(255,255,255,.96); color: var(--brand-dark); box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+
+  section { padding: 3.5rem 1.25rem; max-width: 64rem; margin: 0 auto; }
+  h2 { font-size: clamp(1.5rem, 3.5vw, 1.9rem); font-weight: 800; color: var(--brand-dark); margin-bottom: .4rem; text-align: center; letter-spacing: -.01em; }
+  h2 + .rule, .rule { width: 56px; height: 4px; border-radius: 2px; background: var(--accent); margin: 0 auto 1.6rem; }
+
+  .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.1rem; }
+  .svc { background: var(--card); border-radius: 16px; padding: 1.6rem 1.4rem; box-shadow: 0 2px 14px rgba(30,40,25,.08); border-top: 4px solid var(--brand); transition: transform .15s ease, box-shadow .15s ease; }
+  .svc:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(30,40,25,.14); }
+  .svc .chip { width: 54px; height: 54px; border-radius: 15px; display: flex; align-items: center; justify-content: center; background: color-mix(in srgb, var(--brand) 12%, white); color: var(--brand); margin-bottom: .85rem; } .svc .chip svg { width: 28px; height: 28px; }
+  @supports not (color: color-mix(in srgb, red, black)) { .svc .chip { background: #eef2ea; } }
+  .svc h3 { margin: 0 0 .35rem; font-size: 1.12rem; color: var(--brand-dark); }
+  .svc p { font-size: .93rem; color: var(--muted); }
+
+  /* ---- Quote form ---- */
+  .quote-wrap { background: linear-gradient(160deg, var(--brand), var(--brand-dark)); border-radius: 22px; padding: 2.5rem 1.6rem; color: #fff; box-shadow: 0 18px 44px rgba(20,30,18,.28); }
+  .quote-wrap h2 { color: #fff; }
+  .quote-wrap .rule { background: var(--accent); }
+  .quote-wrap p.lede { text-align: center; opacity: .92; margin-bottom: 1.6rem; }
+  form { display: grid; gap: .9rem; max-width: 29rem; margin: 0 auto; }
+  label { font-size: .82rem; font-weight: 700; letter-spacing: .03em; }
+  input, select, textarea { width: 100%; padding: .9rem 1rem; border-radius: 10px; border: 1px solid rgba(255,255,255,.25); font-size: 1rem; font-family: inherit; background: rgba(255,255,255,.97); transition: box-shadow .15s ease; }
+  input:focus, textarea:focus { outline: none; box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 55%, transparent); }
+  .urgency { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; }
+  .urgency input { display: none; }
+  .urgency label { display: block; text-align: center; padding: .95rem .5rem; border-radius: 12px; background: rgba(255,255,255,.12); border: 2px solid rgba(255,255,255,.35); cursor: pointer; font-size: .95rem; transition: all .15s ease; }
+  .urgency input:checked + label { background: var(--accent); border-color: var(--accent); box-shadow: 0 6px 16px rgba(0,0,0,.25); }
+  button[type=submit] { padding: 1.1rem; border: none; border-radius: 12px; background: var(--accent); color: #fff; font-size: 1.1rem; font-weight: 800; cursor: pointer; letter-spacing: .02em; box-shadow: 0 8px 20px rgba(0,0,0,.28); transition: transform .15s ease; }
+  button[type=submit]:active { transform: scale(.98); }
+  .quote-note { font-size: .82rem; text-align: center; opacity: .85; margin-top: .5rem; }
+  .quote-success { display: none; text-align: center; padding: 2rem 1rem; }
+  .quote-success h3 { font-size: 1.5rem; margin-bottom: .5rem; }
+
+  .reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.1rem; }
+  .rev { background: var(--card); border-radius: 16px; padding: 1.5rem 1.4rem; box-shadow: 0 2px 14px rgba(30,40,25,.08); font-size: .95rem; border-left: 4px solid var(--accent); }
+  .rev .stars { color: #eab308; letter-spacing: 3px; font-size: 1.05rem; margin-bottom: .4rem; }
+  .rev .who { margin-top: .7rem; font-weight: 700; font-size: .83rem; color: var(--muted); }
+
+  .area-strip { text-align: center; background: var(--card); border-radius: 18px; padding: 2rem 1.5rem; box-shadow: 0 2px 14px rgba(30,40,25,.08); }
+  .area-strip h2 { margin-bottom: .3rem; }
+
+  footer { position: relative; background: linear-gradient(180deg, var(--brand-dark), color-mix(in srgb, var(--brand-dark) 70%, black)); color: #fff; text-align: center; padding: 3rem 1.25rem 2.5rem; font-size: .9rem; }
+  @supports not (color: color-mix(in srgb, red, black)) { footer { background: var(--brand-dark); } }
+  footer .foot-call { font-size: 1.45rem; font-weight: 800; display: block; margin-bottom: .75rem; color: #fff; text-decoration: none; }
+  footer .foot-call:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+  /* Mobile floating call button */
+  .float-call { display: none; }
+  @media (max-width: 640px) {
+    .float-call { display: flex; position: fixed; bottom: 1rem; left: 1rem; right: 1rem; z-index: 60; background: var(--accent); color: #fff; border-radius: 14px; padding: 1.05rem; font-weight: 800; font-size: 1.1rem; justify-content: center; text-decoration: none; box-shadow: 0 10px 28px rgba(0,0,0,.35); animation: pulse 2.6s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { box-shadow: 0 10px 28px rgba(0,0,0,.35); } 50% { box-shadow: 0 10px 34px rgba(0,0,0,.55); } }
+    body { padding-bottom: 4.8rem; }
+  }
+.btn-text{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.45);box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.ttbar{display:none}
+@media(max-width:640px){.ttbar{display:flex;gap:.5rem;position:fixed;bottom:1rem;left:1rem;right:1rem;z-index:60}.ttbtn{flex:1;text-align:center;padding:1.05rem;font-weight:800;font-size:1.05rem;text-decoration:none;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.3)}.ttcall{background:var(--accent);color:#fff}.tttext{background:#fff;color:var(--brand-dark)}}
+</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&display=swap">
+</head>
+<body>
+
+<div class="storm-bar"> Kenner AC and heating. <a data-tel href="#">Call now</a></div>
+
+<header>
+  <div class="badge-row">
+    <span class="badge">LA Licensed Mechanical Contractor</span>
+    <span class="badge">Licensed Since 1997</span>
+    <span class="badge">Kenner, LA</span>
+  </div>
+  <h1><span data-name></span></h1>
+  <p class="sub">AC repair, heating and installation for <span data-area></span>. Fast quotes. No runaround.</p>
+  <div class="cta-row">
+    <a class="btn btn-call" data-tel href="#">Call <span data-phone></span></a>
+    <a class="btn btn-text" data-sms href="#">Text Us</a>
+    <a class="btn btn-quote" href="#quote">Get a Fast Quote →</a>
+  </div>
+</header>
+
+<section>
+  <h2>What We Do</h2>
+  <div class="rule"></div>
+  <div class="services">
+    <div class="svc"><div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M3 12h18"/><path d="M6 6l12 12"/><path d="M18 6L6 18"/></svg></div><h3>AC Repair</h3><p>Not cooling, not running, or leaking — we diagnose it and tell you the price before we start.</p></div>
+    <div class="svc"><div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3-2 4-2 7a2 2 0 004 0c0-1 1-2 1-2 1 2 2 3 2 6a5 5 0 11-10 0c0-4 3-6 5-11z"/></svg></div><h3>Heating &amp; Furnace</h3><p>Cold snaps do not wait for business hours. Repairs, replacements and safety checks.</p></div>
+    <div class="svc"><div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4a4 4 0 00-1 7l-8 8 2 2 8-8a4 4 0 004-8l-2.5 2.5-2-2z"/></svg></div><h3>Installation &amp; Replacement</h3><p>New systems sized for your house, not upsold from a catalogue.</p></div>
+    <div class="svc"><div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="11" rx="1.5"/><path d="M3 12h18"/><path d="M9 8V6h6v2"/></svg></div><h3>Maintenance</h3><p>Seasonal service so it does not quit on the hottest day of the year.</p></div>
+  </div>
+</section>
+
+<section id="quote">
+  <div class="quote-wrap">
+    <h2>Get a Quote in Under a Minute</h2>
+    <div class="rule"></div>
+    <p class="lede">Tell us what's going on and we'll get back to you.</p>
+    <form id="quoteForm" onsubmit="return handleQuote(event)">
+      <div class="urgency">
+        <input type="radio" name="urgency" id="u1" value="emergency"><label for="u1"> Emergency<br><small>no cooling / no heat</small></label>
+        <input type="radio" name="urgency" id="u2" value="standard" checked><label for="u2"> Standard<br><small>quote for planned work</small></label>
+      </div>
+      <div><label for="fname">Name</label><input id="fname" name="name" required autocomplete="name"></div>
+      <div><label for="fphone">Phone</label><input id="fphone" name="phone" type="tel" required autocomplete="tel"></div>
+      <div><label for="faddr">Job address or neighborhood</label><input id="faddr" name="address" required></div>
+      <div><label for="fdesc">What do you need?</label><textarea id="fdesc" name="desc" rows="3" placeholder="e.g. AC quit last night, upstairs is 90 degrees"></textarea></div>
+      <button type="submit">Send My Quote Request</button>
+      <p class="quote-note">Prefer to talk? <a data-tel href="#" style="color:#fff">Call <span data-phone></span></a>.</p>
+    </form>
+    <div class="quote-success" id="quoteSuccess">
+      <h3>This is a preview</h3>
+      <p>This website isn't live yet, so the form isn't connected. To reach Mike Rougee Air Conditioning & Heating now, call <a data-tel href="#" style="color:#fff"><span data-phone></span></a>.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Why Folks Trust Mike Rougee Air Conditioning &amp; Heating</h2>
+  <div class="reviews">
+    <div class="rev"><div style="font-size:1.8rem"></div><p style="font-weight:700;margin:.4rem 0 .3rem;color:var(--brand)">State-Licensed Mechanical Contractor</p><p>Louisiana State Licensing Board for Contractors licence CL.30242, mechanical classification, active through January 2027.</p></div>
+    <div class="rev"><div style="font-size:1.8rem"></div><p style="font-weight:700;margin:.4rem 0 .3rem;color:var(--brand)">Licensed Since 1997</p><p>The state licence was first issued in 1997.</p></div>
+    <div class="rev"><div style="font-size:1.8rem"></div><p style="font-weight:700;margin:.4rem 0 .3rem;color:var(--brand)">Based in Kenner</p><p>A Kenner air conditioning and heating company serving the surrounding area.</p></div>
+  </div>
+</section>
+
+<style>.gp-anchor{height:1px}
+.gp{max-width:60rem;margin:0 auto}
+.gp-box{background:#fff;border:1px solid #dadce0;border-radius:14px;padding:1.4rem 1.2rem}
+.gp-summary{font-size:1.05rem;margin:0 0 1rem;text-align:center}
+.gp-gmaps{font-family:Roboto,Arial,sans-serif;font-weight:400;font-size:12px;color:#5E5E5E;white-space:nowrap}
+.gp a{color:inherit}
+.gp-stars{position:relative;display:inline-block;color:#dadce0;letter-spacing:1px;line-height:1}
+.gp-stars-fill{position:absolute;inset:0 auto 0 0;overflow:hidden;white-space:nowrap;color:#e7a500}
+.gp-reviews{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.gp-review{margin:0;background:#f8f9fa;border-radius:12px;padding:1rem}
+.gp-text{margin:.5rem 0;white-space:pre-line;font-size:.95rem}
+.gp-author{display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:#3c4043;flex-wrap:wrap}
+.gp-avatar{border-radius:50%;width:28px;height:28px}
+.gp-note{font-size:12px;color:#5E5E5E;margin:.6rem 0 0}
+.gp-photos{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));margin-top:1.2rem}
+.gp-photo{margin:0}.gp-photo img{width:100%;height:12rem;object-fit:cover;border-radius:10px;display:block}
+.gp-photo .gp-author{margin-top:.3rem}
+.gp-hours{margin-top:1.2rem}.gp-hours ul{list-style:none;padding:0;margin:.3rem 0;font-size:.9rem}
+.gp-h{font-weight:700;margin:0}</style>
+<div class="gp-anchor" aria-hidden="true"></div>
+<section class="gp" hidden data-gp-place="ChIJhzcj3RG3IIYRLZXgXlOI0a8" data-gp-key="AIzaSyAJ3otJDSFoCifWo6WunKIz4DwBwd-ATus" data-gp-name="Mike Rougee Air Conditioning &amp; Heating" data-gp-reviews="3" data-gp-photos="3" data-gp-photo-max="1200" data-gp-fields="rating,userRatingCount,reviews,photos,googleMapsURI,regularOpeningHours,attributions">
+  <h2>What customers say on Google</h2>
+  <div class="rule"></div>
+  <div class="gp-box gp-body"></div>
+</section>
+<script>
+/* autoants Google profile widget: Places API (New) content rendered LIVE in the visitor's browser.
+ *
+ * Why live: Google's terms allow storing only the place ID (Maps ToS 3.2.3(b); Service Specific Terms 14).
+ * Rating, reviews, photos and hours are fetched at view time with the Maps JavaScript API Place class and
+ * never written into the page or a repo. Rules (scripts/places/POLICY.md, verified 2026-10-19):
+ *   - "Google Maps" text attribution beside the content (sans-serif, weight 400, >=12px, #5E5E5E);
+ *   - every review and photo credits its author: name linked to the profile, avatar when given;
+ *   - review text verbatim and untruncated; translated reviews say so;
+ *   - a notice of how reviews are ordered and filtered;
+ *   - data providers in place.attributions are credited.
+ * https://developers.google.com/maps/documentation/places/web-service/policies
+ * https://developers.google.com/maps/documentation/javascript/place-details
+ *
+ * The section stays hidden unless the fetch succeeds, so a failed load never leaves a hollow rating slot.
+ */
+(function (root) {
+  "use strict";
+
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+  function safeUrl(u) {
+    return /^https:\/\//i.test(String(u || "")) ? String(u) : null;
+  }
+  function txt(v) {            // LocalizedText (REST) or plain string (JS Place)
+    if (v == null) return null;
+    return typeof v === "string" ? v : (v.text == null ? null : v.text);
+  }
+  function lang(v, alt) {
+    if (alt) return alt;
+    return v && typeof v === "object" ? (v.languageCode || null) : null;
+  }
+  function author(a) {
+    a = a || {};
+    return { name: a.displayName || null, uri: safeUrl(a.uri), photo: safeUrl(a.photoURI || a.photoUri) };
+  }
+
+  // Accepts a Maps JS Place (after fetchFields) or a REST Place JSON (tests, fixtures).
+  function normalize(p, opts) {
+    opts = opts || {};
+    var hours = p.regularOpeningHours && p.regularOpeningHours.weekdayDescriptions;
+    return {
+      rating: typeof p.rating === "number" ? p.rating : null,
+      count: typeof p.userRatingCount === "number" ? p.userRatingCount : null,
+      mapsUri: safeUrl(p.googleMapsURI || p.googleMapsUri),
+      hours: Array.isArray(hours) ? hours.slice() : null,
+      reviews: (p.reviews || []).slice(0, 5).map(function (r) {
+        var tl = lang(r.text, r.textLanguageCode), ol = lang(r.originalText, r.originalTextLanguageCode);
+        return {
+          text: txt(r.text),
+          translated: !!(tl && ol && tl !== ol),
+          rating: typeof r.rating === "number" ? r.rating : null,
+          author: author(r.authorAttribution),
+          when: r.relativePublishTimeDescription || null
+        };
+      }),
+      photos: (p.photos || []).map(function (ph) {
+        var src = typeof ph.getURI === "function" ? ph.getURI({ maxWidth: opts.photoMaxPx || 1200 })
+          : (opts.photoSrc ? opts.photoSrc(ph) : null);
+        return { src: src, credits: (ph.authorAttributions || []).map(author) };
+      }),
+      providers: (p.attributions || []).map(function (a) {
+        return { name: a.provider || null, uri: safeUrl(a.providerURI || a.providerUri) };
+      })
+    };
+  }
+
+  var GM = '<span class="gp-gmaps">Google Maps</span>';
+
+  function stars(n) {
+    var pct = Math.max(0, Math.min(100, (n / 5) * 100));
+    return '<span class="gp-stars" role="img" aria-label="' + esc(n) + ' out of 5 stars">' +
+      '<span class="gp-stars-fill" style="width:' + pct.toFixed(0) + '%"></span></span>';
+  }
+  function credit(a) {
+    if (!a.name) return "";
+    var name = a.uri ? '<a href="' + esc(a.uri) + '" target="_blank" rel="noopener nofollow">' + esc(a.name) + "</a>"
+      : esc(a.name);
+    return name;
+  }
+
+  // Data -> HTML string. Review text is inserted exactly as returned (escaped for HTML, nothing else).
+  function render(d, opts) {
+    opts = opts || {};
+    var nRev = opts.reviews == null ? 3 : opts.reviews, nPh = opts.photos == null ? 3 : opts.photos;
+    var name = opts.name || "this business";
+    var out = [];
+    if (d.rating != null && d.count) {
+      out.push('<p class="gp-summary">' + stars(d.rating) + ' <b>' + esc(d.rating.toFixed(1)) + "</b> from " +
+        esc(d.count.toLocaleString("en-US")) + " reviews on " +
+        (d.mapsUri ? '<a href="' + esc(d.mapsUri) + '" target="_blank" rel="noopener">' + GM + "</a>" : GM) +
+        "</p>");
+    }
+    var reviews = d.reviews.slice(0, nRev).filter(function (r) { return r.author.name; });
+    if (reviews.length) {
+      out.push('<div class="gp-reviews">');
+      reviews.forEach(function (r) {
+        out.push('<figure class="gp-review">' +
+          (r.rating != null ? stars(r.rating) : "") +
+          (r.text ? '<blockquote class="gp-text">' + esc(r.text) + "</blockquote>" : "") +
+          (r.translated ? '<p class="gp-note">Translated by Google</p>' : "") +
+          '<figcaption class="gp-author">' +
+          (r.author.photo ? '<img class="gp-avatar" src="' + esc(r.author.photo) +
+            '" alt="" width="28" height="28" loading="lazy" referrerpolicy="no-referrer">' : "") +
+          "<span>" + credit(r.author) + (r.when ? " · " + esc(r.when) : "") + " · " + GM + "</span>" +
+          "</figcaption></figure>");
+      });
+      out.push("</div>");
+      out.push('<p class="gp-note">Reviews from ' + GM + ": the first " + reviews.length +
+        " in the order Google returns them (most relevant first), not filtered by rating. " +
+        "Google checks for fake content but doesn't verify every review.</p>");
+    }
+    var photos = d.photos.filter(function (p) { return p.src; }).slice(0, nPh);
+    if (photos.length) {
+      out.push('<div class="gp-photos">');
+      photos.forEach(function (p) {
+        var by = p.credits.map(credit).filter(Boolean).join(", ");
+        out.push('<figure class="gp-photo"><img src="' + esc(p.src) + '" alt="Photo of ' + esc(name) +
+          ' from Google Maps" loading="lazy">' +
+          '<figcaption class="gp-author">' + (by ? "Photo: " + by + " · " : "") + GM + "</figcaption></figure>");
+      });
+      out.push("</div>");
+    }
+    if (d.hours && d.hours.length) {
+      out.push('<div class="gp-hours"><p class="gp-h">Hours</p><ul>' +
+        d.hours.map(function (h) { return "<li>" + esc(h) + "</li>"; }).join("") +
+        "</ul><p class=\"gp-note\">Hours from " + GM + "</p></div>");
+    }
+    if (d.providers.length) {
+      out.push('<p class="gp-note">Data: ' + GM + ", " + d.providers.map(function (a) {
+        return a.uri ? '<a href="' + esc(a.uri) + '" target="_blank" rel="noopener">' + esc(a.name) + "</a>"
+          : esc(a.name);
+      }).join(", ") + "</p>");
+    }
+    return out.join("\n");
+  }
+
+  var api = { normalize: normalize, render: render, esc: esc };
+  if (typeof module !== "undefined" && module.exports) { module.exports = api; return; }
+  root.AutoantsGoogleProfile = api;
+
+  // ---- live boot (browser only) ------------------------------------------------------------------------
+  function boot() {
+    var sec = document.querySelector("section[data-gp-place]");
+    if (!sec) return;
+    var key = sec.getAttribute("data-gp-key"), pid = sec.getAttribute("data-gp-place");
+    if (!key || !pid) return;
+    var cfg = { reviews: +sec.getAttribute("data-gp-reviews") || 3, photos: +sec.getAttribute("data-gp-photos") || 3,
+      photoMaxPx: +sec.getAttribute("data-gp-photo-max") || 1200, name: sec.getAttribute("data-gp-name") || "" };
+    var fields = (sec.getAttribute("data-gp-fields") || "").split(",").filter(Boolean);
+    var started = false;
+    function go() {
+      if (started) return; started = true;
+      var cb = "__gpReady" + Math.random().toString(36).slice(2);
+      root[cb] = function () {
+        google.maps.importLibrary("places").then(function (lib) {
+          var place = new lib.Place({ id: pid, requestedLanguage: "en" });
+          return place.fetchFields({ fields: fields }).then(function () {
+            var html = render(normalize(place, cfg), cfg);
+            if (!html) return;
+            sec.querySelector(".gp-body").innerHTML = html;
+            sec.hidden = false;
+          });
+        }).catch(function () { /* stay hidden: no hollow slot */ });
+      };
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://maps.googleapis.com/maps/api/js?key=" + encodeURIComponent(key) +
+        "&v=weekly&loading=async&callback=" + cb;
+      document.head.appendChild(s);
+    }
+    // Fetch only when the visitor nears the section: each fetch is a billed Place Details call.
+    if ("IntersectionObserver" in root) {
+      var io = new IntersectionObserver(function (es) {
+        if (es.some(function (e) { return e.isIntersecting; })) { io.disconnect(); go(); }
+      }, { rootMargin: "600px 0px" });
+      // A hidden section has no box, so watch the 1px anchor placed just before it.
+      var anchor = sec.previousElementSibling;
+      io.observe(anchor && anchor.classList.contains("gp-anchor") ? anchor : sec.parentNode);
+    } else { go(); }
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();
+})(typeof window !== "undefined" ? window : this);
+
+</script>
+
+<section>
+  <div class="area-strip">
+    <h2>Service Area</h2>
+    <div class="rule"></div>
+    <p>Proudly serving <strong data-area></strong> — <span data-years></span>.</p>
+  </div>
+</section>
+
+<footer>
+  <a class="foot-call" data-tel href="#"> <span data-phone></span></a>
+  <p><span data-name></span> · <span data-city></span>, Louisiana · Louisiana licensed mechanical contractor CL.30242</p>
+  <p style="margin-top:1rem;font-size:.75rem;opacity:.6">Site by AutoAnts</p>
+</footer>
+
+<div class="ttbar"><a class="ttbtn ttcall" data-tel href="#">Call</a><a class="ttbtn tttext" data-sms href="#">Text</a></div>
+
+<script>
+  // Populate all data-* slots from the CONFIG block
+  document.querySelectorAll('[data-name]').forEach(e => e.textContent = BIZ.name);
+  document.querySelectorAll('[data-phone]').forEach(e => e.textContent = BIZ.phone);
+  document.querySelectorAll('[data-city]').forEach(e => e.textContent = BIZ.city);
+  document.querySelectorAll('[data-area]').forEach(e => e.textContent = BIZ.serviceArea);
+  document.querySelectorAll('[data-years]').forEach(e => e.textContent = BIZ.yearsInBusiness);
+  document.querySelectorAll('[data-rating]').forEach(e => e.textContent = BIZ.rating);
+  document.querySelectorAll('[data-reviews]').forEach(e => e.textContent = BIZ.reviewCount);
+  document.querySelectorAll('[data-tel]').forEach(e => e.href = 'tel:' + BIZ.phoneRaw);
+  document.querySelectorAll('[data-sms]').forEach(e=>e.href='sms:'+BIZ.phoneRaw+'?&body='+encodeURIComponent("Hi, I need a quote. Here's what's going on: "));
+  document.title = BIZ.name + ' — AC Repair, Heating & Installation | ' + BIZ.city + ', LA';
+
+  // Demo-mode quote form: swaps to success state. In the PAID build, wire this
+  // to a form backend (Formspree/Netlify/own endpoint) that texts the owner.
+  function handleQuote(ev) {
+    ev.preventDefault();
+    document.getElementById('quoteForm').style.display = 'none';
+    document.getElementById('quoteSuccess').style.display = 'block';
+    return false;
+  }
+</script>
+<style id="design-pass">
+  :root{ --dp-ease-out: cubic-bezier(.23,1,.32,1); }
+  html{ scroll-behavior:smooth; }
+  ::selection{ background:var(--accent); color:#fff; }
+  .btn{ transition: transform .15s var(--dp-ease-out), box-shadow .15s var(--dp-ease-out), filter .15s var(--dp-ease-out) !important; }
+  .btn:active{ transform: scale(.97) !important; }
+  .svc{ transition: transform .16s var(--dp-ease-out), box-shadow .16s var(--dp-ease-out) !important; }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
+  @media (hover:hover) and (pointer:fine){
+    .btn:hover{ filter: brightness(1.06); }
+    .svc:hover{ transform: translateY(-4px); }
+  }
+  @media (hover:none),(pointer:coarse){ .svc:hover{ transform:none; } }
+  @media (prefers-reduced-motion:reduce){
+    html{ scroll-behavior:auto; }
+    *{ transition-duration:.08s !important; animation-duration:.01ms !important; }
+  }
+  /* mobile-native fixes (previews are viewed on phones) */
+  *{ -webkit-tap-highlight-color: transparent; }
+  input, textarea, select{ font-size: 16px; }            /* stop iOS zoom-on-focus */
+  .btn, .ttbtn{ -webkit-user-select:none; user-select:none; -webkit-touch-callout:none; }
+  .float-call, .ttbar{ bottom: calc(1rem + env(safe-area-inset-bottom, 0px)) !important; }
+</style>
+<style id="stars-fix">
+  /* per-review star counts aren't verified, so no stars on cards; the attributed quote carries it */
+  .rev .stars:empty{ display:none; }
+  .rating-hero .stars{ position:relative; display:inline-block; line-height:0; letter-spacing:0; margin:.5rem 0; }
+  .rating-hero .stars svg{ width:22px; height:22px; margin:0 2px; }
+  .rating-hero .stars .fill{ position:absolute; inset:0 auto 0 0; overflow:hidden; white-space:nowrap; }
+</style>
+<script id="stars-fix-js">
+  // rating-hero only: stars filled to the VERIFIED aggregate rating (e.g. 4.9 -> 98%)
+  (function(){
+    var star='<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8z"/></svg>';
+    var five=star+star+star+star+star;
+    document.querySelectorAll('.rating-hero .stars').forEach(function(el){
+      var r=parseFloat((document.querySelector('[data-rating]')||{}).textContent);
+      if(!(r>0&&r<=5)){ el.style.display='none'; return; }
+      el.innerHTML='<span style="color:#d6d3cc">'+five+'</span><span class="fill" style="width:'+(r/5*100)+'%;color:#eab308">'+five+'</span>';
+      el.setAttribute('role','img'); el.setAttribute('aria-label',r+' out of 5 stars');
+    });
+  })();
+</script>
+<style id="layout-variant">
+/* ================= EDITORIAL — type scale: condensed headline, bottom-left ================= */
+html[data-layout="editorial"] header{
+  display:flex; flex-direction:column; justify-content:flex-end; text-align:left;
+  min-height:clamp(440px,66vh,640px); padding:3rem clamp(1.25rem,5vw,4rem) 3.25rem;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.74) 0%,rgba(0,0,0,.4) 55%,rgba(0,0,0,.08) 100%),
+    linear-gradient(0deg,rgba(0,0,0,.55) 0%,transparent 60%),
+    url("assets/hero.jpg") center 35%/cover; }
+html[data-layout="editorial"] header .treeline{ display:none; }
+html[data-layout="editorial"] header .badge-row{ order:0; justify-content:flex-start; gap:.7rem; margin-bottom:1.1rem; }
+html[data-layout="editorial"] .badge{
+  background:none; backdrop-filter:none; border:0; border-radius:0; padding:0;
+  text-transform:uppercase; letter-spacing:.16em; font-size:.74rem; opacity:.9; }
+html[data-layout="editorial"] .badge:not([hidden]) ~ .badge:not([hidden])::before{ content:"/"; margin-right:.7rem; opacity:.55; }
+html[data-layout="editorial"] h1,
+html[data-layout="editorial"] h2,
+html[data-layout="editorial"] h3{ font-family:"Barlow Condensed",Archivo,Inter,sans-serif; text-transform:uppercase; }
+html[data-layout="editorial"] header h1{
+  font-size:clamp(3rem,9.5vw,6.4rem); font-weight:800; line-height:.9; letter-spacing:0;
+  max-width:15ch; text-wrap:balance; text-shadow:none; margin-bottom:1.1rem; }
+html[data-layout="editorial"] header p.sub{ margin:0 0 1.9rem; max-width:34rem; }
+html[data-layout="editorial"] header .cta-row{ justify-content:flex-start; }
+html[data-layout="editorial"] .btn,
+html[data-layout="editorial"] button[type=submit],
+html[data-layout="editorial"] .quote-wrap{ border-radius:3px; }
+html[data-layout="editorial"] section h2{ text-align:left; font-size:clamp(2.1rem,5vw,3.1rem); font-weight:800; line-height:1; letter-spacing:0; }
+html[data-layout="editorial"] .rule{ width:100%; height:1px; margin:.9rem 0 2rem; background:color-mix(in srgb,var(--ink) 18%,transparent); border-radius:0; }
+html[data-layout="editorial"] .quote-wrap .rule{ background:rgba(255,255,255,.25); }
+html[data-layout="editorial"] .quote-wrap h2{ text-align:left; }
+html[data-layout="editorial"] .quote-wrap p.lede{ text-align:left; }
+html[data-layout="editorial"] .quote-wrap form{ margin:0; }
+/* services: open columns under a heavy rule, no card */
+html[data-layout="editorial"] .services{ gap:2rem 1.75rem; grid-template-columns:repeat(3,minmax(0,1fr)); }
+/* column count follows the service count so no row ends in an orphan */
+html[data-layout="editorial"] .services:has(> .svc:nth-child(4):last-child){ grid-template-columns:repeat(4,minmax(0,1fr)); }
+html[data-layout="editorial"] .services:has(> .svc:nth-child(2):last-child){ grid-template-columns:repeat(2,minmax(0,1fr)); }
+@media (max-width:900px){ html[data-layout="editorial"] .services:has(> .svc:nth-child(4):last-child){ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+html[data-layout="editorial"] .svc{
+  background:none; box-shadow:none; border:0; border-radius:0; padding:1.1rem 0 0;
+  border-top:3px solid var(--brand-dark); }
+html[data-layout="editorial"] .svc .chip{ background:none; width:auto; height:auto; justify-content:flex-start; color:var(--accent); margin-bottom:.6rem; }
+html[data-layout="editorial"] .svc h3{ font-size:1.45rem; font-weight:800; line-height:1.05; letter-spacing:.01em; }
+html[data-layout="editorial"] .svc:hover{ transform:none; box-shadow:none; }
+/* reviews: pull quotes, not cards */
+html[data-layout="editorial"] .rev{ background:none; box-shadow:none; border:0; border-radius:0; padding:0 0 0 1.1rem; border-left:2px solid var(--accent); font-size:1.08rem; }
+html[data-layout="editorial"] .area-strip{ text-align:left; background:none; box-shadow:none; border-radius:0; padding:0; }
+html[data-layout="editorial"] .area-strip .rule{ margin-bottom:1rem; }
+@media (max-width:640px){
+  html[data-layout="editorial"] header{ min-height:clamp(420px,78vh,560px); padding-bottom:2.5rem; }
+  html[data-layout="editorial"] header h1{ font-size:clamp(2.6rem,13vw,4rem); overflow-wrap:anywhere; }
+  html[data-layout="editorial"] .services{ grid-template-columns:minmax(0,1fr) !important; }
+}
+</style>
+<style id="polish-390">
+  /* preview-site-build "390px polish pass" (2026-10-12) */
+  header .cta-row{ display:grid; grid-template-columns:1fr 1fr; gap:.6rem; max-width:30rem; }
+  header .cta-row .btn{ margin:0; text-align:center; padding:.95rem .7rem; white-space:nowrap; }
+  header .cta-row .btn-call{ grid-column:1 / -1; }
+  a[data-tel], a[data-sms]{ min-height:44px; display:inline-flex; align-items:center; justify-content:center; gap:.3em; }
+  .quote-note a[data-tel], .foot-call{ min-height:44px; }
+  .ttbar{ transition: transform .25s cubic-bezier(.23,1,.32,1), opacity .25s; }
+  .ttbar.is-hidden{ transform: translateY(140%); opacity:0; pointer-events:none; }
+  html[data-layout="editorial"] .ttbtn,
+  html[data-layout="editorial"] input,
+  html[data-layout="editorial"] textarea,
+  html[data-layout="editorial"] .urgency label{ border-radius:3px; }
+  @media (max-width:640px){
+    html[data-layout="editorial"] .badge:not([hidden]) ~ .badge:not([hidden])::before{ content:none; }
+    html[data-layout="editorial"] header .badge-row{ flex-wrap:wrap; gap:.35rem 1rem; }
+  }
+  .preview-note{ font-size:.8rem; opacity:.75; margin-top:.4rem; }
+</style>
+<script id="polish-390-js">
+  // the sticky Call/Text bar stays out of the way while the hero's own buttons are on screen
+  (function(){
+    var bar=document.querySelector('.ttbar'), cta=document.querySelector('header .cta-row');
+    if(!bar||!cta||!('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function(es){ es.forEach(function(e){ bar.classList.toggle('is-hidden', e.isIntersecting); }); },
+      {threshold:0.01}).observe(cta);
+  })();
+</script>
+</body>
+</html>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Prices · autoants</title>
-<meta name="description" content="The three autoants packages and every add-on with its exact founding price, when that price ends, the $500 assessment credit and the 7-day go-live term.">
+<meta name="description" content="We answer the calls you miss and get you found on Google: $1,250 a month. Not ready? Try one assistant for $500. A free breakdown of your business first.">
 <link rel="canonical" href="https://autoants.com/prices/">
 <meta name="theme-color" content="#0b1712">
 <link rel="icon" href="/brand/favicon.svg" type="image/svg+xml">
@@ -22,77 +22,87 @@
     <a class="ghost" href="/#contact">Contact</a>
   </nav>
   <main id="main">
-    <p class="eyebrow">Prices</p>
-    <h1>Every price, on one page.</h1>
-    <p class="lede">Founding prices, the same for every shop. Each founding price says when it ends and what it becomes. Every plan shows its setup fee, even when it's zero, and the price you see in writing is the price.</p>
-    <p class="promise">The one promise: one assistant live on your phone within 7 days of your go, or the $500 back.</p>
+    <!-- The main view carries the approved plain words (Lane Davis II, 2026-10-19; tle-main docs/playbooks/offer-map.md
+         "Say it this way"): the free breakdown and two choices, nothing else. Everything else lives in "Other options".
+         Check: python3 ~/tle-main/scripts/readability/fk.py prices/index.html -->
+    <!-- main-view -->
+    <h1>Prices</h1>
+    <p class="lede">We answer the calls you miss and get you found on Google: $1,250 a month. Not ready? Try one assistant for $500.</p>
 
-    <h2>Packages</h2>
-    <p>Three packages, each one including the one before it. Founding prices hold for the first 3 shops on each package; then the regular price. With 1&ndash;3 trucks, one assistant ($500) is usually the place to start.</p>
-    <p>We recommend the package your own numbers can carry: if the assessment shows less than about three times the monthly fee in time and jobs recovered, we recommend the smaller one.</p>
-    <ul class="prices">
-      <li><span class="name">The Office Manager <small>&middot; Never miss a job</small></span><span class="amt">$750 setup + $500/mo for the first 3 shops; then $1,500 setup + $750/mo</span><span class="what">Text-Back, Responder, Scheduler with quote follow-up, Reviewer, a light social version, and the Tracker. Email cleanup is included in the setup.<br><b>Who it&rsquo;s for:</b> shops that miss a lot of calls: 1&ndash;3 trucks with heavy call volume, or any size.</span></li>
-      <li><span class="name">Growth <small>&middot; Get found</small></span><span class="amt">$1,500/mo for the first 3 shops; then $1,750/mo &middot; $1,000 setup</span><span class="what">Everything in the Office Manager, plus: the Search plan work (your Google profile, your listings, 2 new service-and-town or AI-answer pages a month, and a monthly check of what AI answers say about you); the social engine twice a month (2 of your jobs become about 8 Google posts, 8 social posts and 2 before/after clips, plus the Weather Trigger); review replies drafted for you every week; and the citywide Next Job Mailer trade bundle. A 30-minute call each month; replies by the next business day.<br><b>Who it&rsquo;s for:</b> shops with 4&ndash;15 trucks.</span></li>
-      <li><span class="name">Pro <small>&middot; Get the next job</small></span><span class="amt">$2,500/mo for the first 3 shops; then $3,000/mo &middot; $1,500 setup</span><span class="what">Everything in Growth, plus: the social engine every week with Animated Shorts; 4 new pages a month instead of 2; the Anniversary Mailer; the Neighbor Hanger; the Booking Box; and the Responder for website and Facebook/Instagram inquiries. A 30-minute call every two weeks; replies the same business day.<br><b>Who it&rsquo;s for:</b> 15+ trucks, or more than one location. For route- and schedule-heavy operations, Operations Math sits beside it.</span></li>
-    </ul>
-    <p class="small">All three: 90-day minimum, then month to month, cancel by email. You own every account, page, listing and list. Postcards are billed per card at $1.30. Phone numbers and texts run on your own Twilio account. Want to try one piece first? One assistant goes live for $500 (founding, first 3 shops; then $750). Everything below is also sold on its own.</p>
+    <div class="card free">
+      <p><b>Free first:</b> a breakdown of your business: how you show up on Google, in AI answers and next to your competitors. It shows which fix your numbers need.</p>
+      <a class="btn" href="/?interest=Free%20company%20breakdown#contact">Get my free breakdown</a>
+    </div>
 
-    <h2>Free to start</h2>
-    <ul class="prices">
-      <li><span class="name">Video audit</span><span class="amt">Free</span><span class="what">About 90 seconds on your business, made only from public information, with four fixes. You keep it either way.</span></li>
-      <li><span class="name">Preview site</span><span class="amt">Free</span><span class="what">Your new site, built with your real name, number and reviews before you pay anything. It's yours to keep. Putting it live on your own domain is part of the Search plan.</span></li>
-      <li><span class="name">15-minute call</span><span class="amt">Free</span><span class="what">We find the one piece that fits your shop.</span></li>
-      <li><span class="name">Next Job Mailer pilot</span><span class="amt">Free for 60 days, capped at 150 cards</span><span class="what">One company per trade. autoants covers the cards, and we count the calls together.</span></li>
+    <ul class="prices plans">
+      <!-- plan:both -->
+      <li class="lead"><span class="name">Get found and never miss a job</span><span class="amt">$1,250 a month + $1,000 setup</span><span class="what">We answer the calls you miss and get you found on Google. Missed calls answered, quotes followed up, appointments booked and reminded, reviews requested, your Google profile kept right and posted to every week, your listings kept right, 2 new pages a month, what AI answers say about you checked every month, and your website kept up.</span><a class="btn" href="/?interest=Get%20found%20and%20never%20miss%20a%20job#contact">Start here</a></li>
+      <!-- /plan:both -->
+      <!-- plan:try-one -->
+      <li><span class="name">Not ready? Try one</span><span class="amt">$500 once</span><span class="what">One assistant on your phone, live within 7 days or your $500 back.</span></li>
+      <!-- /plan:try-one -->
     </ul>
 
-    <h2>The assessment</h2>
-    <ul class="prices">
-      <li><span class="name">Assessment</span><span class="amt">$500 flat</span><span class="what">A recorded 45-minute interview, then a bound, printed report with its own report number: what to fix first, in your own numbers, and how your market looks from public records. Yours to keep. Credited toward setup if you continue within 30 days, up to the whole setup; any remainder comes off your first month. Founding price: it becomes $1,000 after two reference clients.</span></li>
-    </ul>
-
-    <h2>Never miss a job</h2>
-    <ul class="prices">
-      <li><span class="name">One assistant</span><span class="amt">$500 flat go-live</span><span class="what">Text-Back, Responder, Scheduler, Reviewer or Reminder: a single assistant live on your phone within 7 days of your go, or the $500 back. Founding price for the first 3 shops; then $750.</span></li>
-      <li><span class="name">The Office Manager</span><span class="amt">$750 setup + $500/mo</span><span class="what">Text-Back, Responder, Scheduler with quote follow-up, Reviewer, a light social version, and the Tracker. Cancel anytime after 90 days. Founding price for the first 3 shops; then $1,500 setup + $750/mo.</span></li>
-      <li><span class="name">Receptionist</span><span class="amt">$500 go-live; $900/mo incl. 581 min, then $0.43/min</span><span class="what">Answers when nobody can, says it's an AI, and texts you the job. It never quotes or promises. Both rates are written into the agreement.</span></li>
-      <li><span class="name">Booking Box</span><span class="amt">$500 one time</span><span class="what">On your phone homepage: &ldquo;Next available&rdquo; over a Book Online button, into the scheduler you already pay for. Founding price for the first 3 shops; then $750.</span></li>
-      <li><span class="name">Booked Jobs Kit</span><span class="amt">$1,500 setup + $750/mo for the first 3 shops; then $2,500 setup + $750/mo</span><span class="what">For $10k+ jobs: the Booking Box, one funnel, follow-up after every estimate, a 2-minute owner video, the Text-Back assistant, and one tested change and a booked-jobs report each month. Cancel anytime after 90 days.</span></li>
-      <li><span class="name">Answer Desk</span><span class="amt">$150/mo inside the Office Manager; $250/mo + $500 setup on its own</span><span class="what">Your crew texts a question and gets your approved answer, word for word, with where it came from. On its own, founding price for the first 3 shops; then $350/mo + $750 setup.</span></li>
-      <li><span class="name">Company Brain</span><span class="amt">$1,500 setup + $250/mo upkeep</span><span class="what">Your manuals, warranty terms, price book and how-tos, cleaned of customer data and made answerable for your staff. Founding price for the first 3 shops; then $2,500 setup + $250/mo.</span></li>
-      <li><span class="name">Tracker</span><span class="amt">$150/mo; included in the Office Manager</span><span class="what">Which marketing brings calls, jobs and dollars: a tracking number per channel and a code on every printed piece.</span></li>
-      <li><span class="name">Comment-to-Quote</span><span class="amt">$500 setup</span><span class="what">When someone comments &ldquo;QUOTE&rdquo;, one message, labeled automatic, with your quote link. The tool runs on your account and card. Founding price: $1,000 after two reference clients.</span></li>
-      <li><span class="name">Morning Brief</span><span class="amt">Included in the Office Manager; $50/mo beside a single assistant</span><span class="what">One text to your own phone each morning, if you want it: today's jobs, yesterday's missed calls and whether each got a reply, quotes waiting on the customer, and new reviews.</span></li>
-      <li><span class="name">Hiring Helper</span><span class="amt">$500 setup per role + $100/mo while the role is open; extra role $250</span><span class="what">An honest job ad, a job page Google can show, a short apply form and an interview kit. Every application reaches you complete, in the order it came in. It never ranks, scores or filters anyone. Founding price for the first 3 shops; then $750 per role (+$100/mo while it's open).</span></li>
-      <li><span class="name">Onboarding Ant</span><span class="amt">$750 one time, first trade included; $250 per extra trade; $1,000 with the Hiring Helper</span><span class="what">One phone page for your new tech: your rules, schedule and who to call, the equipment and safety stops, and a sign-off sheet. Company orientation, not certification, and checked by a licensed tech before anyone uses it. Founding prices for the first 3 shops; then $1,500, $500 per extra trade, and $1,750 with the Hiring Helper.</span></li>
-      <li><span class="name">Email cleanup</span><span class="amt">Included in the Office Manager setup; $350 one time on its own</span><span class="what">Your customer emails (estimate, confirmation, on the way, invoice, thank-you, after-hours, plan renewal) with your logo and colors, one clear button and one signature, sent from your own domain, with your email records fixed so they reach the inbox.</span></li>
-      <li><span class="name">COI Guard</span><span class="amt">$250/mo, no setup, for the first 3 clients; then $500/mo + $750 setup</span><span class="what">A monthly check of your subs' insurance certificates.</span></li>
-    </ul>
-
-    <h2>Get found</h2>
-    <ul class="prices">
-      <li><span class="name">Search plan</span><span class="amt">$500/mo + $250 setup (founding, 5 seats)</span><span class="what">Google profile, map ranking, listings, a page per service and town, and AI answers checked monthly. Setup includes a rebuild of up to 5 pages when your site is costing calls. After the 5 founding seats: $750/mo + $500 setup.</span></li>
-      <li><span class="name">Site Care</span><span class="amt">$100/mo</span><span class="what">Hosting, edits and listings kept current, and support by text.</span></li>
-      <li><span class="name">AI-answer pages</span><span class="amt">Inside the Search plan</span><span class="what">Pages that answer what people ask ChatGPT and Google about your trade in your town. Not sold alone.</span></li>
-    </ul>
-
-    <h2>Get the next job</h2>
-    <ul class="prices">
-      <li><span class="name">Next Job Mailer</span><span class="amt">$300/mo citywide trade bundle + $1.30/card + $200 setup</span><span class="what">Your postcard at homes the week a public permit says the job before yours just happened. One company per trade. Single ZIP codes: $20&ndash;70/mo per ZIP, capped at $400/mo citywide.</span></li>
-      <li><span class="name">Neighbor Hanger</span><span class="amt">$100/mo; $50/mo inside the Office Manager</span><span class="what">Hangers in your brand for the homes around each finished job. Printing and postage at cost.</span></li>
-      <li><span class="name">Anniversary Mailer</span><span class="amt">$100/mo; $50/mo inside the Office Manager</span><span class="what">Reminds your past customers when the service is due again. Postage at cost, on your own PostGrid account.</span></li>
-      <li><span class="name">Referral Exchange</span><span class="amt">$150 flat per paid referred job</span><span class="what">Paid by the client who gets the job and split 50/50 with the client who sent it ($75 as a credit on their next invoice). Paid work only.</span></li>
-      <li><span class="name">Social engine</span><span class="amt">$750/mo</span><span class="what">A week of posts from your real jobs, every week, approved by you by text. Founding price for the first 3 shops; then $1,000/mo.</span></li>
-      <li><span class="name">Animated Shorts</span><span class="amt">+$350/mo</span><span class="what">Four a month in your name, on top of the social engine. Founding price for the first 3 shops; then +$500/mo.</span></li>
-      <li><span class="name">Explainer video</span><span class="amt">$750 flat</span><span class="what">One 60-second animated video about one service, with one round of changes. Founding price for the first 3 shops; then $1,000.</span></li>
-      <li><span class="name">Weather Trigger</span><span class="amt">Included in the social engine; $100/mo on its own; $50/mo inside the Office Manager</span><span class="what">When the Weather Service issues a freeze, wind or heat alert, a ready campaign for your own customers who said yes, waiting for your approval.</span></li>
-    </ul>
-
-    <h2>What these prices don't cover</h2>
+    <h2>Fine print</h2>
     <ul>
-      <li>Tools that run on your own account and card: phone numbers and minutes, ManyChat, postage. You see those bills directly.</li>
-      <li>Results. I won't promise a number of calls or jobs; nobody honest can. We measure from your own numbers, and you decide if it's worth keeping.</li>
+      <li>You own everything: your accounts, pages and customer list.</li>
+      <li>90 days, then month to month. Cancel by email.</li>
+      <li>We don&rsquo;t promise results. We count your calls and jobs before and after, and show you every month.</li>
+      <li>Prices shown are for our first 3 shops.</li>
     </ul>
-    <p>You'd see the price in writing before anything is charged. <a href="/plain-terms/">The terms, in plain words</a>.</p>
+    <!-- /main-view -->
+
+    <details class="included" id="details">
+      <summary>Other options</summary>
+
+      <p>Most shops need both. When your breakdown shows you only need one, or you&rsquo;re ready for more, these are here too. Need both? Get found and never miss a job is $1,250 a month. That&rsquo;s $250 a month less than buying them one at a time.</p>
+      <ul class="prices">
+        <!-- plan:never-miss -->
+        <li><span class="name">Never miss a job</span><span class="amt">$750 a month + $750 setup</span><span class="what">Just the calls: missed calls answered, quotes followed up, appointments booked and reminded, reviews requested, Facebook and Instagram messages answered, plus a &ldquo;book now&rdquo; box on your site.</span></li>
+        <!-- /plan:never-miss -->
+        <!-- plan:get-found -->
+        <li><span class="name">Get found</span><span class="amt">$750 a month + $250 setup</span><span class="what">Just Google: your Google profile kept right and posted to every week, your listings kept right, 2 new pages a month, what AI answers say about you checked every month, review replies drafted, and your website kept up.</span></li>
+        <!-- /plan:get-found -->
+        <li><span class="name">Pay per job</span><span class="amt">$250 a month + $25 a job, never more than $750</span><span class="what">Prefer to pay per job? Never miss a job is also $250 a month + $25 for each job we save from a call you missed. Never more than $750.</span></li>
+        <!-- plan:next-job -->
+        <li><span class="name">Add-on: Get the next job</span><span class="amt">+ $1,250 a month + $500 setup ($2,500 a month in all; $1,500 setup in all)</span><span class="what">Social and marketing, on top of Get found and never miss a job: weekly posts and short videos from your real jobs, postcards to the neighbors, door hangers around every job, and postcards and emails to past customers.</span></li>
+        <!-- /plan:next-job -->
+        <!-- plan:website -->
+        <li><span class="name">New website</span><span class="amt">$1,000 once</span><span class="what">Up to 5 pages, built for you. You own it and your domain. Free when you start Get found and never miss a job.</span></li>
+        <!-- /plan:website -->
+        <li><span class="name">Operations Math by autoants</span><span class="amt">$1,500 30-day pilot, credited to month one</span><span class="what">For big operations: routes, schedules, cutting and loads, planned from your own weeks. Then priced by the size of the operation, written into the agreement.</span></li>
+        <li><span class="name">The printed assessment</span><span class="amt">$500 flat</span><span class="what">A recorded 45-minute interview, then a bound, printed report with its own report number: what to fix first, in your own numbers, and how your market looks from public records. Yours to keep. Credited toward setup if you continue within 30 days, up to the whole setup; any remainder comes off your first month. It becomes $1,000 after two reference clients.</span></li>
+      </ul>
+
+      <h2>After our first 3 shops</h2>
+      <p>The prices above are for our first 3 shops on each. After that: Never miss a job is $1,000 a month + $1,500 setup; Get found is $1,000 a month + $500 setup; Get found and never miss a job is $1,750 a month + $2,000 setup; the Get the next job add-on is + $1,250 a month + $1,000 setup ($3,000 a month in all). Try one becomes $750, and on pay per job the most you pay in a month becomes $1,000.</p>
+
+      <h2>Everything that&rsquo;s included</h2>
+      <ul class="prices">
+        <li><span class="name">Try one</span><span class="what">One assistant, set up on your phone: the missed-call text-back (most shops start here), answers to your website form, booking with reminders, the review ask, service-due reminders, invoice reminders, or the &ldquo;book now&rdquo; box (the next opening and a Book button on your site as it shows on a phone). Live within 7 days of your go, or your $500 back (for anything that texts, counted from the day the phone carriers approve it). Texts run on your own Twilio account.</span></li>
+        <li><span class="name">Never miss a job</span><span class="what">Every assistant: missed calls texted back, website-form, Facebook and Instagram messages answered, appointments booked with quote follow-up and reminders, the review ask after every job, service-due reminders (pre-season tune-ups for HVAC), invoice reminders, call tracking matched to jobs, and the &ldquo;book now&rdquo; box. Email cleanup is included in the setup.</span></li>
+        <li><span class="name">Get found</span><span class="what">Your Google profile, listings and map work; a Google profile post every week, made from your real job photos and sent to you by text to approve; 2 new service-and-town or AI-answer pages a month and a monthly check of what AI answers say about you; review replies drafted for you every week; website hosting and upkeep (a rebuild of up to 5 pages in the setup when your site is costing calls, and this is where a preview site goes live on your own domain).</span></li>
+        <li><span class="name">Get found and never miss a job</span><span class="what">Both of the above, plus a 30-minute call each month and replies by the next business day.</span></li>
+        <li><span class="name">Get the next job (add-on)</span><span class="what">Weekly social posts and short videos from your real jobs; the citywide permit-timed postcard for your trade (cards $1.30 each); door hangers around each finished job; postcards to past customers on their job&rsquo;s anniversary, and emails to past customers when they&rsquo;re due for service again, written in your voice and approved by you before any go out.</span></li>
+        <li><span class="name">New website</span><span class="what">Up to 5 pages on your own domain, yours to keep. We start from a free preview made from what&rsquo;s public about your business, then use your own photos and words. After launch, Site Care keeps it hosted and up to date for $100 a month, or we hand you the files to take anywhere.</span></li>
+        <li><span class="name">Pay per job, in full</span><span class="what">Same setup as Never miss a job. You pay $25 for each completed, paid job we recover from a call or lead nobody at the shop answered that an assistant caught (a text-back reply, an after-hours answer or a quote follow-up). Booked jobs that cancel are never billed. Each one is listed on your monthly statement with the call it came from, and you can dispute any one by email at <a href="mailto:hello@autoants.com">hello@autoants.com</a>. We don&rsquo;t predict how many there will be. Same 90-day minimum, then month to month.</span></li>
+        <li><span class="name">AI phone answering</span><span class="amt">Priced with you, once you&rsquo;re on Get found and never miss a job</span><span class="what">An AI that answers when nobody can, always says it&rsquo;s an AI, and texts you the job. It never quotes or promises. Its minutes are written into the agreement.</span></li>
+        <li><span class="name">Anything not listed here</span><span class="amt">Priced with you</span><span class="what">Scoped in writing before any work starts.</span></li>
+      </ul>
+      <p>We recommend what your own numbers can carry: if the assessment shows less than about three times the monthly fee in time and jobs recovered, we recommend the smaller option.</p>
+      <p class="small">Same on every monthly plan: you own every account, page, listing and list, and we don&rsquo;t promise results. 90-day minimum, then month to month, cancel by email. Phone numbers and texts run on your own Twilio account.</p>
+
+      <h2>The free breakdown</h2>
+      <p>A 10&ndash;14 page look at your business, made only from public information: how you show up on Google and in AI answers, your reviews and listings next to the shops around you, and what we&rsquo;d fix first. When it helps, the breakdown shows you a short video, a preview of a new site or a sample postcard for your trade. Yours to keep either way.</p>
+
+      <h2>What these prices don&rsquo;t cover</h2>
+      <ul>
+        <li>Tools that run on your own account and card: phone numbers and minutes, postage. You see those bills directly.</li>
+        <li>Results. We won&rsquo;t promise a number of calls or jobs; nobody honest can. We measure from your own numbers, and you decide if it&rsquo;s worth keeping.</li>
+      </ul>
+    </details>
+
+    <p>You&rsquo;d see the price in writing before anything is charged. <a href="/plain-terms/">The terms, in plain words</a>.</p>
   </main>
   <nav class="more" aria-label="Straight answers">
     <p class="small">More straight answers</p>
@@ -109,5 +119,9 @@
   </nav>
   <footer class="foot">autoants, short for automated assistants · New Orleans · <a href="/privacy.html">Privacy</a> · <a href="mailto:hello@autoants.com">hello@autoants.com</a></footer>
 </div>
+<script>
+  // Open the details when someone lands on /prices/#details.
+  (function(){var d=document.getElementById('details');if(!d)return;function o(){if(location.hash==='#details')d.open=true;}o();addEventListener('hashchange',o);})();
+</script>
 </body>
 </html>
