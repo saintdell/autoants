@@ -53,9 +53,23 @@
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
   .brand{display:flex;align-items:center;gap:.5rem;font-family:var(--disp);font-weight:900;font-size:1.22rem;letter-spacing:-.03em}
   .brand .ant{width:26px;height:26px}
-  .navlinks{display:flex;gap:1.9rem;font-size:.92rem;font-weight:500;color:var(--muted)}
+  .navlinks{display:flex;gap:1.5rem;font-size:.92rem;font-weight:500;color:var(--muted)}
   .navlinks a:hover{color:var(--ink)}
-  @media(max-width:820px){.navlinks{display:none}}
+  .navr{display:flex;align-items:center;gap:.9rem}
+  /* Menu: the same links for screens too narrow for the row (phones, tablets, small laptops). */
+  .mmenu{display:none;position:relative}
+  .mmenu>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:.45rem;min-height:44px;padding:0 .9rem;border:1px solid var(--line2);border-radius:11px;font-family:var(--disp);font-weight:700;font-size:.95rem;color:var(--ink)}
+  .mmenu>summary::-webkit-details-marker{display:none}
+  .mmenu>summary::before{content:"";width:16px;height:12px;background:linear-gradient(currentColor 0 0) top/100% 2px no-repeat,linear-gradient(currentColor 0 0) center/100% 2px no-repeat,linear-gradient(currentColor 0 0) bottom/100% 2px no-repeat}
+  .mmenu[open]>summary{border-color:var(--amber);color:var(--amber)}
+  .mpanel{position:absolute;right:0;top:calc(100% + .6rem);width:min(16rem,calc(100vw - 2rem));background:var(--surface2);border:1px solid var(--line2);border-radius:14px;padding:.4rem;box-shadow:0 24px 60px rgba(0,0,0,.5);display:flex;flex-direction:column}
+  .mpanel a{display:flex;align-items:center;min-height:46px;padding:0 .9rem;border-radius:9px;font-weight:600;color:var(--ink)}
+  .mpanel a:hover,.mpanel a:focus-visible{background:var(--surface)}
+  /* nine links + logo + button need ~1150px; below that they move into the Menu */
+  @media(max-width:1180px){.navlinks{display:none}.mmenu{display:block}}
+  @media(max-width:480px){.navr .btn{display:none}}
+  /* The business line (504) 499-1194, prepared but OFF: enable after Lane's test call rings his phone (delete this rule). Call only, never "Text". */
+  .phone-pending{display:none!important}
 
   /* ---- hero (two-col) ---- */
   header{position:relative;padding:5rem 0 4.5rem;overflow:hidden}
@@ -278,9 +292,18 @@
 <nav><div class="wrap">
   <a class="brand" href="#top"><img src="brand/autoants-logo-reverse.svg" alt="AutoAnts" style="height:30px;width:auto;display:block"></a>
   <div class="navlinks">
-    <a href="#offerings">What we do</a><a href="services.html">Services</a><a href="who-we-help.html">Who we help</a><a href="#roi">ROI calculator</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+    <a href="#offerings">What we do</a><a href="services.html">Services</a><a href="who-we-help.html">Who we help</a><a href="demo/">See it work</a><a href="#roi">ROI calculator</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="about-lane/">About</a>
   </div>
-  <a class="btn btn-amber" href="#contact" data-interest="Free company breakdown" style="padding:.6rem 1.1rem;font-size:.9rem">Free breakdown</a>
+  <div class="navr">
+    <details class="mmenu"><summary>Menu</summary>
+      <div class="mpanel">
+        <a href="#offerings">What we do</a><a href="services.html">Services</a><a href="who-we-help.html">Who we help</a><a href="demo/">See it work</a><a href="#roi">ROI calculator</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="about-lane/">About</a>
+        <!-- enable after Lane's test call rings his phone -->
+        <a class="phone-pending" href="tel:+15044991194">Call (504) 499-1194</a>
+      </div>
+    </details>
+    <a class="btn btn-amber" href="#contact" data-interest="Free company breakdown" style="padding:.6rem 1.1rem;font-size:.9rem">Free breakdown</a>
+  </div>
 </div></nav>
 
 <header id="top"><div class="wrap"><div class="hero-grid">
@@ -481,7 +504,9 @@
 
 <section id="contact"><div class="wrap">
   <div class="contact">
-    <div class="sec-head" style="margin-bottom:0"><p class="eyebrow">Get started</p><h2>Tell me about your business.</h2><p>I'll make your free company breakdown or set up a 15-minute call, whichever you pick. You hear back from me, a person, usually the same day.</p></div>
+    <div class="sec-head" style="margin-bottom:0"><p class="eyebrow">Get started</p><h2>Tell me about your business.</h2><p>I'll make your free company breakdown or set up a 15-minute call, whichever you pick. You hear back from me, a person, usually the same day.</p>
+      <!-- enable after Lane's test call rings his phone -->
+      <p class="phone-pending" style="margin-top:.8rem">Rather talk now? Call <a href="tel:+15044991194" style="color:var(--amber);font-weight:600">(504) 499-1194</a>.</p></div>
     <form class="cform" id="contactForm" novalidate>
       <label>Your name<input name="name" autocomplete="name" required></label>
       <label>Business name<input name="business" autocomplete="organization" required></label>
@@ -509,7 +534,7 @@
 
 <footer><div class="wrap">
   <span class="brand"><img src="brand/autoants-logo-reverse.svg" alt="AutoAnts" style="height:22px;width:auto;display:block"></span>
-  <span>autoants, short for automated assistants · Louisiana · <a href="privacy.html" style="color:inherit">Privacy</a> · <a href="ai/" style="color:inherit">For AI assistants</a> · <a href="nola/tree-service/" style="color:inherit">New Orleans tree services guide</a> · <a href="ai-index/" style="color:inherit">AI Recommendation Index</a></span>
+  <span>autoants, short for automated assistants · Louisiana · <a href="privacy.html" style="color:inherit">Privacy</a> · <a href="ai/" style="color:inherit">For AI assistants</a> · <a href="nola/tree-service/" style="color:inherit">New Orleans tree services guide</a> · <a href="ai-index/" style="color:inherit">AI Recommendation Index</a> · <a href="refer/" style="color:inherit">Refer a business</a> · <a href="https://www.instagram.com/autoants/" rel="me noopener" target="_blank" style="color:inherit">Instagram</a><!-- enable after Lane's test call rings his phone --><span class="phone-pending"> · Call <a href="tel:+15044991194" style="color:inherit">(504) 499-1194</a></span></span>
   <span class="trust-links">Straight answers: <a href="prices/" style="color:inherit">Prices</a> · <a href="never/" style="color:inherit">What it never does</a> · <a href="setup/" style="color:inherit">Setup week</a> · <a href="works-with/" style="color:inherit">What it connects to</a> · <a href="rules/" style="color:inherit">Texts and calls</a> · <a href="your-data/" style="color:inherit">Your data</a> · <a href="plain-terms/" style="color:inherit">Terms</a> · <a href="about-lane/" style="color:inherit">About Lane</a></span>
 </div></footer>
 
@@ -572,6 +597,10 @@
         .then(function(){ if (btn) btn.disabled = false; });
     });
   })();
+
+  // ---- menu: close after a tap on a link ----
+  document.querySelectorAll('.mmenu a').forEach(function(a){ a.addEventListener('click', function(){ var d=a.closest('details'); if(d) d.open=false; }); });
+  document.addEventListener('click', function(e){ var d=document.querySelector('.mmenu[open]'); if(d && !d.contains(e.target)) d.open=false; });
 
   // ---- before/after drag ----
   document.querySelectorAll('.ba').forEach(function(b){
