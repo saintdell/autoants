@@ -15,23 +15,24 @@
   video, preview site or sample postcard is shown inside the breakdown, not sold separately
 - Two choices up front (prices for the first 3 shops; full list: https://autoants.com/prices/):
   1. Get found and never miss a job: $1,250 a month + $1,000 setup. Missed calls answered, quotes followed up,
-     appointments booked and reminded, reviews requested, the Google profile and listings kept right, 2 new
+     appointments booked and reminded, reviews requested, the Google profile kept right and posted to every week, the listings kept right, 2 new
      pages a month, what AI answers say about the business checked every month, and the website kept up
   2. Not ready? Try one: $500 once. One assistant on the owner's phone, live within 7 days or the $500 back
      (the only promise AutoAnts makes). Most shops start with texting back every missed call; others are
      web-form answers, booking and reminders, the review ask, service-due or invoice reminders, or a "book now"
      box on the website. Texts run on the business's own phone-and-text account (Twilio)
 - Other options, offered when the owner asks or the breakdown points to one:
-  - Never miss a job alone: $500 a month + $750 setup. Every assistant: missed calls answered, quotes
+  - Never miss a job alone: $750 a month + $750 setup. Every assistant: missed calls answered, quotes
     followed up, appointments booked and reminded, reviews requested, Facebook and Instagram messages
     answered, plus the "book now" box
-  - Get found alone: $500 a month + $250 setup. Google profile and listings kept right, 2 new pages a month,
+  - Get found alone: $750 a month + $250 setup. Google profile and listings kept right, a Google profile
+    post every week from real job photos (approved by the owner by text), 2 new pages a month,
     the monthly AI-answer check, review replies drafted, website hosting and upkeep (a rebuild of up to 5 pages
     in setup when the site is costing calls)
   - Pay per job: Never miss a job is also $250 a month + $25 for each completed, paid job saved from a call the
-    business missed, never more than $500 a month
-  - Add-on, Get the next job (social and marketing, on top of both): + $1,250 a month ($2,500 a month in all;
-    $1,500 setup in all). Weekly posts and short videos from real jobs, postcards to the neighbors (cards $1.30
+    business missed, never more than $750 a month
+  - Add-on, Get the next job (social and marketing, on top of both): + $1,250 a month + $500 setup ($2,500 a
+    month in all; $1,500 setup in all). Weekly posts and short videos from real jobs, postcards to the neighbors (cards $1.30
     each), door hangers around every job, postcards to past customers
   - AI phone answering, scoped once a business has both: an AI that answers when nobody can and always says it
     is an AI; minutes written into the agreement
@@ -40,8 +41,10 @@
   - The printed assessment: $500 flat. A recorded 45-minute interview, then a bound, printed report on what to
     fix first and what each fix is worth in the owner's own numbers. Credited toward setup if they continue
     within 30 days. It becomes $1,000 after two reference clients
-- After the first 3 shops, monthly prices become: Never miss a job $750, Get found $750, both $1,750, the add-on
-  still + $1,250 ($3,000 in all), Try one $750, and the pay-per-job cap $750
+- Both doors together cost $250 a month less than the two bought one at a time ($1,250 vs $750 + $750)
+- After the first 3 shops: Never miss a job $1,000 a month + $1,500 setup, Get found $1,000 a month + $500 setup,
+  both $1,750 a month + $2,000 setup, the add-on + $1,250 a month + $1,000 setup ($3,000 a month in all), Try one
+  $750, and the pay-per-job cap $1,000
 - On every monthly plan: the business owns everything (accounts, pages, customer list); 90 days, then month to
   month, cancel by email; no result promises: AutoAnts counts calls and jobs before and after and shows the owner
   every month
