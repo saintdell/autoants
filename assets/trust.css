@@ -61,6 +61,7 @@ small,.small{font-size:14px;color:var(--muted)}
 .prices .name{font-weight:800;font-size:18px;display:block}
 .prices .amt{display:block;font-weight:800;color:var(--accent-ink);font-size:17px;margin:2px 0 4px;overflow-wrap:anywhere}
 .prices .what{display:block;color:var(--muted);font-size:15px}
+.prices .alt{display:block;font-size:15px;border-left:3px solid var(--accent);background:var(--soft);border-radius:0 10px 10px 0;padding:8px 12px;margin:4px 0 8px}
 .promise{border-left:4px solid var(--accent);background:var(--soft);border-radius:0 12px 12px 0;padding:12px 14px;margin:12px 0;font-weight:700}
 
 /* day-by-day */
