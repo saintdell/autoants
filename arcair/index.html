@@ -192,6 +192,220 @@ const BIZ = {
   </div>
 </section>
 
+<style>.gp-anchor{height:1px}
+.gp{max-width:60rem;margin:0 auto}
+.gp-box{background:#fff;border:1px solid #dadce0;border-radius:14px;padding:1.4rem 1.2rem}
+.gp-summary{font-size:1.05rem;margin:0 0 1rem;text-align:center}
+.gp-gmaps{font-family:Roboto,Arial,sans-serif;font-weight:400;font-size:12px;color:#5E5E5E;white-space:nowrap}
+.gp a{color:inherit}
+.gp-stars{position:relative;display:inline-block;color:#dadce0;letter-spacing:1px;line-height:1}
+.gp-stars-fill{position:absolute;inset:0 auto 0 0;overflow:hidden;white-space:nowrap;color:#e7a500}
+.gp-reviews{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.gp-review{margin:0;background:#f8f9fa;border-radius:12px;padding:1rem}
+.gp-text{margin:.5rem 0;white-space:pre-line;font-size:.95rem}
+.gp-author{display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:#3c4043;flex-wrap:wrap}
+.gp-avatar{border-radius:50%;width:28px;height:28px}
+.gp-note{font-size:12px;color:#5E5E5E;margin:.6rem 0 0}
+.gp-photos{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));margin-top:1.2rem}
+.gp-photo{margin:0}.gp-photo img{width:100%;height:12rem;object-fit:cover;border-radius:10px;display:block}
+.gp-photo .gp-author{margin-top:.3rem}
+.gp-hours{margin-top:1.2rem}.gp-hours ul{list-style:none;padding:0;margin:.3rem 0;font-size:.9rem}
+.gp-h{font-weight:700;margin:0}</style>
+<div class="gp-anchor" aria-hidden="true"></div>
+<section class="gp" hidden data-gp-place="ChIJ465b4KO3IIYRy_coyk1ExWY" data-gp-key="AIzaSyAJ3otJDSFoCifWo6WunKIz4DwBwd-ATus" data-gp-name="Arc Air" data-gp-reviews="3" data-gp-photos="3" data-gp-photo-max="1200" data-gp-fields="rating,userRatingCount,reviews,photos,googleMapsURI,regularOpeningHours,attributions">
+  <h2>What customers say on Google</h2>
+  <div class="rule"></div>
+  <div class="gp-box gp-body"></div>
+</section>
+<script>
+/* autoants Google profile widget: Places API (New) content rendered LIVE in the visitor's browser.
+ *
+ * Why live: Google's terms allow storing only the place ID (Maps ToS 3.2.3(b); Service Specific Terms 14).
+ * Rating, reviews, photos and hours are fetched at view time with the Maps JavaScript API Place class and
+ * never written into the page or a repo. Rules (scripts/places/POLICY.md, verified 2026-10-19):
+ *   - "Google Maps" text attribution beside the content (sans-serif, weight 400, >=12px, #5E5E5E);
+ *   - every review and photo credits its author: name linked to the profile, avatar when given;
+ *   - review text verbatim and untruncated; translated reviews say so;
+ *   - a notice of how reviews are ordered and filtered;
+ *   - data providers in place.attributions are credited.
+ * https://developers.google.com/maps/documentation/places/web-service/policies
+ * https://developers.google.com/maps/documentation/javascript/place-details
+ *
+ * The section stays hidden unless the fetch succeeds, so a failed load never leaves a hollow rating slot.
+ */
+(function (root) {
+  "use strict";
+
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+  function safeUrl(u) {
+    return /^https:\/\//i.test(String(u || "")) ? String(u) : null;
+  }
+  function txt(v) {            // LocalizedText (REST) or plain string (JS Place)
+    if (v == null) return null;
+    return typeof v === "string" ? v : (v.text == null ? null : v.text);
+  }
+  function lang(v, alt) {
+    if (alt) return alt;
+    return v && typeof v === "object" ? (v.languageCode || null) : null;
+  }
+  function author(a) {
+    a = a || {};
+    return { name: a.displayName || null, uri: safeUrl(a.uri), photo: safeUrl(a.photoURI || a.photoUri) };
+  }
+
+  // Accepts a Maps JS Place (after fetchFields) or a REST Place JSON (tests, fixtures).
+  function normalize(p, opts) {
+    opts = opts || {};
+    var hours = p.regularOpeningHours && p.regularOpeningHours.weekdayDescriptions;
+    return {
+      rating: typeof p.rating === "number" ? p.rating : null,
+      count: typeof p.userRatingCount === "number" ? p.userRatingCount : null,
+      mapsUri: safeUrl(p.googleMapsURI || p.googleMapsUri),
+      hours: Array.isArray(hours) ? hours.slice() : null,
+      reviews: (p.reviews || []).slice(0, 5).map(function (r) {
+        var tl = lang(r.text, r.textLanguageCode), ol = lang(r.originalText, r.originalTextLanguageCode);
+        return {
+          text: txt(r.text),
+          translated: !!(tl && ol && tl !== ol),
+          rating: typeof r.rating === "number" ? r.rating : null,
+          author: author(r.authorAttribution),
+          when: r.relativePublishTimeDescription || null
+        };
+      }),
+      photos: (p.photos || []).map(function (ph) {
+        var src = typeof ph.getURI === "function" ? ph.getURI({ maxWidth: opts.photoMaxPx || 1200 })
+          : (opts.photoSrc ? opts.photoSrc(ph) : null);
+        return { src: src, credits: (ph.authorAttributions || []).map(author) };
+      }),
+      providers: (p.attributions || []).map(function (a) {
+        return { name: a.provider || null, uri: safeUrl(a.providerURI || a.providerUri) };
+      })
+    };
+  }
+
+  var GM = '<span class="gp-gmaps">Google Maps</span>';
+
+  function stars(n) {
+    var pct = Math.max(0, Math.min(100, (n / 5) * 100));
+    return '<span class="gp-stars" role="img" aria-label="' + esc(n) + ' out of 5 stars">' +
+      '<span class="gp-stars-fill" style="width:' + pct.toFixed(0) + '%"></span></span>';
+  }
+  function credit(a) {
+    if (!a.name) return "";
+    var name = a.uri ? '<a href="' + esc(a.uri) + '" target="_blank" rel="noopener nofollow">' + esc(a.name) + "</a>"
+      : esc(a.name);
+    return name;
+  }
+
+  // Data -> HTML string. Review text is inserted exactly as returned (escaped for HTML, nothing else).
+  function render(d, opts) {
+    opts = opts || {};
+    var nRev = opts.reviews == null ? 3 : opts.reviews, nPh = opts.photos == null ? 3 : opts.photos;
+    var name = opts.name || "this business";
+    var out = [];
+    if (d.rating != null && d.count) {
+      out.push('<p class="gp-summary">' + stars(d.rating) + ' <b>' + esc(d.rating.toFixed(1)) + "</b> from " +
+        esc(d.count.toLocaleString("en-US")) + " reviews on " +
+        (d.mapsUri ? '<a href="' + esc(d.mapsUri) + '" target="_blank" rel="noopener">' + GM + "</a>" : GM) +
+        "</p>");
+    }
+    var reviews = d.reviews.slice(0, nRev).filter(function (r) { return r.author.name; });
+    if (reviews.length) {
+      out.push('<div class="gp-reviews">');
+      reviews.forEach(function (r) {
+        out.push('<figure class="gp-review">' +
+          (r.rating != null ? stars(r.rating) : "") +
+          (r.text ? '<blockquote class="gp-text">' + esc(r.text) + "</blockquote>" : "") +
+          (r.translated ? '<p class="gp-note">Translated by Google</p>' : "") +
+          '<figcaption class="gp-author">' +
+          (r.author.photo ? '<img class="gp-avatar" src="' + esc(r.author.photo) +
+            '" alt="" width="28" height="28" loading="lazy" referrerpolicy="no-referrer">' : "") +
+          "<span>" + credit(r.author) + (r.when ? " · " + esc(r.when) : "") + " · " + GM + "</span>" +
+          "</figcaption></figure>");
+      });
+      out.push("</div>");
+      out.push('<p class="gp-note">Reviews from ' + GM + ": the first " + reviews.length +
+        " in the order Google returns them (most relevant first), not filtered by rating. " +
+        "Google checks for fake content but doesn't verify every review.</p>");
+    }
+    var photos = d.photos.filter(function (p) { return p.src; }).slice(0, nPh);
+    if (photos.length) {
+      out.push('<div class="gp-photos">');
+      photos.forEach(function (p) {
+        var by = p.credits.map(credit).filter(Boolean).join(", ");
+        out.push('<figure class="gp-photo"><img src="' + esc(p.src) + '" alt="Photo of ' + esc(name) +
+          ' from Google Maps" loading="lazy">' +
+          '<figcaption class="gp-author">' + (by ? "Photo: " + by + " · " : "") + GM + "</figcaption></figure>");
+      });
+      out.push("</div>");
+    }
+    if (d.hours && d.hours.length) {
+      out.push('<div class="gp-hours"><p class="gp-h">Hours</p><ul>' +
+        d.hours.map(function (h) { return "<li>" + esc(h) + "</li>"; }).join("") +
+        "</ul><p class=\"gp-note\">Hours from " + GM + "</p></div>");
+    }
+    if (d.providers.length) {
+      out.push('<p class="gp-note">Data: ' + GM + ", " + d.providers.map(function (a) {
+        return a.uri ? '<a href="' + esc(a.uri) + '" target="_blank" rel="noopener">' + esc(a.name) + "</a>"
+          : esc(a.name);
+      }).join(", ") + "</p>");
+    }
+    return out.join("\n");
+  }
+
+  var api = { normalize: normalize, render: render, esc: esc };
+  if (typeof module !== "undefined" && module.exports) { module.exports = api; return; }
+  root.AutoantsGoogleProfile = api;
+
+  // ---- live boot (browser only) ------------------------------------------------------------------------
+  function boot() {
+    var sec = document.querySelector("section[data-gp-place]");
+    if (!sec) return;
+    var key = sec.getAttribute("data-gp-key"), pid = sec.getAttribute("data-gp-place");
+    if (!key || !pid) return;
+    var cfg = { reviews: +sec.getAttribute("data-gp-reviews") || 3, photos: +sec.getAttribute("data-gp-photos") || 3,
+      photoMaxPx: +sec.getAttribute("data-gp-photo-max") || 1200, name: sec.getAttribute("data-gp-name") || "" };
+    var fields = (sec.getAttribute("data-gp-fields") || "").split(",").filter(Boolean);
+    var started = false;
+    function go() {
+      if (started) return; started = true;
+      var cb = "__gpReady" + Math.random().toString(36).slice(2);
+      root[cb] = function () {
+        google.maps.importLibrary("places").then(function (lib) {
+          var place = new lib.Place({ id: pid, requestedLanguage: "en" });
+          return place.fetchFields({ fields: fields }).then(function () {
+            var html = render(normalize(place, cfg), cfg);
+            if (!html) return;
+            sec.querySelector(".gp-body").innerHTML = html;
+            sec.hidden = false;
+          });
+        }).catch(function () { /* stay hidden: no hollow slot */ });
+      };
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://maps.googleapis.com/maps/api/js?key=" + encodeURIComponent(key) +
+        "&v=weekly&loading=async&callback=" + cb;
+      document.head.appendChild(s);
+    }
+    // Fetch only when the visitor nears the section: each fetch is a billed Place Details call.
+    if ("IntersectionObserver" in root) {
+      var io = new IntersectionObserver(function (es) {
+        if (es.some(function (e) { return e.isIntersecting; })) { io.disconnect(); go(); }
+      }, { rootMargin: "600px 0px" });
+      // A hidden section has no box, so watch the 1px anchor placed just before it.
+      var anchor = sec.previousElementSibling;
+      io.observe(anchor && anchor.classList.contains("gp-anchor") ? anchor : sec.parentNode);
+    } else { go(); }
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();
+})(typeof window !== "undefined" ? window : this);
+
+</script>
+
 <section>
   <div class="area-strip">
     <h2>Service Area</h2>
