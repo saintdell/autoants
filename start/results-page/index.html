@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Read your monthly results page · autoants</title>
+<meta name="description" content="How to read the autoants monthly results page: the measured week before we started, recovered jobs, the numbers with their sources, and what we don't promise.">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&family=JetBrains+Mono:wght@700&display=swap">
+<link rel="stylesheet" href="/assets/trust.css">
+<style>
+  .guide-meta{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 18px}
+  .pill{display:inline-block;font:700 12px/1.3 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:5px 10px;background:var(--card);color:var(--accent-ink)}
+  ol.steps{list-style:none;counter-reset:s;padding:0;margin:0 0 12px;display:flex;flex-direction:column;gap:8px}
+  ol.steps>li{counter-increment:s;position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px 12px 52px;margin:0;max-width:none}
+  ol.steps>li::before{content:counter(s);position:absolute;left:14px;top:12px;width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-weight:800;font-size:14px;line-height:26px;text-align:center}
+  .ok{border-left:4px solid var(--accent);background:var(--soft);border-radius:0 12px 12px 0;padding:10px 14px;margin:10px 0 12px}
+  .ok b:first-child{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink)}
+  .note{border:1px dashed var(--muted);border-radius:12px;padding:10px 14px;margin:10px 0 12px;font-size:15px}
+  .src{font-size:13px;color:var(--muted);margin:4px 0 22px;overflow-wrap:anywhere}
+  .stuck{background:var(--card);border:2px solid var(--accent);border-radius:16px;padding:16px;margin:28px 0 8px;font-weight:700}
+  .back{display:inline-block;margin:18px 0 0;font-weight:700;font-size:15px}
+  code{font:600 15px "JetBrains Mono",ui-monospace,monospace;background:var(--soft);border-radius:6px;padding:1px 6px;overflow-wrap:anywhere}
+  section.plat{border-top:1px solid var(--line);margin-top:26px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="top" aria-label="Site">
+    <a class="logo" href="/" aria-label="autoants home"><img class="on-light" src="/brand/autoants-logo.svg" alt="autoants"><img class="on-dark" src="/brand/autoants-logo-reverse.svg" alt="autoants"></a>
+    <span class="sp"></span>
+    <a class="ghost" href="/start/">All setup guides</a>
+  </nav>
+  <main id="main">
+    <!-- Client setup guide (start/results-page/). Not linked from any public page; noindex. Built 2026-10-19 from
+         tle-main docs/playbooks/onboarding.md and the product docs named in the commit. -->
+    <p class="eyebrow">Setup guide</p>
+    <h1>Read your monthly results page</h1>
+    <div class="guide-meta"><span class="pill">Time: ~5 min</span><span class="pill">You stay the owner</span></div>
+
+    <p class="lede">Once a month, one private link shows what we did and what moved. It&rsquo;s the same link every month; it just updates. Lane shares it with you.</p>
+
+    <h2>Top to bottom</h2>
+    <ol class="steps">
+      <li><b>Your measured week (the before).</b> One real week we counted with you before we started: calls answered and missed by time of day, nights and weekends too; how many real leads got booked; cancellations. This is what &ldquo;now&rdquo; gets compared to.</li>
+      <li><b>Recovered jobs (completed and paid).</b> Each job an assistant caught, like a text-back reply, an after-hours answer or a quote follow-up, with its date and job number. On pay per job, your amounts and the monthly cap are here too. Think one is wrong? Email <a href="mailto:hello@autoants.com">hello@autoants.com</a> to dispute it.</li>
+      <li><b>The numbers.</b> Missed calls texted back, calls the assistant answered, minutes to first reply, leads received, jobs booked from the assistants, Google reviews and star rating, searches for your business name, searches where you&rsquo;re on page two, website visits.</li>
+      <li><b>Your assistants.</b> Which ones are live or still setting up, and since when.</li>
+      <li><b>What we did, Next,</b> and <b>What we need from you.</b></li>
+    </ol>
+
+    <h2>How to read a number</h2>
+    <ul>
+      <li>The big figure is the latest reading. Next to it is the change since the last one: <b>green</b> when it moved the good way, <b>amber</b> when it didn&rsquo;t. Fewer minutes to reply is good; more is not.</li>
+      <li>Under each number: where it came from and the date we read it.</li>
+      <li><b>&ldquo;Not tracked yet&rdquo;</b> means we aren&rsquo;t measuring it yet, and the card says how it starts. A blank is never counted as zero.</li>
+      <li><b>Jobs booked</b> counts only jobs you confirmed.</li>
+    </ul>
+
+    <h2>What it never shows</h2>
+    <ul>
+      <li>Your customers&rsquo; phone numbers or email addresses.</li>
+      <li>Forecasts, or promises about next month.</li>
+    </ul>
+
+    <div class="promise">We don&rsquo;t promise results. Some months a number goes down, and you&rsquo;ll see that too. The page puts your before next to your now, with sources, so you can decide if it&rsquo;s worth keeping.</div>
+    <div class="ok"><b>You&rsquo;ll see</b>The link opens on your phone, with this month&rsquo;s date at the top of the numbers. Ask us about any number on the monthly call.</div>
+
+    <p class="stuck">Stuck? Reply to our email and we&rsquo;ll do it together on a 10-minute screen-share.</p>
+    <a class="back" href="/start/">&larr; All setup guides</a>
+  </main>
+  <footer class="foot">autoants, short for automated assistants · New Orleans · <a href="/privacy.html">Privacy</a> · <a href="mailto:hello@autoants.com">hello@autoants.com</a></footer>
+</div>
+</body>
+</html>
