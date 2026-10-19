@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Set up after-hours answering · autoants</title>
+<meta name="description" content="How autoants' after-hours AI phone answering works: your hours, who gets urgent calls, what counts as an emergency, what the AI says and never says, and how to change the rules.">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&family=JetBrains+Mono:wght@700&display=swap">
+<link rel="stylesheet" href="/assets/trust.css">
+<style>
+  .guide-meta{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 18px}
+  .pill{display:inline-block;font:700 12px/1.3 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:5px 10px;background:var(--card);color:var(--accent-ink)}
+  ol.steps{list-style:none;counter-reset:s;padding:0;margin:0 0 12px;display:flex;flex-direction:column;gap:8px}
+  ol.steps>li{counter-increment:s;position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px 12px 52px;margin:0;max-width:none}
+  ol.steps>li::before{content:counter(s);position:absolute;left:14px;top:12px;width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-weight:800;font-size:14px;line-height:26px;text-align:center}
+  .ok{border-left:4px solid var(--accent);background:var(--soft);border-radius:0 12px 12px 0;padding:10px 14px;margin:10px 0 12px}
+  .ok b:first-child{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink)}
+  .note{border:1px dashed var(--muted);border-radius:12px;padding:10px 14px;margin:10px 0 12px;font-size:15px}
+  .src{font-size:13px;color:var(--muted);margin:4px 0 22px;overflow-wrap:anywhere}
+  .stuck{background:var(--card);border:2px solid var(--accent);border-radius:16px;padding:16px;margin:28px 0 8px;font-weight:700}
+  .back{display:inline-block;margin:18px 0 0;font-weight:700;font-size:15px}
+  code{font:600 15px "JetBrains Mono",ui-monospace,monospace;background:var(--soft);border-radius:6px;padding:1px 6px;overflow-wrap:anywhere}
+  section.plat{border-top:1px solid var(--line);margin-top:26px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="top" aria-label="Site">
+    <a class="logo" href="/" aria-label="autoants home"><img class="on-light" src="/brand/autoants-logo.svg" alt="autoants"><img class="on-dark" src="/brand/autoants-logo-reverse.svg" alt="autoants"></a>
+    <span class="sp"></span>
+    <a class="ghost" href="/start/">All setup guides</a>
+  </nav>
+  <main id="main">
+    <!-- Client setup guide (start/after-hours/). Not linked from any public page; noindex. Built 2026-10-19 from
+         tle-main docs/playbooks/onboarding.md and the product docs named in the commit. -->
+    <p class="eyebrow">Setup guide</p>
+    <h1>Set up after-hours answering</h1>
+    <div class="guide-meta"><span class="pill">Time: ~15 min</span><span class="pill">You stay the owner</span></div>
+
+    <p class="lede">When nobody can pick up, an AI answers. It says it&rsquo;s an AI in its first sentence, takes the details and texts you the job. It never quotes a price or promises a time.</p>
+    <p>It only gets the calls you don&rsquo;t answer: your phone forwards them when it rings out. Your number stays yours. Forwarding is set up in the call-forwarding guide on <a href="/start/">the setup page</a>.</p>
+
+    <h2>Tell us five things</h2>
+    <p class="muted">On the kickoff call, or reply to our email with your answers.</p>
+    <ol class="steps">
+      <li><b>Your hours.</b> Weekdays, Saturdays, and what callers should hear outside them.</li>
+      <li><b>Who gets urgent calls.</b> One person, by name, and their phone number. That phone has to be on loud after hours.</li>
+      <li><b>What counts as an emergency in your trade</b>, in your own words. These are always on the list: a gas smell, a fire, water actively running, someone hurt or in danger.</li>
+      <li><b>Services you don&rsquo;t do.</b> This keeps it from taking down a job you can&rsquo;t do.</li>
+      <li><b>Recorded or not.</b> If calls are recorded, it says so before it asks for anything.</li>
+    </ol>
+
+    <h2>What the AI says</h2>
+    <p>It opens with something like: &ldquo;Thanks for calling [your business], this is their scheduling assistant. I&rsquo;m an AI, and this call is recorded. How can I help?&rdquo;</p>
+    <p>Then it takes the caller&rsquo;s name, a callback number, the address, what&rsquo;s wrong in their words, and how urgent it is. It reads the number back. It can offer up to three times from your calendar, and it always adds that someone will confirm.</p>
+    <p>Anyone who asks for a person gets handed off right away.</p>
+
+    <h2>What it never does</h2>
+    <ul class="never">
+      <li><span class="name">Never quotes a price</span><span class="no">Not even a range. It says you&rsquo;ll call with a price before anyone comes out.</span></li>
+      <li><span class="name">Never promises an arrival time</span><span class="no">&ldquo;Someone will confirm&rdquo; is the most it says.</span></li>
+      <li><span class="name">Never takes a card number</span><span class="no">If a caller starts to read one out, it stops them.</span></li>
+      <li><span class="name">Never diagnoses</span><span class="no">With one exception: for gas, fire or flooding it tells the caller to get to safety and call 911 or the utility, then pages your person.</span></li>
+      <li><span class="name">Never makes things up</span><span class="no">If it wasn&rsquo;t told a fact about your business, it says you&rsquo;ll confirm.</span></li>
+      <li><span class="name">Never pretends to be a person</span><span class="no">It says it&rsquo;s an AI on every call.</span></li>
+    </ul>
+
+    <h2>Before it answers a real customer</h2>
+    <ol class="steps">
+      <li>We make ten test calls to it: asking for a price, asking when someone will come, a gas smell, asking for a person.</li>
+      <li>You call it once yourself, so you hear it before your customers do.</li>
+      <li>We set off a real urgent page, and your person&rsquo;s phone has to ring.</li>
+      <li>It goes live on a weekday during business hours. Never a Friday afternoon, never right before a storm.</li>
+    </ol>
+    <div class="ok"><b>You&rsquo;ll see</b>After each call it answers, a text with the job: name, number, address, the problem and how urgent. For the first two days we read every call it takes.</div>
+
+    <h2>Changing the rules</h2>
+    <p>New hours, a new on-call person, a holiday, a storm week, a new kind of emergency: reply to our email or text us the change. We update it, test it, and tell you when the change is live.</p>
+    <h2>The off switch</h2>
+    <p class="promise">If it ever says something wrong, turn off call forwarding yourself, then call us. Don&rsquo;t wait to be polite about it.</p>
+    <p class="small">The off codes are in the call-forwarding guide and on your one-page down-day sheet.</p>
+
+    <p class="stuck">Stuck? Reply to our email and we&rsquo;ll do it together on a 10-minute screen-share.</p>
+    <a class="back" href="/start/">&larr; All setup guides</a>
+  </main>
+  <footer class="foot">autoants, short for automated assistants · New Orleans · <a href="/privacy.html">Privacy</a> · <a href="mailto:hello@autoants.com">hello@autoants.com</a></footer>
+</div>
+</body>
+</html>

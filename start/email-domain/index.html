@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Send win-back emails from your domain · autoants</title>
+<meta name="description" content="How to set up SPF, DKIM and DMARC so autoants can send win-back emails to your past customers from your own domain, with GoDaddy, Namecheap, Squarespace Domains or Cloudflare steps.">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&family=JetBrains+Mono:wght@700&display=swap">
+<link rel="stylesheet" href="/assets/trust.css">
+<style>
+  .guide-meta{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 18px}
+  .pill{display:inline-block;font:700 12px/1.3 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:5px 10px;background:var(--card);color:var(--accent-ink)}
+  ol.steps{list-style:none;counter-reset:s;padding:0;margin:0 0 12px;display:flex;flex-direction:column;gap:8px}
+  ol.steps>li{counter-increment:s;position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px 12px 52px;margin:0;max-width:none}
+  ol.steps>li::before{content:counter(s);position:absolute;left:14px;top:12px;width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-weight:800;font-size:14px;line-height:26px;text-align:center}
+  .ok{border-left:4px solid var(--accent);background:var(--soft);border-radius:0 12px 12px 0;padding:10px 14px;margin:10px 0 12px}
+  .ok b:first-child{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink)}
+  .note{border:1px dashed var(--muted);border-radius:12px;padding:10px 14px;margin:10px 0 12px;font-size:15px}
+  .src{font-size:13px;color:var(--muted);margin:4px 0 22px;overflow-wrap:anywhere}
+  .stuck{background:var(--card);border:2px solid var(--accent);border-radius:16px;padding:16px;margin:28px 0 8px;font-weight:700}
+  .back{display:inline-block;margin:18px 0 0;font-weight:700;font-size:15px}
+  code{font:600 15px "JetBrains Mono",ui-monospace,monospace;background:var(--soft);border-radius:6px;padding:1px 6px;overflow-wrap:anywhere}
+  section.plat{border-top:1px solid var(--line);margin-top:26px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="top" aria-label="Site">
+    <a class="logo" href="/" aria-label="autoants home"><img class="on-light" src="/brand/autoants-logo.svg" alt="autoants"><img class="on-dark" src="/brand/autoants-logo-reverse.svg" alt="autoants"></a>
+    <span class="sp"></span>
+    <a class="ghost" href="/start/">All setup guides</a>
+  </nav>
+  <main id="main">
+    <!-- Client setup guide (start/email-domain/). Not linked from any public page; noindex. Built 2026-10-19 from
+         tle-main docs/playbooks/onboarding.md and the product docs named in the commit. -->
+    <p class="eyebrow">Setup guide</p>
+    <h1>Send win-back emails from your domain</h1>
+    <div class="guide-meta"><span class="pill">Time: ~15 min</span><span class="pill">You stay the owner</span></div>
+
+    <p class="lede">Emails to your past customers go out from your own address, like you@yourshop.com, signed by you. For that, your domain needs three settings, so inboxes trust the mail.</p>
+
+    <h2>The three settings, in one line each</h2>
+    <ul class="never">
+      <li><span class="name">SPF</span><span class="no">A list of who is allowed to send email for your domain.</span></li>
+      <li><span class="name">DKIM</span><span class="no">A signature on each email that proves it came from you and wasn&rsquo;t changed on the way.</span></li>
+      <li><span class="name">DMARC</span><span class="no">Tells inboxes what to do with mail that fails those checks, and sends you reports.</span></li>
+    </ul>
+
+    <h2>What we send you</h2>
+    <p>Two or three short entries, from the email service that sends for you. Each one has a <b>type</b>, a <b>name</b> and a <b>value</b>. Copy each one exactly.</p>
+    <ul>
+      <li><b>SPF:</b> type TXT, name <code>@</code>. If your domain already has an SPF entry (it starts with <code>v=spf1</code>), we&rsquo;ll send you an edited one. Don&rsquo;t add a second.</li>
+      <li><b>DKIM:</b> type TXT or CNAME, with a name ending in <code>._domainkey</code>.</li>
+      <li><b>DMARC:</b> type TXT, name <code>_dmarc</code>.</li>
+    </ul>
+    <p class="note">Add them where your domain&rsquo;s DNS lives. Usually that&rsquo;s where you bought the domain, unless your web host or Cloudflare runs it. If what you add never shows up, the DNS lives somewhere else, and we&rsquo;ll find it together.</p>
+
+    <section class="plat">
+    <h2>GoDaddy</h2>
+    <ol class="steps">
+      <li>Sign in and open your <b>Domain Portfolio</b>.</li>
+      <li>Next to your domain, click <b>Domain Edit Options</b>, then <b>Edit DNS</b>.</li>
+      <li>Click <b>Add</b>. Pick the type (<b>TXT</b> or <b>CNAME</b>), then fill in the name and value we sent. Leave the TTL as it is.</li>
+      <li>Click <b>Add Record</b>. Repeat for each entry.</li>
+    </ol>
+    <p class="src">Checked against <a href="https://www.godaddy.com/help/add-a-txt-record-19232">GoDaddy: Add a TXT record</a> on 2026-10-19.</p>
+    </section>
+
+    <section class="plat">
+    <h2>Namecheap</h2>
+    <ol class="steps">
+      <li>Sign in. Click <b>Domain List</b>, then <b>Manage</b> next to your domain.</li>
+      <li>Open the <b>Advanced DNS</b> tab and click <b>Add new record</b>.</li>
+      <li>Pick the type. In <b>Host</b>, type the name we sent, without your domain on the end. In <b>Value</b>, paste the value.</li>
+      <li>Click <b>Save all changes</b>. It usually takes about 30 minutes to work.</li>
+    </ol>
+    <p class="src">Checked against <a href="https://www.namecheap.com/support/knowledgebase/article.aspx/317/2237/how-do-i-add-txtspfdkimdmarc-records-for-my-domain/">Namecheap: How do I add TXT/SPF/DKIM/DMARC records</a> on 2026-10-19.</p>
+    </section>
+
+    <section class="plat">
+    <h2>Squarespace Domains</h2>
+    <ol class="steps">
+      <li>Open your domain in Squarespace. Click <b>DNS</b>, then <b>DNS Settings</b>.</li>
+      <li>Scroll to <b>Custom Records</b> and click <b>Add record</b>.</li>
+      <li>Pick the type. Type the name we sent (use <code>@</code> if we didn&rsquo;t send one), and paste the value.</li>
+      <li>Save. Repeat for each entry.</li>
+    </ol>
+    <p class="src">Checked against <a href="https://support.squarespace.com/hc/en-us/articles/360002101888-Adding-DNS-records-to-your-domain">Squarespace: Edit your domain&rsquo;s DNS records</a>, <a href="https://support.squarespace.com/hc/en-us/articles/31120985010957-Add-DNS-records-for-email">Squarespace: Add DNS records for email</a> on 2026-10-19.</p>
+    </section>
+
+    <section class="plat">
+    <h2>Cloudflare</h2>
+    <ol class="steps">
+      <li>Sign in and pick your domain. Open <b>DNS</b>, then <b>Records</b>.</li>
+      <li>Click <b>Add record</b>. Pick the type, then fill in the name and the content we sent.</li>
+      <li>For a CNAME, set <b>Proxy status</b> to <b>DNS only</b> (the grey cloud). TXT entries are always DNS only.</li>
+      <li>Save. Repeat for each entry.</li>
+    </ol>
+    <p class="src">Checked against <a href="https://developers.cloudflare.com/dns/manage-dns-records/how-to/create-dns-records/">Cloudflare: Manage DNS records</a> on 2026-10-19.</p>
+    </section>
+
+    <h2>When it worked</h2>
+    <div class="ok"><b>You&rsquo;ll see</b>A note from us that your domain passed our check of all three settings. Until it passes, nothing is sent.</div>
+
+    <h2>The email rules (CAN-SPAM), in plain words</h2>
+    <p>The law covers you even when someone else sends for you. So every email we set up has:</p>
+    <ul>
+      <li>Your business&rsquo;s name in the From line, on your own domain.</li>
+      <li>An honest subject. No fake &ldquo;Re:&rdquo; or &ldquo;Fwd:&rdquo;.</li>
+      <li>A line saying it&rsquo;s a marketing email.</li>
+      <li>Your business&rsquo;s postal address. A PO box is fine.</li>
+      <li>A working unsubscribe. Anyone who unsubscribes is never emailed again, well inside the 10 business days the law allows.</li>
+    </ul>
+    <p>And our own rules on top:</p>
+    <ul>
+      <li>Only your own customers, at addresses they gave you. No bought lists.</li>
+      <li>Email only. No texts or calls to old customers from this.</li>
+      <li>You read and approve every email before it goes out, and a person presses send. Small batches first, so your domain stays in good standing.</li>
+    </ul>
+    <p class="src">Checked against <a href="https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business">FTC: CAN-SPAM Act compliance guide for business</a> on 2026-10-19.</p>
+
+    <p class="stuck">Stuck? Reply to our email and we&rsquo;ll do it together on a 10-minute screen-share.</p>
+    <a class="back" href="/start/">&larr; All setup guides</a>
+  </main>
+  <footer class="foot">autoants, short for automated assistants · New Orleans · <a href="/privacy.html">Privacy</a> · <a href="mailto:hello@autoants.com">hello@autoants.com</a></footer>
+</div>
+</body>
+</html>
