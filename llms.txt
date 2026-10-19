@@ -33,8 +33,11 @@
     business missed, never more than $750 a month
   - Add-on, Get the next job (social and marketing, on top of both): + $1,250 a month + $500 setup ($2,500 a
     month in all; $1,500 setup in all). Weekly posts and short videos from real jobs, postcards to the neighbors (cards $1.30
-    each), door hangers around every job, postcards to past customers
-  - AI phone answering, scoped once a business has both: an AI that answers when nobody can and always says it
+    each), door hangers around every job, postcards and emails to past customers
+  - New website: $1,000 once, up to 5 pages on the business's own domain, started from a free preview made from
+    public facts; free when the business starts Get found and never miss a job. After launch, Site Care keeps it
+    hosted and up to date for $100 a month, or the owner gets the files
+  - AI phone answering, priced with the business once it is on Get found and never miss a job: an AI that answers when nobody can and always says it
     is an AI; minutes written into the agreement
   - Operations Math by autoants, for big operations (routes, schedules, cutting, loads): a $1,500 30-day pilot,
     credited to month one, then priced by size
