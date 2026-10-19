@@ -1,0 +1,36 @@
+/* /start/ client setup guides (2026-10-19). Sits on top of /assets/trust.css. Phone first, big tap targets. */
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 18px}
+.meta span{display:inline-block;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 12px;font-size:15px;font-weight:700}
+.steps{list-style:none;counter-reset:s;padding:0;margin:0 0 14px;display:flex;flex-direction:column;gap:10px}
+.steps > li{counter-increment:s;position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 56px;margin:0;max-width:none}
+.steps > li::before{content:counter(s);position:absolute;left:14px;top:12px;width:30px;height:30px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-weight:800;display:grid;place-items:center;font-size:15px}
+.steps > li p{margin:0 0 6px}
+.steps > li p:last-child{margin:0}
+.dial{display:inline-block;white-space:nowrap;font:700 19px/1.3 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.02em;background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:2px 8px;overflow-wrap:anywhere}
+.path{font-weight:800}
+.ok{border-left:4px solid var(--accent);background:var(--soft);border-radius:0 12px 12px 0;padding:12px 14px;margin:12px 0}
+.ok b:first-child{display:block;margin-bottom:2px}
+.warn{border:1px solid var(--line);border-left:4px solid var(--muted);background:var(--card);border-radius:0 12px 12px 0;padding:12px 14px;margin:12px 0}
+.stuck{background:var(--card);border:2px solid var(--accent);border-radius:16px;padding:16px;margin:28px 0 8px}
+.stuck p{margin:0 0 8px}
+.stuck p:last-child{margin:0}
+.src{font-size:13px;color:var(--muted);margin:10px 0 0;overflow-wrap:anywhere}
+.src a{color:inherit}
+details.carrier{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:0 0 10px}
+details.carrier > summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:0 16px;font-weight:800;font-size:18px}
+details.carrier > summary::-webkit-details-marker{display:none}
+details.carrier > summary::after{content:"+";font:800 24px/1 Onest,system-ui,sans-serif;color:var(--accent-ink)}
+details.carrier[open] > summary::after{content:"\2212"}
+details.carrier > summary small{font-weight:700}
+details.carrier .in{padding:0 12px 14px}
+details.carrier .steps > li{background:var(--ground);padding:12px 12px 12px 50px}
+details.carrier .steps > li::before{left:10px}
+.steps .reply{margin:6px 0 0}
+.check{list-style:none;counter-reset:c;padding:0;margin:0 0 12px;display:flex;flex-direction:column;gap:10px}
+.check li{margin:0;max-width:none}
+.check a{counter-increment:c;display:grid;grid-template-columns:40px minmax(0,1fr);gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;text-decoration:none;color:var(--ink);min-height:64px}
+.check a::before{content:counter(c);width:34px;height:34px;border-radius:50%;border:2px solid var(--accent);color:var(--accent-ink);font-weight:800;display:grid;place-items:center}
+.check b{display:block;font-size:18px}
+.check span{display:block;font-size:15px;color:var(--muted)}
+.check a:hover b{text-decoration:underline}
+.reply{font:700 17px/1.4 "JetBrains Mono",ui-monospace,monospace;background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:6px 0 10px;overflow-wrap:anywhere}
