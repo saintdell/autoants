@@ -6,49 +6,45 @@
 > company breakdown of a business from public information before any money changes hands.
 
 ## What AutoAnts does
-- Three outcomes: get found (Google profile, listings, map work and AI answers), never miss a job (the automated assistants, the "Ants": missed-call text-back, web-form responder, scheduler, review ask, service-due and invoice reminders), and get the next job (social posts from the business's real jobs, permit-timed postcards, past-customer mailers and door hangers after each job)
-- Starts with a free company breakdown: a 10-14 page look at the business made only from public information (Google and AI-answer visibility, reviews and listings next to nearby shops, what to fix first). Any video, preview site or sample postcard is shown inside the breakdown, not sold separately
-- One ladder, four rungs, each including the one before (founding price for the
-  first 3 shops on each rung, then the regular price; full list:
-  https://autoants.com/prices/):
-  1. Try one: one assistant live on the business's phone, $500 go-live, one
-     time (then $750). The one assistant is missed-call text-back (the usual
-     first one), the web-form responder, the scheduler, the review ask,
-     service-due reminders or invoice reminders. Live within 7 days of "go",
-     or the $500 back. Texts run on the business's own Twilio account
-  2. Office Manager: $750 setup + $500/month, then $1,500 setup + $750/month.
-     Missed-call text-back, web-form responder, scheduler with quote
-     follow-up, review ask, service-due reminders (pre-season tune-ups for
-     HVAC), invoice reminders, call tracking matched to jobs, a light social
-     version, and email cleanup in the setup
-  3. Growth: $1,000 setup + $1,500/month, then $1,750/month. Everything in
-     Office Manager plus Google profile, listings and map work; 2 new
-     service-and-town or AI-answer pages a month and a monthly check of what
-     AI answers say; website hosting and upkeep (a site rebuild of up to 5
-     pages in setup when the site is costing calls; a preview site goes live
-     on the business's own domain here); social posts from real jobs twice a
-     month, including weather-alert campaigns; review replies drafted weekly;
-     the citywide permit-timed postcard for the trade (cards $1.30 each). A
-     30-minute call monthly; next-business-day response
-  4. Pro: $1,500 setup + $2,500/month, then $3,000/month. Everything in Growth
-     plus weekly social posts with animated Shorts, 4 new pages a month, a
-     past-customer anniversary mailer, door hangers around each finished job,
-     the "next available" booking box on the phone homepage, and a responder
-     for Facebook/Instagram inquiries. A 30-minute call every two weeks;
-     same-business-day response
-- Same on every rung: the business owns every account, page, listing and
-  list; no result promises. Office Manager, Growth and Pro have a 90-day
-  minimum, then run month to month, cancel by email
-- Scoped once a business is on Growth: the receptionist (an AI that answers
-  when nobody can and always says it is an AI; minutes written into the
-  agreement) and anything else not listed above
-- Operations Math by autoants: the one separate line, for big shops (routes,
-  schedules, cutting, loads). A $1,500 30-day pilot, credited to month one,
-  then priced by size
-- The assessment: $500 flat. A recorded 45-minute interview, then a bound,
-  printed report on what to fix first and what each fix is worth in the
-  owner's own numbers. Credited toward setup if they continue within 30 days.
-  Founding price; $1,000 after two reference clients
+- In one breath: "We answer the calls you miss, follow up the quotes you forget, and help customers find you on
+  Google, so more of the work you already pay for turns into booked jobs. Start with one for $500."
+- The offer, simply: "We answer the calls you miss and get you found on Google: $1,250 a month. Not ready? Try one
+  assistant for $500."
+- Starts free: a breakdown of the business: how it shows up on Google, in AI answers and next to its competitors.
+  It shows which fix the owner's numbers need. It is a 10-14 page look made only from public information; any
+  video, preview site or sample postcard is shown inside the breakdown, not sold separately
+- Two choices up front (prices for the first 3 shops; full list: https://autoants.com/prices/):
+  1. Get found and never miss a job: $1,250 a month + $1,000 setup. Missed calls answered, quotes followed up,
+     appointments booked and reminded, reviews requested, the Google profile and listings kept right, 2 new
+     pages a month, what AI answers say about the business checked every month, and the website kept up
+  2. Not ready? Try one: $500 once. One assistant on the owner's phone, live within 7 days or the $500 back
+     (the only promise AutoAnts makes). Most shops start with texting back every missed call; others are
+     web-form answers, booking and reminders, the review ask, service-due or invoice reminders, or a "book now"
+     box on the website. Texts run on the business's own phone-and-text account (Twilio)
+- Other options, offered when the owner asks or the breakdown points to one:
+  - Never miss a job alone: $500 a month + $750 setup. Every assistant: missed calls answered, quotes
+    followed up, appointments booked and reminded, reviews requested, Facebook and Instagram messages
+    answered, plus the "book now" box
+  - Get found alone: $500 a month + $250 setup. Google profile and listings kept right, 2 new pages a month,
+    the monthly AI-answer check, review replies drafted, website hosting and upkeep (a rebuild of up to 5 pages
+    in setup when the site is costing calls)
+  - Pay per job: Never miss a job is also $250 a month + $25 for each completed, paid job saved from a call the
+    business missed, never more than $500 a month
+  - Add-on, Get the next job (social and marketing, on top of both): + $1,250 a month ($2,500 a month in all;
+    $1,500 setup in all). Weekly posts and short videos from real jobs, postcards to the neighbors (cards $1.30
+    each), door hangers around every job, postcards to past customers
+  - AI phone answering, scoped once a business has both: an AI that answers when nobody can and always says it
+    is an AI; minutes written into the agreement
+  - Operations Math by autoants, for big operations (routes, schedules, cutting, loads): a $1,500 30-day pilot,
+    credited to month one, then priced by size
+  - The printed assessment: $500 flat. A recorded 45-minute interview, then a bound, printed report on what to
+    fix first and what each fix is worth in the owner's own numbers. Credited toward setup if they continue
+    within 30 days. It becomes $1,000 after two reference clients
+- After the first 3 shops, monthly prices become: Never miss a job $750, Get found $750, both $1,750, the add-on
+  still + $1,250 ($3,000 in all), Try one $750, and the pay-per-job cap $750
+- On every monthly plan: the business owns everything (accounts, pages, customer list); 90 days, then month to
+  month, cancel by email; no result promises: AutoAnts counts calls and jobs before and after and shows the owner
+  every month
 
 ## The assistants ("Ants", one job each; the owner approves what goes to customers)
 - Text-Back Ant: texts back a missed call within seconds
@@ -62,13 +58,12 @@
 - Promoter Ant: short job videos and local ads
 
 ## How it works
-1. AutoAnts makes a free company breakdown of the business from public
-   information
-2. If the owner wants to try one piece: $500 one time puts one assistant live
-   on their phone, within 7 days of the go-ahead or the $500 back (the only
-   promise AutoAnts makes)
-3. Bigger needs move up the ladder: Office Manager, Growth, Pro. No contract to
-   start; monthly rungs have a 90-day minimum, then month to month
+1. AutoAnts makes a free breakdown of the business from public information; it shows which fix the owner's
+   numbers need
+2. The owner picks: get found and never miss a job ($1,250 a month), or tries one assistant for $500, live
+   within 7 days or the $500 back
+3. Social and marketing can be added later. No contract to start; monthly plans have a 90-day minimum, then
+   month to month
 
 ## Who it's for
 - Home services and trades (tree, HVAC, roofing, plumbing, landscaping): the core focus
@@ -80,7 +75,7 @@
 - Owner-run: owners deal with Lane directly, not a call center; the
   business is built on doing only what it would put its name on
 - The free-first model: a free company breakdown before paying anything
-- Flat, quoted-up-front pricing on one published ladder
+- Flat, quoted-up-front pricing, all published on one page
 - Legitimate-only optimization policy: no paid link placements, no seeded
   or undisclosed mentions, no astroturfing — the fixes are real signals
   (complete profiles, real reviews, consistent listings, structured data)

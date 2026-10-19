@@ -89,3 +89,15 @@ small,.small{font-size:14px;color:var(--muted)}
 
 .photo{display:grid;place-items:center;width:140px;height:140px;border-radius:50%;border:2px dashed var(--muted);color:var(--muted);font:700 14px "JetBrains Mono",ui-monospace,monospace;margin:20px 0 8px}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border-radius:12px;background:var(--accent);color:var(--on-accent);font-weight:800;text-decoration:none}
+
+/* /prices/ plain view (2026-10-19): free-first card, pay-per-job line, "See everything that's included" */
+.card.free{display:flex;flex-direction:column;gap:12px;align-items:flex-start;margin:18px 0 4px}
+.card.free p{margin:0}
+.perjob{font-size:16px;margin:4px 0 0}
+details.included{margin:28px 0 16px;border-top:1px solid var(--line);padding-top:6px}
+details.included > summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;font-weight:800;font-size:18px;color:var(--accent-ink)}
+details.included > summary::-webkit-details-marker{display:none}
+details.included > summary::after{content:"+";font:800 24px/1 Onest,system-ui,sans-serif}
+details.included[open] > summary::after{content:"\2212"}
+.prices li.lead{border:2px solid var(--accent)}
+.prices li .btn{margin-top:12px}
