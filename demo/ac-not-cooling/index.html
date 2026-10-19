@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Why is my AC running but not cooling? · Growth demo · autoants</title>
+<meta name="description" content="A sample Growth explainer page for a made-up New Orleans HVAC shop: the answer first, short answers to the next questions, and an AC outdoor unit you can tap through, with a Book button when it fails.">
+<link rel="icon" href="/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/demo/demo.css">
+<link rel="stylesheet" href="/figures/figures.css">
+</head>
+<body>
+<!-- SAMPLE (2026-10-19): a Growth-rung explainer page as it would sit on a shop's own site. Sample Heating & Air is the
+     same made-up shop as /demo/growth/. The figure is /figures/hvac/figure.html (Colorfigures by April Zhu, MIT; built
+     in tle-main products/colorfigures). Facts kept general and true: no prices, no temperatures, no "will fail", and
+     the only do-it-yourself steps are the air filter and one breaker reset. A licensed HVAC tech should read it
+     before a client's name goes on a copy. -->
+<main class="wrap">
+  <p class="banner">Demo with sample data: Sample Heating &amp; Air is a made-up shop in New Orleans, not a real customer.</p>
+  <a class="back" href="/demo/">&larr; All demos</a>
+  <header>
+    <div class="label">Growth &middot; an explainer page &middot; Sample Heating &amp; Air</div>
+    <h1>Why is my AC running but not cooling?</h1>
+  </header>
+
+  <div class="answer">
+    <p><strong>Short answer:</strong> usually one of four things. Air can't get through (a dirty filter or a blocked outdoor coil), the outdoor unit isn't running (a tripped breaker or a failed part such as the capacitor), a clogged drain line has tripped a safety switch, or there's a refrigerant problem. You can check the filter and the breakers yourself. Past that, it's a job for a tech.</p>
+  </div>
+
+  <section class="card" aria-labelledby="fig-h">
+    <h2 id="fig-h">See it: the outdoor unit</h2>
+    <div class="figframe">
+      <iframe src="/figures/hvac/figure.html?embed=1" title="Illustration of an AC outdoor unit. Buttons: call for cooling, capacitor fails, reset." loading="lazy"></iframe>
+      <p class="hint">Tap <b>Call for cooling</b>, then <b>Capacitor fails</b>. Watch the fan.</p>
+      <div class="figbook" hidden>
+        <p><strong>The fan stopped, but the thermostat is still calling?</strong> A tech checks the capacitor first. Don't open the unit: a capacitor can hold a charge even with the power off.</p>
+        <a class="btn primary" href="/demo/booking-box/" target="_top">Book a check</a>
+      </div>
+    </div>
+    <p class="credit">Illustration of a generic outdoor unit, simplified. Figure made with <a href="https://april-zhu.com/colorfigures" rel="noopener">Colorfigures</a>.</p>
+  </section>
+
+  <section class="qa" aria-labelledby="q1">
+    <h2 id="q1">What can I check myself?</h2>
+    <ul>
+      <li><strong>The air filter.</strong> If it's gray and clogged, put in a clean one of the same size. A blocked filter can starve the system of air.</li>
+      <li><strong>The breakers.</strong> The AC usually has its own breakers in the panel, one for the indoor unit and one for the outdoor unit. If one has tripped (the handle sits in the middle), push it to OFF, then ON, once. If it trips again, leave it off and call a tech.</li>
+    </ul>
+    <p>That's the safe list. Leave the panels on the units closed.</p>
+  </section>
+
+  <section class="qa" aria-labelledby="q2">
+    <h2 id="q2">How do I tell if the outdoor unit is running?</h2>
+    <p>Go outside and look at the fan on top. If air is blowing inside but that fan isn't turning, the outdoor unit isn't doing its part, so the air inside never gets cold. A tripped breaker, a failed capacitor or a stuck contactor are common reasons. The figure above shows the capacitor case.</p>
+  </section>
+
+  <section class="qa" aria-labelledby="q3">
+    <h2 id="q3">What does a tech check first?</h2>
+    <p>That the thermostat's call reaches the outdoor unit, that the contactor pulls in, and that the capacitor, the fan motor and the compressor are doing their jobs. Then the coils, the drain line and the refrigerant.</p>
+  </section>
+
+  <section class="qa" aria-labelledby="q4">
+    <h2 id="q4">Could it be ice or the drain?</h2>
+    <p>Ice on the copper line outside or on the indoor coil means something is wrong with airflow or refrigerant: turn the cooling off and call. A clogged drain line can trip a float switch that shuts the cooling off so water doesn't overflow; a tech clears the line.</p>
+  </section>
+
+  <section class="qa" aria-labelledby="q5">
+    <h2 id="q5">When should I call right away?</h2>
+    <ul>
+      <li>A breaker trips again after one reset.</li>
+      <li>A burning smell, or buzzing from the outdoor unit with the fan not turning.</li>
+      <li>Ice, or water where it shouldn't be.</li>
+    </ul>
+  </section>
+
+  <div class="shopbar">
+    <b>Sample Heating &amp; Air</b>
+    <span>Made-up shop. On a real client's page, this is their own phone number and Book button.</span>
+    <a class="btn primary" href="/demo/booking-box/" style="display:flex;align-items:center;justify-content:center;text-decoration:none">Book a check</a>
+  </div>
+
+  <footer>
+    <p>This is a demo of a Growth explainer page: one question customers really ask, answered on the shop's own site, with something they can tap. Every price is on <a href="/prices/">the prices page</a>. Set up by autoants.</p>
+  </footer>
+</main>
+<script src="/figures/figure-embed.js"></script>
+</body>
+</html>
