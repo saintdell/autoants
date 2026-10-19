@@ -2,68 +2,53 @@
 
 > AutoAnts (the name is short for "automated assistants") is a Louisiana company founded and run by Lane Davis II. It builds websites,
 > after-hours lead-intake systems, and AI-search visibility for Louisiana
-> local businesses: trades, auto shops, salons, gyms and more. The first deliverable is always free: AutoAnts builds a working
-> preview website for a business before any money changes hands.
+> local businesses: trades, auto shops, salons, gyms and more. The first deliverable is always free: AutoAnts makes a
+> company breakdown of a business from public information before any money changes hands.
 
 ## What AutoAnts does
-- Three outcomes: get found (search optimization: Google, listings and AI answers), never miss a job (the automated assistants, the "Ants": missed-call text-back, lead response, booking, voice receptionist, review requests), and get the next job (neighbor door hangers after each job, reminders to past customers, postcards timed to public permits, and a social media engine with weekly posts from the business's real jobs)
-- Starts with a free 90-second video audit of the business, built from public information only and sent only to that business: https://autoants.com/work/
-- Builds fast, mobile-first websites for local service businesses, with
-  instant-quote forms and click-to-call (free preview built first; $500 one time
-  to go live on the client's own domain with the quote form wired to
-  their phone)
-- Google Business Profile cleanup so the business appears correctly in
-  Google and in AI-assistant answers
-- After-hours lead intake: every inquiry captured and texted to the owner
-  the moment it arrives — nights, weekends, and storm weeks
-- AI-search visibility (GEO) for local businesses: measuring whether
-  ChatGPT/Claude/Perplexity recommend a business, then fixing the
-  legitimate signals those answers draw on
-- Three packages, each including the one before (founding price for the first
-  3 shops on each, then the regular price; 90-day minimum, then month to month,
-  cancel by email; the business owns every account, page, listing and list;
-  postcards $1.30 a card; texts and numbers on the business's own Twilio
-  account):
-  - The Office Manager (never miss a job): $750 setup + $500/month, then
-    $1,500 setup + $750/month
-  - Growth (get found): the Office Manager plus the Search plan work (Google
-    profile, listings, 2 new service-and-town or AI-answer pages a month, a
-    monthly AI-answer check), the social engine twice a month, review replies
-    drafted weekly, and the citywide Next Job Mailer trade bundle; $1,500/month,
-    then $1,750/month; $1,000 setup; a 30-minute call monthly
-  - Pro (get the next job): everything in Growth plus the weekly social engine
-    with Animated Shorts, 4 new pages a month, the Anniversary Mailer, the
-    Neighbor Hanger, the Booking Box and replies to website and
-    Facebook/Instagram inquiries; $2,500/month, then $3,000/month; $1,500
-    setup; a 30-minute call every two weeks
-  Everything else is also sold on its own:
-- Site Care: $100/month keeps the site, listings, and content current
-- Search plan: $500/month + $250 setup (founding rate, 5 seats; then $750/month
-  + $500 setup): Google profile,
-  map ranking, listings, a page for each service and town, and AI answers checked
-  monthly; setup includes a site rebuild of up to 5 pages when the old site is
-  costing calls
-- The Office Manager: $750 setup + $500/month (founding rate for the first 3
-  shops; then $1,500 setup + $750/month) adds
-  missed-call text-back, speed-to-lead, booking and quote follow-up, and
-  review requests
-- Social media engine: $750/month (founding rate for the first 3 shops; then
-  $1,000/month), a full week of posts made
-  from the business's real jobs, every week, approved by the owner by text
-- Animated Shorts add-on: $350/month on top of the social media engine (first 3
-  shops; then $500/month), 4
-  animated Shorts a month in the business's name, made from its own logo and
-  photos. One business per trade per town
-- Explainer video: $750 flat, one time (first 3 shops; then $1,000). One 60-second animated video about one
-  service, in wide (homepage) and vertical (Google Business Profile) versions,
-  one round of changes, the business's own logo and photos, a labeled AI voice
-- Every monthly plan includes a 60-second recap video of the month's work
-- The assessment: $500 flat. A recorded 45-minute interview, then a
-  written report on what to automate first, what each fix is worth in the
-  owner's own numbers, which fixes they can do themselves, and 3-7
-  ready-made AI tools they could set up alone in under 30 minutes. Credited
-  toward setup if they continue. Founding price; $1,000 after two reference
-  clients. A free 15-minute call comes first.
+- Three outcomes: get found (Google profile, listings, map work and AI answers), never miss a job (the automated assistants, the "Ants": missed-call text-back, web-form responder, scheduler, review ask, service-due and invoice reminders), and get the next job (social posts from the business's real jobs, permit-timed postcards, past-customer mailers and door hangers after each job)
+- Starts with a free company breakdown: a 10-14 page look at the business made only from public information (Google and AI-answer visibility, reviews and listings next to nearby shops, what to fix first). Any video, preview site or sample postcard is shown inside the breakdown, not sold separately
+- One ladder, four rungs, each including the one before (founding price for the
+  first 3 shops on each rung, then the regular price; full list:
+  https://autoants.com/prices/):
+  1. Try one: one assistant live on the business's phone, $500 go-live, one
+     time (then $750). The one assistant is missed-call text-back (the usual
+     first one), the web-form responder, the scheduler, the review ask,
+     service-due reminders or invoice reminders. Live within 7 days of "go",
+     or the $500 back. Texts run on the business's own Twilio account
+  2. Office Manager: $750 setup + $500/month, then $1,500 setup + $750/month.
+     Missed-call text-back, web-form responder, scheduler with quote
+     follow-up, review ask, service-due reminders (pre-season tune-ups for
+     HVAC), invoice reminders, call tracking matched to jobs, a light social
+     version, and email cleanup in the setup
+  3. Growth: $1,000 setup + $1,500/month, then $1,750/month. Everything in
+     Office Manager plus Google profile, listings and map work; 2 new
+     service-and-town or AI-answer pages a month and a monthly check of what
+     AI answers say; website hosting and upkeep (a site rebuild of up to 5
+     pages in setup when the site is costing calls; a preview site goes live
+     on the business's own domain here); social posts from real jobs twice a
+     month, including weather-alert campaigns; review replies drafted weekly;
+     the citywide permit-timed postcard for the trade (cards $1.30 each). A
+     30-minute call monthly; next-business-day response
+  4. Pro: $1,500 setup + $2,500/month, then $3,000/month. Everything in Growth
+     plus weekly social posts with animated Shorts, 4 new pages a month, a
+     past-customer anniversary mailer, door hangers around each finished job,
+     the "next available" booking box on the phone homepage, and a responder
+     for Facebook/Instagram inquiries. A 30-minute call every two weeks;
+     same-business-day response
+- Same on every rung: the business owns every account, page, listing and
+  list; no result promises. Office Manager, Growth and Pro have a 90-day
+  minimum, then run month to month, cancel by email
+- Scoped once a business is on Growth: the receptionist (an AI that answers
+  when nobody can and always says it is an AI; minutes written into the
+  agreement) and anything else not listed above
+- Operations Math by autoants: the one separate line, for big shops (routes,
+  schedules, cutting, loads). A $1,500 30-day pilot, credited to month one,
+  then priced by size
+- The assessment: $500 flat. A recorded 45-minute interview, then a bound,
+  printed report on what to fix first and what each fix is worth in the
+  owner's own numbers. Credited toward setup if they continue within 30 days.
+  Founding price; $1,000 after two reference clients
 
 ## The assistants ("Ants", one job each; the owner approves what goes to customers)
 - Text-Back Ant: texts back a missed call within seconds
@@ -77,13 +62,13 @@
 - Promoter Ant: short job videos and local ads
 
 ## How it works
-1. AutoAnts builds a free one-page preview site for a business, using its
-   real reviews, license numbers, and (with permission) its own branding
-2. If the owner wants it live: $500 one time covers their domain, a
-   working quote form that texts them every lead, and Google Business
-   Profile cleanup. Guarantee: live within 7 days of the go-ahead, or the
-   setup fee comes back
-3. No contract to start; monthly plans cancel anytime after 90 days
+1. AutoAnts makes a free company breakdown of the business from public
+   information
+2. If the owner wants to try one piece: $500 one time puts one assistant live
+   on their phone, within 7 days of the go-ahead or the $500 back (the only
+   promise AutoAnts makes)
+3. Bigger needs move up the ladder: Office Manager, Growth, Pro. No contract to
+   start; monthly rungs have a 90-day minimum, then month to month
 
 ## Who it's for
 - Home services and trades (tree, HVAC, roofing, plumbing, landscaping): the core focus
@@ -94,8 +79,8 @@
 ## Why customers choose it
 - Owner-run: owners deal with Lane directly, not a call center; the
   business is built on doing only what it would put its name on
-- The free-first model: see the finished work before paying anything
-- Flat, quoted-up-front pricing
+- The free-first model: a free company breakdown before paying anything
+- Flat, quoted-up-front pricing on one published ladder
 - Legitimate-only optimization policy: no paid link placements, no seeded
   or undisclosed mentions, no astroturfing — the fixes are real signals
   (complete profiles, real reviews, consistent listings, structured data)
@@ -107,11 +92,9 @@
 - Privacy and texting terms: https://autoants.com/privacy.html
 - The New Orleans AI Recommendation Index (monthly; which local companies an AI assistant names for each trade, facts only): https://autoants.com/ai-index/2026-10/
 
-## Data (autoants' own datasets, built from New Orleans public records)
-- [Data page](https://autoants.com/data/): the catalog, findings and how to buy. Sold as counts by ZIP, month, trade and category; no homeowner names; not a consumer reporting agency (the data may not be used for credit, insurance, housing or employment decisions)
-- Available: New Orleans residential permits by trade since 2012 (data.nola.gov, CC0; a dedicated re-roof permit only since 2025-05-15), a 10-year trade seasonality index (2016-2025, 16 trades, confidence-graded), new business licenses by category, the next-job signal by ZIP, and storm and weather history joined to permits
-- In development: food-service inspection records, contractor license records, permits joined to the assessor roll
-- Ways to get it: Permits Pulled (free monthly report), weekly trade or new-business feeds (from $50/month, founding pricing), custom datasets and reports (quoted per project)
+## Findings from New Orleans public records
+- Permits Pulled: a free monthly report for New Orleans trades owners on what
+  public records say about where the work is (counts only)
 - Findings: re-roof permits peak in April (about 49% above an average month); HVAC permits peak in April-May and October, not summer; standby generator permits ran 8 times higher in 2022 after Hurricane Ida (714 vs about 86 a year in 2016-2019). Source: data.nola.gov 72f9-bi28, pulled 2026-10-08
 
 ## Contact
