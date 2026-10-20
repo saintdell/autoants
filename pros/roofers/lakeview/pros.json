@@ -1,0 +1,232 @@
+{
+ "title": "Licensed roofers in Lakeview, New Orleans",
+ "url": "https://autoants.com/pros/roofers/lakeview/",
+ "last_refreshed": "2026-10-19",
+ "trade": "roofing",
+ "area": "Lakeview",
+ "city_neighborhoods": [
+  "Lakeview"
+ ],
+ "gates": [
+  "An active, unexpired LSLBC license certificate carrying one of these classes: Roofing and Sheet Metal, Siding; Residential Roofing; Residential Construction. No license on the record suspended or revoked.",
+  "General liability insurance on file with the LSLBC, not expired.",
+  "At least one roofing permit credited to the business name in this area in the last 24 full months.",
+  "The license record was read within 45 days.",
+  "Not on our removal list."
+ ],
+ "order": "Listed A to Z by business name. The order says nothing about quality, and paying partners never get a better place.",
+ "disclosure": "Some listed contractors pay Lane Davis II a referral fee when he introduces a customer; that never affects who's listed or the order.",
+ "verify": "Verify any license at lslbc.louisiana.gov.",
+ "never_shown": "homeowner or permit addresses, permit numbers, ratings, reviews, rankings by quality",
+ "corrections": "Email hello@autoants.com. Put 'Correct' or 'Remove' and the business name in the subject, and include the LSLBC license number. To correct a fact, say which one and link the public record or the page on the business's own site that shows it. To be removed, just say so: the business comes off every Verified Pros page and the New Orleans guide at the next rebuild and stays off, even though the records are public. Both are free.",
+ "contractors": [
+  {
+   "name": "Atlas Tile Roofing Co., Inc.",
+   "license": {
+    "number": "CL.19158",
+    "type": "Commercial License Certificate",
+    "classes": [
+     "ROOFING AND SHEET METAL, SIDING"
+    ],
+    "status": "Active",
+    "expires": "2026-11-15",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-04",
+    "record_url": "https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=%2bMOul8ETcp1Rx3QoK2R9WA%3d%3d"
+   },
+   "years_licensed": {
+    "years": 41,
+    "first_issued": "1984-11-15",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-04"
+   },
+   "home_job_classes": {
+    "held": [
+     "RESIDENTIAL ROOFING"
+    ],
+    "residential_license": "RL.07534",
+    "rule": "Louisiana requires the Residential Roofing or Residential Construction class for a home roof job of $7,500 or more (La. R.S. 37:2156.4, since January 1, 2026)",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-04"
+   },
+   "insurance": {
+    "general_liability_on_file": true,
+    "expires_month": "2027-06",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-04"
+   },
+   "permits_in_area": {
+    "count": 1,
+    "trade": "roofing",
+    "area": "Lakeview",
+    "issued_from": "2024-10-01",
+    "issued_to": "2026-09-30",
+    "source": "City of New Orleans Permits - BLDS, data.nola.gov 72f9-bi28",
+    "as_of": "2026-10-19"
+   },
+   "phone": {
+    "value": "(504) 733-8550",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-04"
+   },
+   "website": null,
+   "referral_partner": false
+  },
+  {
+   "name": "Lone Wolf Roofing LLC",
+   "license": {
+    "number": "RL.05382",
+    "type": "Residential License Certificate",
+    "classes": [
+     "RESIDENTIAL CONSTRUCTION"
+    ],
+    "status": "Active",
+    "expires": "2027-09-10",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19",
+    "record_url": "https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=6N3yMurwk1ad4FLizKB4fw%3d%3d"
+   },
+   "years_licensed": {
+    "years": 1,
+    "first_issued": "2025-09-05",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "home_job_classes": {
+    "held": [
+     "RESIDENTIAL CONSTRUCTION"
+    ],
+    "residential_license": "RL.05382",
+    "rule": "Louisiana requires the Residential Roofing or Residential Construction class for a home roof job of $7,500 or more (La. R.S. 37:2156.4, since January 1, 2026)",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "insurance": {
+    "general_liability_on_file": true,
+    "expires_month": "2027-05",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "permits_in_area": {
+    "count": 1,
+    "trade": "roofing",
+    "area": "Lakeview",
+    "issued_from": "2024-10-01",
+    "issued_to": "2026-09-30",
+    "source": "City of New Orleans Permits - BLDS, data.nola.gov 72f9-bi28",
+    "as_of": "2026-10-19"
+   },
+   "phone": {
+    "value": "(504) 583-3333",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "website": null,
+   "referral_partner": false
+  },
+  {
+   "name": "Regional Construction and Inspections LLC",
+   "license": {
+    "number": "CL.05731",
+    "type": "Commercial License Certificate",
+    "classes": [
+     "ROOFING AND SHEET METAL, SIDING"
+    ],
+    "status": "Active",
+    "expires": "2029-11-12",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-05",
+    "record_url": "https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=H2YmhvZyEsNKDQz4nOq2kw%3d%3d"
+   },
+   "years_licensed": {
+    "years": 1,
+    "first_issued": "2025-10-01",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-05"
+   },
+   "home_job_classes": {
+    "held": [
+     "RESIDENTIAL ROOFING"
+    ],
+    "residential_license": "RL.05733",
+    "rule": "Louisiana requires the Residential Roofing or Residential Construction class for a home roof job of $7,500 or more (La. R.S. 37:2156.4, since January 1, 2026)",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-05"
+   },
+   "insurance": {
+    "general_liability_on_file": true,
+    "expires_month": "2027-07",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-05"
+   },
+   "permits_in_area": {
+    "count": 3,
+    "trade": "roofing",
+    "area": "Lakeview",
+    "issued_from": "2024-10-01",
+    "issued_to": "2026-09-30",
+    "source": "City of New Orleans Permits - BLDS, data.nola.gov 72f9-bi28",
+    "as_of": "2026-10-19"
+   },
+   "phone": {
+    "value": "(504) 382-9869",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-05"
+   },
+   "website": null,
+   "referral_partner": false
+  },
+  {
+   "name": "ROBERTSON ROOFING AND SIDING, INC.",
+   "license": {
+    "number": "CL.21823",
+    "type": "Commercial License Certificate",
+    "classes": [
+     "ROOFING AND SHEET METAL, SIDING"
+    ],
+    "status": "Active",
+    "expires": "2027-06-09",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-12",
+    "record_url": "https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=ikEKnH0zS7edVqAyZp%2fqaA%3d%3d"
+   },
+   "years_licensed": {
+    "years": 39,
+    "first_issued": "1987-06-09",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-12"
+   },
+   "home_job_classes": {
+    "held": [
+     "RESIDENTIAL CONSTRUCTION"
+    ],
+    "residential_license": "RL.86830",
+    "rule": "Louisiana requires the Residential Roofing or Residential Construction class for a home roof job of $7,500 or more (La. R.S. 37:2156.4, since January 1, 2026)",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-12"
+   },
+   "insurance": {
+    "general_liability_on_file": true,
+    "expires_month": "2027-04",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-12"
+   },
+   "permits_in_area": {
+    "count": 1,
+    "trade": "roofing",
+    "area": "Lakeview",
+    "issued_from": "2024-10-01",
+    "issued_to": "2026-09-30",
+    "source": "City of New Orleans Permits - BLDS, data.nola.gov 72f9-bi28",
+    "as_of": "2026-10-19"
+   },
+   "phone": {
+    "value": "(504) 394-7200",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-12"
+   },
+   "website": null,
+   "referral_partner": false
+  }
+ ]
+}

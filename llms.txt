@@ -140,3 +140,6 @@
 - [HVAC in Greater New Orleans](https://autoants.com/nola/hvac/): Louisiana license rules, cited; listings when the public data arrives
 - [Plumbing in Greater New Orleans](https://autoants.com/nola/plumbing/): Louisiana license rules, cited; listings when the public data arrives
 - [Remodeling in Greater New Orleans](https://autoants.com/nola/remodeling/): Louisiana license rules, cited; listings when the public data arrives
+
+## Verified Pros
+- [Verified Pros](https://autoants.com/pros/): licensed, insured New Orleans contractors with recent permits, by trade and neighborhood; every fact with its public source and date; A to Z. Index for agents: https://autoants.com/pros/llms.txt
