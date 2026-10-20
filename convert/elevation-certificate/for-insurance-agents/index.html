@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insurance agents: Elevation Certificate reader · autoants</title>
+<meta name="description" content="Pull the zone, BFE, diagram and Section C elevations out of a certificate into a CSV, so the quote starts from the numbers instead of a retyped PDF.">
+<!-- TEST build (branch doc-converters). Remove noindex at go-live: tle-main products/doc-converters/README.md -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="../../../brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../convert/convert.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav><div class="wrap">
+  <a href="../../../" aria-label="autoants home"><img src="../../../brand/autoants-logo-reverse.svg" alt="autoants" class="logo"></a>
+  <div class="links"><a href="../../../convert/">Converters</a><a href="../../../reports/">Reports</a><a href="mailto:hello@autoants.com">Email us</a></div>
+</div></nav>
+<p class="testbar"><b>Test build.</b> Uploads are off and the prices are proposed. Nothing can be bought here yet.</p>
+<main id="main">
+<header><div class="wrap">
+  <p class="eyebrow">For insurance agents</p>
+  <h1>Elevation Certificate reader <span>for insurance agents</span></h1>
+  <p class="lede">Pull the zone, BFE, diagram and Section C elevations out of a certificate into a CSV, so the quote starts from the numbers instead of a retyped PDF.</p>
+</div></header>
+<section class="wrap" aria-label="More"><div class="links2"><a href="../../../convert/elevation-certificate/">Overview</a><a href="../../../convert/elevation-certificate/fema-ff-206-fy-22-152/">2022 edition (FF-206-FY-22-152)</a><a href="../../../convert/elevation-certificate/fema-086-0-33/">Older 086-0-33 editions</a><a href="../../../convert/elevation-certificate/for-homebuyers/">Homebuyers</a><a href="../../../convert/elevation-certificate/for-realtors/">Real estate agents</a><a href="../../../convert/elevation-certificate/for-insurance-agents/" aria-current=page>Insurance agents</a></div></section><section class="wrap" aria-labelledby="w-h"><h2 id="w-h">What you get</h2><ul class="list card"><li>The flood zone, map panel and base flood elevation (BFE)</li><li>The building diagram number and what it means in plain words</li><li>Every Section C elevation (lowest floor, next higher floor, machinery, adjacent grade)</li><li>How high the lowest floor sits above or below the BFE, in feet</li><li>The certifier&#x27;s name, license number, company and date</li><li>A CSV of every item, each marked with where it was read and how sure we are</li></ul></section><section class="wrap" aria-labelledby="s-h"><h2 id="s-h">What comes back</h2><pre>Property: 100 Sample Street, New Orleans, LA 70119.
+Flood zone AE, map panel 22071C0000F (panel effective 2016-09-30).
+Base flood elevation (BFE): -2.0 feet, NAVD 1988.
+Building diagram 1B: raised slab or slab on a stem wall with fill (general description; the certificate&#x27;s diagram governs).
+The lowest floor (top of the bottom floor, C2.a) is 1.4 feet, which is 3.4 feet above the BFE.
+The lowest machinery or equipment (C2.e) is 2.1 feet, which is 4.1 feet above the BFE.
+Ground next to the building: lowest adjacent grade -0.6 and highest adjacent grade 0.3 feet.
+Certified by Pat Example, Professional Land Surveyor (license LA-SAMPLE-1001), Sample Surveying LLC, on 2026-03-14.
+This summary restates the Elevation Certificate. It is not a flood zone determination, a Letter of Map Amendment, a survey or an insurance quote.
+Ask your insurance agent how this affects your premium.</pre><p class="note">From a fictional SAMPLE document made for testing, not a real one.</p></section><section class="wrap" aria-labelledby="u-h"><h2 id="u-h" class="vh" hidden>Upload</h2><form class="drop" onsubmit="return false"><label for="f">Your certificate (PDF, up to 25 MB)</label><input id="f" type="file" accept="application/pdf" disabled><button class="btn" disabled>Convert (opens at launch)</button><p class="note">Your file is processed and then deleted, whether the conversion works or not. We keep a one-line receipt (the time, the page count and a fingerprint of the file), never the file or its text.</p></form></section><section class="wrap" aria-labelledby="p-h"><h2 id="p-h">Price</h2><div class="prices"><div class="card"><b>One certificate</b><div class="price">$10</div></div><div class="card"><b>10 certificates</b><div class="price">$60</div></div><div class="card"><b>Agent plan, 30 a month</b><div class="price">$40<span class="note"> a month</span></div></div></div><p class="note">Free: 1 certificate a day as an on-screen preview, or 3 a month with downloads once you confirm your email. Proposed prices for this test build.</p></section><section class="wrap fine" aria-labelledby="r-h"><h2 id="r-h">Before you use it</h2><dl><dt>Not insurance advice</dt><dd>We restate the certificate. We don&#x27;t quote, rate or say what your flood policy will cost or cover. Ask your insurance agent how this affects your premium.</dd><dt>Not a determination</dt><dd>The summary isn&#x27;t a flood zone determination, a Letter of Map Amendment or a survey. The certificate and its certifier govern.</dd><dt>Property facts only</dt><dd>The owner&#x27;s name and any policy number are read only so they can be left out of the summary and CSV.</dd><dt>Your file</dt><dd>Your file is processed and then deleted, whether the conversion works or not. We keep a one-line receipt (the time, the page count and a fingerprint of the file), never the file or its text.</dd><dt>How it reads</dt><dd>Form fields and the page layout first. Anything still missing can be read by a model that runs on our own machine, and every value it reads is marked "check this".</dd></dl></section>
+</main>
+<footer><div class="wrap">
+  <a href="../../../" aria-label="autoants home"><img src="../../../brand/autoants-logo-reverse.svg" alt="autoants" class="logo sm"></a>
+  <span>autoants (AutoAnts, LLC) · hello@autoants.com · <a href="../../../privacy.html">Privacy</a></span>
+</div></footer>
+</body>
+</html>

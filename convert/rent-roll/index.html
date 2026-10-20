@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rent roll to Excel · autoants</title>
+<meta name="description" content="Rent roll PDF to an Excel workbook. Unit, unit type, square feet, occupied or vacant.">
+<!-- TEST build (branch doc-converters). Remove noindex at go-live: tle-main products/doc-converters/README.md -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="../../brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../convert/convert.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav><div class="wrap">
+  <a href="../../" aria-label="autoants home"><img src="../../brand/autoants-logo-reverse.svg" alt="autoants" class="logo"></a>
+  <div class="links"><a href="../../convert/">Converters</a><a href="../../reports/">Reports</a><a href="mailto:hello@autoants.com">Email us</a></div>
+</div></nav>
+<p class="testbar"><b>Test build.</b> Uploads are off and the prices are proposed. Nothing can be bought here yet.</p>
+<main id="main">
+<header><div class="wrap">
+  <p class="eyebrow">Converter</p>
+  <h1>Rent roll PDF to <span>an Excel workbook</span></h1>
+  <p class="lede">Rent roll PDF to an Excel workbook. Upload the PDF; get the numbers back, each one marked by where it was read.</p>
+</div></header>
+<section class="wrap" aria-label="More"><div class="links2"><a href="../../convert/rent-roll/" aria-current=page>Overview</a><a href="../../convert/rent-roll/pdf-rent-roll/">Any PDF rent roll</a><a href="../../convert/rent-roll/yardi/">Yardi rent roll exports</a><a href="../../convert/rent-roll/appfolio/">AppFolio rent roll exports</a><a href="../../convert/rent-roll/buildium/">Buildium rent roll exports</a><a href="../../convert/rent-roll/for-investors/">Apartment investors</a><a href="../../convert/rent-roll/for-lenders/">Lenders</a><a href="../../convert/rent-roll/for-brokers/">Brokers</a></div></section><section class="wrap" aria-labelledby="w-h"><h2 id="w-h">What you get</h2><ul class="list card"><li>Unit, unit type, square feet, occupied or vacant</li><li>Lease start and end dates, rent (and market rent when the report shows it), deposit and balance</li><li>Totals, occupancy and a check of our sums against the report&#x27;s own totals line</li><li>Columns found by their names, so different property software layouts work</li><li>Tenant names left out by default: units only</li><li>An Excel workbook plus a CSV</li></ul></section><section class="wrap" aria-labelledby="s-h"><h2 id="s-h">What comes back</h2><div class="tbl"><table><thead><tr><th>unit</th><th>type</th><th>sqft</th><th>occupancy</th><th>lease start</th><th>lease end</th><th>rent</th><th>deposit</th><th>balance</th></tr></thead><tbody><tr><td class="num">101</td><td>1BR/1BA</td><td class="num">650.0</td><td>occupied</td><td>2025-01-01</td><td>2026-01-28</td><td class="num">1,050.00</td><td class="num">1,050.00</td><td class="num">225.00</td></tr><tr><td class="num">102</td><td>2BR/1BA</td><td class="num">850.0</td><td>occupied</td><td>2025-02-01</td><td>2026-02-28</td><td class="num">1,275.00</td><td class="num">1,275.00</td><td class="num">0.00</td></tr><tr><td class="num">103</td><td>2BR/2BA</td><td class="num">975.0</td><td>occupied</td><td>2025-03-01</td><td>2026-03-28</td><td class="num">1,395.00</td><td class="num">1,395.00</td><td class="num">0.00</td></tr><tr><td class="num">104</td><td>1BR/1BA</td><td class="num">650.0</td><td>occupied</td><td>2025-04-01</td><td>2026-04-28</td><td class="num">1,050.00</td><td class="num">1,050.00</td><td class="num">0.00</td></tr><tr><td class="num">105</td><td>2BR/1BA</td><td class="num">850.0</td><td>vacant</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="num">106</td><td>2BR/2BA</td><td class="num">975.0</td><td>occupied</td><td>2025-06-01</td><td>2026-06-28</td><td class="num">1,395.00</td><td class="num">1,395.00</td><td class="num">230.00</td></tr><tr><td class="num">201</td><td>1BR/1BA</td><td class="num">650.0</td><td>occupied</td><td>2025-07-01</td><td>2026-07-28</td><td class="num">1,050.00</td><td class="num">1,050.00</td><td class="num">0.00</td></tr><tr><td class="num">202</td><td>2BR/1BA</td><td class="num">850.0</td><td>occupied</td><td>2025-08-01</td><td>2026-08-28</td><td class="num">1,275.00</td><td class="num">1,275.00</td><td class="num">0.00</td></tr></tbody></table></div><p class="note">From a fictional SAMPLE document made for testing, not a real one.</p></section><section class="wrap" aria-labelledby="u-h"><h2 id="u-h" class="vh" hidden>Upload</h2><form class="drop" onsubmit="return false"><label for="f">Your rent roll (PDF, up to 25 MB)</label><input id="f" type="file" accept="application/pdf" disabled><button class="btn" disabled>Convert (opens at launch)</button><p class="note">Your file is processed and then deleted, whether the conversion works or not. We keep a one-line receipt (the time, the page count and a fingerprint of the file), never the file or its text.</p></form></section><section class="wrap" aria-labelledby="p-h"><h2 id="p-h">Price</h2><div class="prices"><div class="card"><b>One rent roll</b><div class="price">$20</div></div><div class="card"><b>10 rent rolls</b><div class="price">$120</div></div><div class="card"><b>Broker/lender plan, 25 a month</b><div class="price">$80<span class="note"> a month</span></div></div></div><p class="note">Free: 1 rent roll a day as an on-screen preview, or 3 a month with downloads once you confirm your email. Proposed prices for this test build.</p></section><section class="wrap fine" aria-labelledby="r-h"><h2 id="r-h">Before you use it</h2><dl><dt>Tenant names off by default</dt><dd>The workbook keeps the unit and whether it&#x27;s occupied, not who lives there. Names can be included only by switching it on, and the workbook then carries a privacy note.</dd><dt>As printed</dt><dd>Figures are as printed on the owner&#x27;s rent roll. Not an estoppel, an audit or an appraisal; confirm against leases and bank records.</dd><dt>Property facts only</dt><dd>Nothing about any resident beyond the lease figures, ever.</dd><dt>Your file</dt><dd>Your file is processed and then deleted, whether the conversion works or not. We keep a one-line receipt (the time, the page count and a fingerprint of the file), never the file or its text.</dd><dt>How it reads</dt><dd>Form fields and the page layout first. Anything still missing can be read by a model that runs on our own machine, and every value it reads is marked "check this".</dd></dl></section>
+</main>
+<footer><div class="wrap">
+  <a href="../../" aria-label="autoants home"><img src="../../brand/autoants-logo-reverse.svg" alt="autoants" class="logo sm"></a>
+  <span>autoants (AutoAnts, LLC) · hello@autoants.com · <a href="../../privacy.html">Privacy</a></span>
+</div></footer>
+</body>
+</html>
