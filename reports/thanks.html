@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your report · autoants</title>
+<meta name="description" content="Your autoants report is being prepared. This page shows the download link when it's ready.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="report-shop-api" content="http://127.0.0.1:8787">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="reports.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav><div class="wrap">
+  <a href="../" aria-label="autoants home"><img src="../brand/autoants-logo-reverse.svg" alt="autoants" class="logo"></a>
+  <div class="links"><a href="./">Reports</a><a href="mailto:hello@autoants.com">Email us</a></div>
+</div></nav>
+<main id="main" class="wrap">
+  <header><p class="eyebrow">Order</p><h1>Thank you for <span>your order</span></h1></header>
+  <section class="status" aria-live="polite">
+    <h2 id="s-title"><span class="spin" aria-hidden="true"></span>Confirming your payment…</h2>
+    <p id="s-body">This takes a few seconds.</p>
+    <p id="s-link" hidden><a class="btn btn-mint" id="dl" href="#">Download your report (PDF)</a></p>
+    <p class="mono" id="s-what"></p>
+  </section>
+  <section class="fine">
+    <dl>
+      <dt>Keep this page</dt><dd>It updates itself. We also email you the link, and Stripe emails your receipt.</dd>
+      <dt>Questions</dt><dd>Reply to your receipt or write to <a href="mailto:hello@autoants.com">hello@autoants.com</a>.</dd>
+      <dt>Remember</dt><dd>Public records; confirm before relying.</dd>
+    </dl>
+  </section>
+</main>
+<footer><div class="wrap"><span>autoants · hello@autoants.com · <a href="../privacy.html">Privacy</a></span></div></footer>
+<script>
+(() => {
+  const API = document.querySelector('meta[name="report-shop-api"]').content.replace(/\/$/, "");
+  const sid = new URLSearchParams(location.search).get("session_id") || "";
+  const $ = (id) => document.getElementById(id);
+  const spin = '<span class="spin" aria-hidden="true"></span>';
+  function set(title, body, busy) { $("s-title").innerHTML = (busy ? spin : "") + title; $("s-body").textContent = body; }
+  if (!/^cs_(test|live)_[A-Za-z0-9]+$/.test(sid)) {
+    set("We couldn't find your order", "Open this page from the link after checkout, or write to hello@autoants.com with your receipt.", false);
+    return;
+  }
+  let tries = 0, stop = false;
+  async function poll() {
+    tries++;
+    let v;
+    try {
+      const c = new AbortController(), t = setTimeout(() => c.abort(), 15000);
+      const r = await fetch(`${API}/api/order-status?session_id=${encodeURIComponent(sid)}`, { signal: c.signal });
+      clearTimeout(t);
+      v = r.status === 400 ? { status: "bad" } : await r.json();
+    } catch { v = { status: "offline" }; }
+    if (v.product) {
+      const i = v.input || {};
+      const area = (i.area || "").replace(/^nsa:/, "").replace(/^zip:/, "ZIP ").replace(/^orleans$/, "All of New Orleans");
+      $("s-what").textContent = v.product + " · " + (i.address || [i.trade, area].filter(Boolean).join(", "));
+    }
+    switch (v.status) {
+      case "ready":
+        set("Your report is ready", `The link works until ${new Date(v.expires).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}.`, false);
+        $("dl").href = v.download_url; $("s-link").hidden = false; stop = true; break;
+      case "paid": case "preparing":
+        set("Your report is being prepared", "We're pulling the public records now. The download link appears here when it's ready, and we email it to you too.", true); break;
+      case "needs_refund":
+        set("We couldn't make this report", "You'll get a full refund to your card. We'll email you about it.", false); stop = true; break;
+      case "refunded":
+        set("This order was refunded", "The refund shows on your card in 5 to 10 business days.", false); stop = true; break;
+      case "confirming":
+        set("Confirming your payment…", "This takes a few seconds.", true); break;
+      case "bad":
+        set("We couldn't find your order", "Write to hello@autoants.com with your receipt and we'll send your report.", false); stop = true; break;
+      default:
+        set("Still working on it", "We couldn't check just now; this page will try again.", true);
+    }
+    if (!stop && tries >= 84) {          // about 35 minutes
+      set("This is taking longer than usual", "We'll email you the link as soon as it's ready. Questions: hello@autoants.com, with your receipt.", false);
+      stop = true;
+    }
+    if (!stop) setTimeout(poll, tries < 24 ? 5000 : 30000);
+  }
+  poll();
+})();
+</script>
+</body>
+</html>

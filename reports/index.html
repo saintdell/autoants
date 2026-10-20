@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New Orleans property and contractor reports · autoants</title>
+<meta name="description" content="Buy a New Orleans public-records report online: a Property History Report for one Orleans Parish address ($30) or a Contractor Market Report for one trade and area ($50). Delivered as a PDF.">
+<!-- TEST MODE build (branch report-checkout). Remove noindex at go-live: products/report-shop/README.md -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="report-shop-api" content="http://127.0.0.1:8787">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="reports.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav><div class="wrap">
+  <a href="../" aria-label="autoants home"><img src="../brand/autoants-logo-reverse.svg" alt="autoants" class="logo"></a>
+  <div class="links"><a href="../data/">Data</a><a href="../services.html">Services</a><a href="mailto:hello@autoants.com">Email us</a></div>
+</div></nav>
+
+<p class="testbar" id="testbar"><b>Test mode.</b> No real charge: Stripe's test card 4242 4242 4242 4242 works, real cards don't.</p>
+
+<main id="main">
+<header><div class="wrap">
+  <p class="eyebrow">Reports · New Orleans public records</p>
+  <h1>New Orleans records, <span>in one PDF</span></h1>
+  <p class="lede">Pick a report, tell us the address or the trade and area, and pay by card. We pull the City of New Orleans' public records, build the report and give you a download link. Every fact names its source.</p>
+</div></header>
+
+<section class="wrap" aria-labelledby="order-h">
+  <h2 id="order-h" class="vh">Order a report</h2>
+  <form id="order" class="order" novalidate>
+    <fieldset class="products">
+      <legend>1. Pick a report</legend>
+      <label class="prod">
+        <input type="radio" name="product" value="property_history" checked aria-label="Property History Report, $30">
+        <span class="card">
+          <span class="top"><b>Property History Report</b><span class="price" data-price="property_history">$30</span></span>
+          <span class="what">For one New Orleans (Orleans Parish) address:</span>
+          <span class="list">
+            <span>The most recent permitted work per system: roof, HVAC, electrical, plumbing and more</span>
+            <span>The permit history in the City's online files (about 2000 on), code enforcement cases and short-term rental licence status</span>
+            <span>Zoning, lot size and dimensions, legal description and tax bill ID</span>
+          </span>
+          <span class="note">It doesn't name the owner. For ownership, see the Orleans Parish Assessor.</span>
+        </span>
+      </label>
+      <label class="prod">
+        <input type="radio" name="product" value="market_report" aria-label="Contractor Market Report, $50">
+        <span class="card">
+          <span class="top"><b>Contractor Market Report</b><span class="price" data-price="market_report">$50</span></span>
+          <span class="what">For one trade in one area (all of New Orleans, a ZIP or a neighborhood):</span>
+          <span class="list">
+            <span>Each contractor's share of the trade's permits, the latest 12 full months against the 12 before</span>
+            <span>The biggest gains and drops in share, and new names</span>
+            <span>Permits per month, with notes on where the City's records changed</span>
+          </span>
+          <span class="note">Counts of public permits only, not jobs, revenue or quality. No homeowner names or addresses.</span>
+        </span>
+      </label>
+    </fieldset>
+
+    <fieldset id="f-address" class="step">
+      <legend>2. The address</legend>
+      <label for="address">Street address in New Orleans (Orleans Parish)</label>
+      <input id="address" name="address" type="text" autocomplete="street-address" inputmode="text" maxlength="120"
+             placeholder="545 St Charles Ave, 70130" aria-describedby="address-help">
+      <p id="address-help" class="help">House number and street. Add the unit for a condo. Jefferson Parish (Metairie, Kenner and so on) isn't covered.</p>
+    </fieldset>
+
+    <fieldset id="f-market" class="step" hidden>
+      <legend>2. The trade and area</legend>
+      <div class="two">
+        <label>Trade
+          <select id="trade" name="trade" aria-describedby="market-help"><option value="">Loading…</option></select>
+        </label>
+        <label>Area
+          <select id="area" name="area" aria-describedby="market-help"><option value="">Loading…</option></select>
+        </label>
+      </div>
+      <p id="market-help" class="help">Each area shows how many of that trade's permits named a contractor in the latest 12 months. Areas with too few to be useful can't be picked.</p>
+    </fieldset>
+
+    <div class="pay">
+      <button class="btn btn-mint" id="pay" type="submit" disabled>Continue to payment</button>
+      <p class="help">Payment is on Stripe's secure page. We never see your card number.</p>
+    </div>
+    <p id="err" class="err" role="alert" aria-live="assertive"></p>
+  </form>
+</section>
+
+<section class="wrap fine" aria-labelledby="fine-h">
+  <h2 id="fine-h">Before you buy</h2>
+  <dl>
+    <dt>Where it comes from</dt>
+    <dd>City of New Orleans open data (data.nola.gov and gis.nola.gov), read when you order. Public records can be incomplete, late or wrong, and older work can predate the online files. Confirm anything important before you rely on it. A report is not a title search, survey, appraisal or inspection.</dd>
+    <dt>How you get it</dt>
+    <dd>After you pay, the next page says your report is being prepared and shows the download link when it's ready. We email you the link too. The link works for 7 days.</dd>
+    <dt>Refunds</dt>
+    <dd>If we can't make your report (the address doesn't match one Orleans Parish parcel, the address is on the protected-records list, or there are too few permits), we refund you in full. If something in the report is wrong because we made a mistake, email hello@autoants.com.</dd>
+    <dt>Who sells it</dt>
+    <dd>autoants (AutoAnts, LLC), New Orleans. Questions: <a href="mailto:hello@autoants.com">hello@autoants.com</a>. <a href="../privacy.html">Privacy</a>.</dd>
+  </dl>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <a href="../" aria-label="autoants home"><img src="../brand/autoants-logo-reverse.svg" alt="autoants" class="logo sm"></a>
+  <span>autoants · hello@autoants.com · Louisiana · <a href="../privacy.html">Privacy</a> · <a href="../data/">Data</a></span>
+</div></footer>
+
+<script>
+(() => {
+  const API = document.querySelector('meta[name="report-shop-api"]').content.replace(/\/$/, "");
+  const form = document.getElementById("order"), err = document.getElementById("err"), pay = document.getElementById("pay");
+  const fA = document.getElementById("f-address"), fM = document.getElementById("f-market");
+  const trade = document.getElementById("trade"), area = document.getElementById("area");
+  let cat = null;
+  const money = (c) => "$" + (c / 100).toLocaleString("en-US", { maximumFractionDigits: 2 });
+  const product = () => form.querySelector('input[name="product"]:checked').value;
+  const timed = (url, opts = {}, ms = 15000) => {
+    const c = new AbortController(), t = setTimeout(() => c.abort(), ms);
+    return fetch(url, { ...opts, signal: c.signal }).finally(() => clearTimeout(t));
+  };
+
+  function show() {
+    const m = product() === "market_report";
+    fA.hidden = m; fM.hidden = !m;
+    err.textContent = "";
+  }
+  form.querySelectorAll('input[name="product"]').forEach((r) => r.addEventListener("change", show));
+
+  function fillAreas() {
+    if (!cat) return;
+    const t = trade.value, keep = area.value;
+    area.innerHTML = "";
+    const groups = { parish: "New Orleans", neighborhood: "Neighborhoods", zip: "ZIP codes" };
+    for (const [kind, label] of Object.entries(groups)) {
+      const og = document.createElement("optgroup");
+      og.label = label;
+      for (const a of cat.areas.filter((x) => x.kind === kind)) {
+        const n = a.permits[t] || 0, o = document.createElement("option");
+        o.value = a.key;
+        o.textContent = `${a.label} (${n.toLocaleString("en-US")} permits)`;
+        o.disabled = n < cat.min_area_permits;
+        og.appendChild(o);
+      }
+      area.appendChild(og);
+    }
+    const opts = [...area.options];
+    const pick = opts.find((o) => o.value === keep && !o.disabled) || opts.find((o) => o.value === "orleans" && !o.disabled)
+      || opts.find((o) => !o.disabled);
+    area.value = pick ? pick.value : "";
+  }
+  trade.addEventListener("change", fillAreas);
+
+  timed(API + "/api/catalog").then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((c) => {
+    if (!c.products || !c.trades || !c.areas) throw new Error();
+    cat = c;
+    document.getElementById("testbar").hidden = c.mode === "live";
+    for (const [k, p] of Object.entries(c.products)) {
+      const el = document.querySelector(`[data-price="${k}"]`);
+      if (el) el.textContent = money(p.cents);
+      const r = document.querySelector(`input[value="${k}"]`);
+      if (r) r.setAttribute("aria-label", `${p.name}, ${money(p.cents)}`);
+    }
+    trade.innerHTML = c.trades.map((t) => `<option value="${t.key}">${t.label}</option>`).join("");
+    trade.value = "hvac";
+    fillAreas();
+    pay.disabled = false;
+  }).catch(() => {
+    err.textContent = "Ordering isn't available right now. Email hello@autoants.com and we'll send your report.";
+    pay.disabled = true;
+  });
+
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    err.textContent = "";
+    const body = { product: product() };
+    if (body.product === "property_history") {
+      body.address = document.getElementById("address").value.trim();
+      if (!body.address) { err.textContent = "Enter the street address."; document.getElementById("address").focus(); return; }
+    } else {
+      body.trade = trade.value; body.area = area.value;
+      if (!body.trade || !body.area) { err.textContent = "Pick a trade and an area."; return; }
+    }
+    pay.disabled = true; pay.textContent = "Starting checkout…";
+    try {
+      const r = await timed(API + "/api/checkout", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+      const j = await r.json();
+      if (r.ok && j.url) { location.href = j.url; return; }
+      err.textContent = j.error || "Checkout couldn't start. Try again in a minute.";
+    } catch {
+      err.textContent = "Checkout couldn't start. Check your connection and try again.";
+    }
+    pay.disabled = false; pay.textContent = "Continue to payment";
+  });
+  show();
+  if (new URLSearchParams(location.search).get("canceled")) err.textContent = "Payment canceled. Nothing was charged.";
+})();
+</script>
+</body>
+</html>
