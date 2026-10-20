@@ -1,0 +1,5 @@
+area,construction_type,wd_number,modification,modification_date,identifier,rate_source,effective,classification,base_rate,fringe,fringe_as_printed,area_as_printed,upcoming
+Bienville Parish,Building,LA20260026,1,2026-05-18,PLUM0141-009,union,2025-08-01,PLUMBER (INCLUDING HVAC PIPE INSTALLATION),31.00,15.35,15.35,,
+Bienville Parish,Building,LA20260026,1,2026-05-18,SULA2012-011,survey,2014-09-22,SHEET METAL WORKER (HVAC DUCT INSTALLATION ONLY),22.77,9.86,9.86,,
+Bienville Parish,Residential,LA20260003,1,2026-05-18,SULA2004-011,survey,2004-06-15,HVAC MECHANIC (SETTING SYSTEM AND DUCT WORK ONLY),10.81,0.00,0.00,,
+Bienville Parish,Residential,LA20260003,1,2026-05-18,SULA2004-011,survey,2004-06-15,PLUMBER (INCLUDING HVAC PIPE),11.77,0.00,0.00,,
