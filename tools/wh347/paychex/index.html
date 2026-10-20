@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Convert Paychex payroll to WH-347 (certified payroll draft)</title>
+<meta name="description" content="Export the Paychex Flex Payroll Journal for one week and get a WH-347-content draft with a rate check against your Davis-Bacon wage determination. 1 worker-week free, no signup.">
+<link rel="canonical" href="https://autoants.com/tools/wh347/paychex/">
+<!-- TEST MODE build (branch converter-tools). Remove noindex and the test bar at go-live: products/wh347-tool/README.md -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="report-shop-api" content="http://127.0.0.1:8787">
+<meta name="theme-color" content="#0b1712">
+<meta property="og:title" content="Convert Paychex payroll to WH-347 (certified payroll draft)">
+<meta property="og:description" content="Export the Paychex Flex Payroll Journal for one week and get a WH-347-content draft with a rate check against your Davis-Bacon wage determination. 1 worker-week free, no signup.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://autoants.com/tools/wh347/paychex/">
+<link rel="icon" href="../../../brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../tools/converter.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Tools", "item": "https://autoants.com/tools/wh347/"}, {"@type": "ListItem", "position": 2, "name": "WH-347 converter", "item": "https://autoants.com/tools/wh347/"}, {"@type": "ListItem", "position": 3, "name": "Paychex", "item": "https://autoants.com/tools/wh347/paychex/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to export from Paychex and convert to WH-347", "description": "Export the Paychex Flex Payroll Journal for one week and get a WH-347-content draft with a rate check against your Davis-Bacon wage determination. 1 worker-week free, no signup.", "tool": [{"@type": "HowToTool", "name": "Paychex"}, {"@type": "HowToTool", "name": "Your wage determination number"}], "step": [{"@type": "HowToStep", "position": 1, "name": "Open reports", "text": "In Paychex Flex, open Analytics & Reports (or Quick Reports on the dashboard), then View All Reports."}, {"@type": "HowToStep", "position": 2, "name": "Pick the Payroll Journal", "text": "Choose Payroll Journal, then Create Report."}, {"@type": "HowToStep", "position": 3, "name": "Set the week", "text": "Choose the date range for the workweek, all employees, with employee totals."}, {"@type": "HowToStep", "position": 4, "name": "Download", "text": "Download the report as Excel."}, {"@type": "HowToStep", "position": 5, "name": "Hours per day", "text": "Run the Timecards report with the Daily option for the same dates, if you use Paychex time and attendance, and export it."}, {"@type": "HowToStep", "position": 6, "name": "Upload", "text": "Upload the journal, the time report and your workers sheet, enter the WD number and modification, and convert."}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "The Payroll Journal has a block per employee, not a row. What do I do?", "acceptedAnswer": {"@type": "Answer", "text": "Choose the option for employee totals when you create the report, so each employee has one totals line, and delete the detail lines. Or use the generic CSV template on this site and paste the numbers in."}}, {"@type": "Question", "name": "Paychex shows OASDI. Is that FICA?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. OASDI is the Social Security part of FICA; the converter adds OASDI and Medicare into the FICA column of the WH-347."}}, {"@type": "Question", "name": "Is this connected to my Paychex account?", "acceptedAnswer": {"@type": "Answer", "text": "No. Nothing logs in to Paychex. You export the report and upload it; the file is converted and deleted."}}, {"@type": "Question", "name": "Does the converter sign or submit the payroll?", "acceptedAnswer": {"@type": "Answer", "text": "No. It makes a draft for your review. The contractor checks the Statement of Compliance boxes, signs it and submits the payroll (a sub sends it to the prime). The signature has to be handwritten or a legally valid electronic signature."}}, {"@type": "Question", "name": "What does the rate check compare?", "acceptedAnswer": {"@type": "Answer", "text": "Each worker's cash rate against the WD basic rate, and rate plus fringe credit plus cash in lieu against the WD rate plus fringe for that classification. It also prices overtime hours paid short and hours over 40 paid at straight time, and flags apprentices without registration details. It checks the numbers you gave it against the WD you named; it doesn't decide whether the contract carries Davis-Bacon or which classification a worker actually performed."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav><div class="wrap">
+  <a href="../../../" aria-label="autoants home"><img src="../../../brand/autoants-logo-reverse.svg" alt="autoants" class="logo"></a>
+  <div class="links"><a href="../../../tools/wh347/">WH-347</a><a href="../../../tools/coi/">COI to Excel</a><a class="mail" href="mailto:hello@autoants.com">Email us</a></div>
+</div></nav>
+<p class="testbar"><b>Test mode.</b> No real charge: Stripe's test card 4242 4242 4242 4242 works, real cards don't.</p>
+<main id="main">
+<div class="wrap crumbs"><a href="../../../tools/wh347/">Tools</a> › <a href="../../../tools/wh347/">WH-347 converter</a> › Paychex</div>
+<header><div class="wrap">
+  <p class="eyebrow">Certified payroll · WH-347 converter</p>
+  <h1>Paychex payroll to <span>WH-347</span></h1>
+  <p class="lede">On Paychex Flex and won a federally funded job? Export the week&#x27;s Payroll Journal, upload it with your wage determination number, and get a certified payroll draft with the rates checked.</p>
+  <div class="trust"><span>1 worker-week free, no signup</span><span>Full SSNs cut to the last 4 before reading</span><span>Files deleted after 72 hours</span><span>A draft: you review and sign</span></div>
+</div></header>
+<section class="wrap" aria-label="Converter"><form id="convert" class="tool" data-tool="wh347" novalidate>
+  <h2>Convert a payroll week</h2>
+  <div class="drop">
+    <label for="payroll">Payroll export for one week <small>(.csv or .xlsx)</small></label>
+    <input id="payroll" type="file" accept=".csv,.xlsx,.txt" required>
+  </div>
+  <div class="grid">
+    <label>Payroll provider <select id="provider"><option value="auto">Detect it for me</option><option value="gusto">Gusto</option><option value="adp">ADP</option><option value="quickbooks">QuickBooks</option><option value="paychex" selected>Paychex</option><option value="generic">Other (CSV or Excel)</option></select></label>
+    <label>Week ending date <input id="week" type="date" required></label>
+    <label>Wage determination number <small>from your contract, e.g. LA20260041</small><input id="wd" type="text" inputmode="text" maxlength="10" placeholder="LA20260041" autocomplete="off"></label>
+    <label>WD modification number <small>the one your contract incorporated (0 if none)</small><input id="mod" type="number" min="0" max="99" value="0"></label>
+  </div>
+  <details><summary>Optional: workers sheet, daily hours, project details</summary>
+  <div class="grid" style="margin-top:.8rem">
+    <label>Workers sheet <small>classification, J or RA, fringe (template on this page)</small><input id="workers" type="file" accept=".csv,.xlsx"></label>
+    <label>Time report <small>hours per day, if your export has weekly totals only</small><input id="time" type="file" accept=".csv,.xlsx"></label>
+    <label>Contractor name <input id="cname" type="text" maxlength="120"></label>
+    <label>Project name <input id="pname" type="text" maxlength="120"></label>
+    <label>Project or contract number <input id="pno" type="text" maxlength="60"></label>
+    <label>Project location <input id="ploc" type="text" maxlength="120"></label>
+    <label>Payroll number <input id="payno" type="text" maxlength="10"></label>
+  </div>
+  <label class="check"><input id="prime" type="checkbox"> We're the prime contractor (leave unchecked for a sub)</label>
+  <label class="check"><input id="cwhssa" type="checkbox" checked> The contract is over $100,000 (overtime is checked under CWHSSA)</label>
+  </details>
+  <p class="privacy">Your file is converted in memory and a temporary folder that is deleted as soon as the draft is made. Full Social Security numbers are cut to the last 4 digits before anything reads the file. We keep the order record (what you bought, counts, the amount), not your payroll. Your draft downloads for 72 hours, then it&#x27;s deleted.</p>
+  <div class="row"><button class="btn btn-mint" id="go" type="submit">Convert</button><span class="help">Draft for your review; the contractor signs the Statement of Compliance.</span></div>
+  <p id="err" class="err" role="alert" aria-live="assertive"></p>
+  <div id="planbox" hidden></div>
+  <div id="status" class="status" hidden aria-live="polite"><div id="state"></div></div>
+  <p class="help">Free: one worker-week, no signup. Then $75 per project-week, or $300 a month for up to 3 projects (first week free). Prices are PROPOSED while this is in test mode.</p>
+</form></section>
+<section class="wrap body">
+<h2>What the converter reads from Paychex</h2><p>The Payroll Journal is built for a printed page: totals rows, subtotals and a title block. Delete the title rows and any company total rows so it&#x27;s one header row and one row per worker. It doesn&#x27;t carry labor classifications; put those in the workers sheet or a Labor Class column.</p><div class="tbl"><table><thead><tr><th>WH-347 content</th><th>Header names the converter looks for</th></tr></thead><tbody><tr><td>Worker ID (kept on your copy only)</td><td><code>Employee ID</code>, <code>Employee Number</code>, <code>Emp ID</code>, <code>Worker ID</code></td></tr><tr><td>Worker name (col. 1)</td><td><code>Employee Name</code>, <code>Employee</code>, <code>Name</code>, <code>Worker Name</code></td></tr><tr><td>Last name (col. 1)</td><td><code>Last Name</code>, <code>Employee Last Name</code></td></tr><tr><td>First name (col. 1)</td><td><code>First Name</code>, <code>Employee First Name</code></td></tr><tr><td>Straight-time hours (col. 4/5)</td><td><code>Regular Hours</code>, <code>Reg Hours</code>, <code>Hourly Hours</code>, <code>Regular</code></td></tr><tr><td>Overtime hours (col. 4/5)</td><td><code>Overtime Hours</code>, <code>OT Hours</code>, <code>Overtime</code></td></tr><tr><td>Straight-time rate (col. 6A)</td><td><code>Regular Rate</code>, <code>Hourly Rate</code>, <code>Pay Rate</code>, <code>Rate</code></td></tr><tr><td>Overtime rate (col. 6A)</td><td><code>Overtime Rate</code>, <code>OT Rate</code></td></tr><tr><td>Gross for all work (col. 7B)</td><td><code>Gross Pay</code>, <code>Gross Earnings</code>, <code>Total Gross</code>, <code>Gross</code></td></tr><tr><td>FICA (col. 8)</td><td><code>Social Security</code>, <code>Medicare</code>, <code>OASDI</code>, <code>Social Security EE</code></td></tr><tr><td>Tax withholding (col. 8)</td><td><code>Federal Income Tax</code>, <code>Fed Income Tax</code>, <code>FITW</code>, <code>LA State Income Tax</code></td></tr><tr><td>Other deductions (col. 8)</td><td><code>Deductions</code>, <code>Total Deductions Other</code>, <code>Voluntary Deductions</code>, <code>401(k)</code></td></tr><tr><td>Net pay (col. 9)</td><td><code>Net Pay</code>, <code>Net Amount</code>, <code>Net</code></td></tr></tbody></table></div><h3>Columns you can add to any export</h3><div class="tbl"><table><thead><tr><th>Add this column</th><th>What goes in it</th></tr></thead><tbody><tr><td><code>Classification</code></td><td>The worker's classification exactly as your wage determination prints it, e.g. ELECTRICIAN (INCLUDING COMMUNICATION TECHNICIAN AND LOW VOLTAGE WIRING). A close match is used and flagged for you to confirm.</td></tr><tr><td><code>J/RA</code></td><td>J for a journeyworker, RA for a registered apprentice.</td></tr><tr><td><code>Fringe Credit</code></td><td>Hourly fringe paid into a plan (column 6B). Name the plan in the workers sheet so page 2 lists it.</td></tr><tr><td><code>Cash in Lieu</code></td><td>Hourly fringe paid as cash (column 6C).</td></tr><tr><td><code>Mon</code> … <code>Sun</code></td><td>Hours worked each day on this project, if you don't upload a time report.</td></tr></tbody></table></div><h2>What you get</h2><ul><li><strong>wh347-DRAFT.pdf</strong>: page 1 is the payroll in the WH-347 layout; page 2 is the Statement of Compliance, unsigned, with the boxes left empty.</li><li><strong>wh347-DRAFT.csv</strong>: the same rows with the WH-347 column numbers as headers.</li><li><strong>rate-check.md</strong>: every item found, with the dollar shortfall per worker.</li></ul><p>Draft for your review; the contractor signs the Statement of Compliance.</p>
+<h2 id="steps">How to export from Paychex and convert to WH-347</h2><ol><li><strong>Open reports.</strong> In Paychex Flex, open Analytics &amp; Reports (or Quick Reports on the dashboard), then View All Reports.</li><li><strong>Pick the Payroll Journal.</strong> Choose Payroll Journal, then Create Report.</li><li><strong>Set the week.</strong> Choose the date range for the workweek, all employees, with employee totals.</li><li><strong>Download.</strong> Download the report as Excel.</li><li><strong>Hours per day.</strong> Run the Timecards report with the Daily option for the same dates, if you use Paychex time and attendance, and export it.</li><li><strong>Upload.</strong> Upload the journal, the time report and your workers sheet, enter the WD number and modification, and convert.</li></ol><p class="help">Menu names are from the provider&#x27;s help pages as of October 2026 and change over time. If yours differ, look for the report by name.</p>
+<h2 id="faq">Questions</h2><details><summary>The Payroll Journal has a block per employee, not a row. What do I do?</summary><p>Choose the option for employee totals when you create the report, so each employee has one totals line, and delete the detail lines. Or use the generic CSV template on this site and paste the numbers in.</p></details><details><summary>Paychex shows OASDI. Is that FICA?</summary><p>Yes. OASDI is the Social Security part of FICA; the converter adds OASDI and Medicare into the FICA column of the WH-347.</p></details><details><summary>Is this connected to my Paychex account?</summary><p>No. Nothing logs in to Paychex. You export the report and upload it; the file is converted and deleted.</p></details><details><summary>Does the converter sign or submit the payroll?</summary><p>No. It makes a draft for your review. The contractor checks the Statement of Compliance boxes, signs it and submits the payroll (a sub sends it to the prime). The signature has to be handwritten or a legally valid electronic signature.</p></details><details><summary>What does the rate check compare?</summary><p>Each worker&#x27;s cash rate against the WD basic rate, and rate plus fringe credit plus cash in lieu against the WD rate plus fringe for that classification. It also prices overtime hours paid short and hours over 40 paid at straight time, and flags apprentices without registration details. It checks the numbers you gave it against the WD you named; it doesn&#x27;t decide whether the contract carries Davis-Bacon or which classification a worker actually performed.</p></details>
+<h2>More converters</h2><nav class="siblings" aria-label="Related pages"><a href="../../../tools/wh347/">WH-347 converter</a><a href="../../../tools/wh347/gusto/">Gusto to WH-347</a><a href="../../../tools/wh347/adp/">ADP to WH-347</a><a href="../../../tools/wh347/quickbooks/">QuickBooks to WH-347</a><a href="../../../tools/wh347/paychex/" aria-current="page">Paychex to WH-347</a><a href="../../../tools/wh347/csv/">Any CSV to WH-347</a></nav>
+</section>
+</main>
+<footer><div class="wrap">
+  <a href="../../../" aria-label="autoants home"><img src="../../../brand/autoants-logo-reverse.svg" alt="autoants" class="logo sm"></a>
+  <span>autoants (AutoAnts, LLC) · hello@autoants.com · <a href="../../../privacy.html">Privacy</a></span>
+</div></footer>
+<script src="../../../tools/converter.js" defer></script>
+</body>
+</html>

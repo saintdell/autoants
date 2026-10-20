@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COI tracker for property managers: vendor certificates</title>
+<meta name="description" content="Property managers: convert vendors&#x27; and contractors&#x27; ACORD 25 certificates into one spreadsheet and an expiration calendar. Know whose certificate date has passed before they&#x27;re back on the property.">
+<link rel="canonical" href="https://autoants.com/tools/coi/property-managers/">
+<!-- TEST MODE build (branch converter-tools). Remove noindex and the test bar at go-live: products/coi-tool/README.md -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="report-shop-api" content="http://127.0.0.1:8787">
+<meta name="theme-color" content="#0b1712">
+<meta property="og:title" content="COI tracker for property managers: vendor certificates">
+<meta property="og:description" content="Property managers: convert vendors&#x27; and contractors&#x27; ACORD 25 certificates into one spreadsheet and an expiration calendar. Know whose certificate date has passed before they&#x27;re back on the property.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://autoants.com/tools/coi/property-managers/">
+<link rel="icon" href="../../../brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../tools/converter.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Tools", "item": "https://autoants.com/tools/coi/"}, {"@type": "ListItem", "position": 2, "name": "COI converter", "item": "https://autoants.com/tools/coi/"}, {"@type": "ListItem", "position": 3, "name": "COI tracker for property managers", "item": "https://autoants.com/tools/coi/property-managers/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How a property manager tracks vendor certificate expirations", "description": "Property managers: convert vendors' and contractors' ACORD 25 certificates into one spreadsheet and an expiration calendar. Know whose certificate date has passed before they're back on the property.", "tool": [{"@type": "HowToTool", "name": "ACORD 25 certificates (PDF)"}], "step": [{"@type": "HowToStep", "position": 1, "name": "Collect the certificates", "text": "From vendors, contractors and commercial tenants, as PDFs."}, {"@type": "HowToStep", "position": 2, "name": "Upload by property or all at once", "text": "The certificate holder column tells them apart."}, {"@type": "HowToStep", "position": 3, "name": "Review the dates", "text": "Sort by days_to_expiration."}, {"@type": "HowToStep", "position": 4, "name": "Add the calendar", "text": "Import coi-expiry.ics for a reminder 30 days ahead."}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "We manage for several owners. Can the sheet separate them?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The certificate_holder column is the name printed in the holder box, so you can filter by owner entity or by the management company."}}, {"@type": "Question", "name": "A vendor sent a photo of the certificate. Will it read?", "acceptedAnswer": {"@type": "Answer", "text": "Usually. A photo or scan is read with OCR, and every value from it is marked needs_check so you compare it with the picture. A sharp, flat, well-lit page reads best."}}, {"@type": "Question", "name": "Does the calendar include the property address?", "acceptedAnswer": {"@type": "Answer", "text": "It includes the insured's name, the policy type, the policy number and the certificate file name. If the description of operations names the property, that's in the spreadsheet row."}}, {"@type": "Question", "name": "Will it tell me whether a sub carries enough insurance?", "acceptedAnswer": {"@type": "Answer", "text": "No. It copies what the certificate prints: the limits, the dates, the boxes marked. Comparing those with your contract's terms is your call, or a question for the issuing agent. A certificate confers no rights by itself."}}, {"@type": "Question", "name": "What happens to my files?", "acceptedAnswer": {"@type": "Answer", "text": "They're read in memory and a temporary folder that's deleted as soon as the spreadsheet is made. The spreadsheet and calendar download for 72 hours, then they're deleted too. We keep the order record, not the certificates."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav><div class="wrap">
+  <a href="../../../" aria-label="autoants home"><img src="../../../brand/autoants-logo-reverse.svg" alt="autoants" class="logo"></a>
+  <div class="links"><a href="../../../tools/wh347/">WH-347</a><a href="../../../tools/coi/">COI to Excel</a><a class="mail" href="mailto:hello@autoants.com">Email us</a></div>
+</div></nav>
+<p class="testbar"><b>Test mode.</b> No real charge: Stripe's test card 4242 4242 4242 4242 works, real cards don't.</p>
+<main id="main">
+<div class="wrap crumbs"><a href="../../../tools/coi/">Tools</a> › <a href="../../../tools/coi/">COI converter</a> › COI tracker for property managers</div>
+<header><div class="wrap">
+  <p class="eyebrow">Property managers · vendor certificates</p>
+  <h1>Vendor certificates for <span>property managers</span></h1>
+  <p class="lede">Landscapers, plumbers, roofers, cleaners: every vendor on your properties sends a certificate. Convert them into one list with the dates and a calendar that reminds you before each one runs out.</p>
+  <div class="trust"><span>3 certificates free, no signup</span><span>Fillable, flattened and scanned PDFs</span><span>A confidence on every row</span><span>Files deleted after 72 hours</span></div>
+</div></header>
+<section class="wrap" aria-label="Converter"><form id="convert" class="tool" data-tool="coi" novalidate>
+  <h2>Convert certificates</h2>
+  <div class="drop">
+    <label for="certs">ACORD 25 certificates of insurance <small>(PDF, up to 60 at once)</small></label>
+    <input id="certs" type="file" accept=".pdf,application/pdf" multiple required>
+  </div>
+  <p class="privacy">Your certificates are read in memory and a temporary folder that is deleted as soon as the spreadsheet is made. We keep the order record (what you bought, how many certificates), not the certificates. Your files download for 72 hours, then they&#x27;re deleted.</p>
+  <div class="row"><button class="btn btn-mint" id="go" type="submit">Convert</button><span class="help">You get an Excel sheet, a CSV and an expiry calendar.</span></div>
+  <p id="err" class="err" role="alert" aria-live="assertive"></p>
+  <div id="planbox" hidden></div>
+  <div id="status" class="status" hidden aria-live="polite"><div id="state"></div></div>
+  <p class="help">Free: 3 certificates, no signup. Then $15 for 25 certificates, or $30 a month for up to 50. Prices are PROPOSED while this is in test mode.</p>
+</form></section>
+<section class="wrap body">
+<h2>One list for every property</h2><p>Upload vendors' certificates as they arrive or in one batch at the start of the year. The sheet lists each vendor's policies with dates and limits; the certificate holder column shows which owner entity or management company each certificate names.</p><h2>Before a vendor's next visit</h2><ul><li>Sort by expiration to see passed and upcoming dates.</li><li>Filter by certificate_holder when you manage for several owners.</li><li>Use the producer column to know which agency to ask for a renewal certificate.</li></ul><h2>Tenants' certificates too</h2><p>Commercial tenants who send a liability certificate under their lease can go in the same upload. The sheet records what the certificate prints; the lease decides what it has to show.</p><h2>Facts only</h2><p>Facts as printed on each certificate. A certificate is issued as a matter of information only and confers no rights; it doesn&#x27;t show whether coverage fits your contract. For that, ask the issuing agent or your own insurance adviser. The converter reports what the certificate prints and when the dates fall. It doesn't judge whether coverage fits a contract, a lease or a law.</p>
+<h2 id="steps">How a property manager tracks vendor certificate expirations</h2><ol><li><strong>Collect the certificates.</strong> From vendors, contractors and commercial tenants, as PDFs.</li><li><strong>Upload by property or all at once.</strong> The certificate holder column tells them apart.</li><li><strong>Review the dates.</strong> Sort by days_to_expiration.</li><li><strong>Add the calendar.</strong> Import coi-expiry.ics for a reminder 30 days ahead.</li></ol>
+<h2 id="faq">Questions</h2><details><summary>We manage for several owners. Can the sheet separate them?</summary><p>Yes. The certificate_holder column is the name printed in the holder box, so you can filter by owner entity or by the management company.</p></details><details><summary>A vendor sent a photo of the certificate. Will it read?</summary><p>Usually. A photo or scan is read with OCR, and every value from it is marked needs_check so you compare it with the picture. A sharp, flat, well-lit page reads best.</p></details><details><summary>Does the calendar include the property address?</summary><p>It includes the insured&#x27;s name, the policy type, the policy number and the certificate file name. If the description of operations names the property, that&#x27;s in the spreadsheet row.</p></details><details><summary>Will it tell me whether a sub carries enough insurance?</summary><p>No. It copies what the certificate prints: the limits, the dates, the boxes marked. Comparing those with your contract&#x27;s terms is your call, or a question for the issuing agent. A certificate confers no rights by itself.</p></details><details><summary>What happens to my files?</summary><p>They&#x27;re read in memory and a temporary folder that&#x27;s deleted as soon as the spreadsheet is made. The spreadsheet and calendar download for 72 hours, then they&#x27;re deleted too. We keep the order record, not the certificates.</p></details>
+<h2>More converters</h2><nav class="siblings" aria-label="Related pages"><a href="../../../tools/coi/">COI converter</a><a href="../../../tools/coi/acord-25-to-excel/">ACORD 25 to Excel</a><a href="../../../tools/coi/general-contractors/">For general contractors</a><a href="../../../tools/coi/property-managers/" aria-current="page">For property managers</a><a href="../../../tools/coi/subcontractor-compliance/">Subcontractor COI tracking</a></nav>
+</section>
+</main>
+<footer><div class="wrap">
+  <a href="../../../" aria-label="autoants home"><img src="../../../brand/autoants-logo-reverse.svg" alt="autoants" class="logo sm"></a>
+  <span>autoants (AutoAnts, LLC) · hello@autoants.com · <a href="../../../privacy.html">Privacy</a></span>
+</div></footer>
+<script src="../../../tools/converter.js" defer></script>
+</body>
+</html>

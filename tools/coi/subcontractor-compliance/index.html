@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subcontractor COI tracking for compliance files</title>
+<meta name="description" content="Keep a dated, sortable record of every subcontractor&#x27;s certificate of insurance: policies, dates, limits and the additional insured and waiver boxes as marked, with an expiration calendar.">
+<link rel="canonical" href="https://autoants.com/tools/coi/subcontractor-compliance/">
+<!-- TEST MODE build (branch converter-tools). Remove noindex and the test bar at go-live: products/coi-tool/README.md -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="report-shop-api" content="http://127.0.0.1:8787">
+<meta name="theme-color" content="#0b1712">
+<meta property="og:title" content="Subcontractor COI tracking for compliance files">
+<meta property="og:description" content="Keep a dated, sortable record of every subcontractor&#x27;s certificate of insurance: policies, dates, limits and the additional insured and waiver boxes as marked, with an expiration calendar.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://autoants.com/tools/coi/subcontractor-compliance/">
+<link rel="icon" href="../../../brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../tools/converter.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Tools", "item": "https://autoants.com/tools/coi/"}, {"@type": "ListItem", "position": 2, "name": "COI converter", "item": "https://autoants.com/tools/coi/"}, {"@type": "ListItem", "position": 3, "name": "Subcontractor COI tracking for compliance files", "item": "https://autoants.com/tools/coi/subcontractor-compliance/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to keep a subcontractor certificate record", "description": "Keep a dated, sortable record of every subcontractor's certificate of insurance: policies, dates, limits and the additional insured and waiver boxes as marked, with an expiration calendar.", "tool": [{"@type": "HowToTool", "name": "ACORD 25 certificates (PDF)"}], "step": [{"@type": "HowToStep", "position": 1, "name": "Collect current certificates", "text": "One per active sub, the latest version."}, {"@type": "HowToStep", "position": 2, "name": "Convert", "text": "Upload all of them in one batch."}, {"@type": "HowToStep", "position": 3, "name": "File the export", "text": "Save the .xlsx with the run date in the job file."}, {"@type": "HowToStep", "position": 4, "name": "Act on dates", "text": "Request renewals for passed or upcoming expirations."}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does the record prove a sub was insured on a given day?", "acceptedAnswer": {"@type": "Answer", "text": "It shows what a certificate printed and when you converted it. A certificate is informational and confers no rights; confirming coverage on a date is a question for the issuing agent or insurer."}}, {"@type": "Question", "name": "Can I keep the original PDFs with the record?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, keep your originals; we delete our copies. The certificate_file column names the PDF each row came from so the two stay linked."}}, {"@type": "Question", "name": "How do I show which rows a person checked?", "acceptedAnswer": {"@type": "Answer", "text": "The needs_check and check_notes columns say which values were read with low confidence. Add your own column for who checked each one and when."}}, {"@type": "Question", "name": "Will it tell me whether a sub carries enough insurance?", "acceptedAnswer": {"@type": "Answer", "text": "No. It copies what the certificate prints: the limits, the dates, the boxes marked. Comparing those with your contract's terms is your call, or a question for the issuing agent. A certificate confers no rights by itself."}}, {"@type": "Question", "name": "What happens to my files?", "acceptedAnswer": {"@type": "Answer", "text": "They're read in memory and a temporary folder that's deleted as soon as the spreadsheet is made. The spreadsheet and calendar download for 72 hours, then they're deleted too. We keep the order record, not the certificates."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav><div class="wrap">
+  <a href="../../../" aria-label="autoants home"><img src="../../../brand/autoants-logo-reverse.svg" alt="autoants" class="logo"></a>
+  <div class="links"><a href="../../../tools/wh347/">WH-347</a><a href="../../../tools/coi/">COI to Excel</a><a class="mail" href="mailto:hello@autoants.com">Email us</a></div>
+</div></nav>
+<p class="testbar"><b>Test mode.</b> No real charge: Stripe's test card 4242 4242 4242 4242 works, real cards don't.</p>
+<main id="main">
+<div class="wrap crumbs"><a href="../../../tools/coi/">Tools</a> › <a href="../../../tools/coi/">COI converter</a> › Subcontractor COI tracking for compliance files</div>
+<header><div class="wrap">
+  <p class="eyebrow">Subcontractor certificates · record keeping</p>
+  <h1>Subcontractor COI tracking <span>for your files</span></h1>
+  <p class="lede">A compliance file needs the certificate on hand and its dates watched. Convert each sub&#x27;s ACORD 25 into a row-per-policy record and a calendar, and keep the export with the job file.</p>
+  <div class="trust"><span>3 certificates free, no signup</span><span>Fillable, flattened and scanned PDFs</span><span>A confidence on every row</span><span>Files deleted after 72 hours</span></div>
+</div></header>
+<section class="wrap" aria-label="Converter"><form id="convert" class="tool" data-tool="coi" novalidate>
+  <h2>Convert certificates</h2>
+  <div class="drop">
+    <label for="certs">ACORD 25 certificates of insurance <small>(PDF, up to 60 at once)</small></label>
+    <input id="certs" type="file" accept=".pdf,application/pdf" multiple required>
+  </div>
+  <p class="privacy">Your certificates are read in memory and a temporary folder that is deleted as soon as the spreadsheet is made. We keep the order record (what you bought, how many certificates), not the certificates. Your files download for 72 hours, then they&#x27;re deleted.</p>
+  <div class="row"><button class="btn btn-mint" id="go" type="submit">Convert</button><span class="help">You get an Excel sheet, a CSV and an expiry calendar.</span></div>
+  <p id="err" class="err" role="alert" aria-live="assertive"></p>
+  <div id="planbox" hidden></div>
+  <div id="status" class="status" hidden aria-live="polite"><div id="state"></div></div>
+  <p class="help">Free: 3 certificates, no signup. Then $15 for 25 certificates, or $30 a month for up to 50. Prices are PROPOSED while this is in test mode.</p>
+</form></section>
+<section class="wrap body">
+<h2>What goes in the record</h2><p>For every policy on every certificate: who issued it (producer and insurer, with NAIC), the policy number, the effective and expiration dates, the limits printed, and whether ADDL INSD and SUBR WVD are marked. The record also notes how each value was read and its confidence, so a reviewer can see which rows a person checked against the PDF.</p><h2>A monthly pass</h2><ol><li>Upload the current certificates for every active sub.</li><li>Save the spreadsheet in the job's file with the date you ran it.</li><li>Request renewals for dates that have passed or fall within 30 days.</li><li>Compare the marked boxes and limits with what your subcontract asks for; that comparison stays with you.</li></ol><h2>Facts only</h2><p>Facts as printed on each certificate. A certificate is issued as a matter of information only and confers no rights; it doesn&#x27;t show whether coverage fits your contract. For that, ask the issuing agent or your own insurance adviser. The converter reports what the certificate prints and when the dates fall. It doesn't judge whether coverage fits a contract, a lease or a law.</p><p>Need the comparison against your own subcontract terms done for you each month? Email hello@autoants.com about a managed certificate review.</p>
+<h2 id="steps">How to keep a subcontractor certificate record</h2><ol><li><strong>Collect current certificates.</strong> One per active sub, the latest version.</li><li><strong>Convert.</strong> Upload all of them in one batch.</li><li><strong>File the export.</strong> Save the .xlsx with the run date in the job file.</li><li><strong>Act on dates.</strong> Request renewals for passed or upcoming expirations.</li></ol>
+<h2 id="faq">Questions</h2><details><summary>Does the record prove a sub was insured on a given day?</summary><p>It shows what a certificate printed and when you converted it. A certificate is informational and confers no rights; confirming coverage on a date is a question for the issuing agent or insurer.</p></details><details><summary>Can I keep the original PDFs with the record?</summary><p>Yes, keep your originals; we delete our copies. The certificate_file column names the PDF each row came from so the two stay linked.</p></details><details><summary>How do I show which rows a person checked?</summary><p>The needs_check and check_notes columns say which values were read with low confidence. Add your own column for who checked each one and when.</p></details><details><summary>Will it tell me whether a sub carries enough insurance?</summary><p>No. It copies what the certificate prints: the limits, the dates, the boxes marked. Comparing those with your contract&#x27;s terms is your call, or a question for the issuing agent. A certificate confers no rights by itself.</p></details><details><summary>What happens to my files?</summary><p>They&#x27;re read in memory and a temporary folder that&#x27;s deleted as soon as the spreadsheet is made. The spreadsheet and calendar download for 72 hours, then they&#x27;re deleted too. We keep the order record, not the certificates.</p></details>
+<h2>More converters</h2><nav class="siblings" aria-label="Related pages"><a href="../../../tools/coi/">COI converter</a><a href="../../../tools/coi/acord-25-to-excel/">ACORD 25 to Excel</a><a href="../../../tools/coi/general-contractors/">For general contractors</a><a href="../../../tools/coi/property-managers/">For property managers</a><a href="../../../tools/coi/subcontractor-compliance/" aria-current="page">Subcontractor COI tracking</a></nav>
+</section>
+</main>
+<footer><div class="wrap">
+  <a href="../../../" aria-label="autoants home"><img src="../../../brand/autoants-logo-reverse.svg" alt="autoants" class="logo sm"></a>
+  <span>autoants (AutoAnts, LLC) · hello@autoants.com · <a href="../../../privacy.html">Privacy</a></span>
+</div></footer>
+<script src="../../../tools/converter.js" defer></script>
+</body>
+</html>
