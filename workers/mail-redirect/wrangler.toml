@@ -1,0 +1,19 @@
+name = "autoants-mail-redirect"
+main = "index.js"
+compatibility_date = "2026-09-01"
+
+# NOT DEPLOYED. Lane's steps are in tle-main products/mail-tracking/README.md ("Go live").
+#
+# The route only takes effect when autoants.com is PROXIED by Cloudflare (orange cloud). Today the apex A records
+# point at GitHub Pages DNS-only, so until that switch /r/<code> is answered by GitHub Pages' 404.html, which
+# forwards to the home page with ?ref=<code> (no scan logged, the form still records the code).
+routes = [{ pattern = "autoants.com/r/*", zone_name = "autoants.com" }]
+
+[vars]
+FALLBACK = "https://autoants.com/"
+
+# code:<code> -> {"target"}; scan:<code>:<time>:<rand> (metadata {d}). Create once:
+#   npx wrangler kv namespace create MAILTRACK   then paste the id below.
+[[kv_namespaces]]
+binding = "MAILTRACK"
+id = "00000000000000000000000000000000"

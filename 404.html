@@ -4,6 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
+<script>
+// Mail tracking fallback: a card's QR is autoants.com/r/<code>. Until the redirect Worker's route is live, GitHub
+// Pages answers here, so send the visitor to the home page with ?ref=<code> (the form still records it).
+(function(){var m=location.pathname.match(/^\/r\/(mt-[23456789abcdefghjkmnpqrstuvwxyz]{6})\/?$/i);
+if(m)location.replace('/?ref='+m[1].toLowerCase());})();
+</script>
 <title>Page Not Found · AutoAnts</title>
 <link rel="icon" href="/brand/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
