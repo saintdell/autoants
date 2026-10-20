@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New Orleans short-term rental check (free) · autoants</title>
+<meta name="description" content="Free check: can this New Orleans address likely get a short-term rental permit? Zoning, the one-per-square rule and open code cases from City records, with the City's next steps.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://autoants.com/tools/str-check/">
+<meta property="og:title" content="New Orleans short-term rental check · autoants">
+<meta property="og:description" content="Can this address likely get a New Orleans STR permit? A free check from City records.">
+<meta property="og:url" content="https://autoants.com/tools/str-check/"><meta property="og:type" content="website">
+<meta property="og:image" content="https://autoants.com/brand/og.png">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="../../brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b1712;--surface:#14261e;--ink:#f4f1e8;--muted:#a3b0a8;--faint:#8d9a93;--mint:#3ddcae;--mint-ink:#062a1d;
+--line:rgba(244,241,232,.14);--warn:#f0c46a;--bad:#ff9b8a;--disp:"Archivo",system-ui,sans-serif;--body:"Inter",system-ui,sans-serif}
+@media (prefers-color-scheme: light){:root:not([data-theme=dark]){--bg:#f7f6f2;--surface:#ffffff;--ink:#14211b;
+--muted:#4c5a53;--faint:#5f6c65;--mint:#0f7a5c;--mint-ink:#ffffff;--line:rgba(20,33,27,.14);--warn:#8a5a00;--bad:#9b1c1c}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;overflow-x:hidden}
+a{color:inherit}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px}
+nav{display:flex;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+nav a{text-decoration:none;font-weight:700}nav .sp{margin-left:auto;color:var(--muted);font-weight:600;font-size:14px}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mint);margin:32px 0 0;font-weight:600}
+h1{font-family:var(--disp);font-weight:800;font-size:clamp(30px,6.4vw,48px);line-height:1.06;margin:8px 0 12px;text-wrap:balance}
+h2{font-family:var(--disp);font-weight:800;font-size:clamp(21px,4.2vw,27px);line-height:1.18;margin:40px 0 10px}
+h3{font-size:16px;margin:14px 0 4px}
+.lede{font-size:18px;max-width:62ch}.muted{color:var(--muted)}.small{font-size:14px;color:var(--muted)}
+.dates{font-size:13px;color:var(--faint)}
+form{display:grid;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 16px;margin:18px 0 8px}
+label{display:grid;gap:5px;font-size:14px;color:var(--muted)}label b{color:var(--ink)}
+input[type=text]{background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:12px;font:inherit;font-size:16px;width:100%}
+fieldset{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:0}legend{font-size:14px;color:var(--ink);font-weight:600;padding:0 4px}
+fieldset label{display:inline-flex;gap:6px;align-items:center;margin-right:16px;color:var(--ink)}
+.btn{width:100%;background:var(--mint);color:var(--mint-ink);border:0;border-radius:10px;padding:14px 18px;font:inherit;font-family:var(--disp);font-weight:800;font-size:17px;cursor:pointer}
+.status{display:none;margin:0;color:var(--mint)}
+.result{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:12px 0}
+.verdict{font-family:var(--disp);font-weight:800;font-size:22px;margin:0}.ok{color:var(--mint)}.warn{color:var(--warn)}.bad{color:var(--bad)}
+.addr{margin:2px 0 8px;color:var(--muted)}.fine{font-size:13px;color:var(--faint)}
+dl.facts{display:grid;grid-template-columns:1fr;gap:2px;margin:8px 0}dl.facts dt{font-size:13px;color:var(--faint)}dl.facts dd{margin:0 0 6px}
+.mono{font-family:ui-monospace,monospace;font-size:13px}
+.box{border-left:4px solid var(--mint);background:var(--surface);padding:12px 14px;border-radius:8px}
+.agent{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:14px 0}
+.agent.draft{border:2px dashed var(--warn)}
+ol.rules li,ul.plain li{margin:6px 0}.cite{display:block;font-size:13px;color:var(--faint)}
+footer{color:var(--faint);font-size:13px;padding:32px 0 44px;border-top:1px solid var(--line);margin-top:44px}
+</style>
+</head>
+<body>
+<!-- DRAFT: brokerage name pending in products/listing-prep/config.json -->
+<div class="wrap">
+<nav aria-label="Site"><a href="../../">autoants</a><a class="sp" href="../fortify-check/">Fortify Homes check</a></nav>
+<header>
+<p class="eyebrow">Free tool · New Orleans</p>
+<h1>Can this New Orleans address have a short-term rental?</h1>
+<p class="lede">A free check for one address: the zoning district, whether its City square already has a residential STR licence, and open code cases, from the City's own records. Then the questions only you can answer.</p>
+<p class="dates">Published 2026-10-20 · Updated 2026-10-20 · Rules read from City pages 2026-10-20</p>
+</header>
+
+<h2 id="answer">Can I get a short-term rental permit for this address?</h2>
+<p>It depends. This check reads three public facts: the zoning district must allow a Non-Commercial STR, the City square must not already have one (one per square, counting all four sides), and the address shouldn&#x27;t have open code cases. It also asks about the operator, who must live on the lot during guest stays. The City checks more than this tool can: ownership, taxes and liens, training and documents. Whole-unit Commercial STRs are a separate permit and now need conditional-use approval.</p>
+
+<h2 id="check">Check an address</h2>
+<noscript><p class="box">This check needs JavaScript. Without it, look up your square on the <a href="https://gis.nola.gov/apps/nstr/">City's NSTR map</a> or call the help desk at <a href="tel:+15046587144">(504) 658-7144</a>.</p></noscript>
+<form id="checkForm" method="post" action="#" novalidate>
+  <label><b>New Orleans address</b><input name="address" type="text" required maxlength="160" autocomplete="street-address" placeholder="123 Main St, New Orleans, LA 70119"></label>
+  <fieldset><legend>Will you, or a tenant with a lease, live on the lot during guest stays?</legend><label><input type="radio" name="operator_on_site" value="yes"> Yes</label><label><input type="radio" name="operator_on_site" value="no"> No</label><label><input type="radio" name="operator_on_site" value="unsure"> Not sure</label></fieldset>
+  <fieldset><legend>Do you already own part of another Non-Commercial STR property?</legend><label><input type="radio" name="other_nstr" value="yes"> Yes</label><label><input type="radio" name="other_nstr" value="no"> No</label><label><input type="radio" name="other_nstr" value="unsure"> Not sure</label></fieldset>
+  <fieldset><legend>Is the property owned by an LLC, trust or other company?</legend><label><input type="radio" name="entity_owner" value="yes"> Yes</label><label><input type="radio" name="entity_owner" value="no"> No</label><label><input type="radio" name="entity_owner" value="unsure"> Not sure</label></fieldset>
+  <button class="btn" type="submit">Check this address</button>
+  <p class="status" id="checkStatus" role="status" aria-live="polite"></p>
+</form>
+<p class="small">The checker doesn't save the address you type. No account, no card.</p>
+<div id="checkResult"></div>
+
+<h2 id="example">What a result looks like</h2>
+<p class="muted">A real run on a public library's address (Norman Mayer Library, 3001 Gentilly Blvd) with no answers, so the operator question shows as needing review.</p>
+<div class="result"><p class="verdict warn">Needs review</p><p class="addr">3001 Gentilly Blvd, New Orleans, LA 70122 · Non-Commercial STR permit</p><dl class="facts"><dt>Zoning</dt><dd>MU-1 · Medium Intensity Mixed-Use District</dd><dt>City square</dt><dd>2701 · Dillard</dd><dt>Residential STR licences on the square</dt><dd>0</dd><dt>Open code cases</dt><dd>0</dd></dl><h3>Needs review</h3><ul><li>Will you, or a tenant with a lease, live on the lot and stay there during guest stays? The City requires it for a Non-Commercial STR. (There&#x27;s no homestead rule any more.)</li></ul><h3>Looks fine</h3><ul><li>Zoning MU-1 (Medium Intensity Mixed-Use District) allows a Non-Commercial STR (CZO Table 21-3).</li><li>No active residential STR licence found on square 2701 (City licence list as of 2026-10-20) and the City NSTR map shows it open.</li></ul><h3>Also</h3><ul><li>Commercial STR: zoning MU-1 lists it as permitted; under the Transient Lodging IZD (since 2026-05-07) any new one needs conditional-use approval. Building caps (1 unit or 25%) and floor rules apply.</li></ul><h3>Next steps</h3><ol><li>Look up your square on the City&#x27;s NSTR map (<a href="https://gis.nola.gov/apps/nstr/">https://gis.nola.gov/apps/nstr/</a>): white is open, pink is not.</li><li>Take the City&#x27;s required STR training, then apply in the One Stop app during a quarterly window (<a href="https://onestopapp.nola.gov/">https://onestopapp.nola.gov/</a>).</li><li>Questions: STR Administration help desk <a href="tel:+15046587144">(504) 658-7144</a> (Mon-Thu 8-5, Fri 8-3:30), str@nola.gov.</li></ol><p class="fine">Sources: City address points, zoning, squares and NSTR map (gis.nola.gov), active STR licences (data.nola.gov ufdg-ajws, read 2026-10-20), open code cases (data.nola.gov u6yx-v2tw), HDLC/VCC map.</p><p class="fine">Estimate from public records as of 2026-10-20; the City decides. <a href="https://nola.gov/next/short-term-rental-administration/home/">City STR Administration</a> · <a href="https://gis.nola.gov/apps/nstr/">City NSTR map</a></p><p class="fine">This check covers the property, its zoning and its square only. It says nothing about the people who live nearby.</p></div>
+
+<h2 id="block">How we match "the block"</h2>
+<p>The City counts one Non-Commercial STR per city block, meaning the whole square: every lot facing any of its four sides plus interior lots (CZO §21.8.C.18(m)). We find the address on the City's address-point layer, take the square that contains it from the City's square layer, then count active Non-Commercial licences from the City's licence list (data.nola.gov ufdg-ajws) whose address is one of the square's own address points, or whose map point falls inside the square. Matching by address catches licences the City mapped in the wrong place. Operator permits and exempt lodging don't count. We also read the City's own NSTR map, which marks squares that already have an NSTR or a bed and breakfast; when it disagrees with our count, the answer is "needs review" and the City's map decides.</p>
+
+<p>The rule is in force: the Fifth Circuit upheld it on Aug. 5, 2026 (<a href="https://www.govinfo.gov/content/pkg/USCOURTS-ca5-25-30524/pdf/USCOURTS-ca5-25-30524-0.pdf">Bodin v. City of New Orleans, No. 25-30524</a>).</p>
+
+<h2 id="next">Next steps with the City</h2>
+<ol><li>Look up your square on the City&#x27;s NSTR map (https://gis.nola.gov/apps/nstr/): white is open, pink is not.</li><li>Take the City&#x27;s required STR training, then apply in the One Stop app during a quarterly window (https://onestopapp.nola.gov/).</li><li>Questions: STR Administration help desk (504) 658-7144 (Mon-Thu 8-5, Fri 8-3:30), str@nola.gov.</li></ol>
+<p class="small">STR Administration, 1340 Poydras St, Suite 800 · <a href="tel:+15046587144">(504) 658-7144</a> · <a href="mailto:str@nola.gov">str@nola.gov</a> · <a href="https://nola.gov/next/short-term-rental-administration/home/">nola.gov STR Administration</a> · <a href="https://onestopapp.nola.gov/">One Stop app</a></p>
+
+<div class="agent draft" data-gate="brokerage-pending"><h3>Talk to a local agent</h3><p>Talk to a local agent: Lane Davis II, a licensed Louisiana real estate agent [brokerage name pending: DRAFT, not for publishing].</p></div>
+
+<h2 id="rules">The rules we check, with sources</h2>
+<ol class="rules"><li>Two property permits exist: Non-Commercial (NSTR, a room-share style rental with the operator living on the lot) and Commercial (CSTR, whole units in commercial and mixed-use districts). Every STR also needs a permitted operator, and permits don&#x27;t transfer on sale.<span class="cite">City Code §26-615, §26-616(a), §26-619 · Ord. 29381 M.C.S., adopted 3-23-23, eff. 7-1-23 · <a href="https://library.municode.com/la/new_orleans/codes/code_of_ordinances?nodeId=PTIICO_CH26BUBUREHOST_ARTXISTSHRMRE">source</a></span></li><li>A Non-Commercial STR is allowed only in these zoning districts: R-RE, M-MU, HMR-1, HMR-2, HMR-3, VCE, HMC-1, HMC-2, HM-MU, HU-RS, HU-RD1, HU-RD2, HU-RM1, HU-RM2, HU-B1A, HU-B1, HU-MU, S-RS, S-RD, S-RM1, S-RM2, S-LRS1, S-LB1, S-LB2, S-LC, S-MU, MU-1, MU-2, EC, CBD-1, CBD-2, CBD-3, CBD-5, CBD-6. Not in the other Vieux Carré districts (only VCE), CBD-4, CBD-7, C-1 to C-3, or industrial districts.<span class="cite">CZO Table 21-3 and §21.8.C.18 · Ord. 29382 M.C.S. (3-23-23) as amended by Ord. 30311 · <a href="https://czo.nola.gov/article-21/">source</a></span></li><li>Only one Non-Commercial STR permit per city block, counting every lot on all four sides of the square and its interior lots. One per lot as well.<span class="cite">CZO §21.8.C.18(l), (m); City Code §26-617(g) · Ord. 29382 M.C.S., eff. 7-1-23; upheld in Bodin v. City of New Orleans (5th Cir. Aug. 5, 2026) · <a href="https://czo.nola.gov/article-21/">source</a></span></li><li>In residential districts and HU-B1A, HU-B1, HU-MU, S-LM, MU-1 and MU-2, a square may hold only one of: a bed and breakfast or a Non-Commercial STR. An existing B&amp;B fills the square.<span class="cite">CZO §21.8.C.18(q); §20.3.I · Ord. 29382 M.C.S. · <a href="https://czo.nola.gov/article-21/">source</a></span></li><li>When more than one complete application is filed for the same square, the City holds a lottery (quarterly). The winner has 5 calendar days to pay. Check the square is open (white) on the City&#x27;s NSTR map before applying; training comes first.<span class="cite">City STR Permit Lotteries page · page last updated 2026-10-02 · <a href="https://nola.gov/NEXT/Short-Term-Rental-Administration/Topics/Short-Term-Rental-Permit-Lotteries">source</a></span></li><li>There is no homestead or owner-residency rule any more. Instead the NSTR operator (the owner, or a tenant with a lease) must live in a reserved bedroom on the lot while guests stay and answer complaints within 1 hour. One NSTR per operator.<span class="cite">CZO §21.8.C.18(h)-(j), (o); Hignell-Stark v. City of New Orleans (5th Cir. 2022 and Oct. 7, 2025) · 2019 homestead rule struck Aug. 2022; operator-presence rule upheld Oct. 7, 2025 · <a href="https://www.govinfo.gov/content/pkg/USCOURTS-ca5-24-30160/pdf/USCOURTS-ca5-24-30160-0.pdf">source</a></span></li><li>No one may own, in whole or in part, more than one NSTR property. The owner can&#x27;t have unpaid City taxes, liens or unabated code violations, or an open construction permit. Affordable (MIZ, VIZ, small multi-family affordable) units can&#x27;t be STRs.<span class="cite">City Code §26-617(a) · Ord. 29381 M.C.S. as amended · <a href="https://library.municode.com/la/new_orleans/codes/code_of_ordinances?nodeId=PTIICO_CH26BUBUREHOST_ARTXISTSHRMRE">source</a></span></li><li>The ban on business entities owning or operating an STR was struck down; the Council adopted an amending ordinance on 2026-10-15 (text not yet in the published Code).<span class="cite">Hignell-Stark II, No. 24-30160 (5th Cir. Oct. 7, 2025); Council summary 2026-10-15 · 2025-10-07 / 2026-10-15 · <a href="https://council.nola.gov/news/october-2026/city-council-regular-meeting-summary-(1)/">source</a></span></li><li>NSTR: up to 3 guest bedrooms and 6 guests, one party at a time, no events, permit posted on the front. CSTR: up to 5 guest bedrooms and 10 guests per unit, and no more than 1 unit or 25% of a building&#x27;s units, whichever is greater (some districts exempt). No yearly night cap.<span class="cite">CZO §21.8.C.18(o); §20.3.LLL.1-2 · Ord. 29284 M.C.S. (1-5-23) and Ord. 29382 M.C.S. · <a href="https://czo.nola.gov/article-20/">source</a></span></li><li>No STR of any kind in the Garden District (St. Charles, Jackson, Magazine and Louisiana) or the Brown&#x27;s Dairy overlay.<span class="cite">CZO §20.3.LLL.1.h; §18.31.B.1 · Ord. 29126 M.C.S. (8-12-22); Ord. 29577 M.C.S. (8-16-23) · <a href="https://czo.nola.gov/article-20/">source</a></span></li><li>Transient Lodging Interim Zoning District: every new Commercial STR needs conditional-use approval from the City Planning Commission and Council.<span class="cite">CZO §19.4.A.23 · Ord. 30625 M.C.S., adopted 5-7-26 · <a href="https://czo.nola.gov/article-19/#19-4-A-23">source</a></span></li><li>The nightly fee is $12 in the published Code; the Council voted on 2026-10-15 to raise it to $20 (effective date not yet published).<span class="cite">City Code §26-616(d); Council summary 2026-10-15 · 2026-10-15 · <a href="https://council.nola.gov/news/october-2026/city-council-regular-meeting-summary-(1)/">source</a></span></li></ol>
+
+<h2 id="questions">Questions</h2>
+<details><summary>Do I need a homestead exemption?</summary><p>Not any more. The 2019 homestead rule was struck down in 2022. The current rule is an operator who lives on the lot during guest stays.</p></details><details><summary>What counts as a block?</summary><p>The whole City square: every lot facing any of its four sides plus interior lots (CZO §21.8.C.18(m)). Not just your side of the street.</p></details><details><summary>Is the one-per-block rule still in force?</summary><p>Yes. The Fifth Circuit upheld it on Aug. 5, 2026 (Bodin v. City of New Orleans).</p></details><details><summary>Who decides?</summary><p>The City&#x27;s STR Administration. This check is an estimate from public records. Help desk (504) 658-7144, str@nola.gov.</p></details>
+
+<p class="box">Estimate from public records as of 2026-10-20; the City decides. This check covers the property, its zoning and its square only. It says nothing about the people who live nearby. autoants is not the City of New Orleans and doesn't issue permits.</p>
+
+<footer>
+<p>autoants, short for automated assistants: AI office help for Louisiana service businesses, based in the New Orleans area · <a href="mailto:hello@autoants.com">hello@autoants.com</a> · <a href="../../privacy.html">Privacy</a> · <a href="../fortify-check/">Fortify Homes check</a></p>
+</footer>
+</div>
+<script>
+(function(){
+  var API = 'https://autoants-tools.saintdell.workers.dev';
+  var LIVE = /(^|\.)autoants\.com$/.test(location.hostname);
+  function say(t){ var s = document.getElementById('checkStatus'); s.textContent = t; s.style.display = 'block'; }
+  function val(f, n){ var x = f.querySelector('[name="' + n + '"]:checked'); return x ? x.value : ''; }
+  var cf = document.getElementById('checkForm'), out = document.getElementById('checkResult'), seq = 0;
+  cf.addEventListener('submit', function(e){
+    e.preventDefault();
+    var addr = cf.address.value.trim();
+    out.innerHTML = '';
+    if (!addr) { say('Add the address.'); cf.address.focus(); return; }
+    if (!LIVE) { say('Preview copy: the check runs only on autoants.com. Nothing was sent.'); return; }
+    var body = {address: addr, operator_on_site: val(cf, 'operator_on_site'), other_nstr: val(cf, 'other_nstr'),
+      entity_owner: val(cf, 'entity_owner')}, mine = ++seq, btn = cf.querySelector('button');
+    btn.disabled = true; say('Reading City records for ' + addr + '…');
+    fetch(API + '/str-check', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body)})
+      .then(function(r){ if (!r.ok) throw 0; return r.json(); })
+      .then(function(d){ if (mine !== seq) return; out.innerHTML = d.html; say('Result for ' + addr + '.'); })
+      .catch(function(){ if (mine === seq) say("The check for " + addr + " didn't work. Try again in a minute, or call the City's help desk at (504) 658-7144."); })
+      .then(function(){ btn.disabled = false; });
+  });
+})();
+</script>
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://autoants.com/tools/str-check/",
+   "url": "https://autoants.com/tools/str-check/",
+   "name": "New Orleans short-term rental eligibility check",
+   "description": "A free check of whether a New Orleans address can likely get a Non-Commercial short-term rental permit: zoning, the one-per-square rule, and open code cases, from City records.",
+   "dateModified": "2026-10-20",
+   "isPartOf": {
+    "@type": "WebSite",
+    "url": "https://autoants.com/",
+    "name": "autoants"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "autoants",
+    "url": "https://autoants.com/",
+    "email": "hello@autoants.com",
+    "areaServed": "New Orleans, Louisiana"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Can I get a short-term rental permit for this address?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It depends. This check reads three public facts: the zoning district must allow a Non-Commercial STR, the City square must not already have one (one per square, counting all four sides), and the address shouldn't have open code cases. It also asks about the operator, who must live on the lot during guest stays. The City checks more than this tool can: ownership, taxes and liens, training and documents. Whole-unit Commercial STRs are a separate permit and now need conditional-use approval."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do I need a homestead exemption?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not any more. The 2019 homestead rule was struck down in 2022. The current rule is an operator who lives on the lot during guest stays."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What counts as a block?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The whole City square: every lot facing any of its four sides plus interior lots (CZO \u00a721.8.C.18(m)). Not just your side of the street."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is the one-per-block rule still in force?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. The Fifth Circuit upheld it on Aug. 5, 2026 (Bodin v. City of New Orleans)."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Who decides?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The City's STR Administration. This check is an estimate from public records. Help desk (504) 658-7144, str@nola.gov."
+     }
+    }
+   ]
+  }
+ ]
+}</script>
+</body>
+</html>
