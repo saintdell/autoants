@@ -1,0 +1,98 @@
+/* autoants en español: shared styles for /es/ pages (same palette and type as the English home page). */
+:root{
+  --bg:#0b1712; --bg2:#0f1f18; --surface:#14261e; --surface2:#1a2f25;
+  --ink:#f4f1e8; --muted:#a3b0a8; --faint:#6f7d75;
+  --mint:#3ddcae; --mint-ink:#062a1d;
+  --line:rgba(244,241,232,.10); --line2:rgba(244,241,232,.16);
+  --draft-bg:#f5c84b; --draft-ink:#2a1f00;
+  --disp:'Archivo',-apple-system,system-ui,sans-serif;
+  --body:'Inter',-apple-system,system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --wrap:68rem;
+  color-scheme:dark;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--mint)}
+h1,h2,h3{font-family:var(--disp);letter-spacing:-.02em;line-height:1.08;text-wrap:balance}
+h1{font-size:clamp(2rem,6vw,3.4rem);font-weight:900}
+h2{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:800}
+h3{font-size:1.15rem;font-weight:800}
+p{text-wrap:pretty}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 16px}
+@media(min-width:640px){.wrap{padding:0 1.5rem}}
+
+/* Draft banner: stays until a fluent reviewer approves the wording (es/REVIEW.md). */
+.draft{background:var(--draft-bg);color:var(--draft-ink);font-weight:700;font-size:.92rem;text-align:center;padding:.6rem 16px;position:sticky;top:0;z-index:60}
+
+nav{border-bottom:1px solid var(--line);background:rgba(11,23,18,.92)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:60px;flex-wrap:wrap;padding-top:.5rem;padding-bottom:.5rem}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{height:22px;width:auto;display:block}
+.navlinks{display:flex;gap:1.1rem;flex-wrap:wrap;font-size:.92rem;font-weight:600}
+.navlinks a{color:var(--muted);text-decoration:none}
+.navlinks a:hover,.navlinks a[aria-current]{color:var(--ink)}
+.lang{font-family:var(--mono);font-size:.78rem;color:var(--muted);text-decoration:none;border:1px solid var(--line2);border-radius:8px;padding:.3rem .6rem}
+
+.eyebrow{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mint)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--disp);font-weight:800;font-size:1rem;padding:.9rem 1.4rem;border-radius:11px;text-decoration:none;border:0;cursor:pointer;min-height:44px}
+.btn-mint{background:var(--mint);color:var(--mint-ink)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line2)}
+.cta-row{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.4rem}
+
+header.hero{padding:3.2rem 0 2.6rem}
+header.hero .lede{font-size:1.15rem;color:var(--muted);max-width:44rem;margin-top:1rem}
+header.hero .lede b{color:var(--ink)}
+section{padding:2.6rem 0;border-top:1px solid var(--line)}
+.sec-head{max-width:44rem;margin-bottom:1.6rem}
+.sec-head p{color:var(--muted);margin-top:.6rem}
+
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.3rem}
+.card p,.card li{color:var(--muted);font-size:.97rem}
+.card h3{margin-bottom:.4rem}
+.card ul{padding-left:1.1rem;margin-top:.5rem}
+.card .tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mint);margin-bottom:.5rem}
+.price,.card .price{font-family:var(--disp);font-weight:900;font-size:1.6rem;color:var(--ink);margin:.3rem 0 .6rem}
+.price small,.card .price small{font-size:.95rem;font-weight:700;color:var(--muted)}
+.card.lead{border-color:var(--mint)}
+
+.facts{background:var(--surface2);border:1px solid var(--line2);border-radius:16px;padding:1.3rem}
+.facts dl{display:grid;grid-template-columns:minmax(7rem,max-content) 1fr;gap:.4rem 1rem}
+.facts dt{color:var(--muted);font-weight:600}
+@media(max-width:480px){.facts dl{grid-template-columns:1fr}.facts dd{margin-bottom:.4rem}}
+
+.note{border-left:4px solid var(--draft-bg);background:rgba(245,200,75,.08);padding:1rem 1.1rem;border-radius:0 12px 12px 0;color:var(--ink)}
+.note b{color:var(--draft-bg)}
+.fine{color:var(--muted);font-size:.93rem}
+.fine li{margin-left:1.1rem;margin-bottom:.3rem}
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1rem 1.2rem;margin-bottom:.8rem}
+details summary{cursor:pointer;font-weight:700;font-family:var(--disp)}
+details[open] summary{margin-bottom:.8rem}
+
+.chat{display:flex;flex-direction:column;gap:.5rem;max-width:26rem}
+.bub{padding:.6rem .9rem;border-radius:14px;font-size:.95rem;max-width:90%}
+.bub.in{background:var(--surface2);align-self:flex-start}
+.bub.out{background:var(--mint);color:var(--mint-ink);align-self:flex-end}
+.who{font-family:var(--mono);font-size:.7rem;color:var(--faint);letter-spacing:.08em}
+
+form.cform{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.4rem}
+form.cform label{display:flex;flex-direction:column;gap:.35rem;font-weight:600;font-size:.92rem}
+form.cform .full{grid-column:1/-1}
+form.cform input,form.cform select,form.cform textarea{font:inherit;background:var(--bg2);color:var(--ink);border:1px solid var(--line2);border-radius:10px;padding:.75rem .8rem;min-height:44px}
+form.cform .smsbox{flex-direction:row;align-items:flex-start;gap:.6rem;font-weight:500}
+form.cform .smsbox input{min-height:auto;margin-top:.3rem}
+.consent{color:var(--faint);font-size:.82rem}
+.sent{display:none;align-items:center;gap:.8rem;color:var(--mint);font-weight:700}
+@media(max-width:640px){form.cform{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--line);padding:2rem 0 3rem;color:var(--muted);font-size:.88rem}
+footer .wrap{display:flex;flex-direction:column;gap:.6rem}
+footer a{color:inherit}
+@media(max-width:640px){
+  nav .navlinks{order:3;width:100%;flex-wrap:nowrap;overflow-x:auto;gap:1rem;padding-bottom:.2rem;scrollbar-width:none}
+  nav .navlinks a{white-space:nowrap}
+}
+form.cform label{min-width:0}
+form.cform input:not([type=checkbox]),form.cform select,form.cform textarea{width:100%;min-width:0}
