@@ -1,0 +1,13 @@
+{
+ "slug": "sample-hvac",
+ "business": "Sample Heating & Air",
+ "uses": [
+  "the Sample Heating & Air website",
+  "Sample Heating & Air's Facebook, Instagram and YouTube pages",
+  "Sample Heating & Air's Google Business Profile posts"
+ ],
+ "consent_text": "I agree that Sample Heating & Air may use my video and/or the words of my review, with the label \"real customer\", in these places only: the Sample Heating & Air website; Sample Heating & Air's Facebook, Instagram and YouTube pages; Sample Heating & Air's Google Business Profile posts. I was not paid or given anything (money, a discount, a gift or an entry) for my review or this video, and nothing was offered for saying something good. I am not an owner or employee of the business, or a relative of one. I can withdraw this at any time by replying to Sample Heating & Air's message, and they will stop using it. Showing my first name is my choice (the box below).",
+ "consent_text_version": "tc-consent/1",
+ "upload_endpoint": "",
+ "sample": true
+}

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Record a short video</title>
+<style>
+:root{--ink:#13243a;--mute:#4e5d70;--line:#d9dee5;--paper:#fff;--soft:#f2f5f9;--accent:#1d4e89;--ok:#1f6b3a;--warn:#9a3412}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ink:#e8edf3;--mute:#aebed3;--line:#2b3a4d;--paper:#0f1722;--soft:#172233;--accent:#7fb0ef;--ok:#6fcf97;--warn:#f0a36b}}
+:root[data-theme="dark"]{--ink:#e8edf3;--mute:#aebed3;--line:#2b3a4d;--paper:#0f1722;--soft:#172233;--accent:#7fb0ef;--ok:#6fcf97;--warn:#f0a36b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+main{max-width:560px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:24px;line-height:1.2;margin:4px 0 8px}h2{font-size:18px;margin:22px 0 8px}
+.biz{color:var(--mute);font-size:15px;margin:0}
+.box{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.consent-text{font-size:15px}
+label.check{display:flex;gap:10px;align-items:flex-start;margin:10px 0;font-size:16px}
+label.check input{width:22px;height:22px;flex:none;margin-top:2px}
+input[type=text]{width:100%;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+button{font:inherit;font-weight:600;border:0;border-radius:10px;padding:12px 18px;background:var(--accent);color:#fff;cursor:pointer;min-height:48px}
+button[disabled]{opacity:.45;cursor:not-allowed}
+button.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+video{width:100%;max-height:60vh;border-radius:12px;background:#000;aspect-ratio:9/16;object-fit:cover}
+.timer{font-variant-numeric:tabular-nums;font-weight:700;font-size:20px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:10px 0}
+.note{color:var(--mute);font-size:14px}.ok{color:var(--ok);font-weight:600}.warn{color:var(--warn);font-weight:600}
+.sample{background:#fde7ea;color:#7a1020;padding:8px 12px;border-radius:8px;font-weight:600;font-size:14px}
+[hidden]{display:none!important}
+pre{white-space:pre-wrap;font-size:12px;background:var(--soft);padding:10px;border-radius:8px;overflow-x:auto}
+</style>
+</head>
+<body>
+<main>
+  <p class="sample" id="sample" hidden>SAMPLE page: fictional business. Nothing you record here is sent anywhere.</p>
+  <p class="biz" id="biz"></p>
+  <h1>Would you record a 20-second video?</h1>
+  <p>Say a few words about your experience, in your own words. It's optional, and you can change your mind at any
+    time.</p>
+
+  <section id="step-consent" aria-labelledby="h-consent">
+    <h2 id="h-consent">1. Your permission first</h2>
+    <div class="box"><p class="consent-text" id="consent-text"></p></div>
+    <label class="check"><input type="checkbox" id="c-agree"> <span>I agree to the above.</span></label>
+    <label class="check"><input type="checkbox" id="c-unpaid"> <span>I was not paid or given anything for my review or
+      this video, and I'm not an owner, employee or relative of one.</span></label>
+    <label class="check"><input type="checkbox" id="c-name"> <span>You may show my first name with the video
+      (optional).</span></label>
+    <label class="check"><input type="checkbox" id="c-review"> <span>You may also show the words of my written review
+      as a text video (optional; no voice, no face).</span></label>
+    <label for="first">Your first name</label>
+    <input type="text" id="first" autocomplete="given-name">
+    <label for="signed">Type your full name to sign</label>
+    <input type="text" id="signed" autocomplete="name">
+    <div class="row"><button id="to-record" type="button" disabled>Continue to recording</button></div>
+  </section>
+
+  <section id="step-record" hidden aria-labelledby="h-record">
+    <h2 id="h-record">2. Record (up to 20 seconds)</h2>
+    <video id="live" playsinline muted autoplay aria-label="Camera preview"></video>
+    <div class="row">
+      <button id="rec" type="button">Start recording</button>
+      <button id="stop" type="button" class="ghost" hidden>Stop</button>
+      <span class="timer" id="timer" aria-live="polite">0:20</span>
+    </div>
+    <p class="note">Hold the phone upright. Talk like you would to a neighbor. You can re-record as many times as you
+      like.</p>
+    <p class="warn" id="cam-err" hidden></p>
+  </section>
+
+  <section id="step-review" hidden aria-labelledby="h-review">
+    <h2 id="h-review">3. Watch it back</h2>
+    <video id="playback" playsinline controls aria-label="Your recording"></video>
+    <div class="row">
+      <button id="send" type="button">Send it</button>
+      <button id="again" type="button" class="ghost">Record again</button>
+    </div>
+  </section>
+
+  <section id="step-done" hidden aria-live="polite">
+    <h2>Thank you</h2>
+    <p id="done-msg"></p>
+    <details id="record-details"><summary>What was saved with your video</summary><pre id="record-json"></pre></details>
+  </section>
+</main>
+<script src="record.js"></script>
+</body>
+</html>
