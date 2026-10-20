@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New Orleans permit fee calculator (free) · autoants</title>
+<meta name="description" content="Estimate City of New Orleans permit fees for building, fence, pool, roof, demolition, sign, electrical, mechanical and plumbing permits, from the City's published fee schedule. Estimate only; the City's calculation is final.">
+<link rel="canonical" href="https://autoants.com/tools/permit-fees/">
+<meta property="og:title" content="New Orleans permit fee calculator · autoants">
+<meta property="og:description" content="A free estimate of City of New Orleans permit fees from the published schedule. The City's calculation is final.">
+<meta property="og:url" content="https://autoants.com/tools/permit-fees/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://autoants.com/brand/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="../../brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "New Orleans permit fee calculator", "url": "https://autoants.com/tools/permit-fees/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimates City of New Orleans permit fees from the published fee schedule. Estimate only; the City's calculation is final.", "dateModified": "2026-10-20", "publisher": {"@type": "Organization", "name": "autoants", "legalName": "AutoAnts, LLC", "url": "https://autoants.com/", "email": "hello@autoants.com"}}</script>
+<style>
+  :root{--bg:#0b1712;--surface:#14261e;--surface-2:#1b3328;--ink:#f4f1e8;--muted:#a3b0a8;--faint:#8d9a93;
+        --mint:#3ddcae;--mint-ink:#062a1d;--line:rgba(244,241,232,.12);--stone:#ebe8e2;--warn:#f2c46d;
+        --disp:"Archivo",system-ui,sans-serif;--body:"Inter",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+  .wrap{max-width:820px;margin:0 auto;padding:0 16px}
+  nav{display:flex;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  nav .sp{margin-left:auto}
+  nav a.ghost{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mint);margin:36px 0 0}
+  h1{font-family:var(--disp);font-weight:800;font-size:clamp(32px,7vw,52px);line-height:1.04;letter-spacing:-.02em;margin:10px 0 12px;text-wrap:balance}
+  h2{font-family:var(--disp);font-weight:800;font-size:clamp(22px,4.4vw,28px);line-height:1.15;margin:44px 0 10px;text-wrap:balance}
+  h3{font-family:var(--disp);font-weight:800;font-size:19px;margin:0 0 6px}
+  p{margin:.5em 0}
+  .lede{font-size:clamp(17px,2.6vw,19px);max-width:60ch}
+  .muted{color:var(--muted)}
+  .small{font-size:14px;color:var(--muted)}
+  .notice{border-left:3px solid var(--warn);background:rgba(242,196,109,.08);border-radius:0 10px 10px 0;padding:10px 14px;margin:18px 0;font-size:15px}
+  .notice b{color:var(--warn)}
+
+  /* calculator */
+  .calc{min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 16px;margin:22px 0 8px;display:grid;gap:14px}
+  label{display:grid;gap:5px;font-size:14px;color:var(--muted);min-width:0}
+  label b{color:var(--ink);font-weight:600}
+  input[type=number],select{background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:12px;font:inherit;font-size:16px;width:100%;max-width:100%;min-width:0}
+  select.kind{font-size:18px;border-color:rgba(61,220,174,.45)}
+  .grid{display:grid;grid-template-columns:1fr;gap:12px}
+  .chk{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:var(--ink)}
+  .chk input{margin-top:4px;width:18px;height:18px;flex:0 0 auto;accent-color:var(--mint)}
+  .chk span small{display:block;color:var(--muted);font-size:13px}
+  fieldset{border:0;padding:0;margin:0;display:grid;gap:12px;min-width:0}
+  fieldset[hidden]{display:none}
+  .hint{font-size:13px;color:var(--faint);margin:-6px 0 0}
+  .out{background:var(--surface-2);border-radius:12px;padding:16px;display:grid;gap:8px}
+  .out .total{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:10px;margin-top:2px}
+  .out .total span{font-weight:600}
+  .out .total strong{font-family:var(--disp);font-size:34px;font-weight:800;color:var(--mint);font-variant-numeric:tabular-nums}
+  .out ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+  .out li{display:flex;justify-content:space-between;gap:12px;font-size:15px}
+  .out li span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .out .final{font-size:13px;color:var(--muted);margin:0}
+  .out .final a{color:var(--muted)}
+  .out .notes{font-size:13px;color:var(--faint);margin:0;padding-left:1.1em}
+
+  /* calls to action */
+  .cta{border:1px solid var(--line);border-radius:14px;padding:16px;margin:18px 0;display:grid;gap:8px}
+  .cta.owner{background:var(--surface)}
+  .cta.pro{background:linear-gradient(135deg,rgba(61,220,174,.12),rgba(61,220,174,.02));border-color:rgba(61,220,174,.35)}
+  .btn{display:inline-block;justify-self:start;background:var(--mint);color:var(--mint-ink);text-decoration:none;border:0;border-radius:10px;padding:12px 18px;font-family:var(--disp);font-weight:800;font-size:16px}
+  .btn.line{background:transparent;color:var(--ink);border:1.5px solid var(--mint)}
+  .fine{font-size:12.5px;color:var(--faint);margin:0}
+
+  /* plain fee facts */
+  table{width:100%;border-collapse:collapse;font-size:14.5px;margin:10px 0}
+  th,td{text-align:left;vertical-align:top;padding:9px 8px;border-bottom:1px solid var(--line)}
+  th{font-weight:600;color:var(--muted);font-size:13px}
+  td:last-child{font-variant-numeric:tabular-nums}
+  .tablewrap{overflow-x:auto}
+  .src{font-size:13px;color:var(--faint)}
+  .src a{color:var(--faint)}
+  .facts{background:var(--surface);border-radius:12px;padding:14px 16px}
+  .facts dl{display:grid;grid-template-columns:1fr;gap:2px 16px;margin:0}
+  .facts dt{color:var(--muted);font-size:13px;margin-top:6px}
+  .facts dd{margin:0}
+  details{border-bottom:1px solid var(--line);padding:12px 0}
+  summary{cursor:pointer;font-weight:600}
+  details p{color:var(--muted)}
+  footer{color:var(--faint);font-size:13px;padding:36px 0 48px;border-top:1px solid var(--line);margin-top:48px}
+  footer a{color:var(--faint)}
+  @media (min-width:640px){
+    .calc{padding:22px 24px}
+    .grid.two{grid-template-columns:1fr 1fr}
+    .facts dl{grid-template-columns:180px 1fr}
+    .facts dt{margin-top:0}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a href="../../index.html"><img src="../../brand/autoants-logo-reverse.svg" alt="autoants home" style="height:26px;width:auto;display:block"></a>
+    <div class="sp"></div>
+    <a class="ghost" href="../../index.html#contact">Contact</a>
+  </nav>
+
+  <p class="eyebrow">Free tool · New Orleans</p>
+  <h1>New Orleans permit fee calculator</h1>
+  <p class="lede">What will the City charge for your permit? Pick the permit, enter the job, and see each fee the City's schedule adds up.</p>
+  <p class="notice"><b>Estimate only.</b> The City's calculation is final. Fees are due when you apply and aren't refundable. Check yours with the City of New Orleans: <a href="https://nola.gov/building-permit-fee-estimator/">nola.gov building permit fees</a> and <a href="https://onestopapp.nola.gov/">One Stop</a>.</p>
+
+  <form class="calc" id="calc" novalidate onsubmit="return false">
+    <label><b>Permit</b>
+      <select class="kind" id="kind" name="kind">
+        <option value="building">Building (new construction, renovation, addition, shed)</option>
+        <option value="fence">Fence (over 7 ft, or a masonry wall over 3 ft)</option>
+        <option value="pool">Swimming pool</option>
+        <option value="roof">Roof (re-roof)</option>
+        <option value="demolition">Demolition</option>
+        <option value="sign">Sign</option>
+        <option value="electrical">Electrical</option>
+        <option value="mechanical">Mechanical (A/C, heating, gas, water heater)</option>
+        <option value="plumbing">Plumbing</option>
+      </select>
+    </label>
+
+    <fieldset data-for="building fence pool demolition sign roof-other" id="f-value">
+      <label><b id="value-label">Job value (materials and labor)</b><input type="number" id="value" min="0" step="100" inputmode="numeric" value="25000"></label>
+      <p class="hint" id="value-hint">Use the fair market value of the whole job, even if you do the work yourself. The City can set it higher.</p>
+    </fieldset>
+
+    <fieldset data-for="roof" id="f-roof">
+      <label class="chk"><input type="checkbox" id="onetwo" checked><span>It's a single or a double (one- or two-family home)<small>Other buildings are charged on the job value.</small></span></label>
+    </fieldset>
+
+    <fieldset data-for="building fence pool sign roof-other" id="f-plans">
+      <label class="chk"><input type="checkbox" id="plans" checked><span>Plans are required (adds plan review)<small>New construction, additions, structural work and most commercial jobs. City records show plan review on almost every building permit.</small></span></label>
+    </fieldset>
+
+    <fieldset data-for="building fence pool demolition sign roof" id="f-hist">
+      <label class="chk"><input type="checkbox" id="historic"><span>In a historic district, a landmark, or the Vieux Carr&eacute; (+50%)<small>HDLC or Vieux Carr&eacute; Commission review adds a 50% surcharge. Look up your address on <a href="https://property.nola.gov/">property.nola.gov</a>.</small></span></label>
+    </fieldset>
+
+    <fieldset data-for="demolition" id="f-ncd">
+      <label><b>Neighborhood Conservation District review</b>
+        <select id="ncd"><option value="">Not in the district</option><option value="residential">In the district, residential</option><option value="commercial">In the district, commercial or multi-family</option></select>
+      </label>
+    </fieldset>
+
+    <fieldset data-for="sign" id="f-sign">
+      <label class="chk"><input type="checkbox" id="illuminated"><span>The sign lights up<small>Adds the electrician's $40 sign permit.</small></span></label>
+    </fieldset>
+
+    <fieldset data-for="electrical" id="f-elec">
+      <div class="grid two">
+        <label><b>Service or device amps</b><input type="number" id="amps" min="0" step="25" value="200"></label>
+        <label><b>New circuits</b><input type="number" id="circuits" min="0" step="1" value="0"></label>
+        <label>Illuminated signs<input type="number" id="esigns" min="0" step="1" value="0"></label>
+        <label>Elevators or lifts<input type="number" id="elevators" min="0" step="1" value="0"></label>
+        <label>Construction loops<input type="number" id="loops" min="0" step="1" value="0"></label>
+      </div>
+      <p class="hint">A 200-amp panel swap is 200 amps and no circuits. A standby generator is its transfer switch amps plus one circuit.</p>
+    </fieldset>
+
+    <fieldset data-for="mechanical" id="f-mech">
+      <div class="grid two">
+        <label><b>A/C systems</b><input type="number" id="systems" min="0" step="1" value="1"></label>
+        <label><b>Tons per system</b><input type="number" id="tons" min="0" step="0.5" value="3"></label>
+        <label><b>Heat with each system</b>
+          <select id="ah"><option value="60000">Gas furnace or air handler with heat (51K to 200K BTU)</option><option value="40000">Electric air handler or heat pump (up to 50K BTU)</option><option value="250000">Large unit (over 200K BTU)</option><option value="0">None (condenser only)</option></select>
+        </label>
+        <label>Water heaters<input type="number" id="wh" min="0" step="1" value="0"></label>
+        <label>Water heater size
+          <select id="whsize"><option value="40000">Up to 50K BTU (most homes)</option><option value="100000">51K to 200K BTU</option></select>
+        </label>
+        <label>Gas line, feet<input type="number" id="gasft" min="0" step="10" value="0"></label>
+        <label>Gas outlets<input type="number" id="gasout" min="0" step="1" value="0"></label>
+        <label>Repair or alteration, contract price<input type="number" id="alt" min="0" step="100" value="0"></label>
+      </div>
+      <p class="hint">Use repair or alteration only for work not counted by unit.</p>
+    </fieldset>
+
+    <fieldset data-for="plumbing" id="f-plmb">
+      <label><b>Fixtures</b><input type="number" id="fixtures" min="0" step="1" value="6"></label>
+      <p class="hint">Count each toilet, sink, tub, shower, dishwasher, washer box and water heater the plumber connects.</p>
+    </fieldset>
+
+    <div class="out" aria-live="polite" id="out">
+      <ul id="lines"><li><span>Building permit</span><span>$185.00</span></li><li><span>Plan review</span><span>$120.00</span></li></ul>
+      <div class="total"><span>Estimated City fee</span><strong id="total">$305.00</strong></div>
+      <ul class="notes" id="notes"></ul>
+      <p class="final">Estimate only. The City's calculation is final. <a href="https://nola.gov/building-permit-fee-estimator/">Check it with the City</a>.</p>
+    </div>
+  </form>
+  <p class="small">Nothing you type here leaves your browser. No sign-up.</p>
+
+  <div class="cta owner">
+    <h3>Need a licensed contractor?</h3>
+    <p class="muted">Lane Davis II's Referral Desk introduces you to up to three licensed contractors who have pulled permits for this kind of work near you. You decide who hears from you; nobody gets your number until you say yes to them by name.</p>
+    <a class="btn line" href="#referral-intake-pending" data-pending="referral-intake-url">Tell us about the job</a>
+    <p class="fine">Free for you. Contractors pay Lane a referral fee when an introduction turns into a real conversation, and the fee never changes who you're shown. Check any contractor's license yourself at <a href="https://lslbc.louisiana.gov/">lslbc.louisiana.gov</a>.</p>
+  </div>
+
+  <h2>New Orleans permit fees, in plain numbers</h2>
+  <p class="muted">The schedule this calculator uses, as of October 20, 2026.</p>
+  <div class="tablewrap">
+  <table>
+  <thead><tr><th>Permit</th><th>Fee</th></tr></thead>
+  <tbody>
+    <tr><td>Building permit (new construction, renovation, addition, accessory structure, fence, pool)</td><td>$60 plus $5 per $1,000 of job value or fraction of $1,000</td></tr>
+    <tr><td>Plan review, when plans are required</td><td>$1 per $1,000 of job value, $120 minimum</td></tr>
+    <tr><td>Plan re-review</td><td>$0.50 per $1,000, $45 minimum, $5,000 maximum</td></tr>
+    <tr><td>Historic district, landmark or Vieux Carr&eacute;</td><td>+50% on the building, plan review, demolition and sign permit fees</td></tr>
+    <tr><td>Re-roof, single or double</td><td>$60 (the building permit base fee)</td></tr>
+    <tr><td>Demolition permit</td><td>$95 plus $5 per $1,000 of demolition cost</td></tr>
+    <tr><td>Neighborhood Conservation District demolition review</td><td>$250 residential, $500 commercial or multi-family</td></tr>
+    <tr><td>Sign permit</td><td>$60 plus $5 per $1,000 of sign cost, plus $125 sign review and $40 first-year operating fee (then $40 a year)</td></tr>
+    <tr><td>Electrical permit</td><td>$40 base, plus $0.30 per amp of service and $3 per circuit; $40 per illuminated sign, $60 per elevator or lift, $40 per construction loop</td></tr>
+    <tr><td>Mechanical (A/C) permit</td><td>$30 application, plus $15 per A/C unit up to 3 tons and $3 per ton over 3; air handlers and furnaces $20 (to 50K BTU), $25 (51K-200K), $35 (over 200K)</td></tr>
+    <tr><td>Gas and water heaters</td><td>Gas line $15 for the first 100 ft and 5 outlets, $12 per extra 100 ft, $1 per extra outlet; water heater $20 (to 50K BTU) or $25 (51K-200K)</td></tr>
+    <tr><td>Mechanical repair or alteration</td><td>$30 for the first $1,500 of contract price, $10 per $1,000 after</td></tr>
+    <tr><td>Plumbing permit</td><td>About $10 per fixture, $50 minimum (from City permit records; no published schedule)</td></tr>
+  </tbody>
+</table>
+  </div>
+  <p class="src">Sources: <a href="https://cityofno.granicus.com/MetaViewer.php?view_id=42&amp;clip_id=5060&amp;meta_id=732053">City Code Sec. 26-15 as amended by Ordinance M.C.S. 30235 (Nov. 21, 2024)</a>; <a href="https://nola.gov/building-permit-fee-estimator/">nola.gov Building Permit Fee page (updated Aug. 14, 2026)</a>; <a href="https://nola.gov/electrical-permit/">Electrical Code fees, Sec. 2734 (nola.gov Electrical Permit page)</a>; <a href="https://nola.gov/nola/media/One-Stop-Shop/Safety%20and%20Permits/Mechanical/OSS_SP_MECHANICAL_PERMIT_APPLICATION_SUPPLEMENT_D1-AC.pdf">Mechanical Code Sec. 104.5-104.6 and the City's A/C and gas permit supplements</a>; <a href="https://www.nola.gov/nola/media/One-Stop-Shop/Safety%20and%20Permits/SP-Building-Permit-Fee-Schedule.pdf">Safety &amp; Permits fee schedule (sign and conservation district fees)</a>; <a href="https://data.nola.gov/resource/72f9-bi28.json">City permit records on data.nola.gov (plumbing rate, re-roof fee)</a>.</p>
+
+  <h2>How close is the estimate?</h2>
+  <p class="muted">We ran the calculator on recent real permits from the City's open data (<a href="https://data.nola.gov/">data.nola.gov</a>) and compared it with the fee the City charged, permits filed up to October 20, 2026.</p>
+  <div class="tablewrap">
+  <table>
+  <thead><tr><th>Permit</th><th>Real permits checked</th><th>Estimate exact (within $1)</th><th>Within 10%</th><th>Typical miss</th></tr></thead>
+  <tbody>
+    <tr><td>Building</td><td>50</td><td>86%</td><td>86%</td><td>$0</td></tr>
+    <tr><td>Fence</td><td>50</td><td>60%</td><td>62%</td><td>$0</td></tr>
+    <tr><td>Pool</td><td>39</td><td>77%</td><td>90%</td><td>$0</td></tr>
+    <tr><td>Roof</td><td>50</td><td>88%</td><td>88%</td><td>$0</td></tr>
+    <tr><td>Demolition</td><td>50</td><td>86%</td><td>88%</td><td>$0</td></tr>
+    <tr><td>Sign</td><td>50</td><td colspan="3">Not checked: sign permits don't record the sign's cost. City fees on them ran $230 to $690.</td></tr>
+    <tr><td>Electrical</td><td>50</td><td>68%</td><td>80%</td><td>$0</td></tr>
+    <tr><td>Mechanical (A/C)</td><td>50</td><td>60%</td><td>90%</td><td>$0</td></tr>
+    <tr><td>Plumbing</td><td>50</td><td>34%</td><td>44%</td><td>$35</td></tr>
+  </tbody>
+</table>
+  </div>
+  <p class="small">Most misses on building, fence, roof and demolition permits are exactly the 50% historic district surcharge, which you set with the checkbox. Plumbing has no published schedule, so its estimate is the low end: sewer, water service and multi-unit work usually cost more.</p>
+
+  <div class="cta pro">
+    <h3>Pull permits for a living? Get found by people pulling permits.</h3>
+    <p class="muted">People price a job here right before they hire. autoants helps New Orleans contractors show up when they search, answer every call, and book the work.</p>
+    <a class="btn" href="../../index.html?ref=permit-fees#contact">See how autoants works</a>
+  </div>
+
+  <h2>About this page</h2>
+  <div class="facts">
+    <dl>
+      <dt>Made by</dt><dd>autoants (AutoAnts, LLC), automated assistants and websites for local businesses</dd>
+      <dt>Based in</dt><dd>Louisiana</dd>
+      <dt>Email</dt><dd><a href="mailto:hello@autoants.com">hello@autoants.com</a></dd>
+      <dt>Website</dt><dd><a href="https://autoants.com/">autoants.com</a></dd>
+      <dt>Fee schedule checked</dt><dd>October 20, 2026</dd>
+      <dt>Not the City</dt><dd>autoants is not part of the City of New Orleans. The City's Department of Safety &amp; Permits sets and calculates every fee.</dd>
+    </dl>
+  </div>
+
+  <h2>Questions</h2>
+  <details><summary>Is this the official City fee?</summary><p>No. It is an estimate from the City's published schedule. The City's calculation is final, and the Director of Safety &amp; Permits can set the job value higher if it looks low.</p></details>
+  <details><summary>What job value should I use?</summary><p>The fair market value of all the work on the permit, materials and labor, including the electrical, gas, mechanical and plumbing equipment, even if you do the work yourself.</p></details>
+  <details><summary>Do I need a permit for a fence or a roof?</summary><p>Fences up to 7 feet that meet the zoning rules don't need a building permit. Replacing less than half the roof on a single or double doesn't either. Historic district and Vieux Carr&eacute; rules can still apply, so check with the HDLC or VCC first.</p></details>
+  <details><summary>What if work starts before the permit?</summary><p>The City adds a penalty: 200% of all fees for building work started without a permit, 100% when work starts after you apply but before approval, and five times the listed fee for electrical and mechanical work. This calculator leaves penalties out.</p></details>
+  <details><summary>Who pulls electrical, mechanical and plumbing permits?</summary><p>The licensed contractor: a City Class A electrical, A/C or gas contractor, or an Orleans Parish licensed master plumber. Their fee is usually inside their price.</p></details>
+
+  <footer>
+    <p>autoants, short for automated assistants · Louisiana · <a href="../../privacy.html">Privacy</a> · <a href="../../nola/">New Orleans guide</a></p>
+  </footer>
+</div>
+
+<script type="application/json" id="schedule">{"_note":"City of New Orleans permit fees as the calculator models them. Every number names its source. Read 2026-10-20. The City's calculation is final; this is an estimate. Edit here, then run page.py: the page and the Python calculator both read this file.","checked":"2026-10-20","sources":{"ord_2024":{"title":"Ordinance M.C.S. No. 30235 (Calendar No. 34,935, adopted as amended Nov. 21, 2024): amends City Code Secs. 26-14 to 26-19 and 26-21 to 26-23, adopting the International Building Code 2021 with New Orleans amendments. Sec. 26-15, Section 109.6 is the building permit fee schedule.","url":"https://cityofno.granicus.com/MetaViewer.php?view_id=42&clip_id=5060&meta_id=732053","read":"2026-10-20"},"estimator_page":{"title":"City of New Orleans, Building Permit Fee (nola.gov), last updated 8/14/2026","url":"https://nola.gov/building-permit-fee-estimator/","read":"2026-10-20"},"electrical":{"title":"City Code Sec. 26-15 Electrical amendments, Section 2734 Fees: Permits (Ordinance Cal. No. 31,893, May 18, 2017, IBC 2015 amendments; unchanged on nola.gov's Electrical Permit page, last updated 5/11/2026)","url":"https://nola.gov/electrical-permit/","ordinance_url":"https://cityofno.granicus.com/MetaViewer.php?view_id=7&clip_id=2658&meta_id=374888","read":"2026-10-20"},"mechanical":{"title":"City Code Sec. 26-17, Mechanical amendments Sections 104.5-104.6 (Ordinance Cal. No. 31,895, May 18, 2017, IMC 2015) and the City's Mechanical A/C Permit Application Supplement D.1 and Gas Supplement D.2 (the per-item fee lines)","url":"https://nola.gov/nola/media/One-Stop-Shop/Safety%20and%20Permits/Mechanical/OSS_SP_MECHANICAL_PERMIT_APPLICATION_SUPPLEMENT_D1-AC.pdf","gas_url":"https://nola.gov/nola/media/One-Stop-Shop/Safety%20and%20Permits/Mechanical/OSS_SP_MECHANICAL_PERMIT_APPLICATION_SUPPLEMENT_D2-Gas.pdf","ordinance_url":"https://cityofno.granicus.com/MetaViewer.php?view_id=7&clip_id=2658&meta_id=374896","read":"2026-10-20"},"sign_demo_schedule":{"title":"City of New Orleans, Department of Safety & Permits, Building Permit Fee Schedule (one-page PDF, file dated 2012): sign review fee, sign operating fee, Neighborhood Conservation District demolition fee","url":"https://www.nola.gov/nola/media/One-Stop-Shop/Safety%20and%20Permits/SP-Building-Permit-Fee-Schedule.pdf","read":"2026-10-20"},"plumbing_observed":{"title":"No published plumbing fee schedule found. Plumbing permits are filed through One Stop under the Sewerage & Water Board Plumbing Code. The per-fixture rate here is what the City's own permit records show: data.nola.gov dataset 72f9-bi28, fee field, permits whose description states a fixture count.","url":"https://data.nola.gov/resource/72f9-bi28.json","read":"2026-10-20"},"permit_data":{"title":"City of New Orleans permits, data.nola.gov dataset 72f9-bi28 (fee and estprojectcost fields)","url":"https://data.nola.gov/resource/72f9-bi28.json","read":"2026-10-20"}},"building":{"source":"ord_2024","base":60,"per_1000":5,"plan_review_min":120,"plan_review_per_1000":1,"rereview_per_1000":0.5,"rereview_min":45,"rereview_max":5000,"historic_surcharge":0.5,"_rounding":"Per $1,000 'or fraction thereof': value is rounded up to the next $1,000. City records show plan review is rounded up the same way.","_history":"Before Ord. 30235 took effect the plan review minimum was $60 (2017 schedule). City records switch from $60 to $120 between June and August 2026."},"demolition":{"source":"ord_2024","base":95,"per_1000":5,"historic_surcharge":0.5,"ncd_fee_residential":250,"ncd_fee_commercial":500,"_ncd_source":"sign_demo_schedule"},"roof":{"source":"permit_data","one_two_family_flat":60,"_note":"Re-roofing a single or double: the City records it at $0 declared value and charges the $60 base building fee (1,900 of 2,090 re-roof permits since June 2025). Replacing less than 50% of the roof on a one- or two-family home needs no permit (Ord. 30235, Sec. 105.2 exemptions). Other buildings use the building formula on the job value."},"sign":{"source":"sign_demo_schedule","base":60,"per_1000":5,"review":125,"first_year_operating":40,"annual_operating":40,"plan_review_min":120,"plan_review_per_1000":1,"historic_surcharge":0.5,"illuminated_electrical":40},"electrical":{"source":"electrical","base":40,"per_amp":0.3,"per_circuit":3,"per_sign":40,"per_elevator":60,"per_construction_loop":40,"low_voltage":40},"mechanical":{"source":"mechanical","application":30,"ac_unit_to_3_tons":15,"per_ton_over_3":3,"_tons":"City records charge whole tons over 3 (a 3.5-ton unit is charged as 3; 4 tons adds $3).","air_handler_to_50k":20,"air_handler_51k_200k":25,"air_handler_over_200k":35,"alteration_first_1500":30,"alteration_per_1000_after":10,"gas_line_first_100ft_5_outlets":15,"gas_outlet_over_5":1,"gas_per_100ft_over_100":12,"water_heater_to_50k":20,"water_heater_51k_200k":25},"plumbing":{"source":"plumbing_observed","per_fixture":10,"minimum":50}}</script>
+<script>
+/* New Orleans permit fee estimate: the same formulas as feecalc.py, from the same schedule.json.
+   Estimate only; the City's calculation is final. page.py inlines this file into the page.
+   In node: const PFC = require('./calc.js'); PFC.estimate(schedule, 'building', {value: 85000}) */
+(function (root, factory) {
+  if (typeof module === 'object' && module.exports) module.exports = factory();
+  else root.PFC = factory();
+})(typeof self !== 'undefined' ? self : this, function () {
+  'use strict';
+
+  function perK(value) {
+    var v = Math.max(0, Number(value) || 0);
+    return Math.ceil(v / 1000 - 1e-9);
+  }
+  function money(x) { return Math.round((Number(x) + 1e-9) * 100) / 100; }
+  function result(kind, lines, notes, source) {
+    var out = [], total = 0;
+    lines.forEach(function (l) {
+      if (l[1]) { var a = money(l[1]); out.push({label: l[0], amount: a}); total += a; }
+    });
+    return {kind: kind, total: money(total), lines: out, notes: notes, source: source};
+  }
+  var HIST = 'Historic district / Vieux Carre surcharge (50%)';
+
+  function valueFee(value, plans, historic, s, label) {
+    var k = perK(value);
+    var permit = s.base + s.per_1000 * k;
+    var review = plans ? Math.max(s.plan_review_min, s.plan_review_per_1000 * k) : 0;
+    var lines = [[label, permit]];
+    if (plans) lines.push(['Plan review', review]);
+    if (historic) lines.push([HIST, (permit + review) * s.historic_surcharge]);
+    return lines;
+  }
+
+  var F = {};
+  F.building = function (S, o) {
+    return result('building', valueFee(o.value, o.plans !== false, !!o.historic, S.building, 'Building permit'),
+      ['Plan review applies when plans are required: new construction, additions, structural work and most commercial jobs. City records show it on almost every building permit.'],
+      S.building.source);
+  };
+  F.fence = function (S, o) {
+    return result('fence', valueFee(o.value, o.plans !== false, !!o.historic, S.building, 'Building permit (fence)'),
+      ['Fences up to 7 ft that meet the zoning rules need no building permit (City Code Sec. 26-15, Sec. 105.2). Taller fences and masonry walls over 3 ft are filed as building permits.'],
+      S.building.source);
+  };
+  F.pool = function (S, o) {
+    return result('pool', valueFee(o.value, o.plans !== false, !!o.historic, S.building, 'Building permit (pool)'),
+      ['Pool wiring and any pool heater are separate electrical and mechanical permits.'], S.building.source);
+  };
+  F.roof = function (S, o) {
+    if (o.one_two_family !== false) {
+      var fee = S.roof.one_two_family_flat, lines = [['Re-roof permit (single or double)', fee]];
+      if (o.historic) lines.push([HIST, fee * S.building.historic_surcharge]);
+      return result('roof', lines, ['Replacing less than half the roof on a single or double needs no permit.'], S.roof.source);
+    }
+    return result('roof', valueFee(o.value, !!o.plans, !!o.historic, S.building, 'Re-roof permit'), [], S.building.source);
+  };
+  F.demolition = function (S, o) {
+    var s = S.demolition, permit = s.base + s.per_1000 * perK(o.value), lines = [['Demolition permit', permit]];
+    if (o.historic) lines.push([HIST, permit * s.historic_surcharge]);
+    if (o.ncd === 'residential') lines.push(['Neighborhood Conservation District application', s.ncd_fee_residential]);
+    else if (o.ncd === 'commercial') lines.push(['Neighborhood Conservation District application', s.ncd_fee_commercial]);
+    return result('demolition', lines, ['Interior-only demolition is filed as a building permit, not a demolition permit.'], s.source);
+  };
+  F.sign = function (S, o) {
+    var s = S.sign, k = perK(o.value), permit = s.base + s.per_1000 * k;
+    var review = o.plans ? Math.max(s.plan_review_min, s.plan_review_per_1000 * k) : 0;
+    var lines = [['Sign permit', permit]];
+    if (o.plans) lines.push(['Plan review', review]);
+    if (o.historic) lines.push([HIST, (permit + review) * s.historic_surcharge]);
+    lines.push(['Sign review', s.review], ['Sign operating fee, first year', s.first_year_operating]);
+    if (o.illuminated) lines.push(['Electrical permit for an illuminated sign (filed by the electrician)', S.electrical.base]);
+    return result('sign', lines, ['After the first year the sign operating fee is $' + s.annual_operating + ' a year.'], s.source);
+  };
+  F.electrical = function (S, o) {
+    var s = S.electrical, n = function (x) { return Math.max(0, Math.floor(Number(x) || 0)); };
+    var lines = [['Electrical permit base fee', s.base],
+      ['Service or device amps x $' + s.per_amp.toFixed(2), s.per_amp * Math.max(0, Number(o.amps) || 0)],
+      ['Circuits x $' + s.per_circuit, s.per_circuit * n(o.circuits)],
+      ['Illuminated signs x $' + s.per_sign, s.per_sign * n(o.signs)],
+      ['Elevators / lifts x $' + s.per_elevator, s.per_elevator * n(o.elevators)],
+      ['Construction loops x $' + s.per_construction_loop, s.per_construction_loop * n(o.loops)]];
+    return result('electrical', lines, ['Only a City Class A electrical contractor can pull this permit; the fee is usually in their price.',
+      'A standby generator is usually its transfer switch amps plus one circuit.'], s.source);
+  };
+  function ahFee(s, btu) {
+    if (btu <= 50000) return s.air_handler_to_50k;
+    if (btu <= 200000) return s.air_handler_51k_200k;
+    return s.air_handler_over_200k;
+  }
+  function fmtTons(t) { return String(Number(t)); }
+  function comma(b) { return Math.floor(b).toLocaleString('en-US'); }
+  F.mechanical = function (S, o) {
+    var s = S.mechanical, lines = [['Mechanical permit application', s.application]];
+    (o.ac_units || []).forEach(function (t) {
+      var extra = Math.max(0, Math.floor(Number(t) + 1e-9) - 3);
+      lines.push(['A/C unit, ' + fmtTons(t) + ' tons', s.ac_unit_to_3_tons + s.per_ton_over_3 * extra]);
+    });
+    (o.air_handlers || []).forEach(function (b) { lines.push(['Air handler / furnace, ' + comma(b) + ' BTU', ahFee(s, b)]); });
+    (o.water_heaters || []).forEach(function (b) {
+      lines.push(['Water heater, ' + comma(b) + ' BTU', b <= 50000 ? s.water_heater_to_50k : s.water_heater_51k_200k]);
+    });
+    var ft = Number(o.gas_line_ft) || 0, outlets = Number(o.gas_outlets) || 0;
+    if (ft || outlets) {
+      var extraFt = ft > 100 ? Math.max(0, Math.ceil((ft - 100) / 100)) : 0;
+      lines.push(['Gas line', s.gas_line_first_100ft_5_outlets + s.gas_per_100ft_over_100 * extraFt +
+        s.gas_outlet_over_5 * Math.max(0, Math.floor(outlets) - 5)]);
+    }
+    var alt = Number(o.alteration_value) || 0;
+    if (alt) {
+      var over = Math.max(0, Math.ceil((alt - 1500) / 1000 - 1e-9));
+      lines.push(['Repair / alteration by contract price', s.alteration_first_1500 + s.alteration_per_1000_after * over]);
+    }
+    return result('mechanical', lines, ['A/C and gas permits are pulled by City-licensed mechanical or gas contractors.',
+      'Electric heat strips are listed as an air handler by their BTU (1 kW = 3,413 BTU).'], s.source);
+  };
+  F.plumbing = function (S, o) {
+    var s = S.plumbing, n = Math.max(0, Math.floor(Number(o.fixtures) || 0));
+    var fee = Math.max(s.minimum, s.per_fixture * n);
+    return result('plumbing', [['Plumbing permit, ' + n + ' fixtures ($' + s.per_fixture + ' each, $' + s.minimum + ' minimum)', fee]],
+      ['Only an Orleans Parish licensed master plumber can pull this permit.',
+       'No published plumbing schedule was found; this rate is what City permit records show. Sewer, water service and meter work can add to it.'],
+      s.source);
+  };
+
+  function estimate(S, kind, inputs) {
+    if (!F[kind]) throw new Error('unknown permit kind ' + kind);
+    return F[kind](S, inputs || {});
+  }
+  return {estimate: estimate, perK: perK, kinds: Object.keys(F)};
+});
+
+</script>
+<script>
+(function(){
+  var S = JSON.parse(document.getElementById('schedule').textContent);
+  var $ = function(id){ return document.getElementById(id); };
+  var num = function(id){ var v = parseFloat($(id).value); return isFinite(v) && v > 0 ? v : 0; };
+  var LABELS = {building: 'Job value (materials and labor)', fence: 'Fence job value (materials and labor)',
+    pool: 'Pool job value (materials and labor)', demolition: 'Demolition cost', sign: 'Sign cost (buying and installing it)',
+    roof: 'Re-roof job value (materials and labor)'};
+  function usd(x){ return '$' + x.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}); }
+  function rep(n, v){ var a = []; for (var i = 0; i < n; i++) a.push(v); return a; }
+  function inputs(kind){
+    var o = {value: num('value'), plans: $('plans').checked, historic: $('historic').checked};
+    if (kind === 'roof') { o.one_two_family = $('onetwo').checked; }
+    if (kind === 'demolition') { o = {value: num('value'), historic: $('historic').checked, ncd: $('ncd').value || null}; }
+    if (kind === 'sign') { o.illuminated = $('illuminated').checked; }
+    if (kind === 'electrical') { o = {amps: num('amps'), circuits: num('circuits'), signs: num('esigns'), elevators: num('elevators'), loops: num('loops')}; }
+    if (kind === 'mechanical') {
+      var n = Math.floor(num('systems')), ah = parseInt($('ah').value, 10);
+      o = {ac_units: rep(n, num('tons')), air_handlers: ah ? rep(n, ah) : [], water_heaters: rep(Math.floor(num('wh')), parseInt($('whsize').value, 10)),
+           gas_line_ft: num('gasft'), gas_outlets: num('gasout'), alteration_value: num('alt')};
+    }
+    if (kind === 'plumbing') { o = {fixtures: num('fixtures')}; }
+    return o;
+  }
+  function show(kind){
+    var tag = kind === 'roof' && !$('onetwo').checked ? 'roof-other' : kind;
+    document.querySelectorAll('fieldset[data-for]').forEach(function(f){
+      var on = f.getAttribute('data-for').split(' ').indexOf(tag) >= 0 || (tag === 'roof-other' && f.getAttribute('data-for').split(' ').indexOf('roof') >= 0);
+      f.hidden = !on;
+    });
+    $('value-label').textContent = LABELS[kind] || LABELS.building;
+  }
+  var lastKind = null, touched = false;
+  var DEFAULT_VALUE = {building: 25000, fence: 6000, pool: 60000, demolition: 15000, sign: 2000, roof: 20000};
+  $('value').addEventListener('input', function(){ touched = true; });
+  function render(){
+    var kind = $('kind').value;
+    if (kind !== lastKind) {
+      if (!touched && DEFAULT_VALUE[kind]) $('value').value = DEFAULT_VALUE[kind];
+      // Sensible defaults per permit: plan review on for building-style permits, off for signs and re-roofs.
+      $('plans').checked = (kind === 'building' || kind === 'fence' || kind === 'pool');
+      lastKind = kind;
+    }
+    show(kind);
+    var r = PFC.estimate(S, kind, inputs(kind));
+    $('lines').innerHTML = r.lines.map(function(l){ return '<li><span>' + l.label + '</span><span>' + usd(l.amount) + '</span></li>'; }).join('');
+    $('total').textContent = usd(r.total);
+    $('notes').innerHTML = r.notes.map(function(n){ return '<li>' + n + '</li>'; }).join('');
+  }
+  $('calc').addEventListener('input', render);
+  $('calc').addEventListener('change', render);
+  render();
+})();
+</script>
+</body>
+</html>
