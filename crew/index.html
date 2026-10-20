@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Join the Upkeepi crew</title>
+<meta name="description" content="Property-care jobs offered to local crews at a set price, paid per job. Take the jobs you want, skip the rest. Apply to the Upkeepi crew roster.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#123b33">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Upkeepi Crew">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- Source of truth: tle-main products/crew-dispatch/join-app/ (tests/test_crew_dispatch.py). Standalone: no autoants
+     nav, relative paths only, so the folder can move to upkeepi.com as-is. Nothing here sends until ENDPOINT is set. -->
+<style>
+  :root{--bg:#f6f3ea;--surface:#fffdf7;--ink:#14231f;--muted:#4f5f59;--faint:#6f7d77;--brand:#123b33;--brand-ink:#f6f3ea;
+        --accent:#e9a23b;--line:rgba(20,35,31,.14);--ok:#1d7a52;--warn:#a5531a;
+        --body:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1714;--surface:#14221e;--ink:#eef0e9;
+        --muted:#a9b6b0;--faint:#8b9993;--brand:#7fd1b4;--brand-ink:#0d1714;--line:rgba(238,240,233,.16);--ok:#7fd1b4;--warn:#f0b36b}}
+  :root[data-theme="dark"]{--bg:#0d1714;--surface:#14221e;--ink:#eef0e9;--muted:#a9b6b0;--faint:#8b9993;--brand:#7fd1b4;
+        --brand-ink:#0d1714;--line:rgba(238,240,233,.16);--ok:#7fd1b4;--warn:#f0b36b}
+  *{box-sizing:border-box}[hidden]{display:none!important}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--body);overflow-x:hidden;
+       padding-bottom:env(safe-area-inset-bottom)}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  .wrap{max-width:640px;margin:0 auto;padding:0 16px}
+  header{display:flex;align-items:center;gap:10px;padding:calc(14px + env(safe-area-inset-top)) 0 14px;border-bottom:1px solid var(--line)}
+  header img{width:32px;height:32px;border-radius:8px}
+  header b{font-size:18px;letter-spacing:-.01em}
+  header .sp{margin-left:auto}
+  #install{background:var(--brand);color:var(--brand-ink);border:0;border-radius:999px;padding:8px 14px;font:600 14px var(--body);min-height:40px}
+  h1{font-size:clamp(28px,7vw,40px);line-height:1.08;letter-spacing:-.02em;margin:26px 0 8px;text-wrap:balance}
+  .lede{font-size:18px;color:var(--muted);margin:0 0 6px;max-width:56ch}
+  h2{font-size:20px;margin:30px 0 8px}
+  ul.terms{list-style:none;padding:0;margin:10px 0;display:grid;gap:8px}
+  ul.terms li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+  ul.terms b{display:block}
+  form{display:grid;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 16px;margin:18px 0}
+  fieldset{border:0;margin:0;padding:0;display:grid;gap:10px;min-width:0}
+  legend{font-weight:700;font-size:18px;padding:0;margin:2px 0 4px}
+  label{display:grid;gap:5px;font-size:14px;color:var(--muted)}
+  label b{color:var(--ink);font-weight:600;font-size:15px}
+  .opt{color:var(--faint);font-weight:400}
+  input[type=text],input[type=email],input[type=tel],input[type=time],select,textarea{background:var(--bg);color:var(--ink);
+       border:1px solid var(--line);border-radius:10px;padding:12px;font:inherit;font-size:16px;width:100%;min-height:46px}
+  textarea{min-height:80px;resize:vertical}
+  .grid{display:grid;grid-template-columns:1fr;gap:8px}
+  .chk{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:var(--ink);padding:10px 12px;border:1px solid var(--line);
+       border-radius:10px;background:var(--bg);min-height:46px}
+  .chk input{width:20px;height:20px;flex:0 0 auto;accent-color:var(--brand);margin:2px 0 0}
+  .chk small{display:block;color:var(--faint);font-size:13px;margin-top:2px}
+  .chk.dis{opacity:.55}
+  .days{display:flex;flex-wrap:wrap;gap:6px}
+  .days label{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:8px 12px;color:var(--ink);min-height:44px}
+  .days input{accent-color:var(--brand);width:18px;height:18px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .note{background:var(--bg);border-left:3px solid var(--accent);border-radius:10px;padding:10px 12px;font-size:14.5px;color:var(--ink)}
+  .note p{margin:.3em 0}
+  .hint{font-size:13px;color:var(--faint);margin:0}
+  .btn{width:100%;background:var(--brand);color:var(--brand-ink);border:0;border-radius:12px;padding:15px 18px;font:700 17px var(--body);
+       cursor:pointer;min-height:50px}
+  #say{margin:0;font-weight:600}#say.ok{color:var(--ok)}#say.no{color:var(--warn)}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  footer{color:var(--faint);font-size:13px;padding:24px 0 40px;border-top:1px solid var(--line);margin-top:28px}
+  footer p{margin:.3em 0}
+  @media (min-width:600px){.grid{grid-template-columns:1fr 1fr}form{padding:22px 24px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="icon.svg" alt="" width="32" height="32">
+    <b>Upkeepi Crew</b>
+    <span class="sp"></span>
+    <button id="install" type="button" hidden>Add to home screen</button>
+  </header>
+
+  <main id="main">
+    <h1>Property-care jobs near you. Take the ones you want.</h1>
+    <p class="lede">Upkeepi offers lawn, cleanup, pressure-washing, gutter and cleaning jobs to local crews at a set price. The first to accept gets the job. You're paid per job.</p>
+
+    <h2>How it works</h2>
+    <ul class="terms">
+      <li><b>You choose every job.</b>An offer shows the work, the area, the time window and the pay before you decide. Skipping a job, or not answering, never counts against you.</li>
+      <li><b>You set your own availability and area.</b>Change them any time. We never schedule you.</li>
+      <li><b>Your tools, your methods.</b>We describe the result and the before-and-after photos we need. How you get there is up to you.</li>
+      <li><b>Work for anyone else.</b>No exclusivity, no minimums, no quotas.</li>
+      <li><b>Paid per job, not by the hour.</b>Pay is released when the job's photos are approved, through Stripe. Stripe collects your tax details; we never ask for your Social Security number.</li>
+      <li><b>Rush and storm work pays more,</b> and the extra is shown on its own line in the offer.</li>
+    </ul>
+
+    <noscript><p class="note">This application needs JavaScript. You can email crew@upkeepi.com instead with your services, area and contact details.</p></noscript>
+
+    <form id="joinForm" novalidate>
+      <fieldset>
+        <legend>You</legend>
+        <div class="two" role="radiogroup" aria-label="Applying as">
+          <label class="chk"><input type="radio" name="kind" value="business" checked><span>A business</span></label>
+          <label class="chk"><input type="radio" name="kind" value="person"><span>Just me</span></label>
+        </div>
+        <label for="name"><b>Business name, or your name</b><input id="name" name="name" type="text" required maxlength="100" autocomplete="organization"></label>
+        <label for="contact_name"><b>Who we talk to</b> <span class="opt">(optional)</span><input id="contact_name" name="contact_name" type="text" maxlength="80" autocomplete="name"></label>
+        <label for="email"><b>Email</b><input id="email" name="email" type="email" required maxlength="120" autocomplete="email"></label>
+        <label for="phone"><b>Mobile phone</b> <span class="opt">(optional)</span><input id="phone" name="phone" type="tel" maxlength="40" inputmode="tel" autocomplete="tel"></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Services you offer</legend>
+        <div class="grid" id="services">
+          <label class="chk"><input type="checkbox" name="services" value="lawn_mow"><span>Lawn mow and edge</span></label>
+          <label class="chk"><input type="checkbox" name="services" value="yard_cleanup"><span>Yard cleanup</span></label>
+          <label class="chk"><input type="checkbox" name="services" value="pressure_wash"><span>Pressure washing</span></label>
+          <label class="chk"><input type="checkbox" name="services" value="gutter_clean"><span>Gutter cleaning</span></label>
+          <label class="chk"><input type="checkbox" name="services" value="clean_standard"><span>Interior cleaning<small>Needs a background check</small></span></label>
+          <label class="chk"><input type="checkbox" name="services" value="clean_turnover"><span>Turnover / move-out cleaning<small>Needs a background check</small></span></label>
+          <label class="chk"><input type="checkbox" name="services" value="vacancy_check"><span>Vacant-property checks<small>Needs a background check</small></span></label>
+          <label class="chk"><input type="checkbox" name="services" value="storm_prep"><span>Storm prep</span></label>
+          <label class="chk"><input type="checkbox" name="services" value="storm_debris"><span>Post-storm debris to the curb</span></label>
+          <label class="chk"><input type="checkbox" name="services" value="weed_turf_treatment"><span>Weed / turf treatment<small>Needs an LDAF commercial applicator certification</small></span></label>
+          <label class="chk"><input type="checkbox" name="services" value="tree_trim_small"><span>Small tree / shrub trimming<small>Needs a Louisiana arborist license</small></span></label>
+          <label class="chk dis"><input type="checkbox" name="services" value="notary_signing" disabled><span>Mobile notary signings<small>Coming later</small></span></label>
+        </div>
+        <label for="licenses"><b>License numbers</b> <span class="opt">(only for licensed services)</span>
+          <input id="licenses" name="licenses" type="text" maxlength="160" placeholder="e.g. LDAF applicator #, arborist #"></label>
+        <p class="hint">We check each license with the board before offering licensed work.</p>
+        <label for="equipment"><b>Your equipment</b> <span class="opt">(optional)</span><textarea id="equipment" name="equipment" maxlength="300" placeholder="Truck and trailer, zero-turn, 4,000 PSI washer, 28 ft ladder..."></textarea></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Where you'll work</legend>
+        <div class="grid" id="areas">
+          <label class="chk"><input type="checkbox" name="area" value="uptown"><span>Uptown / Garden District</span></label>
+          <label class="chk"><input type="checkbox" name="area" value="mid-city"><span>Mid-City / Treme</span></label>
+          <label class="chk"><input type="checkbox" name="area" value="gentilly"><span>Gentilly</span></label>
+          <label class="chk"><input type="checkbox" name="area" value="lakeview"><span>Lakeview</span></label>
+          <label class="chk"><input type="checkbox" name="area" value="bywater"><span>Bywater / Marigny</span></label>
+          <label class="chk"><input type="checkbox" name="area" value="cbd"><span>CBD / French Quarter</span></label>
+          <label class="chk"><input type="checkbox" name="area" value="new orleans east"><span>New Orleans East</span></label>
+          <label class="chk"><input type="checkbox" name="area" value="algiers"><span>Algiers / Westbank</span></label>
+          <label class="chk"><input type="checkbox" name="area" value="metairie"><span>Metairie</span></label>
+          <label class="chk"><input type="checkbox" name="area" value="kenner"><span>Kenner / Harahan</span></label>
+        </div>
+        <label for="zips"><b>Or ZIP codes</b> <span class="opt">(optional)</span><input id="zips" name="zips" type="text" inputmode="numeric" maxlength="120" placeholder="70115, 70118"></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>When you're open to offers</legend>
+        <div class="days" id="days">
+          <label><input type="checkbox" name="days" value="mon">Mon</label><label><input type="checkbox" name="days" value="tue">Tue</label>
+          <label><input type="checkbox" name="days" value="wed">Wed</label><label><input type="checkbox" name="days" value="thu">Thu</label>
+          <label><input type="checkbox" name="days" value="fri">Fri</label><label><input type="checkbox" name="days" value="sat">Sat</label>
+          <label><input type="checkbox" name="days" value="sun">Sun</label>
+        </div>
+        <div class="two">
+          <label for="from"><b>From</b><input id="from" name="from" type="time" value="08:00"></label>
+          <label for="to"><b>To</b><input id="to" name="to" type="time" value="17:00"></label>
+        </div>
+        <p class="hint">This only decides which offers you see. Change it, or pause offers, any time.</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Insurance and checks</legend>
+        <label for="insurance"><b>General liability insurance</b>
+          <select id="insurance" name="insurance">
+            <option value="yes">I have it</option>
+            <option value="getting">I'm getting it</option>
+            <option value="no">I don't have it</option>
+          </select></label>
+        <div class="note">
+          <p>After you apply, we'll ask for your certificate of insurance by email. Most services need at least $300,000 per occurrence; pressure washing, gutters, debris and treatment need $500,000; tree work needs $1,000,000.</p>
+          <p>Services inside homes need a background check through a consumer reporting agency. If you pick one, we'll send a <b>separate</b> disclosure and authorization form. Nothing is ordered without your written OK, and we keep only the result status, never the report.</p>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>How we reach you</legend>
+        <p class="hint">Job offers come by email. Texts are optional.</p>
+        <label class="chk" for="sms_consent"><input type="checkbox" id="sms_consent" name="sms_consent" value="yes"><span>Text me Upkeepi crew job offers at the mobile number above. <span class="opt">(optional)</span><small>Not required to join. Msg frequency varies with jobs near you. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help.</small></span></label>
+        <label class="chk" for="keep_consent"><input type="checkbox" id="keep_consent" name="keep_consent" value="yes" required><span>Upkeepi may keep this application and email me about joining the crew roster.<small>We never sell it. Ask us to delete it any time at crew@upkeepi.com.</small></span></label>
+      </fieldset>
+
+      <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+      <button class="btn" type="submit">Apply to the crew</button>
+      <p id="say" role="status" aria-live="polite"></p>
+    </form>
+
+    <h2>What happens next</h2>
+    <ol>
+      <li>We email you the crew agreement to read, and ask for your insurance certificate.</li>
+      <li>You set up payouts with Stripe (Stripe asks for your tax details, not us).</li>
+      <li>Offers start arriving for the services, areas and times you picked. Take any, skip any.</li>
+    </ol>
+  </main>
+
+  <footer>
+    <p><b>Upkeepi</b> · New Orleans area · crew@upkeepi.com</p>
+    <p>Crew members are independent businesses. Nothing on this page is an offer of employment.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  // No endpoint yet: the application is not open, and nothing leaves the phone. Set this only after Lane approves go-live.
+  var ENDPOINT = '';
+  var f = document.getElementById('joinForm'), say = document.getElementById('say');
+  var DRAFT_KEY = 'upkeepi-crew-draft';
+  function tell(t, ok, el){ say.textContent = t; say.className = ok ? 'ok' : 'no'; if (el && el.focus) el.focus(); }
+  function vals(name){ return [].map.call(f.querySelectorAll('input[name=' + name + ']:checked'), function(i){ return i.value; }); }
+  function data(){
+    return {form: 'crew-join', kind: (f.querySelector('input[name=kind]:checked') || {}).value, name: f.name.value.trim(),
+            contact_name: f.contact_name.value.trim(), email: f.email.value.trim(), phone: f.phone.value.trim(),
+            services: vals('services'), licenses: f.licenses.value.trim(), equipment: f.equipment.value.trim(),
+            area: vals('area'), zips: f.zips.value.trim(), days: vals('days'), from: f.from.value, to: f.to.value,
+            insurance: f.insurance.value, sms_consent: f.sms_consent.checked ? 'yes' : 'no',
+            sms_consent_text: f.sms_consent.checked ? f.sms_consent.parentNode.textContent.replace(/\s+/g, ' ').trim() : '',
+            keep_consent: f.keep_consent.checked ? 'yes' : 'no', website: f.website.value, at: new Date().toISOString()};
+  }
+  // Keep an unsent draft on this phone only (a convenience; it never leaves the device).
+  try {
+    var saved = JSON.parse(localStorage.getItem(DRAFT_KEY) || 'null');
+    if (saved) {
+      ['name','contact_name','email','phone','licenses','equipment','zips','from','to','insurance'].forEach(function(k){ if (saved[k] && f[k]) f[k].value = saved[k]; });
+      ['services','area','days'].forEach(function(k){ (saved[k] || []).forEach(function(v){
+        var el = f.querySelector('input[name=' + k + '][value="' + v + '"]'); if (el && !el.disabled) el.checked = true; }); });
+    }
+  } catch (e) {}
+  f.addEventListener('input', function(){
+    try { var d = data(); delete d.sms_consent; delete d.sms_consent_text; delete d.keep_consent; localStorage.setItem(DRAFT_KEY, JSON.stringify(d)); } catch (e) {}
+  });
+
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var d = data();
+    if (!d.name) return tell('Add your business name or your name.', false, f.name);
+    if (!/^[^\s@<>",]+@[^\s@<>",]+\.[a-z]{2,}$/i.test(d.email)) return tell('Add an email we can send offers to.', false, f.email);
+    if (!d.services.length) return tell('Pick at least one service.', false, f.querySelector('input[name=services]'));
+    if (!d.area.length && !/\d{5}/.test(d.zips)) return tell('Pick at least one area or add a ZIP.', false, f.querySelector('input[name=area]'));
+    if (!d.days.length) return tell('Pick the days you\'re open to offers.', false, f.querySelector('input[name=days]'));
+    if (d.sms_consent === 'yes' && (d.phone.match(/\d/g) || []).length < 10) return tell('Add a 10-digit mobile number for texts, or untick the text box.', false, f.phone);
+    if (!f.keep_consent.checked) return tell('Tick the box so we can keep your application and email you about it.', false, f.keep_consent);
+    if (!ENDPOINT) return tell('Applications open soon. Nothing was sent; your answers are saved on this phone.', false);
+    var btn = f.querySelector('button[type=submit]'); btn.disabled = true;
+    fetch(ENDPOINT, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(d)})
+      .then(function(r){ if (!r.ok) throw 0; tell('Got it. Watch your email for the crew agreement and the insurance request.', true);
+        try { localStorage.removeItem(DRAFT_KEY); } catch (e) {} f.reset(); })
+      .catch(function(){ tell('That didn\'t go through. Your answers are still here; try again in a minute.', false); })
+      .then(function(){ btn.disabled = false; });
+  });
+
+  // Installable: register the service worker and offer "Add to home screen" where the browser allows it.
+  if ('serviceWorker' in navigator && location.protocol === 'https:') {
+    navigator.serviceWorker.register('sw.js').catch(function(){});
+  }
+  var deferred = null, btnI = document.getElementById('install');
+  window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); deferred = e; btnI.hidden = false; });
+  btnI.addEventListener('click', function(){ if (!deferred) return; deferred.prompt(); deferred = null; btnI.hidden = true; });
+})();
+</script>
+</body>
+</html>
