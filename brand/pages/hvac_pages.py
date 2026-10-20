@@ -732,6 +732,10 @@ def p_ai():
         ("Which AI assistant do you check?",
          "Our scans run today on Claude with web search on, asking each question more than once. For your own site "
          "we also read Google's AI report in Search Console, with your access."),
+        ("Should I put my prices on my website?",
+         "Your service-call fee and tune-up price, yes, if you'll stand behind them. When we asked one AI what an AC "
+         "repair visit costs, it could only name shops whose price it could read. Put them on your site and your "
+         "listings, and say whether the fee comes off the repair."),
         ("Do I pay to be listed in an AI answer?",
          "There's no honest way to buy a place in an AI answer, and we don't sell one. No paid placements, no fake "
          "reviews and no planted mentions."),
@@ -752,8 +756,9 @@ def p_ai():
     <li><b>Your Google profile:</b> the right category, hours, services and photos, matching the site.</li>
     <li><b>Listings:</b> the directories the answers cite, with your name and phone the same everywhere. That includes Apple Maps, which Siri uses for places, and Bing Places.</li>
     <li><b>Reviews:</b> real ones, asked of every customer. In BrightLocal's US study, 80% of ChatGPT's answers to local searches cited Yelp. ({link(p, "hvac/more-google-reviews/", "How to ask inside Google's rules")})</li>
+    <li><b>Your prices:</b> your service-call fee and tune-up price, written where the answers look, on your site and on your listings. One of our 8 questions asked what an AC repair visit costs. In Kenner, 2 of the 3 answers said they couldn't find a Kenner company's published service-call price. In Slidell, one company came up in all 3 answers to that question and in none of the other 21, and the answers named the reason: a directory listing showed its service-call price.</li>
   </ul>
-  {src_line("brightlocal")}
+  {src_line("brightlocal", "aien")}
 
   <h2>Measure it yourself</h2>
   <ol>
