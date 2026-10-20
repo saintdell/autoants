@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Give us access · autoants</title>
+<meta name="description" content="Step by step: how to add autoants as a user on Google, Bing, Apple, Yelp, Facebook, your domain and your website. You keep ownership. Never send a password.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&family=JetBrains+Mono:wght@700&display=swap">
+<link rel="stylesheet" href="/assets/trust.css">
+<style>
+  /* /access/ only (2026-10-19). Phone first: big tap targets, no screenshots. */
+  .why{list-style:none;padding:0;margin:16px 0 8px;display:flex;flex-direction:column;gap:8px}
+  .why li{border-left:4px solid var(--accent);background:var(--soft);border-radius:0 12px 12px 0;padding:10px 14px;margin:0;font-weight:700;max-width:none}
+  .jump{list-style:none;padding:0;margin:8px 0 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+  .jump li{margin:0;max-width:none}
+  .jump a{display:flex;align-items:center;min-height:48px;padding:8px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);text-decoration:none;font-weight:700;font-size:16px;line-height:1.25}
+  .copy{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:6px 12px;margin:2px 0;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:700 16px/1.2 "JetBrains Mono",ui-monospace,monospace;cursor:pointer;vertical-align:middle;max-width:100%;overflow-wrap:anywhere;text-align:left}
+  .copy::after{content:"Copy";font:700 12px/1 Onest,system-ui,sans-serif;color:var(--accent-ink);border-left:1px solid var(--line);padding-left:8px}
+  .copy.done::after{content:"Copied"}
+  .copy.big{font-size:18px;min-height:52px;padding:8px 16px}
+  section.pf{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:16px 0}
+  section.pf h2{margin:0 0 4px;scroll-margin-top:16px}
+  section.pf h3{margin:18px 0 6px}
+  .time{font:700 13px/1.3 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);margin:0 0 12px}
+  .role{background:var(--soft);border-radius:12px;padding:10px 14px;margin:0 0 12px}
+  .role b{display:block}
+  ol.steps{padding-left:1.4em;margin:0 0 12px}
+  ol.steps li{margin:.5em 0;padding-left:2px}
+  .note{font-size:15px;color:var(--muted)}
+  .help{border-top:1px solid var(--line);margin-top:14px;padding-top:12px}
+  .help p{margin:0 0 8px}
+  .src{font-size:13px;color:var(--muted);overflow-wrap:anywhere;margin:10px 0 0}
+  .flag{font-size:14px;color:var(--muted);border:1px dashed var(--muted);border-radius:10px;padding:8px 12px;margin:8px 0 12px}
+  .top-link{display:inline-flex;align-items:center;min-height:44px;font-weight:700;font-size:15px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="top" aria-label="Site">
+    <a class="logo" href="/" aria-label="autoants home"><img class="on-light" src="/brand/autoants-logo.svg" alt="autoants"><img class="on-dark" src="/brand/autoants-logo-reverse.svg" alt="autoants"></a>
+    <span class="sp"></span>
+    <a class="ghost" href="mailto:clients@autoants.com">clients@autoants.com</a>
+  </nav>
+  <main id="main">
+    <!-- Not linked from any public page and not in sitemap.xml (noindex). Linked from the kickoff email.
+         Every section was checked against the platform's own help page on 2026-10-19; source under each one.
+         Rule: the owner keeps ownership; we are added as a user with clients@autoants.com; we never ask for,
+         receive, keep or create their passwords; 2-step codes stay on the owner's phone. -->
+    <p class="eyebrow" id="top">Give us access</p>
+    <h1>How to add us to your accounts</h1>
+    <ul class="why">
+      <li>You own everything. It stays in your name.</li>
+      <li>You add us as a user, with our own email. You can remove us any time.</li>
+      <li>Never send us a password. Any code goes to your phone, not ours.</li>
+    </ul>
+
+    <p>The email to add, every time:</p>
+    <p><button type="button" class="copy big" data-copy="clients@autoants.com">clients@autoants.com</button></p>
+    <p class="note">Do the ones on your list from our email. Skip the rest. Each one takes a couple of minutes on your phone or computer.</p>
+
+    <h2>Pick your account</h2>
+    <ul class="jump">
+      <li><a href="#google">Google Business Profile</a></li>
+      <li><a href="#search-console">Google Search Console</a></li>
+      <li><a href="#bing">Bing Places</a></li>
+      <li><a href="#apple">Apple Business (Apple Maps)</a></li>
+      <li><a href="#yelp">Yelp for Business</a></li>
+      <li><a href="#meta">Facebook and Instagram</a></li>
+      <li><a href="#domain">Your domain (GoDaddy, Namecheap, Squarespace)</a></li>
+      <li><a href="#website">Your website (WordPress, Wix, Squarespace)</a></li>
+      <li><a href="#bbb">BBB</a></li>
+      <li><a href="#angi">Angi</a></li>
+    </ul>
+
+    <!-- ============ Google Business Profile ============ -->
+    <section class="pf" id="google" aria-labelledby="google-h">
+      <h2 id="google-h">Google Business Profile</h2>
+      <p class="time">Time: ~2 min</p>
+      <div class="role"><b>What role to pick: Manager</b>Not Owner. A Manager can update your profile and answer reviews, but can't add or remove people or delete your profile.</div>
+
+      <h3>On your phone (Google Maps app)</h3>
+      <ol class="steps">
+        <li>Open the Google Maps app. Make sure you're signed in to the Google account that runs your business.</li>
+        <li>At the bottom right, tap <b>Business</b>.</li>
+        <li>Tap <b>More</b> (it may show as three dots), then <b>Business Profile settings</b>.</li>
+        <li>Tap <b>People and access</b>.</li>
+        <li>Tap <b>Add</b>.</li>
+        <li>Type <button type="button" class="copy" data-copy="clients@autoants.com">clients@autoants.com</button></li>
+        <li>Under <b>Access</b>, pick <b>Manager</b>.</li>
+        <li>Tap <b>Invite</b>. That's it.</li>
+      </ol>
+
+      <h3>On a computer</h3>
+      <ol class="steps">
+        <li>Go to google.com. Make sure you're signed in to the Google account that runs your business.</li>
+        <li>Search for <b>my business</b>. Your profile opens at the top.</li>
+        <li>Click <b>More</b> (three dots), then <b>Business Profile settings</b>, then <b>People and access</b>.</li>
+        <li>At the top left, click <b>Add</b>.</li>
+        <li>Type <button type="button" class="copy" data-copy="clients@autoants.com">clients@autoants.com</button></li>
+        <li>Under <b>Access</b>, pick <b>Manager</b>, then click <b>Invite</b>.</li>
+      </ol>
+      <p class="note">We accept the invite on our side. Google may hold a few settings for 7 days after a new manager joins. That's normal.</p>
+      <p class="flag">Google's help page gives one path for every device. On a phone the "More" button can look a little different. If you can't find it, use the computer steps or do it with us on a call.</p>
+
+      <div class="help">
+        <p><b>If you don't have an account yet:</b> we'll set it up with you on the call.</p>
+        <p><b>Stuck?</b> Reply to our email and we'll do it together on a 10-minute screen-share.</p>
+        <p>Prefer not to share your screen? We can talk you through it on a call, or do it with you in person. <a href="/start/screen-share/">How we keep screen-shares private</a>.</p>
+      </div>
+      <p class="src">Source: <a href="https://support.google.com/business/answer/3403100?hl=en">Google: Manage your Business Profile owners &amp; managers</a> and <a href="https://support.google.com/business/answer/145585?hl=en">Find your business on Google</a>, checked 2026-10-19.</p>
+      <a class="top-link" href="#top">Back to the list</a>
+    </section>
+
+    <!-- ============ Search Console ============ -->
+    <section class="pf" id="search-console" aria-labelledby="sc-h">
+      <h2 id="sc-h">Google Search Console</h2>
+      <p class="time">Time: ~2 min</p>
+      <div class="role"><b>What role to pick: Full</b>Full lets us see how Google reads your website and ask Google to check fixes. It can't add or remove owners.</div>
+      <p class="note">This one is easier on a computer.</p>
+      <ol class="steps">
+        <li>Go to search.google.com/search-console and sign in.</li>
+        <li>Pick your website at the top left.</li>
+        <li>Click <b>Settings</b>, then <b>Users and permissions</b>.</li>
+        <li>Click <b>Add user</b>.</li>
+        <li>Type <button type="button" class="copy" data-copy="clients@autoants.com">clients@autoants.com</button></li>
+        <li>For <b>Permission</b>, pick <b>Full</b>.</li>
+        <li>Click <b>Add</b> to save.</li>
+      </ol>
+      <p class="note">Don't see "Users and permissions"? Only an owner can add people. Whoever built your site may be the owner. Tell us and we'll sort it out together.</p>
+      <div class="help">
+        <p><b>If you don't have an account yet:</b> we'll set it up with you on the call.</p>
+        <p><b>Stuck?</b> Reply to our email and we'll do it together on a 10-minute screen-share.</p>
+        <p>Prefer not to share your screen? We can talk you through it on a call, or do it with you in person. <a href="/start/screen-share/">How we keep screen-shares private</a>.</p>
+      </div>
+      <p class="src">Source: <a href="https://support.google.com/webmasters/answer/7687615?hl=en">Google: Managing owners, users, and permissions</a>, checked 2026-10-19.</p>
+      <a class="top-link" href="#top">Back to the list</a>
+    </section>
+
+    <!-- ============ Bing Places ============ -->
+    <section class="pf" id="bing" aria-labelledby="bing-h">
+      <h2 id="bing-h">Bing Places for Business</h2>
+      <p class="time">Time: ~10 min, together</p>
+      <div class="role"><b>What role to pick: none</b>Bing's current help doesn't show a way to add a second person to your listing. So we do this one with you, and we keep no login.</div>
+      <p>The easy way: Bing can copy your Google profile and keep it up to date. Once we're a Manager on your Google profile, fixing Google fixes Bing too.</p>
+      <ol class="steps">
+        <li>Book 10 minutes with us. Share your screen, or we talk you through it.</li>
+        <li>You go to bing.com/forbusiness and sign in yourself.</li>
+        <li>You pick <b>Import from your Google Business Profile</b>.</li>
+        <li>You pick how often to sync. We suggest weekly.</li>
+        <li>You sign in to Google when it asks. Any code goes to your phone.</li>
+        <li>You import the listing it finds. Bing checks it, then publishes it in about 1 to 2 weeks.</li>
+      </ol>
+      <p class="note">We watch and point. You type and click. We never see or keep your sign-in.</p>
+      <div class="help">
+        <p><b>If you don't have an account yet:</b> we'll set it up with you on the call.</p>
+        <p><b>Stuck?</b> Reply to our email and we'll do it together on a 10-minute screen-share.</p>
+        <p>Prefer not to share your screen? We can talk you through it on a call, or do it with you in person. <a href="/start/screen-share/">How we keep screen-shares private</a>.</p>
+      </div>
+      <p class="src">Source: <a href="https://www.bing.com/forbusiness/help/syncGoogleBusinessProfile">Bing Places: Sync your Google Business Profile</a> and <a href="https://www.bing.com/forbusiness/help/manageYourListings">Manage your listing</a>, checked 2026-10-19.</p>
+      <a class="top-link" href="#top">Back to the list</a>
+    </section>
+
+    <!-- ============ Apple Business ============ -->
+    <section class="pf" id="apple" aria-labelledby="apple-h">
+      <h2 id="apple-h">Apple Business (Apple Maps)</h2>
+      <p class="time">Time: ~2 min</p>
+      <div class="role"><b>What role to pick: Marketing Administrator, for your business only</b>It lets us keep your Apple Maps place card right. It can't manage your devices or other people.</div>
+      <p class="note">Apple Business Connect is now called Apple Business. Same account, same sign-in. Use a web browser; a computer is easiest.</p>
+      <ol class="steps">
+        <li>Go to business.apple.com and sign in.</li>
+        <li>Choose <b>People</b>, then <b>Users</b>.</li>
+        <li>Choose <b>Add</b>.</li>
+        <li>Choose <b>Send Email</b>.</li>
+        <li>Type <button type="button" class="copy" data-copy="clients@autoants.com">clients@autoants.com</button></li>
+        <li>For the role, pick <b>Marketing Administrator</b>. Pick your one business (brand), not all.</li>
+        <li>Choose <b>Invite</b>.</li>
+      </ol>
+      <div class="help">
+        <p><b>If you don't have an account yet:</b> we'll set it up with you on the call.</p>
+        <p><b>Stuck?</b> Reply to our email and we'll do it together on a 10-minute screen-share.</p>
+        <p>Prefer not to share your screen? We can talk you through it on a call, or do it with you in person. <a href="/start/screen-share/">How we keep screen-shares private</a>.</p>
+      </div>
+      <p class="src">Source: <a href="https://support.apple.com/guide/business/manually-add-users-axme2e2158c6/web">Apple: Manually add users in Apple Business</a> and <a href="https://support.apple.com/guide/business/intro-to-roles-and-permissions-axm97dd59159/web">Intro to roles and permissions</a>, checked 2026-10-19.</p>
+      <a class="top-link" href="#top">Back to the list</a>
+    </section>
+
+    <!-- ============ Yelp ============ -->
+    <section class="pf" id="yelp" aria-labelledby="yelp-h">
+      <h2 id="yelp-h">Yelp for Business</h2>
+      <p class="time">Time: ~2 min</p>
+      <div class="role"><b>What role to pick: any job title</b>Yelp has only one level: anyone you add gets the same access you have. The job title you pick doesn't change that. We only touch your page, photos and replies. We never touch your ads or payment settings.</div>
+      <ol class="steps">
+        <li>Go to biz.yelp.com in a web browser and sign in.</li>
+        <li>Go to <b>Account Settings</b>.</li>
+        <li>In the menu on the left, pick <b>User Management</b>.</li>
+        <li>Click <b>Invite a User</b>.</li>
+        <li>Pick a job title.</li>
+        <li>Type <button type="button" class="copy" data-copy="clients@autoants.com">clients@autoants.com</button></li>
+        <li>Pick your business location.</li>
+        <li>Click <b>Send Invite</b>.</li>
+      </ol>
+      <p class="note">No "User Management" in your menu? Yelp has a share-access request form instead. Tell us and we'll fill it out with you. Rather not give full access? We'll do your Yelp work with you on a screen-share instead.</p>
+      <div class="help">
+        <p><b>If you don't have an account yet:</b> we'll set it up with you on the call.</p>
+        <p><b>Stuck?</b> Reply to our email and we'll do it together on a 10-minute screen-share.</p>
+        <p>Prefer not to share your screen? We can talk you through it on a call, or do it with you in person. <a href="/start/screen-share/">How we keep screen-shares private</a>.</p>
+      </div>
+      <p class="src">Source: <a href="https://biz.yelp.com/support-center/article/How-do-I-set-up-additional-logins-for-my-Yelp-Business-Account">Yelp: How do I share access to the Yelp page for my business?</a>, checked 2026-10-19.</p>
+      <a class="top-link" href="#top">Back to the list</a>
+    </section>
+
+    <!-- ============ Meta ============ -->
+    <section class="pf" id="meta" aria-labelledby="meta-h">
+      <h2 id="meta-h">Facebook Page and Instagram</h2>
+      <p class="time">Time: ~2 min</p>
+      <div class="role"><b>What role to pick: partial access</b>Not full control. Turn on only what your plan needs: posting, insights (your numbers), and messages if we answer them for you. Leave ads and settings off.</div>
+      <p class="note">Meta says to do this from Meta Business Suite on a computer.</p>
+
+      <h3>Best way: add autoants as a partner</h3>
+      <ol class="steps">
+        <li>Go to business.facebook.com and open <b>Settings</b>.</li>
+        <li>Under <b>Users</b> on the left, click <b>Partners</b>.</li>
+        <li>Click <b>Add</b>, then <b>Give a partner access to your assets</b>.</li>
+        <li>Type our business portfolio ID. It's in our email to you. Click <b>Next</b>.</li>
+        <li>Pick your Facebook Page and your Instagram account.</li>
+        <li>Pick <b>partial access</b> and turn on only the tasks from the box above.</li>
+        <li>Click <b>Assign assets</b>.</li>
+      </ol>
+
+      <h3>Other way: add us as a person</h3>
+      <ol class="steps">
+        <li>In Meta Business Suite, open <b>Settings</b>, then <b>People</b>.</li>
+        <li>Click <b>Invite people</b>.</li>
+        <li>Type <button type="button" class="copy" data-copy="clients@autoants.com">clients@autoants.com</button> and click <b>Next</b>.</li>
+        <li>Leave the business portfolio access at the basic level. Click <b>Next</b>.</li>
+        <li>Pick your Page and Instagram account, with partial access only. Click <b>Invite</b>.</li>
+      </ol>
+
+      <h3>No Business Suite? Your Page alone</h3>
+      <ol class="steps">
+        <li>On Facebook, switch into your Page.</li>
+        <li>Go to <b>Settings &amp; privacy</b>, then <b>Settings</b>, then <b>Page setup</b>, then <b>Page access</b>.</li>
+        <li>Next to <b>People with task access</b>, click <b>Add New</b>, then <b>Next</b>.</li>
+        <li>Type <button type="button" class="copy" data-copy="clients@autoants.com">clients@autoants.com</button> and pick us.</li>
+        <li>Turn on only the tasks from the box above, then click <b>Give Access</b>.</li>
+      </ol>
+      <p class="note">Facebook may ask for your own password to confirm. Type it into Facebook only. Never send it to us. Don't see the Partners or People menu? You may not have full control of the portfolio. We'll find out who does, together.</p>
+      <p class="flag">Meta's pages don't list the task names in the same words everywhere, so we describe them in plain words. On the call we'll point to the exact switches.</p>
+      <div class="help">
+        <p><b>If you don't have an account yet:</b> we'll set it up with you on the call.</p>
+        <p><b>Stuck?</b> Reply to our email and we'll do it together on a 10-minute screen-share.</p>
+        <p>Prefer not to share your screen? We can talk you through it on a call, or do it with you in person. <a href="/start/screen-share/">How we keep screen-shares private</a>.</p>
+      </div>
+      <p class="src">Source: <a href="https://www.facebook.com/business/help/1717412048538897">Meta: Give a partner access to business assets</a>, <a href="https://www.facebook.com/business/help/2169003770027706">Add people to a business portfolio</a>, <a href="https://www.facebook.com/business/help/152071822895768">Give someone access to your Facebook Page</a> and <a href="https://www.facebook.com/help/187316341316631">Give, edit or remove Facebook Page access</a>, checked 2026-10-19.</p>
+      <a class="top-link" href="#top">Back to the list</a>
+    </section>
+
+    <!-- ============ Domain ============ -->
+    <section class="pf" id="domain" aria-labelledby="domain-h">
+      <h2 id="domain-h">Your domain (your web address)</h2>
+      <p class="time">Time: ~2 min</p>
+      <p>Your domain stays yours. We only need to point it at your website. Not sure where your domain lives? Search your inbox for the renewal email. Pick yours below.</p>
+
+      <h3 id="godaddy">GoDaddy</h3>
+      <div class="role"><b>What role to pick: Domains Only</b>If your website or email is also at GoDaddy, pick <b>Products &amp; Domains</b>. Never pick the one that says Purchase.</div>
+      <ol class="steps">
+        <li>Go to account.godaddy.com/access and sign in.</li>
+        <li>Under <b>People who can access my account</b>, pick <b>Invite to Access</b>.</li>
+        <li>Name: autoants. Email: <button type="button" class="copy" data-copy="clients@autoants.com">clients@autoants.com</button></li>
+        <li>Pick the access level from the box above.</li>
+        <li>Pick <b>Invite</b>. The invite runs out in 2 to 3 days, so we'll accept it fast.</li>
+      </ol>
+      <p class="note">GoDaddy gives us "management" on your domains by default: pointing them at your site. Leave "transfer" off. We can never see your payment methods or password.</p>
+
+      <h3 id="namecheap">Namecheap</h3>
+      <div class="role"><b>What role to pick: the DNS settings only</b>That's the part that points your name at your website. Leave transfer and contact settings off.</div>
+      <ol class="steps">
+        <li>Go to namecheap.com and sign in.</li>
+        <li>Pick <b>Domain List</b> on the left.</li>
+        <li>Click <b>Manage</b> next to your domain.</li>
+        <li>Open the <b>Sharing &amp; Transfer</b> tab and find <b>Share Access</b>.</li>
+        <li>Type <button type="button" class="copy" data-copy="clients@autoants.com">clients@autoants.com</button> as the new manager and click <b>Add</b>.</li>
+        <li>Turn on only the DNS settings.</li>
+        <li>Namecheap asks for your own password to confirm. Type it into Namecheap only. Never send it to us.</li>
+      </ol>
+      <p class="flag">Namecheap's help page doesn't list the names of each setting you can share. We'll point to the right ones on the call.</p>
+
+      <h3 id="squarespace-domains">Squarespace Domains (and old Google Domains)</h3>
+      <div class="role"><b>What role to pick: Domain manager</b>A domain manager can change the DNS settings. They can't see your billing or delete the domain.</div>
+      <ol class="steps">
+        <li>Go to account.squarespace.com/domains and sign in.</li>
+        <li>Click your domain, then <b>Permissions</b>.</li>
+        <li>Click <b>Invite domain manager</b>.</li>
+        <li>Name: autoants. Email: <button type="button" class="copy" data-copy="clients@autoants.com">clients@autoants.com</button></li>
+        <li>Send the invite.</li>
+      </ol>
+      <p class="note">If your domain came with a Squarespace website, it uses the website's people list instead. Use the Squarespace steps under <a href="#website">Your website</a>.</p>
+
+      <div class="help">
+        <p><b>If you don't have an account yet:</b> we'll set it up with you on the call.</p>
+        <p><b>Stuck?</b> Reply to our email and we'll do it together on a 10-minute screen-share.</p>
+        <p>Prefer not to share your screen? We can talk you through it on a call, or do it with you in person. <a href="/start/screen-share/">How we keep screen-shares private</a>.</p>
+      </div>
+      <p class="src">Source: <a href="https://www.godaddy.com/help/invite-a-delegate-to-access-my-godaddy-account-12376">GoDaddy: Invite a delegate</a>, <a href="https://www.godaddy.com/help/delegate-access-levels-of-permission-12374">Delegate access levels</a>, <a href="https://www.godaddy.com/help/grant-delegate-access-to-domains-32180">Grant delegate access to domains</a>; <a href="https://www.namecheap.com/support/knowledgebase/article.aspx/192/46/how-do-i-share-access-to-my-domain-with-other-users/">Namecheap: Share access to my domain</a>; <a href="https://support.squarespace.com/hc/en-us/articles/25974568684557-Managing-domain-permissions">Squarespace: Managing domain permissions</a>, checked 2026-10-19.</p>
+      <a class="top-link" href="#top">Back to the list</a>
+    </section>
+
+    <!-- ============ Website ============ -->
+    <section class="pf" id="website" aria-labelledby="website-h">
+      <h2 id="website-h">Your website</h2>
+      <p class="time">Time: ~2 min</p>
+      <p>Pick the one your site is built on. Not sure? Tell us your web address and we'll check.</p>
+
+      <h3 id="wordpress">WordPress</h3>
+      <div class="role"><b>What role to pick: Editor or Administrator</b>Editor if we only write pages. Administrator if we keep your site up (updates, speed, Google settings). We'll tell you which on the call.</div>
+      <p><b>Most WordPress sites</b> (you log in at your-site.com/wp-admin):</p>
+      <ol class="steps">
+        <li>Log in to your site's dashboard.</li>
+        <li>Go to <b>Users</b>, then <b>Add New User</b>.</li>
+        <li>Username: autoants. Email: <button type="button" class="copy" data-copy="clients@autoants.com">clients@autoants.com</button></li>
+        <li>Leave the password WordPress fills in. Don't copy it or send it. We make our own from the email WordPress sends us.</li>
+        <li>Leave the box checked that emails the new user about their account.</li>
+        <li>Pick the <b>Role</b> from the box above.</li>
+        <li>Click <b>Add New User</b>.</li>
+      </ol>
+      <p><b>If your site is on WordPress.com:</b></p>
+      <ol class="steps">
+        <li>Open your site's dashboard.</li>
+        <li>Go to <b>Users</b>, then <b>All Users</b>.</li>
+        <li>On the <b>Team</b> tab, click <b>Add a team member</b>.</li>
+        <li>Pick the role from the box above.</li>
+        <li>Type <button type="button" class="copy" data-copy="clients@autoants.com">clients@autoants.com</button> and click <b>Send invitation</b>.</li>
+      </ol>
+      <p class="flag">WordPress's own help page for the Add New User screen shows an older version of it. If the boxes look different, the steps are the same idea: our email, a role, and let WordPress email us.</p>
+
+      <h3 id="wix">Wix</h3>
+      <div class="role"><b>What role to pick: Website Designer</b>It can edit your site and settings, but can't see your inbox or customer contacts. If a job needs more, we'll ask first.</div>
+      <p><b>On your phone (Wix app):</b></p>
+      <ol class="steps">
+        <li>Open your site in the Wix app.</li>
+        <li>Tap <b>Manage</b> at the bottom.</li>
+        <li>Scroll to <b>Settings</b> and tap <b>Roles &amp; Permissions</b>.</li>
+        <li>Tap <b>Collaborators</b>, then <b>+ Invite Others</b>.</li>
+        <li>Type <button type="button" class="copy" data-copy="clients@autoants.com">clients@autoants.com</button></li>
+        <li>Under <b>Choose Roles</b>, pick the role above. Tap <b>Send</b>.</li>
+      </ol>
+      <p><b>On a computer:</b></p>
+      <ol class="steps">
+        <li>Open your site's dashboard, then <b>Settings</b>, then <b>Roles &amp; Permissions</b>.</li>
+        <li>Click <b>Invite Collaborators</b>.</li>
+        <li>Type <button type="button" class="copy" data-copy="clients@autoants.com">clients@autoants.com</button></li>
+        <li>Check the role above, then click <b>Send Invites</b>.</li>
+      </ol>
+      <p class="note">Some Wix plans come with only one free collaborator seat. If yours is full, tell us and we'll work it out.</p>
+      <p class="flag">Wix's help doesn't say in plain words whether Website Designer covers Google (SEO) settings. If it doesn't, we'll ask you before changing the role.</p>
+
+      <h3 id="squarespace">Squarespace</h3>
+      <div class="role"><b>What role to pick: Administrator</b>Not Billing. "Website editor" can't add pages or change the page settings Google reads, so it isn't enough for this work.</div>
+      <p><b>On your phone (Squarespace app):</b></p>
+      <ol class="steps">
+        <li>Tap <b>More</b>, then <b>Settings</b>, then <b>Permissions</b>.</li>
+        <li>Scroll down and tap <b>Invite Contributor</b>.</li>
+        <li>Name: autoants. Email: <button type="button" class="copy" data-copy="clients@autoants.com">clients@autoants.com</button></li>
+        <li>Turn on <b>Administrator</b>. Tap <b>Send</b>.</li>
+      </ol>
+      <p><b>On a computer:</b></p>
+      <ol class="steps">
+        <li>In your site, open <b>Settings</b>, then <b>Permissions &amp; Ownership</b>.</li>
+        <li>Click <b>Invite Contributor</b>.</li>
+        <li>Name: autoants. Email: <button type="button" class="copy" data-copy="clients@autoants.com">clients@autoants.com</button></li>
+        <li>Turn on <b>Administrator</b>. Click <b>Invite</b>.</li>
+      </ol>
+      <p class="note">The Basic plan allows one helper besides you.</p>
+
+      <div class="help">
+        <p><b>If you don't have an account yet:</b> we'll set it up with you on the call.</p>
+        <p><b>Stuck?</b> Reply to our email and we'll do it together on a 10-minute screen-share.</p>
+        <p>Prefer not to share your screen? We can talk you through it on a call, or do it with you in person. <a href="/start/screen-share/">How we keep screen-shares private</a>.</p>
+      </div>
+      <p class="src">Source: <a href="https://wordpress.org/documentation/article/users-add-new-screen/">WordPress.org: Users Add New screen</a>, <a href="https://wordpress.com/support/invite-people/">WordPress.com: Invite users</a>; <a href="https://support.wix.com/en/article/wix-app-inviting-and-managing-collaborators">Wix app: Inviting collaborators</a>, <a href="https://support.wix.com/en/article/inviting-people-to-contribute-to-your-site">Wix: Roles &amp; Permissions</a>, <a href="https://support.wix.com/en/article/roles-permissions-overview">Roles overview</a>; <a href="https://support.squarespace.com/hc/en-us/articles/206537287-Invite-a-contributor">Squarespace: Invite a contributor</a>, <a href="https://support.squarespace.com/hc/en-us/articles/206537297-Contributor-roles-and-permissions">Contributor roles</a>, checked 2026-10-19.</p>
+      <a class="top-link" href="#top">Back to the list</a>
+    </section>
+
+    <!-- ============ BBB ============ -->
+    <section class="pf" id="bbb" aria-labelledby="bbb-h">
+      <h2 id="bbb-h">BBB Business Profile</h2>
+      <p class="time">Time: ~10 min, together</p>
+      <div class="role"><b>What role to pick: none</b>BBB's public help doesn't show a way to add a second person to your business account. So we do this one with you, and we keep no login.</div>
+      <ol class="steps">
+        <li>Book 10 minutes with us. Share your screen, or we talk you through it.</li>
+        <li>You go to bbb.org, click <b>My BBB</b> at the top right, and sign in yourself.</li>
+        <li>You make the changes while we point: your services, hours, service area and photos.</li>
+      </ol>
+      <p class="note">You can also ask your local BBB office if they can add a second contact to your file. If they can, add <button type="button" class="copy" data-copy="clients@autoants.com">clients@autoants.com</button>.</p>
+      <div class="help">
+        <p><b>If you don't have an account yet:</b> we'll set it up with you on the call.</p>
+        <p><b>Stuck?</b> Reply to our email and we'll do it together on a 10-minute screen-share.</p>
+        <p>Prefer not to share your screen? We can talk you through it on a call, or do it with you in person. <a href="/start/screen-share/">How we keep screen-shares private</a>.</p>
+      </div>
+      <p class="src">Source: <a href="https://www.bbb.org/business/accreditation/setting-up-your-business-profile">BBB: Setting up your business profile</a>, checked 2026-10-19.</p>
+      <a class="top-link" href="#top">Back to the list</a>
+    </section>
+
+    <!-- ============ Angi ============ -->
+    <section class="pf" id="angi" aria-labelledby="angi-h">
+      <h2 id="angi-h">Angi (and HomeAdvisor)</h2>
+      <p class="time">Time: ~2 min</p>
+      <div class="role"><b>What role to pick: Associate</b>Not Admin. An Admin can change your budget and payments; an Associate can't. If your profile needs fixing, we'll do that part with you on a screen-share.</div>
+      <p><b>On your phone (Angi for Pros app):</b></p>
+      <ol class="steps">
+        <li>Tap the <b>Account</b> icon at the top right.</li>
+        <li>Tap <b>Manage team</b>, then <b>Add team member</b>.</li>
+        <li>Name: autoants. Email: <button type="button" class="copy" data-copy="clients@autoants.com">clients@autoants.com</button></li>
+        <li>Pick <b>Associate</b>. Tap <b>Send invite</b>.</li>
+      </ol>
+      <p><b>On a computer:</b></p>
+      <ol class="steps">
+        <li>Sign in to your Angi business account.</li>
+        <li>Point at <b>My business</b> and click <b>Manage team</b>.</li>
+        <li>Click <b>Add team member</b>.</li>
+        <li>Name: autoants. Email: <button type="button" class="copy" data-copy="clients@autoants.com">clients@autoants.com</button></li>
+        <li>Pick <b>Associate</b>. Click <b>Send invite</b>.</li>
+      </ol>
+      <p class="note">Only an Admin on your account can add people.</p>
+      <p class="flag">Angi's help covers the Angi for Pros account. If you still log in to an older HomeAdvisor Pro account, the menus may differ. Do it with us on a call.</p>
+      <div class="help">
+        <p><b>If you don't have an account yet:</b> we'll set it up with you on the call.</p>
+        <p><b>Stuck?</b> Reply to our email and we'll do it together on a 10-minute screen-share.</p>
+        <p>Prefer not to share your screen? We can talk you through it on a call, or do it with you in person. <a href="/start/screen-share/">How we keep screen-shares private</a>.</p>
+      </div>
+      <p class="src">Source: <a href="https://intercom.help/angi/en/articles/10722223-how-to-manage-my-team">Angi Help Center: How to manage my team</a> (updated 2026-03-19), checked 2026-10-19.</p>
+      <a class="top-link" href="#top">Back to the list</a>
+    </section>
+
+    <h2>To take us off later</h2>
+    <p>Every account above has the same page you used to add us. Remove us there, any time. You don't need to ask.</p>
+  </main>
+  <footer class="foot">autoants, short for automated assistants · New Orleans · <a href="/privacy.html">Privacy</a> · <a href="mailto:hello@autoants.com">hello@autoants.com</a></footer>
+</div>
+<script>
+  // Tap any email button to copy it. Falls back to selecting the text if the clipboard is blocked.
+  (function(){
+    function sel(el){try{var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);}catch(e){}}
+    document.addEventListener('click',function(e){
+      var b=e.target.closest&&e.target.closest('.copy'); if(!b) return;
+      var t=b.getAttribute('data-copy')||b.textContent.trim();
+      function ok(){b.classList.add('done');setTimeout(function(){b.classList.remove('done');},1800);}
+      try{ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,function(){sel(b);});} else {sel(b);} }catch(err){sel(b);}
+    });
+  })();
+</script>
+</body>
+</html>
