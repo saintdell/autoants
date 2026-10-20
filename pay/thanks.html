@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Payment received · autoants</title>
+<meta name="description" content="Your payment to autoants went through. Here's what happens next.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pay.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <nav aria-label="Site">
+    <a class="logo" href="../" aria-label="autoants home"><img src="../brand/autoants-logo-reverse.svg" alt="autoants"></a>
+    <span class="sp"></span>
+    <a class="ghost" href="../services.html">Services</a>
+    <a class="ghost" href="mailto:hello@autoants.com">Email us</a>
+  </nav>
+
+  <main id="main">
+  <header class="hero">
+    <p class="eyebrow">Payment received</p>
+    <h1>Thanks. You're <em>in</em>.</h1>
+    <p class="sub">Your payment went through. Stripe has emailed your receipt; keep it for your books. Here's what happens next.</p>
+  </header>
+
+  <section aria-labelledby="next-h">
+    <h2 class="sec" id="next-h">What we need from you</h2>
+    <p class="sec-lede">This is the "What you provide" part of the <a href="../terms/">service agreement</a>. The sooner we have it, the sooner your work starts; the 7-day clock for a go-live site starts once we do.</p>
+    <ol class="steps">
+      <li><b>Your business info</b>Your legal business name, the name customers know you by, phone, service area, hours, the services you sell and anything you want said, or never said.</li>
+      <li><b>Access where it's needed</b>Logins or access for what we're working on: your domain, Google Business Profile, social accounts. Add us as a user where you can, rather than sharing a password.</li>
+      <li><b>Replies within two business days</b>When we ask you to approve something, reply within two business days. Nothing goes to your customers in a new form until you've approved the wording.</li>
+    </ol>
+    <div class="callout"><b>Texting?</b> Text messaging needs your business registered with the carriers, so we'll ask for the details that registration needs.</div>
+  </section>
+
+  <section aria-labelledby="call-h">
+    <h2 class="sec" id="call-h">Book your kickoff call</h2>
+    <p class="sec-lede">A short call to walk through the checklist, set up access together and agree what you'll approve first.</p>
+    <p><a class="btn" id="kickoff" href="mailto:hello@autoants.com?subject=Kickoff%20call">Book the kickoff call</a></p>
+    <p class="sec-lede" style="margin-top:14px">Rather email? Send the checklist items to <a href="mailto:hello@autoants.com">hello@autoants.com</a>, and don't send passwords by email.</p>
+  </section>
+  </main>
+
+  <footer>
+    <p class="q">Questions? <a href="mailto:hello@autoants.com">hello@autoants.com</a></p>
+    <p>autoants, short for automated assistants. AutoAnts, LLC. Commercial services only.</p>
+  </footer>
+</div>
+<script>
+// The kickoff booking link lives in links.json with the payment links. Until it's set, the button falls back to email.
+fetch('links.json', { cache: 'no-store' })
+  .then(function (r) { return r.json(); })
+  .then(function (j) {
+    var url = j.kickoff_call || '';
+    if (url && url.indexOf('REPLACE_') === -1) document.getElementById('kickoff').href = url;
+  })
+  .catch(function () {});
+</script>
+</body>
+</html>
