@@ -1,0 +1,284 @@
+{
+ "title": "Licensed roofers in Mid-City, New Orleans",
+ "url": "https://autoants.com/pros/roofers/mid-city/",
+ "last_refreshed": "2026-10-20",
+ "trade": "roofing",
+ "area": "Mid-City",
+ "city_neighborhoods": [
+  "Mid-City"
+ ],
+ "gates": [
+  "An active, unexpired LSLBC license certificate carrying one of these classes: Roofing and Sheet Metal, Siding; Residential Roofing; Residential Construction. No license on the record suspended or revoked.",
+  "General liability insurance on file with the LSLBC, not expired.",
+  "At least one roofing permit credited to the business name in this area in the last 24 full months.",
+  "The license record was read within 45 days.",
+  "Not on our removal list."
+ ],
+ "order": "Listed A to Z by business name. The order says nothing about quality, and paying partners never get a better place.",
+ "disclosure": "Some listed contractors pay Lane Davis II a referral fee when he introduces a customer; that never affects who's listed or the order.",
+ "verify": "Verify any license at lslbc.louisiana.gov.",
+ "never_shown": "homeowner or permit addresses, permit numbers, ratings, reviews, rankings by quality",
+ "corrections": "Email hello@autoants.com. Put 'Correct' or 'Remove' and the business name in the subject, and include the LSLBC license number. To correct a fact, say which one and link the public record or the page on the business's own site that shows it. To be removed, just say so: the business comes off every Verified Pros page and the New Orleans guide at the next rebuild and stays off, even though the records are public. Both are free.",
+ "contractors": [
+  {
+   "name": "AM Properties and Preservation LLC",
+   "license": {
+    "number": "CL.77699",
+    "type": "Commercial License Certificate",
+    "classes": [
+     "ROOFING AND SHEET METAL, SIDING"
+    ],
+    "status": "Active",
+    "expires": "2027-11-14",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-04",
+    "record_url": "https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=rGIsFhTt4zP55uVHwxHmDw%3d%3d"
+   },
+   "years_licensed": {
+    "years": 2,
+    "first_issued": "2023-11-14",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-04"
+   },
+   "home_job_classes": {
+    "held": [
+     "RESIDENTIAL ROOFING"
+    ],
+    "residential_license": "RL.01983",
+    "rule": "Louisiana requires the Residential Roofing or Residential Construction class for a home roof job of $7,500 or more (La. R.S. 37:2156.4, since January 1, 2026)",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-04"
+   },
+   "insurance": {
+    "general_liability_on_file": true,
+    "expires_month": "2027-07",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-04"
+   },
+   "permits_in_area": {
+    "count": 2,
+    "trade": "roofing",
+    "area": "Mid-City",
+    "issued_from": "2024-10-01",
+    "issued_to": "2026-09-30",
+    "source": "City of New Orleans Permits - BLDS, data.nola.gov 72f9-bi28",
+    "as_of": "2026-10-20"
+   },
+   "phone": {
+    "value": "(504) 957-0742",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-04"
+   },
+   "website": null,
+   "referral_partner": false
+  },
+  {
+   "name": "Lapeyre Construction LLC",
+   "license": {
+    "number": "RL.889405",
+    "type": "Residential License Certificate",
+    "classes": [
+     "RESIDENTIAL CONSTRUCTION"
+    ],
+    "status": "Active",
+    "expires": "2027-06-12",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19",
+    "record_url": "https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=QCnRam4fPzSYl14%2b%2f0QqYQ%3d%3d"
+   },
+   "years_licensed": {
+    "years": 3,
+    "first_issued": "2023-06-12",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "home_job_classes": {
+    "held": [
+     "RESIDENTIAL CONSTRUCTION"
+    ],
+    "residential_license": "RL.889405",
+    "rule": "Louisiana requires the Residential Roofing or Residential Construction class for a home roof job of $7,500 or more (La. R.S. 37:2156.4, since January 1, 2026)",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "insurance": {
+    "general_liability_on_file": true,
+    "expires_month": "2027-10",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "permits_in_area": {
+    "count": 4,
+    "trade": "roofing",
+    "area": "Mid-City",
+    "issued_from": "2024-10-01",
+    "issued_to": "2026-09-30",
+    "source": "City of New Orleans Permits - BLDS, data.nola.gov 72f9-bi28",
+    "as_of": "2026-10-20"
+   },
+   "phone": {
+    "value": "(504) 290-2911",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "website": null,
+   "referral_partner": false
+  },
+  {
+   "name": "MID CITY CONSTRUCTION, LLC",
+   "license": {
+    "number": "RL.882592",
+    "type": "Residential License Certificate",
+    "classes": [
+     "RESIDENTIAL CONSTRUCTION"
+    ],
+    "status": "Active",
+    "expires": "2027-12-02",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19",
+    "record_url": "https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=x7LbyTtBJ%2bMjQeA0oRxFiQ%3d%3d"
+   },
+   "years_licensed": {
+    "years": 14,
+    "first_issued": "2012-09-12",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "home_job_classes": {
+    "held": [
+     "RESIDENTIAL CONSTRUCTION"
+    ],
+    "residential_license": "RL.882592",
+    "rule": "Louisiana requires the Residential Roofing or Residential Construction class for a home roof job of $7,500 or more (La. R.S. 37:2156.4, since January 1, 2026)",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "insurance": {
+    "general_liability_on_file": true,
+    "expires_month": "2026-11",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "permits_in_area": {
+    "count": 1,
+    "trade": "roofing",
+    "area": "Mid-City",
+    "issued_from": "2024-10-01",
+    "issued_to": "2026-09-30",
+    "source": "City of New Orleans Permits - BLDS, data.nola.gov 72f9-bi28",
+    "as_of": "2026-10-20"
+   },
+   "phone": {
+    "value": "(504) 821-0034",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "website": null,
+   "referral_partner": false
+  },
+  {
+   "name": "Star Recovery Services, LLC",
+   "license": {
+    "number": "RL.887176",
+    "type": "Residential License Certificate",
+    "classes": [
+     "RESIDENTIAL CONSTRUCTION"
+    ],
+    "status": "Active",
+    "expires": "2027-04-05",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19",
+    "record_url": "https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=769TfaSJllj7ByBIn8kZCA%3d%3d"
+   },
+   "years_licensed": {
+    "years": 5,
+    "first_issued": "2021-04-05",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "home_job_classes": {
+    "held": [
+     "RESIDENTIAL CONSTRUCTION"
+    ],
+    "residential_license": "RL.887176",
+    "rule": "Louisiana requires the Residential Roofing or Residential Construction class for a home roof job of $7,500 or more (La. R.S. 37:2156.4, since January 1, 2026)",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "insurance": {
+    "general_liability_on_file": true,
+    "expires_month": "2027-03",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "permits_in_area": {
+    "count": 1,
+    "trade": "roofing",
+    "area": "Mid-City",
+    "issued_from": "2024-10-01",
+    "issued_to": "2026-09-30",
+    "source": "City of New Orleans Permits - BLDS, data.nola.gov 72f9-bi28",
+    "as_of": "2026-10-20"
+   },
+   "phone": {
+    "value": "(504) 235-8360",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "website": null,
+   "referral_partner": false
+  },
+  {
+   "name": "Sunbelt Roofs, LLC",
+   "license": {
+    "number": "RL.04954",
+    "type": "Residential License Certificate",
+    "classes": [
+     "RESIDENTIAL CONSTRUCTION"
+    ],
+    "status": "Active",
+    "expires": "2027-07-19",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19",
+    "record_url": "https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=RNIGBNVAEDR5JFMvy1e8Vw%3d%3d"
+   },
+   "years_licensed": {
+    "years": 1,
+    "first_issued": "2025-07-11",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "home_job_classes": {
+    "held": [
+     "RESIDENTIAL CONSTRUCTION"
+    ],
+    "residential_license": "RL.04954",
+    "rule": "Louisiana requires the Residential Roofing or Residential Construction class for a home roof job of $7,500 or more (La. R.S. 37:2156.4, since January 1, 2026)",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "insurance": {
+    "general_liability_on_file": true,
+    "expires_month": "2027-06",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "permits_in_area": {
+    "count": 1,
+    "trade": "roofing",
+    "area": "Mid-City",
+    "issued_from": "2024-10-01",
+    "issued_to": "2026-09-30",
+    "source": "City of New Orleans Permits - BLDS, data.nola.gov 72f9-bi28",
+    "as_of": "2026-10-20"
+   },
+   "phone": {
+    "value": "(504) 418-8781",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "website": null,
+   "referral_partner": false
+  }
+ ]
+}

@@ -2,15 +2,16 @@
 
 > Licensed, insured New Orleans contractors with recent permits, one page per trade and neighborhood. Every fact carries its public source and date. Listed A to Z; the order says nothing about quality.
 
-Last refreshed: 2026-10-19
+Last refreshed: 2026-10-20
 Disclosure: Some listed contractors pay Lane Davis II a referral fee when he introduces a customer; that never affects who's listed or the order.
 Verify: Verify any license at lslbc.louisiana.gov.
 Corrections and removals: hello@autoants.com
 
 ## Pages
 
-- [Licensed roofers in Lakeview, New Orleans](https://autoants.com/pros/roofers/lakeview/): 4 listed; JSON: https://autoants.com/pros/roofers/lakeview/pros.json
-- [Licensed roofers in Uptown and Audubon, New Orleans](https://autoants.com/pros/roofers/uptown-audubon/): 7 listed; JSON: https://autoants.com/pros/roofers/uptown-audubon/pros.json
+- [Licensed roofers in Lakeview, New Orleans](https://autoants.com/pros/roofers/lakeview/): 5 listed; JSON: https://autoants.com/pros/roofers/lakeview/pros.json
+- [Licensed roofers in Mid-City, New Orleans](https://autoants.com/pros/roofers/mid-city/): 5 listed; JSON: https://autoants.com/pros/roofers/mid-city/pros.json
+- [Licensed roofers in Uptown and Audubon, New Orleans](https://autoants.com/pros/roofers/uptown-audubon/): 8 listed; JSON: https://autoants.com/pros/roofers/uptown-audubon/pros.json
 
 ## Method
 

@@ -1,7 +1,7 @@
 {
  "title": "Licensed roofers in Lakeview, New Orleans",
  "url": "https://autoants.com/pros/roofers/lakeview/",
- "last_refreshed": "2026-10-19",
+ "last_refreshed": "2026-10-20",
  "trade": "roofing",
  "area": "Lakeview",
  "city_neighborhoods": [
@@ -62,12 +62,64 @@
     "issued_from": "2024-10-01",
     "issued_to": "2026-09-30",
     "source": "City of New Orleans Permits - BLDS, data.nola.gov 72f9-bi28",
-    "as_of": "2026-10-19"
+    "as_of": "2026-10-20"
    },
    "phone": {
     "value": "(504) 733-8550",
     "source": "LSLBC license record",
     "as_of": "2026-10-04"
+   },
+   "website": null,
+   "referral_partner": false
+  },
+  {
+   "name": "Lapeyre Construction LLC",
+   "license": {
+    "number": "RL.889405",
+    "type": "Residential License Certificate",
+    "classes": [
+     "RESIDENTIAL CONSTRUCTION"
+    ],
+    "status": "Active",
+    "expires": "2027-06-12",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19",
+    "record_url": "https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=QCnRam4fPzSYl14%2b%2f0QqYQ%3d%3d"
+   },
+   "years_licensed": {
+    "years": 3,
+    "first_issued": "2023-06-12",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "home_job_classes": {
+    "held": [
+     "RESIDENTIAL CONSTRUCTION"
+    ],
+    "residential_license": "RL.889405",
+    "rule": "Louisiana requires the Residential Roofing or Residential Construction class for a home roof job of $7,500 or more (La. R.S. 37:2156.4, since January 1, 2026)",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "insurance": {
+    "general_liability_on_file": true,
+    "expires_month": "2027-10",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
+   },
+   "permits_in_area": {
+    "count": 3,
+    "trade": "roofing",
+    "area": "Lakeview",
+    "issued_from": "2024-10-01",
+    "issued_to": "2026-09-30",
+    "source": "City of New Orleans Permits - BLDS, data.nola.gov 72f9-bi28",
+    "as_of": "2026-10-20"
+   },
+   "phone": {
+    "value": "(504) 290-2911",
+    "source": "LSLBC license record",
+    "as_of": "2026-10-19"
    },
    "website": null,
    "referral_partner": false
@@ -114,7 +166,7 @@
     "issued_from": "2024-10-01",
     "issued_to": "2026-09-30",
     "source": "City of New Orleans Permits - BLDS, data.nola.gov 72f9-bi28",
-    "as_of": "2026-10-19"
+    "as_of": "2026-10-20"
    },
    "phone": {
     "value": "(504) 583-3333",
@@ -166,7 +218,7 @@
     "issued_from": "2024-10-01",
     "issued_to": "2026-09-30",
     "source": "City of New Orleans Permits - BLDS, data.nola.gov 72f9-bi28",
-    "as_of": "2026-10-19"
+    "as_of": "2026-10-20"
    },
    "phone": {
     "value": "(504) 382-9869",
@@ -218,7 +270,7 @@
     "issued_from": "2024-10-01",
     "issued_to": "2026-09-30",
     "source": "City of New Orleans Permits - BLDS, data.nola.gov 72f9-bi28",
-    "as_of": "2026-10-19"
+    "as_of": "2026-10-20"
    },
    "phone": {
     "value": "(504) 394-7200",

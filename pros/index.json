@@ -1,18 +1,24 @@
 {
  "title": "autoants Verified Pros",
- "last_refreshed": "2026-10-19",
+ "last_refreshed": "2026-10-20",
  "pages": [
   {
    "title": "Licensed roofers in Lakeview, New Orleans",
    "url": "https://autoants.com/pros/roofers/lakeview/",
    "json": "https://autoants.com/pros/roofers/lakeview/pros.json",
-   "listed": 4
+   "listed": 5
+  },
+  {
+   "title": "Licensed roofers in Mid-City, New Orleans",
+   "url": "https://autoants.com/pros/roofers/mid-city/",
+   "json": "https://autoants.com/pros/roofers/mid-city/pros.json",
+   "listed": 5
   },
   {
    "title": "Licensed roofers in Uptown and Audubon, New Orleans",
    "url": "https://autoants.com/pros/roofers/uptown-audubon/",
    "json": "https://autoants.com/pros/roofers/uptown-audubon/pros.json",
-   "listed": 7
+   "listed": 8
   }
  ],
  "disclosure": "Some listed contractors pay Lane Davis II a referral fee when he introduces a customer; that never affects who's listed or the order.",
