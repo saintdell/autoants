@@ -25,7 +25,7 @@
 <style>
   :root{
     --bg:#0b1712; --bg2:#0f1f18; --surface:#14261e; --surface2:#1a2f25;
-    --ink:#f4f1e8; --muted:#a3b0a8; --faint:#6f7d75;
+    --ink:#f4f1e8; --muted:#a3b0a8; --faint:#87948d;
     --amber:#3ddcae; --amber-deep:#22b892; --amber-ink:#062a1d;
     --line:rgba(244,241,232,.10); --line2:rgba(244,241,232,.16);
     --ok:#7bc96a;
@@ -92,7 +92,7 @@
   .dispatch .dhead{display:flex;align-items:center;gap:.55rem;padding:.3rem .5rem .8rem;border-bottom:1px solid var(--line);margin-bottom:.7rem}
   .dispatch .dhead .ant{width:20px;height:20px}
   .dispatch .dhead .t{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-  .live-dot{margin-left:auto;display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.66rem;color:var(--ok);letter-spacing:.08em}
+  .live-dot{margin-left:auto;display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.6875rem;color:var(--ok);letter-spacing:.08em}
   .live-dot i{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(123,201,106,.6);animation:blip 2s infinite}
   @keyframes blip{0%{box-shadow:0 0 0 0 rgba(123,201,106,.5)}70%{box-shadow:0 0 0 7px rgba(123,201,106,0)}100%{box-shadow:0 0 0 0 rgba(123,201,106,0)}}
   #feed{display:flex;flex-direction:column;gap:.5rem;min-height:270px}
@@ -104,7 +104,7 @@
   @keyframes spin{to{transform:rotate(360deg)}}
   .task .txt{font-size:.86rem;line-height:1.35}
   .task .txt b{font-weight:700}
-  .task .sub{font-family:var(--mono);font-size:.68rem;color:var(--faint);margin-top:.15rem}
+  .task .sub{font-family:var(--mono);font-size:.6875rem;color:var(--faint);margin-top:.15rem}
   .task.proc .txt .sub{color:var(--amber)}
 
   section{padding:4.8rem 0;position:relative}
@@ -128,9 +128,9 @@
   .stack{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
   .scard{background:var(--surface);border:1px solid var(--line);border-radius:15px;padding:1.5rem 1.4rem;transition:transform .16s ease,border-color .16s ease,background .16s ease;position:relative}
   .scard:hover{transform:translateY(-3px);border-color:var(--line2);background:var(--surface2)}
-  .scard .tag{font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.1em;color:var(--amber);text-transform:uppercase}
+  .scard .tag{font-family:var(--mono);font-size:.6875rem;font-weight:700;letter-spacing:.1em;color:var(--amber);text-transform:uppercase}
   .scard h3{font-size:1.14rem;font-weight:800;margin:.4rem 0 .5rem}.scard p{color:var(--muted);font-size:.92rem}
-  .scard .free{position:absolute;top:1.1rem;right:1.1rem;font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.08em;background:var(--amber);color:var(--amber-ink);padding:.2rem .5rem;border-radius:6px}
+  .scard .free{position:absolute;top:1.1rem;right:1.1rem;font-family:var(--mono);font-size:.6875rem;font-weight:700;letter-spacing:.08em;background:var(--amber);color:var(--amber-ink);padding:.2rem .5rem;border-radius:6px}
   .stack-note{margin-top:1.6rem;font-size:1.02rem;color:var(--muted);text-align:center}.stack-note b{color:var(--ink)}
 
   /* ---- ROI calc ---- */
@@ -201,7 +201,7 @@
 .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.1rem}
   .tier{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.8rem 1.6rem;display:flex;flex-direction:column}
   .tier.feature{border-color:var(--amber);box-shadow:0 0 0 1px var(--amber),0 18px 50px rgba(61,220,174,.1)}
-  .tier .flag{font-family:var(--mono);font-size:.64rem;font-weight:700;letter-spacing:.1em;color:var(--amber);text-transform:uppercase;margin-bottom:.6rem}
+  .tier .flag{font-family:var(--mono);font-size:.6875rem;font-weight:700;letter-spacing:.1em;color:var(--amber);text-transform:uppercase;margin-bottom:.6rem}
   .tier h3{font-size:1.28rem;font-weight:800;margin-bottom:.3rem}
   .tier .price{font-family:var(--disp);font-weight:900;font-size:2rem;margin:.4rem 0 .1rem;letter-spacing:-.03em}
   .tier .price small{font-family:var(--mono);font-size:.78rem;font-weight:500;color:var(--muted);letter-spacing:0}
@@ -226,7 +226,7 @@
   .ba .handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:var(--amber);transform:translateX(-1px)}
   .ba .handle:after{content:"◀ ▶";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--amber);color:var(--amber-ink);font:700 .7rem var(--mono);padding:.5rem .6rem;border-radius:999px;white-space:nowrap}
   .ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
-  .ba .lab{position:absolute;top:.8rem;font:700 .66rem var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:.3rem .6rem;border-radius:6px;background:rgba(13,14,12,.8)}
+  .ba .lab{position:absolute;top:.8rem;font:700 .6875rem var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:.3rem .6rem;border-radius:6px;background:rgba(13,14,12,.8)}
   .ba .lab.l{left:.8rem}.ba .lab.r{right:.8rem;color:var(--amber)}
   .fine{margin-top:.9rem;font-family:var(--mono);font-size:.74rem;color:var(--faint)}
   /* ---- build animation (#build) ---- */
@@ -249,7 +249,7 @@
   /* ---- assistants ---- */
   .scard .who{display:flex;align-items:center;gap:.6rem;margin-bottom:.15rem}
   .scard .who .ant{width:22px;height:30px}
-  .scard .role{font-family:var(--mono);font-size:.66rem;color:var(--faint);letter-spacing:.06em;text-transform:uppercase;margin-top:.1rem}
+  .scard .role{font-family:var(--mono);font-size:.6875rem;color:var(--faint);letter-spacing:.06em;text-transform:uppercase;margin-top:.1rem}
   /* ---- FAQ ---- */
   .faq{display:grid;gap:.7rem;max-width:52rem}
   .faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.05rem 1.3rem}
