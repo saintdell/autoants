@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Find a licensed pro · Lane Davis II's Referral Desk</title>
+<meta name="description" content="Tell Lane Davis II's Referral Desk what needs doing. Lane picks up to three licensed, insured local contractors and shows you their license records first. Free for you; not a contractor.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://autoants.com/connect/">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<!-- Source of truth: tle-main products/referral-desk/templates/connect.html (tests/test_connect.py). Copy it here when it changes. -->
+<style>
+  :root{--bg:#0b1712;--surface:#14261e;--ink:#f4f1e8;--muted:#a3b0a8;--faint:#8a968f;
+        --mint:#3ddcae;--mint-ink:#062a1d;--line:rgba(244,241,232,.14);--warn:#ffb86b;
+        --disp:"Archivo",system-ui,sans-serif;--body:"Inter",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+  .wrap{max-width:720px;margin:0 auto;padding:0 16px}
+  nav{display:flex;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  nav .sp{margin-left:auto}
+  nav a.ghost{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mint);margin:32px 0 0}
+  h1{font-family:var(--disp);font-weight:800;font-size:clamp(30px,7vw,46px);line-height:1.05;letter-spacing:-.02em;margin:10px 0 10px;text-wrap:balance}
+  .lede{font-size:clamp(17px,2.6vw,19px);max-width:60ch;margin:0}
+  p{margin:.5em 0}
+  form{display:grid;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 16px;margin:22px 0 8px}
+  fieldset{border:0;margin:0;padding:0;display:grid;gap:10px;min-width:0}
+  legend{font-family:var(--disp);font-weight:800;font-size:18px;padding:0;margin:4px 0 2px}
+  label{display:grid;gap:5px;font-size:14px;color:var(--muted)}
+  label b{color:var(--ink);font-weight:600;font-size:15px}
+  .opt{color:var(--faint);font-weight:400}
+  input[type=text],input[type=email],input[type=tel],select,textarea{background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:12px;font:inherit;font-size:16px;width:100%;min-height:46px}
+  textarea{min-height:96px;resize:vertical}
+  select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 12px) 50%;background-size:6px 6px;background-repeat:no-repeat;padding-right:34px}
+  .hint{font-size:13px;color:var(--faint);margin:0}
+  .two{display:grid;grid-template-columns:1fr;gap:12px}
+  .radios{display:flex;flex-wrap:wrap;gap:8px 18px}
+  .radios label,.chk{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:var(--ink)}
+  .radios label{align-items:center;min-height:44px}
+  .radios input,.chk input{width:20px;height:20px;flex:0 0 auto;accent-color:var(--mint);margin:2px 0 0}
+  .chk{padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:rgba(0,0,0,.18)}
+  .chk small{display:block;color:var(--faint);font-size:13px;margin-top:3px}
+  .consent{border-color:rgba(61,220,174,.45)}
+  .disclose{background:rgba(0,0,0,.22);border-left:3px solid var(--mint);border-radius:10px;padding:12px 14px;font-size:14.5px}
+  .disclose p{margin:.35em 0;color:var(--ink)}
+  .disclose .soft{color:var(--muted)}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .btn{display:inline-block;width:100%;background:var(--mint);color:var(--mint-ink);border:0;border-radius:10px;padding:15px 18px;font:inherit;font-family:var(--disp);font-weight:800;font-size:17px;cursor:pointer;min-height:48px}
+  .btn[disabled]{opacity:.6;cursor:wait}
+  #say{margin:0;font-weight:600}
+  #say.ok{color:var(--mint)} #say.no{color:var(--warn)}
+  .privacy{font-size:13.5px;color:var(--muted);margin:10px 0 0}
+  h2{font-family:var(--disp);font-weight:800;font-size:clamp(20px,4.4vw,24px);line-height:1.2;margin:38px 0 8px}
+  ol.steps{padding-left:1.3em;margin:8px 0;color:var(--muted)}
+  ol.steps li{margin:.45em 0}
+  ol.steps b{color:var(--ink)}
+  footer{color:var(--faint);font-size:13px;padding:32px 0 44px;border-top:1px solid var(--line);margin-top:40px}
+  footer p{margin:.3em 0}
+  footer a{color:var(--faint)}
+  @media (min-width:640px){form{padding:22px 24px}.two{grid-template-columns:1fr 1fr}.btn{width:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Site">
+    <a href="../index.html"><img src="../brand/autoants-logo-reverse.svg" alt="autoants home" style="height:26px;width:auto;display:block"></a>
+    <div class="sp"></div>
+    <a class="ghost" href="../privacy.html">Privacy</a>
+  </nav>
+
+  <main id="main">
+  <p class="eyebrow">Referral Desk · Lane Davis II</p>
+  <h1>Need a licensed pro?</h1>
+  <p class="lede">Tell Lane what needs doing. He picks up to three licensed, insured local contractors and sends you their names and license records first. Free for you.</p>
+
+  <noscript><p class="disclose">This form needs JavaScript. You can email <a href="mailto:hello@autoants.com">hello@autoants.com</a> instead with the trade, your neighborhood or ZIP, and when you need it done.</p></noscript>
+
+  <form id="connectForm" novalidate aria-describedby="fee-line">
+    <fieldset>
+      <legend>The job</legend>
+      <label for="trade"><b>What do you need?</b>
+        <select id="trade" name="trade" required>
+          <option value="">Pick a trade</option>
+          <option value="roofing">Roofing</option>
+          <option value="plumbing">Plumbing</option>
+          <option value="electrical">Electrical</option>
+          <option value="hvac">Heating and A/C</option>
+          <option value="generator">Standby generator</option>
+          <option value="pool">Pool</option>
+          <option value="solar">Solar</option>
+          <option value="concrete">Concrete or driveway</option>
+          <option value="mold">Mold remediation</option>
+          <option value="foundation">Foundation</option>
+          <option value="painting">Painting</option>
+          <option value="carpentry">Carpentry</option>
+          <option value="flooring">Flooring</option>
+          <option value="gutters">Gutters</option>
+          <option value="siding">Siding</option>
+          <option value="general">Something else, or several trades</option>
+        </select>
+      </label>
+      <label for="desc"><b>In a sentence or two</b>
+        <textarea id="desc" name="desc" required maxlength="600" aria-describedby="desc-hint"></textarea>
+      </label>
+      <p class="hint" id="desc-hint">For example: "Water heater is 15 years old and leaking." Please leave out phone numbers and addresses here.</p>
+      <div class="two">
+        <label for="area"><b>Neighborhood or ZIP</b>
+          <input id="area" name="area" type="text" required maxlength="60" autocomplete="postal-code" aria-describedby="area-hint">
+        </label>
+        <label for="timing"><b>When</b>
+          <select id="timing" name="timing" required>
+            <option value="asap">As soon as possible</option>
+            <option value="within-2-weeks">Within 2 weeks</option>
+            <option value="within-30-days" selected>Within 30 days</option>
+            <option value="within-90-days">Within 90 days</option>
+            <option value="flexible">Flexible</option>
+          </select>
+        </label>
+      </div>
+      <p class="hint" id="area-hint">No street address needed yet.</p>
+      <label for="budget"><b>Rough size of the job</b> <span class="opt">(optional)</span>
+        <select id="budget" name="budget" aria-describedby="budget-hint">
+          <option value="unknown" selected>Not sure</option>
+          <option value="under-2500">Under $2,500</option>
+          <option value="2500-7500">$2,500 to $7,500</option>
+          <option value="7500-25000">$7,500 to $25,000</option>
+          <option value="25000-50000">$25,000 to $50,000</option>
+          <option value="50000-plus">$50,000 or more</option>
+        </select>
+      </label>
+      <p class="hint" id="budget-hint">It tells Lane which state license the job needs. A home roof job of $7,500 or more, for example, needs a Residential Roofing license.</p>
+      <label class="chk" for="insurance"><input type="checkbox" id="insurance" name="insurance" value="yes"><span>Insurance is paying for some of it <span class="opt">(optional)</span></span></label>
+      <label class="chk" for="closing"><input type="checkbox" id="closing" name="closing" value="yes"><span>It will be paid at a home sale closing <span class="opt">(optional)</span></span></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>You</legend>
+      <label for="name"><b>Your name</b>
+        <input id="name" name="name" type="text" required maxlength="80" autocomplete="name">
+      </label>
+      <fieldset>
+        <legend style="font-family:var(--body);font-weight:600;font-size:15px">How should Lane reach you?</legend>
+        <div class="radios">
+          <label for="by-email"><input type="radio" id="by-email" name="contact" value="email" checked>Email</label>
+          <label for="by-phone"><input type="radio" id="by-phone" name="contact" value="phone">Phone</label>
+        </div>
+      </fieldset>
+      <label for="email" id="email-wrap"><b>Email</b>
+        <input id="email" name="email" type="email" maxlength="120" autocomplete="email">
+      </label>
+      <label for="phone" id="phone-wrap" hidden><b>Phone</b>
+        <input id="phone" name="phone" type="tel" maxlength="40" inputmode="tel" autocomplete="tel">
+      </label>
+      <label class="chk" for="phone_consent" id="phone-consent-wrap" hidden><input type="checkbox" id="phone_consent" name="phone_consent" value="yes"><span>Lane Davis II may call or text me at this number about this request only.<small>Needed if you pick phone. No marketing. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help.</small></span></label>
+    </fieldset>
+
+    <label class="chk consent" for="share_consent"><input type="checkbox" id="share_consent" name="share_consent" value="yes" required><span>I agree to share these details with up to 3 licensed, insured pros Lane selects.<small>Lane sends you their names and license records first. A pro hears from you only after you say yes to that pro by name.</small></span></label>
+
+    <div class="disclose" id="fee-line">
+      <p>Contractors on this list pay Lane Davis II a referral fee. That never changes who's shown or what you pay.</p>
+      <p class="soft">If you're Lane's own real estate client, no referral fee is taken on your project.</p>
+      <p>Check licenses yourself at lslbc.louisiana.gov; get written estimates.</p>
+      <p class="soft">Lane Davis II is not a contractor and doesn't do the work. We connect you.</p>
+    </div>
+
+    <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+    <button class="btn" type="submit">Send my request</button>
+    <p id="say" role="status" aria-live="polite"></p>
+    <p class="privacy"><b>Your information:</b> we keep what you type here and the boxes you ticked, with the date, for up to 400 days, only to answer this request. It goes to a pro only after you say yes to that pro by name. We never sell it or use it for marketing. <a href="../privacy.html">Privacy &amp; texting terms</a></p>
+  </form>
+
+  <h2>What happens next</h2>
+  <ol class="steps">
+    <li><b>Lane reads your request</b> and checks which state license the job needs.</li>
+    <li><b>You get up to three names</b> for the trade, each with its license, class, insurance on file and permits pulled nearby, and the date each record was read.</li>
+    <li><b>You say yes to the ones you want,</b> by name. Only those get your details, and only for this job.</li>
+  </ol>
+  </main>
+
+  <footer>
+    <p><b>Referral Desk: Lane Davis II</b>, New Orleans area, Louisiana · <a href="mailto:hello@autoants.com">hello@autoants.com</a></p>
+    <p>Hosted on autoants.com, a service of AutoAnts, LLC. Not a contractor; we connect you. · <a href="../privacy.html">Privacy</a></p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var CONNECT_ENDPOINT = 'https://autoants-leads.saintdell.workers.dev/connect';
+  // The worker only takes posts from autoants.com. Anywhere else (a local preview) the form says so and sends nothing.
+  var LIVE = /(^|\.)autoants\.com$/.test(location.hostname);
+  // Which tool's button sent the visitor here (?src=). Anything else is recorded as "direct".
+  var SRCS = ['calculator', 'inspection', 'str', 'fortify', 'home-help', 'pros', 'property-care', 'mailer'];
+  function param(k){ try { return new URLSearchParams(location.search).get(k) || ''; } catch(e) { return ''; } }
+  function kept(key, v){
+    try { if (v) sessionStorage.setItem(key, v); else v = sessionStorage.getItem(key) || ''; } catch(e) {}
+    return v;
+  }
+  function src(){ var s = kept('aa-connect-src', param('src').toLowerCase()); return SRCS.indexOf(s) >= 0 ? s : 'direct'; }
+  function ref(){ return kept('aa-ref', param('ref')).replace(/[^a-z0-9_-]/gi, '').slice(0, 40); }
+  src(); ref();
+
+  var f = document.getElementById('connectForm'), say = document.getElementById('say');
+  var emailWrap = document.getElementById('email-wrap'), phoneWrap = document.getElementById('phone-wrap'),
+      pcWrap = document.getElementById('phone-consent-wrap');
+  function by(){ return f.querySelector('input[name=contact]:checked').value; }
+  function show(){
+    var p = by() === 'phone';
+    emailWrap.hidden = p; phoneWrap.hidden = !p; pcWrap.hidden = !p;
+    // Switching back to email never leaves a texting consent behind. Nothing here ever ticks the box.
+    if (!p) f.phone_consent.checked = false;
+  }
+  [].forEach.call(f.querySelectorAll('input[name=contact]'), function(r){ r.addEventListener('change', show); });
+  show();
+  function tell(t, ok, el){ say.textContent = t; say.className = ok ? 'ok' : 'no'; if (el) el.focus(); }
+
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var c = by(), email = f.email.value.trim(), phone = f.phone.value.trim();
+    if (!f.trade.value) return tell('Pick what you need.', false, f.trade);
+    if (!f.desc.value.trim()) return tell('Add a sentence about the job.', false, f.desc);
+    if (!f.area.value.trim()) return tell('Add your neighborhood or ZIP.', false, f.area);
+    if (!f.name.value.trim()) return tell('Add your name.', false, f.name);
+    if (c === 'email' && !/^[^\s@<>",]+@[^\s@<>",]+\.[a-z]{2,}$/i.test(email)) return tell('Add an email Lane can reply to.', false, f.email);
+    if (c === 'phone' && (phone.match(/\d/g) || []).length < 10) return tell('Add a 10-digit phone number.', false, f.phone);
+    if (c === 'phone' && !f.phone_consent.checked) return tell('Tick the box so Lane may call or text you about this request, or pick email.', false, f.phone_consent);
+    if (!f.share_consent.checked) return tell('Tick the box to agree to share these details with up to 3 pros Lane selects. Without it Lane can\'t connect you.', false, f.share_consent);
+    if (!LIVE) return tell('Preview copy: this form only sends from autoants.com. Nothing was sent.', false);
+    var d = {form: 'connect', trade: f.trade.value, desc: f.desc.value.trim().slice(0, 600), area: f.area.value.trim(),
+             timing: f.timing.value, budget: f.budget.value, insurance: f.insurance.checked ? 'yes' : 'no',
+             closing: f.closing.checked ? 'yes' : 'no', name: f.name.value.trim(), contact: c,
+             email: c === 'email' ? email : '', phone: c === 'phone' ? phone : '',
+             phone_consent: c === 'phone' && f.phone_consent.checked ? 'yes' : 'no',
+             share_consent: f.share_consent.checked ? 'yes' : 'no',
+             src: src(), ref: ref(), page: 'autoants.com/connect', website: f.website.value};
+    var btn = f.querySelector('button'); btn.disabled = true;
+    fetch(CONNECT_ENDPOINT, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(d)})
+      .then(function(r){ if (!r.ok) throw 0;
+        tell('Got it. Lane will reply with up to three licensed, insured pros and their records. Nothing goes to a pro until you say yes to that one by name.', true);
+        f.reset(); show(); })
+      .catch(function(){ tell('That didn\'t go through. Your answers are still here; try again in a minute, or email hello@autoants.com.', false); })
+      .then(function(){ btn.disabled = false; });
+  });
+})();
+</script>
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "WebPage", "@id": "https://autoants.com/connect/", "url": "https://autoants.com/connect/",
+ "name": "Need a licensed pro? Lane Davis II's Referral Desk",
+ "description": "Request up to three licensed, insured local contractors. Free for you. Contractors on the list pay Lane Davis II a referral fee; that never changes who's shown or what you pay.",
+ "isPartOf": {"@type": "WebSite", "url": "https://autoants.com/", "name": "autoants"},
+ "publisher": {"@type": "Organization", "name": "autoants", "legalName": "AutoAnts, LLC", "url": "https://autoants.com/", "email": "hello@autoants.com"}
+}</script>
+</body>
+</html>
