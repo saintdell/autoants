@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Refer a business to autoants</title>
+<meta name="description" content="Know a trades shop that misses calls when they're out on a job? Here's who to send, a text and an email you can copy, and what happens after.">
+<link rel="canonical" href="https://autoants.com/refer/">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&family=JetBrains+Mono:wght@700&display=swap">
+<link rel="stylesheet" href="/assets/trust.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="top" aria-label="Site">
+    <a class="logo" href="/" aria-label="autoants home"><img class="on-light" src="/brand/autoants-logo.svg" alt="autoants"><img class="on-dark" src="/brand/autoants-logo-reverse.svg" alt="autoants"></a>
+    <span class="sp"></span>
+    <a class="ghost" href="/demo/">See it work</a>
+    <a class="ghost" href="/about-lane/">About</a>
+    <a class="ghost" href="/#contact">Contact</a>
+  </nav>
+  <main id="main">
+    <!-- For BNI members and anyone else who sends us a business (2026-10-19). No referral fees or rewards on this page. -->
+    <p class="eyebrow">Referrals</p>
+    <h1>Refer a business to autoants</h1>
+    <p class="lede">Thanks for thinking of us. Here&rsquo;s who to send, what to say, and what happens after.</p>
+
+    <h2>Who&rsquo;s a great referral</h2>
+    <p>Owners of home-service shops: HVAC, plumbing, roofing, electrical, pest control, pool and tree service. Usually a small crew, where the owner is on the job and the phone rings in the truck.</p>
+    <p>Listen for one phrase:</p>
+    <p class="promise">&ldquo;We miss calls when we&rsquo;re out on a job.&rdquo;</p>
+    <p>When you hear it, that&rsquo;s the intro.</p>
+
+    <h2>How to introduce us</h2>
+    <p>Copy one of these, put in their name, and send it from your own phone or email.</p>
+
+    <div class="copy-box">
+      <h3>A text to them</h3>
+      <p class="copy-text" id="t-text">Hi [name], you mentioned missing calls when you&rsquo;re out on a job. My friend Lane Davis with autoants helps trades shops answer the calls they miss. OK if I give him your number? Or you can reach him at hello@autoants.com.</p>
+      <div class="copy-acts"><button class="btn" type="button" data-copy="t-text">Copy the text</button><span class="copied" aria-live="polite"></span></div>
+    </div>
+
+    <div class="copy-box">
+      <h3>An email to both of you</h3>
+      <p class="small">Send it to them and copy <a href="mailto:hello@autoants.com">hello@autoants.com</a>.</p>
+      <p class="copy-text" id="t-email">Subject: Meet Lane (autoants)
+
+Hi [name],
+
+Meet Lane Davis with autoants. He helps trades shops answer the calls they miss. Lane, meet [name], who runs [business].
+
+[name], you mentioned missing calls when you&rsquo;re out on a job. Lane will look over your business for free and tell you what he&rsquo;d fix first. No pressure either way.
+
+I&rsquo;ll let you two take it from here.
+[your name]</p>
+      <div class="copy-acts"><button class="btn" type="button" data-copy="t-email">Copy the email</button><a id="mailto-intro" href="mailto:?cc=hello%40autoants.com&amp;subject=Meet%20Lane%20(autoants)">Open it in my email</a><span class="copied" aria-live="polite"></span></div>
+    </div>
+
+    <h2>Or tell Lane yourself</h2>
+    <p>Give me the name and I&rsquo;ll take it from there. If they don&rsquo;t know yet that I&rsquo;ll reach out, say so and I&rsquo;ll wait for your intro.</p>
+    <form class="rform" id="referForm" novalidate>
+      <fieldset>
+        <legend>You</legend>
+        <label>Your name<input name="name" autocomplete="name" required></label>
+        <label>Your phone or email<input name="contact" autocomplete="email" inputmode="email" required></label>
+      </fieldset>
+      <fieldset>
+        <legend>The business</legend>
+        <label>Business name<input name="business" autocomplete="off" required></label>
+        <label>Owner&rsquo;s name <span class="opt">(optional)</span><input name="owner" autocomplete="off"></label>
+        <label>Their trade<select name="trade"><option>HVAC</option><option>Plumbing</option><option>Roofing</option><option>Electrical</option><option>Pest control</option><option>Pool</option><option>Tree service</option><option>Other home service</option><option>Something else</option></select></label>
+        <label>How to reach them <span class="opt">(optional)</span><input name="reach" autocomplete="off"></label>
+        <label>Do they know I&rsquo;ll reach out?<select name="ok" required><option value="">Pick one</option><option>Yes, they said it&rsquo;s OK</option><option>Not yet. Wait for my intro</option></select></label>
+        <label>Anything I should know? <span class="opt">(optional)</span><textarea name="note" rows="3" placeholder="e.g. they said they miss calls when they're out on a job"></textarea></label>
+      </fieldset>
+      <input type="hidden" name="interest" value="Referral">
+      <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+      <button class="btn" type="submit">Send to Lane</button>
+      <p class="sent" id="referSent" role="status"></p>
+    </form>
+    <p class="small">Rather email? <a href="mailto:hello@autoants.com?subject=Referral">hello@autoants.com</a>. What you send here goes only to Lane. Nothing is shared or sold. <a href="/privacy.html">Privacy</a></p>
+
+    <h2>What happens next</h2>
+    <ol class="steps">
+      <li>I reply within one business day.</li>
+      <li>I offer them a free breakdown of their business: how they show up on Google and in AI answers, and what I&rsquo;d fix first. Theirs to keep either way.</li>
+      <li>I never push. If it&rsquo;s not a fit, I say so, and that&rsquo;s the end of it.</li>
+      <li>I tell you how it went.</li>
+    </ol>
+
+    <div class="card">
+      <h3>Work with trades owners too?</h3>
+      <p>CPAs, bookkeepers, bankers, insurance agents, payroll: if you work with trades owners, let&rsquo;s compare notes. <a href="/?interest=Something%20else#contact">Get in touch</a>.</p>
+    </div>
+  </main>
+  <nav class="more" aria-label="Straight answers">
+    <p class="small">More straight answers</p>
+    <ul>
+      <li><a href="/prices/">Prices</a></li>
+      <li><a href="/never/">What it never does</a></li>
+      <li><a href="/setup/">Setup week</a></li>
+      <li><a href="/works-with/">What it connects to</a></li>
+      <li><a href="/rules/">Texts and calls</a></li>
+      <li><a href="/your-data/">Your data</a></li>
+      <li><a href="/plain-terms/">Terms</a></li>
+      <li><a href="/about-lane/">About Lane</a></li>
+    </ul>
+  </nav>
+  <footer class="foot">autoants, short for automated assistants · New Orleans · <a href="/privacy.html">Privacy</a> · <a href="mailto:hello@autoants.com">hello@autoants.com</a> · <a href="https://www.instagram.com/autoants/" rel="me noopener" target="_blank">Instagram</a></footer>
+</div>
+<script>
+  // Copy buttons: clipboard first, then a select-and-copy fallback for older phones.
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var el = document.getElementById(b.getAttribute('data-copy')), txt = el.innerText, note = b.parentNode.querySelector('.copied');
+      function ok(){ note.textContent = 'Copied'; setTimeout(function(){ note.textContent = ''; }, 2500); }
+      function fallback(){
+        var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+        try { document.execCommand('copy'); ok(); } catch(e) { note.textContent = 'Selected. Copy it from here.'; }
+      }
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(txt).then(ok, fallback); else fallback();
+    });
+  });
+  // "Open it in my email": the same email as a draft, cc Lane (no personal details in the link; they fill those in).
+  (function(){
+    var a = document.getElementById('mailto-intro'), el = document.getElementById('t-email'); if (!a || !el) return;
+    var body = el.innerText.replace(/^Subject:[^\n]*\n+/, '');
+    a.href = 'mailto:?cc=hello%40autoants.com&subject=' + encodeURIComponent('Meet Lane (autoants)') + '&body=' + encodeURIComponent(body);
+  })();
+  // The referral form posts to the same autoants-leads worker as the homepage contact form (interest "Referral").
+  // name/phone/email = the referrer; business/trade = the shop they're sending; the rest goes in the note.
+  var LEAD_ENDPOINT = "https://autoants-leads.saintdell.workers.dev/lead";
+  function leadSource(){
+    var r = ''; try { r = new URLSearchParams(location.search).get('ref') || ''; } catch(e) {}
+    try { if (r) sessionStorage.setItem('aa-ref', r); else r = sessionStorage.getItem('aa-ref') || ''; } catch(e) {}
+    return r.replace(/[^a-z0-9_-]/gi, '').slice(0, 40) || 'refer';
+  }
+  leadSource();
+  (function(){
+    var f = document.getElementById('referForm'); if (!f) return;
+    var out = document.getElementById('referSent');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var c = f.contact.value.trim(), isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c);
+      if (!f.name.value.trim() || !f.business.value.trim() || !f.ok.value || (!isEmail && (c.match(/\d/g) || []).length < 7)) {
+        out.textContent = 'Please add your name, a phone or email for you, the business name, and whether they know I\'ll reach out.'; out.style.display = 'block'; return;
+      }
+      var note = ['Referral from ' + f.name.value.trim() + '.',
+                  f.owner.value.trim() ? 'Owner: ' + f.owner.value.trim() + '.' : '',
+                  f.reach.value.trim() ? 'Reach them: ' + f.reach.value.trim() + '.' : '',
+                  'They know Lane will reach out: ' + f.ok.value + '.',
+                  f.note.value.trim() ? 'Note: ' + f.note.value.trim() : ''].filter(Boolean).join(' ');
+      var d = {name: f.name.value.trim(), business: f.business.value.trim(), phone: isEmail ? '' : c, email: isEmail ? c : '',
+               trade: f.trade.value, interest: 'Referral', msg: note.slice(0, 1000), page: 'autoants.com/refer/', source: leadSource(),
+               website: (f.website ? f.website.value : ''), sms: 'no'};
+      var btn = f.querySelector('button[type=submit]'); if (btn) btn.disabled = true;
+      fetch(LEAD_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(d)})
+        .then(function(r){ if (!r.ok) throw 0; out.textContent = 'Thank you. I\'ll reply within one business day, and I\'ll tell you how it goes.'; out.style.display = 'block'; f.reset(); })
+        .catch(function(){ out.textContent = 'That didn\'t go through. Your details are still here; please try again in a minute, or email hello@autoants.com.'; out.style.display = 'block'; })
+        .then(function(){ if (btn) btn.disabled = false; });
+    });
+  })();
+</script>
+</body>
+</html>
