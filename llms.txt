@@ -95,6 +95,7 @@
 - Privacy and texting terms: https://autoants.com/privacy.html
 - The New Orleans AI Recommendation Index (monthly; which local companies an AI assistant names for each trade, facts only): https://autoants.com/ai-index/2026-10/
 - Comparisons (autoants vs an answering service, a call center, AI website builders and doing it yourself; other side's facts from their own pages, dated): https://autoants.com/compare/
+- Where to follow autoants (only the accounts we actually run; anything not listed there isn't us): https://autoants.com/follow/
 
 ## Findings from New Orleans public records
 - Permits Pulled: a free monthly report for New Orleans trades owners on what
