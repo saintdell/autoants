@@ -3,7 +3,7 @@
     uv run --with qrcode python3 brand/print/business-card/make_card.py
 
 Front: stone ground (prints reliably, writeable), wordmark, name, contact.
-Back: night ground (the site's dark green), the mascot, the promise, and a QR code to the free preview.
+Back: night ground (the site's dark green), the mascot, the promise, and a QR code to the free business breakdown.
 Edit CARD below; PHONE stays a red placeholder until there's a real business line."""
 import os, subprocess, sys
 import qrcode
@@ -14,7 +14,7 @@ sys.path.insert(0, os.path.join(BRAND, "mascot"))
 from mascot import mascot, FOREST, MINT, STONE, INK, NIGHT  # noqa: E402
 
 CARD = dict(name="Lane Davis II", title="Founder", email="lane@autoants.com", web="autoants.com",
-            phone=None,  # e.g. "(504) 555-0100" once the business line exists
+            phone="(504) 499-1194",  # autoants Twilio line (Lane, 2026-10-21); do not print until the 10DLC campaign is approved and the missed-call test passes
             qr="https://autoants.com/?ref=card#contact")
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 FONTS = ('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800'
@@ -63,7 +63,7 @@ def back():
             f'<div style="position:absolute;left:1.42in;top:{s+.04}in;width:1.2in;font:800 11.5pt/1.08 Onest;letter-spacing:-.02em;color:{STONE};text-wrap:balance">Automated assistants for local businesses.</div>'
             f'<div style="position:absolute;right:{s}in;top:{s}in;background:{STONE};border-radius:.08in;padding:.1in">{qr_svg(CARD["qr"], .74)}</div>'
             f'<div style="position:absolute;right:{s}in;top:{s+1.0}in;width:.94in;text-align:center;font:700 6.5pt/1.3 Onest;color:{MINT}">'
-            f'Scan for your free site preview</div>')
+            f'Scan for your free business breakdown</div>')
 
 
 def shoot(name, html, guides):
