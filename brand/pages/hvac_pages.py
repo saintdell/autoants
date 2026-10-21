@@ -34,8 +34,9 @@ SRC = {
                 "data). The city records the license holder, not the company, and permits track installs and "
                 "replacements, not repair calls",
                 "https://data.nola.gov/resource/72f9-bi28.json", "Pulled October 14, 2026"),
-    "firstscreen": ("autoants first-screen check: 51 New Orleans-area HVAC homepages, each loaded once at phone size. "
-                    "A first pass on one date. We count the sites; we don't name them",
+    "firstscreen": ("autoants first-screen check: 51 New Orleans-area HVAC homepages, each loaded once at phone size; "
+                    "the 45 that loaded as a working site are counted (6 didn't load, showed an error page or stayed "
+                    "blank). A first pass on one date. We count the sites; we don't name them",
                     None, "Checked October 12, 2026"),
     "spanishsites": ("autoants language check: the homepages of 135 HVAC businesses in Orleans, Jefferson and St. "
                      "Bernard parishes, each read once for a Spanish page, link or language switch. A first pass on "
@@ -367,7 +368,7 @@ def hub():
     stats = ('<div class="stats">' +
              stat("91&deg;F", "the normal July high in New Orleans, with about 23 days at 90&deg;F or hotter in July "
                   "alone", "NOAA normals 1991-2020, read Oct 20, 2026") +
-             stat("19 of 51", "New Orleans-area HVAC websites had no way to book or request service on the first "
+             stat("16 of 45", "New Orleans-area HVAC websites had no way to book or request service on the first "
                   "phone screen", "autoants check, Oct 12, 2026") +
              stat("132 of 135", "HVAC websites in Orleans, Jefferson and St. Bernard showed no Spanish page on the "
                   "homepage", "autoants first-pass check, Oct 20, 2026") +
@@ -510,7 +511,7 @@ def p_missed():
   <ol>
     <li><b>Register for business texting.</b> Carriers block texts from unregistered business numbers, and the review usually takes two to three weeks. Your shop gets its own registration under your legal name. ({link(p, "rules/", "How we handle texts and calls")})</li>
     <li><b>Send tune-up reminders</b> to past customers who agreed to hear from you, so tune-ups get booked in spring, before the heat, while your crew has room.</li>
-    <li><b>Put a way to book on the first phone screen</b>, so a customer who can't get through can still ask for a time. {link(p, "hvac/book-from-the-first-screen/", "19 of 51 local HVAC sites didn't have one")}.</li>
+    <li><b>Put a way to book on the first phone screen</b>, so a customer who can't get through can still ask for a time. {link(p, "hvac/book-from-the-first-screen/", "16 of 45 local HVAC sites didn't have one")}.</li>
     <li><b>Make your Google hours honest.</b> Only list late hours if someone, or an AI on a line you approved, really answers then. A text-back alone doesn't make the shop open.</li>
   </ol>
 
@@ -587,8 +588,9 @@ def p_booking():
     url = f"{BASE}/hvac/{slug}/"
     h1 = H1[slug]
     answer = [
-        "Many can't. When we opened 51 New Orleans-area HVAC websites on a phone on October 12, 2026, 19 had no way "
-        "to book or request service on the first screen, and 13 of those had none anywhere on the homepage.",
+        "Many can't. When we opened New Orleans-area HVAC websites on a phone on October 12, 2026, 16 of the 45 that "
+        "loaded had no way to book or request service on the first screen, and 10 of those had none anywhere on the "
+        "homepage.",
         "The fix is a Book button or a “next opening” box at the top of the phone screen, tied to times your "
         "crew will actually keep.",
     ]
@@ -596,10 +598,10 @@ def p_booking():
         ["A Book, Schedule or Request Service button, with no time promised (often it opens a contact form)", "22"],
         ["A button plus a time promise in words, such as “same-day”", "4"],
         ["A booking control, but below the first screen", "6"],
-        ["No way to book or request service anywhere on the homepage", "13"],
+        ["No way to book or request service anywhere on the homepage", "10"],
         ["Unclear: says “book online” but we found no control", "3"],
-        ["Didn't load during the check", "3"],
-        ["<b>Total</b>", "<b>51</b>"],
+        ["<b>Working sites counted</b>", "<b>45</b>"],
+        ["Left out: didn't load, showed an error page or stayed blank", "6"],
     ])
     faq = [
         ("Isn't a phone number enough?",
@@ -615,10 +617,10 @@ def p_booking():
          "We count them; we don't name them."),
     ]
     body = f"""
-  <h2>What we found on 51 local HVAC sites</h2>
+  <h2>What we found on 45 local HVAC sites</h2>
   {t}
   {src_line("firstscreen")}
-  <p>The 19 are the 6 with booking below the first screen plus the 13 with none at all. Even among the 26 with a button up top, only 4 said anything about when.</p>
+  <p>The 16 are the 6 with booking below the first screen plus the 10 with none at all. Even among the 26 with a button up top, only 4 said anything about when.</p>
 
   <h2>What a first phone screen that books has</h2>
   <ol>
@@ -641,7 +643,7 @@ def p_booking():
 """
     graph = [faq_ld(url, faq), breadcrumb(slug, h1), ORG]
     return page(f"hvac/{slug}/", "Can customers book your HVAC company from a phone? · autoants",
-                "We opened 51 New Orleans-area HVAC websites on a phone: 19 had no way to book on the first screen. "
+                "We opened New Orleans-area HVAC websites on a phone: 16 of the 45 that loaded had no way to book on the first screen. "
                 "What a first screen that books has, and a 2-minute self-check.",
                 h1, crumbs(p, "Booking from a phone"), answer, body, faq, ["firstscreen", "prices"], graph, p)
 
