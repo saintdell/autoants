@@ -144,6 +144,8 @@ def page():
 <title>Who We Help · autoants</title>
 <meta name="description" content="What autoants' automated assistants do for local businesses: trades, auto repair shops, salons and nail spas, gyms and studios. Missed-call text-back, fast replies, booking, reviews.">
 <meta name="theme-color" content="#0b1712">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">

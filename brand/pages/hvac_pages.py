@@ -257,6 +257,8 @@ def page(path, title, desc, h1, crumbs_html, answer_paras, body, faq, srcs, grap
 <meta property="og:url" content="{canon}">
 <meta property="og:image" content="{BASE}/brand/og.png">
 <meta name="theme-color" content="#0b1712">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" href="{p}brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{p}brand/apple-touch-icon.png">
 {FONTS}
