@@ -21,7 +21,7 @@
 - `ant-anim@1x.gif`: the same at 64 px, about 12 KB, for places that do not scale images down.
 - `ant-still.png`: the resting ant at 128 px on forest, for anywhere motion is unwanted.
 - `sig-logo.png`: the wordmark at 2x (522×112, transparent), used by `signature.html`.
-- `signature-anim.html` / `signature.html`: open the page, copy what is inside the white box, and paste it into Gmail → Settings → See all settings → Signature. Fill in the phone first. The images load from `https://autoants.com/brand/email/`, so they show once the site is live.
+- `signature-anim.html` / `signature.html`: open the page, copy what is inside the white box, and paste it into Gmail → Settings → See all settings → Signature. The phone is the autoants line, (504) 499-1194. The images load from `https://autoants.com/brand/email/`, so they show once the site is live.
 - `contact-sheet-email.png`: shows each avatar candidate at 40, 64 and 128 px on Gmail's light and dark lists, and the GIF frames on white and on Gmail dark #202124.
 - `build_email_assets.py`: rebuilds all of the above (usage at the top of the file).
 
@@ -70,6 +70,6 @@ Sources (prices checked 2026-10-11):
 **What's deliberately missing:** "attorney". AutoAnts stays separate from the law license.
 
 **When the mailbox is live:**
-- fill the phone in the signature files;
+- ~~fill the phone in the signature files~~ (done 2026-10-30: (504) 499-1194);
 - set `channel.email.sender` in `tree-lead-engine/playbook.yaml`;
 - switch the site's footer and JSON-LD email to lane@autoants.com.
