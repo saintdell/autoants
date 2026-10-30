@@ -307,7 +307,7 @@ def page():
     </ol>
     <a class="cta noprint" href="index.html#contact" style="display:inline-block;margin-top:24px">Get your free preview →</a>
   </section>
-  <footer>autoants, short for automated assistants · Louisiana · autoants.com · Commercial services only.</footer>
+  <footer>autoants, short for automated assistants · Louisiana · autoants.com · <a href="tel:+15044991194" style="color:inherit">(504) 499-1194</a> · Commercial services only.</footer>
 </div>
 <script src="assets/newsletter-signup.js" defer></script>
 </body>

@@ -108,9 +108,6 @@ details.included[open] > summary::after{content:"\2212"}
 .prices li.lead{border:2px solid var(--accent)}
 .prices li .btn{margin-top:12px}
 
-/* The business line, prepared but OFF: enable after Lane's test call rings his phone (delete this rule). Call only, never "Text". */
-.phone-pending{display:none!important}
-
 /* About: "Met me at BNI?" */
 .card.met{margin:20px 0 4px}
 .card.met h2{margin:0 0 8px;font-size:20px}

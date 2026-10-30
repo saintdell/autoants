@@ -7,8 +7,10 @@ The branded door hanger: 4.25 × 11 in, 0.125 in bleed, standard 1.25 in hole. `
 
 Regenerate with `uv run --with qrcode python3 brand/print/door-hanger/make_hanger.py` after editing `INFO` or the copy in the script.
 
+**HOLD for a copy pass before the next print run** (2026-10-30). The phone is in, but the hanger still sells the old offer ("Free website preview" on the front, "See your free preview" and "the $500 setup fee comes back" on the back) where the site now leads with the free breakdown and Try one. Step 1 also says "call or text": check the line forwards inbound texts to Lane before keeping "text".
+
 **Before printing:**
-1. Put the real phone number in `INFO["phone"]`; the back shows a red PHONE TBD until then.
+1. The phone is the autoants line, (504) 499-1194 (live and tested 2026-10-30). Re-check it still rings through before a print run.
 2. Make sure autoants.com resolves and the hello@autoants.com alias exists (Google Admin → Users → Add alternate email).
 3. Scan the proof's QR code with a phone. It goes to `autoants.com/?ref=hanger#contact`, and `ref=hanger` tells us which visits came from hangers.
 4. Order one printed proof first: the night green shifts in print.

@@ -18,7 +18,7 @@ BRAND = os.path.normpath(os.path.join(HERE, "..", ".."))
 sys.path.insert(0, os.path.join(BRAND, "mascot"))
 from mascot import mascot, FOREST, MINT, STONE, INK, NIGHT  # noqa: E402
 
-INFO = dict(phone=None,  # e.g. "(504) 555-0100" once the business line exists
+INFO = dict(phone="(504) 499-1194",  # autoants Twilio line; live and tested 2026-10-30
             email="hello@autoants.com", web="autoants.com",  # an alias of the main mailbox: no personal name on print
             qr="https://autoants.com/?ref=hanger#contact")
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
@@ -68,8 +68,8 @@ def front(guides):
             f'{die(guides)}</div>')
 
 
-CREW = [("phone", "Text-Back Ant", "Miss a call and it texts them back in seconds, so the customer stays yours."),
-        ("carry", "Responder Ant", "A new lead gets an answer in seconds, even when your hands are full."),
+CREW = [("phone", "Text-Back Ant", "Miss a call and it texts them back, so the customer stays yours."),
+        ("carry", "Responder Ant", "A new lead gets an answer, even when your hands are full."),
         ("clipboard", "Scheduler Ant", "Requests turn into booked appointments and jobs. You approve; it handles the back-and-forth."),
         ("thumbs", "Reviewer Ant", "Every customer gets the same review ask, one tap from your phone.")]
 STEPS = [("Reach out", "Scan the code, visit autoants.com, or call or text."),

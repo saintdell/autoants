@@ -174,6 +174,7 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
 ORG = {"@type": "ProfessionalService", "@id": BASE + "/#organization", "name": "autoants",
        "alternateName": "automated assistants", "legalName": "AutoAnts, LLC", "url": BASE + "/",
        "logo": BASE + "/brand/autoants-icon.svg", "email": "hello@autoants.com",
+       "telephone": "+1-504-499-1194",
        "areaServed": [{"@type": "City", "name": "New Orleans"}, {"@type": "City", "name": "Metairie"},
                       {"@type": "City", "name": "Kenner"},
                       {"@type": "AdministrativeArea", "name": "St. Tammany Parish (the Northshore)"}]}
@@ -285,7 +286,7 @@ def page(path, title, desc, h1, crumbs_html, answer_paras, body, faq, srcs, grap
 {sources_block(srcs)}
   </main>
   <footer>
-    <p>autoants, short for automated assistants · a New Orleans company that answers missed calls, books jobs and gets local businesses found on Google and in AI answers · commercial services only.</p>
+    <p>autoants, short for automated assistants · a New Orleans company that answers missed calls, books jobs and gets local businesses found on Google and in AI answers · commercial services only. Call <a href="tel:+15044991194">(504) 499-1194</a>.</p>
     <p>Checked {TODAY_WORDS}. Corrections: hello@autoants.com · <a href="{p}hvac/">For HVAC companies</a> · <a href="{p}never/">What it never does</a> · <a href="{p}prices/">Prices</a> · <a href="{p}compare/">Comparisons</a> · <a href="{p}ai/">For AI assistants</a></p>
     <p>&mdash; autoants</p>
   </footer>
