@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Electricians in New Orleans</title>
+<meta name="description" content="Electrical contractors based in New Orleans (Orleans Parish), with LSLBC numbers, phone numbers and websites. Free list, no paid placement.">
+<link rel="canonical" href="https://autoants.com/nola/electrical/orleans/">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="../../../brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0b1712;--surface:#14261e;--surface-2:#1b3328;--ink:#f4f1e8;--muted:#a3b0a8;--faint:#7d8a83;
+        --mint:#3ddcae;--mint-ink:#062a1d;--line:rgba(244,241,232,.12);
+        --disp:"Archivo",system-ui,sans-serif;--body:"Inter",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+  .wrap{max-width:820px;margin:0 auto;padding:0 16px}
+  nav{display:flex;align-items:center;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
+  nav .sp{margin-left:auto}
+  nav a.ghost{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
+  .crumbs{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--faint);margin:36px 0 0}
+  .crumbs a{color:var(--mint);text-decoration:none}
+  h1{font-family:var(--disp);font-weight:800;font-size:clamp(30px,5.4vw,46px);line-height:1.06;margin:10px 0 12px;text-wrap:balance}
+  .lede{font-size:18px;color:var(--muted);max-width:62ch;margin:0 0 10px}
+  .stamp{font-family:var(--mono);font-size:12px;color:var(--faint);margin:0 0 28px}
+  h2{font-family:var(--disp);font-weight:800;font-size:22px;margin:40px 0 10px;text-wrap:balance}
+  p,li{color:var(--muted);max-width:65ch}
+  b,strong{color:var(--ink)}
+  .parishes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:8px 0}
+  .parish{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  .parish:hover{border-color:var(--mint)}
+  .parish .n{font-family:var(--disp);font-weight:800;font-size:34px;color:var(--mint);font-variant-numeric:tabular-nums;line-height:1}
+  .parish h3{font-family:var(--disp);font-size:19px;margin:8px 0 4px}
+  .parish p{margin:0;font-size:14px}
+  ol.check{padding-left:1.3em;margin:6px 0}
+  ol.check li{margin:.5em 0}
+  .list{list-style:none;padding:0;margin:8px 0;border-top:1px solid var(--line)}
+  .item{display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:baseline;padding:16px 2px;border-bottom:1px solid var(--line)}
+  .item h3{font-family:var(--disp);font-weight:700;font-size:18px;margin:0;color:var(--ink)}
+  .meta{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:15px;color:var(--muted)}
+  .meta a{color:var(--ink);text-underline-offset:3px}
+  .meta .tel{font-variant-numeric:tabular-nums}
+  .badge{justify-self:start;font-family:var(--mono);font-size:12px;color:var(--mint-ink);background:var(--mint);border-radius:999px;padding:3px 10px;text-decoration:none;white-space:nowrap}
+  .fix{grid-column:1/-1;justify-self:start;background:none;border:0;padding:0;color:var(--faint);font:inherit;font-size:13px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+  .fix:hover{color:var(--mint)}
+  .note{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0}
+  .note p{margin:.35em 0}
+  .ad{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:36px 0}
+  .ad .tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 6px}
+  .ad h3{font-family:var(--disp);font-size:20px;margin:0 0 6px}
+  .ad p{margin:0 0 10px}
+  .btn{display:inline-block;background:var(--mint);color:var(--mint-ink);font-weight:700;text-decoration:none;border:0;border-radius:10px;padding:11px 18px;font:inherit;font-weight:700;cursor:pointer}
+  form{display:grid;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  label{display:grid;gap:5px;font-size:14px;color:var(--muted)}
+  input,textarea{background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:10px 12px;font:inherit}
+  textarea{min-height:90px;resize:vertical}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  #sent{display:none;color:var(--mint);margin:0}
+  footer{color:var(--faint);font-size:13px;padding:36px 0 48px;border-top:1px solid var(--line);margin-top:48px}
+  footer p{color:var(--faint);margin:.3em 0}
+  @media (max-width:560px){.two{grid-template-columns:1fr}.item{grid-template-columns:1fr}nav a.ghost.hide-sm{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a href="../../../index.html"><img src="../../../brand/autoants-logo-reverse.svg" alt="autoants home" style="height:26px;width:auto;display:block"></a>
+    <div class="sp"></div>
+    <a class="ghost hide-sm" href="../../../nola/electrical/index.html">Electricians guide</a>
+    <a class="ghost" href="#claim">Fix a listing</a>
+  </nav>
+
+  <p class="crumbs"><a href="../index.html">Electricians in Greater New Orleans</a> · Orleans Parish</p>
+  <h1>Electricians in New Orleans</h1>
+  <p class="lede">Electrical contractors based in New Orleans, in alphabetical order.</p>
+  <p class="stamp">46 companies · data as of October 20, 2026</p>
+
+  <div class="note" id="disclosure">
+    <p><b>Who made this guide.</b> autoants, a New Orleans company that sells services to local trades (AI phone
+    assistants and marketing). We may work with businesses listed here. Nobody pays to be listed, and that never
+    changes where anyone appears: every list is in alphabetical order.</p>
+  </div>
+  <div class="note"><p>Sources: the LSLBC contractor roster (as of October 20, 2026) and public business listings (gathered October 19, 2026). A badge is an active LSLBC record matched by exact phone or exact name, linked to the board's own lookup. Websites are ones we checked: each loaded and showed the same phone.</p></div>
+  <ul class="list">
+    <li class="item"><h3>AP3 Electric LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=7wtW3H%2fjO2aM8ByrZg8IoA%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.72813 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15047585087">(504) 758-5087</a><span>LSLBC license since 2022</span></div><button class="fix" type="button" data-fix="AP3 Electric LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>Art Electrical LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=%2fPOghX4d7ZtkHrC4V4WaZA%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.53158 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15042172315">(504) 217-2315</a><span>LSLBC license since 2010</span></div><button class="fix" type="button" data-fix="Art Electrical LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>Atlas Electrical Services, LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=CM7Px2v3BjrQltgbMVHfcA%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.61509 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15049131208">(504) 913-1208</a><span>LSLBC license since 2016</span></div><button class="fix" type="button" data-fix="Atlas Electrical Services, LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>B Powered Electric, LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=pQBtpD3WHR13YYHChLP%2bfw%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.55375 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15042265801">(504) 226-5801</a><a href="https://bpoweredelectric.com/" target="_blank" rel="noopener nofollow">bpoweredelectric.com</a><span>LSLBC license since 2011</span></div><button class="fix" type="button" data-fix="B Powered Electric, LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>Barnes Electric LLC</h3><span></span><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15043396221">(504) 339-6221</a></div><button class="fix" type="button" data-fix="Barnes Electric LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>Big Herc Electric, LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=6rJK2E0Np0b35z0UaH%2fGiA%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.49104 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+19859604023">(985) 960-4023</a><span>LSLBC license since 2008</span></div><button class="fix" type="button" data-fix="Big Herc Electric, LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>Bluewater Electric</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=uEKUnwqgWbIJz5r2G7%2bOCA%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.48997 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15043045007">(504) 304-5007</a><span>LSLBC license since 2007</span></div><button class="fix" type="button" data-fix="Bluewater Electric">Is this you? Claim or fix it</button></li><li class="item"><h3>Borey Electric</h3><span></span><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15044865509">(504) 486-5509</a></div><button class="fix" type="button" data-fix="Borey Electric">Is this you? Claim or fix it</button></li><li class="item"><h3>Chatman Electrical Enterprises LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=ppuxM4lHY14FbOCumdjxOw%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.60161 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15042818123">(504) 281-8123</a><span>LSLBC license since 2014</span></div><button class="fix" type="button" data-fix="Chatman Electrical Enterprises LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>DECO Electric, LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=YT2%2f1ByNsk5UUxZUMF505g%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.71819 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15045270500">(504) 527-0500</a><span>LSLBC license since 2021</span></div><button class="fix" type="button" data-fix="DECO Electric, LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>Double S Electric llc</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=7Hc6eiG18HLQDoAIh1xLjQ%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.34262 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15044818445">(504) 481-8445</a><span>LSLBC license since 1999</span></div><button class="fix" type="button" data-fix="Double S Electric llc">Is this you? Claim or fix it</button></li><li class="item"><h3>E.W. Electric LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=iN6R%2bYRsUkhTscjpedjOBg%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.79627 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15044025447">(504) 402-5447</a><span>LSLBC license since 2024</span></div><button class="fix" type="button" data-fix="E.W. Electric LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>Fantastical Electrical</h3><span></span><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15044081955">(504) 408-1955</a><a href="https://www.fantasticalelectrical.com/" target="_blank" rel="noopener nofollow">fantasticalelectrical.com</a></div><button class="fix" type="button" data-fix="Fantastical Electrical">Is this you? Claim or fix it</button></li><li class="item"><h3>FIRST CLASS ELECTRIC, LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=9UJIKRTIhd4KO%2fxo5JJ%2bVQ%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.47665 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15043444235">(504) 344-4235</a><span>LSLBC license since 2007</span></div><button class="fix" type="button" data-fix="FIRST CLASS ELECTRIC, LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>FIRST DOWN ELECTRIC L.L.C.</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=pXdcBaebb2yaPsSXlv6RbQ%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.65699 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15042050069">(504) 205-0069</a><span>LSLBC license since 2018</span></div><button class="fix" type="button" data-fix="FIRST DOWN ELECTRIC L.L.C.">Is this you? Claim or fix it</button></li><li class="item"><h3>Fitzgerald Electrical Contractors, LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=%2bcxz8Rqcb0fRB0NeYWsEBw%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.31933 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15046163879">(504) 616-3879</a><span>LSLBC license since 1998</span></div><button class="fix" type="button" data-fix="Fitzgerald Electrical Contractors, LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>Frischhertz Electric</h3><span></span><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15044821146">(504) 482-1146</a><a href="https://www.frischhertz.com/" target="_blank" rel="noopener nofollow">frischhertz.com</a></div><button class="fix" type="button" data-fix="Frischhertz Electric">Is this you? Claim or fix it</button></li><li class="item"><h3>Frischhertz Electric Company, Inc.</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=mXIK%2fN6iqslCGzmwDj%2ftSw%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.01185 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15044821164">(504) 482-1164</a><span>LSLBC license since 1957</span></div><button class="fix" type="button" data-fix="Frischhertz Electric Company, Inc.">Is this you? Claim or fix it</button></li><li class="item"><h3>G.L. BEAN ELECTRICAL LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=Ym20Z5TV9ZNBHsDE7gGR%2bg%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.37419 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15045087535">(504) 508-7535</a><span>LSLBC license since 2000</span></div><button class="fix" type="button" data-fix="G.L. BEAN ELECTRICAL LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>GalCan Electric &amp; General Contracting</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=7VaFZgEvzlIVOt5ADTVYhA%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.58704 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15049421912">(504) 942-1912</a><span>LSLBC license since 2013</span></div><button class="fix" type="button" data-fix="GalCan Electric &amp; General Contracting">Is this you? Claim or fix it</button></li><li class="item"><h3>GRILLOT&#x27;S ELECTRIC COMPANY, INC.</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=m44x93lmy8ziBXz6hWXsLA%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.51993 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15043822476">(504) 382-2476</a><span>LSLBC license since 2009</span></div><button class="fix" type="button" data-fix="GRILLOT&#x27;S ELECTRIC COMPANY, INC.">Is this you? Claim or fix it</button></li><li class="item"><h3>Hack Electrical LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=m7tIJJsotnBYRHYnw7N0kQ%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.02342 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15042343308">(504) 234-3308</a><a href="https://hackelectrical.com/" target="_blank" rel="noopener nofollow">hackelectrical.com</a><span>LSLBC license since 2025</span></div><button class="fix" type="button" data-fix="Hack Electrical LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>Hi Power Electric Design, LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=Z8BQImBmvzygmZsDzDXzmw%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.67897 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15044071238">(504) 407-1238</a><span>LSLBC license since 2019</span></div><button class="fix" type="button" data-fix="Hi Power Electric Design, LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>Immanuel Electrical &amp; Construction LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=lOP5Hoz08EV0WVz4dtbjDg%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.46567 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15043820910">(504) 382-0910</a><span>LSLBC license since 2007</span></div><button class="fix" type="button" data-fix="Immanuel Electrical &amp; Construction LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>JACK&#x27;S ELECTRIC SERVICE, INC.</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=%2bMOul8ETcp09S2GkPkOLQw%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.19125 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15045814408">(504) 581-4408</a><span>LSLBC license since 1984</span></div><button class="fix" type="button" data-fix="JACK&#x27;S ELECTRIC SERVICE, INC.">Is this you? Claim or fix it</button></li><li class="item"><h3>Jay Electric AC &amp; Heating LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=VLG%2fDYbgDAbR6AWvBd6R0Q%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.76656 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15045169550">(504) 516-9550</a><span>LSLBC license since 2023</span></div><button class="fix" type="button" data-fix="Jay Electric AC &amp; Heating LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>Lagniappe Electric LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=%2b7gxQpEi7pc7iqmcxRP02Q%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.68955 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15045343500">(504) 534-3500</a><a href="https://www.lagniappeelectric.com/" target="_blank" rel="noopener nofollow">lagniappeelectric.com</a><span>LSLBC license since 2020</span></div><button class="fix" type="button" data-fix="Lagniappe Electric LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>Louisiana Energy Solutions LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=4pihPYwaPBh%2bCyXCsO%2b5FA%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.53940 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15044090089">(504) 409-0089</a><span>LSLBC license since 2010</span></div><button class="fix" type="button" data-fix="Louisiana Energy Solutions LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>Malone Electrical Services, Incorporated</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=ySRC770xUKm4iivrPN2qvw%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.60626 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15042884000">(504) 288-4000</a><span>LSLBC license since 2015</span></div><button class="fix" type="button" data-fix="Malone Electrical Services, Incorporated">Is this you? Claim or fix it</button></li><li class="item"><h3>MARGIOTTA ELECTRIC, INC.</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=0AQ4PBaWKEZeHnX%2fBThzRA%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.27193 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15048914241">(504) 891-4241</a><a href="http://margiottaelectricinc.com/" target="_blank" rel="noopener nofollow">margiottaelectricinc.com</a><span>LSLBC license since 1993</span></div><button class="fix" type="button" data-fix="MARGIOTTA ELECTRIC, INC.">Is this you? Claim or fix it</button></li><li class="item"><h3>MK Electric Man</h3><span></span><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15048995483">(504) 899-5483</a><a href="https://www.mkelectricman.com/" target="_blank" rel="noopener nofollow">mkelectricman.com</a></div><button class="fix" type="button" data-fix="MK Electric Man">Is this you? Claim or fix it</button></li><li class="item"><h3>Monarch Light LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=wmHmpGYPXWLxgVJ1k2NE0A%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.79932 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15044934328">(504) 493-4328</a><span>LSLBC license since 2024</span></div><button class="fix" type="button" data-fix="Monarch Light LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>Ohm Electrical Contractors Llc</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=vhl3kqE8cUlQK2DXVsF%2fzQ%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.66600 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15044943053">(504) 494-3053</a><a href="https://ohm.services/" target="_blank" rel="noopener nofollow">ohm.services</a><span>LSLBC license since 2018</span></div><button class="fix" type="button" data-fix="Ohm Electrical Contractors Llc">Is this you? Claim or fix it</button></li><li class="item"><h3>PELLET ELECTRICAL SOLUTIONS LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=zziW0nS1rsX8YAcOu%2fXXpg%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.59767 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15043589832">(504) 358-9832</a><span>LSLBC license since 2014</span></div><button class="fix" type="button" data-fix="PELLET ELECTRICAL SOLUTIONS LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>POWER PLUS ELECTRIC, L.L.C.</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=FRfQGn98Jfzm2uoxn0evNA%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.51022 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15047565818">(504) 756-5818</a><span>LSLBC license since 2009</span></div><button class="fix" type="button" data-fix="POWER PLUS ELECTRIC, L.L.C.">Is this you? Claim or fix it</button></li><li class="item"><h3>Ready Power</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=%2fB7fAY4Z04nPtvijwIEZlw%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.51843 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15043272143">(504) 327-2143</a><span>LSLBC license since 2009</span></div><button class="fix" type="button" data-fix="Ready Power">Is this you? Claim or fix it</button></li><li class="item"><h3>Redfish Electric LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=EkJNTNVlbJ6DhfXqT5TEMw%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.68290 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15049573544">(504) 957-3544</a><span>LSLBC license since 2019</span></div><button class="fix" type="button" data-fix="Redfish Electric LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>Sanders Electric &amp; Construction</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=5ajU0mhRFf0ashF8nYKO5Q%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.46028 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15043196858">(504) 319-6858</a><span>LSLBC license since 2006</span></div><button class="fix" type="button" data-fix="Sanders Electric &amp; Construction">Is this you? Claim or fix it</button></li><li class="item"><h3>Schlumbrecht&#x27;s Electric LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=Dv7rItTONO%2bIztozU3xkQA%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.51737 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15042567312">(504) 256-7312</a><a href="https://www.schlumbrechtselectric.com/" target="_blank" rel="noopener nofollow">schlumbrechtselectric.com</a><span>LSLBC license since 2009</span></div><button class="fix" type="button" data-fix="Schlumbrecht&#x27;s Electric LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>Southern Electrical Services of Louisiana LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=aahMBaOTJGbXHX2i0dJxQQ%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.10515 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15044736937">(504) 473-6937</a><span>LSLBC license since 2026</span></div><button class="fix" type="button" data-fix="Southern Electrical Services of Louisiana LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>Term Fast Electric of Louisiana, LLC</h3><span></span><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15044201274">(504) 420-1274</a></div><button class="fix" type="button" data-fix="Term Fast Electric of Louisiana, LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>THE PEOPLES ELECTRICIAN LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=i%2faaPVMpMMgw5WLf9141ag%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.55891 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15046101298">(504) 610-1298</a><span>LSLBC license since 2011</span></div><button class="fix" type="button" data-fix="THE PEOPLES ELECTRICIAN LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>ULTRA ELECTRIC LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=wWKomn1Cp4HXfJp33Lur%2bQ%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.57759 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15043044603">(504) 304-4603</a><span>LSLBC license since 2013</span></div><button class="fix" type="button" data-fix="ULTRA ELECTRIC LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>Wilson&#x27;s Wires LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=yIIktCGkuLWX63M8Hzsmyg%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.79644 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15043234935">(504) 323-4935</a><span>LSLBC license since 2024</span></div><button class="fix" type="button" data-fix="Wilson&#x27;s Wires LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>Wire Worx Solutions LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=ZLh9qK%2bsfdWMNYpVNSd28g%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.78774 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15042017802">(504) 201-7802</a><span>LSLBC license since 2024</span></div><button class="fix" type="button" data-fix="Wire Worx Solutions LLC">Is this you? Claim or fix it</button></li><li class="item"><h3>Wiring Resource LLC</h3><a class="badge" href="https://arlspublic.lslbc.louisiana.gov/Public/_DisplayOnlineDetails/?key=T61wBhZbRnXo%2b5%2bECHryGA%3d%3d" target="_blank" rel="noopener" title="Active on the LSLBC roster; opens the board&#x27;s own record">LSLBC CL.75150 · Electrical</a><div class="meta"><span>New Orleans</span><a class="tel" href="tel:+15047825775">(504) 782-5775</a><a href="https://wiringresource.com/" target="_blank" rel="noopener nofollow">wiringresource.com</a><span>LSLBC license since 2023</span></div><button class="fix" type="button" data-fix="Wiring Resource LLC">Is this you? Claim or fix it</button></li>
+  </ul>
+
+  <h2 id="claim">Claim or fix a listing</h2>
+  <p>Own one of these companies, or spotted something wrong? Tell us and we'll fix it, usually within a day.
+  Listings are free and stay free. Want yours removed? Say so and it comes down.</p>
+  <form id="claimForm" novalidate>
+    <label>Company<input name="business" required maxlength="120" autocomplete="organization"></label>
+    <div class="two">
+      <label>Your name<input name="name" required maxlength="80" autocomplete="name"></label>
+      <label>Phone<input name="phone" required maxlength="40" inputmode="tel" autocomplete="tel"></label>
+    </div>
+    <label>What should we change?<textarea name="msg" maxlength="1000" placeholder="For example: new phone number, our website is ..., we also serve Kenner"></textarea></label>
+    <div><button class="btn" type="submit">Send the fix</button></div>
+    <p id="sent" role="status"></p>
+  </form>
+  <script>
+  (function(){
+    var f=document.getElementById('claimForm'), sent=document.getElementById('sent');
+    document.querySelectorAll('[data-fix]').forEach(function(b){
+      b.addEventListener('click',function(){ f.business.value=b.getAttribute('data-fix');
+        document.getElementById('claim').scrollIntoView({behavior:'smooth'}); f.name.focus({preventScroll:true}); });
+    });
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(!f.business.value.trim()||!f.name.value.trim()||!f.phone.value.trim()){ f.reportValidity&&f.reportValidity(); return; }
+      var d={name:f.name.value.trim(),business:f.business.value.trim(),phone:f.phone.value.trim(),
+             trade:'electrical',interest:'Claim or fix a guide listing',msg:f.msg.value.trim(),
+             page:'autoants.com/nola/electrical/orleans',source:'guide-claim',sms:'no'};
+      var btn=f.querySelector('button'); btn.disabled=true;
+      fetch('https://autoants-leads.saintdell.workers.dev/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+        .then(function(r){ if(!r.ok) throw 0; sent.textContent='Got it. We\'ll make the change and let you know.'; f.reset(); })
+        .catch(function(){ sent.textContent='That didn\'t go through. Your details are still here; please try again in a minute, or email hello@autoants.com.'; })
+        .then(function(){ sent.style.display='block'; btn.disabled=false; });
+    });
+  })();
+  </script>
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "ItemList",
+ "name": "Electricians in New Orleans",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "item": {
+    "@type": "Electrician",
+    "name": "AP3 Electric LLC",
+    "telephone": "(504) 758-5087",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "item": {
+    "@type": "Electrician",
+    "name": "Art Electrical LLC",
+    "telephone": "(504) 217-2315",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "item": {
+    "@type": "Electrician",
+    "name": "Atlas Electrical Services, LLC",
+    "telephone": "(504) 913-1208",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 4,
+   "item": {
+    "@type": "Electrician",
+    "name": "B Powered Electric, LLC",
+    "telephone": "(504) 226-5801",
+    "url": "https://bpoweredelectric.com/",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 5,
+   "item": {
+    "@type": "Electrician",
+    "name": "Barnes Electric LLC",
+    "telephone": "(504) 339-6221",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 6,
+   "item": {
+    "@type": "Electrician",
+    "name": "Big Herc Electric, LLC",
+    "telephone": "(985) 960-4023",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 7,
+   "item": {
+    "@type": "Electrician",
+    "name": "Bluewater Electric",
+    "telephone": "(504) 304-5007",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 8,
+   "item": {
+    "@type": "Electrician",
+    "name": "Borey Electric",
+    "telephone": "(504) 486-5509",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 9,
+   "item": {
+    "@type": "Electrician",
+    "name": "Chatman Electrical Enterprises LLC",
+    "telephone": "(504) 281-8123",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 10,
+   "item": {
+    "@type": "Electrician",
+    "name": "DECO Electric, LLC",
+    "telephone": "(504) 527-0500",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 11,
+   "item": {
+    "@type": "Electrician",
+    "name": "Double S Electric llc",
+    "telephone": "(504) 481-8445",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 12,
+   "item": {
+    "@type": "Electrician",
+    "name": "E.W. Electric LLC",
+    "telephone": "(504) 402-5447",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 13,
+   "item": {
+    "@type": "Electrician",
+    "name": "Fantastical Electrical",
+    "telephone": "(504) 408-1955",
+    "url": "https://www.fantasticalelectrical.com/",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 14,
+   "item": {
+    "@type": "Electrician",
+    "name": "FIRST CLASS ELECTRIC, LLC",
+    "telephone": "(504) 344-4235",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 15,
+   "item": {
+    "@type": "Electrician",
+    "name": "FIRST DOWN ELECTRIC L.L.C.",
+    "telephone": "(504) 205-0069",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 16,
+   "item": {
+    "@type": "Electrician",
+    "name": "Fitzgerald Electrical Contractors, LLC",
+    "telephone": "(504) 616-3879",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 17,
+   "item": {
+    "@type": "Electrician",
+    "name": "Frischhertz Electric",
+    "telephone": "(504) 482-1146",
+    "url": "https://www.frischhertz.com/",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 18,
+   "item": {
+    "@type": "Electrician",
+    "name": "Frischhertz Electric Company, Inc.",
+    "telephone": "(504) 482-1164",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 19,
+   "item": {
+    "@type": "Electrician",
+    "name": "G.L. BEAN ELECTRICAL LLC",
+    "telephone": "(504) 508-7535",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 20,
+   "item": {
+    "@type": "Electrician",
+    "name": "GalCan Electric & General Contracting",
+    "telephone": "(504) 942-1912",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 21,
+   "item": {
+    "@type": "Electrician",
+    "name": "GRILLOT'S ELECTRIC COMPANY, INC.",
+    "telephone": "(504) 382-2476",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 22,
+   "item": {
+    "@type": "Electrician",
+    "name": "Hack Electrical LLC",
+    "telephone": "(504) 234-3308",
+    "url": "https://hackelectrical.com/",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 23,
+   "item": {
+    "@type": "Electrician",
+    "name": "Hi Power Electric Design, LLC",
+    "telephone": "(504) 407-1238",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 24,
+   "item": {
+    "@type": "Electrician",
+    "name": "Immanuel Electrical & Construction LLC",
+    "telephone": "(504) 382-0910",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 25,
+   "item": {
+    "@type": "Electrician",
+    "name": "JACK'S ELECTRIC SERVICE, INC.",
+    "telephone": "(504) 581-4408",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 26,
+   "item": {
+    "@type": "Electrician",
+    "name": "Jay Electric AC & Heating LLC",
+    "telephone": "(504) 516-9550",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 27,
+   "item": {
+    "@type": "Electrician",
+    "name": "Lagniappe Electric LLC",
+    "telephone": "(504) 534-3500",
+    "url": "https://www.lagniappeelectric.com/",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 28,
+   "item": {
+    "@type": "Electrician",
+    "name": "Louisiana Energy Solutions LLC",
+    "telephone": "(504) 409-0089",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 29,
+   "item": {
+    "@type": "Electrician",
+    "name": "Malone Electrical Services, Incorporated",
+    "telephone": "(504) 288-4000",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 30,
+   "item": {
+    "@type": "Electrician",
+    "name": "MARGIOTTA ELECTRIC, INC.",
+    "telephone": "(504) 891-4241",
+    "url": "http://margiottaelectricinc.com/",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 31,
+   "item": {
+    "@type": "Electrician",
+    "name": "MK Electric Man",
+    "telephone": "(504) 899-5483",
+    "url": "https://www.mkelectricman.com/",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 32,
+   "item": {
+    "@type": "Electrician",
+    "name": "Monarch Light LLC",
+    "telephone": "(504) 493-4328",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 33,
+   "item": {
+    "@type": "Electrician",
+    "name": "Ohm Electrical Contractors Llc",
+    "telephone": "(504) 494-3053",
+    "url": "https://ohm.services/",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 34,
+   "item": {
+    "@type": "Electrician",
+    "name": "PELLET ELECTRICAL SOLUTIONS LLC",
+    "telephone": "(504) 358-9832",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 35,
+   "item": {
+    "@type": "Electrician",
+    "name": "POWER PLUS ELECTRIC, L.L.C.",
+    "telephone": "(504) 756-5818",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 36,
+   "item": {
+    "@type": "Electrician",
+    "name": "Ready Power",
+    "telephone": "(504) 327-2143",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 37,
+   "item": {
+    "@type": "Electrician",
+    "name": "Redfish Electric LLC",
+    "telephone": "(504) 957-3544",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 38,
+   "item": {
+    "@type": "Electrician",
+    "name": "Sanders Electric & Construction",
+    "telephone": "(504) 319-6858",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 39,
+   "item": {
+    "@type": "Electrician",
+    "name": "Schlumbrecht's Electric LLC",
+    "telephone": "(504) 256-7312",
+    "url": "https://www.schlumbrechtselectric.com/",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 40,
+   "item": {
+    "@type": "Electrician",
+    "name": "Southern Electrical Services of Louisiana LLC",
+    "telephone": "(504) 473-6937",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 41,
+   "item": {
+    "@type": "Electrician",
+    "name": "Term Fast Electric of Louisiana, LLC",
+    "telephone": "(504) 420-1274",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 42,
+   "item": {
+    "@type": "Electrician",
+    "name": "THE PEOPLES ELECTRICIAN LLC",
+    "telephone": "(504) 610-1298",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 43,
+   "item": {
+    "@type": "Electrician",
+    "name": "ULTRA ELECTRIC LLC",
+    "telephone": "(504) 304-4603",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 44,
+   "item": {
+    "@type": "Electrician",
+    "name": "Wilson's Wires LLC",
+    "telephone": "(504) 323-4935",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 45,
+   "item": {
+    "@type": "Electrician",
+    "name": "Wire Worx Solutions LLC",
+    "telephone": "(504) 201-7802",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 46,
+   "item": {
+    "@type": "Electrician",
+    "name": "Wiring Resource LLC",
+    "telephone": "(504) 782-5775",
+    "url": "https://wiringresource.com/",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "New Orleans",
+     "addressRegion": "LA"
+    }
+   }
+  }
+ ]
+}</script>
+  <footer>
+    <p>Made by autoants, a New Orleans company that sells services to local trades. Some companies
+    listed here may become our clients; that never changes where they appear, and nobody pays to be listed.</p>
+    <p>Data as of October 20, 2026. Questions or corrections: hello@autoants.com.</p>
+  </footer>
+</div>
+</body>
+</html>

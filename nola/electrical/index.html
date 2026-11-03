@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Electricians in Greater New Orleans</title>
+<meta name="description" content="A plain list of electrical contractors based in Orleans and Jefferson parishes, with facts you can check: LSLBC license numbers, phone numbers and websites. No paid placement.">
+<link rel="canonical" href="https://autoants.com/nola/electrical/">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="../../brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0b1712;--surface:#14261e;--surface-2:#1b3328;--ink:#f4f1e8;--muted:#a3b0a8;--faint:#7d8a83;
+        --mint:#3ddcae;--mint-ink:#062a1d;--line:rgba(244,241,232,.12);
+        --disp:"Archivo",system-ui,sans-serif;--body:"Inter",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+  .wrap{max-width:820px;margin:0 auto;padding:0 16px}
+  nav{display:flex;align-items:center;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
+  nav .sp{margin-left:auto}
+  nav a.ghost{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
+  .crumbs{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--faint);margin:36px 0 0}
+  .crumbs a{color:var(--mint);text-decoration:none}
+  h1{font-family:var(--disp);font-weight:800;font-size:clamp(30px,5.4vw,46px);line-height:1.06;margin:10px 0 12px;text-wrap:balance}
+  .lede{font-size:18px;color:var(--muted);max-width:62ch;margin:0 0 10px}
+  .stamp{font-family:var(--mono);font-size:12px;color:var(--faint);margin:0 0 28px}
+  h2{font-family:var(--disp);font-weight:800;font-size:22px;margin:40px 0 10px;text-wrap:balance}
+  p,li{color:var(--muted);max-width:65ch}
+  b,strong{color:var(--ink)}
+  .parishes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:8px 0}
+  .parish{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  .parish:hover{border-color:var(--mint)}
+  .parish .n{font-family:var(--disp);font-weight:800;font-size:34px;color:var(--mint);font-variant-numeric:tabular-nums;line-height:1}
+  .parish h3{font-family:var(--disp);font-size:19px;margin:8px 0 4px}
+  .parish p{margin:0;font-size:14px}
+  ol.check{padding-left:1.3em;margin:6px 0}
+  ol.check li{margin:.5em 0}
+  .list{list-style:none;padding:0;margin:8px 0;border-top:1px solid var(--line)}
+  .item{display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:baseline;padding:16px 2px;border-bottom:1px solid var(--line)}
+  .item h3{font-family:var(--disp);font-weight:700;font-size:18px;margin:0;color:var(--ink)}
+  .meta{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:15px;color:var(--muted)}
+  .meta a{color:var(--ink);text-underline-offset:3px}
+  .meta .tel{font-variant-numeric:tabular-nums}
+  .badge{justify-self:start;font-family:var(--mono);font-size:12px;color:var(--mint-ink);background:var(--mint);border-radius:999px;padding:3px 10px;text-decoration:none;white-space:nowrap}
+  .fix{grid-column:1/-1;justify-self:start;background:none;border:0;padding:0;color:var(--faint);font:inherit;font-size:13px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+  .fix:hover{color:var(--mint)}
+  .note{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0}
+  .note p{margin:.35em 0}
+  .ad{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:36px 0}
+  .ad .tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 6px}
+  .ad h3{font-family:var(--disp);font-size:20px;margin:0 0 6px}
+  .ad p{margin:0 0 10px}
+  .btn{display:inline-block;background:var(--mint);color:var(--mint-ink);font-weight:700;text-decoration:none;border:0;border-radius:10px;padding:11px 18px;font:inherit;font-weight:700;cursor:pointer}
+  form{display:grid;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  label{display:grid;gap:5px;font-size:14px;color:var(--muted)}
+  input,textarea{background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:10px 12px;font:inherit}
+  textarea{min-height:90px;resize:vertical}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  #sent{display:none;color:var(--mint);margin:0}
+  footer{color:var(--faint);font-size:13px;padding:36px 0 48px;border-top:1px solid var(--line);margin-top:48px}
+  footer p{color:var(--faint);margin:.3em 0}
+  @media (max-width:560px){.two{grid-template-columns:1fr}.item{grid-template-columns:1fr}nav a.ghost.hide-sm{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a href="../../index.html"><img src="../../brand/autoants-logo-reverse.svg" alt="autoants home" style="height:26px;width:auto;display:block"></a>
+    <div class="sp"></div>
+    <a class="ghost hide-sm" href="../../nola/electrical/index.html">Electricians guide</a>
+    <a class="ghost" href="#claim">Fix a listing</a>
+  </nav>
+
+  <p class="crumbs">autoants local guides · Greater New Orleans</p>
+  <h1>Electricians in Greater New Orleans</h1>
+  <p class="lede">A plain list of electrical contractors based in New Orleans and Jefferson Parish, with the facts you can check for yourself. No star ratings and no paid spots.</p>
+  <p class="stamp">License data from LSLBC's roster as of October 20, 2026; business listings gathered October 19, 2026</p>
+
+  <div class="note" id="disclosure">
+    <p><b>Who made this guide.</b> autoants, a New Orleans company that sells services to local trades (AI phone
+    assistants and marketing). We may work with businesses listed here. Nobody pays to be listed, and that never
+    changes where anyone appears: every list is in alphabetical order.</p>
+  </div>
+
+  <div class="parishes">
+    <a class="parish" href="jefferson/index.html"><div class="n">84</div><h3>Jefferson Parish</h3>
+      <p>Metairie, Kenner, Harahan, River Ridge and the West Bank.</p></a>
+    <a class="parish" href="orleans/index.html"><div class="n">46</div><h3>Orleans Parish</h3>
+      <p>Electrical contractors based in New Orleans.</p></a>
+  </div>
+
+  <h2>How to choose an electrician</h2>
+  <ol class="check">
+    <li><b>Check the state license yourself.</b> The Louisiana State Licensing Board for Contractors (LSLBC) licenses electrical work: its Electrical classification covers wiring, fixtures and equipment that supply electricity, and the board says it applies when the job's value exceeds $10,000 (<a href="https://lslbc.gov/classifications_list/electrical/" target="_blank" rel="noopener">LSLBC</a>). Ask for the license number and look it up on the board's own search, <a href="https://arlspublic.lslbc.louisiana.gov/Public/DetailedSearch/ByNumber" target="_blank" rel="noopener">by number</a> or <a href="https://arlspublic.lslbc.louisiana.gov/Public/DetailedSearch/ByName" target="_blank" rel="noopener">by company name</a>. The badges in this guide link to the board's record.</li>
+    <li><b>The electrician pulls the permit.</b> The City requires an electrical permit to install, repair, replace or alter electrical equipment (changing a light bulb or a fuse is the exception), and only an electrical contractor holding the City's Class "A" Electrical License can get one (<a href="https://nola.gov/electrical-permit/" target="_blank" rel="noopener">City of New Orleans</a>). In Jefferson Parish, electrical work has to be filed for inspection before it starts, and replacing or adding a panel, light fixture, ceiling fan, switch or outlet has to be filed by a Jefferson Parish licensed electrician (<a href="https://www.jeffparish.gov/499/When-Do-I-Need-Not-Need-a-Permit" target="_blank" rel="noopener">Jefferson Parish</a>). Ask who files the permit and when the inspection is.</li>
+    <li><b>Get the job in writing.</b> For a panel change, a rewire or a generator hookup, ask for a written quote that names the work and the equipment, and compare the same things across quotes.</li>
+    <li><b>Ask about after-hours calls.</b> Do they answer nights and weekends, and does an after-hours visit cost more? Ask before the power goes out.</li>
+  </ol>
+
+  <h2>How this list was built</h2>
+  <div class="note">
+    <p><b>Who's listed.</b> A company is listed when it is based in Orleans or Jefferson Parish, has a phone, and
+    either holds an active LSLBC license in the Electrical classification, or appears in public business listings under an electrician or electrical-installation category. Duplicates (same phone) are listed once. We also need to confirm a real local base: an
+    LSLBC match, or a street address in the parish shown on the company's own website next to the same
+    phone, or on a City of New Orleans occupational license.</p>
+    <p><b>Who's left out.</b> A license held under a person's own name; retail stores and supply houses; companies whose name says their main trade is something else (general construction, plumbing, air conditioning, security, solar, signs and the like); companies found only on the LSLBC roster, in no electrician listing, whose name doesn't say electrical (many builders, developers and institutions hold the license for their own work); and listings that look like call-routing
+    services rather than a local company: an out-of-state phone number, three or more different names on near-identical
+    phone numbers, a throwaway ".site" web address, or a name made of a city plus a service, unless it matches the
+    board's records. Companies whose base we couldn't confirm are left out too, for now. If we left your company out by
+    mistake, use the form below and we'll add it.</p>
+    <p><b>What a listing shows.</b> Name, phone, base city, a website we checked (it loaded and showed the same phone
+    number), and the LSLBC license with the year LSLBC first issued it, when the company matches LSLBC's records by exact phone or exact name. A missing badge only means we couldn't match a company to those records with
+    certainty. Ask the company for its number and check it.</p>
+    <p><b>Order.</b> Alphabetical. Nobody pays to be listed, and whether a company works with autoants never changes
+    its order or how it looks.</p>
+    <p><b>What we never show.</b> Star ratings or reviews, and anything that isn't a public fact about the company.</p>
+    <p><b>Dates.</b> License data from LSLBC's roster as of October 20, 2026; business listings gathered October 19, 2026.</p>
+  </div>
+
+  <h2 id="claim">Claim or fix a listing</h2>
+  <p>Own one of these companies, or spotted something wrong? Tell us and we'll fix it, usually within a day.
+  Listings are free and stay free. Want yours removed? Say so and it comes down.</p>
+  <form id="claimForm" novalidate>
+    <label>Company<input name="business" required maxlength="120" autocomplete="organization"></label>
+    <div class="two">
+      <label>Your name<input name="name" required maxlength="80" autocomplete="name"></label>
+      <label>Phone<input name="phone" required maxlength="40" inputmode="tel" autocomplete="tel"></label>
+    </div>
+    <label>What should we change?<textarea name="msg" maxlength="1000" placeholder="For example: new phone number, our website is ..., we also serve Kenner"></textarea></label>
+    <div><button class="btn" type="submit">Send the fix</button></div>
+    <p id="sent" role="status"></p>
+  </form>
+  <script>
+  (function(){
+    var f=document.getElementById('claimForm'), sent=document.getElementById('sent');
+    document.querySelectorAll('[data-fix]').forEach(function(b){
+      b.addEventListener('click',function(){ f.business.value=b.getAttribute('data-fix');
+        document.getElementById('claim').scrollIntoView({behavior:'smooth'}); f.name.focus({preventScroll:true}); });
+    });
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(!f.business.value.trim()||!f.name.value.trim()||!f.phone.value.trim()){ f.reportValidity&&f.reportValidity(); return; }
+      var d={name:f.name.value.trim(),business:f.business.value.trim(),phone:f.phone.value.trim(),
+             trade:'electrical',interest:'Claim or fix a guide listing',msg:f.msg.value.trim(),
+             page:'autoants.com/nola/electrical',source:'guide-claim',sms:'no'};
+      var btn=f.querySelector('button'); btn.disabled=true;
+      fetch('https://autoants-leads.saintdell.workers.dev/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+        .then(function(r){ if(!r.ok) throw 0; sent.textContent='Got it. We\'ll make the change and let you know.'; f.reset(); })
+        .catch(function(){ sent.textContent='That didn\'t go through. Your details are still here; please try again in a minute, or email hello@autoants.com.'; })
+        .then(function(){ sent.style.display='block'; btn.disabled=false; });
+    });
+  })();
+  </script>
+
+  <footer>
+    <p>Made by autoants, a New Orleans company that sells services to local trades. Some companies
+    listed here may become our clients; that never changes where they appear, and nobody pays to be listed.</p>
+    <p>Data as of October 20, 2026. Questions or corrections: hello@autoants.com.</p>
+  </footer>
+</div>
+</body>
+</html>
