@@ -330,7 +330,7 @@ def related(p, skip):
 def hub():
     p = "../"
     url = BASE + "/hvac/"
-    title = "Never miss an AC call: autoants for HVAC companies"
+    title = "Catch missed AC calls: autoants for HVAC companies"
     desc = ("For HVAC owners in New Orleans, Metairie, Kenner and the Northshore: missed calls answered, phone "
             "booking, reviews, and getting found on Google and in AI answers.")
     answer = [
@@ -353,7 +353,7 @@ def hub():
          "A quote that goes quiet gets a nudge. A reply stops it, and nothing goes out without your OK.", None, None),
         ("Pre-season tune-up reminders",
          "Past customers who agreed to hear from you get a reminder before the season, at no extra price inside "
-         "Never miss a job.", None, None),
+         "Catch missed calls.", None, None),
         ("Every customer asked for a review",
          "The same ask after every job, with your link. It never picks who gets asked and never pays for reviews.",
          "more-google-reviews", "More reviews, inside Google's rules"),
@@ -390,18 +390,18 @@ def hub():
     prices = table(["What", "Price"], [
         ["<b>The free breakdown</b>: a 10-14 page look at how you show up on Google, in AI answers and next to the "
          "shops around you, made from public information", "Free"],
-        ["<b>Get found and never miss a job</b>: missed calls answered, quotes followed up, appointments booked and "
+        ["<b>Get found and catch missed calls</b>: missed calls answered, quotes followed up, appointments booked and "
          "reminded (pre-season tune-ups included), reviews requested, your Google profile kept right and posted to "
          "every week, your listings kept right, 2 new pages a month, what AI answers say about you checked every "
          "month, and your website kept up", P_BOTH],
         ["<b>Not ready? Try one</b>: one assistant on your phone (most shops start with texting back every missed "
          "call). Live within 7 days of your go (for texting, within 7 days of the carriers' approval), or the $500 "
          "back", P_TRY],
-        ["<b>Never miss a job</b> alone: just the calls", P_NMJ],
+        ["<b>Catch missed calls</b> alone: just the calls", P_NMJ],
         ["<b>Get found</b> alone: just Google and AI answers", P_GF],
-        ["<b>Pay per job</b>: Never miss a job, paid by the job", P_PPJ],
+        ["<b>Pay per job</b>: Catch missed calls, paid by the job", P_PPJ],
         ["<b>AI phone answering</b>: an AI that answers when nobody can, always says it's an AI, and texts you the "
-         "job", "Priced with you once you're on Get found and never miss a job; minutes written into the agreement"],
+         "job", "Priced with you once you're on Get found and catch missed calls; minutes written into the agreement"],
     ])
     body = f"""
   <h2>What we do for HVAC shops</h2>
@@ -451,7 +451,7 @@ def hub():
          "provider": {"@id": BASE + "/#organization"}, "areaServed": ORG["areaServed"],
          "audience": {"@type": "BusinessAudience", "audienceType": "HVAC and air conditioning companies"},
          "offers": [
-             {"@type": "Offer", "name": "Get found and never miss a job", "price": "1250", "priceCurrency": "USD",
+             {"@type": "Offer", "name": "Get found and catch missed calls", "price": "1250", "priceCurrency": "USD",
               "description": P_BOTH + ", for our first 3 shops", "url": BASE + "/prices/"},
              {"@type": "Offer", "name": "Try one", "price": "500", "priceCurrency": "USD",
               "description": "One assistant, $500 once, for our first 3 shops", "url": BASE + "/prices/"},
@@ -486,7 +486,7 @@ def p_missed():
          "Before May. Business texting has to be registered with the carriers first, and that review usually takes "
          "two to three weeks."),
         ("What does it cost at autoants?",
-         "The text-back on its own is Try one, $500 once. Never miss a job, with quote follow-up, booking, "
+         "The text-back on its own is Try one, $500 once. Catch missed calls, with quote follow-up, booking, "
          "reminders and the review ask, is $750 a month + $750 setup. Both are prices for our first 3 shops."),
         ("Can you tell me how many calls my shop misses?",
          "Yes, for your own phone. Before we start we count one real week of your calls, nights and weekends "
@@ -540,10 +540,10 @@ def p_receptionist():
     ]
     t = table(["Option", "Who answers", "What it costs", "Fits when"], [
         ["<b>Missed-call text-back</b> (autoants)", "Nobody by voice: a text from your business goes back within "
-         "seconds", f"Try one, {P_TRY}; or inside Never miss a job, {P_NMJ}", "Calls ring out while techs are on "
+         "seconds", f"Try one, {P_TRY}; or inside Catch missed calls, {P_NMJ}", "Calls ring out while techs are on "
          "jobs"],
         ["<b>AI receptionist</b> (autoants)", "An AI that says it's an AI in its first sentence, then texts you the "
-         "job", "Priced with you once you're on Get found and never miss a job; minutes written into the agreement",
+         "job", "Priced with you once you're on Get found and catch missed calls; minutes written into the agreement",
          "Nights, weekends, lunch, and techs on a roof"],
         ["<b>Answering service</b>", "Live people, often 24/7", "Published plans are priced by the minute; see our "
          f'{link(p, "compare/answering-service/", "dated comparison")}', "Callers expect a person every time"],
@@ -614,7 +614,7 @@ def p_booking():
          "No. The box can show a time from your calendar or from a simple rule you set, and it says “same-day "
          "when available” when it can't check. It never shows a time your crew won't keep."),
         ("What does it cost at autoants?",
-         "It can be your one assistant in Try one, $500 once, and it's included in Never miss a job, $750 a month + "
+         "It can be your one assistant in Try one, $500 once, and it's included in Catch missed calls, $750 a month + "
          "$750 setup. Both are prices for our first 3 shops."),
         ("Which sites didn't have a way to book?",
          "We count them; we don't name them."),
@@ -683,7 +683,7 @@ def p_reviews():
          "Yes, the same way for every customer. Don't give techs a review quota or tell customers what to write; "
          "Google's policy bans both."),
         ("What does the review ask cost at autoants?",
-         "It can be your one assistant in Try one, $500 once, and it's part of Never miss a job, $750 a month + $750 "
+         "It can be your one assistant in Try one, $500 once, and it's part of Catch missed calls, $750 a month + $750 "
          "setup. Both are prices for our first 3 shops."),
     ]
     body = f"""
