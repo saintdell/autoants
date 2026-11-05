@@ -17,7 +17,7 @@
 .wrap{max-width:1040px;gap:14px}
 .intro h1{margin:4px 0 0;font-size:clamp(28px,5vw,44px);line-height:1.08;font-weight:800;text-wrap:balance}
 .stage{background:#0b1712;color:#f4f6f4;border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0;max-width:100%;overflow:hidden}
-.bar{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 18px}
+.bar{display:flex;flex-direction:column;align-items:center;gap:6px}
 .stops{display:flex;gap:6px;overflow-x:auto;min-width:0;width:100%;margin:0;padding:2px;list-style:none;scrollbar-width:none}
 .stops::-webkit-scrollbar{display:none}
 .stops li{flex:1 0 auto}
@@ -106,7 +106,16 @@
 .ctl{display:flex;justify-content:center;align-items:center;gap:8px}
 .ctl button{min-height:44px;padding:8px 18px;border-radius:10px;border:1px solid #3a4d43;background:transparent;color:#f4f6f4;font:700 14px Onest,system-ui,sans-serif;cursor:pointer}
 .ctl .pri{background:#3ddcae;color:#0b1712;border-color:#3ddcae}
-.ctl span{font-size:12px;color:#a9bbb0}
+.dial{width:100%;display:flex;align-items:center;gap:12px}
+.dial input{flex:1;min-width:0;height:44px;margin:0;background:transparent;accent-color:#3ddcae;cursor:grab;touch-action:pan-y}
+.dial input:active{cursor:grabbing}
+.dial input::-webkit-slider-runnable-track{height:8px;border-radius:4px;background:linear-gradient(to right,#3ddcae var(--fill,0%),#2c3d34 var(--fill,0%))}
+.dial input::-moz-range-track{height:8px;border-radius:4px;background:#2c3d34}
+.dial input::-moz-range-progress{height:8px;border-radius:4px;background:#3ddcae}
+.dial input::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;margin-top:-9px;border-radius:50%;background:#f4f6f4;border:3px solid #3ddcae;box-shadow:0 2px 8px rgba(0,0,0,.5)}
+.dial input::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#f4f6f4;border:3px solid #3ddcae}
+.dial input{-webkit-appearance:none;appearance:none}
+.dial span{flex:none;font-size:12px;color:#a9bbb0;min-width:74px;text-align:right}
 .below{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
 .box h2{margin:0 0 6px;font-size:18px;font-weight:800}
@@ -137,7 +146,8 @@
   <section class="stage" aria-label="Demo of one day">
     <ol class="stops" id="stops"></ol>
     <div class="bar">
-    <div class="ctl"><button class="pri" id="play" type="button">Pause</button><button id="again" type="button">Start over</button><span id="prog"></span></div>
+    <div class="ctl"><button id="back" type="button" aria-label="Back one step">◀ Back</button><button class="pri" id="play" type="button">Pause</button><button id="fwd" type="button" aria-label="Forward one step">Next ▶</button><button id="again" type="button">Start over</button></div>
+      <div class="dial"><input id="dial" type="range" min="1" max="24" value="1" step="1" aria-label="Drag to move through the demo"><span id="prog"></span></div>
     </div>
     <p class="cap" id="cap" aria-live="polite"></p>
     <div class="phones">
@@ -166,9 +176,9 @@ var STOPS=[["8:05 AM","Missed call"],["10:20 AM","Finds the site"],["10:21 AM","
 var S=[
  {s:0,t:"8:05",on:"L",cap:"Dana calls the shop. Nobody can pick up.",L:{who:"Dana's phone (the customer)",mode:"call",state:"ringing"},R:{mode:"lock",line:"Sam's on a job in Metairie"}},
  {s:0,t:"8:05",on:"L",cap:"It rings out.",L:{mode:"call",state:"ended"}},
- {s:0,t:"8:05",on:"L",cap:"Dana gets one text, in Sam's own approved words.",L:{mode:"chat",head:biz,add:{k:"in",x:"Hi, this is Sam at "+B+". Sorry we missed you, we're on a job. Is it not cooling, not running, or leaking? Tell me that and your cross streets and I'll text you a time. Reply STOP to opt out."}}},
+ {s:0,t:"8:05",on:"L",cap:"Seconds later, Dana gets one text, in wording Sam approved.",L:{mode:"chat",head:biz,add:{k:"in",x:B+": Sorry we missed your call. We're with a customer right now. Reply with what's going on with your system and your address, and we'll get back to you with a time. Reply STOP to opt out."}}},
  {s:0,t:"8:06",on:"L",cap:"Dana answers.",L:{add:{k:"out",x:"Not cooling. Upstairs unit. Banks and Carrollton."}}},
- {s:0,t:"8:06",on:"L",cap:"She hears back right away.",L:{add:{k:"in",x:"Thanks, Dana. Got it: not cooling, upstairs unit, near Banks and Carrollton. Sam's on a job and will text you a time as soon as he's between jobs."}}},
+ {s:0,t:"8:06",on:"L",cap:"She hears back right away.",L:{add:{k:"in",x:"Thank you, Dana. We have your AC not cooling upstairs, near Banks and Carrollton. Sam will text you with a time as soon as he's off this job."}}},
  {s:0,t:"8:06",on:"R",cap:"Sam gets the whole thing in one text.",note:"No tap needed. He texts her a time between jobs.",R:{mode:"chat",head:ants,add:{k:"in",tag:"Text-Back",x:"Dana ((504) 555-0134): \"Not cooling. Upstairs unit. Banks and Carrollton.\" She's been told you'll text a time."}}},
  {s:1,t:"10:20",on:"L",cap:"Ray's system is 15 years old and the bills keep climbing. He searches on his iPhone.",L:{who:"Ray's phone (the customer)",mode:"web",web:"search"}},
  {s:1,t:"10:20",on:"L",cap:"He finds Sample Heating & Air and taps through.",L:{web:"results"}},
@@ -225,8 +235,8 @@ function draw(){var step=S[i-1]||S[0];
  $("whoL").textContent=st.L.who||"The customer's phone";
  ["L","R"].forEach(function(p){var w=$("wrap"+p);w.classList.toggle("on",step.on===p);w.classList.toggle("idle",step.on!==p)});
  $("stops").querySelectorAll("button").forEach(function(b,n){b.classList.toggle("now",n===step.s);b.classList.toggle("done",n<step.s);if(n===step.s){b.setAttribute("aria-current","step");if(window.innerWidth<760)$("stops").scrollLeft=b.parentNode.offsetLeft-$("stops").offsetLeft-12}else b.removeAttribute("aria-current")});
- var done=i>=S.length;$("play").textContent=done?"Play again":(playing?"Pause":"Play");$("prog").textContent="Step "+i+" of "+S.length;}
-function delay(step){var c=[step.L,step.R].map(function(x){if(!x||!x.add)return 0;return [].concat(x.add).reduce(function(n,a){return n+(a.x||"").length},0)}).reduce(function(a,b){return a+b},0);return Math.min(7000,Math.max(2300,1500+((step.cap||"").length+(step.note||"").length)*18+c*15))}
+ var done=i>=S.length;$("play").textContent=done?"Play again":(playing?"Pause":"Play");$("prog").textContent="Step "+i+" of "+S.length;var d=$("dial");d.max=S.length;d.value=i;d.style.setProperty("--fill",((i-1)/(S.length-1)*100)+"%");}
+function delay(step){var c=[step.L,step.R].map(function(x){if(!x||!x.add)return 0;return [].concat(x.add).reduce(function(n,a){return n+(a.x||"").length},0)}).reduce(function(a,b){return a+b},0);return Math.min(14000,Math.max(5000,3200+((step.cap||"").length+(step.note||"").length)*42+c*46))}
 function schedule(){clearTimeout(timer);if(!playing||i>=S.length){draw();return}timer=setTimeout(next,delay(S[i-1]))}
 function next(){if(i>=S.length){playing=false;draw();return}var step=S[i];apply(step,"L");apply(step,"R");i++;if(i>=S.length)playing=false;draw();schedule()}
 function jump(n){clearTimeout(timer);reset();i=0;while(i<n){var s=S[i];apply(s,"L");apply(s,"R");i++}draw();schedule()}
@@ -234,6 +244,9 @@ $("stops").innerHTML=STOPS.map(function(x,n){return '<li><button class="stop" ty
 $("stops").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var t=+b.dataset.s,n=0;while(S[n].s!==t)n++;jump(n+1)});
 $("play").addEventListener("click",function(){if(i>=S.length){playing=true;jump(1);return}playing=!playing;draw();if(playing)schedule();else clearTimeout(timer)});
 $("again").addEventListener("click",function(){playing=true;jump(1)});
+$("dial").addEventListener("input",function(){playing=false;jump(+this.value)});
+$("back").addEventListener("click",function(){playing=false;jump(Math.max(1,i-1))});
+$("fwd").addEventListener("click",function(){playing=false;jump(Math.min(S.length,i+1))});
 reset();jump(1);
 })();
 </script>
