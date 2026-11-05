@@ -153,7 +153,7 @@
   <section class="stage" aria-label="Demo of one day">
     <ol class="stops" id="stops"></ol>
     <div class="bar">
-    <div class="ctl"><button id="back" type="button" aria-label="Back one step">◀ Back</button><button class="pri" id="play" type="button">Pause</button><button id="fwd" type="button" aria-label="Forward one step">Next ▶</button><button id="again" type="button">Start over</button></div>
+    <div class="ctl"><button class="pri" id="play" type="button">Pause</button><button id="again" type="button">Start over</button></div>
       <div class="dial"><input id="dial" type="range" min="1" max="24" value="1" step="1" aria-label="Drag to move through the demo"><span id="timer" role="timer" aria-label="Time in the demo">0:00 / 0:00</span><span id="prog"></span></div>
     </div>
     <p class="cap" id="cap" aria-live="polite"></p>
@@ -261,8 +261,6 @@ $("stops").addEventListener("click",function(e){var b=e.target.closest("button")
 $("play").addEventListener("click",function(){if(i>=S.length){playing=true;jump(1);return}if(playing){left=Math.max(200,left-(Date.now()-began));began=0;clearTimeout(timer);playing=false;draw();tick()}else{playing=true;draw();schedule()}});
 $("again").addEventListener("click",function(){playing=true;jump(1)});
 $("dial").addEventListener("input",function(){playing=false;jump(+this.value)});
-$("back").addEventListener("click",function(){playing=false;jump(Math.max(1,i-1))});
-$("fwd").addEventListener("click",function(){playing=false;jump(Math.min(S.length,i+1))});
 reset();jump(1);
 })();
 </script>
