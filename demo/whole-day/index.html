@@ -145,7 +145,7 @@
 </head>
 <body>
 <main class="wrap">
-  <p class="banner">Demo with sample data: Sample HVAC is a made-up shop, not a real customer.</p>
+  <p class="banner">Demo with sample data: HVAC1 is a made-up shop, not a real customer.</p>
   <a class="back" href="/demo/">&larr; All demos</a>
   <header class="intro">
     <h1>How it runs at an HVAC shop</h1>
@@ -168,21 +168,21 @@
   </div>
   <div class="cta"><a class="go" href="/?interest=Free%20company%20breakdown#contact">Get my free breakdown</a></div>
   <p class="pieces">See one piece at a time: <a href="/demo/text-back/">Text-Back</a> · <a href="/demo/responder/">Responder</a> · <a href="/demo/scheduler/">Scheduler</a> · <a href="/demo/review-ask/">Review ask</a> · <a href="/demo/reminders/">Reminders</a> · <a href="/demo/monthly-report/">Monthly report</a></p>
-  <footer>Sample HVAC, Sam and Ray are made up, and so is every number, time and message (555 numbers). Set up by autoants.</footer>
+  <footer>HVAC1, Sam and Ray are made up, and so is every number, time and message (555 numbers). Set up by autoants.</footer>
 </main>
 <script>
 (function(){
-var B="Sample HVAC", DOW=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"], MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+var B="HVAC1", DOW=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"], MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 function wkd(n){var d=new Date(),k=0;while(k<n){d.setDate(d.getDate()+1);if(d.getDay()>0&&d.getDay()<6)k++}return d}
 var DAYS=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
 function lab(d){return DAYS[d.getDay()]+" "+MONTHS[d.getMonth()]+" "+d.getDate()}
 var t1=lab(wkd(1))+" at 2:00 PM",vd=wkd(2),visit=lab(vd)+" at 9:00 AM",t3=lab(wkd(3))+" at 8:00 AM";
-var biz={name:B,sub:"Text Message",av:"SH"},ants={name:"autoants",sub:"Alerts for Sam",av:"img"};
+var biz={name:B,sub:"Text Message",av:"H1"},ants={name:"autoants",sub:"Alerts for Sam",av:"img"};
 var FORM="My system is 15 years old and the bills keep going up. Can someone look at replacing it?";
 var OFFER="Hi Ray, this is Sam at "+B+". Thanks for reaching out. A replacement starts with a visit to look at the system and the house. We can visit at one of the following times:\n\n"+t1+"\n"+visit+"\n"+t3+"\n\nWhich time works best? Reply STOP to opt out.";
 var STOPS=[["8:05 AM","Missed call"],["10:20 AM","Finds the site"],["10:21 AM","Gets times"],["10:24 AM","Booked"],["Day before","Reminder"],["After the visit","Review ask"],["Monthly","One page"]];
 var S=[
- {s:0,t:"8:05",on:"none",intro:1,cap:"Customer calls the shop.|Nobody can pick up.|The call rings out.|Seconds later, Customer receives a text from Sample HVAC.",L:{who:"The customer's phone",mode:"lock",line:""},R:{mode:"lock",line:"Sam's on a job in Metairie"}},
+ {s:0,t:"8:05",on:"none",intro:1,cap:"Customer calls the shop.|Nobody can pick up.|The call rings out.|Seconds later, Customer receives a text from HVAC1.",L:{who:"The customer's phone",mode:"lock",line:""},R:{mode:"lock",line:"Sam's on a job in Metairie"}},
  {s:0,t:"8:05",on:"L",cap:"The text goes out in wording Sam approved.",L:{mode:"chat",head:biz,add:{k:"in",x:B+": Sorry for missing your call! Tell us the problem, and provide your address. We’ll respond with available times. Reply STOP to opt out."}}},
  {s:0,t:"8:06",on:"L",cap:"The customer answers.",L:{add:{k:"out",x:"My upstairs AC is blowing warm air. I’m at 123 Main Street."}}},
  {s:0,t:"8:06",on:"L",cap:"She hears back right away, with open times from Sam's calendar.",L:{add:{k:"in",x:"We can visit at one of the following times:\n\n"+lab(wkd(1))+" at 10:00 AM\n"+lab(wkd(1))+" at 4:00 PM\n"+lab(wkd(2))+" at 1:00 PM\n\nWhich time works best?"}}},
@@ -190,7 +190,7 @@ var S=[
  {s:0,t:"8:07",on:"L",cap:"It's a job type and time Sam pre-approved, so it books itself.",L:{add:{k:"in",x:"You're booked for "+lab(wkd(1))+" at 4:00 PM. We'll text you prior to visiting. If anything changes, reply here."}}},
  {s:0,t:"8:07",on:"R",cap:"Sam gets the whole thing in one text.",note:"No tap needed.",R:{mode:"chat",head:ants,add:{k:"in",tag:"Text-Back",x:"Customer ((504) 555-0134): \"My upstairs AC is blowing warm air. I’m at 123 Main Street.\" Booked: "+lab(wkd(1))+" at 4:00 PM."}}},
  {s:1,t:"10:20",on:"L",cap:"Ray's system is 15 years old and the bills keep climbing. He searches on his iPhone.",L:{who:"Ray's phone (the customer)",mode:"web",web:"search"}},
- {s:1,t:"10:20",on:"L",cap:"He finds Sample HVAC and taps through.",L:{web:"results"}},
+ {s:1,t:"10:20",on:"L",cap:"He finds HVAC1 and taps through.",L:{web:"results"}},
  {s:1,t:"10:20",on:"L",cap:"He fills out the form on the website.",L:{web:"form0"}},
  {s:1,t:"10:21",on:"L",cap:"He says what he needs, and that it's OK to text him.",L:{web:"form1"}},
  {s:1,t:"10:21",on:"L",cap:"He sends it.",L:{web:"form2"}},
@@ -217,17 +217,17 @@ function apply(step,ph){var c=step[ph];if(!c)return;var p=st[ph];
 function reset(){st={L:blank(),R:blank()}}
 function esc(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML}
 function web(p){var w=p.web;
- if(w==="search"||w==="results"){var h='<div class="web"><div class="url">sample hvac new orleans</div><div class="res">';
+ if(w==="search"||w==="results"){var h='<div class="web"><div class="url">hvac1 new orleans</div><div class="res">';
   if(w==="search")h+='<div class="r dim"><p>Searching…</p></div>';
-  else h+='<div class="r hit"><small>samplehvac.example</small><b>'+esc(B)+'</b><p>AC and heating in Orleans and Jefferson. Request a visit online.</p></div><div class="r dim"><small>example-directory.example</small><b>HVAC companies near you</b><p>Compare local heating and air companies.</p></div><div class="r dim"><small>another-listing.example</small><b>Best AC repair in New Orleans</b><p>Ratings and reviews from homeowners.</p></div>';
+  else h+='<div class="r hit"><small>hvac1.example</small><b>'+esc(B)+'</b><p>AC and heating in Orleans and Jefferson. Request a visit online.</p></div><div class="r dim"><small>example-directory.example</small><b>HVAC companies near you</b><p>Compare local heating and air companies.</p></div><div class="r dim"><small>another-listing.example</small><b>Best AC repair in New Orleans</b><p>Ratings and reviews from homeowners.</p></div>';
   return h+'</div></div>'}
  var on=w!=="form0";var f=function(ph,val,big){return '<div class="fld'+(big?" big":"")+(on?"":" ph")+'">'+esc(on?val:ph)+'</div>'};
- return '<div class="web"><div class="url">samplehvac.example</div><div class="bizhero"><b>'+esc(B)+'</b><span>Heating and air for Orleans and Jefferson</span></div><div class="form"><h4>Request a visit</h4>'+f("Name","Ray")+f("Phone","(504) 555-0178")+f("Neighborhood","Gentilly")+f("What do you need?",FORM,1)+'<div class="chk'+(on?" on":"")+'"><i>'+(on?"✓":"")+'</i><span>OK to text me about this request. Reply STOP to opt out.</span></div><div class="sendb'+(w==="form2"?" sent":"")+'">'+(w==="form2"?"Request sent ✓":"Send request")+'</div></div></div>'}
+ return '<div class="web"><div class="url">hvac1.example</div><div class="bizhero"><b>'+esc(B)+'</b><span>Heating and air for Orleans and Jefferson</span></div><div class="form"><h4>Request a visit</h4>'+f("Name","Ray")+f("Phone","(504) 555-0178")+f("Neighborhood","Gentilly")+f("What do you need?",FORM,1)+'<div class="chk'+(on?" on":"")+'"><i>'+(on?"✓":"")+'</i><span>OK to text me about this request. Reply STOP to opt out.</span></div><div class="sendb'+(w==="form2"?" sent":"")+'">'+(w==="form2"?"Request sent ✓":"Send request")+'</div></div></div>'}
 function drawPhone(id,clock){var p=st[id],light=p.mode==="chat"||p.mode==="web"||p.mode==="cal",h='<div class="stat'+(light?"":" dark")+'"><span>'+clock+'</span><i>●●●</i></div>';
  var el=$(id);el.className="scr"+(light?"":" dark");
  if(p.banner)h+='<div class="notif"><small>now</small><b>'+esc(B)+'</b>'+esc(p.banner.slice(0,118))+'…</div>';
  if(p.mode==="lock")h+='<div class="lock"><b>'+clock+'</b><span>'+esc(p.line)+'</span></div>';
- else if(p.mode==="call")h+='<div class="callv"><div class="av '+(p.state==="ringing"?"ring":"")+'">SH</div><h3>'+esc(B)+'</h3><p>'+(p.state==="ringing"?"(504) 555-0100 · calling…":"No answer · call ended")+'</p>'+(p.state==="ringing"?'<div class="endb"></div>':"")+'</div>';
+ else if(p.mode==="call")h+='<div class="callv"><div class="av '+(p.state==="ringing"?"ring":"")+'">H1</div><h3>'+esc(B)+'</h3><p>'+(p.state==="ringing"?"(504) 555-0100 · calling…":"No answer · call ended")+'</p>'+(p.state==="ringing"?'<div class="endb"></div>':"")+'</div>';
  else if(p.mode==="web")h+=web(p);
  else if(p.mode==="cal")h+='<div class="cal"><h4>'+esc(lab(vd))+'</h4><div class="slot"><span>8 AM</span><div class="ev">Tune-up, Lakeview</div></div><div class="slot"><span>9 AM</span><div class="ev new">Ray, Gentilly: replacement look</div></div><div class="slot"><span>10 AM</span><div></div></div><div class="slot"><span>11 AM</span><div class="ev">AC repair, Metairie</div></div><div class="slot"><span>12 PM</span><div></div></div></div>';
  else{var a=p.head.av==="img"?'<img src="/brand/autoants-icon.svg" alt="">':p.head.av;
