@@ -57,12 +57,13 @@
 .feed{flex:1;min-height:0;overflow-y:auto;scrollbar-width:none;display:flex;flex-direction:column;gap:6px;padding:10px 10px 12px;background:#fff}
 .feed::-webkit-scrollbar{display:none}
 .b,.cardx,.act,.typing{flex:none}
-.b{max-width:84%;padding:8px 11px;border-radius:17px;white-space:pre-line;animation:pop .22s ease-out}
+.b{max-width:84%;padding:8px 11px;border-radius:17px;white-space:pre-line}
+.fresh{animation:pop .3s ease-out}
 .in{align-self:flex-start;background:#e9e9eb;color:#111;border-bottom-left-radius:5px}
 .out{align-self:flex-end;background:#248a3d;color:#fff;border-bottom-right-radius:5px}
 .tm{align-self:center;font-size:10.5px;color:#6b6b70;font-weight:600;margin:3px 0 0}
 .tag{display:inline-block;margin-bottom:3px;padding:1px 7px;border-radius:7px;background:#0f5132;color:#fff;font-size:10.5px;font-weight:700}
-.cardx{align-self:stretch;background:#f2f4f3;border:1px solid #dde3df;border-radius:14px;padding:10px 11px;white-space:pre-line;animation:pop .22s ease-out}
+.cardx{align-self:stretch;background:#f2f4f3;border:1px solid #dde3df;border-radius:14px;padding:10px 11px;white-space:pre-line}
 .cardx h4{margin:3px 0 4px;font-size:14px;font-weight:700}
 .cardx .nt{display:block;margin-top:5px;font-size:11px;color:#5b655f}
 .act{display:flex;gap:6px;align-self:stretch}
@@ -96,7 +97,7 @@
 .notif{position:absolute;left:8px;right:8px;top:42px;z-index:5;background:rgba(245,245,247,.97);color:#111;border-radius:15px;padding:9px 11px;box-shadow:0 8px 24px rgba(0,0,0,.35);font-size:12.5px;line-height:1.28;animation:drop .35s ease-out}
 .notif b{display:block;font-size:12px}.notif small{float:right;color:#777;font-size:10.5px}
 @keyframes drop{from{transform:translateY(-70px);opacity:0}}
-.apptc{align-self:stretch;background:#fff;border:1px solid #cfd6d2;border-left:5px solid #0f5132;border-radius:11px;padding:8px 10px;font-size:12.5px;animation:pop .22s ease-out;flex:none}
+.apptc{align-self:stretch;background:#fff;border:1px solid #cfd6d2;border-left:5px solid #0f5132;border-radius:11px;padding:8px 10px;font-size:12.5px;flex:none}
 .apptc b{display:block;font-size:13.5px}.apptc em{font-style:normal;color:#0f5132;font-weight:700;font-size:11px}
 .cal{flex:1;min-height:0;display:flex;flex-direction:column;background:#fff;padding:2px 12px 10px;overflow:hidden}
 .cal h4{margin:2px 0 8px;font-size:17px}
@@ -104,7 +105,7 @@
 .ev{border-radius:7px;padding:5px 8px;font-size:12px;color:#123;background:#e6ece9}
 .ev.new{background:#3ddcae;color:#0b1712;font-weight:700;animation:pop .3s ease-out}
 .ctl{display:flex;justify-content:center;align-items:center;gap:8px}
-.ctl button{min-height:44px;padding:8px 18px;border-radius:10px;border:1px solid #3a4d43;background:transparent;color:#f4f6f4;font:700 14px Onest,system-ui,sans-serif;cursor:pointer}
+.ctl button{min-height:44px;white-space:nowrap;padding:8px 16px;border-radius:10px;border:1px solid #3a4d43;background:transparent;color:#f4f6f4;font:700 14px Onest,system-ui,sans-serif;cursor:pointer}
 .ctl .pri{background:#3ddcae;color:#0b1712;border-color:#3ddcae}
 .dial{width:100%;display:flex;align-items:center;gap:12px}
 .dial input{flex:1;min-width:0;height:44px;margin:0;background:transparent;accent-color:#3ddcae;cursor:grab;touch-action:pan-y}
@@ -131,6 +132,7 @@
  .back{padding:0}
  .below{grid-template-columns:minmax(0,1fr)}
  .cap{min-height:3.8em}
+ .ctl{gap:6px}.ctl button{padding:8px 11px;font-size:13px}
 }
 @media (prefers-reduced-motion:reduce){.b,.cardx,.act button,.ring,.typing i{animation:none}}
 </style>
@@ -200,7 +202,7 @@ var S=[
  {s:6,t:"9:00",on:"R",cap:"Sam didn't tap once. Prices, complaints and anything unusual would still go to him."}
 ];
 var $=function(id){return document.getElementById(id)},reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
-var i=0,timer=null,playing=!reduced,st;
+var i=0,timer=null,playing=!reduced,st,animate=false;
 function blank(){return {mode:"lock",line:"",state:"",web:"",banner:"",head:null,items:[],who:null}}
 function apply(step,ph){var c=step[ph];if(!c)return;var p=st[ph];
  ["who","mode","state","line","head","web","banner"].forEach(function(k){if(c[k]!==undefined)p[k]=c[k]});
@@ -223,12 +225,12 @@ function drawPhone(id,clock){var p=st[id],light=p.mode==="chat"||p.mode==="web"|
  else if(p.mode==="cal")h+='<div class="cal"><h4>'+esc(lab(vd))+'</h4><div class="slot"><span>8 AM</span><div class="ev">Tune-up, Lakeview</div></div><div class="slot"><span>9 AM</span><div class="ev new">Ray, Gentilly: replacement look</div></div><div class="slot"><span>10 AM</span><div></div></div><div class="slot"><span>11 AM</span><div class="ev">AC repair, Metairie</div></div><div class="slot"><span>12 PM</span><div></div></div></div>';
  else{var a=p.head.av==="img"?'<img src="/brand/autoants-icon.svg" alt="">':p.head.av;
   h+='<div class="hd"><div class="mini">'+a+'</div><b>'+esc(p.head.name)+'</b><span>'+esc(p.head.sub)+'</span></div><div class="feed">';
-  p.items.forEach(function(it){
-   if(it.k==="card")h+='<div class="cardx"><h4>'+esc(it.h)+'</h4>'+esc(it.x)+(it.nt?'<span class="nt">'+esc(it.nt)+'</span>':"")+'</div>';
-   else if(it.k==="appt")h+='<div class="apptc"><em>APPOINTMENT</em><b>'+esc(visit)+'</b>'+esc(it.x)+'</div>';
-   else h+='<div class="b '+it.k+'">'+(it.tag?'<span class="tag">'+esc(it.tag)+'</span><br>':"")+esc(it.x)+'</div>'});
+  p.items.forEach(function(it,n){var fr=(animate&&n>=(p.seen||0))?" fresh":"";
+   if(it.k==="card")h+='<div class="cardx'+fr+'"><h4>'+esc(it.h)+'</h4>'+esc(it.x)+(it.nt?'<span class="nt">'+esc(it.nt)+'</span>':"")+'</div>';
+   else if(it.k==="appt")h+='<div class="apptc'+fr+'"><em>APPOINTMENT</em><b>'+esc(visit)+'</b>'+esc(it.x)+'</div>';
+   else h+='<div class="b '+it.k+fr+'">'+(it.tag?'<span class="tag">'+esc(it.tag)+'</span><br>':"")+esc(it.x)+'</div>'});
   h+='</div>'}
- el.innerHTML=h;var f=el.querySelector(".feed");if(f)f.scrollTop=f.scrollHeight;}
+ el.innerHTML=h;p.seen=p.items.length;var f=el.querySelector(".feed");if(f)f.scrollTop=f.scrollHeight;}
 function draw(){var step=S[i-1]||S[0];
  $("cap").innerHTML=esc(step.cap)+(step.note?"<small>"+esc(step.note)+"</small>":"");
  drawPhone("L",step.t);drawPhone("R",step.t);
@@ -238,7 +240,7 @@ function draw(){var step=S[i-1]||S[0];
  var done=i>=S.length;$("play").textContent=done?"Play again":(playing?"Pause":"Play");$("prog").textContent="Step "+i+" of "+S.length;var d=$("dial");d.max=S.length;d.value=i;d.style.setProperty("--fill",((i-1)/(S.length-1)*100)+"%");}
 function delay(step){var c=[step.L,step.R].map(function(x){if(!x||!x.add)return 0;return [].concat(x.add).reduce(function(n,a){return n+(a.x||"").length},0)}).reduce(function(a,b){return a+b},0);return Math.min(14000,Math.max(5000,3200+((step.cap||"").length+(step.note||"").length)*42+c*46))}
 function schedule(){clearTimeout(timer);if(!playing||i>=S.length){draw();return}timer=setTimeout(next,delay(S[i-1]))}
-function next(){if(i>=S.length){playing=false;draw();return}var step=S[i];apply(step,"L");apply(step,"R");i++;if(i>=S.length)playing=false;draw();schedule()}
+function next(){if(i>=S.length){playing=false;draw();return}var step=S[i];apply(step,"L");apply(step,"R");i++;if(i>=S.length)playing=false;animate=!reduced;draw();animate=false;schedule()}
 function jump(n){clearTimeout(timer);reset();i=0;while(i<n){var s=S[i];apply(s,"L");apply(s,"R");i++}draw();schedule()}
 $("stops").innerHTML=STOPS.map(function(x,n){return '<li><button class="stop" type="button" data-s="'+n+'">'+x[0]+'<small>'+x[1]+'</small></button></li>'}).join("");
 $("stops").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var t=+b.dataset.s,n=0;while(S[n].s!==t)n++;jump(n+1)});
