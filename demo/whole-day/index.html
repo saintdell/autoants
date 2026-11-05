@@ -27,8 +27,9 @@
 .stop.now{background:#3ddcae;color:#0b1712;border-color:#3ddcae}
 .cap{margin:0;min-height:1.35em;font-size:clamp(16px,1.6vw,18px);line-height:1.35;font-weight:700;text-wrap:balance;text-align:center}
 .cap small{display:block;margin-top:3px;font-size:14px;font-weight:500;color:#9fe9cf}
-.stage.opening .phones{display:none}
-.stage.opening .cap{min-height:0;padding:14px 0 26px;display:flex;flex-direction:column;justify-content:flex-start;gap:14px;font-size:clamp(22px,3.6vw,34px);line-height:1.2}
+.stage.opening .phones{visibility:hidden}
+.stage.opening .cap{position:relative}
+.lines{position:absolute;left:0;right:0;top:14px;display:flex;flex-direction:column;gap:14px;font-size:clamp(22px,3.6vw,34px);line-height:1.2}
 .stage.opening .cap span{display:block}
 .phones{display:flex;justify-content:center;gap:clamp(18px,6vw,64px)}
 .ph-wrap{display:flex;flex-direction:column;align-items:center;gap:9px;transition:opacity .25s}
@@ -241,7 +242,7 @@ function drawPhone(id,clock){var p=st[id],light=p.mode==="chat"||p.mode==="web"|
  el.innerHTML=h;p.seen=p.items.length;var f=el.querySelector(".feed");if(f)f.scrollTop=f.scrollHeight;}
 function draw(){var step=S[i-1]||S[0];
  document.querySelector(".stage").classList.toggle("opening",!!step.intro);
- $("cap").innerHTML=step.intro?step.cap.split("|").map(function(x){return "<span>"+esc(x)+"</span>"}).join(""):esc(step.cap)+(step.note?"<small>"+esc(step.note)+"</small>":"");
+ $("cap").innerHTML=step.intro?'<div class="lines">'+step.cap.split("|").map(function(x){return "<span>"+esc(x)+"</span>"}).join("")+"</div>":esc(step.cap)+(step.note?"<small>"+esc(step.note)+"</small>":"");
  drawPhone("L",step.t);drawPhone("R",step.t);
  $("whoL").textContent=st.L.who||"Customer's Phone";
  ["L","R"].forEach(function(p){var w=$("wrap"+p);w.classList.toggle("on",step.on===p);w.classList.toggle("idle",step.on!==p)});
