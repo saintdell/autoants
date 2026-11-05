@@ -28,9 +28,10 @@
 .cap{margin:0;min-height:1.35em;font-size:clamp(16px,1.6vw,18px);line-height:1.35;font-weight:700;text-wrap:balance;text-align:center}
 .cap small{display:block;margin-top:3px;font-size:14px;font-weight:500;color:#9fe9cf}
 .view{position:relative}
-.lines{position:absolute;left:0;right:0;top:0;z-index:2;display:none;flex-direction:column;gap:14px;text-align:center;font-weight:700;font-size:clamp(22px,3.6vw,34px);line-height:1.2;text-wrap:balance}
-.stage.opening .lines{display:flex}
-.stage.opening .phones{visibility:hidden}
+.lines{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;gap:16px;padding:0 6%;text-align:center;font-weight:800;font-size:clamp(23px,3.4vw,36px);line-height:1.18;text-wrap:balance;text-shadow:0 2px 18px rgba(0,0,0,.85);opacity:0;pointer-events:none;transition:opacity .45s}
+.stage.opening .lines{opacity:1}
+.stage.opening .phones{opacity:.16}
+.stage .phones{transition:opacity .55s}
 .phones{display:flex;justify-content:center;gap:clamp(18px,6vw,64px)}
 .ph-wrap{display:flex;flex-direction:column;align-items:center;gap:9px;transition:opacity .25s}
 .ph-wrap.idle{opacity:.62}
