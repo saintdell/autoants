@@ -32,7 +32,7 @@
 .ph-wrap.idle{opacity:.62}
 .who{font-size:14px;font-weight:700;color:#d7e3db}
 .ph-wrap.on .who{color:#3ddcae}
-.phone-x{width:276px;height:clamp(460px,60vh,560px);background:#000;border-radius:44px;padding:10px;box-shadow:0 0 0 1px #33413a,0 20px 44px rgba(0,0,0,.55)}
+.phone-x{width:300px;height:clamp(460px,60vh,560px);background:#000;border-radius:44px;padding:10px;box-shadow:0 0 0 1px #33413a,0 20px 44px rgba(0,0,0,.55)}
 .ph-wrap.on .phone-x{box-shadow:0 0 0 2px #3ddcae,0 20px 44px rgba(0,0,0,.55)}
 .scr{position:relative;width:100%;height:100%;background:#fff;color:#111;border-radius:35px;overflow:hidden;display:flex;flex-direction:column;font:400 14.5px/1.32 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
 .stat{flex:none;height:42px;display:flex;align-items:center;justify-content:space-between;padding:6px 22px 0;font-size:13px;font-weight:600;position:relative;z-index:2}
@@ -58,6 +58,7 @@
 .feed::-webkit-scrollbar{display:none}
 .b,.cardx,.act,.typing{flex:none}
 .b{max-width:84%;padding:8px 11px;border-radius:17px;white-space:pre-line}
+.b.list{max-width:97%;font-size:13.5px}
 .fresh{animation:pop .3s ease-out}
 .in{align-self:flex-start;background:#e9e9eb;color:#111;border-bottom-left-radius:5px}
 .out{align-self:flex-end;background:#248a3d;color:#fff;border-bottom-right-radius:5px}
@@ -128,7 +129,7 @@
 @media (max-width:760px){
  .stage{padding:14px 12px;margin:0 -4px}
  .ph-wrap{display:none}.ph-wrap.on{display:flex}
- .phone-x{width:min(270px,74vw);height:clamp(420px,56vh,500px)}
+ .phone-x{width:min(300px,84vw);height:clamp(420px,56vh,500px)}
  .intro .label{display:none}
  .back{padding:0}
  .below{grid-template-columns:minmax(0,1fr)}
@@ -231,7 +232,7 @@ function drawPhone(id,clock){var p=st[id],light=p.mode==="chat"||p.mode==="web"|
   p.items.forEach(function(it,n){var fr=(animate&&n>=(p.seen||0))?" fresh":"";
    if(it.k==="card")h+='<div class="cardx'+fr+'"><h4>'+esc(it.h)+'</h4>'+esc(it.x)+(it.nt?'<span class="nt">'+esc(it.nt)+'</span>':"")+'</div>';
    else if(it.k==="appt")h+='<div class="apptc'+fr+'"><em>APPOINTMENT</em><b>'+esc(visit)+'</b>'+esc(it.x)+'</div>';
-   else h+='<div class="b '+it.k+fr+'">'+(it.tag?'<span class="tag">'+esc(it.tag)+'</span><br>':"")+esc(it.x)+'</div>'});
+   else h+='<div class="b '+it.k+(it.x.indexOf("\n")>=0?" list":"")+fr+'">'+(it.tag?'<span class="tag">'+esc(it.tag)+'</span><br>':"")+esc(it.x)+'</div>'});
   h+='</div>'}
  el.innerHTML=h;p.seen=p.items.length;var f=el.querySelector(".feed");if(f)f.scrollTop=f.scrollHeight;}
 function draw(){var step=S[i-1]||S[0];
