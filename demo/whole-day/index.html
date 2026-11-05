@@ -159,7 +159,7 @@
     <p class="cap" id="cap" aria-live="polite"></p>
     <div class="phones">
       <div class="ph-wrap" id="wrapL"><div class="who" id="whoL"></div><div class="phone-x"><div class="scr" id="L"></div></div></div>
-      <div class="ph-wrap" id="wrapR"><div class="who" id="whoR">Sam's phone (the owner)</div><div class="phone-x"><div class="scr" id="R"></div></div></div>
+      <div class="ph-wrap" id="wrapR"><div class="who" id="whoR">Owner's Phone</div><div class="phone-x"><div class="scr" id="R"></div></div></div>
     </div>
   </section>
   <div class="below">
@@ -182,14 +182,14 @@ var FORM="My system is 15 years old and the bills keep going up. Can someone loo
 var OFFER="Hi Ray, this is Sam at "+B+". Thanks for reaching out. A replacement starts with a visit to look at the system and the house. We can visit at one of the following times:\n\n"+t1+"\n"+visit+"\n"+t3+"\n\nWhich time works best? Reply STOP to opt out.";
 var STOPS=[["8:05 AM","Missed call"],["10:20 AM","Finds the site"],["10:21 AM","Gets times"],["10:24 AM","Booked"],["Day before","Reminder"],["After the visit","Review ask"],["Monthly","One page"]];
 var S=[
- {s:0,t:"8:05",on:"none",intro:1,cap:"Customer calls the shop.|Nobody can pick up.|The call rings out.|Seconds later, Customer receives a text from HVAC1.",L:{who:"The customer's phone",mode:"lock",line:""},R:{mode:"lock",line:"Sam's on a job in Metairie"}},
- {s:0,t:"8:05",on:"L",cap:"The text goes out in wording Sam approved.",L:{mode:"chat",head:biz,add:{k:"in",x:B+": Sorry for missing your call! Tell us the problem, and provide your address. We’ll respond with available times. Reply STOP to opt out."}}},
+ {s:0,t:"8:05",on:"none",intro:1,cap:"Customer calls the shop.|Nobody can pick up.|The call rings out.|Seconds later, Customer receives a text from HVAC1.",L:{who:"Customer's Phone",mode:"lock",line:""},R:{mode:"lock",line:"Sam's on a job in Metairie"}},
+ {s:0,t:"8:05",on:"L",cap:"",L:{mode:"chat",head:biz,add:{k:"in",x:B+": Sorry for missing your call! Tell us the problem, and provide your address. We’ll respond with available times. Reply STOP to opt out."}}},
  {s:0,t:"8:06",on:"L",cap:"The customer answers.",L:{add:{k:"out",x:"My upstairs AC is blowing warm air. I’m at 123 Main Street."}}},
  {s:0,t:"8:06",on:"L",cap:"She hears back right away, with open times from Sam's calendar.",L:{add:{k:"in",x:"We can visit at one of the following times:\n\n"+lab(wkd(1))+" at 10:00 AM\n"+lab(wkd(1))+" at 4:00 PM\n"+lab(wkd(2))+" at 1:00 PM\n\nWhich time works best?"}}},
  {s:0,t:"8:07",on:"L",cap:"The customer picks a time.",L:{add:{k:"out",x:lab(wkd(1))+" at 4:00 PM works."}}},
  {s:0,t:"8:07",on:"L",cap:"It's a job type and time Sam pre-approved, so it books itself.",L:{add:{k:"in",x:"You're booked for "+lab(wkd(1))+" at 4:00 PM. We'll text you prior to visiting. If anything changes, reply here."}}},
  {s:0,t:"8:07",on:"R",cap:"Sam gets the whole thing in one text.",note:"No tap needed.",R:{mode:"chat",head:ants,add:{k:"in",tag:"Text-Back",x:"Customer ((504) 555-0134): \"My upstairs AC is blowing warm air. I’m at 123 Main Street.\" Booked: "+lab(wkd(1))+" at 4:00 PM."}}},
- {s:1,t:"10:20",on:"L",cap:"Ray's system is 15 years old and the bills keep climbing. He searches on his iPhone.",L:{who:"Ray's phone (the customer)",mode:"web",web:"search"}},
+ {s:1,t:"10:20",on:"L",cap:"Ray's system is 15 years old and the bills keep climbing. He searches on his iPhone.",L:{who:"Customer's Phone",mode:"web",web:"search"}},
  {s:1,t:"10:20",on:"L",cap:"He finds HVAC1 and taps through.",L:{web:"results"}},
  {s:1,t:"10:20",on:"L",cap:"He fills out the form on the website.",L:{web:"form0"}},
  {s:1,t:"10:21",on:"L",cap:"He says what he needs, and that it's OK to text him.",L:{web:"form1"}},
@@ -205,7 +205,7 @@ var S=[
  {s:4,t:"9:12",on:"R",cap:"Sam sees it, along with Ray's note.",R:{add:{k:"in",tag:"Reminders",x:"Ray confirmed tomorrow at 9:00 AM. He says: \"Side gate will be open.\""}}},
  {s:5,t:"11:30",on:"R",cap:"The visit's done. Sam marks it complete.",R:{add:{k:"in",tag:"Review ask",x:"Ray's visit is marked complete. Review ask sent."}}},
  {s:5,t:"11:30",on:"L",cap:"Ray gets one review ask, in the same words every customer gets.",L:{add:{k:"in",x:"Hi Ray, thanks for choosing "+B+". If you have a minute, a Google review helps a small local crew a lot: [your Google review link] Thank you! Sam"}}},
- {s:6,t:"9:00",on:"R",cap:"Once a month, the whole month on one page.",L:{mode:"lock",line:"",who:"The customer's phone"},R:{add:{k:"card",h:"October at "+B,x:"Missed calls texted back: 18 of 20\nJobs booked from them: 4\nInvoiced on those jobs: $3,120\nGoogle reviews: 38 → 44\nNot tracked yet: website visits (analytics not on)",nt:"Made-up numbers to show the layout."}}},
+ {s:6,t:"9:00",on:"R",cap:"Once a month, the whole month on one page.",L:{mode:"lock",line:"",who:"Customer's Phone"},R:{add:{k:"card",h:"October at "+B,x:"Missed calls texted back: 18 of 20\nJobs booked from them: 4\nInvoiced on those jobs: $3,120\nGoogle reviews: 38 → 44\nNot tracked yet: website visits (analytics not on)",nt:"Made-up numbers to show the layout."}}},
  {s:6,t:"9:00",on:"R",cap:"Sam didn't tap once. Prices, complaints and anything unusual would still go to him."}
 ];
 var $=function(id){return document.getElementById(id)},reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -242,7 +242,7 @@ function draw(){var step=S[i-1]||S[0];
  document.querySelector(".stage").classList.toggle("opening",!!step.intro);
  $("cap").innerHTML=step.intro?step.cap.split("|").map(function(x){return "<span>"+esc(x)+"</span>"}).join(""):esc(step.cap)+(step.note?"<small>"+esc(step.note)+"</small>":"");
  drawPhone("L",step.t);drawPhone("R",step.t);
- $("whoL").textContent=st.L.who||"The customer's phone";
+ $("whoL").textContent=st.L.who||"Customer's Phone";
  ["L","R"].forEach(function(p){var w=$("wrap"+p);w.classList.toggle("on",step.on===p);w.classList.toggle("idle",step.on!==p)});
  $("stops").querySelectorAll("button").forEach(function(b,n){b.classList.toggle("now",n===step.s);b.classList.toggle("done",n<step.s);if(n===step.s){b.setAttribute("aria-current","step");if(window.innerWidth<760)$("stops").scrollLeft=b.parentNode.offsetLeft-$("stops").offsetLeft-12}else b.removeAttribute("aria-current")});
  var done=i>=S.length;$("play").textContent=done?"Play again":(playing?"Pause":"Play");$("prog").textContent="Step "+i+" of "+S.length;var d=$("dial");d.max=S.length;d.value=i;d.style.setProperty("--fill",((i-1)/(S.length-1)*100)+"%");}
