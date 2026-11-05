@@ -28,7 +28,7 @@
 .cap{margin:0;min-height:1.35em;font-size:clamp(16px,1.6vw,18px);line-height:1.35;font-weight:700;text-wrap:balance;text-align:center}
 .cap small{display:block;margin-top:3px;font-size:14px;font-weight:500;color:#9fe9cf}
 .stage.opening .phones{display:none}
-.stage.opening .cap{min-height:min(52vh,430px);display:flex;flex-direction:column;justify-content:center;gap:14px;font-size:clamp(22px,3.6vw,34px);line-height:1.2}
+.stage.opening .cap{min-height:0;padding:14px 0 26px;display:flex;flex-direction:column;justify-content:flex-start;gap:14px;font-size:clamp(22px,3.6vw,34px);line-height:1.2}
 .stage.opening .cap span{display:block}
 .phones{display:flex;justify-content:center;gap:clamp(18px,6vw,64px)}
 .ph-wrap{display:flex;flex-direction:column;align-items:center;gap:9px;transition:opacity .25s}
@@ -183,7 +183,7 @@ var FORM="My system is 15 years old and the bills keep going up. Can someone loo
 var OFFER="Hi Ray, this is Sam at "+B+". Thanks for reaching out. A replacement starts with a visit to look at the system and the house. We can visit at one of the following times:\n\n"+t1+"\n"+visit+"\n"+t3+"\n\nWhich time works best? Reply STOP to opt out.";
 var STOPS=[["8:05 AM","Missed call"],["10:20 AM","Finds the site"],["10:21 AM","Gets times"],["10:24 AM","Booked"],["Day before","Reminder"],["After the visit","Review ask"],["Monthly","One page"]];
 var S=[
- {s:0,t:"8:05",on:"none",intro:1,cap:"Customer calls the shop.|Nobody can pick up.|The call rings out.|Seconds later, Customer receives a text from HVAC1.",L:{who:"Customer's Phone",mode:"lock",line:""},R:{mode:"lock",line:"Sam's on a job in Metairie"}},
+ {s:0,t:"8:05",on:"none",intro:1,cap:"Customer calls the shop.|Nobody answers.|The call rings out.|Seconds later, Customer receives a text from the shop.",L:{who:"Customer's Phone",mode:"lock",line:""},R:{mode:"lock",line:"Sam's on a job in Metairie"}},
  {s:0,t:"8:05",on:"L",cap:"",L:{mode:"chat",head:biz,add:{k:"in",x:B+": Sorry for missing your call! Tell us the problem, and provide your address. We’ll respond with available times. Reply STOP to opt out."}}},
  {s:0,t:"8:06",on:"L",cap:"",L:{add:{k:"out",x:"My upstairs AC is blowing warm air. I’m at 123 Main Street."}}},
  {s:0,t:"8:06",on:"L",cap:"",L:{add:{k:"in",x:"We can visit at one of the following times:\n\n"+lab(wkd(1))+" at 10:00 AM\n"+lab(wkd(1))+" at 4:00 PM\n"+lab(wkd(2))+" at 1:00 PM\n\nWhich time works best?"}}},
