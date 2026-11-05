@@ -27,10 +27,10 @@
 .stop.now{background:#3ddcae;color:#0b1712;border-color:#3ddcae}
 .cap{margin:0;min-height:1.35em;font-size:clamp(16px,1.6vw,18px);line-height:1.35;font-weight:700;text-wrap:balance;text-align:center}
 .cap small{display:block;margin-top:3px;font-size:14px;font-weight:500;color:#9fe9cf}
+.view{position:relative}
+.lines{position:absolute;left:0;right:0;top:0;z-index:2;display:none;flex-direction:column;gap:14px;text-align:center;font-weight:700;font-size:clamp(22px,3.6vw,34px);line-height:1.2;text-wrap:balance}
+.stage.opening .lines{display:flex}
 .stage.opening .phones{visibility:hidden}
-.stage.opening .cap{position:relative}
-.lines{position:absolute;left:0;right:0;top:14px;display:flex;flex-direction:column;gap:14px;font-size:clamp(22px,3.6vw,34px);line-height:1.2}
-.stage.opening .cap span{display:block}
 .phones{display:flex;justify-content:center;gap:clamp(18px,6vw,64px)}
 .ph-wrap{display:flex;flex-direction:column;align-items:center;gap:9px;transition:opacity .25s}
 .ph-wrap.idle{opacity:.62}
@@ -132,7 +132,7 @@
 .pieces{margin:0;text-align:center;font-size:14px;color:var(--muted)}
 @media (max-width:760px){
  .stage{padding:14px 12px;margin:0 -4px}
- .ph-wrap{display:none}.ph-wrap.on{display:flex}
+ .ph-wrap{display:none}.ph-wrap.on{display:flex}.stage.opening #wrapL{display:flex}
  .phone-x{width:min(300px,84vw);height:clamp(400px,calc(100vh - 345px),500px)}
  .bar{flex-direction:column;gap:4px}
  .intro .label{display:none}
@@ -159,10 +159,10 @@
       <div class="dial"><input id="dial" type="range" min="1" max="24" value="1" step="1" aria-label="Drag to move through the demo"><span id="timer" role="timer" aria-label="Time in the demo">0:00 / 0:00</span><span id="prog"></span></div>
     </div>
     <p class="cap" id="cap" aria-live="polite"></p>
-    <div class="phones">
+    <div class="view"><div class="lines" id="lines"></div><div class="phones">
       <div class="ph-wrap" id="wrapL"><div class="who" id="whoL"></div><div class="phone-x"><div class="scr" id="L"></div></div></div>
       <div class="ph-wrap" id="wrapR"><div class="who" id="whoR">Owner's Phone</div><div class="phone-x"><div class="scr" id="R"></div></div></div>
-    </div>
+    </div></div>
   </section>
   <div class="below">
     <section class="box"><h2>What it never does</h2><p>Sends wording Sam hasn't approved, books a visit he hasn't confirmed or pre-approved, texts a call he answered, or asks the same customer for a review twice. Prices, complaints and anything unusual always go to Sam. Prefer to approve each message first? That's a setting.</p></section>
@@ -242,7 +242,7 @@ function drawPhone(id,clock){var p=st[id],light=p.mode==="chat"||p.mode==="web"|
  el.innerHTML=h;p.seen=p.items.length;var f=el.querySelector(".feed");if(f)f.scrollTop=f.scrollHeight;}
 function draw(){var step=S[i-1]||S[0];
  document.querySelector(".stage").classList.toggle("opening",!!step.intro);
- $("cap").innerHTML=step.intro?'<div class="lines">'+step.cap.split("|").map(function(x){return "<span>"+esc(x)+"</span>"}).join("")+"</div>":esc(step.cap)+(step.note?"<small>"+esc(step.note)+"</small>":"");
+ if(step.intro){$("lines").innerHTML=step.cap.split("|").map(function(x){return "<span>"+esc(x)+"</span>"}).join("");$("cap").textContent=""}else $("cap").innerHTML=esc(step.cap)+(step.note?"<small>"+esc(step.note)+"</small>":"");
  drawPhone("L",step.t);drawPhone("R",step.t);
  $("whoL").textContent=st.L.who||"Customer's Phone";
  ["L","R"].forEach(function(p){var w=$("wrap"+p);w.classList.toggle("on",step.on===p);w.classList.toggle("idle",step.on!==p)});
