@@ -182,7 +182,7 @@ var STOPS=[["8:05 AM","Missed call"],["10:20 AM","Finds the site"],["10:21 AM","
 var S=[
  {s:0,t:"8:05",on:"L",cap:"Dana calls the shop. Nobody can pick up.",L:{who:"Dana's phone (the customer)",mode:"call",state:"ringing"},R:{mode:"lock",line:"Sam's on a job in Metairie"}},
  {s:0,t:"8:05",on:"L",cap:"It rings out.",L:{mode:"call",state:"ended"}},
- {s:0,t:"8:05",on:"L",cap:"Seconds later, Dana gets one text, in wording Sam approved.",L:{mode:"chat",head:biz,add:{k:"in",x:B+": Sorry, we missed your call! Tell us the problem and your address, and we’ll respond with available times. Reply STOP to opt out."}}},
+ {s:0,t:"8:05",on:"L",cap:"Seconds later, Dana gets one text, in wording Sam approved.",L:{mode:"chat",head:biz,add:{k:"in",x:B+": Sorry for missing your call! Tell us your problem, and provide your address. We’ll respond with available times. Reply STOP to opt out."}}},
  {s:0,t:"8:06",on:"L",cap:"Dana answers.",L:{add:{k:"out",x:"My upstairs AC is blowing warm air. I’m at 123 Main Street."}}},
  {s:0,t:"8:06",on:"L",cap:"She hears back right away, with open times from Sam's calendar.",L:{add:{k:"in",x:"We can visit at one of the following times:\n"+lab(wkd(1))+" at 10:00 AM\n"+lab(wkd(1))+" at 4:00 PM\n"+lab(wkd(2))+" at 1:00 PM\nWhich time works best?"}}},
  {s:0,t:"8:06",on:"R",cap:"Sam gets the whole thing in one text.",note:"No tap needed.",R:{mode:"chat",head:ants,add:{k:"in",tag:"Text-Back",x:"Dana ((504) 555-0134): \"My upstairs AC is blowing warm air. I’m at 123 Main Street.\" Three times sent."}}},
