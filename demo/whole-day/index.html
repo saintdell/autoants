@@ -115,6 +115,8 @@
 .ctl button{min-height:44px;white-space:nowrap;padding:8px 16px;border-radius:10px;border:1px solid #3a4d43;background:transparent;color:#f4f6f4;font:700 14px Onest,system-ui,sans-serif;cursor:pointer}
 .ctl .pri{background:#3ddcae;color:#0b1712;border-color:#3ddcae;width:52px;padding:0;display:inline-flex;align-items:center;justify-content:center}
 .ctl .pri svg{fill:currentColor;display:block}
+#again{width:52px;padding:0;display:inline-flex;align-items:center;justify-content:center}
+#again svg{display:block}
 .dial{width:100%;max-width:680px;display:flex;align-items:center;gap:12px}
 .dial input{flex:1;min-width:0;height:44px;margin:0;background:transparent;accent-color:#3ddcae;cursor:grab;touch-action:pan-y}
 .dial input:active{cursor:grabbing}
@@ -158,7 +160,7 @@
   <section class="stage" aria-label="Demo of one day">
     <ol class="stops" id="stops"></ol>
     <div class="bar">
-    <div class="ctl"><button class="pri" id="play" type="button" aria-label="Pause"></button><button id="again" type="button">Start over</button></div>
+    <div class="ctl"><button class="pri" id="play" type="button" aria-label="Pause"></button><button id="again" type="button" aria-label="Start over" title="Start over"><svg viewBox="0 0 24 24" width="21" height="21" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1"/><path d="M3.5 4v5h5"/></svg></button></div>
       <div class="dial"><input id="dial" type="range" min="1" max="24" value="1" step="1" aria-label="Drag to move through the demo"><span id="timer" role="timer" aria-label="Time in the demo">0:00 / 0:00</span><span id="prog"></span></div>
     </div>
     <p class="cap" id="cap" aria-live="polite"></p>
