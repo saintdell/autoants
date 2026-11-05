@@ -116,7 +116,8 @@
 .dial input::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;margin-top:-9px;border-radius:50%;background:#f4f6f4;border:3px solid #3ddcae;box-shadow:0 2px 8px rgba(0,0,0,.5)}
 .dial input::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#f4f6f4;border:3px solid #3ddcae}
 .dial input{-webkit-appearance:none;appearance:none}
-.dial span{flex:none;font-size:12px;color:#a9bbb0;min-width:74px;text-align:right}
+.dial span{flex:none;font-size:12px;color:#a9bbb0;text-align:right}
+#timer{font:700 17px/1 Onest,system-ui,sans-serif;color:#f4f6f4;font-variant-numeric:tabular-nums;min-width:96px}
 .below{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
 .box h2{margin:0 0 6px;font-size:18px;font-weight:800}
@@ -149,7 +150,7 @@
     <ol class="stops" id="stops"></ol>
     <div class="bar">
     <div class="ctl"><button id="back" type="button" aria-label="Back one step">◀ Back</button><button class="pri" id="play" type="button">Pause</button><button id="fwd" type="button" aria-label="Forward one step">Next ▶</button><button id="again" type="button">Start over</button></div>
-      <div class="dial"><input id="dial" type="range" min="1" max="24" value="1" step="1" aria-label="Drag to move through the demo"><span id="prog"></span></div>
+      <div class="dial"><input id="dial" type="range" min="1" max="24" value="1" step="1" aria-label="Drag to move through the demo"><span id="timer" role="timer" aria-label="Time in the demo">0:00 / 0:00</span><span id="prog"></span></div>
     </div>
     <p class="cap" id="cap" aria-live="polite"></p>
     <div class="phones">
@@ -178,7 +179,7 @@ var STOPS=[["8:05 AM","Missed call"],["10:20 AM","Finds the site"],["10:21 AM","
 var S=[
  {s:0,t:"8:05",on:"L",cap:"Dana calls the shop. Nobody can pick up.",L:{who:"Dana's phone (the customer)",mode:"call",state:"ringing"},R:{mode:"lock",line:"Sam's on a job in Metairie"}},
  {s:0,t:"8:05",on:"L",cap:"It rings out.",L:{mode:"call",state:"ended"}},
- {s:0,t:"8:05",on:"L",cap:"Seconds later, Dana gets one text, in wording Sam approved.",L:{mode:"chat",head:biz,add:{k:"in",x:B+": Sorry we missed your call. We're with a customer right now. Reply with what's going on with your system and your address, and we'll get back to you with a time. Reply STOP to opt out."}}},
+ {s:0,t:"8:05",on:"L",cap:"Seconds later, Dana gets one text, in wording Sam approved.",L:{mode:"chat",head:biz,add:{k:"in",x:B+": Sorry, we missed your call! Tell us the problem with your system and your address, and we’ll get back to you with a time. Reply STOP to opt out."}}},
  {s:0,t:"8:06",on:"L",cap:"Dana answers.",L:{add:{k:"out",x:"Not cooling. Upstairs unit. Banks and Carrollton."}}},
  {s:0,t:"8:06",on:"L",cap:"She hears back right away.",L:{add:{k:"in",x:"Thank you, Dana. We have your AC not cooling upstairs, near Banks and Carrollton. Sam will text you with a time as soon as he's off this job."}}},
  {s:0,t:"8:06",on:"R",cap:"Sam gets the whole thing in one text.",note:"No tap needed. He texts her a time between jobs.",R:{mode:"chat",head:ants,add:{k:"in",tag:"Text-Back",x:"Dana ((504) 555-0134): \"Not cooling. Upstairs unit. Banks and Carrollton.\" She's been told you'll text a time."}}},
@@ -238,13 +239,19 @@ function draw(){var step=S[i-1]||S[0];
  ["L","R"].forEach(function(p){var w=$("wrap"+p);w.classList.toggle("on",step.on===p);w.classList.toggle("idle",step.on!==p)});
  $("stops").querySelectorAll("button").forEach(function(b,n){b.classList.toggle("now",n===step.s);b.classList.toggle("done",n<step.s);if(n===step.s){b.setAttribute("aria-current","step");if(window.innerWidth<760)$("stops").scrollLeft=b.parentNode.offsetLeft-$("stops").offsetLeft-12}else b.removeAttribute("aria-current")});
  var done=i>=S.length;$("play").textContent=done?"Play again":(playing?"Pause":"Play");$("prog").textContent="Step "+i+" of "+S.length;var d=$("dial");d.max=S.length;d.value=i;d.style.setProperty("--fill",((i-1)/(S.length-1)*100)+"%");}
-function delay(step){var c=[step.L,step.R].map(function(x){if(!x||!x.add)return 0;return [].concat(x.add).reduce(function(n,a){return n+(a.x||"").length},0)}).reduce(function(a,b){return a+b},0);return Math.min(14000,Math.max(5000,3200+((step.cap||"").length+(step.note||"").length)*42+c*46))}
-function schedule(){clearTimeout(timer);if(!playing||i>=S.length){draw();return}timer=setTimeout(next,delay(S[i-1]))}
-function next(){if(i>=S.length){playing=false;draw();return}var step=S[i];apply(step,"L");apply(step,"R");i++;if(i>=S.length)playing=false;animate=!reduced;draw();animate=false;schedule()}
-function jump(n){clearTimeout(timer);reset();i=0;while(i<n){var s=S[i];apply(s,"L");apply(s,"R");i++}draw();schedule()}
+function delay(step){var c=[step.L,step.R].map(function(x){if(!x||!x.add)return 0;return [].concat(x.add).reduce(function(n,a){return n+(a.x||"").length},0)}).reduce(function(a,b){return a+b},0);return Math.min(8500,Math.max(3000,1900+((step.cap||"").length+(step.note||"").length)*25+c*28))}
+var began=0,left=0;
+function total(){return S.reduce(function(a,x,n){return n<S.length-1?a+delay(x):a},0)}
+function before(n){var a=0;for(var k=0;k<n-1;k++)a+=delay(S[k]);return a}
+function mmss(ms){var t=Math.round(ms/1000);return Math.floor(t/60)+":"+String(t%60).padStart(2,"0")}
+function tick(){var d=delay(S[i-1]),run=(playing&&began)?Date.now()-began:0,at=before(i)+Math.min(d,(d-left)+run);if(i>=S.length)at=total();$("timer").textContent=mmss(at)+" / "+mmss(total())}
+setInterval(tick,250);
+function schedule(){clearTimeout(timer);if(!playing||i>=S.length){began=0;draw();tick();return}if(!left)left=delay(S[i-1]);began=Date.now();timer=setTimeout(function(){left=0;next()},left);tick()}
+function next(){left=0;if(i>=S.length){playing=false;draw();return}var step=S[i];apply(step,"L");apply(step,"R");i++;if(i>=S.length)playing=false;animate=!reduced;draw();animate=false;schedule()}
+function jump(n){clearTimeout(timer);left=0;began=0;reset();i=0;while(i<n){var s=S[i];apply(s,"L");apply(s,"R");i++}draw();schedule()}
 $("stops").innerHTML=STOPS.map(function(x,n){return '<li><button class="stop" type="button" data-s="'+n+'">'+x[0]+'<small>'+x[1]+'</small></button></li>'}).join("");
 $("stops").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var t=+b.dataset.s,n=0;while(S[n].s!==t)n++;jump(n+1)});
-$("play").addEventListener("click",function(){if(i>=S.length){playing=true;jump(1);return}playing=!playing;draw();if(playing)schedule();else clearTimeout(timer)});
+$("play").addEventListener("click",function(){if(i>=S.length){playing=true;jump(1);return}if(playing){left=Math.max(200,left-(Date.now()-began));began=0;clearTimeout(timer);playing=false;draw();tick()}else{playing=true;draw();schedule()}});
 $("again").addEventListener("click",function(){playing=true;jump(1)});
 $("dial").addEventListener("input",function(){playing=false;jump(+this.value)});
 $("back").addEventListener("click",function(){playing=false;jump(Math.max(1,i-1))});
