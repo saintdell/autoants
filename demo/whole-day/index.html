@@ -187,34 +187,34 @@ var DAYS=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"
 function lab(d){return DAYS[d.getDay()]+" "+MONTHS[d.getMonth()]+" "+d.getDate()}
 var t1=lab(wkd(1))+" at 2:00 PM",vd=wkd(2),visit=lab(vd)+" at 9:00 AM",t3=lab(wkd(3))+" at 8:00 AM";
 var biz={name:B,sub:"Text Message",av:"H1"},ants={name:"autoants",sub:"Alerts for the owner",av:"img"};
-var FORM="My system is 15 years old and the bills keep going up. Can someone look at replacing it?";
-var OFFER="This is "+B+". Thanks for reaching out. A replacement starts with a visit to look at the system and the house. We can visit at one of the following times:\n\n"+t1+"\n"+visit+"\n"+t3+"\n\nWhich time works best? Reply STOP to opt out.";
+var FORM="I'd like to schedule a tune-up for my AC and heater.";
+var OFFER="This is "+B+". Thanks for reaching out. We can visit at one of the following times:\n\n"+t1+"\n"+visit+"\n"+t3+"\n\nWhich time works best? Reply STOP to opt out.";
 var STOPS=[["8:05 AM","Missed call"],["10:20 AM","Finds the site"],["10:21 AM","Gets times"],["10:24 AM","Booked"],["Day before","Reminder"],["After the visit","Review ask"],["Monthly","One page"]];
 var S=[
- {s:0,t:"8:05",on:"none",intro:1,cap:"Customer calls the shop.|Nobody answers.|Call rings out.|Seconds later, Customer receives a text from the shop.",L:{who:"Customer's Phone",mode:"lock",line:""},R:{mode:"lock",line:lab(new Date())}},
+ {s:0,t:"8:05",on:"none",intro:1,cap:"Customer calls the shop.|Nobody answers.|Call rings out.|Seconds later, Customer receives a text from the shop.",L:{who:"Customer 1's Phone",mode:"lock",line:""},R:{mode:"lock",line:lab(new Date())}},
  {s:0,t:"8:05",on:"L",cap:"",L:{mode:"chat",head:biz,add:{k:"in",x:B+": Sorry for missing your call! Tell us the problem, and provide your address. We’ll respond with available times. Reply STOP to opt out."}}},
  {s:0,t:"8:06",on:"L",cap:"",L:{add:{k:"out",x:"My upstairs AC is blowing warm air. I’m at 123 Main Street."}}},
  {s:0,t:"8:06",on:"L",cap:"",L:{add:{k:"in",x:"We can visit at one of the following times:\n\n"+lab(wkd(1))+" at 10:00 AM\n"+lab(wkd(1))+" at 4:00 PM\n"+lab(wkd(2))+" at 1:00 PM\n\nWhich time works best?"}}},
  {s:0,t:"8:07",on:"L",cap:"",L:{add:{k:"out",x:lab(wkd(1))+" at 4:00 PM works."}}},
  {s:0,t:"8:07",on:"L",cap:"It's a job type and time the owner pre-approved, so it books itself.",L:{add:{k:"in",x:"You're booked for "+lab(wkd(1))+" at 4:00 PM. We'll text you prior to visiting. If anything changes, reply here."}}},
  {s:0,t:"8:07",on:"R",cap:"",R:{mode:"chat",head:ants,add:{k:"in",tag:"New booking",x:lab(wkd(1))+" at 4:00 PM\n\nPhone: (504) 555-0134\nAddress: 123 Main Street\nProblem: Upstairs AC blowing warm air"}}},
- {s:1,t:"10:20",on:"L",cap:"Later that morning, another customer searches online.",L:{who:"Customer's Phone",mode:"web",web:"search"}},
+ {s:1,t:"10:20",on:"L",cap:"Later that morning, a second customer searches online.",L:{who:"Customer 2's Phone",mode:"web",web:"search"}},
  {s:1,t:"10:20",on:"L",cap:"",L:{web:"results"}},
  {s:1,t:"10:20",on:"L",cap:"",L:{web:"form0"}},
  {s:1,t:"10:21",on:"L",cap:"",L:{web:"form1"}},
  {s:1,t:"10:21",on:"L",cap:"",L:{web:"form2"}},
  {s:2,t:"10:21",on:"L",cap:"",L:{banner:OFFER}},
  {s:2,t:"10:21",on:"L",cap:"",L:{mode:"chat",head:biz,clear:1,banner:"",add:{k:"in",x:OFFER}}},
- {s:2,t:"10:22",on:"R",cap:"",R:{add:{k:"in",tag:"New lead",x:"Source: Website form\nArea: Gentilly\nRequest: Replace 15-year-old system\n\nThree times sent"}}},
+ {s:2,t:"10:22",on:"R",cap:"",R:{add:{k:"in",tag:"New lead",x:"Source: Website form\nArea: Gentilly\nRequest: AC and heater tune-up\n\nThree times sent"}}},
  {s:3,t:"10:24",on:"L",cap:"",L:{add:{k:"out",x:visit+" works."}}},
- {s:3,t:"10:24",on:"L",cap:"",L:{add:[{k:"in",x:"You're booked for "+visit+". We'll text you prior to visiting. If anything changes, reply here."},{k:"appt",x:"Replacement look · "+B}]}},
+ {s:3,t:"10:24",on:"L",cap:"",L:{add:[{k:"in",x:"You're booked for "+visit+". We'll text you prior to visiting. If anything changes, reply here."},{k:"appt",x:"Tune-up · "+B}]}},
  {s:3,t:"10:24",on:"R",cap:"",R:{mode:"cal"}},
- {s:4,t:"9:00",on:"L",cap:"The day before the visit.",L:{add:{k:"in",x:B+": A reminder that your replacement look is tomorrow, "+visit+". Reply C to confirm or R to reschedule. Reply STOP to opt out."}},R:{mode:"chat"}},
+ {s:4,t:"9:00",on:"L",cap:"The day before the visit.",L:{add:{k:"in",x:B+": A reminder that your tune-up is tomorrow, "+visit+". Reply C to confirm or R to reschedule. Reply STOP to opt out."}},R:{mode:"chat"}},
  {s:4,t:"9:12",on:"L",cap:"",L:{add:{k:"out",x:"C. Side gate will be open."}}},
  {s:4,t:"9:12",on:"R",cap:"",R:{add:{k:"in",tag:"Reminder",x:"Confirmed: "+visit+"\nNote: Side gate will be open"}}},
- {s:5,t:"11:30",on:"R",cap:"After the visit.",R:{add:{k:"in",tag:"Review request",x:"Visit complete: Replacement look, Gentilly\n\nReview request sent"}}},
+ {s:5,t:"11:30",on:"R",cap:"After the visit.",R:{add:{k:"in",tag:"Review request",x:"Visit complete: Tune-up, Gentilly\n\nReview request sent"}}},
  {s:5,t:"11:30",on:"L",cap:"",L:{add:{k:"in",x:"Thanks for choosing "+B+". If you have a minute, a Google review helps a small local crew a lot: [your Google review link] Thank you!"}}},
- {s:6,t:"9:00",on:"R",cap:"Once a month, the owner gets one page.",L:{mode:"lock",line:"",who:"Customer's Phone"},R:{add:{k:"card",h:"October at "+B,x:"Missed calls texted back: 18 of 20\nJobs booked from them: 4\nInvoiced on those jobs: $3,120\nGoogle reviews: 38 → 44\nNot tracked yet: website visits (analytics not on)",nt:"Made-up numbers to show the layout."}}},
+ {s:6,t:"9:00",on:"R",cap:"Once a month, the owner gets one page.",L:{mode:"lock",line:"",who:"Customer 2's Phone"},R:{add:{k:"card",h:"October at "+B,x:"Missed calls texted back: 18 of 20\nJobs booked from them: 4\nInvoiced on those jobs: $3,120\nGoogle reviews: 38 → 44\nNot tracked yet: website visits (analytics not on)",nt:"Made-up numbers to show the layout."}}},
  {s:6,t:"9:00",on:"R",cap:"The owner didn't tap once. Prices, complaints and anything unusual would still go to the owner."}
 ];
 var $=function(id){return document.getElementById(id)},reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -238,7 +238,7 @@ function drawPhone(id,clock){var p=st[id],light=p.mode==="chat"||p.mode==="web"|
  if(p.mode==="lock")h+='<div class="lock"><b>'+clock+'</b><span>'+esc(p.line)+'</span></div>';
  else if(p.mode==="call")h+='<div class="callv"><div class="av '+(p.state==="ringing"?"ring":"")+'">H1</div><h3>'+esc(B)+'</h3><p>'+(p.state==="ringing"?"(504) 555-0100 · calling…":"No answer · call ended")+'</p>'+(p.state==="ringing"?'<div class="endb"></div>':"")+'</div>';
  else if(p.mode==="web")h+=web(p);
- else if(p.mode==="cal")h+='<div class="cal"><h4>'+esc(lab(vd))+'</h4><div class="slot"><span>8 AM</span><div class="ev">Tune-up, Lakeview</div></div><div class="slot"><span>9 AM</span><div class="ev new">Gentilly: replacement look</div></div><div class="slot"><span>10 AM</span><div></div></div><div class="slot"><span>11 AM</span><div class="ev">AC repair, Metairie</div></div><div class="slot"><span>12 PM</span><div></div></div></div>';
+ else if(p.mode==="cal")h+='<div class="cal"><h4>'+esc(lab(vd))+'</h4><div class="slot"><span>8 AM</span><div class="ev">Tune-up, Lakeview</div></div><div class="slot"><span>9 AM</span><div class="ev new">Gentilly: tune-up</div></div><div class="slot"><span>10 AM</span><div></div></div><div class="slot"><span>11 AM</span><div class="ev">AC repair, Metairie</div></div><div class="slot"><span>12 PM</span><div></div></div></div>';
  else{var a=p.head.av==="img"?'<img src="/brand/autoants-icon.svg" alt="">':p.head.av;
   h+='<div class="hd"><div class="mini">'+a+'</div><b>'+esc(p.head.name)+'</b><span>'+esc(p.head.sub)+'</span></div><div class="feed">';
   p.items.forEach(function(it,n){var fr=(animate&&n>=(p.seen||0))?" fresh":"";
@@ -251,7 +251,7 @@ function draw(){var step=S[i-1]||S[0];
  document.querySelector(".stage").classList.toggle("opening",!!step.intro);
  if(step.intro){$("lines").innerHTML=step.cap.split("|").map(function(x){return "<span>"+esc(x)+"</span>"}).join("");$("cap").textContent=""}else $("cap").innerHTML=esc(step.cap)+(step.note?"<small>"+esc(step.note)+"</small>":"");
  drawPhone("L",step.t);drawPhone("R",step.t);
- $("whoL").textContent=st.L.who||"Customer's Phone";
+ $("whoL").textContent=st.L.who||"Customer 1's Phone";
  ["L","R"].forEach(function(p){var w=$("wrap"+p);w.classList.toggle("on",step.on===p);w.classList.toggle("idle",step.on!==p)});
  $("stops").querySelectorAll("button").forEach(function(b,n){b.classList.toggle("now",n===step.s);b.classList.toggle("done",n<step.s);if(n===step.s){b.setAttribute("aria-current","step");if(window.innerWidth<760)$("stops").scrollLeft=b.parentNode.offsetLeft-$("stops").offsetLeft-12}else b.removeAttribute("aria-current")});
  var done=i>=S.length;var pb=$("play"),pl=done?"Play again":(playing?"Pause":"Play");pb.setAttribute("aria-label",pl);pb.title=pl;pb.innerHTML=(playing&&!done)?'<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="6" y="4" width="4.5" height="16" rx="1"/><rect x="13.5" y="4" width="4.5" height="16" rx="1"/></svg>':'<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>';var d=$("dial");d.max=S.length;d.value=i;d.style.setProperty("--fill",((i-1)/(S.length-1)*100)+"%");}
