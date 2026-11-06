@@ -178,7 +178,7 @@
   <section class="box answer"><h2>Would you rather the call got answered?</h2><p>An AI can pick up when you can't. It says it's an AI, takes down the job and texts you right away. <a href="/?interest=AI%20phone%20demo#contact">Ask to hear it</a></p></section>
   <div class="cta"><a class="go" href="/?interest=Free%20company%20breakdown#contact">Get my free breakdown</a></div>
   <p class="pieces">See one piece at a time: <a href="/demo/text-back/">Text-Back</a> · <a href="/demo/responder/">Responder</a> · <a href="/demo/scheduler/">Scheduler</a> · <a href="/demo/review-ask/">Review ask</a> · <a href="/demo/reminders/">Reminders</a> · <a href="/demo/monthly-report/">Monthly report</a></p>
-  <footer>HVAC1 is made up, and so is every number, time and message (555 numbers). Set up by autoants.</footer>
+  <footer>HVAC1 and Jordan are made up, and so is every number, time and message (555 numbers). Set up by autoants.</footer>
 </main>
 <script>
 (function(){
@@ -193,12 +193,12 @@ var OFFER="This is "+B+". Thanks for reaching out. We can visit at one of the fo
 var STOPS=[["8:05 AM","Missed call"],["10:20 AM","Finds the site"],["10:21 AM","Gets times"],["10:24 AM","Booked"],["Day before","Reminder"],["After the visit","Review ask"],["Monthly","One page"]];
 var S=[
  {s:0,t:"8:05",on:"none",intro:1,cap:"Customer calls the shop.|Nobody answers.|Call rings out.|Seconds later, an autoants assistant texts Customer.",L:{who:"Customer 1's Phone",mode:"lock",line:""},R:{mode:"lock",line:lab(new Date())}},
- {s:0,t:"8:05",on:"L",cap:"",L:{mode:"chat",head:biz,add:{k:"in",x:B+": Sorry for missing your call! Tell us the problem, and provide your address. We’ll respond with available times. Reply STOP to opt out."}}},
- {s:0,t:"8:06",on:"L",cap:"",L:{add:{k:"out",x:"My upstairs AC is blowing warm air. I’m at 123 Main Street."}}},
+ {s:0,t:"8:05",on:"L",cap:"",L:{mode:"chat",head:biz,add:{k:"in",x:B+": Sorry for missing your call! Tell us your name, the problem and your address. We’ll respond with available times. Reply STOP to opt out."}}},
+ {s:0,t:"8:06",on:"L",cap:"",L:{add:{k:"out",x:"Jordan here. My upstairs AC is blowing warm air. I’m at 123 Main Street."}}},
  {s:0,t:"8:06",on:"L",cap:"",L:{add:{k:"in",x:"We can visit at one of the following times:\n\n"+lab(wkd(1))+" at 10:00 AM\n"+lab(wkd(1))+" at 4:00 PM\n"+lab(wkd(2))+" at 1:00 PM\n\nWhich time works best?"}}},
  {s:0,t:"8:07",on:"L",cap:"",L:{add:{k:"out",x:lab(wkd(1))+" at 4:00 PM works."}}},
  {s:0,t:"8:07",on:"L",cap:"It's a job type and time the owner pre-approved, so it books itself.",L:{add:{k:"in",x:"You're booked for "+lab(wkd(1))+" at 4:00 PM. We'll text you prior to visiting. If anything changes, reply here."}}},
- {s:0,t:"8:07",on:"R",cap:"",R:{mode:"chat",head:ants,add:{k:"in",tag:"New Booking",x:lab(wkd(1))+" at 4:00 PM\n\nPhone: (504) 555-0134\nAddress: 123 Main Street\nProblem: Upstairs AC blowing warm air"}}},
+ {s:0,t:"8:07",on:"R",cap:"",R:{mode:"chat",head:ants,add:{k:"in",tag:"New Booking",x:lab(wkd(1))+" at 4:00 PM\n\nName: Jordan\nPhone: (504) 555-0134\nAddress: 123 Main Street\nProblem: Upstairs AC blowing warm air"}}},
  {s:1,t:"10:20",on:"L",cap:"Later that morning, a second customer searches online.",L:{who:"Customer 2's Phone",mode:"web",web:"search"}},
  {s:1,t:"10:20",on:"L",cap:"",L:{web:"results"}},
  {s:1,t:"10:20",on:"L",cap:"",L:{web:"form0"}},
