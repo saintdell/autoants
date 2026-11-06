@@ -191,7 +191,7 @@ var t1=lab(wkd(1))+" at 2:00 PM",vd=wkd(2),visit=lab(vd)+" at 9:00 AM",t3=lab(wk
 var biz={name:B,sub:"Text Message",av:"H1"},ants={name:"autoants",sub:"Alerts for the owner",av:"img"};
 var FORM="My AC and heater are due for a tune-up.";
 var OFFER=B+": Thanks for reaching out. We can visit at one of the following times:\n\n"+t1+"\n"+visit+"\n"+t3+"\n\nWhich time works best? Reply STOP to opt out.";
-var STOPS=[["8:05 AM","Customer 1's Missed Call"],["10:20 AM","Customer 2's Website Form"],["10:21 AM","Gets Times"],["10:24 AM","Booked"],["Day before","Reminder"],["After the visit","Review Ask"],["Monthly","One Page"]];
+var STOPS=[["8:05 AM","Customer 1's Missed Call"],["10:20 AM","Customer 2's Website Form"],["Day before","Reminder"],["After the visit","Review Ask"],["Monthly","One Page"]];
 var S=[
  {s:0,t:"8:05",on:"none",intro:1,cap:"Customer calls the shop.|Nobody answers.|Call rings out.|Seconds later, an autoants assistant texts Customer.",L:{who:"Customer 1's Phone",mode:"lock",line:""},R:{mode:"lock",line:lab(new Date())}},
  {s:0,t:"8:05",on:"L",cap:"",L:{mode:"chat",head:biz,add:{k:"in",x:B+": Sorry for the missed call! Tell us your name, the problem, and your address. We’ll respond with available times. Reply STOP to opt out."}}},
@@ -206,22 +206,22 @@ var S=[
  {s:1,t:"10:20",on:"L",cap:"",L:{web:"form0"}},
  {s:1,t:"10:21",on:"L",cap:"",L:{web:"form1"}},
  {s:1,t:"10:21",on:"L",cap:"",L:{web:"form2"}},
- {s:2,t:"10:21",on:"L",cap:"",L:{banner:OFFER}},
- {s:2,t:"10:21",on:"L",cap:"",L:{mode:"chat",head:biz,clear:1,banner:"",add:{k:"in",x:OFFER}}},
- {s:3,t:"10:24",on:"L",cap:"",L:{add:{k:"out",x:visit+" works."}}},
- {s:3,t:"10:24",on:"L",cap:"",L:{add:[{k:"in",x:"You're booked for "+visit+". We'll text you prior to visiting. If anything changes, reply here."},{k:"appt",x:"Tune-up · "+B}]}},
- {s:3,t:"10:24",on:"R",cap:"",R:{add:{k:"in",tag:"New Booking",x:visit+"\n\nSource: Website Form\nName: Taylor\nPhone: (504) 555-0178\nAddress: 456 Oak Avenue\nProblem: AC and heater due for a tune-up"}}},
- {s:3,t:"10:24",on:"R",cap:"",R:{mode:"cal"}},
- {s:4,t:"9:00",on:"none",intro:1,card:1,cap:"9:00 AM|The day before the visit."},
- {s:4,t:"9:00",on:"L",cap:"",L:{add:{k:"in",x:B+": A reminder that your tune-up is tomorrow, "+visit+". Reply C to confirm or R to reschedule. Reply STOP to opt out."}},R:{mode:"chat"}},
- {s:4,t:"9:12",on:"L",cap:"",L:{add:{k:"out",x:"C. Side gate will be open."}}},
- {s:4,t:"9:12",on:"R",cap:"",R:{add:{k:"in",tag:"Reminder",x:visit+" visit has been CONFIRMED.\n\nSource: Website Form\nName: Taylor\nPhone: (504) 555-0178\nAddress: 456 Oak Avenue\nProblem: AC and heater due for a tune-up\nNote: Side gate will be open"}}},
- {s:5,t:"11:30",on:"none",intro:1,card:1,cap:"11:30 AM|After the visit."},
- {s:5,t:"11:30",on:"R",cap:"",R:{add:{k:"in",tag:"Google Review Request",x:visit+" visit has been COMPLETED. A Google Review Request has been sent."}}},
- {s:5,t:"11:30",on:"L",cap:"",L:{add:{k:"in",x:B+": Our visit has concluded. If you have a minute, please leave us a review on Google: [your Google review link]. Thanks for choosing "+B+"!"}}},
- {s:6,t:"9:00",on:"none",intro:1,card:1,cap:"Once a month|The owner gets one page."},
- {s:6,t:"9:00",on:"R",cap:"",L:{mode:"lock",line:"",who:"Customer 2's Phone"},R:{add:{k:"card",h:"October at "+B,x:"Missed calls texted back: 18 of 20\nJobs booked from them: 4\nInvoiced on those jobs: $3,120\nGoogle reviews: 38 → 44\nNot tracked yet: website visits (analytics not on)",nt:"Made-up numbers to show the layout."}}},
- {s:6,t:"9:00",on:"R",cap:"The owner didn't tap once. Prices, complaints and anything unusual would still go to the owner."}
+ {s:1,t:"10:21",on:"L",cap:"",L:{banner:OFFER}},
+ {s:1,t:"10:21",on:"L",cap:"",L:{mode:"chat",head:biz,clear:1,banner:"",add:{k:"in",x:OFFER}}},
+ {s:1,t:"10:24",on:"L",cap:"",L:{add:{k:"out",x:visit+" works."}}},
+ {s:1,t:"10:24",on:"L",cap:"",L:{add:[{k:"in",x:"You're booked for "+visit+". We'll text you prior to visiting. If anything changes, reply here."},{k:"appt",x:"Tune-up · "+B}]}},
+ {s:1,t:"10:24",on:"R",cap:"",R:{add:{k:"in",tag:"New Booking",x:visit+"\n\nSource: Website Form\nName: Taylor\nPhone: (504) 555-0178\nAddress: 456 Oak Avenue\nProblem: AC and heater due for a tune-up"}}},
+ {s:1,t:"10:24",on:"R",cap:"",R:{mode:"cal"}},
+ {s:2,t:"9:00",on:"none",intro:1,card:1,cap:"9:00 AM|The day before the visit."},
+ {s:2,t:"9:00",on:"L",cap:"",L:{add:{k:"in",x:B+": A reminder that your tune-up is tomorrow, "+visit+". Reply C to confirm or R to reschedule. Reply STOP to opt out."}},R:{mode:"chat"}},
+ {s:2,t:"9:12",on:"L",cap:"",L:{add:{k:"out",x:"C. Side gate will be open."}}},
+ {s:2,t:"9:12",on:"R",cap:"",R:{add:{k:"in",tag:"Reminder",x:visit+" visit has been CONFIRMED.\n\nSource: Website Form\nName: Taylor\nPhone: (504) 555-0178\nAddress: 456 Oak Avenue\nProblem: AC and heater due for a tune-up\nNote: Side gate will be open"}}},
+ {s:3,t:"11:30",on:"none",intro:1,card:1,cap:"11:30 AM|After the visit."},
+ {s:3,t:"11:30",on:"R",cap:"",R:{add:{k:"in",tag:"Google Review Request",x:visit+" visit has been COMPLETED. A Google Review Request has been sent."}}},
+ {s:3,t:"11:30",on:"L",cap:"",L:{add:{k:"in",x:B+": Our visit has concluded. If you have a minute, please leave us a review on Google: [your Google review link]. Thanks for choosing "+B+"!"}}},
+ {s:4,t:"9:00",on:"none",intro:1,card:1,cap:"Once a month|The owner gets one page."},
+ {s:4,t:"9:00",on:"R",cap:"",L:{mode:"lock",line:"",who:"Customer 2's Phone"},R:{add:{k:"card",h:"October at "+B,x:"Missed calls texted back: 18 of 20\nJobs booked from them: 4\nInvoiced on those jobs: $3,120\nGoogle reviews: 38 → 44\nNot tracked yet: website visits (analytics not on)",nt:"Made-up numbers to show the layout."}}},
+ {s:4,t:"9:00",on:"R",cap:"The owner didn't tap once. Prices, complaints and anything unusual would still go to the owner."}
 ];
 var $=function(id){return document.getElementById(id)},reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
 var i=0,timer=null,playing=!reduced,st,animate=false;
