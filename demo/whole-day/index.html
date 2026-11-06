@@ -213,8 +213,8 @@ var S=[
  {s:4,t:"9:00",on:"L",cap:"The day before the visit.",L:{add:{k:"in",x:B+": A reminder that your tune-up is tomorrow, "+visit+". Reply C to confirm or R to reschedule. Reply STOP to opt out."}},R:{mode:"chat"}},
  {s:4,t:"9:12",on:"L",cap:"",L:{add:{k:"out",x:"C. Side gate will be open."}}},
  {s:4,t:"9:12",on:"R",cap:"",R:{add:{k:"in",tag:"Reminder",x:visit+" visit has been CONFIRMED.\n\nSource: Website Form\nName: Taylor\nPhone: (504) 555-0178\nAddress: 456 Oak Avenue\nProblem: AC and heater due for a tune-up\nNote: Side gate will be open"}}},
- {s:5,t:"11:30",on:"R",cap:"After the visit.",R:{add:{k:"in",tag:"Review Request",x:"Visit complete: Tune-up, 456 Oak Avenue\n\nReview request sent"}}},
- {s:5,t:"11:30",on:"L",cap:"",L:{add:{k:"in",x:"Thanks for choosing "+B+". If you have a minute, a Google review helps a small local crew a lot: [your Google review link] Thank you!"}}},
+ {s:5,t:"11:30",on:"R",cap:"After the visit.",R:{add:{k:"in",tag:"Google Review Request",x:visit+" visit has been COMPLETED. A Google Review Request has been sent."}}},
+ {s:5,t:"11:30",on:"L",cap:"",L:{add:{k:"in",x:B+": Our visit has concluded. If you have a minute, please leave us a positive review on Google: [your Google review link]. Thanks for choosing "+B+"!"}}},
  {s:6,t:"9:00",on:"R",cap:"Once a month, the owner gets one page.",L:{mode:"lock",line:"",who:"Customer 2's Phone"},R:{add:{k:"card",h:"October at "+B,x:"Missed calls texted back: 18 of 20\nJobs booked from them: 4\nInvoiced on those jobs: $3,120\nGoogle reviews: 38 → 44\nNot tracked yet: website visits (analytics not on)",nt:"Made-up numbers to show the layout."}}},
  {s:6,t:"9:00",on:"R",cap:"The owner didn't tap once. Prices, complaints and anything unusual would still go to the owner."}
 ];
