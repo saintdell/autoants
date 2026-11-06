@@ -145,7 +145,6 @@
  .below{grid-template-columns:minmax(0,1fr)}
  .cap{min-height:2.7em}
  .ctl{gap:6px}.ctl button{padding:8px 11px;font-size:13px}
- #prog{display:none}
 }
 @media (prefers-reduced-motion:reduce){.b,.cardx,.act button,.ring,.typing i{animation:none}}
 </style>
@@ -161,7 +160,7 @@
     <ol class="stops" id="stops"></ol>
     <div class="bar">
     <div class="ctl"><button class="pri" id="play" type="button" aria-label="Pause"></button><button id="again" type="button" aria-label="Start over" title="Start over"><svg viewBox="0 0 24 24" width="21" height="21" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1"/><path d="M3.5 4v5h5"/></svg></button></div>
-      <div class="dial"><input id="dial" type="range" min="1" max="24" value="1" step="1" aria-label="Drag to move through the demo"><span id="timer" role="timer" aria-label="Time in the demo">0:00 / 0:00</span><span id="prog"></span></div>
+      <div class="dial"><input id="dial" type="range" min="1" max="24" value="1" step="1" aria-label="Drag to move through the demo"><span id="timer" role="timer" aria-label="Time in the demo">0:00 / 0:00</span></div>
     </div>
     <p class="cap" id="cap" aria-live="polite"></p>
     <div class="view"><div class="lines" id="lines"></div><div class="phones">
@@ -190,7 +189,7 @@ var FORM="My system is 15 years old and the bills keep going up. Can someone loo
 var OFFER="This is "+B+". Thanks for reaching out. A replacement starts with a visit to look at the system and the house. We can visit at one of the following times:\n\n"+t1+"\n"+visit+"\n"+t3+"\n\nWhich time works best? Reply STOP to opt out.";
 var STOPS=[["8:05 AM","Missed call"],["10:20 AM","Finds the site"],["10:21 AM","Gets times"],["10:24 AM","Booked"],["Day before","Reminder"],["After the visit","Review ask"],["Monthly","One page"]];
 var S=[
- {s:0,t:"8:05",on:"none",intro:1,cap:"Customer calls the shop.|Nobody answers.|The call rings out.|Seconds later, Customer receives a text from the shop.",L:{who:"Customer's Phone",mode:"lock",line:""},R:{mode:"lock",line:lab(new Date())}},
+ {s:0,t:"8:05",on:"none",intro:1,cap:"Customer calls the shop.|Nobody answers.|Call rings out.|Seconds later, Customer receives a text from the shop.",L:{who:"Customer's Phone",mode:"lock",line:""},R:{mode:"lock",line:lab(new Date())}},
  {s:0,t:"8:05",on:"L",cap:"",L:{mode:"chat",head:biz,add:{k:"in",x:B+": Sorry for missing your call! Tell us the problem, and provide your address. We’ll respond with available times. Reply STOP to opt out."}}},
  {s:0,t:"8:06",on:"L",cap:"",L:{add:{k:"out",x:"My upstairs AC is blowing warm air. I’m at 123 Main Street."}}},
  {s:0,t:"8:06",on:"L",cap:"",L:{add:{k:"in",x:"We can visit at one of the following times:\n\n"+lab(wkd(1))+" at 10:00 AM\n"+lab(wkd(1))+" at 4:00 PM\n"+lab(wkd(2))+" at 1:00 PM\n\nWhich time works best?"}}},
@@ -253,7 +252,7 @@ function draw(){var step=S[i-1]||S[0];
  $("whoL").textContent=st.L.who||"Customer's Phone";
  ["L","R"].forEach(function(p){var w=$("wrap"+p);w.classList.toggle("on",step.on===p);w.classList.toggle("idle",step.on!==p)});
  $("stops").querySelectorAll("button").forEach(function(b,n){b.classList.toggle("now",n===step.s);b.classList.toggle("done",n<step.s);if(n===step.s){b.setAttribute("aria-current","step");if(window.innerWidth<760)$("stops").scrollLeft=b.parentNode.offsetLeft-$("stops").offsetLeft-12}else b.removeAttribute("aria-current")});
- var done=i>=S.length;var pb=$("play"),pl=done?"Play again":(playing?"Pause":"Play");pb.setAttribute("aria-label",pl);pb.title=pl;pb.innerHTML=(playing&&!done)?'<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="6" y="4" width="4.5" height="16" rx="1"/><rect x="13.5" y="4" width="4.5" height="16" rx="1"/></svg>':'<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>';$("prog").textContent="Step "+i+" of "+S.length;var d=$("dial");d.max=S.length;d.value=i;d.style.setProperty("--fill",((i-1)/(S.length-1)*100)+"%");}
+ var done=i>=S.length;var pb=$("play"),pl=done?"Play again":(playing?"Pause":"Play");pb.setAttribute("aria-label",pl);pb.title=pl;pb.innerHTML=(playing&&!done)?'<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="6" y="4" width="4.5" height="16" rx="1"/><rect x="13.5" y="4" width="4.5" height="16" rx="1"/></svg>':'<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>';var d=$("dial");d.max=S.length;d.value=i;d.style.setProperty("--fill",((i-1)/(S.length-1)*100)+"%");}
 function delay(step){var c=[step.L,step.R].map(function(x){if(!x||!x.add)return 0;return [].concat(x.add).reduce(function(n,a){return n+(a.x||"").length},0)}).reduce(function(a,b){return a+b},0);return Math.min(8500,Math.max(3000,1900+((step.cap||"").length+(step.note||"").length)*25+c*28))}
 var began=0,left=0;
 function total(){return S.reduce(function(a,x,n){return n<S.length-1?a+delay(x):a},0)}
