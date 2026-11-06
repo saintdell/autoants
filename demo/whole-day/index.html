@@ -189,7 +189,7 @@ function lab(d){return DAYS[d.getDay()]+" "+MONTHS[d.getMonth()]+" "+d.getDate()
 var t1=lab(wkd(1))+" at 2:00 PM",vd=wkd(2),visit=lab(vd)+" at 9:00 AM",t3=lab(wkd(3))+" at 8:00 AM";
 var biz={name:B,sub:"Text Message",av:"H1"},ants={name:"autoants",sub:"Alerts for the owner",av:"img"};
 var FORM="My AC and heater are due for a tune-up.";
-var OFFER=""+B+": Thanks for reaching out. We can visit at one of the following times:\n\n"+t1+"\n"+visit+"\n"+t3+"\n\nWhich time works best? Reply STOP to opt out.";
+var OFFER=B+": Thanks for reaching out. We can visit at one of the following times:\n\n"+t1+"\n"+visit+"\n"+t3+"\n\nWhich time works best? Reply STOP to opt out.";
 var STOPS=[["8:05 AM","Missed call"],["10:20 AM","Finds the site"],["10:21 AM","Gets times"],["10:24 AM","Booked"],["Day before","Reminder"],["After the visit","Review ask"],["Monthly","One page"]];
 var S=[
  {s:0,t:"8:05",on:"none",intro:1,cap:"Customer calls the shop.|Nobody answers.|Call rings out.|Seconds later, an autoants assistant texts Customer.",L:{who:"Customer 1's Phone",mode:"lock",line:""},R:{mode:"lock",line:lab(new Date())}},
@@ -212,7 +212,7 @@ var S=[
  {s:3,t:"10:24",on:"R",cap:"",R:{mode:"cal"}},
  {s:4,t:"9:00",on:"L",cap:"The day before the visit.",L:{add:{k:"in",x:B+": A reminder that your tune-up is tomorrow, "+visit+". Reply C to confirm or R to reschedule. Reply STOP to opt out."}},R:{mode:"chat"}},
  {s:4,t:"9:12",on:"L",cap:"",L:{add:{k:"out",x:"C. Side gate will be open."}}},
- {s:4,t:"9:12",on:"R",cap:"",R:{add:{k:"in",tag:"Reminder",x:visit+" visit has been CONFIRMED.\n\nSource: Website Form\nName: Taylor\nPhone: (504) 555-0178\nAddress: 456 Oak Avenue\nProblem: AC and heater due for a tune-up"}}},
+ {s:4,t:"9:12",on:"R",cap:"",R:{add:{k:"in",tag:"Reminder",x:visit+" visit has been CONFIRMED.\n\nSource: Website Form\nName: Taylor\nPhone: (504) 555-0178\nAddress: 456 Oak Avenue\nProblem: AC and heater due for a tune-up\nNote: Side gate will be open"}}},
  {s:5,t:"11:30",on:"R",cap:"After the visit.",R:{add:{k:"in",tag:"Review Request",x:"Visit complete: Tune-up, 456 Oak Avenue\n\nReview request sent"}}},
  {s:5,t:"11:30",on:"L",cap:"",L:{add:{k:"in",x:"Thanks for choosing "+B+". If you have a minute, a Google review helps a small local crew a lot: [your Google review link] Thank you!"}}},
  {s:6,t:"9:00",on:"R",cap:"Once a month, the owner gets one page.",L:{mode:"lock",line:"",who:"Customer 2's Phone"},R:{add:{k:"card",h:"October at "+B,x:"Missed calls texted back: 18 of 20\nJobs booked from them: 4\nInvoiced on those jobs: $3,120\nGoogle reviews: 38 → 44\nNot tracked yet: website visits (analytics not on)",nt:"Made-up numbers to show the layout."}}},
@@ -232,7 +232,7 @@ function web(p){var w=p.web;
   else h+='<div class="r hit"><small>hvac1.example</small><b>'+esc(B)+'</b><p>AC and heating in Orleans and Jefferson. Request a visit online.</p></div><div class="r dim"><small>example-directory.example</small><b>HVAC companies near you</b><p>Compare local heating and air companies.</p></div><div class="r dim"><small>another-listing.example</small><b>Best AC repair in New Orleans</b><p>Ratings and reviews from homeowners.</p></div>';
   return h+'</div></div>'}
  var on=w!=="form0";var f=function(ph,val,big){return '<div class="fld'+(big?" big":"")+(on?"":" ph")+'">'+esc(on?val:ph)+'</div>'};
- return '<div class="web"><div class="url">hvac1.example</div><div class="bizhero"><b>'+esc(B)+'</b><span>Heating and air for Orleans and Jefferson</span></div><div class="form"><h4>Request a visit</h4>'+f("Name","Taylor")+f("Phone","(504) 555-0178")+f("Address","456 Oak Avenue")+f("What is the problem?",FORM,1)+'<div class="chk'+(on?" on":"")+'"><i>'+(on?"✓":"")+'</i><span>OK to text me about this request. Reply STOP to opt out.</span></div><div class="sendb'+(w==="form2"?" sent":"")+'">'+(w==="form2"?"Request sent ✓":"Send request")+'</div></div></div>'}
+ return '<div class="web"><div class="url">hvac1.example</div><div class="bizhero"><b>'+esc(B)+'</b><span>HVAC company serving the Greater New Orleans area</span></div><div class="form"><h4>Request a visit</h4>'+f("Name","Taylor")+f("Phone","(504) 555-0178")+f("Address","456 Oak Avenue")+f("What is the problem?",FORM,1)+'<div class="chk'+(on?" on":"")+'"><i>'+(on?"✓":"")+'</i><span>OK to text me about this request. Reply STOP to opt out.</span></div><div class="sendb'+(w==="form2"?" sent":"")+'">'+(w==="form2"?"Request sent ✓":"Send request")+'</div></div></div>'}
 function drawPhone(id,clock){var p=st[id],light=p.mode==="chat"||p.mode==="web"||p.mode==="cal",h='<div class="stat'+(light?"":" dark")+'"><span>'+clock+'</span><i>●●●</i></div>';
  var el=$(id);el.className="scr"+(light?"":" dark");
  if(p.banner)h+='<div class="notif"><small>now</small><b>'+esc(B)+'</b>'+esc(p.banner.slice(0,118))+'…</div>';
