@@ -170,13 +170,13 @@
     </div></div>
   </section>
   <div class="below">
-    <section class="box"><h2>What it never does</h2><p>Sends wording Sam hasn't approved, books a visit he hasn't confirmed or pre-approved, texts a call he answered, or asks the same customer for a review twice. Prices, complaints and anything unusual always go to Sam. Prefer to approve each message first? That's a setting.</p></section>
+    <section class="box"><h2>What it never does</h2><p>Sends wording the owner hasn't approved, books a visit the owner hasn't confirmed or pre-approved, texts a call the owner answered, or asks the same customer for a review twice. Prices, complaints and anything unusual always go to the owner. Prefer to approve each message first? That's a setting.</p></section>
     <section class="box"><h2>Price</h2><p>Catch missed calls: $750 a month + $750 setup, or $1,250 a month with Get found. 90 days, then month to month. Texts run on your own account. Prices are for our first 3 shops with up to 15 trucks.</p></section>
   </div>
   <section class="box answer"><h2>Would you rather the call got answered?</h2><p>An AI can pick up when you can't. It says it's an AI, takes down the job and texts you right away. <a href="/?interest=AI%20phone%20demo#contact">Ask to hear it</a></p></section>
   <div class="cta"><a class="go" href="/?interest=Free%20company%20breakdown#contact">Get my free breakdown</a></div>
   <p class="pieces">See one piece at a time: <a href="/demo/text-back/">Text-Back</a> · <a href="/demo/responder/">Responder</a> · <a href="/demo/scheduler/">Scheduler</a> · <a href="/demo/review-ask/">Review ask</a> · <a href="/demo/reminders/">Reminders</a> · <a href="/demo/monthly-report/">Monthly report</a></p>
-  <footer>HVAC1 and Sam are made up, and so is every number, time and message (555 numbers). Set up by autoants.</footer>
+  <footer>HVAC1 is made up, and so is every number, time and message (555 numbers). Set up by autoants.</footer>
 </main>
 <script>
 (function(){
@@ -185,17 +185,17 @@ function wkd(n){var d=new Date(),k=0;while(k<n){d.setDate(d.getDate()+1);if(d.ge
 var DAYS=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
 function lab(d){return DAYS[d.getDay()]+" "+MONTHS[d.getMonth()]+" "+d.getDate()}
 var t1=lab(wkd(1))+" at 2:00 PM",vd=wkd(2),visit=lab(vd)+" at 9:00 AM",t3=lab(wkd(3))+" at 8:00 AM";
-var biz={name:B,sub:"Text Message",av:"H1"},ants={name:"autoants",sub:"Alerts for Sam",av:"img"};
+var biz={name:B,sub:"Text Message",av:"H1"},ants={name:"autoants",sub:"Alerts for the owner",av:"img"};
 var FORM="My system is 15 years old and the bills keep going up. Can someone look at replacing it?";
-var OFFER="This is Sam at "+B+". Thanks for reaching out. A replacement starts with a visit to look at the system and the house. We can visit at one of the following times:\n\n"+t1+"\n"+visit+"\n"+t3+"\n\nWhich time works best? Reply STOP to opt out.";
+var OFFER="This is "+B+". Thanks for reaching out. A replacement starts with a visit to look at the system and the house. We can visit at one of the following times:\n\n"+t1+"\n"+visit+"\n"+t3+"\n\nWhich time works best? Reply STOP to opt out.";
 var STOPS=[["8:05 AM","Missed call"],["10:20 AM","Finds the site"],["10:21 AM","Gets times"],["10:24 AM","Booked"],["Day before","Reminder"],["After the visit","Review ask"],["Monthly","One page"]];
 var S=[
- {s:0,t:"8:05",on:"none",intro:1,cap:"Customer calls the shop.|Nobody answers.|The call rings out.|Seconds later, Customer receives a text from the shop.",L:{who:"Customer's Phone",mode:"lock",line:""},R:{mode:"lock",line:"Sam's on a job in Metairie"}},
+ {s:0,t:"8:05",on:"none",intro:1,cap:"Customer calls the shop.|Nobody answers.|The call rings out.|Seconds later, Customer receives a text from the shop.",L:{who:"Customer's Phone",mode:"lock",line:""},R:{mode:"lock",line:lab(new Date())}},
  {s:0,t:"8:05",on:"L",cap:"",L:{mode:"chat",head:biz,add:{k:"in",x:B+": Sorry for missing your call! Tell us the problem, and provide your address. We’ll respond with available times. Reply STOP to opt out."}}},
  {s:0,t:"8:06",on:"L",cap:"",L:{add:{k:"out",x:"My upstairs AC is blowing warm air. I’m at 123 Main Street."}}},
  {s:0,t:"8:06",on:"L",cap:"",L:{add:{k:"in",x:"We can visit at one of the following times:\n\n"+lab(wkd(1))+" at 10:00 AM\n"+lab(wkd(1))+" at 4:00 PM\n"+lab(wkd(2))+" at 1:00 PM\n\nWhich time works best?"}}},
  {s:0,t:"8:07",on:"L",cap:"",L:{add:{k:"out",x:lab(wkd(1))+" at 4:00 PM works."}}},
- {s:0,t:"8:07",on:"L",cap:"It's a job type and time Sam pre-approved, so it books itself.",L:{add:{k:"in",x:"You're booked for "+lab(wkd(1))+" at 4:00 PM. We'll text you prior to visiting. If anything changes, reply here."}}},
+ {s:0,t:"8:07",on:"L",cap:"It's a job type and time the owner pre-approved, so it books itself.",L:{add:{k:"in",x:"You're booked for "+lab(wkd(1))+" at 4:00 PM. We'll text you prior to visiting. If anything changes, reply here."}}},
  {s:0,t:"8:07",on:"R",cap:"",R:{mode:"chat",head:ants,add:{k:"in",tag:"Text-Back",x:"Customer ((504) 555-0134): \"My upstairs AC is blowing warm air. I’m at 123 Main Street.\" Booked: "+lab(wkd(1))+" at 4:00 PM."}}},
  {s:1,t:"10:20",on:"L",cap:"Later that morning, another customer searches online.",L:{who:"Customer's Phone",mode:"web",web:"search"}},
  {s:1,t:"10:20",on:"L",cap:"",L:{web:"results"}},
@@ -214,7 +214,7 @@ var S=[
  {s:5,t:"11:30",on:"R",cap:"After the visit.",R:{add:{k:"in",tag:"Review ask",x:"Replacement look in Gentilly is marked complete. Review ask sent."}}},
  {s:5,t:"11:30",on:"L",cap:"",L:{add:{k:"in",x:"Thanks for choosing "+B+". If you have a minute, a Google review helps a small local crew a lot: [your Google review link] Thank you! Sam"}}},
  {s:6,t:"9:00",on:"R",cap:"Once a month, the owner gets one page.",L:{mode:"lock",line:"",who:"Customer's Phone"},R:{add:{k:"card",h:"October at "+B,x:"Missed calls texted back: 18 of 20\nJobs booked from them: 4\nInvoiced on those jobs: $3,120\nGoogle reviews: 38 → 44\nNot tracked yet: website visits (analytics not on)",nt:"Made-up numbers to show the layout."}}},
- {s:6,t:"9:00",on:"R",cap:"Sam didn't tap once. Prices, complaints and anything unusual would still go to him."}
+ {s:6,t:"9:00",on:"R",cap:"The owner didn't tap once. Prices, complaints and anything unusual would still go to the owner."}
 ];
 var $=function(id){return document.getElementById(id)},reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
 var i=0,timer=null,playing=!reduced,st,animate=false;
