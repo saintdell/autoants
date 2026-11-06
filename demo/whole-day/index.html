@@ -16,6 +16,7 @@
 <style>
 .wrap{max-width:1040px;gap:14px}
 .intro h1{margin:4px 0 0;font-size:clamp(28px,5vw,44px);line-height:1.08;font-weight:800;text-wrap:balance}
+.intro .sub{margin:6px 0 0;font-size:clamp(16px,2vw,19px);color:var(--muted)}
 .stage{background:#0b1712;color:#f4f6f4;border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0;max-width:100%;overflow:hidden}
 .bar{width:100%;display:flex;align-items:center;justify-content:center;gap:14px}
 .stops{display:flex;gap:6px;overflow-x:auto;min-width:0;width:100%;margin:0;padding:2px;list-style:none;scrollbar-width:none}
@@ -38,7 +39,7 @@
 .ph-wrap.idle{opacity:.62}
 .who{font-size:14px;font-weight:700;color:#d7e3db}
 .ph-wrap.on .who{color:#3ddcae}
-.phone-x{width:300px;height:clamp(440px,calc(100vh - 395px),560px);background:#000;border-radius:44px;padding:10px;box-shadow:0 0 0 1px #33413a,0 20px 44px rgba(0,0,0,.55)}
+.phone-x{width:300px;height:clamp(440px,calc(100vh - 430px),560px);background:#000;border-radius:44px;padding:10px;box-shadow:0 0 0 1px #33413a,0 20px 44px rgba(0,0,0,.55)}
 .ph-wrap.on .phone-x{box-shadow:0 0 0 2px #3ddcae,0 20px 44px rgba(0,0,0,.55)}
 .scr{position:relative;width:100%;height:100%;background:#fff;color:#111;border-radius:35px;overflow:hidden;display:flex;flex-direction:column;font:400 14.5px/1.32 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
 .stat{flex:none;height:42px;display:flex;align-items:center;justify-content:space-between;padding:6px 22px 0;font-size:13px;font-weight:600;position:relative;z-index:2}
@@ -138,7 +139,7 @@
 @media (max-width:760px){
  .stage{padding:14px 12px;margin:0 -4px}
  .ph-wrap{display:none}.ph-wrap.on{display:flex}.stage.opening #wrapL{display:flex}
- .phone-x{width:min(300px,84vw);height:clamp(400px,calc(100vh - 345px),500px)}
+ .phone-x{width:min(300px,84vw);height:clamp(400px,calc(100vh - 400px),500px)}
  .bar{flex-direction:column;gap:4px}
  .intro .label{display:none}
  .back{display:none}
@@ -155,6 +156,7 @@
   <a class="back" href="/demo/">&larr; All demos</a>
   <header class="intro">
     <h1>What happens when an HVAC shop misses a call</h1>
+    <p class="sub">From one missed call to a booked visit, a reminder and a review request.</p>
   </header>
   <section class="stage" aria-label="Demo of one day">
     <ol class="stops" id="stops"></ol>
