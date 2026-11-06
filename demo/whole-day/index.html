@@ -32,6 +32,7 @@
 .lines{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;gap:16px;padding:0 6%;text-align:center;font-weight:800;font-size:clamp(23px,3.4vw,36px);line-height:1.18;text-wrap:balance;text-shadow:0 2px 18px rgba(0,0,0,.85);opacity:0;pointer-events:none;transition:opacity .45s}
 .lines .lg{height:1.02em;width:auto;vertical-align:-.03em;margin:0 .04em}
 .stage.opening .lines{opacity:1}
+.stage.card .lines span:first-child{color:#3ddcae;font-size:1.35em}
 .stage.opening .phones{opacity:.16}
 .stage.opening .lock,.stage.opening .stat span,.stage.opening .stat i{visibility:hidden}
 .stage .phones{transition:opacity .55s}
@@ -190,7 +191,7 @@ var t1=lab(wkd(1))+" at 2:00 PM",vd=wkd(2),visit=lab(vd)+" at 9:00 AM",t3=lab(wk
 var biz={name:B,sub:"Text Message",av:"H1"},ants={name:"autoants",sub:"Alerts for the owner",av:"img"};
 var FORM="My AC and heater are due for a tune-up.";
 var OFFER=B+": Thanks for reaching out. We can visit at one of the following times:\n\n"+t1+"\n"+visit+"\n"+t3+"\n\nWhich time works best? Reply STOP to opt out.";
-var STOPS=[["8:05 AM","Missed call"],["10:20 AM","Finds the site"],["10:21 AM","Gets times"],["10:24 AM","Booked"],["Day before","Reminder"],["After the visit","Review ask"],["Monthly","One page"]];
+var STOPS=[["8:05 AM","Customer 1's Missed Call"],["10:20 AM","Customer 2's Website Form"],["10:21 AM","Gets Times"],["10:24 AM","Booked"],["Day before","Reminder"],["After the visit","Review Ask"],["Monthly","One Page"]];
 var S=[
  {s:0,t:"8:05",on:"none",intro:1,cap:"Customer calls the shop.|Nobody answers.|Call rings out.|Seconds later, an autoants assistant texts Customer.",L:{who:"Customer 1's Phone",mode:"lock",line:""},R:{mode:"lock",line:lab(new Date())}},
  {s:0,t:"8:05",on:"L",cap:"",L:{mode:"chat",head:biz,add:{k:"in",x:B+": Sorry for the missed call! Tell us your name, the problem, and your address. We’ll respond with available times. Reply STOP to opt out."}}},
@@ -199,7 +200,8 @@ var S=[
  {s:0,t:"8:07",on:"L",cap:"",L:{add:{k:"out",x:lab(wkd(1))+" at 4:00 PM works."}}},
  {s:0,t:"8:07",on:"L",cap:"It's a job type and time the owner pre-approved, so it books itself.",L:{add:{k:"in",x:"You're booked for "+lab(wkd(1))+" at 4:00 PM. We'll text you prior to visiting. If anything changes, reply here."}}},
  {s:0,t:"8:07",on:"R",cap:"",R:{mode:"chat",head:ants,add:{k:"in",tag:"New Booking",x:lab(wkd(1))+" at 4:00 PM\n\nSource: Missed Call\nName: Jordan\nPhone: (504) 555-0134\nAddress: 123 Main Street\nProblem: Upstairs AC blowing warm air"}}},
- {s:1,t:"10:20",on:"L",cap:"Later that morning, a second customer searches online.",L:{who:"Customer 2's Phone",mode:"web",web:"search"}},
+ {s:1,t:"10:20",on:"none",intro:1,card:1,cap:"10:20 AM|Customer 2 searches online."},
+ {s:1,t:"10:20",on:"L",cap:"",L:{who:"Customer 2's Phone",mode:"web",web:"search"}},
  {s:1,t:"10:20",on:"L",cap:"",L:{web:"results"}},
  {s:1,t:"10:20",on:"L",cap:"",L:{web:"form0"}},
  {s:1,t:"10:21",on:"L",cap:"",L:{web:"form1"}},
@@ -210,12 +212,15 @@ var S=[
  {s:3,t:"10:24",on:"L",cap:"",L:{add:[{k:"in",x:"You're booked for "+visit+". We'll text you prior to visiting. If anything changes, reply here."},{k:"appt",x:"Tune-up · "+B}]}},
  {s:3,t:"10:24",on:"R",cap:"",R:{add:{k:"in",tag:"New Booking",x:visit+"\n\nSource: Website Form\nName: Taylor\nPhone: (504) 555-0178\nAddress: 456 Oak Avenue\nProblem: AC and heater due for a tune-up"}}},
  {s:3,t:"10:24",on:"R",cap:"",R:{mode:"cal"}},
- {s:4,t:"9:00",on:"L",cap:"The day before the visit.",L:{add:{k:"in",x:B+": A reminder that your tune-up is tomorrow, "+visit+". Reply C to confirm or R to reschedule. Reply STOP to opt out."}},R:{mode:"chat"}},
+ {s:4,t:"9:00",on:"none",intro:1,card:1,cap:"9:00 AM|The day before the visit."},
+ {s:4,t:"9:00",on:"L",cap:"",L:{add:{k:"in",x:B+": A reminder that your tune-up is tomorrow, "+visit+". Reply C to confirm or R to reschedule. Reply STOP to opt out."}},R:{mode:"chat"}},
  {s:4,t:"9:12",on:"L",cap:"",L:{add:{k:"out",x:"C. Side gate will be open."}}},
  {s:4,t:"9:12",on:"R",cap:"",R:{add:{k:"in",tag:"Reminder",x:visit+" visit has been CONFIRMED.\n\nSource: Website Form\nName: Taylor\nPhone: (504) 555-0178\nAddress: 456 Oak Avenue\nProblem: AC and heater due for a tune-up\nNote: Side gate will be open"}}},
- {s:5,t:"11:30",on:"R",cap:"After the visit.",R:{add:{k:"in",tag:"Google Review Request",x:visit+" visit has been COMPLETED. A Google Review Request has been sent."}}},
+ {s:5,t:"11:30",on:"none",intro:1,card:1,cap:"11:30 AM|After the visit."},
+ {s:5,t:"11:30",on:"R",cap:"",R:{add:{k:"in",tag:"Google Review Request",x:visit+" visit has been COMPLETED. A Google Review Request has been sent."}}},
  {s:5,t:"11:30",on:"L",cap:"",L:{add:{k:"in",x:B+": Our visit has concluded. If you have a minute, please leave us a review on Google: [your Google review link]. Thanks for choosing "+B+"!"}}},
- {s:6,t:"9:00",on:"R",cap:"Once a month, the owner gets one page.",L:{mode:"lock",line:"",who:"Customer 2's Phone"},R:{add:{k:"card",h:"October at "+B,x:"Missed calls texted back: 18 of 20\nJobs booked from them: 4\nInvoiced on those jobs: $3,120\nGoogle reviews: 38 → 44\nNot tracked yet: website visits (analytics not on)",nt:"Made-up numbers to show the layout."}}},
+ {s:6,t:"9:00",on:"none",intro:1,card:1,cap:"Once a month|The owner gets one page."},
+ {s:6,t:"9:00",on:"R",cap:"",L:{mode:"lock",line:"",who:"Customer 2's Phone"},R:{add:{k:"card",h:"October at "+B,x:"Missed calls texted back: 18 of 20\nJobs booked from them: 4\nInvoiced on those jobs: $3,120\nGoogle reviews: 38 → 44\nNot tracked yet: website visits (analytics not on)",nt:"Made-up numbers to show the layout."}}},
  {s:6,t:"9:00",on:"R",cap:"The owner didn't tap once. Prices, complaints and anything unusual would still go to the owner."}
 ];
 var $=function(id){return document.getElementById(id)},reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -250,13 +255,14 @@ function drawPhone(id,clock){var p=st[id],light=p.mode==="chat"||p.mode==="web"|
  el.innerHTML=h;p.seen=p.items.length;var f=el.querySelector(".feed");if(f)f.scrollTop=f.scrollHeight;}
 function draw(){var step=S[i-1]||S[0];
  document.querySelector(".stage").classList.toggle("opening",!!step.intro);
+ document.querySelector(".stage").classList.toggle("card",!!step.card);
  if(step.intro){$("lines").innerHTML=step.cap.split("|").map(function(x){return "<span>"+esc(x).replace("autoants",'<img class="lg" src="/brand/autoants-logo-reverse.svg" alt="autoants">')+"</span>"}).join("");$("cap").textContent=""}else $("cap").innerHTML=esc(step.cap)+(step.note?"<small>"+esc(step.note)+"</small>":"");
  drawPhone("L",step.t);drawPhone("R",step.t);
  $("whoL").textContent=st.L.who||"Customer 1's Phone";
  ["L","R"].forEach(function(p){var w=$("wrap"+p);w.classList.toggle("on",step.on===p);w.classList.toggle("idle",step.on!==p)});
  $("stops").querySelectorAll("button").forEach(function(b,n){b.classList.toggle("now",n===step.s);b.classList.toggle("done",n<step.s);if(n===step.s){b.setAttribute("aria-current","step");if(window.innerWidth<760)$("stops").scrollLeft=b.parentNode.offsetLeft-$("stops").offsetLeft-12}else b.removeAttribute("aria-current")});
  var done=i>=S.length;var pb=$("play"),pl=done?"Play again":(playing?"Pause":"Play");pb.setAttribute("aria-label",pl);pb.title=pl;pb.innerHTML=(playing&&!done)?'<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="6" y="4" width="4.5" height="16" rx="1"/><rect x="13.5" y="4" width="4.5" height="16" rx="1"/></svg>':'<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>';var d=$("dial");d.max=S.length;d.value=i;d.style.setProperty("--fill",((i-1)/(S.length-1)*100)+"%");}
-function delay(step){var c=[step.L,step.R].map(function(x){if(!x||!x.add)return 0;return [].concat(x.add).reduce(function(n,a){return n+(a.x||"").length},0)}).reduce(function(a,b){return a+b},0);return Math.min(8500,Math.max(3000,1900+((step.cap||"").length+(step.note||"").length)*25+c*28))}
+function delay(step){if(step.card)return 2200;var c=[step.L,step.R].map(function(x){if(!x||!x.add)return 0;return [].concat(x.add).reduce(function(n,a){return n+(a.x||"").length},0)}).reduce(function(a,b){return a+b},0);return Math.min(8500,Math.max(3000,1900+((step.cap||"").length+(step.note||"").length)*25+c*28))}
 var began=0,left=0;
 function total(){return S.reduce(function(a,x,n){return n<S.length-1?a+delay(x):a},0)}
 function before(n){var a=0;for(var k=0;k<n-1;k++)a+=delay(S[k]);return a}
