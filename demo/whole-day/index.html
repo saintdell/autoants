@@ -30,6 +30,7 @@
 .cap small{display:block;margin-top:3px;font-size:14px;font-weight:500;color:#9fe9cf}
 .view{position:relative}
 .lines{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;gap:16px;padding:0 6%;text-align:center;font-weight:800;font-size:clamp(23px,3.4vw,36px);line-height:1.18;text-wrap:balance;text-shadow:0 2px 18px rgba(0,0,0,.85);opacity:0;pointer-events:none;transition:opacity .45s}
+.lines .lg{height:1.02em;width:auto;vertical-align:-.13em;margin:0 .04em}
 .stage.opening .lines{opacity:1}
 .stage.opening .phones{opacity:.16}
 .stage.opening .lock,.stage.opening .stat span,.stage.opening .stat i{visibility:hidden}
@@ -249,7 +250,7 @@ function drawPhone(id,clock){var p=st[id],light=p.mode==="chat"||p.mode==="web"|
  el.innerHTML=h;p.seen=p.items.length;var f=el.querySelector(".feed");if(f)f.scrollTop=f.scrollHeight;}
 function draw(){var step=S[i-1]||S[0];
  document.querySelector(".stage").classList.toggle("opening",!!step.intro);
- if(step.intro){$("lines").innerHTML=step.cap.split("|").map(function(x){return "<span>"+esc(x)+"</span>"}).join("");$("cap").textContent=""}else $("cap").innerHTML=esc(step.cap)+(step.note?"<small>"+esc(step.note)+"</small>":"");
+ if(step.intro){$("lines").innerHTML=step.cap.split("|").map(function(x){return "<span>"+esc(x).replace("autoants",'<img class="lg" src="/brand/autoants-logo-reverse.svg" alt="autoants">')+"</span>"}).join("");$("cap").textContent=""}else $("cap").innerHTML=esc(step.cap)+(step.note?"<small>"+esc(step.note)+"</small>":"");
  drawPhone("L",step.t);drawPhone("R",step.t);
  $("whoL").textContent=st.L.who||"Customer 1's Phone";
  ["L","R"].forEach(function(p){var w=$("wrap"+p);w.classList.toggle("on",step.on===p);w.classList.toggle("idle",step.on!==p)});
