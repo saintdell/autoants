@@ -197,7 +197,7 @@ var S=[
  {s:0,t:"8:06",on:"L",cap:"",L:{add:{k:"in",x:"We can visit at one of the following times:\n\n"+lab(wkd(1))+" at 10:00 AM\n"+lab(wkd(1))+" at 4:00 PM\n"+lab(wkd(2))+" at 1:00 PM\n\nWhich time works best?"}}},
  {s:0,t:"8:07",on:"L",cap:"",L:{add:{k:"out",x:lab(wkd(1))+" at 4:00 PM works."}}},
  {s:0,t:"8:07",on:"L",cap:"It's a job type and time the owner pre-approved, so it books itself.",L:{add:{k:"in",x:"You're booked for "+lab(wkd(1))+" at 4:00 PM. We'll text you prior to visiting. If anything changes, reply here."}}},
- {s:0,t:"8:07",on:"R",cap:"",R:{mode:"chat",head:ants,add:{k:"in",tag:"Text-Back",x:"Customer ((504) 555-0134): \"My upstairs AC is blowing warm air. I’m at 123 Main Street.\" Booked: "+lab(wkd(1))+" at 4:00 PM."}}},
+ {s:0,t:"8:07",on:"R",cap:"",R:{mode:"chat",head:ants,add:{k:"in",tag:"New booking",x:lab(wkd(1))+" at 4:00 PM\n\nPhone: (504) 555-0134\nAddress: 123 Main Street\nProblem: Upstairs AC blowing warm air"}}},
  {s:1,t:"10:20",on:"L",cap:"Later that morning, another customer searches online.",L:{who:"Customer's Phone",mode:"web",web:"search"}},
  {s:1,t:"10:20",on:"L",cap:"",L:{web:"results"}},
  {s:1,t:"10:20",on:"L",cap:"",L:{web:"form0"}},
