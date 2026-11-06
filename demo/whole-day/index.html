@@ -191,7 +191,7 @@ var t1=lab(wkd(1))+" at 2:00 PM",vd=wkd(2),visit=lab(vd)+" at 9:00 AM",t3=lab(wk
 var biz={name:B,sub:"Text Message",av:"H1"},ants={name:"autoants",sub:"Alerts for the owner",av:"img"};
 var FORM="My AC and heater are due for a tune-up.";
 var OFFER=B+": Thanks for reaching out. We can visit at one of the following times:\n\n"+t1+"\n"+visit+"\n"+t3+"\n\nWhich time works best? Reply STOP to opt out.";
-var STOPS=[["8:05 AM","Customer 1's Missed Call"],["10:20 AM","Customer 2's Website Form"],["Day before","Reminder"],["After the visit","Review Ask"],["Monthly","One Page"]];
+var STOPS=[["8:05 AM","Customer 1's Missed Call"],["10:20 AM","Customer 2's Website Form"],["Day before","Reminder"],["After the visit","Google Review Request"],["Monthly","Owner's Summary"]];
 var S=[
  {s:0,t:"8:05",on:"none",intro:1,cap:"Customer calls the shop.|Nobody answers.|Call rings out.|Seconds later, an autoants assistant texts Customer.",L:{who:"Customer 1's Phone",mode:"lock",line:""},R:{mode:"lock",line:lab(new Date())}},
  {s:0,t:"8:05",on:"L",cap:"",L:{mode:"chat",head:biz,add:{k:"in",x:B+": Sorry for the missed call! Tell us your name, the problem, and your address. We’ll respond with available times. Reply STOP to opt out."}}},
