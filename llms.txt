@@ -41,7 +41,7 @@
     is an AI; minutes written into the agreement
   - Operations Math by autoants, for big operations (routes, schedules, cutting, loads): a $1,500 30-day pilot,
     credited to month one, then priced by size
-  - The printed assessment: $500 flat. A recorded 45-minute interview, then a bound, printed report on what to
+  - The AI Opportunity Assessment: $500 flat. A recorded 45-minute interview, then a bound, printed report on what to
     fix first and what each fix is worth in the owner's own numbers. Credited toward setup if they continue
     within 30 days. It becomes $1,000 after two reference clients
 - Both doors together cost $250 a month less than the two bought one at a time ($1,250 vs $750 + $750) for the
