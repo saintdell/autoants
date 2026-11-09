@@ -214,7 +214,7 @@ var S=[
  {s:1,t:"7:34",on:"L",cap:"",L:{add:[{k:"in",x:B+": You're booked for "+visit+". We'll text you prior to visiting. If anything changes, reply here. Reply STOP to opt out."},{k:"appt",x:"First cleaning · "+B}]}},
  {s:1,t:"7:34",on:"R",cap:"",R:{add:{k:"in",tag:"New Booking",x:visit+"\n\nSource: Quote Request\nName: Riley\nPhone: (504) 555-0178\nAddress: 456 Oak Avenue\nJob: Every-other-week cleaning, 2-bedroom apartment"}}},
  {s:1,t:"7:34",on:"R",cap:"",R:{mode:"cal"}},
- {s:2,t:"9:00",on:"none",intro:1,card:1,cap:"9:00 AM|The day before the visit."},
+ {s:2,t:"9:00",on:"none",intro:1,card:1,cap:"9:00 AM|The day before the cleaning."},
  {s:2,t:"9:00",on:"L",cap:"",L:{add:{k:"in",x:B+": A reminder that your cleaning is tomorrow, "+visit+". Reply C to confirm or R to reschedule. Reply STOP to opt out."}},R:{mode:"chat"}},
  {s:2,t:"9:12",on:"L",cap:"",L:{add:{k:"out",x:"C. The dog will be in the backyard."}}},
  {s:2,t:"9:12",on:"R",cap:"",R:{add:{k:"in",tag:"Reminder",x:visit+" cleaning has been CONFIRMED.\n\nSource: Quote Request\nName: Riley\nPhone: (504) 555-0178\nAddress: 456 Oak Avenue\nJob: Every-other-week cleaning, 2-bedroom apartment\nNote: The dog will be in the backyard"}}},
