@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>What happens when a cleaning company misses a call · autoants demo</title>
+<meta name="description" content="One made-up cleaning company: a missed call answered, a quote request answered, a cleaning booked, a reminder, a review ask and the monthly report.">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" href="/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="/demo/demo.css">
+<style>
+.wrap{max-width:1040px;gap:14px}
+.intro h1{margin:4px 0 0;font-size:clamp(28px,5vw,44px);line-height:1.08;font-weight:800;text-wrap:balance}
+.intro .sub{margin:6px 0 0;font-size:clamp(16px,2vw,19px);color:var(--muted)}
+.stage{background:#0b1712;color:#f4f6f4;border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0;max-width:100%;overflow:hidden}
+.bar{width:100%;display:flex;align-items:center;justify-content:center;gap:14px}
+.stops{display:flex;gap:6px;overflow-x:auto;min-width:0;width:100%;margin:0;padding:2px;list-style:none;scrollbar-width:none}
+.stops::-webkit-scrollbar{display:none}
+.stops li{flex:1 0 auto}
+.stop{width:100%;min-height:44px;background:#13211a;color:#a9bbb0;border:1px solid #26372d;border-radius:10px;padding:6px 11px;font:700 13px/1.2 Onest,system-ui,sans-serif;text-align:left;cursor:pointer;white-space:nowrap}
+.stop small{display:block;font-weight:500;font-size:11px;opacity:.85}
+.stop.done{color:#d7e3db;border-color:#2f5c47}
+.stop.now{background:#3ddcae;color:#0b1712;border-color:#3ddcae}
+.cap{margin:0;min-height:1.35em;font-size:clamp(16px,1.6vw,18px);line-height:1.35;font-weight:700;text-wrap:balance;text-align:center}
+.cap small{display:block;margin-top:3px;font-size:14px;font-weight:500;color:#9fe9cf}
+.view{position:relative}
+.lines{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;gap:16px;padding:0 6%;text-align:center;font-weight:800;font-size:clamp(23px,3.4vw,36px);line-height:1.18;text-wrap:balance;text-shadow:0 2px 18px rgba(0,0,0,.85);opacity:0;pointer-events:none;transition:opacity .45s}
+.lines .lg{height:1.02em;width:auto;vertical-align:-.03em;margin:0 .04em}
+.stage.opening .lines{opacity:1}
+.stage.card .lines span:first-child{color:#3ddcae;font-size:1.35em}
+.stage.opening .phones{opacity:.16}
+.stage.opening .lock,.stage.opening .stat span,.stage.opening .stat i{visibility:hidden}
+.stage .phones{transition:opacity .55s}
+.phones{display:flex;justify-content:center;gap:clamp(18px,6vw,64px)}
+.ph-wrap{display:flex;flex-direction:column;align-items:center;gap:9px;transition:opacity .25s}
+.ph-wrap.idle{opacity:.62}
+.who{font-size:14px;font-weight:700;color:#d7e3db}
+.ph-wrap.on .who{color:#3ddcae}
+.phone-x{width:300px;height:clamp(440px,calc(100vh - 430px),560px);background:#000;border-radius:44px;padding:10px;box-shadow:0 0 0 1px #33413a,0 20px 44px rgba(0,0,0,.55)}
+.ph-wrap.on .phone-x{box-shadow:0 0 0 2px #3ddcae,0 20px 44px rgba(0,0,0,.55)}
+.scr{position:relative;width:100%;height:100%;background:#fff;color:#111;border-radius:35px;overflow:hidden;display:flex;flex-direction:column;font:400 14.5px/1.32 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.stat{flex:none;height:42px;display:flex;align-items:center;justify-content:space-between;padding:6px 22px 0;font-size:13px;font-weight:600;position:relative;z-index:2}
+.stat::after{content:"";position:absolute;left:50%;top:8px;width:78px;height:22px;margin-left:-39px;border-radius:12px;background:#000}
+.stat i{font-style:normal;letter-spacing:.5px;font-size:11px}
+.dark{background:#16211c;color:#fff}
+.lock{flex:1;display:flex;flex-direction:column;align-items:center;padding:34px 16px;text-align:center}
+.lock b{font-size:54px;font-weight:300;line-height:1}
+.lock span{margin-top:8px;color:#c6d2cb;font-size:14px}
+.callv{flex:1;display:flex;flex-direction:column;align-items:center;padding:42px 16px 26px;text-align:center}
+.av{width:82px;height:82px;border-radius:50%;background:#0f5132;color:#fff;display:flex;align-items:center;justify-content:center;font:800 28px Onest,system-ui,sans-serif}
+.callv h3{margin:14px 0 3px;font-size:21px;font-weight:600}
+.callv p{margin:0;color:#c6d2cb}
+.ring{animation:ring 1.1s infinite}
+@keyframes ring{50%{box-shadow:0 0 0 14px rgba(61,220,174,.22)}}
+.endb{margin-top:auto;width:58px;height:58px;border-radius:50%;background:#d92d20}
+.hd{flex:none;display:flex;flex-direction:column;align-items:center;gap:2px;padding:3px 10px 8px;border-bottom:1px solid #e3e3e6;background:#f6f6f7}
+.hd .mini{width:36px;height:36px;border-radius:50%;background:#0f5132;color:#fff;display:flex;align-items:center;justify-content:center;font:800 13px Onest,system-ui,sans-serif;overflow:hidden}
+.hd .mini img{width:100%;height:100%;display:block}
+.hd b{font-size:12.5px;font-weight:600}
+.hd span{font-size:10.5px;color:#6b6b70}
+.feed{flex:1;min-height:0;overflow-y:auto;scrollbar-width:none;display:flex;flex-direction:column;gap:6px;padding:10px 10px 12px;background:#fff}
+.feed::-webkit-scrollbar{display:none}
+.b,.cardx,.act,.typing{flex:none}
+.b{max-width:84%;padding:8px 11px;border-radius:17px;white-space:pre-line}
+.b.list{max-width:97%;font-size:13.5px}
+.fresh{animation:pop .3s ease-out}
+.in{align-self:flex-start;background:#e9e9eb;color:#111;border-bottom-left-radius:5px}
+.out{align-self:flex-end;background:#248a3d;color:#fff;border-bottom-right-radius:5px}
+.tm{align-self:center;font-size:10.5px;color:#6b6b70;font-weight:600;margin:3px 0 0}
+.tag{display:inline-block;margin-bottom:3px;padding:1px 7px;border-radius:7px;background:#0f5132;color:#fff;font-size:10.5px;font-weight:700}
+.cardx{align-self:stretch;background:#f2f4f3;border:1px solid #dde3df;border-radius:14px;padding:10px 11px;white-space:pre-line}
+.cardx h4{margin:3px 0 4px;font-size:14px;font-weight:700}
+.cardx .nt{display:block;margin-top:5px;font-size:11px;color:#5b655f}
+.act{display:flex;gap:6px;align-self:stretch}
+.act button{flex:1;min-height:44px;border:0;border-radius:12px;background:#0f5132;color:#fff;font:700 13.5px Onest,system-ui,sans-serif;cursor:pointer;animation:glow 1.1s infinite}
+.act.used button{animation:none;background:#dfe6e2;color:#37433c;cursor:default}
+@keyframes glow{50%{box-shadow:0 0 0 6px rgba(61,220,174,.5)}}
+@keyframes pop{from{transform:translateY(7px) scale(.97);opacity:0}}
+.typing{align-self:flex-start;background:#e9e9eb;border-radius:17px;padding:10px 12px;display:flex;gap:4px}
+.typing i{width:6px;height:6px;border-radius:50%;background:#8e8e93;animation:dot 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{50%{opacity:.25}}
+.web{flex:1;min-height:0;display:flex;flex-direction:column;background:#fff}
+.url{flex:none;margin:4px 10px 8px;padding:8px 12px;border-radius:11px;background:#eeeef0;font-size:13px;color:#333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.res{padding:6px 12px;display:flex;flex-direction:column;gap:12px;overflow:hidden}
+.r small{display:block;color:#3c6e52;font-size:11px}
+.r b{display:block;color:#1a4fbf;font-size:15px;font-weight:500}
+.r p{margin:2px 0 0;font-size:12px;color:#555}
+.r.hit{background:#e8f6ef;margin:-4px -6px;padding:6px;border-radius:9px;box-shadow:0 0 0 2px #3ddcae}
+.r.dim{opacity:.55}
+.bizhero{flex:none;background:#0f5132;color:#fff;padding:12px 14px}
+.bizhero b{display:block;font-size:16px}.bizhero span{font-size:12px;opacity:.9}
+.form{padding:10px 14px;display:flex;flex-direction:column;gap:7px;overflow:hidden}
+.form h4{margin:0;font-size:14px}
+.fld{border:1px solid #cfd6d2;border-radius:8px;padding:6px 9px;font-size:12.5px;min-height:31px;color:#111}
+.fld.ph{color:#9aa39e}.fld.big{min-height:64px}
+.chk{display:flex;gap:6px;font-size:11px;color:#444;line-height:1.25}
+.chk i{flex:none;width:14px;height:14px;border:1px solid #8a948e;border-radius:3px;font-style:normal;text-align:center;line-height:13px;font-size:11px}
+.chk.on i{background:#0f5132;border-color:#0f5132;color:#fff}
+.sendb{border-radius:9px;background:#0f5132;color:#fff;text-align:center;padding:9px;font-weight:700;font-size:13.5px}
+.sendb.sent{background:#e8f6ef;color:#0f5132}
+.notif{position:absolute;left:8px;right:8px;top:42px;z-index:5;background:rgba(245,245,247,.97);color:#111;border-radius:15px;padding:9px 11px;box-shadow:0 8px 24px rgba(0,0,0,.35);font-size:12.5px;line-height:1.28;animation:drop .35s ease-out}
+.notif b{display:block;font-size:12px}.notif small{float:right;color:#777;font-size:10.5px}
+@keyframes drop{from{transform:translateY(-70px);opacity:0}}
+.apptc{align-self:stretch;background:#fff;border:1px solid #cfd6d2;border-left:5px solid #0f5132;border-radius:11px;padding:8px 10px;font-size:12.5px;flex:none}
+.apptc b{display:block;font-size:13.5px}.apptc em{font-style:normal;color:#0f5132;font-weight:700;font-size:11px}
+.cal{flex:1;min-height:0;display:flex;flex-direction:column;background:#fff;padding:2px 12px 10px;overflow:hidden}
+.cal h4{margin:2px 0 8px;font-size:17px}
+.slot{display:grid;grid-template-columns:48px 1fr;gap:6px;min-height:44px;border-top:1px solid #e6e6e8;padding-top:4px;font-size:11px;color:#777}
+.ev{border-radius:7px;padding:5px 8px;font-size:12px;color:#123;background:#e6ece9}
+.ev.new{background:#3ddcae;color:#0b1712;font-weight:700;animation:pop .3s ease-out}
+.ctl{flex-wrap:wrap;display:flex;justify-content:center;align-items:center;gap:8px}
+.ctl button{min-height:44px;white-space:nowrap;padding:8px 16px;border-radius:10px;border:1px solid #3a4d43;background:transparent;color:#f4f6f4;font:700 14px Onest,system-ui,sans-serif;cursor:pointer}
+.ctl .pri{background:#3ddcae;color:#0b1712;border-color:#3ddcae;width:52px;padding:0;display:inline-flex;align-items:center;justify-content:center}
+.ctl .pri svg{fill:currentColor;display:block}
+#again{width:52px;padding:0;display:inline-flex;align-items:center;justify-content:center}
+#again svg{display:block}
+.dial{width:100%;max-width:680px;display:flex;align-items:center;gap:12px}
+.dial input{flex:1;min-width:0;height:44px;margin:0;background:transparent;accent-color:#3ddcae;cursor:grab;touch-action:pan-y}
+.dial input:active{cursor:grabbing}
+.dial input::-webkit-slider-runnable-track{height:8px;border-radius:4px;background:linear-gradient(to right,#3ddcae var(--fill,0%),#2c3d34 var(--fill,0%))}
+.dial input::-moz-range-track{height:8px;border-radius:4px;background:#2c3d34}
+.dial input::-moz-range-progress{height:8px;border-radius:4px;background:#3ddcae}
+.dial input::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;margin-top:-9px;border-radius:50%;background:#f4f6f4;border:3px solid #3ddcae;box-shadow:0 2px 8px rgba(0,0,0,.5)}
+.dial input::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#f4f6f4;border:3px solid #3ddcae}
+.dial input{-webkit-appearance:none;appearance:none}
+.dial span{flex:none;font-size:12px;color:#a9bbb0;text-align:right}
+#timer{font:700 17px/1 Onest,system-ui,sans-serif;color:#f4f6f4;font-variant-numeric:tabular-nums;min-width:96px}
+.below{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.box h2{margin:0 0 6px;font-size:18px;font-weight:800}
+.box p{margin:0}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:center;padding:6px 0}
+.cta a.go{display:inline-flex;align-items:center;min-height:48px;padding:10px 22px;border-radius:10px;background:var(--accent);color:var(--on-accent);font-weight:800;text-decoration:none}
+.pieces{margin:0;text-align:center;font-size:14px;color:var(--muted)}
+@media (max-width:760px){
+ .stage{padding:14px 12px;margin:0 -4px}
+ .ph-wrap{display:none}.ph-wrap.on{display:flex}.stage.opening #wrapL{display:flex}
+ .phone-x{width:min(300px,84vw);height:clamp(400px,calc(100vh - 400px),500px)}
+ .bar{flex-direction:column;gap:4px}
+ .intro .label{display:none}
+ .back{display:none}
+ .below{grid-template-columns:minmax(0,1fr)}
+ .cap{min-height:2.7em}
+ .ctl{gap:6px}.ctl button{padding:8px 11px;font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){.b,.cardx,.act button,.ring,.typing i{animation:none}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="banner">Demo with sample data: CLEAN1 is a made-up cleaning company. This shows the full setup, and we're rolling it out in stages. Ask us what's live today.</p>
+  <a class="back" href="/demo/">&larr; All demos</a>
+  <header class="intro">
+    <h1>What happens when a cleaning company misses a call</h1>
+    <p class="sub">From one missed call while you're on a job to a booked cleaning, a reminder and a review request.</p>
+  </header>
+  <section class="stage" aria-label="Demo of one day">
+    <ol class="stops" id="stops"></ol>
+    <div class="bar">
+    <div class="ctl"><button class="pri" id="play" type="button" aria-label="Pause"></button><button id="again" type="button" aria-label="Start over" title="Start over"><svg viewBox="0 0 24 24" width="21" height="21" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1"/><path d="M3.5 4v5h5"/></svg></button></div>
+      <div class="dial"><input id="dial" type="range" min="1" max="24" value="1" step="1" aria-label="Drag to move through the demo"><span id="timer" role="timer" aria-label="Time in the demo">0:00 / 0:00</span></div>
+    </div>
+    <p class="cap" id="cap" aria-live="polite"></p>
+    <div class="view"><div class="lines" id="lines"></div><div class="phones">
+      <div class="ph-wrap" id="wrapL"><div class="who" id="whoL"></div><div class="phone-x"><div class="scr" id="L"></div></div></div>
+      <div class="ph-wrap" id="wrapR"><div class="who" id="whoR">Owner's Phone</div><div class="phone-x"><div class="scr" id="R"></div></div></div>
+    </div></div>
+  </section>
+  <div class="below">
+    <section class="box"><h2>What it never does</h2><p>Sends wording the owner hasn't approved, books a cleaning the owner hasn't confirmed or pre-approved, texts a call the owner answered, or asks the same customer for a review twice. Prices, complaints and anything unusual always go to the owner. Prefer to approve each message first? That's a setting.</p></section>
+    <section class="box"><h2>Price</h2><p>Catch missed calls: $750 a month + $750 setup, or $1,250 a month with Get found. 90 days, then month to month. Texts run on your own account. Prices are for our first 3 businesses.</p></section>
+  </div>
+  <section class="box answer"><h2>Would you rather the call got answered?</h2><p>An AI can pick up when you can't. It says it's an AI, takes down the job and texts you right away, even while your hands are full. <a href="/?interest=AI%20phone%20demo#contact">Ask to hear it</a></p></section>
+  <div class="cta"><a class="go" href="/?interest=15-minute%20call#contact">Book a 15-minute call</a></div>
+  <p class="pieces">See one piece at a time: <a href="/demo/text-back/">Text-Back</a> · <a href="/demo/responder/">Responder</a> · <a href="/demo/scheduler/">Scheduler</a> · <a href="/demo/review-ask/">Review ask</a> · <a href="/demo/reminders/">Reminders</a> · <a href="/demo/monthly-report/">Monthly report</a></p>
+  <footer>CLEAN1, Morgan and Riley are made up, and so is every number, time and message (555 numbers). Set up by autoants.</footer>
+</main>
+<script>
+(function(){
+var B="CLEAN1", DOW=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"], MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function wkd(n){var d=new Date(),k=0;while(k<n){d.setDate(d.getDate()+1);if(d.getDay()>0&&d.getDay()<6)k++}return d}
+var DAYS=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
+function lab(d){return DAYS[d.getDay()]+" "+MONTHS[d.getMonth()]+" "+d.getDate()}
+var t1=lab(wkd(1))+" at 2:00 PM",vd=wkd(2),visit=lab(vd)+" at 9:00 AM",t3=lab(wkd(3))+" at 8:00 AM";
+var biz={name:B,sub:"Text Message",av:"C1"},ants={name:"autoants",sub:"Alerts for the owner",av:"img"};
+var FORM="Every-other-week cleaning for a 2-bedroom apartment.";
+var OFFER=B+": Thanks for reaching out. We can clean at one of the following times. We'll confirm the price with you before the visit:\n\n"+t1+"\n"+visit+"\n"+t3+"\n\nWhich time works best? Reply STOP to opt out.";
+var STOPS=[["4:40 PM","Customer 1's Missed Call"],["7:15 PM","Customer 2's Quote Request"],["Day before","Reminder"],["After the cleaning","Google Review Request"],["Monthly","Owner's Summary"]];
+var S=[
+ {s:0,t:"4:40",on:"none",intro:1,cap:"Customer calls for a cleaning quote.|The owner is mid-job.|Call rings out.|Seconds later, an autoants assistant texts Customer.",L:{who:"Customer 1's Phone",mode:"lock",line:""},R:{mode:"lock",line:lab(new Date())}},
+ {s:0,t:"4:40",on:"L",cap:"",L:{mode:"chat",head:biz,add:{k:"in",x:B+": Sorry for the missed call! Tell us your name, what you need cleaned, and your address. We’ll text back open times. Reply STOP to opt out."}}},
+ {s:0,t:"4:41",on:"L",cap:"",L:{add:{k:"out",x:"Morgan here. Deep clean for a 3-bedroom house before the holidays. I’m at 123 Main Street."}}},
+ {s:0,t:"4:41",on:"L",cap:"",L:{add:{k:"in",x:B+": We can clean at one of the following times. We'll confirm the price with you before the visit:\n\n"+lab(wkd(1))+" at 10:00 AM\n"+lab(wkd(1))+" at 4:00 PM\n"+lab(wkd(2))+" at 1:00 PM\n\nWhich time works best? Reply STOP to opt out."}}},
+ {s:0,t:"4:41",on:"R",cap:"",R:{mode:"chat",head:ants,add:{k:"in",tag:"Times Went Out",x:"3 times sent. No time picked yet.\n\nSource: Missed Call\nName: Morgan\nPhone: (504) 555-0134\nAddress: 123 Main Street\nJob: Deep clean, 3-bedroom house"}}},
+ {s:0,t:"4:42",on:"L",cap:"",L:{add:{k:"out",x:lab(wkd(1))+" at 4:00 PM works."}}},
+ {s:0,t:"4:42",on:"L",cap:"It's a cleaning type and time the owner pre-approved, so it books itself.",L:{add:{k:"in",x:B+": You're booked for "+lab(wkd(1))+" at 4:00 PM. We'll text you prior to visiting. If anything changes, reply here. Reply STOP to opt out."}}},
+ {s:0,t:"4:42",on:"R",cap:"",R:{mode:"chat",head:ants,add:{k:"in",tag:"New Booking",x:lab(wkd(1))+" at 4:00 PM\n\nSource: Missed Call\nName: Morgan\nPhone: (504) 555-0134\nAddress: 123 Main Street\nJob: Deep clean, 3-bedroom house"}}},
+ {s:1,t:"7:15",on:"none",intro:1,card:1,cap:"7:15 PM|Customer 2 searches online after work."},
+ {s:1,t:"7:15",on:"L",cap:"",L:{who:"Customer 2's Phone",mode:"web",web:"search"}},
+ {s:1,t:"7:15",on:"L",cap:"",L:{web:"results"}},
+ {s:1,t:"7:15",on:"L",cap:"",L:{web:"form0"}},
+ {s:1,t:"7:16",on:"L",cap:"",L:{web:"form1"}},
+ {s:1,t:"7:16",on:"L",cap:"",L:{web:"form2"}},
+ {s:1,t:"7:31",on:"L",cap:"Up to 15 minutes later, the customer gets a text, even after hours.",L:{banner:OFFER}},
+ {s:1,t:"7:31",on:"L",cap:"",L:{mode:"chat",head:biz,clear:1,banner:"",add:{k:"in",x:OFFER}}},
+ {s:1,t:"7:31",on:"R",cap:"",R:{add:{k:"in",tag:"Times Went Out",x:"3 times sent. No time picked yet.\n\nSource: Quote Request\nName: Riley\nPhone: (504) 555-0178\nAddress: 456 Oak Avenue\nJob: Every-other-week cleaning, 2-bedroom apartment"}}},
+ {s:1,t:"7:34",on:"L",cap:"",L:{add:{k:"out",x:visit+" works."}}},
+ {s:1,t:"7:34",on:"L",cap:"",L:{add:[{k:"in",x:B+": You're booked for "+visit+". We'll text you prior to visiting. If anything changes, reply here. Reply STOP to opt out."},{k:"appt",x:"First cleaning · "+B}]}},
+ {s:1,t:"7:34",on:"R",cap:"",R:{add:{k:"in",tag:"New Booking",x:visit+"\n\nSource: Quote Request\nName: Riley\nPhone: (504) 555-0178\nAddress: 456 Oak Avenue\nJob: Every-other-week cleaning, 2-bedroom apartment"}}},
+ {s:1,t:"7:34",on:"R",cap:"",R:{mode:"cal"}},
+ {s:2,t:"9:00",on:"none",intro:1,card:1,cap:"9:00 AM|The day before the visit."},
+ {s:2,t:"9:00",on:"L",cap:"",L:{add:{k:"in",x:B+": A reminder that your cleaning is tomorrow, "+visit+". Reply C to confirm or R to reschedule. Reply STOP to opt out."}},R:{mode:"chat"}},
+ {s:2,t:"9:12",on:"L",cap:"",L:{add:{k:"out",x:"C. The dog will be in the backyard."}}},
+ {s:2,t:"9:12",on:"R",cap:"",R:{add:{k:"in",tag:"Reminder",x:visit+" cleaning has been CONFIRMED.\n\nSource: Quote Request\nName: Riley\nPhone: (504) 555-0178\nAddress: 456 Oak Avenue\nJob: Every-other-week cleaning, 2-bedroom apartment\nNote: The dog will be in the backyard"}}},
+ {s:3,t:"11:30",on:"none",intro:1,card:1,cap:"11:30 AM|After the visit."},
+ {s:3,t:"11:30",on:"R",cap:"",R:{add:{k:"in",tag:"Google Review Request",x:visit+" cleaning has been COMPLETED. A Google Review Request has been sent."}}},
+ {s:3,t:"11:30",on:"L",cap:"",L:{add:{k:"in",x:B+": Thanks for letting us clean for you! If you have a minute, please leave us a review on Google: [your Google review link]. Thanks for choosing "+B+"! Reply STOP to opt out."}}},
+ {s:4,t:"9:00",on:"none",intro:1,card:1,cap:"Once a month|The owner gets one page."},
+ {s:4,t:"9:00",on:"R",cap:"",L:{mode:"lock",line:"",who:"Customer 2's Phone"},R:{add:{k:"card",h:"October at "+B,x:"Missed calls texted back: 22 of 25\nCleanings booked from them: 7\nNew every-other-week customers: 3\nInvoiced on those jobs: $2,840\nGoogle reviews: 21 → 27\nNot tracked yet: website visits (analytics not on)",nt:"Made-up numbers to show the layout."}}},
+ {s:4,t:"9:00",on:"R",cap:"The owner didn't tap once. Prices, complaints and anything unusual would still go to the owner."}
+];
+var $=function(id){return document.getElementById(id)},reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+var i=0,timer=null,playing=!reduced,st,animate=false;
+function blank(){return {mode:"lock",line:"",state:"",web:"",banner:"",head:null,items:[],who:null}}
+function apply(step,ph){var c=step[ph];if(!c)return;var p=st[ph];
+ ["who","mode","state","line","head","web","banner"].forEach(function(k){if(c[k]!==undefined)p[k]=c[k]});
+ if(c.clear)p.items=[]; if(c.add)p.items=p.items.concat(c.add);}
+function reset(){st={L:blank(),R:blank()}}
+function esc(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML}
+function web(p){var w=p.web;
+ if(w==="search"||w==="results"){var h='<div class="web"><div class="url">clean1 metairie</div><div class="res">';
+  if(w==="search")h+='<div class="r dim"><p>Searching…</p></div>';
+  else h+='<div class="r hit"><small>clean1.example</small><b>'+esc(B)+'</b><p>Home and office cleaning in the Greater New Orleans area. Request a quote online.</p></div><div class="r dim"><small>example-directory.example</small><b>Cleaning services near you</b><p>Compare local cleaning companies.</p></div><div class="r dim"><small>another-listing.example</small><b>Best house cleaning in Metairie</b><p>Ratings and reviews from homeowners.</p></div>';
+  return h+'</div></div>'}
+ var on=w!=="form0";var f=function(ph,val,big){return '<div class="fld'+(big?" big":"")+(on?"":" ph")+'">'+esc(on?val:ph)+'</div>'};
+ return '<div class="web"><div class="url">clean1.example</div><div class="bizhero"><b>'+esc(B)+'</b><span>Home and office cleaning, Greater New Orleans</span></div><div class="form"><h4>Request a quote</h4>'+f("Name","Taylor")+f("Phone","(504) 555-0178")+f("Address","456 Oak Avenue")+f("What do you need cleaned?",FORM,1)+'<div class="chk'+(on?" on":"")+'"><i>'+(on?"✓":"")+'</i><span>OK to text me about this request. Reply STOP to opt out.</span></div><div class="sendb'+(w==="form2"?" sent":"")+'">'+(w==="form2"?"Request sent ✓":"Send request")+'</div></div></div>'}
+function drawPhone(id,clock){var p=st[id],light=p.mode==="chat"||p.mode==="web"||p.mode==="cal",h='<div class="stat'+(light?"":" dark")+'"><span>'+clock+'</span><i>●●●</i></div>';
+ var el=$(id);el.className="scr"+(light?"":" dark");
+ if(p.banner)h+='<div class="notif"><small>now</small><b>'+esc(B)+'</b>'+esc(p.banner.slice(0,118))+'…</div>';
+ if(p.mode==="lock")h+='<div class="lock"><b>'+clock+'</b><span>'+esc(p.line)+'</span></div>';
+ else if(p.mode==="call")h+='<div class="callv"><div class="av '+(p.state==="ringing"?"ring":"")+'">H1</div><h3>'+esc(B)+'</h3><p>'+(p.state==="ringing"?"(504) 555-0100 · calling…":"No answer · call ended")+'</p>'+(p.state==="ringing"?'<div class="endb"></div>':"")+'</div>';
+ else if(p.mode==="web")h+=web(p);
+ else if(p.mode==="cal")h+='<div class="cal"><h4>'+esc(lab(vd))+'</h4><div class="slot"><span>8 AM</span><div class="ev">Standard clean, Lakeview</div></div><div class="slot"><span>9 AM</span><div class="ev new">456 Oak Avenue: first cleaning</div></div><div class="slot"><span>10 AM</span><div></div></div><div class="slot"><span>11 AM</span><div class="ev">Move-out clean, Kenner</div></div><div class="slot"><span>12 PM</span><div></div></div></div>';
+ else{var a=p.head.av==="img"?'<img src="/brand/autoants-icon.svg" alt="">':p.head.av;
+  h+='<div class="hd"><div class="mini">'+a+'</div><b>'+esc(p.head.name)+'</b><span>'+esc(p.head.sub)+'</span></div><div class="feed">';
+  p.items.forEach(function(it,n){var fr=(animate&&n>=(p.seen||0))?" fresh":"";
+   if(it.k==="card")h+='<div class="cardx'+fr+'"><h4>'+esc(it.h)+'</h4>'+esc(it.x)+(it.nt?'<span class="nt">'+esc(it.nt)+'</span>':"")+'</div>';
+   else if(it.k==="appt")h+='<div class="apptc'+fr+'"><em>APPOINTMENT</em><b>'+esc(visit)+'</b>'+esc(it.x)+'</div>';
+   else h+='<div class="b '+it.k+(it.x.indexOf("\n")>=0?" list":"")+fr+'">'+(it.tag?'<span class="tag">'+esc(it.tag)+'</span><br>':"")+esc(it.x)+'</div>'});
+  h+='</div>'}
+ el.innerHTML=h;p.seen=p.items.length;var f=el.querySelector(".feed");if(f)f.scrollTop=f.scrollHeight;}
+function draw(){var step=S[i-1]||S[0];
+ document.querySelector(".stage").classList.toggle("opening",!!step.intro);
+ document.querySelector(".stage").classList.toggle("card",!!step.card);
+ if(step.intro){$("lines").innerHTML=step.cap.split("|").map(function(x){return "<span>"+esc(x).replace("autoants",'<img class="lg" src="/brand/autoants-logo-reverse.svg" alt="autoants">')+"</span>"}).join("");$("cap").textContent=""}else $("cap").innerHTML=esc(step.cap)+(step.note?"<small>"+esc(step.note)+"</small>":"");
+ drawPhone("L",step.t);drawPhone("R",step.t);
+ $("whoL").textContent=st.L.who||"Customer 1's Phone";
+ ["L","R"].forEach(function(p){var w=$("wrap"+p);w.classList.toggle("on",step.on===p);w.classList.toggle("idle",step.on!==p)});
+ $("stops").querySelectorAll("button").forEach(function(b,n){b.classList.toggle("now",n===step.s);b.classList.toggle("done",n<step.s);if(n===step.s){b.setAttribute("aria-current","step");if(window.innerWidth<760)$("stops").scrollLeft=b.parentNode.offsetLeft-$("stops").offsetLeft-12}else b.removeAttribute("aria-current")});
+ var done=i>=S.length;var pb=$("play"),pl=done?"Play again":(playing?"Pause":"Play");pb.setAttribute("aria-label",pl);pb.title=pl;pb.innerHTML=(playing&&!done)?'<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="6" y="4" width="4.5" height="16" rx="1"/><rect x="13.5" y="4" width="4.5" height="16" rx="1"/></svg>':'<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>';var d=$("dial");d.max=S.length;d.value=i;d.style.setProperty("--fill",((i-1)/(S.length-1)*100)+"%");}
+function delay(step){if(step.card)return 2200;var c=[step.L,step.R].map(function(x){if(!x||!x.add)return 0;return [].concat(x.add).reduce(function(n,a){return n+(a.x||"").length},0)}).reduce(function(a,b){return a+b},0);return Math.min(8500,Math.max(3000,1900+((step.cap||"").length+(step.note||"").length)*25+c*28))}
+var began=0,left=0;
+function total(){return S.reduce(function(a,x,n){return n<S.length-1?a+delay(x):a},0)}
+function before(n){var a=0;for(var k=0;k<n-1;k++)a+=delay(S[k]);return a}
+function mmss(ms){var t=Math.round(ms/1000);return Math.floor(t/60)+":"+String(t%60).padStart(2,"0")}
+function tick(){var d=delay(S[i-1]),run=(playing&&began)?Date.now()-began:0,at=before(i)+Math.min(d,(left?d-left:0)+run);if(i>=S.length)at=total();$("timer").textContent=mmss(at)+" / "+mmss(total())}
+setInterval(tick,250);
+function schedule(){clearTimeout(timer);if(!playing||i>=S.length){began=0;draw();tick();return}if(!left)left=delay(S[i-1]);began=Date.now();timer=setTimeout(function(){left=0;next()},left);tick()}
+function next(){left=0;if(i>=S.length){playing=false;draw();return}var step=S[i];apply(step,"L");apply(step,"R");i++;if(i>=S.length)playing=false;animate=!reduced;draw();animate=false;schedule()}
+function jump(n){clearTimeout(timer);left=0;began=0;reset();i=0;while(i<n){var s=S[i];apply(s,"L");apply(s,"R");i++}draw();schedule()}
+$("stops").innerHTML=STOPS.map(function(x,n){return '<li><button class="stop" type="button" data-s="'+n+'">'+x[0]+'<small>'+x[1]+'</small></button></li>'}).join("");
+$("stops").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var t=+b.dataset.s,n=0;while(S[n].s!==t)n++;jump(n+1)});
+$("play").addEventListener("click",function(){if(i>=S.length){playing=true;jump(1);return}if(playing){left=Math.max(200,left-(Date.now()-began));began=0;clearTimeout(timer);playing=false;draw();tick()}else{playing=true;draw();schedule()}});
+$("again").addEventListener("click",function(){playing=true;jump(1)});
+$("dial").addEventListener("input",function(){playing=false;jump(+this.value)});
+reset();jump(1);
+})();
+</script>
+</body>
+</html>
