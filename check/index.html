@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Free AI check for your business · autoants</title>
+<meta name="description" content="Tell us about your business and we'll check how it shows up on Google and in AI answers like ChatGPT, and what happens to calls after hours. A short list of what to fix first, free.">
+<link rel="canonical" href="https://autoants.com/check/">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" href="/brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&family=JetBrains+Mono:wght@700&display=swap">
+<link rel="stylesheet" href="/assets/trust.css">
+<style>
+  .rform label.smsbox{display:flex;align-items:flex-start;gap:.6rem;font-weight:700}
+  .rform label.smsbox input{width:22px;height:22px;min-height:0;padding:0;margin:.1rem 0 0;flex:none;accent-color:var(--accent)}
+  .rform .consent{font-size:14px;color:var(--muted);margin:-6px 0 0}
+  .rform .err{display:none;margin:0;font-weight:700;color:#b42318}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .rform .err{color:#ff9b8f} }
+  :root[data-theme="dark"] .rform .err{color:#ff9b8f}
+  .rform button[disabled]{opacity:.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="top" aria-label="Site">
+    <a class="logo" href="/" aria-label="autoants home"><img class="on-light" src="/brand/autoants-logo.svg" alt="autoants"><img class="on-dark" src="/brand/autoants-logo-reverse.svg" alt="autoants"></a>
+    <span class="sp"></span>
+    <a class="ghost" href="/demo/">See it work</a>
+    <a class="ghost" href="/about-lane/">About</a>
+  </nav>
+  <main id="main">
+    <!-- The pocket referral card's QR lands here (2026-11-10). ?r=<code> is an opaque card code; it says which card
+         was scanned and is sent with the form as "ref". The code-to-person list is private and never on this site. -->
+    <p class="eyebrow">Free AI check</p>
+    <h1>A free AI check for your business</h1>
+    <p class="lede">Tell me a little about your business. I&rsquo;ll check how people find you and what happens when they call, then send you a short list of what I&rsquo;d fix first. No charge, and it&rsquo;s yours to keep.</p>
+
+    <h2>What I check</h2>
+    <ul>
+      <li>How your business shows up on Google, and what ChatGPT and other AI tools say when someone asks for your kind of business.</li>
+      <li>What happens to a call that comes in after hours or while you&rsquo;re on a job.</li>
+      <li>Whether email from your business is set up so quotes don&rsquo;t land in spam.</li>
+    </ul>
+    <p class="small">I use AI tools to help with the check, and I read every result myself before it reaches you.</p>
+
+    <h2>Ask for yours</h2>
+    <form class="rform" id="checkForm" novalidate>
+      <label>Your name<input name="name" autocomplete="name" required maxlength="80"></label>
+      <label>Business name<input name="business" autocomplete="organization" required maxlength="120"></label>
+      <label>What kind of business?<input name="trade" autocomplete="off" required maxlength="60" placeholder="e.g. heating and air"></label>
+      <label>Town<input name="town" autocomplete="address-level2" required maxlength="60" placeholder="e.g. Metairie"></label>
+      <label>Best email<input name="email" type="email" autocomplete="email" inputmode="email" required maxlength="120"></label>
+      <label>Phone <span class="opt">(optional)</span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40"></label>
+      <label class="smsbox"><input type="checkbox" name="sms" value="yes"><span>Text me about this request (optional)</span></label>
+      <p class="consent">Ticking the box means autoants may text you about this request: replies, scheduling and follow-ups. Message frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. You don&rsquo;t have to agree to texts to send this form; I&rsquo;ll email instead.</p>
+      <label>How did you hear about us?
+        <select name="heard" required>
+          <option value="">Pick one</option>
+          <option>A card someone gave me</option>
+          <option>A BNI meeting</option>
+          <option>A friend or another business</option>
+          <option>Google</option>
+          <option>ChatGPT or another AI</option>
+          <option>Instagram or social media</option>
+          <option>Something else</option>
+        </select>
+      </label>
+      <input type="hidden" name="r" value="">
+      <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+      <button class="btn" type="submit">Send me my free check</button>
+      <p class="err" id="checkErr" role="alert"></p>
+      <p class="sent" id="checkSent" role="status"></p>
+    </form>
+    <p class="small">What you send goes only to me. Nothing is shared or sold. <a href="/privacy.html">Privacy &amp; texting terms</a></p>
+
+    <h2>What happens next</h2>
+    <ol class="steps">
+      <li>I reply by email within one business day.</li>
+      <li>You get the short list: what I found and what I&rsquo;d fix first. Some fixes you can do yourself.</li>
+      <li>If you want help with any of it, we talk. If not, that&rsquo;s the end of it. No promised results and no pressure.</li>
+    </ol>
+    <p class="small">Rather call? <a href="tel:+15044991194">(504) 499-1194</a> or email <a href="mailto:hello@autoants.com?subject=Free%20AI%20check">hello@autoants.com</a>.</p>
+  </main>
+  <nav class="more" aria-label="Straight answers">
+    <p class="small">More straight answers</p>
+    <ul>
+      <li><a href="/prices/">Prices</a></li>
+      <li><a href="/never/">What it never does</a></li>
+      <li><a href="/rules/">Texts and calls</a></li>
+      <li><a href="/your-data/">Your data</a></li>
+      <li><a href="/about-lane/">About Lane</a></li>
+    </ul>
+  </nav>
+  <footer class="foot">autoants, short for automated assistants · New Orleans · <a href="/privacy.html">Privacy</a> · <a href="mailto:hello@autoants.com">hello@autoants.com</a> · <a href="tel:+15044991194">(504) 499-1194</a></footer>
+</div>
+<script>
+  // Posts to the same autoants-leads worker as the homepage form (POST /lead, already live; no worker change).
+  // source "check", ref = the card code from ?r= (letters, digits, - and _ only), town and "heard" go in the note.
+  var LEAD_ENDPOINT = "https://autoants-leads.saintdell.workers.dev/lead";
+  function cardCode(){
+    var r = ''; try { r = new URLSearchParams(location.search).get('r') || ''; } catch(e) {}
+    r = r.replace(/[^a-z0-9_-]/gi, '').slice(0, 40);
+    try { if (r) sessionStorage.setItem('aa-r', r); else r = sessionStorage.getItem('aa-r') || ''; } catch(e) {}
+    return r;
+  }
+  (function(){
+    var f = document.getElementById('checkForm'); if (!f) return;
+    var out = document.getElementById('checkSent'), err = document.getElementById('checkErr');
+    var code = cardCode();
+    f.r.value = code;
+    if (code) f.heard.value = 'A card someone gave me';
+    function say(el, t){ err.style.display = out.style.display = 'none'; el.textContent = t; el.style.display = 'block'; }
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var v = function(n){ return f[n].value.trim(); };
+      var emailOk = /^[^\s@<>",]+@[^\s@<>",]+\.[a-z]{2,}$/i.test(v('email'));
+      var missing = [];
+      if (!v('name')) missing.push('your name');
+      if (!v('business')) missing.push('the business name');
+      if (!v('trade')) missing.push('what kind of business');
+      if (!v('town')) missing.push('your town');
+      if (!emailOk) missing.push('an email address');
+      if (!f.heard.value) missing.push('how you heard about us');
+      if (missing.length) { say(err, 'Please add ' + missing.join(', ') + '.'); return; }
+      var phone = v('phone'), sms = f.sms.checked && (phone.match(/\d/g) || []).length >= 10;
+      if (f.sms.checked && !sms) { say(err, 'To get texts, add a phone number with area code, or untick the texting box.'); return; }
+      var d = {name: v('name'), business: v('business'), trade: v('trade'), email: v('email'), phone: phone,
+               interest: 'Free AI check', msg: ('Town: ' + v('town') + '. Heard about us: ' + f.heard.value + '.').slice(0, 1000),
+               page: 'autoants.com/check/', source: 'check', ref: f.r.value, sms: sms ? 'yes' : 'no',
+               website: (f.website ? f.website.value : '')};
+      var btn = f.querySelector('button[type=submit]'); if (btn) btn.disabled = true;
+      fetch(LEAD_ENDPOINT, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(d)})
+        .then(function(r){ if (!r.ok) throw 0; say(out, 'Thank you. I’ll email you within one business day.'); f.reset(); f.r.value = code; if (code) f.heard.value = 'A card someone gave me'; })
+        .catch(function(){ say(err, 'That didn’t go through. Your details are still here; please try again in a minute, or email hello@autoants.com.'); })
+        .then(function(){ if (btn) btn.disabled = false; });
+    });
+  })();
+</script>
+</body>
+</html>
