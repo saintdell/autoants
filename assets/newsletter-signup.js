@@ -65,7 +65,7 @@ window.AUTOANTS_NEWSLETTER = {
         .then(function (r) {
           if (!r.ok) throw new Error(String(r.status));
           f.reset();
-          if (note) note.textContent = "You're on the list. The next report comes at the start of the month.";
+          if (note) note.textContent = "You're on the list. The next report comes next Wednesday.";
         })
         .catch(function () {
           if (note) note.textContent = "That didn't go through. Check the email and try again in a minute.";
