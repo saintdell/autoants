@@ -15,6 +15,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="pay.css">
+<script>
+/* Since 2026-11-13 the welcome page is the after-payment page. Payment links redirect here with ?offer=<links_key>;
+   forward to /welcome/ with the matching plan. Without JavaScript this page still shows the old next steps. */
+(function(){var q=new URLSearchParams(location.search),o=q.get('offer')||'',
+m={search_plan:'get-found',office_manager:'calls',go_live:'calls',growth:'both',pro:'both',site_care:'website'};
+if(o==='assessment')return;
+var u='/welcome/'+(m[o]?'?plan='+m[o]:'');location.replace(u);})();
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
