@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Welcome · autoants</title>
+<meta name="description" content="You're signed up with autoants. Book your setup call and see what happens next.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/pay/pay.css">
+<!-- Internal notes (Stripe redirect URLs, BOOK_URL, plan switch): welcome/README.md -->
+<style>
+  /* Only what this page adds to pay.css. */
+  .progress{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+  .progress li{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;font-size:14px;font-weight:600;background:var(--surface);border:1px solid var(--line);color:var(--muted)}
+  .progress .ok{color:var(--ink)}
+  .progress .ok i{font-style:normal;color:var(--ok);font-weight:800}
+  .progress .now{background:var(--amber);border-color:var(--amber);color:var(--amber-ink)}
+  .receipt{margin:14px 0 0;font-size:14px;color:var(--faint)}
+  .plan-chip{display:inline-block;margin:0 0 0 6px;padding:2px 9px;border-radius:999px;border:1px solid var(--line2);font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:none;color:var(--ink)}
+  .plan-chip[hidden]{display:none}
+
+  /* setup call */
+  .book{background:var(--surface);border:1px solid var(--line2);border-radius:16px;padding:18px;max-width:640px}
+  .book[hidden],.pick[hidden],form[hidden]{display:none}
+  .pick p{margin:0 0 12px;color:var(--muted)}
+  .linkish{background:none;border:0;padding:0;margin:14px 0 0;color:var(--amber);font:inherit;font-size:15px;text-decoration:underline;cursor:pointer}
+  .wform{display:grid;gap:14px}
+  .wform label.f{display:grid;gap:6px;font-weight:600;font-size:15px}
+  .wform .opt{font-weight:500;color:var(--faint)}
+  .wform input[type=text],.wform input[type=tel],.wform input[type=email],.wform textarea{width:100%;min-height:48px;padding:11px 12px;border-radius:10px;border:1px solid var(--line2);background:var(--bg);color:var(--ink);font:inherit;font-size:16px}
+  .wform textarea{min-height:88px;resize:vertical}
+  .wform input:focus,.wform textarea:focus{outline:2px solid var(--amber);outline-offset:1px;border-color:var(--amber)}
+  .wform .pair{display:grid;gap:14px}
+  @media (min-width:560px){.wform .pair{grid-template-columns:1fr 1fr}}
+  .wform fieldset{border:0;margin:0;padding:0;display:grid;gap:8px}
+  .wform legend{font-weight:600;font-size:15px;padding:0;margin:0 0 8px}
+  .wform legend span{display:block;font-weight:500;color:var(--faint);font-size:14px}
+  .tick{display:flex;align-items:center;gap:12px;min-height:48px;padding:10px 14px;border:1px solid var(--line2);border-radius:10px;background:var(--bg);cursor:pointer;font-size:15px}
+  .tick input{width:22px;height:22px;margin:0;accent-color:var(--amber);flex:0 0 auto}
+  .tick:has(input:checked){border-color:var(--amber)}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .wform button[type=submit]{border:0;cursor:pointer;width:100%}
+  .wform button[disabled]{opacity:.6;cursor:wait}
+  @media (min-width:560px){.wform button[type=submit]{width:auto}}
+  .status{margin:0;font-size:15px}
+  .status:empty{display:none}
+  .status.err{color:var(--warn)}
+  .status a{font-weight:700}
+  .sent{display:flex;gap:14px;align-items:center}
+  .sent[hidden]{display:none}
+  .sent p{margin:0;font-size:16px}
+  .sent b{font-family:var(--disp);font-size:19px;display:block}
+
+  /* two weeks + what I need */
+  .plain{list-style:none;margin:0;padding:0;display:grid;gap:10px;max-width:720px;counter-reset:s}
+  .plain li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 54px;position:relative;color:var(--muted);font-size:15px;counter-increment:s}
+  .plain li[hidden]{display:none}
+  .plain li::before{content:counter(s);position:absolute;left:16px;top:14px;width:26px;height:26px;border-radius:50%;background:var(--surface2);border:1px solid var(--line2);color:var(--amber);font-family:var(--mono);font-size:13px;display:grid;place-content:center}
+  .plain.checks li::before{content:"✓";counter-increment:none}
+  .plain li b{display:block;color:var(--ink);font-family:var(--disp);font-size:17px;margin-bottom:2px}
+  .for{display:inline-block;margin-left:6px;padding:1px 8px;border-radius:999px;background:var(--surface2);border:1px solid var(--line2);font-family:var(--mono);font-size:11px;font-weight:500;color:var(--faint);vertical-align:2px}
+  body.has-plan .for{display:none}
+  .callout.stop{border-left-color:var(--warn);max-width:720px}
+  .callout.stop b{color:var(--warn)}
+  .general-note{max-width:62ch}
+  .general-note[hidden]{display:none}
+  .wrap > footer a{color:var(--amber)}
+  .who{font-family:var(--disp);font-weight:700;color:var(--ink);font-size:16px}
+  .dot{color:var(--faint);padding:0 4px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <nav aria-label="Site">
+    <a class="logo" href="/" aria-label="autoants home"><img src="/brand/autoants-logo-reverse.svg" alt="autoants"></a>
+    <span class="sp"></span>
+    <a class="ghost" href="sms:+15044991194">Text Lane</a>
+    <a class="ghost" href="tel:+15044991194">Call</a>
+  </nav>
+
+  <main id="main">
+  <header class="hero">
+    <p class="eyebrow">Welcome to autoants<span class="plan-chip" id="planChip" hidden></span></p>
+    <h1>You're <em>in</em>.</h1>
+    <p class="sub">Thanks for signing up. One thing left: book your setup call, and I'll take it from there.</p>
+    <ol class="progress" aria-label="Your signup">
+      <li class="ok"><i aria-hidden="true">✓</i> Signed</li>
+      <li class="ok"><i aria-hidden="true">✓</i> Paid</li>
+      <li class="now" aria-current="step">Next: your setup call</li>
+    </ol>
+    <p class="receipt">Stripe emails your receipt. Keep it for your books.</p>
+  </header>
+
+  <section aria-labelledby="call-h" id="book">
+    <h2 class="sec" id="call-h">Book your setup call</h2>
+    <p class="sec-lede">30 to 40 minutes on the phone. We go through this page together, and you add me as a user in your own accounts while we're on the call.</p>
+
+    <div class="book">
+      <!-- Shown only when BOOK_URL is set (script below). -->
+      <div class="pick" id="pick" hidden>
+        <p>Pick any open time that works for you.</p>
+        <a class="btn" id="pickBtn" href="#" target="_blank" rel="noopener">Pick a time</a>
+        <br><button type="button" class="linkish" id="showForm">None of the times work? Tell me when's good instead.</button>
+      </div>
+
+      <!-- method=post: what someone types can never end up in a URL, even if the script fails. -->
+      <form class="wform" id="wform" method="post" novalidate>
+        <p style="margin:0;color:var(--muted)">Tell me when's good, and I'll get back to you to confirm a time.</p>
+        <div class="pair">
+          <label class="f">Your name<input type="text" name="name" autocomplete="name" maxlength="80" required></label>
+          <label class="f">Business name<input type="text" name="business" autocomplete="organization" maxlength="120" required></label>
+        </div>
+        <div class="pair">
+          <label class="f">Best phone<input type="tel" name="phone" autocomplete="tel" maxlength="40" inputmode="tel"></label>
+          <label class="f">Best email<input type="email" name="email" autocomplete="email" maxlength="120"></label>
+        </div>
+        <fieldset>
+          <legend>When's good for the call?<span>Tick any that work.</span></legend>
+          <label class="tick"><input type="checkbox" name="when" value="weekday morning">Weekday morning</label>
+          <label class="tick"><input type="checkbox" name="when" value="weekday afternoon">Weekday afternoon</label>
+          <label class="tick"><input type="checkbox" name="when" value="Saturday morning">Saturday morning</label>
+        </fieldset>
+        <label class="f">Anything I should know? <span class="opt">(optional)</span><textarea name="note" rows="3" maxlength="600" placeholder="e.g. not before 10, or call my office manager"></textarea></label>
+        <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+        <button class="btn" type="submit">Send my times</button>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="sent" id="sent" hidden tabindex="-1">
+        <img src="/brand/mascot/anim/svg/thumbs-up-dark.svg" alt="" width="52" height="64">
+        <p><b>Got it, thanks.</b>I'll get back to you to confirm a time. Need me sooner? Text Lane at <a href="sms:+15044991194">(504) 499-1194</a>.</p>
+      </div>
+      <noscript><p class="status">This form needs JavaScript. Text Lane at <a href="sms:+15044991194">(504) 499-1194</a> with two or three times that work.</p></noscript>
+    </div>
+  </section>
+
+  <section aria-labelledby="weeks-h">
+    <h2 class="sec" id="weeks-h">What happens in your first two weeks</h2>
+    <p class="sec-lede general-note" data-general hidden>Some steps depend on your plan. The tag on a step says which plan it's for.</p>
+    <ol class="plain">
+      <li><b>The setup call</b>We go through what I need from you (below) and name what goes live first.</li>
+      <li data-plans="get-found both"><b>Cleanup <span class="for">Get found</span></b>One name, address, phone and hours everywhere you're listed, starting with your Google profile.</li>
+      <li data-plans="get-found both website"><b>Your website <span class="for">Get found · Website</span></b>Built or fixed from your facts and photos. You see the pages before they go live.</li>
+      <li data-plans="calls both"><b>Your assistant <span class="for">Catch missed calls</span></b>Built from your facts and tested. You get every message it can send, in writing, to approve first.</li>
+      <li data-plans="calls both"><b>Texting registration <span class="for">Catch missed calls</span></b>Carriers require it before a business can text. I file it once I have your details; texting starts when the carriers clear it.</li>
+      <li data-plans="calls both"><b>Call forwarding <span class="for">Catch missed calls</span></b>We set it up together. You keep your number, and you get the code that turns forwarding on and the one that turns it off.</li>
+      <li><b>Your go-live date, in writing</b>Once I have what's below, I tell you the go-live date in writing. Nothing goes out under your name until you've OK'd it.</li>
+      <li data-plans="get-found calls both"><b>Then, every month <span class="for">Monthly plans</span></b>A one-page report with your calls and jobs, counted before and after. I don't promise results; I show you the numbers.</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="need-h">
+    <h2 class="sec" id="need-h">What I'll need from you</h2>
+    <p class="sec-lede">Most of the work is mine. These are the few things only you can do. The sooner I have them, the sooner your work starts.</p>
+    <ul class="plain checks">
+      <li data-plans="get-found both"><b>Add me to your Google profile <span class="for">Get found</span></b>Add <a class="mgr" href="mailto:lane@autoants.com">lane@autoants.com</a> as a manager on your Google Business Profile. If you have more than one profile, tell me, and don't delete any: the reviews go with it.</li>
+      <li data-plans="get-found both"><b>Verification codes, the same day <span class="for">Get found</span></b>Google and other sites confirm the business is yours by sending a code by text, call, email or postcard. When one arrives, pass it along to me that day.</li>
+      <li><b>One set of facts</b>Your business name, address, phone and hours, the way you want them shown everywhere.</li>
+      <li data-plans="get-found both website"><b>10 to 30 job photos <span class="for">Get found · Website</span></b>Recent jobs, before and after if you have them. Phone photos are fine. Only photos you or your team took.</li>
+      <li data-plans="get-found both website"><b>Which work you want more of <span class="for">Get found · Website</span></b>The jobs you want more of, and anything you don't do. New pages follow your answer.</li>
+      <li data-plans="calls both"><b>How your calls should go <span class="for">Catch missed calls</span></b>Your hours, the work you don't do, what counts as an emergency, and who gets urgent calls at what number.</li>
+      <li data-plans="calls both"><b>Your phone setup <span class="for">Catch missed calls</span></b>Your carrier and who can change call forwarding. We'll set up call forwarding together on the call.</li>
+      <li data-plans="calls both"><b>Texting registration details <span class="for">Catch missed calls</span></b>Your legal business name and EIN as they appear on your IRS letter, your address, and a contact's name. I'll ask for them on the call.</li>
+      <li data-plans="website"><b>Your domain <span class="for">Website</span></b>Who your domain is with. Most registrars let you give me access without a password, or we do it together on the call. Keep auto-renew on.</li>
+      <li><b>Where new leads should go</b>The one number customers should call, and whether new requests reach you by text, email or both.</li>
+      <li><b>Replies within two business days</b>When I send you something to approve, a quick yes or a fix is all I need.</li>
+    </ul>
+    <div class="callout stop"><b>Never send passwords.</b> Not by text, email or anything else. You add me as a user in your own accounts, or we do it together on the call. I'll never ask for a password.</div>
+  </section>
+  </main>
+
+  <footer>
+    <p class="who">Lane Davis II<span class="dot">·</span>autoants</p>
+    <p><a href="tel:+15044991194">(504) 499-1194</a><span class="dot">·</span><a href="mailto:lane@autoants.com">lane@autoants.com</a></p>
+    <p>autoants, short for automated assistants. AutoAnts, LLC.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  // Booking link (Cal.com, Calendly, Google appointment page...). Empty = show the "when's good" form instead.
+  // When set, the page shows a "Pick a time" button that opens it, with the form one tap away. See welcome/README.md.
+  var BOOK_URL = "";
+  // The address a client adds as a manager on their Google Business Profile.
+  // TODO(Lane): still deciding between lane@autoants.com and clients@autoants.com. Change it here only.
+  var MANAGER_EMAIL = "lane@autoants.com";
+  // The same lead worker as the home page form (tle-main/workers/autoants-leads). It accepts autoants.com only.
+  var LEAD_ENDPOINT = "https://autoants-leads.saintdell.workers.dev/lead";
+  var PHONE_TEXT = "(504) 499-1194", PHONE_SMS = "sms:+15044991194";
+  // ?plan= values. Anything else (or none) shows the general version with every step tagged by plan.
+  var PLANS = { "get-found": "Get found", "calls": "Catch missed calls",
+                "both": "Get found and catch missed calls", "website": "New website" };
+
+  var plan = "";
+  try { plan = (new URLSearchParams(location.search).get("plan") || "").trim().toLowerCase(); } catch (e) {}
+  if (!Object.prototype.hasOwnProperty.call(PLANS, plan)) plan = "";
+
+  // Plan switch: keep only what applies. Items without data-plans apply to every plan.
+  if (plan) {
+    document.body.classList.add("has-plan");
+    var chip = document.getElementById("planChip");
+    chip.textContent = PLANS[plan]; chip.hidden = false;
+    document.querySelectorAll("[data-plans]").forEach(function (el) {
+      if (el.getAttribute("data-plans").split(/\s+/).indexOf(plan) === -1) el.hidden = true;
+    });
+  } else {
+    document.querySelectorAll("[data-general]").forEach(function (el) { el.hidden = false; });
+  }
+
+  document.querySelectorAll("a.mgr").forEach(function (a) { a.textContent = MANAGER_EMAIL; a.href = "mailto:" + MANAGER_EMAIL; });
+
+  var f = document.getElementById("wform"), st = document.getElementById("status"), sent = document.getElementById("sent");
+
+  if (BOOK_URL) {
+    var pick = document.getElementById("pick");
+    document.getElementById("pickBtn").href = BOOK_URL;
+    pick.hidden = false; f.hidden = true;
+    document.getElementById("showForm").addEventListener("click", function () {
+      f.hidden = false; this.hidden = true; f.querySelector("[name=name]").focus();
+    });
+  }
+
+  function fail(text) {
+    st.className = "status err";
+    st.innerHTML = "";
+    st.appendChild(document.createTextNode(text + " Text Lane at "));
+    var a = document.createElement("a"); a.href = PHONE_SMS; a.textContent = PHONE_TEXT;
+    st.appendChild(a); st.appendChild(document.createTextNode("."));
+  }
+
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var v = function (n) { return f.elements[n].value.trim(); };
+    var digits = (v("phone").match(/\d/g) || []).length;
+    var emailOk = /^[^\s@<>",]+@[^\s@<>",]+\.[a-z]{2,}$/i.test(v("email"));
+    if (!v("name") || !v("business") || (digits < 7 && !emailOk)) {
+      st.className = "status err";
+      st.textContent = "Please add your name, your business name, and a phone or email so I can reach you.";
+      return;
+    }
+    var when = [];
+    f.querySelectorAll("input[name=when]:checked").forEach(function (c) { when.push(c.value); });
+    var note = v("note");
+    // /lead fields (workers/autoants-leads/index.js): source and interest tag it as a setup-call request.
+    var d = {
+      name: v("name"), business: v("business"), phone: v("phone"), email: v("email"),
+      trade: "", interest: "Setup call" + (plan ? " (" + PLANS[plan] + ")" : ""),
+      msg: "Setup call request from the welcome page. Plan: " + (plan || "not given") +
+           ". Good times: " + (when.length ? when.join(", ") : "none ticked") + "." + (note ? " Note: " + note : ""),
+      page: "welcome", source: "welcome", website: f.elements.website.value, sms: "no"
+    };
+    var btn = f.querySelector("button[type=submit]");
+    btn.disabled = true; st.className = "status"; st.textContent = "Sending…";
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 15000);
+    fetch(LEAD_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" },
+                           body: JSON.stringify(d), signal: ctrl ? ctrl.signal : undefined })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+      .then(function (j) {
+        if (!j || j.ok !== true) throw 0;
+        f.reset(); f.hidden = true; st.textContent = "";
+        var pk = document.getElementById("pick"); if (pk) pk.hidden = true;
+        sent.hidden = false; sent.focus();
+      })
+      .catch(function () { fail("That didn't go through. Your details are still here; try again in a minute."); })
+      .then(function () { clearTimeout(timer); btn.disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>
