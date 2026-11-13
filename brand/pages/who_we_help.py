@@ -88,7 +88,7 @@ GROUPS = [
 STEPS = [("Reach out", "Fill out the form, or call or text. Two minutes: your name, number and business."),
          ("See your free preview", "We build your new website with your real info and reviews, before you pay anything."),
          ("Pick your crew", "A 15-minute call to choose the assistants that fit. You approve every message before it goes out."),
-         ("Go live", "Once you say go, your site is live within 7 days or the $500 setup fee comes back.")]
+         ("Go live", "Once you say go, we start the work and tell you the go-live date in writing.")]
 # Owners who buy a public-records list or mailing from us, not the assistants (Lane, 2026-10-07: these
 # never go on the home or services page). One sentence and one contact button each; the interest
 # text must match an <option> in the index.html contact form.

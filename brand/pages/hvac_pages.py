@@ -395,8 +395,7 @@ def hub():
          "every week, your listings kept right, 2 new pages a month, what AI answers say about you checked every "
          "month, and your website kept up", P_BOTH],
         ["<b>Not ready? Try one</b>: one assistant on your phone (most shops start with texting back every missed "
-         "call). Live within 7 days of your go (for texting, within 7 days of the carriers' approval), or the $500 "
-         "back", P_TRY],
+         "call)", P_TRY],
         ["<b>Catch missed calls</b> alone: just the calls", P_NMJ],
         ["<b>Get found</b> alone: just Google and AI answers", P_GF],
         ["<b>Pay per job</b>: Catch missed calls, paid by the job", P_PPJ],

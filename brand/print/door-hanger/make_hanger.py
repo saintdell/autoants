@@ -75,7 +75,7 @@ CREW = [("phone", "Text-Back Ant", "Miss a call and it texts them back, so the c
 STEPS = [("Reach out", "Scan the code, visit autoants.com, or call or text."),
          ("Tell us about your business", "A two-minute form: your name, number and business. We get back to you, usually the same day."),
          ("See your free preview", "Your new site, built with your real info and reviews, before you pay anything."),
-         ("Pick your crew", "A 15-minute call to choose the assistants you want. Once you say go, your site is live within 7 days or the $500 setup fee comes back.")]
+         ("Pick your crew", "A 15-minute call to choose the assistants you want. Once you say go, we start the work and tell you the go-live date in writing.")]
 
 
 def back(guides):

@@ -17,8 +17,8 @@
   1. Get found and catch missed calls: $1,250 a month + $1,250 setup. Missed calls answered, quotes followed up,
      appointments booked and reminded, reviews requested, the Google profile kept right and posted to every week, the listings kept right, 2 new
      pages a month, what AI answers say about the business checked every month, and the website kept up
-  2. Not ready? Try one: $500 once. One assistant on the owner's phone, live within 7 days or the $500 back
-     (the only promise AutoAnts makes). Most shops start with texting back every missed call; others are
+  2. Not ready? Try one: $500 once. One assistant on the owner's phone. AutoAnts doesn't
+     promise calls or rankings; it measures where the business is now and shows the same numbers later. Most shops start with texting back every missed call; others are
      web-form answers, booking and reminders, the review ask, service-due or invoice reminders, or a "book now"
      box on the website. Texts run on the business's own phone-and-text account (Twilio)
 - Other options, offered when the owner asks or the breakdown points to one:
@@ -68,8 +68,7 @@
 ## How it works
 1. AutoAnts makes a free breakdown of the business from public information; it shows which fix the owner's
    numbers need
-2. The owner picks: get found and catch missed calls ($1,250 a month), or tries one assistant for $500, live
-   within 7 days or the $500 back
+2. The owner picks: get found and catch missed calls ($1,250 a month), or tries one assistant for $500 once
 3. Social and marketing can be added later. No contract to start; monthly plans have a 90-day minimum, then
    month to month
 
