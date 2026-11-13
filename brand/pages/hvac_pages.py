@@ -390,17 +390,17 @@ def hub():
     prices = table(["What", "Price"], [
         ["<b>The free breakdown</b>: a 10-14 page look at how you show up on Google, in AI answers and next to the "
          "shops around you, made from public information", "Free"],
-        ["<b>Get found and catch missed calls</b>: missed calls answered, quotes followed up, appointments booked and "
+        ["<b>Get Found and catch missed calls</b>: missed calls answered, quotes followed up, appointments booked and "
          "reminded (pre-season tune-ups included), reviews requested, your Google profile kept right and posted to "
          "every week, your listings kept right, 2 new pages a month, what AI answers say about you checked every "
          "month, and your website kept up", P_BOTH],
         ["<b>Not ready? Try one</b>: one assistant on your phone (most shops start with texting back every missed "
          "call)", P_TRY],
         ["<b>Catch missed calls</b> alone: just the calls", P_NMJ],
-        ["<b>Get found</b> alone: just Google and AI answers", P_GF],
+        ["<b>Get Found</b> alone: just Google and AI answers", P_GF],
         ["<b>Pay per job</b>: Catch missed calls, paid by the job", P_PPJ],
         ["<b>AI phone answering</b>: an AI that answers when nobody can, always says it's an AI, and texts you the "
-         "job", "Priced with you once you're on Get found and catch missed calls; minutes written into the agreement"],
+         "job", "Priced with you once you're on Get Found and catch missed calls; minutes written into the agreement"],
     ])
     body = f"""
   <h2>What we do for HVAC shops</h2>
@@ -450,7 +450,7 @@ def hub():
          "provider": {"@id": BASE + "/#organization"}, "areaServed": ORG["areaServed"],
          "audience": {"@type": "BusinessAudience", "audienceType": "HVAC and air conditioning companies"},
          "offers": [
-             {"@type": "Offer", "name": "Get found and catch missed calls", "price": "1250", "priceCurrency": "USD",
+             {"@type": "Offer", "name": "Get Found and catch missed calls", "price": "1250", "priceCurrency": "USD",
               "description": P_BOTH + ", for our first 3 shops", "url": BASE + "/prices/"},
              {"@type": "Offer", "name": "Try one", "price": "500", "priceCurrency": "USD",
               "description": "One assistant, $500 once, for our first 3 shops", "url": BASE + "/prices/"},
@@ -542,7 +542,7 @@ def p_receptionist():
          "seconds", f"Try one, {P_TRY}; or inside Catch missed calls, {P_NMJ}", "Calls ring out while techs are on "
          "jobs"],
         ["<b>AI receptionist</b> (autoants)", "An AI that says it's an AI in its first sentence, then texts you the "
-         "job", "Priced with you once you're on Get found and catch missed calls; minutes written into the agreement",
+         "job", "Priced with you once you're on Get Found and catch missed calls; minutes written into the agreement",
          "Nights, weekends, lunch, and techs on a roof"],
         ["<b>Answering service</b>", "Live people, often 24/7", "Published plans are priced by the minute; see our "
          f'{link(p, "compare/answering-service/", "dated comparison")}', "Callers expect a person every time"],
@@ -705,7 +705,7 @@ def p_reviews():
   {src_line("brightlocal")}
 
   <h2>What autoants does</h2>
-  <p>The review assistant sends the same ask to every customer after every job, one tap from your phone, and you approve the wording before anything goes out. It never picks who gets asked and never pays for reviews. With Get found, replies to your new reviews are drafted for you every week. More: {link(p, "questions/more-google-reviews-home-service-new-orleans/", "getting more Google reviews for a home service business")}.</p>
+  <p>The review assistant sends the same ask to every customer after every job, one tap from your phone, and you approve the wording before anything goes out. It never picks who gets asked and never pays for reviews. With Get Found, replies to your new reviews are drafted for you every week. More: {link(p, "questions/more-google-reviews-home-service-new-orleans/", "getting more Google reviews for a home service business")}.</p>
 {related(p, slug)}
 """
     graph = [faq_ld(url, faq), breadcrumb(slug, h1), ORG]
@@ -740,7 +740,7 @@ def p_ai():
          "There's no honest way to buy a place in an AI answer, and we don't sell one. No paid placements, no fake "
          "reviews and no planted mentions."),
         ("What does it cost at autoants?",
-         "The monthly AI-answer check is part of Get found, $750 a month + $250 setup, and of Get found and never "
+         "The monthly AI-answer check is part of Get Found, $750 a month + $250 setup, and of Get Found and never "
          "miss a job, $1,250 a month + $1,000 setup. Both are prices for our first 3 shops."),
     ]
     body = f"""
@@ -768,7 +768,7 @@ def p_ai():
   {src_line("gsc")}
 
   <h2>What autoants does, and won't do</h2>
-  <p>With Get found, we ask the questions your customers ask every month, record who gets named and which sites the answers cite, and fix your profile, listings and pages. We fix real signals only. We never promise a rank. More: {link(p, "questions/show-up-in-chatgpt-contractor-new-orleans/", "how a New Orleans contractor gets named by ChatGPT")}.</p>
+  <p>With Get Found, we ask the questions your customers ask every month, record who gets named and which sites the answers cite, and fix your profile, listings and pages. We fix real signals only. We never promise a rank. More: {link(p, "questions/show-up-in-chatgpt-contractor-new-orleans/", "how a New Orleans contractor gets named by ChatGPT")}.</p>
 {related(p, slug)}
 """
     graph = [faq_ld(url, faq), breadcrumb(slug, h1), ORG]

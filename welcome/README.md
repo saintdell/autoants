@@ -13,9 +13,9 @@ website** → paste the URL for that link's plan:
 
 | Payment link for | Redirect URL |
 |---|---|
-| Get found | `https://autoants.com/welcome/?plan=get-found` |
+| Get Found | `https://autoants.com/welcome/?plan=get-found` |
 | Catch missed calls | `https://autoants.com/welcome/?plan=calls` |
-| Get found and catch missed calls | `https://autoants.com/welcome/?plan=both` |
+| Get Found and catch missed calls | `https://autoants.com/welcome/?plan=both` |
 | New website | `https://autoants.com/welcome/?plan=website` |
 | Anything else (Try one, the assessment, custom links) | `https://autoants.com/welcome/` |
 
@@ -48,7 +48,7 @@ link. If that is the setup-call calendar, use the same URL here.
 
 It posts JSON to the home page's lead worker, `https://autoants-leads.saintdell.workers.dev/lead`
 (`tle-main/workers/autoants-leads/index.js`). No worker change was needed:
-- `source: "welcome"`, `page: "welcome"`, `interest: "Setup call (Get found)"` (or the plan's name), and `msg` carries
+- `source: "welcome"`, `page: "welcome"`, `interest: "Setup call (Get Found)"` (or the plan's name), and `msg` carries
   the plan, the ticked time windows and the note. Lane's Telegram ping reads "Wants: Setup call (...)" and
   "Found us via: welcome".
 - `sms: "no"` always: there are no consent boxes on this page, and nothing about marketing texts.

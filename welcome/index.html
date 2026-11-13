@@ -148,8 +148,8 @@
     <p class="sec-lede general-note" data-general hidden>Some steps depend on your plan. The tag on a step says which plan it's for.</p>
     <ol class="plain">
       <li><b>The setup call</b>We go through what I need from you (below) and name what goes live first.</li>
-      <li data-plans="get-found both"><b>Cleanup <span class="for">Get found</span></b>One name, address, phone and hours everywhere you're listed, starting with your Google profile.</li>
-      <li data-plans="get-found both website"><b>Your website <span class="for">Get found · Website</span></b>Built or fixed from your facts and photos. You see the pages before they go live.</li>
+      <li data-plans="get-found both"><b>Cleanup <span class="for">Get Found</span></b>One name, address, phone and hours everywhere you're listed, starting with your Google profile.</li>
+      <li data-plans="get-found both website"><b>Your website <span class="for">Get Found · Website</span></b>Built or fixed from your facts and photos. You see the pages before they go live.</li>
       <li data-plans="calls both"><b>Your assistant <span class="for">Catch missed calls</span></b>Built from your facts and tested. You get every message it can send, in writing, to approve first.</li>
       <li data-plans="calls both"><b>Texting registration <span class="for">Catch missed calls</span></b>Carriers require it before a business can text. I file it once I have your details; texting starts when the carriers clear it.</li>
       <li data-plans="calls both"><b>Call forwarding <span class="for">Catch missed calls</span></b>We set it up together. You keep your number, and you get the code that turns forwarding on and the one that turns it off.</li>
@@ -162,11 +162,11 @@
     <h2 class="sec" id="need-h">What I'll need from you</h2>
     <p class="sec-lede">Most of the work is mine. These are the few things only you can do. The sooner I have them, the sooner your work starts.</p>
     <ul class="plain checks">
-      <li data-plans="get-found both"><b>Add me to your Google profile <span class="for">Get found</span></b>Add <a class="mgr" href="mailto:lane@autoants.com">lane@autoants.com</a> as a manager on your Google Business Profile. If you have more than one profile, tell me, and don't delete any: the reviews go with it.</li>
-      <li data-plans="get-found both"><b>Verification codes, the same day <span class="for">Get found</span></b>Google and other sites confirm the business is yours by sending a code by text, call, email or postcard. When one arrives, pass it along to me that day.</li>
+      <li data-plans="get-found both"><b>Add me to your Google profile <span class="for">Get Found</span></b>Add <a class="mgr" href="mailto:lane@autoants.com">lane@autoants.com</a> as a manager on your Google Business Profile. If you have more than one profile, tell me, and don't delete any: the reviews go with it.</li>
+      <li data-plans="get-found both"><b>Verification codes, the same day <span class="for">Get Found</span></b>Google and other sites confirm the business is yours by sending a code by text, call, email or postcard. When one arrives, pass it along to me that day.</li>
       <li><b>One set of facts</b>Your business name, address, phone and hours, the way you want them shown everywhere.</li>
-      <li data-plans="get-found both website"><b>10 to 30 job photos <span class="for">Get found · Website</span></b>Recent jobs, before and after if you have them. Phone photos are fine. Only photos you or your team took.</li>
-      <li data-plans="get-found both website"><b>Which work you want more of <span class="for">Get found · Website</span></b>The jobs you want more of, and anything you don't do. New pages follow your answer.</li>
+      <li data-plans="get-found both website"><b>10 to 30 job photos <span class="for">Get Found · Website</span></b>Recent jobs, before and after if you have them. Phone photos are fine. Only photos you or your team took.</li>
+      <li data-plans="get-found both website"><b>Which work you want more of <span class="for">Get Found · Website</span></b>The jobs you want more of, and anything you don't do. New pages follow your answer.</li>
       <li data-plans="calls both"><b>How your calls should go <span class="for">Catch missed calls</span></b>Your hours, the work you don't do, what counts as an emergency, and who gets urgent calls at what number.</li>
       <li data-plans="calls both"><b>Your phone setup <span class="for">Catch missed calls</span></b>Your carrier and who can change call forwarding. We'll set up call forwarding together on the call.</li>
       <li data-plans="calls both"><b>Texting registration details <span class="for">Catch missed calls</span></b>Your legal business name and EIN as they appear on your IRS letter, your address, and a contact's name. I'll ask for them on the call.</li>
@@ -197,8 +197,8 @@
   var LEAD_ENDPOINT = "https://autoants-leads.saintdell.workers.dev/lead";
   var PHONE_TEXT = "(504) 499-1194", PHONE_SMS = "sms:+15044991194";
   // ?plan= values. Anything else (or none) shows the general version with every step tagged by plan.
-  var PLANS = { "get-found": "Get found", "calls": "Catch missed calls",
-                "both": "Get found and catch missed calls", "website": "New website" };
+  var PLANS = { "get-found": "Get Found", "calls": "Catch missed calls",
+                "both": "Get Found and catch missed calls", "website": "New website" };
 
   var plan = "";
   try { plan = (new URLSearchParams(location.search).get("plan") || "").trim().toLowerCase(); } catch (e) {}
