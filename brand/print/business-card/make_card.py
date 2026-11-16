@@ -32,8 +32,8 @@ _I = '<svg viewBox="0 0 24 24" style="width:{w}in;height:{w}in;display:block;fle
 ICONS = (
     '<path d="M12 21s-6-5.6-6-10.5A6 6 0 0 1 18 10.5C18 15.4 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.2"/>',
     '<path d="M5 4h3l1.6 4-2 1.3a11 11 0 0 0 5.1 5.1l1.3-2 4 1.6v3a2 2 0 0 1-2.2 2A16 16 0 0 1 3 6.2 2 2 0 0 1 5 4z"/><path d="M15 3.5a5.5 5.5 0 0 1 5.5 5.5"/>',
-    '<path d="M12 3 3 7.5l9 4.5 9-4.5z"/><path d="m3 12 9 4.5 9-4.5"/><path d="m3 16.5 9 4.5 9-4.5"/>',
-    '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/>',
+    '<path d="M4 8h3l1.5-2.5h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13.2" r="3.4"/>',
+    '<circle cx="12" cy="12" r="3.2"/><path d="M12 2.8l1.6 2.3 2.7-.8.6 2.8 2.7.9-.6 2.7 2 1.9-2 1.9.6 2.7-2.7.9-.6 2.8-2.7-.8L12 21.2l-1.6-2.3-2.7.8-.6-2.8-2.7-.9.6-2.7-2-1.9 2-1.9-.6-2.7 2.7-.9.6-2.8 2.7.8z"/>',
 )
 PHONE_I = '<path d="M5 4h3l1.6 4-2 1.3a11 11 0 0 0 5.1 5.1l1.3-2 4 1.6v3a2 2 0 0 1-2.2 2A16 16 0 0 1 3 6.2 2 2 0 0 1 5 4z"/>'
 MAIL_I = '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6 8.5 7 8.5-7"/>'
@@ -81,7 +81,7 @@ def front():
     word = WORD_REV.replace("<svg ", "<svg style='height:.5in;width:auto;display:block' ", 1)
     return wave + (f'<div style="position:absolute;left:{s}in;top:{s}in;right:{s}in;bottom:{s}in;display:flex;flex-direction:column;'
             f'align-items:center;justify-content:center;gap:.12in">{word}'
-            f'<div style="font:700 8pt Onest;color:{MINT};letter-spacing:.01em">Automated assistants for local businesses.</div></div>')
+            f'<div style="font:700 8pt Onest;color:{MINT};letter-spacing:.01em">Automated assistants for local businesses</div></div>')
 
 
 def back():
