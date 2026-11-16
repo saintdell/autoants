@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Davis;Lane;;;II
+FN:Lane Davis II
+ORG:autoants
+TITLE:Founder
+TEL;TYPE=WORK,VOICE:+15044991194
+EMAIL;TYPE=INTERNET,WORK:lane@autoants.com
+URL:https://autoants.com
+ADR;TYPE=WORK:;;;New Orleans;LA;;
+NOTE:Automated assistants for local businesses.
+END:VCARD

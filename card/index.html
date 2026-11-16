@@ -2,16 +2,78 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lane Davis II · autoants</title>
+<meta name="description" content="Lane Davis II, founder of autoants in New Orleans. See it work, get a free breakdown of your business, or save his contact.">
+<!-- The QR code on printed business cards opens this page. Keep ?ref=card on every link to the homepage and the demos. -->
 <meta name="robots" content="noindex, follow">
-<title>autoants</title>
-<link rel="canonical" href="https://autoants.com/">
-<link rel="icon" href="/brand/favicon.svg">
-<!-- The QR code on printed business cards points here. To change where cards go, edit the address in the next two places. -->
-<meta http-equiv="refresh" content="0; url=/?ref=card#contact">
-<script>location.replace("/?ref=card#contact");</script>
+<link rel="canonical" href="https://autoants.com/about-lane/">
+<meta name="theme-color" content="#0b1712">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" href="/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&family=JetBrains+Mono:wght@700&display=swap">
+<link rel="stylesheet" href="/assets/trust.css">
+<script>
+  // Tag this tab as a card visit, so the contact form counts it even if they reach it through the demos.
+  // Same key the homepage's leadSource() reads.
+  try { sessionStorage.setItem('aa-ref', 'card'); } catch (e) {}
+</script>
+<style>
+  .who{text-align:center;padding:28px 0 4px}
+  .avatar{display:block;width:112px;height:112px;margin:0 auto 14px;border-radius:50%;object-fit:cover;object-position:50% 18%;border:1px solid var(--line);background:var(--card)}
+  .who h1{margin:0 0 4px}
+  .who .role{margin:0 0 10px;color:var(--muted);font-weight:700}
+  .who .line{margin:0 auto;font-size:18px}
+  .acts{display:flex;flex-direction:column;gap:12px;margin:26px 0 22px}
+  .acts .btn{width:100%;min-height:56px;font-size:18px;border-radius:14px;padding:0 20px;text-align:center}
+  .acts .btn.ghost-btn{min-height:56px}
+  .reach{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 18px;margin:0 0 8px;padding:0;list-style:none}
+  .reach li{margin:0;max-width:none}
+  .reach a{display:inline-flex;align-items:center;min-height:44px;font-weight:700;font-size:16px}
+  .social{text-align:center;margin:0 auto}
+  .social a{display:inline-flex;align-items:center;min-height:44px;font-weight:700}
+  .home{text-align:center;margin:10px auto 0}
+  .home a{display:inline-flex;align-items:center;min-height:44px}
+</style>
 </head>
 <body>
-<p><a href="/?ref=card#contact">Continue to autoants.com</a></p>
+<div class="wrap">
+  <nav class="top" aria-label="Site">
+    <a class="logo" href="/?ref=card" aria-label="autoants home"><img class="on-light" src="/brand/autoants-logo.svg" alt="autoants"><img class="on-dark" src="/brand/autoants-logo-reverse.svg" alt="autoants"></a>
+    <span class="sp"></span>
+    <a class="ghost" href="/demo/?ref=card">See it work</a>
+    <a class="ghost" href="/about-lane/">About</a>
+    <a class="ghost" href="/?ref=card#contact">Contact</a>
+  </nav>
+  <main id="main">
+    <section class="who">
+      <img class="avatar" src="/assets/lane-davis.jpg" alt="Lane Davis II, founder of autoants" width="112" height="112" fetchpriority="high">
+      <h1>Lane Davis II</h1>
+      <p class="role">Founder, autoants · New Orleans</p>
+      <p class="line">Automated assistants for local businesses.</p>
+    </section>
+
+    <div class="acts">
+      <a class="btn ghost-btn" href="/demo/whole-day/?ref=card">See it work</a>
+      <a class="btn" href="/?ref=card&amp;interest=Free+company+breakdown#contact">Get your free breakdown</a>
+      <a class="btn ghost-btn" href="/lane-davis.vcf" type="text/vcard">Save my contact</a>
+    </div>
+
+    <ul class="reach" aria-label="Reach Lane">
+      <li><a href="tel:+15044991194">Call (504) 499-1194</a></li>
+      <li><a href="sms:+15044991194">Text</a></li>
+      <li><a href="mailto:lane@autoants.com">lane@autoants.com</a></li>
+    </ul>
+    <!-- Only profiles the site already links to. YouTube and X join this row once the site links them (see /follow/). -->
+    <p class="social small">Follow autoants: <a href="https://www.instagram.com/autoants/" rel="me noopener" target="_blank">Instagram</a></p>
+
+    <p class="home small"><a href="/?ref=card">Go to autoants.com</a></p>
+  </main>
+  <footer class="foot">autoants, short for automated assistants · New Orleans · <a href="/privacy.html">Privacy</a> · <a href="mailto:hello@autoants.com">hello@autoants.com</a> · <a href="tel:+15044991194">(504) 499-1194</a> · <a href="https://www.instagram.com/autoants/" rel="me noopener" target="_blank">Instagram</a></footer>
+</div>
 </body>
 </html>
