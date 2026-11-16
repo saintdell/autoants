@@ -60,7 +60,7 @@ def qr_svg(url, size_in, fg=INK, ant=False):
                 f'<circle cx="{c}" cy="{c + r*0.12}" r="{r*0.72}" fill="{MINT}"/>'
                 f'<circle cx="{c - r*0.26}" cy="{c + r*0.08}" r="{r*0.11}" fill="{FOREST}"/>'
                 f'<circle cx="{c + r*0.26}" cy="{c + r*0.08}" r="{r*0.11}" fill="{FOREST}"/>')
-    return (f'<svg viewBox="0 0 {n} {n}" style="width:{size_in}in;height:{size_in}in;display:block" shape-rendering="crispEdges">'
+    return (f'<svg viewBox="0 0 {n} {n}" style="width:{size_in}in;height:{size_in}in;display:block;margin:0 auto" shape-rendering="crispEdges">'
             f'<g fill="{fg}">{rects}</g><g shape-rendering="geometricPrecision">{face}</g></svg>')
 
 
