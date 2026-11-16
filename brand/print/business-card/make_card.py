@@ -25,8 +25,20 @@ W, H, B = 3.75, 2.25, 0.125            # page = trim + bleed on every side
 WORD = open(os.path.join(BRAND, "autoants-logo.svg")).read().strip()
 WORD_REV = open(os.path.join(BRAND, "autoants-logo-reverse.svg")).read().strip()
 WHITE = "#ffffff"
-LINES = ("Get found on Google and ChatGPT", "Answer and text back missed calls",
-         "Turn finished jobs into social posts", "AI advice for the rest of your business")
+LINES = ("Get found on Google and ChatGPT", "AI call answering + missed-call texts",
+         "Turn finished jobs into social posts", "AI tools set up and managed for you")
+# Simple line icons (24-unit viewBox, stroke = currentColor), one per LINES entry, then phone/mail/web.
+_I = '<svg viewBox="0 0 24 24" style="width:{w}in;height:{w}in;display:block;flex:none" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">{p}</svg>'
+ICONS = (
+    '<path d="M12 21s-6-5.6-6-10.5A6 6 0 0 1 18 10.5C18 15.4 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.2"/>',
+    '<path d="M5 4h3l1.6 4-2 1.3a11 11 0 0 0 5.1 5.1l1.3-2 4 1.6v3a2 2 0 0 1-2.2 2A16 16 0 0 1 3 6.2 2 2 0 0 1 5 4z"/><path d="M15 3.5a5.5 5.5 0 0 1 5.5 5.5"/>',
+    '<path d="M12 3 3 7.5l9 4.5 9-4.5z"/><path d="m3 12 9 4.5 9-4.5"/><path d="m3 16.5 9 4.5 9-4.5"/>',
+    '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/>',
+)
+PHONE_I = '<path d="M5 4h3l1.6 4-2 1.3a11 11 0 0 0 5.1 5.1l1.3-2 4 1.6v3a2 2 0 0 1-2.2 2A16 16 0 0 1 3 6.2 2 2 0 0 1 5 4z"/>'
+MAIL_I = '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6 8.5 7 8.5-7"/>'
+WEB_I = '<rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/>'
+def icon(p, w=.11): return _I.format(w=w, p=p)
 
 
 def qr_svg(url, size_in, fg=INK):
@@ -58,21 +70,23 @@ def front():
 
 
 def back():
-    """The info side: who, what, how to reach, and the QR code. White so it takes a pen."""
+    """The info side: who, what, how to reach, and the QR code. Off-white so it takes a pen."""
     s = B * 2 + .06
-    lines = "".join(f'<div style="display:flex;gap:.05in;align-items:baseline"><span style="color:{FOREST};font-weight:800">&#8226;</span>'
-                    f'<span>{t}</span></div>' for t in LINES)
-    phone = (f'<div>{CARD["phone"]}</div>' if CARD["phone"]
-             else '<div style="color:#d1242f;font-weight:700">PHONE TBD</div>')
+    lines = "".join(f'<div style="display:flex;gap:.07in;align-items:center;margin-top:.058in">'
+                    f'<span style="color:{FOREST}">{icon(ic)}</span><span>{t}</span></div>' for ic, t in zip(ICONS, LINES))
+    sep = f'<span style="width:1px;height:.12in;background:#c9cec9;display:inline-block"></span>'
+    item = lambda ic, t, bold=False: (f'<span style="display:inline-flex;align-items:center;gap:.035in;color:{FOREST if bold else INK};'
+                                      f'font-weight:{700 if bold else 500}"><span style="color:{FOREST}">{icon(ic, .09)}</span>{t}</span>')
     return (f'<div style="position:absolute;left:{s}in;top:{s}in;right:{s}in;bottom:{s}in">'
-            f'<div style="font:800 12pt/1.1 Onest;letter-spacing:-.01em;color:{INK}">{CARD["name"]}</div>'
-            f'<div style="font:500 7.5pt/1.2 Onest;color:#4d5a51;margin-top:2pt">{CARD["title"]} · New Orleans</div>'
-            f'<div style="font:500 6.8pt/1.45 Onest;color:#2f3d35;margin-top:.07in">{lines}</div>'
-            f'<div style="position:absolute;left:0;bottom:0;font:500 6.9pt/1.55 JetBrains Mono,monospace;color:{INK}">'
-            f'{phone}<div>{CARD["email"]}</div><div style="color:{FOREST};font-weight:700">{CARD["web"]}</div></div>'
-            f'<div style="position:absolute;right:0;bottom:0;width:.84in;text-align:center">'
-            f'<div style="background:#f1efe9;border-radius:.07in;padding:.07in;display:inline-block">{qr_svg(CARD["qr"], .62)}</div>'
-            f'<div style="font:700 5.6pt/1.2 Onest;color:{FOREST};margin-top:.03in">Scan to request a free breakdown</div></div></div>')
+            f'<div style="font:800 12.5pt/1.05 Onest;letter-spacing:-.01em;color:{INK}">{CARD["name"]}</div>'
+            f'<div style="font:500 7.4pt/1.2 Onest;color:{FOREST};margin-top:2pt">{CARD["title"]} · New Orleans</div>'
+            f'<div style="font:500 6.9pt/1.25 Onest;color:#1f2d25;margin-top:.06in;width:2.1in">{lines}</div>'
+            f'<div style="position:absolute;right:0;top:.02in;width:.86in;text-align:center">'
+            f'<div style="background:#e3f1ea;border-radius:.08in;padding:.06in .05in .05in">{qr_svg(CARD["qr"], .62)}'
+            f'<div style="font:700 5.7pt/1.2 Onest;color:{FOREST};margin-top:.04in">Scan to request a free breakdown</div></div></div>'
+            f'<div style="position:absolute;left:0;right:0;bottom:0;border-top:1px solid #d5dad5;padding-top:.05in;'
+            f'display:flex;justify-content:space-between;align-items:center;font:500 6.4pt/1 JetBrains Mono,monospace">'
+            f'{item(PHONE_I, CARD["phone"])}{sep}{item(MAIL_I, CARD["email"])}{sep}{item(WEB_I, CARD["web"], True)}</div></div>')
 
 
 def shoot(name, html, guides):
@@ -89,7 +103,7 @@ def shoot(name, html, guides):
 
 
 if __name__ == "__main__":
-    for name, inner, ground in (("card-front", front(), FOREST), ("card-back", back(), WHITE)):
+    for name, inner, ground in (("card-front", front(), FOREST), ("card-back", back(), "#fbfaf6")):
         shoot(name, page(inner, ground, guides=False), False)
         shoot(name, page(inner, ground, guides=True), True)
     print("\n".join(sorted(f for f in os.listdir(HERE) if f.startswith("card-"))))
