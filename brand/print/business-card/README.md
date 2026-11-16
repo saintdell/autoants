@@ -1,6 +1,6 @@
 # Business card
 
-3.5 × 2 in with 0.125 in bleed. `card-front.pdf` and `card-back.pdf` are the print files. The `-proof.png` files show the trim line (solid) and the safe area (dashed); never send the proofs to the printer.
+3.5 × 2 in with 0.125 in bleed. `card-front.pdf` (the green logo side) and `card-back.pdf` (the white info side) are the print files. Design picked by Lane 2026-11-16 ("Card 2": logo side + info side). The `-proof.png` files show the trim line (solid) and the safe area (dashed); never send the proofs to the printer.
 
 Regenerate with `uv run --with qrcode python3 brand/print/business-card/make_card.py` after editing `CARD` in the script.
 
@@ -8,7 +8,7 @@ Regenerate with `uv run --with qrcode python3 brand/print/business-card/make_car
 
 **Before printing:**
 1. The phone is the Twilio line (set 2026-10-21). Re-check it still forwards to Lane's cell.
-2. Make sure autoants.com resolves (the Cloudflare import). The QR code points to `https://autoants.com/?ref=card#contact`, and `ref=card` shows which visits came from cards.
+2. The QR code points to `https://autoants.com/card`, which forwards to the request form with "Free company breakdown" already picked (`?ref=card&interest=Free+company+breakdown#contact`). Change where cards land by editing `card/index.html`; the printed code never changes.
 3. Scan the back proof with a phone.
 4. Order one printed proof first: the forest and night greens shift in print.
 
