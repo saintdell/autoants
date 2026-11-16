@@ -83,7 +83,7 @@ def front():
     word = WORD_REV.replace("<svg ", "<svg style='height:.5in;width:auto;display:block' ", 1)
     return wave + (f'<div style="position:absolute;left:{s}in;top:{s}in;right:{s}in;bottom:{s}in;display:flex;flex-direction:column;'
             f'align-items:center;justify-content:center;gap:.12in">{word}'
-            f'<div style="font:700 8pt Onest;color:{MINT};letter-spacing:.01em">Automated assistants for local businesses</div></div>')
+            f'<div style="font:700 8pt Onest;color:{MINT};letter-spacing:.01em">automated assistants for local businesses</div></div>')
 
 
 def back():
