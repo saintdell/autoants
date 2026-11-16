@@ -61,10 +61,13 @@ def page(inner, ground, guides):
 
 
 def front():
-    """The logo side: wordmark and tagline, centred on forest green."""
+    """The logo side: wordmark and tagline, centred on forest green, with one soft wave in the lower right
+    (Lane, 2026-11-16: "Wave only"; no swoosh, no sparkles). The wave runs into the bleed so trimming can't clip it."""
     s = B * 2 + .06
+    wave = (f'<svg style="position:absolute;left:0;top:0;width:{W}in;height:{H}in" viewBox="0 0 375 225" preserveAspectRatio="none">'
+            f'<path d="M150 225 C 230 200, 300 170, 375 120 L375 225 Z" fill="#14603d"/></svg>')
     word = WORD_REV.replace("<svg ", "<svg style='height:.5in;width:auto;display:block' ", 1)
-    return (f'<div style="position:absolute;left:{s}in;top:{s}in;right:{s}in;bottom:{s}in;display:flex;flex-direction:column;'
+    return wave + (f'<div style="position:absolute;left:{s}in;top:{s}in;right:{s}in;bottom:{s}in;display:flex;flex-direction:column;'
             f'align-items:center;justify-content:center;gap:.12in">{word}'
             f'<div style="font:700 8pt Onest;color:{MINT};letter-spacing:.01em">Automated assistants for local businesses.</div></div>')
 
