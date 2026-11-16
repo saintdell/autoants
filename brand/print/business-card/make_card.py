@@ -25,7 +25,7 @@ W, H, B = 3.75, 2.25, 0.125            # page = trim + bleed on every side
 WORD = open(os.path.join(BRAND, "autoants-logo.svg")).read().strip()
 WORD_REV = open(os.path.join(BRAND, "autoants-logo-reverse.svg")).read().strip()
 WHITE = "#ffffff"
-LINES = ("Get found on Google and ChatGPT", "Catch missed calls, day or night",
+LINES = ("Get found on Google and ChatGPT", "Answer the calls you miss, day or night",
          "Turn finished jobs into social posts", "AI tools set up and managed for you")
 # Simple line icons (24-unit viewBox, stroke = currentColor), one per LINES entry, then phone/mail/web.
 _I = '<svg viewBox="0 0 24 24" style="width:{w}in;height:{w}in;display:block;flex:none" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">{p}</svg>'
