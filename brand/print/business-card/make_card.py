@@ -87,7 +87,7 @@ def front():
 def back():
     """The info side: who, what, how to reach, and the QR code. Off-white so it takes a pen."""
     s = B * 2 + .06
-    lines = "".join(f'<div style="display:flex;gap:.07in;align-items:center;margin-top:.058in">'
+    lines = "".join(f'<div style="display:flex;gap:.07in;align-items:center;margin-top:.075in">'
                     f'<span style="color:{FOREST}">{icon(ic)}</span><span>{t}</span></div>' for ic, t in zip(ICONS, LINES))
     sep = f'<span style="width:1px;height:.12in;background:#c9cec9;display:inline-block"></span>'
     item = lambda ic, t, bold=False: (f'<span style="display:inline-flex;align-items:center;gap:.035in;color:{FOREST if bold else INK};'
@@ -95,7 +95,7 @@ def back():
     return (f'<div style="position:absolute;left:{s}in;top:{s}in;right:{s}in;bottom:{s}in">'
             f'<div style="font:800 12.5pt/1.05 Onest;letter-spacing:-.01em;color:{INK}">{CARD["name"]}</div>'
             f'<div style="font:500 7.4pt/1.2 Onest;color:{FOREST};margin-top:2pt">{CARD["title"]} · New Orleans</div>'
-            f'<div style="font:500 6.9pt/1.25 Onest;color:#1f2d25;margin-top:.06in;width:2.1in">{lines}</div>'
+            f'<div style="font:500 6.9pt/1.25 Onest;color:#1f2d25;margin-top:.1in;width:2.1in">{lines}</div>'
             f'<div style="position:absolute;right:0;top:.02in;width:.86in;text-align:center">'
             f'<div style="background:#e3f1ea;border-radius:.08in;padding:.06in .05in .05in">{qr_svg(CARD["qr"], .64)}'
             f'<div style="font:700 5.7pt/1.2 Onest;color:{FOREST};margin-top:.04in">Scan to see it work</div></div></div>'
