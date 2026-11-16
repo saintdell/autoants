@@ -41,13 +41,25 @@ WEB_I = '<rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/>
 def icon(p, w=.11): return _I.format(w=w, p=p)
 
 
-def qr_svg(url, size_in, fg=INK):
-    q = qrcode.QRCode(border=0, error_correction=qrcode.constants.ERROR_CORRECT_M)
+def qr_svg(url, size_in, fg=INK, ant=False):
+    """The QR code as crisp SVG squares. ant=True prints with high error correction (30% recoverable) and puts
+    the mint ant face, on a light patch, in the middle: about 9% of the code's area, well inside what H corrects.
+    Always re-check the printed proof with two phones (iPhone camera + an Android) before ordering."""
+    q = qrcode.QRCode(border=0, error_correction=qrcode.constants.ERROR_CORRECT_H if ant else qrcode.constants.ERROR_CORRECT_M)
     q.add_data(url)
     m = q.get_matrix()
     n = len(m)
     rects = "".join(f'<rect x="{x}" y="{y}" width="1.02" height="1.02"/>' for y, row in enumerate(m) for x, v in enumerate(row) if v)
-    return f'<svg viewBox="0 0 {n} {n}" style="width:{size_in}in;height:{size_in}in;display:block" fill="{fg}" shape-rendering="crispEdges">{rects}</svg>'
+    face = ""
+    if ant:
+        r = n * 0.15                      # patch radius in modules (diameter 30% of the side, ~7% of the area)
+        c = n / 2
+        face = (f'<circle cx="{c}" cy="{c}" r="{r}" fill="#e3f1ea"/>'
+                f'<circle cx="{c}" cy="{c + r*0.12}" r="{r*0.72}" fill="{MINT}"/>'
+                f'<circle cx="{c - r*0.26}" cy="{c + r*0.08}" r="{r*0.11}" fill="{FOREST}"/>'
+                f'<circle cx="{c + r*0.26}" cy="{c + r*0.08}" r="{r*0.11}" fill="{FOREST}"/>')
+    return (f'<svg viewBox="0 0 {n} {n}" style="width:{size_in}in;height:{size_in}in;display:block" shape-rendering="crispEdges">'
+            f'<g fill="{fg}">{rects}</g><g shape-rendering="geometricPrecision">{face}</g></svg>')
 
 
 def page(inner, ground, guides):
@@ -85,8 +97,8 @@ def back():
             f'<div style="font:500 7.4pt/1.2 Onest;color:{FOREST};margin-top:2pt">{CARD["title"]} · New Orleans</div>'
             f'<div style="font:500 6.9pt/1.25 Onest;color:#1f2d25;margin-top:.06in;width:2.1in">{lines}</div>'
             f'<div style="position:absolute;right:0;top:.02in;width:.86in;text-align:center">'
-            f'<div style="background:#e3f1ea;border-radius:.08in;padding:.06in .05in .05in">{qr_svg(CARD["qr"], .62)}'
-            f'<div style="font:700 5.7pt/1.2 Onest;color:{FOREST};margin-top:.04in">Scan to request a free breakdown</div></div></div>'
+            f'<div style="background:#e3f1ea;border-radius:.08in;padding:.06in .05in .05in">{qr_svg(CARD["qr"], .64)}'
+            f'<div style="font:700 5.7pt/1.2 Onest;color:{FOREST};margin-top:.04in">Scan to see it work</div></div></div>'
             f'<div style="position:absolute;left:0;right:0;bottom:0;border-top:1px solid #d5dad5;padding-top:.05in;'
             f'display:flex;justify-content:space-between;align-items:center;font:500 6.4pt/1 JetBrains Mono,monospace">'
             f'{item(PHONE_I, CARD["phone"])}{sep}{item(MAIL_I, CARD["email"])}{sep}{item(WEB_I, CARD["web"], True)}</div></div>')
