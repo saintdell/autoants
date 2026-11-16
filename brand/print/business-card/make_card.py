@@ -100,7 +100,7 @@ def back():
             f'<div style="font:500 6.9pt/1.25 Onest;color:#1f2d25;margin-top:.1in;width:2.1in">{lines}</div>'
             f'<div style="position:absolute;right:0;top:.02in;width:.86in;text-align:center">'
             f'<div style="background:#e3f1ea;border-radius:.08in;padding:.06in .05in .05in">{qr_svg(CARD["qr"], .64)}'
-            f'<div style="font:700 5.7pt/1.2 Onest;color:{FOREST};margin-top:.04in">Scan to see it work</div></div></div>'
+            f'<div style="font:700 5.7pt/1.2 Onest;color:{FOREST};margin-top:.04in">Scan to request a free business breakdown</div></div></div>'
             f'<div style="position:absolute;left:0;right:0;bottom:0;border-top:1px solid #d5dad5;padding-top:.05in;'
             f'display:flex;justify-content:space-between;align-items:center;font:500 7pt/1 Onest,sans-serif;font-variant-numeric:tabular-nums">'
             f'{item(PHONE_I, CARD["phone"])}{sep}{item(MAIL_I, CARD["email"])}{sep}{item(WEB_I, CARD["web"], True)}</div></div>')
