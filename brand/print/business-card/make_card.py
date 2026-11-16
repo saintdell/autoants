@@ -26,13 +26,15 @@ WORD = open(os.path.join(BRAND, "autoants-logo.svg")).read().strip()
 WORD_REV = open(os.path.join(BRAND, "autoants-logo-reverse.svg")).read().strip()
 WHITE = "#ffffff"
 LINES = ("Get found on Google and ChatGPT", "Answer the calls you miss, day or night",
-         "A Google review request after every job", "AI tools set up and managed for you")
+         "A Google review request after every job", "Turn finished jobs into social media posts",
+         "AI tools set up and managed for you")
 # Simple line icons (24-unit viewBox, stroke = currentColor), one per LINES entry, then phone/mail/web.
 _I = '<svg viewBox="0 0 24 24" style="width:{w}in;height:{w}in;display:block;flex:none" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">{p}</svg>'
 ICONS = (
     '<path d="M12 21s-6-5.6-6-10.5A6 6 0 0 1 18 10.5C18 15.4 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.2"/>',
     '<path d="M5 4h3l1.6 4-2 1.3a11 11 0 0 0 5.1 5.1l1.3-2 4 1.6v3a2 2 0 0 1-2.2 2A16 16 0 0 1 3 6.2 2 2 0 0 1 5 4z"/><path d="M15 3.5a5.5 5.5 0 0 1 5.5 5.5"/>',
     '<path d="M12 3.2l2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6-4.4-4.2 6-.8z"/>',
+    '<path d="M4 8h3l1.5-2.5h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13.2" r="3.4"/>',
     '<circle cx="12" cy="12" r="3.2"/><path d="M12 2.8l1.6 2.3 2.7-.8.6 2.8 2.7.9-.6 2.7 2 1.9-2 1.9.6 2.7-2.7.9-.6 2.8-2.7-.8L12 21.2l-1.6-2.3-2.7.8-.6-2.8-2.7-.9.6-2.7-2-1.9 2-1.9-.6-2.7 2.7-.9.6-2.8 2.7.8z"/>',
 )
 PHONE_I = '<path d="M5 4h3l1.6 4-2 1.3a11 11 0 0 0 5.1 5.1l1.3-2 4 1.6v3a2 2 0 0 1-2.2 2A16 16 0 0 1 3 6.2 2 2 0 0 1 5 4z"/>'
