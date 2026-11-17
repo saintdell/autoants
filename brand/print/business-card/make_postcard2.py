@@ -31,7 +31,7 @@ def front():
                    f'<div style="font:800 30pt/1.06 Onest;letter-spacing:-.015em;color:#f4f2ec;margin-top:.32in">What happens when a customer calls and '
                    f'<span style="color:{C.MINT}">nobody answers?</span></div>{under}'
                    f'<div style="font:500 11.5pt/1.4 Onest;color:#e3ece6;margin-top:.18in;width:4.3in">autoants helps local businesses answer calls, follow up with customers, '
-                   f'and automate everyday work. We set up and manage the AI tools for you.</div></div>')
+                   f'and automate everyday work. We set up and manage AI tools for you.</div></div>')
 
 
 def back():
