@@ -505,14 +505,14 @@
 
 <section id="contact"><div class="wrap">
   <div class="contact">
-    <div class="sec-head" style="margin-bottom:0"><p class="eyebrow">Get started</p><h2>Tell me about your business.</h2><p>I'll make your free company breakdown or set up a 15-minute call, whichever you pick. You hear back from me, a person, usually the same day.</p>
+    <div class="sec-head" style="margin-bottom:0"><p class="eyebrow">Get started</p><h2>Tell me about your business.</h2><p id="contactIntro">I'll make your free business breakdown or set up a 15-minute call, whichever you pick. You hear back from me, a person, usually the same day.</p>
       <p style="margin-top:.8rem">Rather talk now? Call <a href="tel:+15044991194" style="color:var(--amber);font-weight:600">(504) 499-1194</a>.</p></div>
     <form class="cform" id="contactForm" novalidate>
-      <label>Your name<input name="name" autocomplete="name" required></label>
-      <label>Business name<input name="business" autocomplete="organization" required></label>
-      <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
-      <label>Type of business<select name="trade"><option>Home services</option><option>Auto</option><option>Beauty &amp; personal care</option><option>Fitness</option><option>Pets</option><option>Food &amp; events</option><option>Professional services</option><option>Other</option></select></label>
-      <label class="full">I'm interested in<select name="interest" id="interest"><option>15-minute call</option><option>Get Found and catch missed calls</option><option>Try one ($500)</option><option>Catch missed calls</option><option>Get Found</option><option>Get the next job</option><option>The AI Opportunity Assessment ($500)</option><option>Free company breakdown</option><option>Larger operations</option><option>AI Index correction</option><option>Something else</option></select></label>
+      <label>Your Name<input name="name" autocomplete="name" required></label>
+      <label>Business Name<input name="business" autocomplete="organization" required></label>
+      <label>Your Phone Number<input name="phone" type="tel" autocomplete="tel" required></label>
+      <label>Type of Business<select name="trade"><option>Heating &amp; Air (HVAC)</option><option>Plumbing</option><option>Electrical</option><option>Roofing</option><option>General Contractor &amp; Remodeling</option><option>Landscaping &amp; Lawn Care</option><option>Tree Service</option><option>Pest Control</option><option>Pool &amp; Spa Service</option><option>Cleaning &amp; Maid Service</option><option>Painting</option><option>Flooring</option><option>Garage Doors</option><option>Fencing &amp; Concrete</option><option>Pressure Washing &amp; Gutters</option><option>Handyman</option><option>Moving</option><option>Junk Removal</option><option>Locksmith</option><option>Appliance Repair</option><option>Security &amp; Alarms</option><option>Auto Repair &amp; Body Shop</option><option>Towing</option><option>Salon &amp; Barber</option><option>Spa &amp; Beauty</option><option>Gym &amp; Fitness</option><option>Pet Care &amp; Grooming</option><option>Restaurant &amp; Bar</option><option>Catering &amp; Events</option><option>Retail Store</option><option>Real Estate</option><option>Property Management</option><option>Professional Services (Legal, Accounting, Insurance)</option><option>Other</option></select></label>
+      <label class="full">I'm interested in<select name="interest" id="interest"><option value="15-Minute Call">15-Minute Call</option><option value="Get Found and Catch Missed Calls">Get Found and Catch Missed Calls</option><option value="Try One ($500)">Try One ($500)</option><option value="Catch Missed Calls">Catch Missed Calls</option><option value="Get Found">Get Found</option><option value="Get the Next Job">Get the Next Job</option><option value="The AI Opportunity Assessment ($500)">The AI Opportunity Assessment ($500)</option><option value="Free Business Breakdown">Free Business Breakdown</option><option value="Larger Operations">Larger Operations</option><option value="AI Index Correction">AI Index Correction</option><option value="Something Else">Something Else</option></select></label>
       <label class="hp" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">Website<input name="website" tabindex="-1" autocomplete="off"></label>
       <label class="full">Anything I should know?<textarea name="msg" rows="3" placeholder="e.g. we miss calls when we're busy with customers"></textarea></label>
       <label class="full smsbox"><input type="checkbox" name="sms" value="yes"><span>Text me about this request (optional)</span></label>
@@ -562,17 +562,37 @@
   document.querySelectorAll('[data-interest]').forEach(function(a){
     a.addEventListener('click', function(e){
       if (CALL_URL && a.hasAttribute('data-call')) { e.preventDefault(); window.open(CALL_URL, '_blank'); return; }
-      var sel = document.getElementById('interest'); if (sel) sel.value = a.getAttribute('data-interest');
+      pickInterest(a.getAttribute('data-interest'));
     });
   });
-  // ?interest= on a link from another page (e.g. the AI Index) preselects a matching option.
+  // Options are Title Case (Lane, 2026-11-16); links and buttons may use any case, so match ignoring it.
+  var heldCall = null, introText = '';   // the call option and intro, set aside in breakdown mode
+  function pickInterest(want){
+    var sel = document.getElementById('interest'); if (!sel || !want) return false;
+    // A visitor who taps a "15-minute call" button later on the page still gets the call.
+    if (heldCall && want.toLowerCase() === heldCall.text.toLowerCase()) {
+      sel.insertBefore(heldCall, sel.options[0] || null); heldCall = null;
+      var it = document.getElementById('contactIntro'); if (it && introText) it.textContent = introText;
+    }
+    // Older links used billing names or the old breakdown name; map them to what customers see.
+    var OLD = {"office manager": "Catch Missed Calls", "growth": "Get Found and Catch Missed Calls", "pro": "Get the Next Job",
+               "free company breakdown": "Free Business Breakdown"};
+    want = OLD[want.toLowerCase()] || want;
+    for (var i = 0; i < sel.options.length; i++) if (sel.options[i].text.toLowerCase() === want.toLowerCase()) { sel.selectedIndex = i; return true; }
+    return false;
+  }
+  // ?interest= on a link from another page (the card page, the AI Index) preselects a matching option.
   (function(){
     var want = ''; try { want = new URLSearchParams(location.search).get('interest') || ''; } catch(e) {}
+    if (!pickInterest(want)) return;
+    // Arriving for the free breakdown (the card's QR page): no 15-minute-call choice (Lane, 2026-11-16).
     var sel = document.getElementById('interest');
-    // Older links used the billing names; map them to the door names customers see.
-    var OLD = {"Office Manager": "Catch missed calls", "Growth": "Get Found and catch missed calls", "Pro": "Get the next job"};
-    if (OLD[want]) want = OLD[want];
-    if (want && sel) for (var i = 0; i < sel.options.length; i++) if (sel.options[i].text === want) { sel.selectedIndex = i; break; }
+    if (sel.value === 'Free Business Breakdown') {
+      for (var i = sel.options.length - 1; i >= 0; i--) if (sel.options[i].value === '15-Minute Call') { heldCall = sel.options[i]; sel.remove(i); }
+      var intro = document.getElementById('contactIntro');
+      if (intro) introText = intro.textContent;
+      if (intro) intro.textContent = "I'll make your free business breakdown: a short video and a written report on how your business shows up on Google and in AI answers. You hear back from me, a person, usually the same day.";
+    }
   })();
   // Where the visitor came from: ?ref= on the link (hanger, card, dm, badge...). Kept for the visit.
   function leadSource(){
