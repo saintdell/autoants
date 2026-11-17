@@ -116,6 +116,11 @@
 - [How does an HVAC company show up when people ask ChatGPT, Claude or Google's AI for an AC company?](https://autoants.com/hvac/show-up-in-ai-answers/): one AI named 28 companies across 24 answers about New Orleans (autoants scan, 2026-10-19); a snapshot, never a rank promise
 - [Does an HVAC company around New Orleans need a Spanish line?](https://autoants.com/hvac/spanish-line/): 14.3% of Jefferson Parish residents 5+ speak Spanish at home (Census ACS 2020-2024); 132 of 135 local HVAC sites showed no Spanish page (autoants first-pass check, 2026-10-20)
 
+## For plumbers, roofers and electricians (pages checked 2026-11-17)
+- [autoants for plumbers](https://autoants.com/plumbing/): missed-call text-back, AI answering that says it's an AI, quote follow-up, review asks and Google and AI-answer visibility for plumbing shops in New Orleans and Jefferson Parish; 28 of 45 local plumbing sites that loaded had no way to book on the first phone screen (autoants check, 2026-10-14); prices and the free breakdown
+- [autoants for roofers](https://autoants.com/roofing/): the same for roofing companies in New Orleans and Jefferson Parish (leak calls, estimate follow-up, reviews and posts from finished roofs); 22 of 50 local roofing sites that loaded had no way to book on the first phone screen (autoants check, 2026-10-14)
+- [autoants for electricians](https://autoants.com/electrical/): the same for electrical contractors in New Orleans and Jefferson Parish (trouble calls, estimate follow-up, generator maintenance reminders); 30 of 47 local electrical sites that loaded had no way to book on the first phone screen (autoants check, 2026-10-14)
+
 ## Questions trades owners ask (answer pages, checked 2026-10-19)
 - [All questions](https://autoants.com/questions/)
 - [Who can set up a missed-call text-back for an HVAC business in New Orleans?](https://autoants.com/questions/missed-call-text-back-hvac-new-orleans/)
