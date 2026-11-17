@@ -512,6 +512,7 @@
       <label>Business Name<input name="business" autocomplete="organization" required></label>
       <label>Your Phone Number<input name="phone" type="tel" autocomplete="tel" required></label>
       <label>Type of Business<select name="trade"><option>Heating &amp; Air (HVAC)</option><option>Plumbing</option><option>Electrical</option><option>Roofing</option><option>General Contractor &amp; Remodeling</option><option>Landscaping &amp; Lawn Care</option><option>Tree Service</option><option>Pest Control</option><option>Pool &amp; Spa Service</option><option>Cleaning &amp; Maid Service</option><option>Painting</option><option>Flooring</option><option>Garage Doors</option><option>Fencing &amp; Concrete</option><option>Pressure Washing &amp; Gutters</option><option>Handyman</option><option>Moving</option><option>Junk Removal</option><option>Locksmith</option><option>Appliance Repair</option><option>Security &amp; Alarms</option><option>Auto Repair &amp; Body Shop</option><option>Towing</option><option>Salon &amp; Barber</option><option>Spa &amp; Beauty</option><option>Gym &amp; Fitness</option><option>Pet Care &amp; Grooming</option><option>Restaurant &amp; Bar</option><option>Catering &amp; Events</option><option>Retail Store</option><option>Real Estate</option><option>Property Management</option><option>Professional Services (Legal, Accounting, Insurance)</option><option>Other</option></select></label>
+       <label>How Many People Work There?<select name="size" required><option value="" disabled selected>Choose one</option><option>Just me</option><option>2–5</option><option>6–15</option><option>16–50</option><option>More than 50</option></select></label>
       <label class="full">I'm interested in<select name="interest" id="interest"><option value="15-Minute Call">15-Minute Call</option><option value="Get Found and Catch Missed Calls">Get Found and Catch Missed Calls</option><option value="Try One ($500)">Try One ($500)</option><option value="Catch Missed Calls">Catch Missed Calls</option><option value="Get Found">Get Found</option><option value="Get the Next Job">Get the Next Job</option><option value="The AI Opportunity Assessment ($500)">The AI Opportunity Assessment ($500)</option><option value="Free Business Breakdown">Free Business Breakdown</option><option value="Larger Operations">Larger Operations</option><option value="AI Index Correction">AI Index Correction</option><option value="Something Else">Something Else</option></select></label>
       <label class="hp" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">Website<input name="website" tabindex="-1" autocomplete="off"></label>
       <label class="full">Anything I should know?<textarea name="msg" rows="3" placeholder="e.g. we miss calls when we're busy with customers"></textarea></label>
@@ -605,9 +606,12 @@
     var f = document.getElementById('contactForm'); if (!f) return;
     f.addEventListener('submit', function(e){
       e.preventDefault();
-      if (!f.name.value.trim() || !f.phone.value.trim() || !f.business.value.trim()) { f.reportValidity && f.reportValidity(); return; }
+      if (!f.name.value.trim() || !f.phone.value.trim() || !f.business.value.trim() || (f.size && !f.size.value)) { f.reportValidity && f.reportValidity(); return; }
+      // Team size (Lane, 2026-11-16: size-first targeting). The lead Worker doesn't store a size field yet, so it also
+      // rides at the front of the message, which the Worker keeps and pings.
+      var size = f.size ? f.size.value : '';
       var d = {name:f.name.value.trim(), business:f.business.value.trim(), phone:f.phone.value.trim(),
-               trade:f.trade.value, interest:f.interest.value, msg:f.msg.value.trim(), page:'autoants.com', source:leadSource(), website:(f.website ? f.website.value : ''), sms:(f.sms && f.sms.checked ? 'yes' : 'no')};
+               trade:f.trade.value, size:size, interest:f.interest.value, msg:((size ? 'People who work there: ' + size + '. ' : '') + f.msg.value.trim()).slice(0, 1000), page:'autoants.com', source:leadSource(), website:(f.website ? f.website.value : ''), sms:(f.sms && f.sms.checked ? 'yes' : 'no')};
       var done = function(){ document.getElementById('sentNote').style.display='flex'; };
       var btn = f.querySelector('button[type=submit]'); if (btn) btn.disabled = true;
       fetch(LEAD_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(d)})
