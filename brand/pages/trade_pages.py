@@ -362,7 +362,7 @@ def page(slug):
   {prices}
   <ul>
     <li>You own everything: your accounts, pages and customer list.</li>
-    <li>90 days, then month to month. Cancel by email.</li>
+    <li>No 12-month contract: 90 days, then month to month. Cancel by email.</li><li>Try one counts toward setup if you upgrade within 30 days. Pay for a year up front and setup is free.</li>
     <li>We don't promise results. We count your calls and jobs before and after, and show you every month.</li>
     <li>Prices shown are for our first 3 shops with up to 15 trucks; bigger or multi-location operations are quoted by size. Texts and phone minutes run on your own account, billed to you directly.</li>
   </ul>
