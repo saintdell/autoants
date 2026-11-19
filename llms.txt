@@ -43,7 +43,8 @@
     credited to month one, then priced by size
   - The AI Opportunity Assessment (https://autoants.com/assessment/): $500 flat. A recorded 45-minute interview, then a bound, printed report on what to
     fix first and what each fix is worth in the owner's own numbers. Credited toward setup if they continue
-    within 30 days. It becomes $1,000 after two reference clients
+    within 60 days. It becomes $750 after two reference clients with measured before-and-after numbers, then
+    $1,000 after five. No money-back guarantee: the assessment may conclude that a build isn't worth it
 - Both doors together cost $250 a month less than the two bought one at a time ($1,250 vs $750 + $750) for the
   first 3 shops; after that they cost the same as the two ($2,000) and include a monthly market pack (permit
   share, past jobs coming due, neighborhood pages, competitor watch) that single doors don't
