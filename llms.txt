@@ -84,6 +84,13 @@
 - [Facts](https://autoants.com/facts/index.md): name, founder, service area, hours, contact, prices in short, the rules we keep
 - [Book a free breakdown](https://autoants.com/book/index.md): by email, by phone or with the form
 - [The New Orleans AI Recommendation Index, November 2026](https://autoants.com/ai-index/2026-11/index.md): which local companies an AI assistant named for each trade
+- [Missed-call answering](https://autoants.com/missed-call-answering/index.md): Catch missed calls: what happens when a call rings out, what it won't do, prices
+- [Get Found](https://autoants.com/get-found/index.md): Google profile, listings, pages, review replies and AI answers checked monthly, and how it's reported
+- [New Business Launch](https://autoants.com/new-business-launch/index.md): website, Google profile, business email and 30 days of posts for a new business, $750 one time
+- [Where we work](https://autoants.com/areas/index.md): service areas: New Orleans, Metairie, Kenner and the rest of Louisiana
+- [autoants in New Orleans](https://autoants.com/areas/new-orleans/index.md): Orleans Parish licensing, the City's permit seasons, our AI checks
+- [autoants in Metairie](https://autoants.com/areas/metairie/index.md): Jefferson Parish licensing and our repeated AI checks for Metairie
+- [autoants in Kenner](https://autoants.com/areas/kenner/index.md): the City of Kenner license and what AI answers said about Kenner
 
 ## Key pages
 - Website: https://autoants.com

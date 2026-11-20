@@ -47,6 +47,20 @@ TWINS = [
      ("Book a free breakdown", "by email, by phone or with the form")),
     ("ai-index/2026-11/index.html", "ai-index/2026-11/index.md", "body", set(), set(),
      ("The New Orleans AI Recommendation Index, November 2026", "which local companies an AI assistant named for each trade")),
+    ("missed-call-answering/index.html", "missed-call-answering/index.md", "main", set(), set(),
+     ("Missed-call answering", "Catch missed calls: what happens when a call rings out, what it won't do, prices")),
+    ("get-found/index.html", "get-found/index.md", "main", set(), set(),
+     ("Get Found", "Google profile, listings, pages, review replies and AI answers checked monthly, and how it's reported")),
+    ("new-business-launch/index.html", "new-business-launch/index.md", "main", set(), set(),
+     ("New Business Launch", "website, Google profile, business email and 30 days of posts for a new business, $750 one time")),
+    ("areas/index.html", "areas/index.md", "main", set(), set(),
+     ("Where we work", "service areas: New Orleans, Metairie, Kenner and the rest of Louisiana")),
+    ("areas/new-orleans/index.html", "areas/new-orleans/index.md", "main", set(), set(),
+     ("autoants in New Orleans", "Orleans Parish licensing, the City's permit seasons, our AI checks")),
+    ("areas/metairie/index.html", "areas/metairie/index.md", "main", set(), set(),
+     ("autoants in Metairie", "Jefferson Parish licensing and our repeated AI checks for Metairie")),
+    ("areas/kenner/index.html", "areas/kenner/index.md", "main", set(), set(),
+     ("autoants in Kenner", "the City of Kenner license and what AI answers said about Kenner")),
 ]
 
 BANNED = [r"#1\b", r"\bguarantee", r"\bnever miss", r"\brisk[- ]free"]
