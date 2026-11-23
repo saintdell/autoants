@@ -276,8 +276,8 @@ def page():
     <div class="sells">{sell}</div>
     <p class="lede" style="margin:14px 0 0">Want the counts behind these lists, for your own market? <a href="data/" style="color:var(--mint);font-weight:600">See the datasets →</a></p>
     <div class="nl" id="permit-report">
-      <div class="nl-copy"><div class="eyebrow">Free · once a month</div><h3>Permits Pulled</h3>
-        <p>A monthly read on what New Orleans' public records say about where the work is, from the same records these lists come from: re-roofs by ZIP, where houses are getting work, and what kinds of businesses just opened. Counts only, a two-minute read.</p></div>
+      <div class="nl-copy"><div class="eyebrow">Free · every week</div><h3>autoants weekly</h3>
+        <p>A free weekly email for local business owners: trade changes, deadlines, local numbers and one AI idea.</p></div>
       <form class="nl-form" data-newsletter action="#permit-report" method="post">
         <label class="sr" for="nl-email-who">Your email</label>
         <input id="nl-email-who" type="email" name="email" placeholder="you@yourbusiness.com" autocomplete="email" required>

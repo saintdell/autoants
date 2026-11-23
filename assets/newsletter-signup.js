@@ -1,4 +1,4 @@
-/* Permits Pulled sign-up: THE ONE PLACE the form's destination is set.
+/* autoants weekly sign-up (renamed from Permits Pulled 2026-11-23): THE ONE PLACE the form's destination is set.
  *
  * PLACEHOLDER (2026-10-08): no Kit account exists yet, so `action` is empty and every sign-up form posts to the
  * autoants-leads worker (POST /subscribe), which keeps a consent record in KV and pings Lane on Telegram. Opt-in only.
