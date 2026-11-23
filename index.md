@@ -54,7 +54,7 @@ The neighbors, your past customers and your own work bring in the next one.
 
 Add-on Add social and marketing when you're ready
 
-**Free first.** A breakdown of your business: how you show up on Google, in AI answers and next to your competitors. It shows which fix your numbers need. [Prices →](https://autoants.com/prices/)
+**Free first.** A short video of how customers find you: the 3 questions they ask Google and ChatGPT about your trade, who gets named today, and the 3 fixes we'd make first, walked through with you in 15 minutes. Yours to keep. [Prices →](https://autoants.com/prices/)
 
 Free · every week
 

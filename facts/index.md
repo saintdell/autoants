@@ -44,7 +44,7 @@ Monday to Friday, 8:30 am to 6:00 pm Central.
 
 ## Prices, in short
 
-Free first: a breakdown of the business: how it shows up on Google, in AI answers and next to its competitors. It shows which fix the owner's numbers need. It is a short video and a written report, made only from public information; any preview site or sample postcard is shown inside it, not sold separately.
+Free first: a short video of how customers find the business: the 3 questions they ask Google and ChatGPT about its trade, who gets named today, and the 3 fixes we'd make first, walked through with the owner in 15 minutes. It comes with a written report, made only from public information; any preview site or sample postcard is shown inside it, not sold separately.
 
 Then two choices:
 

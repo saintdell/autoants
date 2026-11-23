@@ -4,7 +4,7 @@
 
 We answer the calls you miss and get you found on Google: $1,250 a month. Not ready? Try one assistant for $500.
 
-**Free first:** a breakdown of your business: how you show up on Google, in AI answers and next to your competitors. It shows which fix your numbers need.
+**Free first:** a short video of how customers find you: the 3 questions they ask Google and ChatGPT about your trade, who gets named today, and the 3 fixes we'd make first, walked through with you in 15 minutes. Yours to keep.
 
 - **Get Found and catch missed calls**: $1,250 a month + $1,250 setup. We answer the calls you miss and get you found on Google. Missed calls answered, quotes followed up, appointments booked and reminded, reviews requested, your Google profile kept right and posted to every week, your listings kept right, 2 new pages a month, what AI answers say about you checked every month, and your website kept up. Plus a monthly market pack: permit share, jobs coming due, neighborhood pages, competitor watch.
 - **Not ready? Try one**: $500 once. One assistant on your phone. If you upgrade within 30 days, the $500 counts toward setup.

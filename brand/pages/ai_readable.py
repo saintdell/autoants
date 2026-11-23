@@ -535,7 +535,7 @@ def build_book():
     <h2>What happens next</h2>
     <ol>
       <li>Lane Davis II, the founder, makes the breakdown from public information. You hear back from him, a person.</li>
-      <li>You get the short video and the written report. It shows which fix your numbers need.</li>
+      <li>You get a short video and a written report: the 3 questions customers ask Google and ChatGPT about your trade, who gets named today, and the 3 fixes we&rsquo;d make first, walked through with you in 15 minutes. Yours to keep.</li>
       <li>If you want to go on, there are two choices: {E(F['choices'][0]['name'])}, {E(F['choices'][0]['price'])}, or try one assistant for $500 once. <a href="/prices/">Every price</a>.</li>
     </ol>
     <p>Nothing is charged until you see the price in writing. We don't promise calls, rankings or jobs.</p>
