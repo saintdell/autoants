@@ -58,9 +58,9 @@ Add-on Add social and marketing when you're ready
 
 Free · every week
 
-### Permits Pulled
+### autoants weekly
 
-A weekly read on what New Orleans' public records say about where the work is: re-roofs by ZIP, where houses are getting work, and what kinds of businesses just opened. For local business owners, trades and real estate. Counts from city data, plus one AI tip each week.
+A free weekly email for local business owners: what changed in your trade this week, rule and deadline changes, local numbers like new businesses and building permits, and one AI idea to try. For trades, local businesses and real estate.
 
 The problem
 
