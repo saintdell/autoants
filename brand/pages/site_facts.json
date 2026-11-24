@@ -103,7 +103,7 @@
   "after_first_3_check": ["$1,000 a month + $1,500 setup", "$1,000 a month + $500 setup", "$2,000 a month + $2,000 setup", "+ $1,500 a month + $1,000 setup ($3,500 a month in all; $3,000 setup in all)", "Try one becomes $750", "becomes $1,000"],
 
   "terms": [
-    "No 12-month contract: 90 days, then month to month. Cancel by email.",
+    "No 12-month contract: three months, then month to month. Cancel by email.",
     "Try one's $500 counts toward setup if the owner upgrades within 30 days.",
     "Pay for a year up front and setup is free.",
     "The business owns everything: its accounts, pages, listings and customer list.",
@@ -111,13 +111,13 @@
     "A person steps in for emergencies and for callers who want one.",
     "It works with the software the business already uses, like Jobber, Housecall Pro or ServiceTitan."
   ],
-  "terms_check": ["No 12-month contract: 90 days, then month to month.", "within 30 days", "Pay for a year up front and setup is free."],
-  "terms_offer_map": ["No 12-month contract", "90 days, then month to month", "counts toward setup if you upgrade within 30", "Pay for a year up front and setup is free"],
+  "terms_check": ["No 12-month contract: three months, then month to month.", "within 30 days", "Pay for a year up front and setup is free."],
+  "terms_offer_map": ["No 12-month contract", "three months, then month to month", "counts toward setup if you upgrade within 30", "Pay for a year up front and setup is free"],
 
   "how_it_works": [
     "autoants makes a free breakdown of the business from public information; it shows which fix the owner's numbers need.",
     "The owner picks: Get Found and catch missed calls ($1,250 a month), or tries one assistant for $500 once.",
-    "Social and marketing can be added later. No contract to start; monthly plans run 90 days, then month to month."
+    "Social and marketing can be added later. No contract to start; monthly plans run three months, then month to month."
   ],
 
   "ants": [

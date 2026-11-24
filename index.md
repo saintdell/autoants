@@ -248,7 +248,7 @@ For any business, any size. A recorded 45-minute interview about how your week a
 2. **The AI Opportunity Assessment · $500 flat** The interview and the bound report. Credited toward your setup if you continue within 60 days; whatever the setup doesn't use comes off your first month.
 3. **The fix that fits** Usually get found and catch missed calls, together; sized by your own numbers: if the report shows less than about three times the monthly fee in time and jobs recovered, we recommend the smaller option.
 
-**No result promises:** I don't promise calls or rankings. I measure where you are now and show you the same numbers later. Monthly plans: no 12-month contract. 90 days, then month to month, cancel by email.
+**No result promises:** I don't promise calls or rankings. I measure where you are now and show you the same numbers later. Monthly plans: no 12-month contract. Three months, then month to month, cancel by email.
 
 Straight answers
 
@@ -272,7 +272,7 @@ Yes. It's on your own domain and it's yours to keep, even if you stop paying for
 
 **What does it cost?**
 
-We answer the calls you miss and get you found on Google: $1,250 a month, plus $1,250 to set up. Not ready? Try one assistant for $500, once. If your breakdown shows you need only one fix, either one is $750 a month on its own, and you can add social and marketing later. Prices shown are for our first 3 shops with up to 15 trucks. Bigger or multi-location operations are quoted by size. No 12-month contract: 90 days, then month to month, cancel by email. Try one counts toward setup if you upgrade within 30 days, and setup is free if you pay for a year up front. Every price is on [one page](https://autoants.com/prices/).
+We answer the calls you miss and get you found on Google: $1,250 a month, plus $1,250 to set up. Not ready? Try one assistant for $500, once. If your breakdown shows you need only one fix, either one is $750 a month on its own, and you can add social and marketing later. Prices shown are for our first 3 shops with up to 15 trucks. Bigger or multi-location operations are quoted by size. No 12-month contract: three months, then month to month, cancel by email. Try one counts toward setup if you upgrade within 30 days, and setup is free if you pay for a year up front. Every price is on [one page](https://autoants.com/prices/).
 
 **What do you need from me?**
 

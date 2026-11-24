@@ -34,7 +34,7 @@ The offer, simply: "We answer the calls you miss and get you found on Google: $1
 | Operations Math by autoants, for big operations: routes, schedules, cutting, loads | $1,500 30-day pilot, credited to month one; then priced by size |
 | The AI Opportunity Assessment: a recorded 45-minute interview, then a bound, printed report with its own report number on what to fix first and what each fix is worth in the owner's own numbers | $500 flat, credited toward setup if they continue within 60 days; any remainder comes off the first month; $750 after two reference clients with measured before-and-after numbers, then $1,000 after five; it may conclude that a build isn't worth it |
 
-On every monthly plan: the business owns everything (accounts, pages, customer list); no 12-month contract: 90 days, then month to month, cancel by email; Try one's $500 counts toward setup if the owner upgrades within 30 days; setup is free with a year paid up front; no result promises: calls and jobs are counted before and after and shown to the owner every month.
+On every monthly plan: the business owns everything (accounts, pages, customer list); no 12-month contract: three months, then month to month, cancel by email; Try one's $500 counts toward setup if the owner upgrades within 30 days; setup is free with a year paid up front; no result promises: calls and jobs are counted before and after and shown to the owner every month.
 
 ## The assistants
 

@@ -64,7 +64,7 @@ Other options, when the owner asks or the breakdown points to one:
 
 Prices shown are for our first 3 shops with up to 15 trucks. Bigger or multi-location operations are quoted by size. Every price, with what each includes: [autoants.com/prices](https://autoants.com/prices/).
 
-- No 12-month contract: 90 days, then month to month. Cancel by email.
+- No 12-month contract: three months, then month to month. Cancel by email.
 - Try one's $500 counts toward setup if the owner upgrades within 30 days.
 - Pay for a year up front and setup is free.
 

@@ -100,7 +100,7 @@ One assistant on your phone. $500 once.
 
 [Try one](https://autoants.com/index.html?interest=Try%20one%20(%24500)#contact)
 
-You own everything: your accounts, pages and customer list. 90 days, then month to month, cancel by email. We don't promise results; we count your calls and jobs before and after and show you every month. Prices shown are for our first 3 shops with up to 15 trucks. Bigger or multi-location operations are quoted by size.
+You own everything: your accounts, pages and customer list. Three months, then month to month, cancel by email. We don't promise results; we count your calls and jobs before and after and show you every month. Prices shown are for our first 3 shops with up to 15 trucks. Bigger or multi-location operations are quoted by size.
 
 **Other options**
 

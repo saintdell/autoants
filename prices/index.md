@@ -12,7 +12,7 @@ We answer the calls you miss and get you found on Google: $1,250 a month. Not re
 ## Fine print
 
 - You own everything: your accounts, pages and customer list.
-- No 12-month contract: 90 days, then month to month. Cancel by email.
+- No 12-month contract: three months, then month to month. Cancel by email.
 - Pay for a year up front and setup is free.
 - We don't promise results. We count your calls and jobs before and after, and every month you get a report in booked jobs and dollars.
 - A person steps in for emergencies and for callers who want one.
@@ -43,13 +43,13 @@ The prices above are for our first 3 shops on each. After that: Catch missed cal
 - **Get Found and catch missed calls**: Both of the above, plus a 30-minute call each month, replies by the next business day, and the monthly market pack: a report on your share of the permits pulled for your trade in your area, your past jobs coming due for service (and a campaign to reach those customers), pages for your site about the neighborhoods you've worked in, from your own permits, and a watch on nearby competitors.
 - **Get the next job (add-on)**: Weekly social posts and short videos from your real jobs; the citywide permit-timed postcard for your trade (cards $1.30 each); door hangers around each finished job; postcards to past customers on their job's anniversary, and emails to past customers when they're due for service again, written in your voice and approved by you before any go out; and New Owner Week: offers to people who just bought a house in your area, in their first weeks.
 - **New website**: Up to 10 pages on your own domain, yours to keep. We start from a free preview made from what's public about your business, then use your own photos and words. After launch, Site Care keeps it hosted and up to date for $100 a month, or we hand you the files to take anywhere.
-- **Pay per job, in full**: Same setup as Catch missed calls. You pay $25 for each completed, paid job we recover from a call or lead nobody at the shop answered that an assistant caught (a text-back reply, an after-hours answer or a quote follow-up). Booked jobs that cancel are never billed. Each one is listed on your monthly statement with the call it came from, and you can dispute any one by email at [hello@autoants.com](mailto:hello@autoants.com). We don't predict how many there will be. Same 90-day minimum, then month to month.
+- **Pay per job, in full**: Same setup as Catch missed calls. You pay $25 for each completed, paid job we recover from a call or lead nobody at the shop answered that an assistant caught (a text-back reply, an after-hours answer or a quote follow-up). Booked jobs that cancel are never billed. Each one is listed on your monthly statement with the call it came from, and you can dispute any one by email at [hello@autoants.com](mailto:hello@autoants.com). We don't predict how many there will be. Same three-month minimum, then month to month.
 - **AI phone answering**: Priced with you, once you're on Get Found and catch missed calls. An AI that answers when nobody can, always says it's an AI, and texts you the job. It never quotes or promises. Its minutes are written into the agreement.
 - **Anything not listed here**: Priced with you. Scoped in writing before any work starts.
 
 We recommend what your own numbers can carry: if the assessment shows less than about three times the monthly fee in time and jobs recovered, we recommend the smaller option.
 
-Same on every monthly plan: you own every account, page, listing and list, and we don't promise results. 90-day minimum, then month to month, cancel by email; no 12-month contract. Try one counts toward setup if you upgrade within 30 days, and setup is free if you pay for a year up front. Phone numbers and texts run on your own Twilio account.
+Same on every monthly plan: you own every account, page, listing and list, and we don't promise results. Three-month minimum, then month to month, cancel by email; no 12-month contract. Try one counts toward setup if you upgrade within 30 days, and setup is free if you pay for a year up front. Phone numbers and texts run on your own Twilio account.
 
 ## The free breakdown
 
