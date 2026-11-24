@@ -588,13 +588,14 @@
   (function(){
     var want = ''; try { want = new URLSearchParams(location.search).get('interest') || ''; } catch(e) {}
     if (!pickInterest(want)) return;
-    // Arriving for the free breakdown (the card's QR page): no 15-minute-call choice (Lane, 2026-11-16).
+    // Arriving for the free breakdown (the card's QR page): no 15-minute-call choice (Lane, 2026-11-16);
+    // the walk-through call comes with the breakdown instead (board, 2026-11-24).
     var sel = document.getElementById('interest');
     if (sel.value === 'Free Business Breakdown') {
       for (var i = sel.options.length - 1; i >= 0; i--) if (sel.options[i].value === '15-Minute Call') { heldCall = sel.options[i]; sel.remove(i); }
       var intro = document.getElementById('contactIntro');
       if (intro) introText = intro.textContent;
-      if (intro) intro.textContent = "I'll make your free business breakdown: a short video and a written report on how your business shows up on Google and in AI answers. You hear back from me, a person, usually the same day.";
+      if (intro) intro.textContent = "I'll make your free business breakdown: a short video and a written report on how your business shows up on Google and in AI answers, plus a 15-minute call to walk you through it and name the one fix that would help most. You hear back from me, a person, usually the same day.";
     }
   })();
   // Where the visitor came from: ?ref= on the link (hanger, card, dm, badge...). Kept for the visit.
