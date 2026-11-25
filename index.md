@@ -1,10 +1,10 @@
 > Plain-text version of https://autoants.com/ (Digital Marketing, Social Media & AI Assistants, New Orleans · autoants), made from that page. If the two ever differ, the page is right.
 
-Digital marketing · Social media · AI assistants
+SEO & AI search · Social media & marketing · AI front desk
 
 # Automated assistants for local businesses.
 
-**Digital marketing, social media and AI assistants, built to get you more customers without more hours from you.** We get you found on Google and in AI answers, run your social media from your real jobs, answer every call and lead and book the job before it goes to the next company, and bring back your past customers and their neighbors. And before you pay a dime, a free breakdown of your business from public information.
+**Digital marketing, social media and an AI front desk for local businesses.** We get you found, keep you in front of customers, and answer your phone when you can't, so more calls turn into booked jobs. **Hear it yourself: call [(504) 499-1194](tel:+15044991194).** And before you pay a dime, a free breakdown of your business from public information.
 
 Not sure where to start? The [AI Opportunity Assessment](https://autoants.com/assessment/) finds where calls, jobs and hours slip, in your own numbers. $500, credited toward setup.
 
@@ -18,11 +18,13 @@ What we do
 
 ## Three things grow a local business. We do all three.
 
-We answer the calls you miss, follow up the quotes you forget, and help customers find you on Google, so more of the work you already pay for turns into booked jobs. Start with one for $500.
+We get you found, keep you in front of customers, and answer your phone when you can't, so more of the work you already pay for turns into booked jobs. Start with one for $500.
+
+SEO & AI search
 
 ### Get Found.
 
-Show up when people search, and when they ask an assistant who to call.
+Your Google profile, your website, and what ChatGPT says when someone asks who to call.
 
 - Your Google profile fixed, kept current and posted to every week
 - Listings matched on Apple, Bing, Yelp and the rest
@@ -32,20 +34,25 @@ Show up when people search, and when they ask an assistant who to call.
 
 **$1,250** a month Get Found and catch missed calls, together · + $1,250 setup
 
-### Catch missed calls.
+AI front desk
 
-Every call, text and form gets an answer while you're on the job.
+### Never miss a call.
+
+An AI front desk answers calls and texts when you can't, says it's an AI, and books the job or texts it to you.
 
 - Missed calls texted back
+- AI phone answering on your line, priced with you
 - Web-form leads answered and booked
 - A review ask after every job
 - Service-due and invoice reminders
 
 **$1,250** a month Together with get found · Not ready? Try one assistant for $500
 
-### Get the next job.
+Social media & marketing
 
-Social media and marketing: the neighbors, your past customers and your own work bring in the next one.
+### Stay in front of customers.
+
+Posts and short videos from your real jobs, plus postcards and reminders to past customers. You approve everything by text.
 
 - Hangers on the doors around every job you finish
 - Reminders to past customers when it's time again
