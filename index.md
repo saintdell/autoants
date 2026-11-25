@@ -99,9 +99,9 @@ Estimates sent, never followed up. A text on Tuesday would've closed it. By Frid
 
 → work you already priced, walking
 
-Automated assistants · meet the Ants
+Automated assistants
 
-## They work while you're on the job.
+## What runs while you're on the job.
 
 That's where the name comes from: **Auto**mated assist**Ants**. A crew of assistants that never clocks out, each with one job. You stay the boss: nothing gets confirmed to a customer without your OK.
 
@@ -113,65 +113,65 @@ A real, fast, mobile site with your reviews and a quote form. Your free breakdow
 
 Never lose a call
 
-### Text-Back Ant
+### Missed-call text-back
 
-Missed-call text-back
+Text-Back Ant
 
 Miss a call, and it texts them back: "Sorry I missed you — what do you need?" The job stays yours.
 
 Be first
 
-### Responder Ant
+### Fast replies to new leads
 
-Speed-to-lead
+Responder Ant
 
 The business that answers first wins. New lead comes in, we reply automatically, day or night.
 
 Fill the calendar
 
-### Scheduler Ant
+### Quotes to booked jobs
 
-Booking
+Scheduler Ant
 
 Quote requests turn into estimates and booked jobs without you touching your phone.
 
 Everywhere they look
 
-### Scout Ant
+### Found on Google and in AI answers
 
-Local visibility + AI answers
+Scout Ant
 
 Google, Yelp, Apple, Bing — dialed in and consistent. Plus showing up when someone asks *ChatGPT* for the best one in town.
 
 When you can't pick up
 
-### Receptionist Ant
+### AI front desk
 
-Voice receptionist
+Receptionist Ant
 
 An AI that answers when you can't, says up front that it's an AI, screens the job and texts it to you. Scoped with you once you're on get found and catch missed calls.
 
 Every customer asked
 
-### Reviewer Ant
+### A review ask after every job
 
-Reviews engine
+Reviewer Ant
 
 Every finished job gets the same review ask, every customer, one tap from your phone.
 
 Fill the pipeline
 
-### Promoter Ant
+### Social posts from your jobs
 
-Content & ads
+Promoter Ant
 
 Text us photos from the job. Every week you get a before/after clip, Google posts and social posts made from your real work, ready to approve by text. Ads on your own account when you want them.
 
 Found money
 
-### Reminder Ant
+### Past customers brought back
 
-Database reactivation
+Reminder Ant
 
 "Time for a trim?" to your past customers: by text where they've said yes, by email otherwise. Work from a list you already own.
 
