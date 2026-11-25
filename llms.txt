@@ -1,6 +1,6 @@
 # AutoAnts
 
-> AutoAnts (the name is short for "automated assistants") is a Louisiana company founded and run by Lane Davis II. It answers the calls local businesses miss, follows up their quotes, and helps customers find them on Google and in AI answers: trades first, and also auto shops, salons, gyms and more. The first deliverable is always free: a breakdown of the business made from public information before any money changes hands.
+> AutoAnts (the name is short for "automated assistants") is a Louisiana company founded and run by Lane Davis II. It does digital marketing, social media and AI assistants for local businesses: it answers the calls they miss, follows up their quotes, runs their social media from their real jobs, and helps customers find them on Google and in AI answers: trades first, and also auto shops, salons, gyms and more. The first deliverable is always free: a breakdown of the business made from public information before any money changes hands.
 
 ## What AutoAnts does
 - In one breath: "We answer the calls you miss, follow up the quotes you forget, and help customers find you on Google, so more of the work you already pay for turns into booked jobs. Start with one for $500."

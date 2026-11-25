@@ -1,10 +1,10 @@
-> Plain-text version of https://autoants.com/ (AI Opportunity Assessments & Assistants, New Orleans · autoants), made from that page. If the two ever differ, the page is right.
+> Plain-text version of https://autoants.com/ (Digital Marketing, Social Media & AI Assistants, New Orleans · autoants), made from that page. If the two ever differ, the page is right.
 
-Get Found · Catch missed calls · Get the next job
+Digital marketing · Social media · AI assistants
 
 # Automated assistants for local businesses.
 
-**Built to get you more customers, without more hours from you.** We get you found on Google and in AI answers, answer every call and lead and book the job before it goes to the next company, and bring back your past customers and their neighbors. And before you pay a dime, a free breakdown of your business from public information.
+**Digital marketing, social media and AI assistants, built to get you more customers without more hours from you.** We get you found on Google and in AI answers, run your social media from your real jobs, answer every call and lead and book the job before it goes to the next company, and bring back your past customers and their neighbors. And before you pay a dime, a free breakdown of your business from public information.
 
 Not sure where to start? The [AI Opportunity Assessment](https://autoants.com/assessment/) finds where calls, jobs and hours slip, in your own numbers. $500, credited toward setup.
 
@@ -45,12 +45,12 @@ Every call, text and form gets an answer while you're on the job.
 
 ### Get the next job.
 
-The neighbors, your past customers and your own work bring in the next one.
+Social media and marketing: the neighbors, your past customers and your own work bring in the next one.
 
 - Hangers on the doors around every job you finish
 - Reminders to past customers when it's time again
 - Postcards to homes that just had the job before yours
-- Posts from your real jobs, approved by text
+- Your Facebook and Instagram run for you: posts and short videos from your real jobs, approved by text
 
 Add-on Add social and marketing when you're ready
 
