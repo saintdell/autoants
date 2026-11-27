@@ -6,7 +6,7 @@ Lane Davis II · AI consultant · New Orleans
 
 I'm on the AI tools every day, looking for edges a New Orleans business can use. Hire me, and I'll show you where you can modernize to bring in more customers, then set it up for you.
 
-It starts with a free mini assessment of your business. Three fields, and I do the rest. Most fixes are one of three:
+It starts with a free mini assessment of your business, made from public information. Want the full picture? I also offer a paid **AI Opportunity Assessment**, with a 1-on-1 interview about how your week actually runs. Most fixes are one of three:
 
 1. 1 **Get Found.** Show up on Google and in ChatGPT's answers.
 2. 2 **AI Front Desk.** Answers the calls and texts you can't get to, follows up on quotes, and texts you the job to confirm.
