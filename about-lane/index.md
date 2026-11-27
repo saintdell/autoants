@@ -6,7 +6,7 @@ About
 
 Founder, autoants. New Orleans.
 
-autoants is my company. The name is short for "automated assistants." We do digital marketing, social media and AI assistants for local businesses: getting you found on Google and in AI answers, running your social media from your real jobs, and answering every call and lead. I fix the small things that cost local businesses jobs: the missed call nobody texts back, the quote request that sits, the Google profile that loses the map.
+autoants is my company. The name is short for "automated assistants." We do digital marketing, AI assistants and social media for local businesses: getting you found on Google and in AI answers, answering every call and lead, and running your social media from your real jobs. I fix the small things that cost local businesses jobs: the missed call nobody texts back, the quote request that sits, the Google profile that loses the map.
 
 I build every site and the AI behind it myself, here in Louisiana, and you deal with me directly, not a call center.
 

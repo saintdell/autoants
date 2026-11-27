@@ -4,7 +4,7 @@ Services and prices
 
 # Three things grow a local business. *We do all three.*
 
-We answer the calls you miss, follow up the quotes you forget, and help customers find you on Google, so more of the work you already pay for turns into booked jobs. Start with one for $500.
+We answer the calls you miss, follow up the quotes you forget, and help customers find you on Google, so more of the work you already pay for turns into booked jobs.
 
 **Our rule:** we sell what makes you **money**, not what just saves you time. Prices shown are for our first 3 shops, and every price shows its setup fee.
 

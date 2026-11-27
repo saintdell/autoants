@@ -1,4 +1,4 @@
-> Plain-text version of https://autoants.com/ (Digital Marketing, Social Media & AI Assistants, New Orleans · autoants), made from that page. If the two ever differ, the page is right.
+> Plain-text version of https://autoants.com/ (Digital Marketing, AI Assistants & Social Media, New Orleans · autoants), made from that page. If the two ever differ, the page is right.
 
 autoants · Automated assistants for local businesses
 
@@ -8,7 +8,7 @@ autoants · Automated assistants for local businesses
 - **AI Front Desk:** we answer the calls you miss
 - **Social Media:** your Facebook and Instagram, posted from your real jobs
 
-You approve everything before it goes out. Start with one for $500.
+You approve everything before it goes out.
 
 **◆** Free breakdown of your business first **◆** No contract to start **◆** You approve the wording first
 
@@ -20,7 +20,7 @@ What we do
 
 ## Three things grow a local business. We do all three.
 
-We get you found, keep you in front of customers, and answer your phone when you can't, so more of the work you already pay for turns into booked jobs. Start with one for $500.
+We get you found, answer your phone when you can't, and keep you in front of customers, so more of the work you already pay for turns into booked jobs.
 
 SEO & AI search
 
