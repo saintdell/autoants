@@ -325,7 +325,7 @@ def page(slug):
 <meta property="og:url" content="{url}">
 <meta property="og:image" content="{BASE}/brand/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#0b1712">
+<meta name="theme-color" content="#f7f5f0">
 <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" href="{p}brand/favicon.svg" type="image/svg+xml">
@@ -336,7 +336,7 @@ def page(slug):
 <body>
 <div class="wrap">
   <nav>
-    <a href="{p}index.html"><img src="{p}brand/autoants-logo-reverse.svg" alt="autoants home" width="120" height="26" style="height:26px;width:auto;display:block"></a>
+    <a href="{p}index.html"><img src="{p}brand/autoants-logo.svg" alt="autoants home" width="120" height="26" style="height:26px;width:auto;display:block"></a>
     <div class="sp"></div>
     <a class="ghost" href="{p}prices/">Prices</a>
     <a class="ghost" href="{p}index.html#contact">Contact</a>

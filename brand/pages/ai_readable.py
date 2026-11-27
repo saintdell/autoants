@@ -361,7 +361,7 @@ def page_shell(path, title, desc, body, current=None, schema=None):
 <meta name="description" content="{E(desc)}">
 <link rel="canonical" href="{BASE}{path}">
 <link rel="alternate" type="text/markdown" href="/{md}">
-<meta name="theme-color" content="#0b1712">
+<meta name="theme-color" content="#f7f5f0">
 <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" href="/brand/favicon.svg" type="image/svg+xml">
@@ -374,7 +374,7 @@ def page_shell(path, title, desc, body, current=None, schema=None):
 <body>
 <div class="wrap">
   <nav class="top" aria-label="Site">
-    <a class="logo" href="/" aria-label="autoants home"><img class="on-light" src="/brand/autoants-logo.svg" alt="autoants"><img class="on-dark" src="/brand/autoants-logo-reverse.svg" alt="autoants"></a>
+    <a class="logo" href="/" aria-label="autoants home"><img class="on-light" src="/brand/autoants-logo.svg" alt="autoants"><img class="on-dark" src="/brand/autoants-logo.svg" alt="autoants"></a>
     <span class="sp"></span>
     <a class="ghost" href="/demo/">See it work</a>
     <a class="ghost" href="/about-lane/">About</a>

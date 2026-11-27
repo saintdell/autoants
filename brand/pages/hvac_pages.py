@@ -99,10 +99,10 @@ PAGES = [
 H1 = dict(PAGES)
 
 CSS = """
-  :root{--bg:#0b1712;--surface:#14261e;--surface-2:#1b3328;--ink:#f4f1e8;--muted:#a3b0a8;--faint:#87948d;
-        --mint:#3ddcae;--mint-ink:#062a1d;--line:rgba(244,241,232,.12);
+  :root{--bg:#f7f5f0;--surface:#ffffff;--surface-2:#efece6;--ink:#0f2a1d;--muted:#4b5a52;--faint:#56655d;
+        --mint:#0f5132;--mint-ink:#ffffff;--line:rgba(15,42,29,.12);
         --disp:"Archivo",system-ui,sans-serif;--body:"Inter",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;
-        color-scheme:dark}
+        color-scheme:light}
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -257,7 +257,7 @@ def page(path, title, desc, h1, crumbs_html, answer_paras, body, faq, srcs, grap
 <meta property="og:description" content="{E(desc)}">
 <meta property="og:url" content="{canon}">
 <meta property="og:image" content="{BASE}/brand/og.png">
-<meta name="theme-color" content="#0b1712">
+<meta name="theme-color" content="#f7f5f0">
 <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" href="{p}brand/favicon.svg" type="image/svg+xml">
@@ -269,7 +269,7 @@ def page(path, title, desc, h1, crumbs_html, answer_paras, body, faq, srcs, grap
 <body>
 <div class="wrap">
   <nav>
-    <a href="{p}index.html"><img src="{p}brand/autoants-logo-reverse.svg" alt="autoants home" width="120" height="26" style="height:26px;width:auto;display:block"></a>
+    <a href="{p}index.html"><img src="{p}brand/autoants-logo.svg" alt="autoants home" width="120" height="26" style="height:26px;width:auto;display:block"></a>
     <div class="sp"></div>
     <a class="ghost" href="{p}prices/">Prices</a>
     <a class="ghost" href="{p}index.html#contact">Contact</a>
