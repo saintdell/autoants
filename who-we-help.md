@@ -58,7 +58,7 @@ Patient information needs a HIPAA program and signed agreements first, so we're 
 
 Dental offices, Chiropractors, Physical therapy, Med spas, Optometry, Clinics
 
-**Not sure what you need?** Start with a free company breakdown, a short video and written report on your business from public information, or [the AI Opportunity Assessment](https://autoants.com/index.html#assessment) ($500, credited toward setup, any remainder to the first month): a bound, printed report on what to automate first, and what each fix is worth. Every business above gets the same two choices: we answer the calls you miss and get you found on Google, $1,250 a month; or, not ready, try one assistant for $500. [Every price](https://autoants.com/prices/).
+**Not sure what you need?** Start with a free company breakdown, a short video and written report on your business from public information, or [the AI Opportunity Assessment](https://autoants.com/index.html#assessment) ($500, credited toward setup, any remainder to the first month): a bound, printed report on what to automate first, and what each fix is worth. Every business above gets the same two choices: we get you found on Google and answer the calls you miss, $1,250 a month; or, not ready, try one assistant for $500. [Every price](https://autoants.com/prices/).
 
 ## How it works
 

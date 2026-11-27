@@ -4,7 +4,7 @@ Services and prices
 
 # Three things grow a local business. *We do all three.*
 
-We answer the calls you miss, follow up the quotes you forget, and help customers find you on Google, so more of the work you already pay for turns into booked jobs.
+We help customers find you on Google, answer the calls you miss, and follow up the quotes you forget, so more of the work you already pay for turns into booked jobs.
 
 **Our rule:** we sell what makes you **money**, not what just saves you time. Prices shown are for our first 3 shops, and every price shows its setup fee.
 
@@ -56,7 +56,7 @@ Add-on · when you're ready
 
 ## Two ways to start
 
-We answer the calls you miss and get you found on Google: $1,250 a month. Not ready? Try one assistant for $500.
+We get you found on Google and answer the calls you miss: $1,250 a month. Not ready? Try one assistant for $500.
 
 Free first
 
@@ -74,7 +74,7 @@ Get Found + AI Front Desk
 
 $1,250 a month + $1,250 setup
 
-We answer the calls you miss and get you found on Google.
+We get you found on Google and answer the calls you miss.
 
 - Missed calls answered
 - Quotes followed up

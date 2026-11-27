@@ -16,9 +16,9 @@ AutoAnts (the name is short for "automated assistants") is a Louisiana company f
 
 ## Services and pricing
 
-In one breath: "We answer the calls you miss, follow up the quotes you forget, and help customers find you on Google, so more of the work you already pay for turns into booked jobs."
+In one breath: "We help customers find you on Google, answer the calls you miss, and follow up the quotes you forget, so more of the work you already pay for turns into booked jobs."
 
-The offer, simply: "We answer the calls you miss and get you found on Google: $1,250 a month. Not ready? Try one assistant for $500." Prices are for the first 3 shops on each. Full list: [autoants.com/prices](https://autoants.com/prices/).
+The offer, simply: "We get you found on Google and answer the calls you miss: $1,250 a month. Not ready? Try one assistant for $500." Prices are for the first 3 shops on each. Full list: [autoants.com/prices](https://autoants.com/prices/).
 
 | Service | Pricing |
 |---|---|

@@ -197,7 +197,7 @@ Not ready for more? One assistant on your phone for $500, once. Most shops start
 
 ### Both, for $1,250
 
-We answer the calls you miss and get you found on Google: $1,250 a month. Add Social Media when you're ready.
+We get you found on Google and answer the calls you miss: $1,250 a month. Add Social Media when you're ready.
 
 ### The 30-day receipt
 
@@ -243,7 +243,7 @@ Pricing
 
 ## Two ways to start.
 
-We answer the calls you miss and get you found on Google: $1,250 a month. Not ready? Try one assistant for $500. Start free with a breakdown of your business. Every price and every setup fee is on [one page](https://autoants.com/prices/).
+We get you found on Google and answer the calls you miss: $1,250 a month. Not ready? Try one assistant for $500. Start free with a breakdown of your business. Every price and every setup fee is on [one page](https://autoants.com/prices/).
 
 Not sure where to start?
 
@@ -281,7 +281,7 @@ Yes. It's on your own domain and it's yours to keep, even if you stop paying for
 
 **What does it cost?**
 
-We answer the calls you miss and get you found on Google: $1,250 a month, plus $1,250 to set up. Not ready? Try one assistant for $500, once. If your breakdown shows you need only one fix, either one is $750 a month on its own, and you can add social and marketing later. Prices shown are for our first 3 shops with up to 15 trucks. Bigger or multi-location operations are quoted by size. No 12-month contract: three months, then month to month, cancel by email. Try one counts toward setup if you upgrade within 30 days, and setup is free if you pay for a year up front. Every price is on [one page](https://autoants.com/prices/).
+We get you found on Google and answer the calls you miss: $1,250 a month, plus $1,250 to set up. Not ready? Try one assistant for $500, once. If your breakdown shows you need only one fix, either one is $750 a month on its own, and you can add social and marketing later. Prices shown are for our first 3 shops with up to 15 trucks. Bigger or multi-location operations are quoted by size. No 12-month contract: three months, then month to month, cancel by email. Try one counts toward setup if you upgrade within 30 days, and setup is free if you pay for a year up front. Every price is on [one page](https://autoants.com/prices/).
 
 **What do you need from me?**
 
