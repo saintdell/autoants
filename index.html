@@ -86,6 +86,17 @@
   .what3 li{padding-left:1.5rem;position:relative}
   .what3 li::before{content:"";position:absolute;left:0;top:.55em;width:.6rem;height:.6rem;border-radius:50%;background:var(--amber)}
   .what3 b{font-weight:800}
+  .mission{font-size:clamp(1.02rem,1.9vw,1.18rem);color:var(--ink);margin:-.2rem 0 1rem;max-width:34rem}
+  .mission b{color:var(--amber)}
+  .plan{font-size:1rem;color:var(--muted);margin:0 0 1rem;max-width:34rem}
+  .plan b{color:var(--ink)}
+  .hfounder{display:flex;align-items:center;gap:.75rem;margin:0 0 1.5rem;max-width:34rem}
+  .hfounder img{width:48px;height:48px;border-radius:50%;object-fit:cover;flex-shrink:0}
+  .hfounder p{margin:0;font-size:.95rem;color:var(--muted)}
+  .hfounder a{color:var(--ink);font-weight:700}
+  .o3-plan{display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;justify-content:space-between;margin-top:1.4rem;padding:1.4rem 1.6rem;border:1.5px solid var(--amber);border-radius:16px;background:var(--bg2)}
+  .o3-plan h3{margin:.2rem 0 .4rem}
+  .o3-plan p{margin:0;color:var(--muted);max-width:40rem}
   .lede b{color:var(--ink);font-weight:600}
   .cta-row{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:1.9rem}
   .trust{display:flex;gap:.5rem 1.3rem;flex-wrap:wrap;font-family:var(--mono);font-size:.74rem;color:var(--faint)}
@@ -297,12 +308,12 @@
 <nav><div class="wrap">
   <a class="brand" href="#top"><img src="brand/autoants-logo-reverse.svg" alt="AutoAnts" style="height:30px;width:auto;display:block"></a>
   <div class="navlinks">
-    <a href="#offerings">What we do</a><a href="services.html">Services</a><a href="who-we-help.html">Who we help</a><a href="demo/">See it work</a><a href="#roi">ROI calculator</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="about-lane/">About</a>
+    <a href="#offerings">What we do</a><a href="services.html">Services</a><a href="who-we-help.html">Who we help</a><a href="demo/">See it work</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="about-lane/">About</a>
   </div>
   <div class="navr">
     <details class="mmenu"><summary>Menu</summary>
       <div class="mpanel">
-        <a href="#offerings">What we do</a><a href="services.html">Services</a><a href="who-we-help.html">Who we help</a><a href="demo/">See it work</a><a href="#roi">ROI calculator</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="about-lane/">About</a>
+        <a href="#offerings">What we do</a><a href="services.html">Services</a><a href="who-we-help.html">Who we help</a><a href="demo/">See it work</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="about-lane/">About</a>
         <a href="tel:+15044991194">Call (504) 499-1194</a>
       </div>
     </details>
@@ -312,19 +323,21 @@
 
 <header id="top"><div class="wrap"><div class="hero-grid">
   <div>
-    <p class="eyebrow">autoants · Automated assistants for local businesses</p>
-    <h1>Digital marketing for local businesses, <span class="amb">done for you.</span></h1>
+    <p class="eyebrow">autoants · New Orleans</p>
+    <h1>We get New Orleans trades found on Google <span class="amb">and answer the calls they miss.</span></h1>
+    <p class="mission"><b>Our mission:</b> no New Orleans trade loses a job to a missed call or a bad Google listing.</p>
     <ul class="what3">
       <li><b>Get Found:</b> you show up on Google and in ChatGPT's answers</li>
       <li><b>AI Front Desk:</b> we answer the calls you miss</li>
       <li><b>Social Media:</b> your Facebook and Instagram, posted from your real jobs</li>
     </ul>
-    <p class="lede">You approve everything before it goes out.</p>
+    <p class="plan"><b>Get Found + AI Front Desk:</b> $1,250 a month + $1,250 setup. Three months, then month to month. Social Media is an add-on.</p>
+    <div class="hfounder"><img src="assets/lane-davis.jpg" alt="Lane Davis II" width="48" height="48" onerror="this.remove()"><p>Founded by <a href="about-lane/">Lane Davis II</a> in New Orleans. He signs off on every setup, and you deal with him directly.</p></div>
     <div class="cta-row">
-      <a class="btn btn-amber" href="#contact" data-interest="15-minute call" data-call>Book a free 15-minute call</a>
-      <a class="btn btn-ghost" href="tel:+15044991194">Hear the AI Front Desk: (504) 499-1194</a>
+      <a class="btn btn-amber" href="tel:+15044991194">Hear the AI Front Desk: (504) 499-1194</a>
+      <a class="btn btn-ghost" href="#contact" data-interest="15-minute call" data-call>Book a free 15-minute call</a>
     </div>
-    <div class="trust"><span><b>◆</b> Free breakdown of your business first</span><span><b>◆</b> No contract to start</span><span><b>◆</b> You approve the wording first</span></div>
+    <div class="trust"><span><b>◆</b> Free breakdown of your business first</span><span><b>◆</b> You approve every word</span><span><b>◆</b> No result promises: we count your calls and jobs, before and after</span></div>
   </div>
   <div class="dispatch">
     <div class="dhead"><svg class="ant"><use href="#ant"/></svg><span class="t">AutoAnt Dispatch</span><span class="live-dot"><i></i>EXAMPLE</span></div>
@@ -340,43 +353,27 @@
 </div></div>
 
 <section id="offerings"><div class="wrap">
-  <div class="sec-head"><p class="eyebrow">What we do</p><h2>Three things grow a local business. We do all three.</h2><p>We get you found, answer your phone when you can't, and keep you in front of customers, so more of the work you already pay for turns into booked jobs.</p></div>
+  <div class="sec-head"><p class="eyebrow">Services and prices</p><h2>What we do, and what it costs.</h2><p>Two services make the plan: we get you found and answer the calls you miss. Social Media is an add-on.</p></div>
   <div class="offer3">
     <div class="o3"><div class="o3-top"><span class="o3-n">01</span></div>
       <p class="eyebrow" style="margin:.1rem 0 .35rem;font-size:.66rem">SEO &amp; AI search</p><h3>Get Found.</h3><p class="o3-out">Your Google profile, your website, and what ChatGPT says when someone asks who to call.</p>
       <ul><li>Your Google profile fixed, kept current and posted to every week</li><li>Listings matched on Apple, Bing, Yelp and the rest</li><li>A rebuilt site if yours is costing you calls</li><li>Checked against what AI answers say about you</li><li>Business email on your own domain set up so quotes don&rsquo;t land in spam</li></ul>
-      <div class="o3-price"><b>$1,250</b> a month<span class="o3-sub">Get Found + AI Front Desk, together · + $1,250 setup</span></div>
-      <a class="btn btn-ghost o3-btn" href="#contact" data-interest="Get Found + AI Front Desk">Get Found →</a></div>
+      <div class="o3-price"><b>$750</b> a month alone<span class="o3-sub">+ $500 setup · or both services for $1,250 (below)</span></div>
+      <a class="btn btn-ghost o3-btn" href="#contact" data-interest="Get Found" data-call>Book a free 15-minute call</a></div>
     <div class="o3"><div class="o3-top"><span class="o3-n">02</span></div>
-      <p class="eyebrow" style="margin:.1rem 0 .35rem;font-size:.66rem">AI Front Desk</p><h3>Never miss a call.</h3><p class="o3-out">AI Front Desk answers calls and texts when you can't, says it's an AI, and books the job or texts it to you.</p>
-      <ul><li>Missed calls texted back</li><li>AI phone answering on your line, priced with you</li><li>Web-form leads answered and booked</li><li>A review ask after every job</li><li>Service-due and invoice reminders</li></ul>
-      <div class="o3-price"><b>$1,250</b> a month<span class="o3-sub">Together with Get Found · Not ready? Try one assistant for $500</span></div>
-      <a class="btn btn-amber o3-btn" href="#contact" data-interest="Try one ($500)">Try one →</a></div>
+      <p class="eyebrow" style="margin:.1rem 0 .35rem;font-size:.66rem">AI Front Desk</p><h3>Never miss a call.</h3><p class="o3-out">AI Front Desk answers calls and texts when you can't, says it's an AI, takes the job and texts it to you to confirm.</p>
+      <ul><li>Missed calls texted back</li><li>AI phone answering on your line (minutes priced with you)</li><li>Web-form leads answered and sent to you to confirm</li><li>A review ask after every job</li><li>Service-due and invoice reminders</li></ul>
+      <div class="o3-price"><b>$750</b> a month alone<span class="o3-sub">+ $750 setup · or both services for $1,250 (below)</span></div>
+      <a class="btn btn-ghost o3-btn" href="#contact" data-interest="AI Front Desk" data-call>Book a free 15-minute call</a></div>
     <div class="o3"><div class="o3-top"><span class="o3-n">03</span></div>
       <p class="eyebrow" style="margin:.1rem 0 .35rem;font-size:.66rem">Social Media</p><h3>Stay in front of customers.</h3><p class="o3-out">Posts and short videos from your real jobs, plus postcards and reminders to past customers. You approve everything by text.</p>
       <ul><li>Hangers on the doors around every job you finish</li><li>Reminders to past customers when it's time again</li><li>Postcards to homes that just had the job before yours</li><li>Your Facebook and Instagram run for you: posts and short videos from your real jobs, approved by text</li></ul>
-      <div class="o3-price">Add-on<span class="o3-sub">Add Social Media when you're ready</span></div>
-      <a class="btn btn-ghost o3-btn" href="#contact" data-interest="Social Media">Social Media →</a></div>
+      <div class="o3-price"><b>+ $1,250</b> a month<span class="o3-sub">Add-on, on top of the plan · + $500 setup</span></div>
+      <a class="btn btn-ghost o3-btn" href="#contact" data-interest="Social Media" data-call>Book a free 15-minute call</a></div>
   </div>
+  <div class="o3-plan"><div><p class="eyebrow">The plan</p><h3>Get Found + AI Front Desk</h3><p><b>$1,250 a month + $1,250 setup.</b> That's $250 a month less than the two alone. Three months, then month to month, cancel by email.</p></div><a class="btn btn-amber" href="#contact" data-interest="Get Found + AI Front Desk" data-call>Book a free 15-minute call</a></div>
   <div class="o3-start"><p><b>Free first.</b> A short video of how customers find you: the 3 questions they ask Google and ChatGPT about your trade, who gets named today, and the 3 fixes we'd make first, walked through with you in 15 minutes. Yours to keep. <a href="prices/" style="color:var(--amber);font-weight:600">Prices →</a></p><a class="btn btn-amber" href="#contact" data-interest="15-minute call" data-call>Book a 15-minute call →</a></div>
-  <div class="nl" id="permit-report">
-    <div class="nl-copy"><p class="eyebrow">Free · every week</p><h3>Permits Pulled</h3>
-      <p>A weekly read on what New Orleans' public records say about where the work is: re-roofs by ZIP, where houses are getting work, and what kinds of businesses just opened. For local business owners, trades and real estate. Counts from city data, plus one AI tip each week.</p></div>
-    <form class="nl-form" data-newsletter action="#permit-report" method="post">
-      <label class="sr" for="nl-email-home">Your email</label>
-      <input id="nl-email-home" type="email" name="email" placeholder="you@yourbusiness.com" autocomplete="email" required>
-      <label class="sr" for="nl-seg-home">I mostly…</label>
-      <select id="nl-seg-home" name="segment" required>
-        <option value="" disabled selected>I mostly…</option>
-        <option value="trades">fix or build homes</option>
-        <option value="sells-to-business">sell to local businesses</option>
-        <option value="real-estate">work in real estate</option>
-        <option value="other">something else</option>
-      </select>
-      <button class="btn btn-amber" type="submit">Send me the report</button>
-      <p class="nl-consent">Weekly. Unsubscribe anytime.</p>
-    </form>
-  </div>
+  <p class="fine" style="margin-top:1.4rem">Free every week: <a href="who-we-help.html#permit-report" style="color:var(--amber);font-weight:600">Permits Pulled</a>, what New Orleans city records say about where the work is.</p>
 </div></section>
 
 <section id="transform"><div class="wrap">
@@ -387,13 +384,13 @@
     <div class="handle"></div><span class="lab l">Their site today</span><span class="lab r">Built by AutoAnts</span>
     <input type="range" min="0" max="100" value="50" aria-label="Compare the old and new site">
   </div>
-  <p class="fine">Example business, made up for this page. Real before-and-afters go here with each owner's OK.</p>
+  <p class="fine">Example business, made up for this page.</p>
 </div></section>
 
 <section id="problem" class="band"><div class="wrap">
-  <div class="sec-head"><p class="eyebrow">The problem</p><h2>Right now, money's on the floor.</h2><p>You're great at the work and stretched thin everywhere else. Every day, jobs you already earned walk out the door — and you never see them go.</p></div>
+  <div class="sec-head"><p class="eyebrow">The problem</p><h2>Where local businesses lose jobs.</h2><p>You're great at the work and stretched thin everywhere else. Every day, jobs you already earned walk out the door — and you never see them go.</p></div>
   <div class="prob">
-    <div class="pcard"><div class="n">01 / MISSED</div><h3>The phone rings out</h3><p>You're with a customer or on a job. The call goes to voicemail. That caller doesn't leave one — they call the next business on Google.</p><div class="cost">→ a booked job, gone in 20 seconds</div></div>
+    <div class="pcard"><div class="n">01 / MISSED</div><h3>The phone rings out</h3><p>You're with a customer or on a job. The call goes to voicemail. That caller doesn't leave one — they call the next business on Google.</p><div class="cost">→ the caller tries the next name</div></div>
     <div class="pcard"><div class="n">02 / INVISIBLE</div><h3>Nobody can find you</h3><p>Great reviews, no website — or a broken one. The business <em>with</em> a site gets your Google searches. And now customers are asking ChatGPT, too.</p><div class="cost">→ the searches never reach you</div></div>
     <div class="pcard"><div class="n">03 / DROPPED</div><h3>Quotes die quietly</h3><p>Estimates sent, never followed up. A text on Tuesday would've closed it. By Friday it's someone else's job.</p><div class="cost">→ work you already priced, walking</div></div>
   </div>
@@ -415,44 +412,7 @@
   <p class="stack-note"><b>Turn on what you need, when you need it.</b> Start with the essentials; add the rest as you grow.</p>
 </div></section>
 
-<section class="wwh-strip" style="padding:1.6rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)"><div class="wrap" style="display:flex;flex-wrap:wrap;gap:.8rem 1.6rem;align-items:center;justify-content:space-between"><p style="margin:0;font-size:1.05rem;color:var(--ink)"><b>Not a contractor?</b> <span style="color:var(--muted)">The same crew works for auto shops, salons, gyms, restaurants, pet businesses and dozens more.</span></p><a class="btn btn-ghost" href="who-we-help.html">See what we do for you →</a></div></section>
 
-<section id="build"><div class="wrap">
-  <div class="build-track"><div class="build-pin">
-    <div>
-      <p class="eyebrow">Add-on · the build animation</p>
-      <h2 style="font-size:clamp(1.9rem,4vw,2.7rem);font-weight:800;margin:.7rem 0 .6rem">Watch the job come together.</h2>
-      <p style="color:var(--muted);font-size:1.05rem">Send us one before and one after photo of a real job, same spot. On your site, the visitor's scroll plays the job from start to finish. Nothing sells a crew like its own work.</p>
-      <p class="fine">This demo is an illustration made with AI. On your site it's your real photos, animated between, and labeled that way.</p>
-    </div>
-    <div>
-      <div class="build-media" id="buildMedia">
-        <img src="assets/build-demo/before.jpg" alt="Illustration: a dead oak leaning over a raised Louisiana cottage">
-        <img class="after" src="assets/build-demo/after.jpg" alt="Illustration: the same yard with the tree removed and the stump ground out">
-        <div class="edge"></div>
-      </div>
-      <div class="build-meter" id="buildMeter"><i></i></div>
-    </div>
-  </div></div>
-</div></section>
-
-<section id="roi" class="band"><div class="wrap">
-  <div class="sec-head"><p class="eyebrow">ROI calculator</p><h2>See what you're leaving on the floor.</h2><p>Your numbers, not ours. Slide them to your reality — this is the money slipping past every month.</p></div>
-  <div class="calc">
-    <div>
-      <div class="field"><label>Calls you miss a week <b><span id="v-calls">8</span></b></label><input id="calls" type="range" min="1" max="40" value="8"></div>
-      <div class="field"><label>Of those, how many would've booked <b><span id="v-close">30</span>%</b></label><input id="close" type="range" min="5" max="70" value="30"></div>
-      <div class="field"><label>Your average job <b>$<span id="v-job">650</span></b></label><input id="job" type="range" min="150" max="4000" step="50" value="650"></div>
-    </div>
-    <div class="result">
-      <div class="cap">Walking out the door</div>
-      <div class="big" id="permo">$0</div>
-      <div class="yr">that's <b id="peryr" style="color:var(--ink)">$0</b> a year</div>
-      <a class="btn btn-amber" href="#contact" data-interest="15-minute call" style="width:100%;justify-content:center">Stop the leak — free 15-minute call →</a>
-      <div class="note">Estimate from your own inputs. Missed-Call Text-Back is built to catch these.</div>
-    </div>
-  </div>
-</div></section>
 
 <section id="how"><div class="wrap">
   <div class="sec-head"><p class="eyebrow">How it works</p><h2>I do the work first. You decide after.</h2><p>No contract to start. You see a free breakdown before you spend a dollar, and you can try one assistant on your phone for $500 once.</p></div>
@@ -465,38 +425,23 @@
 </div></section>
 
 <section id="why" class="band"><div class="wrap">
-  <div class="sec-head"><p class="eyebrow">Who builds your site</p><h2>Built by someone who gets it — and won't BS you.</h2></div>
+  <div class="sec-head"><p class="eyebrow">Who's behind autoants</p><h2>A New Orleans company, and the person who answers for it.</h2></div>
   <div class="why">
     <div>
-    <div class="founder"><img src="assets/lane-davis.jpg" alt="Lane Davis II" onerror="this.remove()"><p><b>I'm Lane Davis II.</b> I build every site and the AI behind it myself, here in Louisiana, and you deal with me, not a call center.</p></div>
+    <div class="founder"><img src="assets/lane-davis.jpg" alt="Lane Davis II" onerror="this.remove()"><p><b>autoants was founded by Lane Davis II</b> in New Orleans. He signs off on every setup, and you deal with him directly, not a call center.</p></div>
     <div class="whylist">
-      <div class="wrow"><div class="dot"></div><div><h4>Only claims I can back up</h4><p>I only put claims on your site I can stand behind — no fake reviews, no made-up credentials. That protects you, and customers can tell.</p></div></div>
-      <div class="wrow"><div class="dot"></div><div><h4>Local, not a call center</h4><p>I know your area and your customers, and you talk to a person — me.</p></div></div>
-      <div class="wrow"><div class="dot"></div><div><h4>Done-for-you, not another login</h4><p>You didn't start a business to manage software. I run the whole system; you get the jobs.</p></div></div>
-      <div class="wrow"><div class="dot"></div><div><h4>Big-company tools, small-shop price</h4><p>The same modern AI big companies use, pointed at one thing: answering your customers and booking your jobs.</p></div></div>
-      <div class="wrow"><div class="dot"></div><div><h4>Honest about what to automate</h4><p>Sometimes the answer is "don't." If a tool won't earn its keep, I'll say so. That's how you know the next thing I recommend is real.</p></div></div>
+      <div class="wrow"><div class="dot"></div><div><h4>Only claims we can back up</h4><p>We only put claims on your site we can stand behind — no fake reviews, no made-up credentials. That protects you, and customers can tell.</p></div></div>
+      <div class="wrow"><div class="dot"></div><div><h4>Local, not a call center</h4><p>We know your area and your customers, and you talk to a person.</p></div></div>
+      <div class="wrow"><div class="dot"></div><div><h4>Done-for-you, not another login</h4><p>You didn't start a business to manage software. We run the whole system; you get the jobs.</p></div></div>
+            <div class="wrow"><div class="dot"></div><div><h4>Honest about what to automate</h4><p>Sometimes the answer is "don't." If a tool won't earn its keep, we'll say so.</p></div></div>
     </div>
     </div>
-    <div class="proofcard"><p class="eyebrow">Proof</p><div class="bignum">61</div><h3>site previews built for Louisiana businesses.</h3><p>Before we ever talk money, there's a live website with your business on it. That's how I work.</p><div class="thumb"><img src="assets/example/new.jpg" alt="Example of the AutoAnts site design" loading="lazy"></div><p class="fine" style="margin-top:0">The design every preview now uses (example business). Live client sites and their numbers go here as they launch.</p></div>
+    <div class="proofcard"><p class="eyebrow">How we work</p><h3>You see it before you pay for it.</h3><p>A free breakdown of how customers find your business today, and if you want one, a preview of your new site, before we ever talk money.</p><div class="thumb"><img src="assets/example/new.jpg" alt="Example of the autoants site design" loading="lazy"></div><p class="fine" style="margin-top:0">Example business, made up for this page.</p></div>
   </div>
 </div></section>
 
 <section id="pricing"><div class="wrap">
-  <div class="sec-head"><p class="eyebrow">Pricing</p><h2>Two ways to start.</h2><p>We get you found on Google and answer the calls you miss: $1,250 a month. Not ready? Try one assistant for $500. Start free with a breakdown of your business. Every price and every setup fee is on <a href="prices/" style="color:var(--amber);font-weight:600">one page</a>.</p></div>
-  <div class="assess" id="assessment">
-    <div>
-      <p class="eyebrow">Not sure where to start?</p>
-      <h3>The AI Opportunity Assessment</h3>
-      <p>For any business, any size. A recorded 45-minute interview about how your week actually runs, then a bound, printed report with its own report number: what to automate first, what each fix is worth in your own hours and dollars, how your market looks from public records, which ones you can do yourself, and 3–7 ready-made AI tools you could set up yourself in under 30 minutes. It's yours to keep, even if you never hire us.</p>
-      <a class="btn btn-amber" href="#contact" data-interest="The AI Opportunity Assessment ($500)">Book the assessment</a>
-      <p style="margin-top:.8rem"><a href="assessment/" style="color:var(--amber);font-weight:600">What's in the report, with sample pages →</a></p>
-    </div>
-    <ol class="ladder">
-      <li><b>Free 15-minute call</b><span>One bottleneck, one fix you can use. Free.</span></li>
-      <li><b>The AI Opportunity Assessment · $500 flat</b><span>The interview and the bound report. Credited toward your setup if you continue within 60 days; whatever the setup doesn't use comes off your first month.</span></li>
-      <li><b>The fix that fits</b><span>Usually Get Found + AI Front Desk, together; sized by your own numbers: if the report shows less than about three times the monthly fee in time and jobs recovered, we recommend the smaller option.</span></li>
-    </ol>
-  </div>
+  <div class="sec-head"><p class="eyebrow">Pricing</p><h2>One plan. Every price on one page.</h2><p>We get you found on Google and answer the calls you miss: $1,250 a month + $1,250 setup. Each service alone is $750 a month; Social Media adds $1,250. Start free with a breakdown of your business. Every price and every setup fee is on <a href="prices/" style="color:var(--amber);font-weight:600">one page</a>.</p></div>
   <div class="guarantee"><b>No result promises:</b> I don't promise calls or rankings. I measure where you are now and show you the same numbers later. Monthly plans: no 12-month contract. Three months, then month to month, cancel by email.</div>
 </div></section>
 
@@ -534,11 +479,11 @@
   </div>
 </div></section>
 
-<div class="mbar"><a class="btn btn-ghost" href="assessment/">The assessment</a><a class="btn btn-amber" href="#contact" data-interest="15-minute call" data-call>Book a 15-minute call</a></div>
+<div class="mbar"><a class="btn btn-ghost" href="tel:+15044991194">Hear it answer</a><a class="btn btn-amber" href="#contact" data-interest="15-minute call" data-call>Book a 15-minute call</a></div>
 
 <section class="final"><div class="wrap">
-  <h2>Let's find the money<br>you're leaving on the table.</h2>
-  <p>Free call, free breakdown, no catch. Worst case, you keep the breakdown and delete my number.</p>
+  <h2>Hear it answer, then talk to Lane.</h2>
+  <p>Call (504) 499-1194 to hear the AI Front Desk, or book a free 15-minute call. You keep the breakdown either way.</p>
   <div class="cta-row" style="justify-content:center"><a class="btn btn-amber" href="#contact" data-interest="15-minute call" data-call style="font-size:1.1rem;padding:1.1rem 2rem">Book a 15-minute call →</a></div>
 </div></section>
 
@@ -562,6 +507,7 @@
       document.getElementById('permo').textContent=fmt(mo)+'/mo';
       document.getElementById('peryr').textContent=fmt(mo*12);
     }
+    if(!c||!cl||!j) return;  // the ROI calculator left the homepage 2026-11-27
     [c,cl,j].forEach(function(el){el.addEventListener('input',upd)}); upd();
   })();
 

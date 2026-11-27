@@ -1,26 +1,30 @@
 > Plain-text version of https://autoants.com/ (Digital Marketing, AI Assistants & Social Media, New Orleans · autoants), made from that page. If the two ever differ, the page is right.
 
-autoants · Automated assistants for local businesses
+autoants · New Orleans
 
-# Digital marketing for local businesses, done for you.
+# We get New Orleans trades found on Google and answer the calls they miss.
+
+**Our mission:** no New Orleans trade loses a job to a missed call or a bad Google listing.
 
 - **Get Found:** you show up on Google and in ChatGPT's answers
 - **AI Front Desk:** we answer the calls you miss
 - **Social Media:** your Facebook and Instagram, posted from your real jobs
 
-You approve everything before it goes out.
+**Get Found + AI Front Desk:** $1,250 a month + $1,250 setup. Three months, then month to month. Social Media is an add-on.
 
-**◆** Free breakdown of your business first **◆** No contract to start **◆** You approve the wording first
+Founded by [Lane Davis II](https://autoants.com/about-lane/) in New Orleans. He signs off on every setup, and you deal with him directly.
+
+**◆** Free breakdown of your business first **◆** You approve every word **◆** No result promises: we count your calls and jobs, before and after
 
 Works with the tools you already use. Nothing to switch: we connect to what you already run.
 
 Google Business Profile, Your phone & texting, QuickBooks, Jobber, Housecall Pro, Yelp & Apple Maps
 
-What we do
+Services and prices
 
-## Three things grow a local business. We do all three.
+## What we do, and what it costs.
 
-We get you found, answer your phone when you can't, and keep you in front of customers, so more of the work you already pay for turns into booked jobs.
+Two services make the plan: we get you found and answer the calls you miss. Social Media is an add-on.
 
 SEO & AI search
 
@@ -34,21 +38,21 @@ Your Google profile, your website, and what ChatGPT says when someone asks who t
 - Checked against what AI answers say about you
 - Business email on your own domain set up so quotes don't land in spam
 
-**$1,250** a month Get Found + AI Front Desk, together · + $1,250 setup
+**$750** a month alone+ $500 setup · or both services for $1,250 (below)
 
 AI Front Desk
 
 ### Never miss a call.
 
-AI Front Desk answers calls and texts when you can't, says it's an AI, and books the job or texts it to you.
+AI Front Desk answers calls and texts when you can't, says it's an AI, takes the job and texts it to you to confirm.
 
 - Missed calls texted back
-- AI phone answering on your line, priced with you
-- Web-form leads answered and booked
+- AI phone answering on your line (minutes priced with you)
+- Web-form leads answered and sent to you to confirm
 - A review ask after every job
 - Service-due and invoice reminders
 
-**$1,250** a month Together with Get Found · Not ready? Try one assistant for $500
+**$750** a month alone+ $750 setup · or both services for $1,250 (below)
 
 Social Media
 
@@ -61,19 +65,21 @@ Posts and short videos from your real jobs, plus postcards and reminders to past
 - Postcards to homes that just had the job before yours
 - Your Facebook and Instagram run for you: posts and short videos from your real jobs, approved by text
 
-Add-on Add Social Media when you're ready
+**+ $1,250** a month Add-on, on top of the plan · + $500 setup
+
+The plan
+
+### Get Found + AI Front Desk
+
+**$1,250 a month + $1,250 setup.** That's $250 a month less than the two alone. Three months, then month to month, cancel by email.
 
 **Free first.** A short video of how customers find you: the 3 questions they ask Google and ChatGPT about your trade, who gets named today, and the 3 fixes we'd make first, walked through with you in 15 minutes. Yours to keep. [Prices →](https://autoants.com/prices/)
 
-Free · every week
-
-### Permits Pulled
-
-A weekly read on what New Orleans' public records say about where the work is: re-roofs by ZIP, where houses are getting work, and what kinds of businesses just opened. For local business owners, trades and real estate. Counts from city data, plus one AI tip each week.
+Free every week: [Permits Pulled](https://autoants.com/who-we-help.html#permit-report), what New Orleans city records say about where the work is.
 
 The problem
 
-## Right now, money's on the floor.
+## Where local businesses lose jobs.
 
 You're great at the work and stretched thin everywhere else. Every day, jobs you already earned walk out the door — and you never see them go.
 
@@ -83,7 +89,7 @@ You're great at the work and stretched thin everywhere else. Every day, jobs you
 
 You're with a customer or on a job. The call goes to voicemail. That caller doesn't leave one — they call the next business on Google.
 
-→ a booked job, gone in 20 seconds
+→ the caller tries the next name
 
 02 / INVISIBLE
 
@@ -179,8 +185,6 @@ Reminder Ant
 
 **Turn on what you need, when you need it.** Start with the essentials; add the rest as you grow.
 
-**Not a contractor?** The same crew works for auto shops, salons, gyms, restaurants, pet businesses and dozens more.
-
 How it works
 
 ## I do the work first. You decide after.
@@ -203,59 +207,41 @@ We get you found on Google and answer the calls you miss: $1,250 a month. Add So
 
 One page: calls caught, quotes booked, reviews gained, each number with where it came from. The ones that didn't move stay on the page too.
 
-Who builds your site
+Who's behind autoants
 
-## Built by someone who gets it — and won't BS you.
+## A New Orleans company, and the person who answers for it.
 
-**I'm Lane Davis II.** I build every site and the AI behind it myself, here in Louisiana, and you deal with me, not a call center.
+**autoants was founded by Lane Davis II** in New Orleans. He signs off on every setup, and you deal with him directly, not a call center.
 
-#### Only claims I can back up
+#### Only claims we can back up
 
-I only put claims on your site I can stand behind — no fake reviews, no made-up credentials. That protects you, and customers can tell.
+We only put claims on your site we can stand behind — no fake reviews, no made-up credentials. That protects you, and customers can tell.
 
 #### Local, not a call center
 
-I know your area and your customers, and you talk to a person — me.
+We know your area and your customers, and you talk to a person.
 
 #### Done-for-you, not another login
 
-You didn't start a business to manage software. I run the whole system; you get the jobs.
-
-#### Big-company tools, small-shop price
-
-The same modern AI big companies use, pointed at one thing: answering your customers and booking your jobs.
+You didn't start a business to manage software. We run the whole system; you get the jobs.
 
 #### Honest about what to automate
 
-Sometimes the answer is "don't." If a tool won't earn its keep, I'll say so. That's how you know the next thing I recommend is real.
+Sometimes the answer is "don't." If a tool won't earn its keep, we'll say so.
 
-Proof
+How we work
 
-61
+### You see it before you pay for it.
 
-### site previews built for Louisiana businesses.
+A free breakdown of how customers find your business today, and if you want one, a preview of your new site, before we ever talk money.
 
-Before we ever talk money, there's a live website with your business on it. That's how I work.
-
-The design every preview now uses (example business). Live client sites and their numbers go here as they launch.
+Example business, made up for this page.
 
 Pricing
 
-## Two ways to start.
+## One plan. Every price on one page.
 
-We get you found on Google and answer the calls you miss: $1,250 a month. Not ready? Try one assistant for $500. Start free with a breakdown of your business. Every price and every setup fee is on [one page](https://autoants.com/prices/).
-
-Not sure where to start?
-
-### The AI Opportunity Assessment
-
-For any business, any size. A recorded 45-minute interview about how your week actually runs, then a bound, printed report with its own report number: what to automate first, what each fix is worth in your own hours and dollars, how your market looks from public records, which ones you can do yourself, and 3–7 ready-made AI tools you could set up yourself in under 30 minutes. It's yours to keep, even if you never hire us.
-
-[What's in the report, with sample pages →](https://autoants.com/assessment/)
-
-1. **Free 15-minute call** One bottleneck, one fix you can use. Free.
-2. **The AI Opportunity Assessment · $500 flat** The interview and the bound report. Credited toward your setup if you continue within 60 days; whatever the setup doesn't use comes off your first month.
-3. **The fix that fits** Usually Get Found + AI Front Desk, together; sized by your own numbers: if the report shows less than about three times the monthly fee in time and jobs recovered, we recommend the smaller option.
+We get you found on Google and answer the calls you miss: $1,250 a month + $1,250 setup. Each service alone is $750 a month; Social Media adds $1,250. Start free with a breakdown of your business. Every price and every setup fee is on [one page](https://autoants.com/prices/).
 
 **No result promises:** I don't promise calls or rankings. I measure where you are now and show you the same numbers later. Monthly plans: no 12-month contract. Three months, then month to month, cancel by email.
 
