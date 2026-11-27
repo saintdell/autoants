@@ -14,8 +14,8 @@ website** → paste the URL for that link's plan:
 | Payment link for | Redirect URL |
 |---|---|
 | Get Found | `https://autoants.com/welcome/?plan=get-found` |
-| Catch missed calls | `https://autoants.com/welcome/?plan=calls` |
-| Get Found and catch missed calls | `https://autoants.com/welcome/?plan=both` |
+| AI Front Desk | `https://autoants.com/welcome/?plan=calls` |
+| Get Found and AI Front Desk | `https://autoants.com/welcome/?plan=both` |
 | New website | `https://autoants.com/welcome/?plan=website` |
 | Anything else (Try one, the assessment, custom links) | `https://autoants.com/welcome/` |
 

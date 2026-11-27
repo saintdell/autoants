@@ -1,14 +1,16 @@
 > Plain-text version of https://autoants.com/ (Digital Marketing, Social Media & AI Assistants, New Orleans · autoants), made from that page. If the two ever differ, the page is right.
 
-SEO & AI search · Social media & marketing · AI front desk
+autoants · Automated assistants for local businesses
 
-# Automated assistants for local businesses.
+# Digital marketing for local businesses, done for you.
 
-**Digital marketing, social media and an AI front desk for local businesses.** We get you found, keep you in front of customers, and answer your phone when you can't, so more calls turn into booked jobs. **Hear it yourself: call [(504) 499-1194](tel:+15044991194).** And before you pay a dime, a free breakdown of your business from public information.
+- **Get Found** on Google and in ChatGPT's answers
+- **Your Facebook and Instagram** posted from your real jobs
+- **AI Front Desk:** we answer the calls you miss
 
-Not sure where to start? The [AI Opportunity Assessment](https://autoants.com/assessment/) finds where calls, jobs and hours slip, in your own numbers. $500, credited toward setup.
+You approve everything before it goes out. Start with one for $500.
 
-**◆** No contract to start **◆** You see it before you pay **◆** You approve the wording first
+**◆** Free breakdown of your business first **◆** No contract to start **◆** You approve the wording first
 
 Works with the tools you already use. Nothing to switch: we connect to what you already run.
 
@@ -32,13 +34,13 @@ Your Google profile, your website, and what ChatGPT says when someone asks who t
 - Checked against what AI answers say about you
 - Business email on your own domain set up so quotes don't land in spam
 
-**$1,250** a month Get Found and catch missed calls, together · + $1,250 setup
+**$1,250** a month Get Found and AI Front Desk, together · + $1,250 setup
 
-AI front desk
+AI Front Desk
 
 ### Never miss a call.
 
-An AI front desk answers calls and texts when you can't, says it's an AI, and books the job or texts it to you.
+AI Front Desk answers calls and texts when you can't, says it's an AI, and books the job or texts it to you.
 
 - Missed calls texted back
 - AI phone answering on your line, priced with you
@@ -149,7 +151,7 @@ When you can't pick up
 
 Receptionist Ant
 
-An AI that answers when you can't, says up front that it's an AI, screens the job and texts it to you. Scoped with you once you're on get found and catch missed calls.
+An AI that answers when you can't, says up front that it's an AI, screens the job and texts it to you. Scoped with you once you're on Get Found and AI Front Desk.
 
 Every customer asked
 
@@ -253,7 +255,7 @@ For any business, any size. A recorded 45-minute interview about how your week a
 
 1. **Free 15-minute call** One bottleneck, one fix you can use. Free.
 2. **The AI Opportunity Assessment · $500 flat** The interview and the bound report. Credited toward your setup if you continue within 60 days; whatever the setup doesn't use comes off your first month.
-3. **The fix that fits** Usually get found and catch missed calls, together; sized by your own numbers: if the report shows less than about three times the monthly fee in time and jobs recovered, we recommend the smaller option.
+3. **The fix that fits** Usually Get Found and AI Front Desk, together; sized by your own numbers: if the report shows less than about three times the monthly fee in time and jobs recovered, we recommend the smaller option.
 
 **No result promises:** I don't promise calls or rankings. I measure where you are now and show you the same numbers later. Monthly plans: no 12-month contract. Three months, then month to month, cancel by email.
 

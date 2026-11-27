@@ -64,7 +64,7 @@ Dental offices, Chiropractors, Physical therapy, Med spas, Optometry, Clinics
 
 1. **Reach out** Fill out the form, or call or text.
 2. **See your free breakdown** A short video and written report on your business from public information, before you pay anything.
-3. **Pick what fits** Get Found and catch missed calls, $1,250 a month, or try one assistant for $500: a 15-minute call to choose.
+3. **Pick what fits** Get Found and AI Front Desk, $1,250 a month, or try one assistant for $500: a 15-minute call to choose.
 
 ---
 
