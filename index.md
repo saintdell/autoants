@@ -48,7 +48,7 @@ AI Front Desk answers calls and texts when you can't, says it's an AI, and books
 - A review ask after every job
 - Service-due and invoice reminders
 
-**$1,250** a month Together with get found · Not ready? Try one assistant for $500
+**$1,250** a month Together with Get Found · Not ready? Try one assistant for $500
 
 Social Media
 
@@ -61,7 +61,7 @@ Posts and short videos from your real jobs, plus postcards and reminders to past
 - Postcards to homes that just had the job before yours
 - Your Facebook and Instagram run for you: posts and short videos from your real jobs, approved by text
 
-Add-on Add social and marketing when you're ready
+Add-on Add Social Media when you're ready
 
 **Free first.** A short video of how customers find you: the 3 questions they ask Google and ChatGPT about your trade, who gets named today, and the 3 fixes we'd make first, walked through with you in 15 minutes. Yours to keep. [Prices →](https://autoants.com/prices/)
 
@@ -197,7 +197,7 @@ Not ready for more? One assistant on your phone for $500, once. Most shops start
 
 ### Both, for $1,250
 
-We answer the calls you miss and get you found on Google: $1,250 a month. Add social and marketing when you're ready.
+We answer the calls you miss and get you found on Google: $1,250 a month. Add Social Media when you're ready.
 
 ### The 30-day receipt
 
