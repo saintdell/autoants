@@ -7,13 +7,7 @@
   --accent:var(--forest); --on-accent:#ffffff; --accent-ink:var(--forest);
   --draft-bg:#dff3ea; --draft-ink:#0b3d26; --draft-line:#a9dcc6;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --muted:#a3b5a9; --line:#26372d; --soft:#17291f;
-    --accent:#3ddcae; --on-accent:#0b1712; --accent-ink:#3ddcae;
-    --draft-bg:#123326; --draft-ink:#bff0dc; --draft-line:#1f5a42;
-  }
-}
+/* 2026-11-27: light everywhere (Lane wants the site lighter); dark only if a page sets data-theme="dark". */
 :root[data-theme="dark"]{
   --ground:#0b1712; --card:#13211a; --ink:#e6ece7; --muted:#a3b5a9; --line:#26372d; --soft:#17291f;
   --accent:#3ddcae; --on-accent:#0b1712; --accent-ink:#3ddcae;
@@ -132,3 +126,5 @@ button.btn{border:0;font:inherit;font-weight:800;cursor:pointer}
 .rform .sent{display:none;margin:0;font-weight:700;color:var(--accent-ink)}
 .steps{padding-left:1.4em}
 .steps li{margin:.5em 0}
+.cta{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;margin:22px 0}
+.cta .ghost{font-weight:700}

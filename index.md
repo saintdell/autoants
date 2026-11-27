@@ -83,6 +83,8 @@ The plan
 
 **$1,250 a month + $1,250 setup.** That's $250 a month less than the two alone. Three months, then month to month, cancel by email.
 
+Bigger operation, or need more than these three? The [AI Opportunity Assessment](https://autoants.com/assessment/): a recorded interview and a bound report on where AI fits your business. $500, credited toward setup. →
+
 **Free first.** A short video of how customers find you: the 3 questions they ask Google and ChatGPT about your trade, who gets named today, and the 3 fixes we'd make first, walked through with you in 15 minutes. Yours to keep. [Prices →](https://autoants.com/prices/)
 
 Free every week: [Permits Pulled](https://autoants.com/who-we-help.html#permit-report), what New Orleans city records say about where the work is.
