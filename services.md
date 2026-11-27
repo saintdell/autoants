@@ -1,4 +1,4 @@
-> Plain-text version of https://autoants.com/services.html (Services and prices · autoants | Get Found and AI Front Desk), made from that page. If the two ever differ, the page is right.
+> Plain-text version of https://autoants.com/services.html (Services and prices · autoants | Get Found + AI Front Desk), made from that page. If the two ever differ, the page is right.
 
 Services and prices
 
@@ -41,7 +41,7 @@ $1,250 a month, with Get Found · or Try one for $500
 
 03
 
-## Get the next job.
+## Social Media.
 
 The neighbors, your past customers and your own work bring in the next one.
 
@@ -52,7 +52,7 @@ The neighbors, your past customers and your own work bring in the next one.
 
 Add-on · when you're ready
 
-[Get the next job](https://autoants.com/index.html?interest=Get%20the%20next%20job#contact)
+[Social Media](https://autoants.com/index.html?interest=Get%20the%20next%20job#contact)
 
 ## Two ways to start
 
@@ -70,7 +70,7 @@ Free
 
 MOST SHOPS
 
-Get Found and AI Front Desk
+Get Found + AI Front Desk
 
 $1,250 a month + $1,250 setup
 
@@ -104,7 +104,7 @@ You own everything: your accounts, pages and customer list. Three months, then m
 
 **Other options**
 
-Most shops need both. When your breakdown shows you only need one, or you're ready for more, these are here too. Need both? Get Found and AI Front Desk is $1,250 a month. That's $250 a month less than buying them one at a time.
+Most shops need both. When your breakdown shows you only need one, or you're ready for more, these are here too. Need both? Get Found + AI Front Desk is $1,250 a month. That's $250 a month less than buying them one at a time.
 
 - **AI Front Desk** Just the calls: missed calls answered, quotes followed up, appointments booked and reminded, reviews requested, Facebook and Instagram messages answered, plus a "book now" box on your site.
   $750 a month + $750 setup
@@ -112,9 +112,9 @@ Most shops need both. When your breakdown shows you only need one, or you're rea
   $750 a month + $250 setup
 - **Pay per job** Prefer to pay per job? AI Front Desk is also $250 a month + $25 for each job we save from a call you missed. Never more than $750.
   $250 a month + $25 a job
-- **Add-on: Get the next job** Social and marketing, on top of Get Found and AI Front Desk: weekly posts and short videos from your real jobs, postcards to the neighbors, door hangers around every job, postcards to past customers, and New Owner Week: offers to people who just bought a house near you.
+- **Add-on: Social Media** Social and marketing, on top of Get Found + AI Front Desk: weekly posts and short videos from your real jobs, postcards to the neighbors, door hangers around every job, postcards to past customers, and New Owner Week: offers to people who just bought a house near you.
   + $1,250 a month + $500 setup; $2,500 a month in all; $1,750 setup in all
-- **AI phone answering** An AI that answers when nobody can, always says it's an AI, and texts you the job. Scoped with you once you're on Get Found and AI Front Desk; its minutes are written into the agreement.
+- **AI phone answering** An AI that answers when nobody can, always says it's an AI, and texts you the job. Scoped with you once you're on Get Found + AI Front Desk; its minutes are written into the agreement.
   Priced with you
 - **Operations Math by autoants** For big operations: routes, schedules, cutting and loads, planned from your own weeks. A 30-day pilot, credited to month one; then priced by the size of the operation.
   $1,500 30-day pilot

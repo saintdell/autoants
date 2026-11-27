@@ -390,7 +390,7 @@ def hub():
     prices = table(["What", "Price"], [
         ["<b>The free breakdown</b>: a 10-14 page look at how you show up on Google, in AI answers and next to the "
          "shops around you, made from public information", "Free"],
-        ["<b>Get Found and AI Front Desk</b>: missed calls answered, quotes followed up, appointments booked and "
+        ["<b>Get Found + AI Front Desk</b>: missed calls answered, quotes followed up, appointments booked and "
          "reminded (pre-season tune-ups included), reviews requested, your Google profile kept right and posted to "
          "every week, your listings kept right, 2 new pages a month, what AI answers say about you checked every "
          "month, and your website kept up", P_BOTH],
@@ -400,7 +400,7 @@ def hub():
         ["<b>Get Found</b> alone: just Google and AI answers", P_GF],
         ["<b>Pay per job</b>: AI Front Desk, paid by the job", P_PPJ],
         ["<b>AI phone answering</b>: an AI that answers when nobody can, always says it's an AI, and texts you the "
-         "job", "Priced with you once you're on Get Found and AI Front Desk; minutes written into the agreement"],
+         "job", "Priced with you once you're on Get Found + AI Front Desk; minutes written into the agreement"],
     ])
     body = f"""
   <h2>What we do for HVAC shops</h2>
@@ -450,7 +450,7 @@ def hub():
          "provider": {"@id": BASE + "/#organization"}, "areaServed": ORG["areaServed"],
          "audience": {"@type": "BusinessAudience", "audienceType": "HVAC and air conditioning companies"},
          "offers": [
-             {"@type": "Offer", "name": "Get Found and AI Front Desk", "price": "1250", "priceCurrency": "USD",
+             {"@type": "Offer", "name": "Get Found + AI Front Desk", "price": "1250", "priceCurrency": "USD",
               "description": P_BOTH + ", for our first 3 shops", "url": BASE + "/prices/"},
              {"@type": "Offer", "name": "Try one", "price": "500", "priceCurrency": "USD",
               "description": "One assistant, $500 once, for our first 3 shops", "url": BASE + "/prices/"},
@@ -542,7 +542,7 @@ def p_receptionist():
          "seconds", f"Try one, {P_TRY}; or inside AI Front Desk, {P_NMJ}", "Calls ring out while techs are on "
          "jobs"],
         ["<b>AI receptionist</b> (autoants)", "An AI that says it's an AI in its first sentence, then texts you the "
-         "job", "Priced with you once you're on Get Found and AI Front Desk; minutes written into the agreement",
+         "job", "Priced with you once you're on Get Found + AI Front Desk; minutes written into the agreement",
          "Nights, weekends, lunch, and techs on a roof"],
         ["<b>Answering service</b>", "Live people, often 24/7", "Published plans are priced by the minute; see our "
          f'{link(p, "compare/answering-service/", "dated comparison")}', "Callers expect a person every time"],

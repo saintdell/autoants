@@ -227,7 +227,7 @@ def faq(t):
          "No. Nobody honest can. Before we start we count one real week of your calls, nights and weekends "
          "included, and we show you the same numbers every month after."),
         ("What does it cost, and for how long?",
-         f"Get Found and AI Front Desk is {P_BOTH}; to try one assistant first, it's {P_TRY}. Those are the "
+         f"Get Found + AI Front Desk is {P_BOTH}; to try one assistant first, it's {P_TRY}. Those are the "
          "prices for our first 3 shops with up to 15 trucks. Monthly plans are three months, then month to month, and "
          "you cancel by email. You own your accounts, pages and customer list."),
     ]
@@ -255,7 +255,7 @@ def page(slug):
     prices = hp.table(["What", "Price"], [
         [f"<b>The free breakdown</b>: {BREAKDOWN} on how you show up on Google, in AI answers and next to the shops "
          "around you, made from public information", "Free"],
-        ["<b>Get Found and AI Front Desk</b>: missed calls answered, quotes followed up, appointments booked and "
+        ["<b>Get Found + AI Front Desk</b>: missed calls answered, quotes followed up, appointments booked and "
          "reminded, reviews requested, your Google profile kept right and posted to every week, your listings kept "
          "right, 2 new pages a month, what AI answers say about you checked every month, and your website kept up",
          P_BOTH],
@@ -265,7 +265,7 @@ def page(slug):
         ["<b>Get Found</b> alone: just Google and AI answers", P_GF],
         ["<b>Pay per job</b>: AI Front Desk, paid by the job", P_PPJ],
         ["<b>AI phone answering</b>: an AI that answers when nobody can, always says it's an AI, and texts you the "
-         "job", "Priced with you once you're on Get Found and AI Front Desk; minutes written into the agreement"],
+         "job", "Priced with you once you're on Get Found + AI Front Desk; minutes written into the agreement"],
     ])
     more = [f'<li><a class="in" href="{p}{t["question"][0]}">{E(t["question"][1])}</a></li>',
             f'<li><a class="in" href="{p}questions/show-up-in-chatgpt-contractor-new-orleans/">How does a New Orleans '
@@ -294,7 +294,7 @@ def page(slug):
                         {"@type": "AdministrativeArea", "name": "Jefferson Parish"}],
          "audience": {"@type": "BusinessAudience", "audienceType": t["audience"]},
          "offers": [
-             {"@type": "Offer", "name": "Get Found and AI Front Desk", "price": "1250", "priceCurrency": "USD",
+             {"@type": "Offer", "name": "Get Found + AI Front Desk", "price": "1250", "priceCurrency": "USD",
               "description": P_BOTH + ", for our first 3 shops", "url": BASE + "/prices/"},
              {"@type": "Offer", "name": "Try one", "price": "500", "priceCurrency": "USD",
               "description": "One assistant, $500 once, for our first 3 shops", "url": BASE + "/prices/"},

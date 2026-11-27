@@ -34,7 +34,7 @@ Your Google profile, your website, and what ChatGPT says when someone asks who t
 - Checked against what AI answers say about you
 - Business email on your own domain set up so quotes don't land in spam
 
-**$1,250** a month Get Found and AI Front Desk, together · + $1,250 setup
+**$1,250** a month Get Found + AI Front Desk, together · + $1,250 setup
 
 AI Front Desk
 
@@ -50,7 +50,7 @@ AI Front Desk answers calls and texts when you can't, says it's an AI, and books
 
 **$1,250** a month Together with get found · Not ready? Try one assistant for $500
 
-Social media & marketing
+Social Media
 
 ### Stay in front of customers.
 
@@ -151,7 +151,7 @@ When you can't pick up
 
 Receptionist Ant
 
-An AI that answers when you can't, says up front that it's an AI, screens the job and texts it to you. Scoped with you once you're on Get Found and AI Front Desk.
+An AI that answers when you can't, says up front that it's an AI, screens the job and texts it to you. Scoped with you once you're on Get Found + AI Front Desk.
 
 Every customer asked
 
@@ -255,7 +255,7 @@ For any business, any size. A recorded 45-minute interview about how your week a
 
 1. **Free 15-minute call** One bottleneck, one fix you can use. Free.
 2. **The AI Opportunity Assessment · $500 flat** The interview and the bound report. Credited toward your setup if you continue within 60 days; whatever the setup doesn't use comes off your first month.
-3. **The fix that fits** Usually Get Found and AI Front Desk, together; sized by your own numbers: if the report shows less than about three times the monthly fee in time and jobs recovered, we recommend the smaller option.
+3. **The fix that fits** Usually Get Found + AI Front Desk, together; sized by your own numbers: if the report shows less than about three times the monthly fee in time and jobs recovered, we recommend the smaller option.
 
 **No result promises:** I don't promise calls or rankings. I measure where you are now and show you the same numbers later. Monthly plans: no 12-month contract. Three months, then month to month, cancel by email.
 

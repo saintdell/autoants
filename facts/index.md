@@ -48,7 +48,7 @@ Free first: a short video of how customers find the business: the 3 questions th
 
 Then two choices:
 
-- **Get Found and AI Front Desk:** $1,250 a month + $1,250 setup. Missed calls answered, quotes followed up, appointments booked and reminded, reviews requested, the Google profile kept right and posted to every week, the listings kept right, 2 new pages a month, what AI answers say about the business checked every month, and the website kept up. Plus a monthly market pack: permit share, jobs coming due, neighborhood pages, competitor watch.
+- **Get Found + AI Front Desk:** $1,250 a month + $1,250 setup. Missed calls answered, quotes followed up, appointments booked and reminded, reviews requested, the Google profile kept right and posted to every week, the listings kept right, 2 new pages a month, what AI answers say about the business checked every month, and the website kept up. Plus a monthly market pack: permit share, jobs coming due, neighborhood pages, competitor watch.
 - **Not ready? Try one:** $500 once. One assistant on the owner's phone. Most shops start with texting back every missed call; others pick web-form answers, booking and reminders, the review ask, service-due or invoice reminders, or a "book now" box on the website. If the owner upgrades within 30 days, the $500 counts toward setup.
 
 Other options, when the owner asks or the breakdown points to one:
@@ -56,9 +56,9 @@ Other options, when the owner asks or the breakdown points to one:
 - **AI Front Desk alone:** $750 a month + $750 setup.
 - **Get Found alone:** $750 a month + $500 setup.
 - **Pay per job:** $250 a month + $25 a job, never more than $750.
-- **Add-on: Get the next job:** + $1,250 a month + $500 setup ($2,500 a month in all; $1,750 setup in all).
+- **Add-on: Social Media:** + $1,250 a month + $500 setup ($2,500 a month in all; $1,750 setup in all).
 - **New website:** $1,000 once.
-- **AI phone answering:** Priced with you, once you're on Get Found and AI Front Desk.
+- **AI phone answering:** Priced with you, once you're on Get Found + AI Front Desk.
 - **Operations Math by autoants:** $1,500 30-day pilot, credited to month one.
 - **The AI Opportunity Assessment:** $500 flat.
 

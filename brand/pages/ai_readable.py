@@ -34,7 +34,7 @@ TWINS = [
     ("prices/index.html", "prices/index.md", "main", set(), set(),
      ("Prices", "every price, the fine print and the other options")),
     ("services.html", "services.md", "body", set(), {"noprint"},
-     ("What we do", "Get Found, AI Front Desk and Get the next job, and what each includes")),
+     ("What we do", "Get Found, AI Front Desk and Social Media, and what each includes")),
     ("who-we-help.html", "who-we-help.md", "body", {"permits-pulled"}, {"printonly", "cta", "noprint"},
      ("Who we help", "every kind of local business we work with, and what we automate for each")),
     ("about-lane/index.html", "about-lane/index.md", "main", set(), set(),

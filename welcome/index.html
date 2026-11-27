@@ -198,7 +198,7 @@
   var PHONE_TEXT = "(504) 499-1194", PHONE_SMS = "sms:+15044991194";
   // ?plan= values. Anything else (or none) shows the general version with every step tagged by plan.
   var PLANS = { "get-found": "Get Found", "calls": "AI Front Desk",
-                "both": "Get Found and AI Front Desk", "website": "New website" };
+                "both": "Get Found + AI Front Desk", "website": "New website" };
 
   var plan = "";
   try { plan = (new URLSearchParams(location.search).get("plan") || "").trim().toLowerCase(); } catch (e) {}

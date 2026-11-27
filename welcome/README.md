@@ -15,7 +15,7 @@ website** → paste the URL for that link's plan:
 |---|---|
 | Get Found | `https://autoants.com/welcome/?plan=get-found` |
 | AI Front Desk | `https://autoants.com/welcome/?plan=calls` |
-| Get Found and AI Front Desk | `https://autoants.com/welcome/?plan=both` |
+| Get Found + AI Front Desk | `https://autoants.com/welcome/?plan=both` |
 | New website | `https://autoants.com/welcome/?plan=website` |
 | Anything else (Try one, the assessment, custom links) | `https://autoants.com/welcome/` |
 
