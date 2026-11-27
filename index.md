@@ -4,9 +4,9 @@ autoants · Automated assistants for local businesses
 
 # Digital marketing for local businesses, done for you.
 
-- **Get Found** on Google and in ChatGPT's answers
-- **Your Facebook and Instagram** posted from your real jobs
+- **Get Found:** you show up on Google and in ChatGPT's answers
 - **AI Front Desk:** we answer the calls you miss
+- **Social Media:** your Facebook and Instagram, posted from your real jobs
 
 You approve everything before it goes out. Start with one for $500.
 

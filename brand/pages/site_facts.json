@@ -47,16 +47,16 @@
 
   "other_options": [
     {
-      "name": "AI Front Desk alone",
-      "price": "$750 a month + $750 setup",
-      "offer_map": ["$750 a month + $750 setup"],
-      "what": "Just the calls: missed calls answered, quotes followed up, appointments booked and reminded, reviews requested, Facebook and Instagram messages answered, plus a \"book now\" box on the website."
-    },
-    {
       "name": "Get Found alone",
       "price": "$750 a month + $500 setup",
       "offer_map": ["$750 a month + $500 setup"],
       "what": "Just Google: the Google profile kept right and posted to every week, the listings kept right, 2 new pages a month, what AI answers say about the business checked every month, review replies drafted, and the website kept up. Setup includes business email on the business's own domain."
+    },
+    {
+      "name": "AI Front Desk alone",
+      "price": "$750 a month + $750 setup",
+      "offer_map": ["$750 a month + $750 setup"],
+      "what": "Just the calls: missed calls answered, quotes followed up, appointments booked and reminded, reviews requested, Facebook and Instagram messages answered, plus a \"book now\" box on the website."
     },
     {
       "name": "Pay per job",
@@ -117,7 +117,7 @@
   "how_it_works": [
     "autoants makes a free breakdown of the business from public information; it shows which fix the owner's numbers need.",
     "The owner picks: Get Found + AI Front Desk ($1,250 a month), or tries one assistant for $500 once.",
-    "Social and marketing can be added later. No contract to start; monthly plans run three months, then month to month."
+    "Social Media can be added later. No contract to start; monthly plans run three months, then month to month."
   ],
 
   "ants": [

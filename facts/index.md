@@ -53,8 +53,8 @@ Then two choices:
 
 Other options, when the owner asks or the breakdown points to one:
 
-- **AI Front Desk alone:** $750 a month + $750 setup.
 - **Get Found alone:** $750 a month + $500 setup.
+- **AI Front Desk alone:** $750 a month + $750 setup.
 - **Pay per job:** $250 a month + $25 a job, never more than $750.
 - **Add-on: Social Media:** + $1,250 a month + $500 setup ($2,500 a month in all; $1,750 setup in all).
 - **New website:** $1,000 once.
