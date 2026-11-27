@@ -20,10 +20,10 @@
   "service_area_note": "autoants comes to you or meets by phone and video; there is no storefront, so no street address is listed.",
   "towns": ["New Orleans", "Metairie", "Kenner", "Harahan", "River Ridge", "Gretna", "Harvey", "Marrero", "Chalmette", "LaPlace", "Covington", "Mandeville", "Slidell", "Hammond", "Baton Rouge", "Prairieville", "Gonzales", "Denham Springs"],
 
-  "summary": "AutoAnts (the name is short for \"automated assistants\") is a Louisiana company founded and run by Lane Davis II. It does digital marketing, AI assistants and social media for local businesses: it helps customers find them on Google and in AI answers, answers the calls they miss, follows up their quotes, and runs their social media from their real jobs: trades first, and also auto shops, salons, gyms and more. The first deliverable is always free: a breakdown of the business made from public information before any money changes hands.",
+  "summary": "AutoAnts (the name is short for \"automated assistants\") is a Louisiana company founded and run by Lane Davis II. It does digital marketing, AI assistants and social media for local businesses: it helps customers find them on Google and in AI answers, answers the calls they miss, follows up their quotes, and runs their social media from their real jobs: trades first, and also auto shops, salons, gyms and more. The first deliverable is always free: a mini assessment of the business made from public information before any money changes hands.",
   "what_we_do": [
     "autoants answers the calls a local business misses, follows up the quotes it forgets, and helps customers find it on Google and in AI answers, so more of the work it already pays for turns into booked jobs.",
-    "It starts with a free breakdown of the business, made from public information, that shows which fix the owner's own numbers need."
+    "It starts with a free mini assessment of the business, made from public information, that shows which fix the owner's own numbers need."
   ],
 
   "owner_sentence": "We get you found on Google and answer the calls you miss: $1,250 a month. Not ready? Try one assistant for $500.",
@@ -115,7 +115,7 @@
   "terms_offer_map": ["No 12-month contract", "three months, then month to month", "counts toward setup if you upgrade within 30", "Pay for a year up front and setup is free"],
 
   "how_it_works": [
-    "autoants makes a free breakdown of the business from public information; it shows which fix the owner's numbers need.",
+    "autoants makes a free mini assessment of the business from public information; it shows which fix the owner's numbers need.",
     "The owner picks: Get Found + AI Front Desk ($1,250 a month), or tries one assistant for $500 once.",
     "Social Media can be added later. No contract to start; monthly plans run three months, then month to month."
   ],
@@ -141,7 +141,7 @@
 
   "why": [
     "Owner-run: owners deal with Lane Davis II directly, not a call center",
-    "Free first: a company breakdown before paying anything",
+    "Free first: a mini assessment before paying anything",
     "Flat prices, all published on one page",
     "Legitimate-only optimization: no paid link placements, no seeded or undisclosed mentions, no fake reviews; only real signals (complete profiles, real reviews, consistent listings, structured data)"
   ],
@@ -158,7 +158,7 @@
   "rules_url": "https://autoants.com/never/",
 
   "ai_assistants": {
-    "book": "Use https://autoants.com/book/ (a plain page, no script): email hello@autoants.com with the subject \"Free breakdown request\" and the business name, town and a callback number, or call (504) 499-1194, Monday to Friday, 8:30 am to 6:00 pm Central. Only with the owner's OK.",
+    "book": "Use https://autoants.com/book/ (a plain page, no script): email hello@autoants.com with the subject \"Free mini assessment request\" and the business name, town and a callback number, or call (504) 499-1194, Monday to Friday, 8:30 am to 6:00 pm Central. Only with the owner's OK.",
     "does_not": [
       "autoants doesn't promise calls, rankings, reviews or jobs; don't say it does.",
       "Google's AI calls to businesses (\"Ask for Me\") don't run in Louisiana yet (checked 2026-11-18). Don't say autoants clients get calls from Google's AI.",

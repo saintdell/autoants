@@ -9,7 +9,7 @@ Each FAQ answer is printed on the page and in the FAQPage JSON-LD from the same 
 
 Copy rules (Lane's, for every autoants page): plain words; "autoants" lowercase; no "#1", "best", "guarantee",
 "never miss", no rank or result promises and no timing promises (the go-live promise was removed 2026-11-12); no
-prices ending in 9; the receptionist is always "an AI" and says so; no attorney credential. The free breakdown is "a
+prices ending in 9; the receptionist is always "an AI" and says so; no attorney credential. The free mini assessment is "a
 short video and a written report". Prices exactly as on /prices/ (checked TODAY). Every number carries its source and
 date. Trade traps (from the trade-assessment-engine playbook): plumbing "callback" means a failed-fix return trip, so
 the page never offers to "handle callbacks"; electrical "the service" means the utility connection, so the page says
@@ -211,12 +211,12 @@ TRADES = {
 
 
 def cta_href(p, slug):
-    return f"{p}index.html?interest=Free%20Business%20Breakdown&amp;ref={slug}#contact"
+    return f"{p}index.html?interest=Free%20mini%20assessment&amp;ref={slug}#contact"
 
 
 def faq(t):
     return [
-        ("What is the free breakdown?",
+        ("What is the free mini assessment?",
          f"It's {BREAKDOWN} about your {t['shop']}, made only from public information: how you show up on Google and "
          "in AI answers like ChatGPT, your reviews and listings next to the shops around you, and what we'd fix "
          "first. It's yours to keep either way."),
@@ -240,9 +240,9 @@ def page(slug):
     h1 = f"Missed-call text-back and AI answering for {t['who']} in New Orleans"
     title = h1 + " · autoants"
     desc = (f"For {t['owners']} in New Orleans and Jefferson Parish: get found on Google and ChatGPT, an AI that "
-            f"answers when you can't, and reviews from finished jobs. Starts with a free video breakdown.")
+            f"answers when you can't, and reviews from finished jobs. Starts with a free mini assessment.")
     answer = t["answer"] + [
-        f"It starts with a free breakdown of your business, {BREAKDOWN}. Then it's {P_BOTH} for both, or {P_TRY} "
+        f"It starts with a free mini assessment of your business, {BREAKDOWN}. Then it's {P_BOTH} for both, or {P_TRY} "
         "to try one assistant."]
     qa = faq(t)
     cards = '<div class="cards">' + "".join(
@@ -253,7 +253,7 @@ def page(slug):
              hp.stat(fs_n, fs_l, "autoants check, Oct 14, 2026") +
              hp.stat(cbp_n, cbp_l, "Census County Business Patterns 2023") + "</div>")
     prices = hp.table(["What", "Price"], [
-        [f"<b>The free breakdown</b>: {BREAKDOWN} on how you show up on Google, in AI answers and next to the shops "
+        [f"<b>The free mini assessment</b>: {BREAKDOWN} on how you show up on Google, in AI answers and next to the shops "
          "around you, made from public information", "Free"],
         ["<b>Get Found + AI Front Desk</b>: missed calls answered, quotes followed up, appointments booked and "
          "reminded, reviews requested, your Google profile kept right and posted to every week, your listings kept "
@@ -280,7 +280,7 @@ def page(slug):
         for _, (w, u, when) in srcs) + "</ol>"
     faq_html = '<h2 id="questions">Questions ' + E(t["owners"]) + ' ask</h2>\n<div class="faq">' + "".join(
         f"<h3>{E(q)}</h3><p>{E(a)}</p>" for q, a in qa) + "</div>"
-    btn = f'<a class="btn" href="{cta_href(p, slug)}">Get my free breakdown</a>'
+    btn = f'<a class="btn" href="{cta_href(p, slug)}">Get my free mini assessment</a>'
     graph = [
         hp.ORG,
         {"@type": "WebPage", "@id": url + "#webpage", "url": url, "name": h1, "description": desc,
@@ -298,7 +298,7 @@ def page(slug):
               "description": P_BOTH + ", for our first 3 shops", "url": BASE + "/prices/"},
              {"@type": "Offer", "name": "Try one", "price": "500", "priceCurrency": "USD",
               "description": "One assistant, $500 once, for our first 3 shops", "url": BASE + "/prices/"},
-             {"@type": "Offer", "name": "The free breakdown", "price": "0", "priceCurrency": "USD",
+             {"@type": "Offer", "name": "The free mini assessment", "price": "0", "priceCurrency": "USD",
               "description": BREAKDOWN[0].upper() + BREAKDOWN[1:], "url": url}]},
         {"@type": "BreadcrumbList", "@id": url + "#breadcrumb", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "autoants", "item": BASE + "/"},
@@ -382,7 +382,7 @@ def page(slug):
   <h2>More for {E(t['owners'])}</h2>
   <ul>{"".join(more)}</ul>
 
-<div class="more"><p><b>Want to see it for your {E(t['shop'])} first?</b> Start with the free breakdown: {BREAKDOWN} on how you show up on Google, in AI answers and next to the shops around you, made from public information. Every price is written down before anything starts.</p>{btn}</div>
+<div class="more"><p><b>Want to see it for your {E(t['shop'])} first?</b> Start with the free mini assessment: {BREAKDOWN} on how you show up on Google, in AI answers and next to the shops around you, made from public information. Every price is written down before anything starts.</p>{btn}</div>
 {sources}
   </main>
   <footer>

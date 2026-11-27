@@ -58,14 +58,14 @@ Patient information needs a HIPAA program and signed agreements first, so we're 
 
 Dental offices, Chiropractors, Physical therapy, Med spas, Optometry, Clinics
 
-**Not sure what you need?** Start with a free company breakdown, a short video and written report on your business from public information, or [the AI Opportunity Assessment](https://autoants.com/index.html#assessment) ($500, credited toward setup, any remainder to the first month): a bound, printed report on what to automate first, and what each fix is worth. Every business above gets the same two choices: we get you found on Google and answer the calls you miss, $1,250 a month; or, not ready, try one assistant for $500. [Every price](https://autoants.com/prices/).
+**Not sure what you need?** Start with a free mini assessment, a short video and written report on your business from public information, or [the AI Opportunity Assessment](https://autoants.com/index.html#assessment) ($500, credited toward setup, any remainder to the first month): a bound, printed report on what to automate first, and what each fix is worth. Every business above gets the same two choices: we get you found on Google and answer the calls you miss, $1,250 a month; or, not ready, try one assistant for $500. [Every price](https://autoants.com/prices/).
 
 ## How it works
 
 1. **Reach out** Fill out the form, or call or text.
-2. **See your free breakdown** A short video and written report on your business from public information, before you pay anything.
+2. **See your free mini assessment** A short video and written report on your business from public information, before you pay anything.
 3. **Pick what fits** Get Found + AI Front Desk, $1,250 a month, or try one assistant for $500: a 15-minute call to choose.
 
 ---
 
-Book a free breakdown: https://autoants.com/book/ · hello@autoants.com · (504) 499-1194 (Monday to Friday, 8:30 am to 6:00 pm Central). All the facts: https://autoants.com/facts/ · Every price: https://autoants.com/prices/
+Book a free mini assessment: https://autoants.com/book/ · hello@autoants.com · (504) 499-1194 (Monday to Friday, 8:30 am to 6:00 pm Central). All the facts: https://autoants.com/facts/ · Every price: https://autoants.com/prices/

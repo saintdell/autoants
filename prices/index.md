@@ -21,7 +21,7 @@ We get you found on Google and answer the calls you miss: $1,250 a month. Not re
 
 **Other options**
 
-Most shops need both. When your breakdown shows you only need one, or you're ready for more, these are here too. Need both? Get Found + AI Front Desk is $1,250 a month. That's $250 a month less than buying them one at a time.
+Most shops need both. When your mini assessment shows you only need one, or you're ready for more, these are here too. Need both? Get Found + AI Front Desk is $1,250 a month. That's $250 a month less than buying them one at a time.
 
 - **Get Found**: $750 a month + $500 setup. Just Google: your Google profile kept right and posted to every week, your listings kept right, 2 new pages a month, what AI answers say about you checked every month, review replies drafted, and your website kept up. Setup includes business email on your own domain set up so quotes don't land in spam.
 - **AI Front Desk**: $750 a month + $750 setup. Just the calls: missed calls answered, quotes followed up, appointments booked and reminded, reviews requested, Facebook and Instagram messages answered, plus a "book now" box on your site.
@@ -51,13 +51,13 @@ We recommend what your own numbers can carry: if the assessment shows less than 
 
 Same on every monthly plan: you own every account, page, listing and list, and we don't promise results. Three-month minimum, then month to month, cancel by email; no 12-month contract. Try one counts toward setup if you upgrade within 30 days, and setup is free if you pay for a year up front. Phone numbers and texts run on your own Twilio account.
 
-## The free breakdown
+## The free mini assessment
 
 A short video and a written report about your business, made only from public information: how you show up on Google and in AI answers, your reviews and listings next to the shops around you, and what we'd fix first. When it helps, it also shows you a preview of a new site or a sample postcard for your trade. Yours to keep either way.
 
-## Free breakdown or the assessment?
+## Free mini assessment or the assessment?
 
-### The free breakdown
+### The free mini assessment
 
 Free
 
@@ -75,7 +75,7 @@ $500 flat, credited toward setup
 - **You get**: A bound, printed report: what to fix first, what each fix is worth, what AI can and can't do, and a plan in order
 - **Answers**: "What should I change, and what first?"
 
-Most owners start with the free breakdown. It shows whether the assessment is worth it, or whether one fix is enough.
+Most owners start with the free mini assessment. It shows whether the assessment is worth it, or whether one fix is enough.
 
 ## What these prices don't cover
 
@@ -86,4 +86,4 @@ You'd see the price in writing before anything is charged. [The terms, in plain 
 
 ---
 
-Book a free breakdown: https://autoants.com/book/ · hello@autoants.com · (504) 499-1194 (Monday to Friday, 8:30 am to 6:00 pm Central). All the facts: https://autoants.com/facts/ · Every price: https://autoants.com/prices/
+Book a free mini assessment: https://autoants.com/book/ · hello@autoants.com · (504) 499-1194 (Monday to Friday, 8:30 am to 6:00 pm Central). All the facts: https://autoants.com/facts/ · Every price: https://autoants.com/prices/

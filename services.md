@@ -60,7 +60,7 @@ We get you found on Google and answer the calls you miss: $1,250 a month. Not re
 
 Free first
 
-A breakdown of your business
+A mini assessment of your business
 
 A short video of how customers find you: the 3 questions they ask Google and ChatGPT about your trade, who gets named today, and the 3 fixes we'd make first, walked through with you in 15 minutes. With a written report, made only from public information. Yours to keep either way.
 
@@ -104,7 +104,7 @@ You own everything: your accounts, pages and customer list. Three months, then m
 
 **Other options**
 
-Most shops need both. When your breakdown shows you only need one, or you're ready for more, these are here too. Need both? Get Found + AI Front Desk is $1,250 a month. That's $250 a month less than buying them one at a time.
+Most shops need both. When your mini assessment shows you only need one, or you're ready for more, these are here too. Need both? Get Found + AI Front Desk is $1,250 a month. That's $250 a month less than buying them one at a time.
 
 - **AI Front Desk** Just the calls: missed calls answered, quotes followed up, appointments booked and reminded, reviews requested, Facebook and Instagram messages answered, plus a "book now" box on your site.
   $750 a month + $750 setup
@@ -127,7 +127,7 @@ Prices for our first 3 shops on each. [Everything that's included, and the price
 
 01
 
-#### Free breakdown
+#### Free mini assessment
 
 A short video and written report on your business, from public information, before you pay anything.
 
@@ -147,10 +147,10 @@ We report the numbers from your own records. You decide whether to keep it, or a
 
 ## See it before you pay for it.
 
-We'll make you a free breakdown of your business from public information. Yours to keep either way.
+We'll make you a free mini assessment of your business from public information. Yours to keep either way.
 
 [Book a 15-minute call](https://autoants.com/index.html?interest=15-minute%20call#contact)
 
 ---
 
-Book a free breakdown: https://autoants.com/book/ · hello@autoants.com · (504) 499-1194 (Monday to Friday, 8:30 am to 6:00 pm Central). All the facts: https://autoants.com/facts/ · Every price: https://autoants.com/prices/
+Book a free mini assessment: https://autoants.com/book/ · hello@autoants.com · (504) 499-1194 (Monday to Friday, 8:30 am to 6:00 pm Central). All the facts: https://autoants.com/facts/ · Every price: https://autoants.com/prices/

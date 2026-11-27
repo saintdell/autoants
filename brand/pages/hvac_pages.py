@@ -233,10 +233,10 @@ def faq_block(faq):
 
 
 def cta(p):
-    return (f'<div class="more"><p><b>Want to see it for your shop first?</b> Start with the free breakdown: how you '
+    return (f'<div class="more"><p><b>Want to see it for your shop first?</b> Start with the free mini assessment: how you '
             f'show up on Google, in AI answers and next to the shops around you, made from public information. Every '
             f'price is written down before anything starts.</p>'
-            f'<a class="btn" href="{p}index.html?interest=Free%20company%20breakdown&amp;ref=hvac#contact">Get my free '
+            f'<a class="btn" href="{p}index.html?interest=Free%20mini%20assessment&amp;ref=hvac#contact">Get my free '
             f'breakdown</a></div>')
 
 
@@ -279,7 +279,7 @@ def page(path, title, desc, h1, crumbs_html, answer_paras, body, faq, srcs, grap
   <h1>{E(h1)}</h1>
   <div class="answer">{ans}</div>
   <p class="stamp">By autoants · checked {TODAY_WORDS} · prices for our first 3 shops</p>
-{f'  <p><a class="btn" href="{p}index.html?interest=Free%20company%20breakdown&amp;ref=hvac#contact">Get my free breakdown</a></p>' if top_cta else ""}
+{f'  <p><a class="btn" href="{p}index.html?interest=Free%20mini%20assessment&amp;ref=hvac#contact">Get my free mini assessment</a></p>' if top_cta else ""}
 {body}
 {faq_block(faq) if faq else ""}
 {cta(p)}
@@ -388,7 +388,7 @@ def hub():
         ["Kenner residents (5 and over) who speak Spanish at home", "23%", "Census ACS 2020-2024, table C16001"],
     ])
     prices = table(["What", "Price"], [
-        ["<b>The free breakdown</b>: a 10-14 page look at how you show up on Google, in AI answers and next to the "
+        ["<b>The free mini assessment</b>: a 10-14 page look at how you show up on Google, in AI answers and next to the "
          "shops around you, made from public information", "Free"],
         ["<b>Get Found + AI Front Desk</b>: missed calls answered, quotes followed up, appointments booked and "
          "reminded (pre-season tune-ups included), reviews requested, your Google profile kept right and posted to "
@@ -454,7 +454,7 @@ def hub():
               "description": P_BOTH + ", for our first 3 shops", "url": BASE + "/prices/"},
              {"@type": "Offer", "name": "Try one", "price": "500", "priceCurrency": "USD",
               "description": "One assistant, $500 once, for our first 3 shops", "url": BASE + "/prices/"},
-             {"@type": "Offer", "name": "The free breakdown", "price": "0", "priceCurrency": "USD",
+             {"@type": "Offer", "name": "The free mini assessment", "price": "0", "priceCurrency": "USD",
               "url": BASE + "/prices/"}]},
         breadcrumb(None, None),
     ]

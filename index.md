@@ -6,13 +6,13 @@ Lane Davis II · AI consultant · New Orleans
 
 I'm on the AI tools every day, looking for edges a New Orleans business can use. Hire me, and I'll show you where you can modernize to bring in more customers, then set it up for you.
 
-It starts with a free breakdown of your business. Most fixes are one of three:
+It starts with a free mini assessment of your business. Most fixes are one of three:
 
 1. 1 **Get Found.** Show up on Google and in ChatGPT's answers.
 2. 2 **AI Front Desk.** Every call and text answered, quotes followed up, the job texted to you to confirm.
 3. 3 **Social Media.** Posts and short videos from your real jobs, so customers see you more often.
 
-**◆** Free breakdown first **◆** You approve every word **◆** No result promises
+**◆** Free mini assessment first **◆** You approve every word **◆** No result promises
 
 **Our mission:** help every New Orleans business use today's AI to get found, answer every customer, and stay in front of the people who need it.
 
@@ -129,7 +129,7 @@ Get Found
 
 ### Your website
 
-A real, fast, mobile site with your reviews and a quote form. Your free breakdown can show you a preview; it goes live on your own domain with Get Found.
+A real, fast, mobile site with your reviews and a quote form. Your free mini assessment can show you a preview; it goes live on your own domain with Get Found.
 
 Never lose a call
 
@@ -201,9 +201,9 @@ How it works
 
 ## I do the work first. You decide after.
 
-You see a free breakdown of your business before you spend a dollar. Then you pick the fix, and you approve every word before it goes live.
+You see a free mini assessment of your business before you spend a dollar. Then you pick the fix, and you approve every word before it goes live.
 
-### Free breakdown
+### Free mini assessment
 
 A short video and written report on your business, from public information: how customers find you today and where today's AI tools fit. Before you pay anything.
 
@@ -245,7 +245,7 @@ How we work
 
 ### You see it before you pay for it.
 
-A free breakdown of how customers find your business today, and if you want one, a preview of your new site, before we ever talk money.
+A free mini assessment of how customers find your business today, and if you want one, a preview of your new site, before we ever talk money.
 
 Example business, made up for this page.
 
@@ -253,7 +253,7 @@ Pricing
 
 ## One plan. Every price on one page.
 
-We get you found on Google and answer the calls you miss: $1,250 a month + $1,250 setup. Each service alone is $750 a month; Social Media adds $1,250. Start free with a breakdown of your business. Every price and every setup fee is on [one page](https://autoants.com/prices/).
+We get you found on Google and answer the calls you miss: $1,250 a month + $1,250 setup. Each service alone is $750 a month; Social Media adds $1,250. Start free with a mini assessment of your business. Every price and every setup fee is on [one page](https://autoants.com/prices/).
 
 **No result promises:** I don't promise calls or rankings. I measure where you are now and show you the same numbers later. Monthly plans: no 12-month contract. Three months, then month to month, cancel by email.
 
@@ -279,7 +279,7 @@ Yes. It's on your own domain and it's yours to keep, even if you stop paying for
 
 **What does it cost?**
 
-We get you found on Google and answer the calls you miss: $1,250 a month, plus $1,250 to set up. Not ready? Try one assistant for $500, once. If your breakdown shows you need only one fix, either one is $750 a month on its own, and you can add social and marketing later. Prices shown are for our first 3 shops with up to 15 trucks. Bigger or multi-location operations are quoted by size. No 12-month contract: three months, then month to month, cancel by email. Try one counts toward setup if you upgrade within 30 days, and setup is free if you pay for a year up front. Every price is on [one page](https://autoants.com/prices/).
+We get you found on Google and answer the calls you miss: $1,250 a month, plus $1,250 to set up. Not ready? Try one assistant for $500, once. If your mini assessment shows you need only one fix, either one is $750 a month on its own, and you can add social and marketing later. Prices shown are for our first 3 shops with up to 15 trucks. Bigger or multi-location operations are quoted by size. No 12-month contract: three months, then month to month, cancel by email. Try one counts toward setup if you upgrade within 30 days, and setup is free if you pay for a year up front. Every price is on [one page](https://autoants.com/prices/).
 
 **What do you need from me?**
 
@@ -287,4 +287,4 @@ Your Google Business Profile, about 20 minutes on the phone, and a few photos of
 
 ---
 
-Book a free breakdown: https://autoants.com/book/ · hello@autoants.com · (504) 499-1194 (Monday to Friday, 8:30 am to 6:00 pm Central). All the facts: https://autoants.com/facts/ · Every price: https://autoants.com/prices/
+Book a free mini assessment: https://autoants.com/book/ · hello@autoants.com · (504) 499-1194 (Monday to Friday, 8:30 am to 6:00 pm Central). All the facts: https://autoants.com/facts/ · Every price: https://autoants.com/prices/

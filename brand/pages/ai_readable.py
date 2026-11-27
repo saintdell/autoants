@@ -44,7 +44,7 @@ TWINS = [
     ("facts/index.html", "facts/index.md", "main", set(), set(),
      ("Facts", "name, founder, service area, hours, contact, prices in short, the rules we keep")),
     ("book/index.html", "book/index.md", "main", set(), set(),
-     ("Book a free breakdown", "by email, by phone or with the form")),
+     ("Book a free mini assessment", "by email, by phone or with the form")),
     ("ai-index/2026-11/index.html", "ai-index/2026-11/index.md", "body", set(), set(),
      ("The New Orleans AI Recommendation Index, November 2026", "which local companies an AI assistant named for each trade")),
 ]
@@ -326,7 +326,7 @@ def twin(rel_html, rel_md, root, skip_ids, skip_classes):
     body = "\n\n".join(out)
     head = (f"> Plain-text version of {page_url(rel_html)} ({title}), made from that page. "
             "If the two ever differ, the page is right.\n\n")
-    foot = (f"\n\n---\n\nBook a free breakdown: {BASE}book/ · {F['email']} · {F['phone']} "
+    foot = (f"\n\n---\n\nBook a free mini assessment: {BASE}book/ · {F['email']} · {F['phone']} "
             f"({F['hours']}). All the facts: {BASE}facts/ · Every price: {BASE}prices/\n")
     return head + body + foot
 
@@ -416,7 +416,7 @@ def amount(price):
 
 
 def facts_schema():
-    offers = [{"@type": "Offer", "name": "Free breakdown", "price": "0", "priceCurrency": "USD",
+    offers = [{"@type": "Offer", "name": "Free mini assessment", "price": "0", "priceCurrency": "USD",
                "description": F["free_first"], "url": BASE + "book/"}]
     for c in F["choices"]:
         name = c["name"].replace("Not ready? ", "")
@@ -481,7 +481,7 @@ def build_facts():
 
     <h2>How to reach us or book</h2>
     <ul>
-      <li>Book a free breakdown: <a href="/book/">autoants.com/book</a></li>
+      <li>Book a free mini assessment: <a href="/book/">autoants.com/book</a></li>
       <li>Email: <a href="mailto:{F['email']}">{F['email']}</a></li>
       <li>Phone: <a href="tel:{F['phone_e164']}">{F['phone']}</a></li>
     </ul>
@@ -492,7 +492,7 @@ def build_facts():
     <ul>
 {ch}
     </ul>
-    <p>Other options, when the owner asks or the breakdown points to one:</p>
+    <p>Other options, when the owner asks or the mini assessment points to one:</p>
     <ul>
 {oth}
     </ul>
@@ -512,21 +512,21 @@ def build_facts():
 {li(F['ai_assistants']['does_not'])}
     </ul>
     <p>A plain-text copy of this page is at <a href="/facts/index.md">/facts/index.md</a>, and a summary of the whole site is at <a href="/llms.txt">/llms.txt</a>.</p>"""
-    desc = (f"autoants in short: founder {F['founder']}, what we do, service area, hours, how to book a free breakdown, "
+    desc = (f"autoants in short: founder {F['founder']}, what we do, service area, hours, how to book a free mini assessment, "
             "prices and the rules we keep.")
     return page_shell("facts/", "Facts", desc, body, "facts", facts_schema())
 
 
 def build_book():
-    breakdown = mailto("Free breakdown request")
+    breakdown = mailto("Free mini assessment request")
     call15 = mailto("15-minute call")
     body = f"""    <p class="eyebrow">Book</p>
-    <h1>Book a free breakdown</h1>
+    <h1>Book a free mini assessment</h1>
     <p class="lede">A short video and a written report about your business, made only from public information: how you show up on Google and in AI answers, your reviews and listings next to the shops around you, and what we'd fix first. Free, and yours to keep.</p>
 
     <h2>Three ways to ask</h2>
     <ul>
-      <li><b>Email:</b> <a href="{E(breakdown)}">{F['email']}</a>, subject &ldquo;Free breakdown request&rdquo;. Include your business name, your town and a number to call you back.</li>
+      <li><b>Email:</b> <a href="{E(breakdown)}">{F['email']}</a>, subject &ldquo;Free mini assessment request&rdquo;. Include your business name, your town and a number to call you back.</li>
       <li><b>Call:</b> <a href="tel:{F['phone_e164']}">{F['phone']}</a>, {E(F['hours'])}.</li>
       <li><b>The form:</b> <a href="/#contact">on the home page</a> (it needs JavaScript).</li>
     </ul>
@@ -534,7 +534,7 @@ def build_book():
 
     <h2>What happens next</h2>
     <ol>
-      <li>Lane Davis II, the founder, makes the breakdown from public information. You hear back from him, a person.</li>
+      <li>Lane Davis II, the founder, makes the mini assessment from public information. You hear back from him, a person.</li>
       <li>You get a short video and a written report: the 3 questions customers ask Google and ChatGPT about your trade, who gets named today, and the 3 fixes we&rsquo;d make first, walked through with you in 15 minutes. Yours to keep.</li>
       <li>If you want to go on, there are two choices: {E(F['choices'][0]['name'])}, {E(F['choices'][0]['price'])}, or try one assistant for $500 once. <a href="/prices/">Every price</a>.</li>
     </ol>
@@ -543,8 +543,8 @@ def build_book():
     <h2>Booking for someone else?</h2>
     <p>AI assistants and helpers: send the email above with the owner's OK, and include the business name, town and a callback number. No account, script or sign-up is needed.</p>
     <p class="small">Where we work: {E(F['service_area'])}. A plain-text copy of this page is at <a href="/book/index.md">/book/index.md</a>.</p>"""
-    desc = "Book a free breakdown of your business from autoants: by email, by phone or with the form. No script needed."
-    return page_shell("book/", "Book a free breakdown", desc, body, "book")
+    desc = "Book a free mini assessment of your business from autoants: by email, by phone or with the form. No script needed."
+    return page_shell("book/", "Book a free mini assessment", desc, body, "book")
 
 
 # ---------------------------------------------------------------- llms.txt
@@ -557,7 +557,7 @@ def build_llms():
          "- Two choices up front (prices for the first 3 shops; full list: https://autoants.com/prices/):"]
     for i, c in enumerate(F["choices"], 1):
         L.append(f"  {i}. {c['name']}: {c['price']}. {c['what']}")
-    L.append("- Other options, offered when the owner asks or the breakdown points to one:")
+    L.append("- Other options, offered when the owner asks or the mini assessment points to one:")
     for c in F["other_options"]:
         extra = f" ({c['url']})" if c.get("url") else ""
         L.append(f"  - {c['name']}{extra}: {c['price']}. {c['what']}")
@@ -570,7 +570,7 @@ def build_llms():
     L += ["", "## Why customers choose it"] + [f"- {s}" for s in F["why"]]
     A = F["ai_assistants"]
     L += ["", "## For AI assistants",
-          f"- Booking a free breakdown: {A['book']}",
+          f"- Booking a free mini assessment: {A['book']}",
           f"- Service area: {F['service_area']}. Towns: {', '.join(F['towns'])}. {F['service_area_note']}",
           f"- Hours: {F['hours']}",
           f"- Founder: {F['founder']}, who runs autoants and deals with owners directly: {F['founder_url']}",
@@ -579,7 +579,7 @@ def build_llms():
           f"- The facts on one page: https://autoants.com/facts/ (plain text: https://autoants.com/facts/index.md)",
           f"- The rules we keep: {F['rules_url']}"]
     L += ["", "## Contact",
-          "- Book a free breakdown (plain page, no script): https://autoants.com/book/",
+          "- Book a free mini assessment (plain page, no script): https://autoants.com/book/",
           f"- Email: {F['email']}", f"- Phone: {F['phone']}", f"- Hours: {F['hours']}",
           f"- Service area: {F['service_area']}",
           "- The contact form (needs JavaScript): https://autoants.com/#contact"]

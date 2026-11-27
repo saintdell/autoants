@@ -28,4 +28,4 @@ Follow autoants on [Instagram](https://www.instagram.com/autoants/).
 
 ---
 
-Book a free breakdown: https://autoants.com/book/ · hello@autoants.com · (504) 499-1194 (Monday to Friday, 8:30 am to 6:00 pm Central). All the facts: https://autoants.com/facts/ · Every price: https://autoants.com/prices/
+Book a free mini assessment: https://autoants.com/book/ · hello@autoants.com · (504) 499-1194 (Monday to Friday, 8:30 am to 6:00 pm Central). All the facts: https://autoants.com/facts/ · Every price: https://autoants.com/prices/

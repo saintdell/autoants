@@ -16,7 +16,7 @@ autoants, short for "automated assistants". Legal name: AutoAnts, LLC.
 
 ## What we do
 
-autoants answers the calls a local business misses, follows up the quotes it forgets, and helps customers find it on Google and in AI answers, so more of the work it already pays for turns into booked jobs. It starts with a free breakdown of the business, made from public information, that shows which fix the owner's own numbers need.
+autoants answers the calls a local business misses, follows up the quotes it forgets, and helps customers find it on Google and in AI answers, so more of the work it already pays for turns into booked jobs. It starts with a free mini assessment of the business, made from public information, that shows which fix the owner's own numbers need.
 
 ## Who we help
 
@@ -38,7 +38,7 @@ Monday to Friday, 8:30 am to 6:00 pm Central.
 
 ## How to reach us or book
 
-- Book a free breakdown: [autoants.com/book](https://autoants.com/book/)
+- Book a free mini assessment: [autoants.com/book](https://autoants.com/book/)
 - Email: [hello@autoants.com](mailto:hello@autoants.com)
 - Phone: [(504) 499-1194](tel:+15044991194)
 
@@ -51,7 +51,7 @@ Then two choices:
 - **Get Found + AI Front Desk:** $1,250 a month + $1,250 setup. Missed calls answered, quotes followed up, appointments booked and reminded, reviews requested, the Google profile kept right and posted to every week, the listings kept right, 2 new pages a month, what AI answers say about the business checked every month, and the website kept up. Plus a monthly market pack: permit share, jobs coming due, neighborhood pages, competitor watch.
 - **Not ready? Try one:** $500 once. One assistant on the owner's phone. Most shops start with texting back every missed call; others pick web-form answers, booking and reminders, the review ask, service-due or invoice reminders, or a "book now" box on the website. If the owner upgrades within 30 days, the $500 counts toward setup.
 
-Other options, when the owner asks or the breakdown points to one:
+Other options, when the owner asks or the mini assessment points to one:
 
 - **Get Found alone:** $750 a month + $500 setup.
 - **AI Front Desk alone:** $750 a month + $750 setup.
@@ -92,4 +92,4 @@ A plain-text copy of this page is at [/facts/index.md](https://autoants.com/fact
 
 ---
 
-Book a free breakdown: https://autoants.com/book/ · hello@autoants.com · (504) 499-1194 (Monday to Friday, 8:30 am to 6:00 pm Central). All the facts: https://autoants.com/facts/ · Every price: https://autoants.com/prices/
+Book a free mini assessment: https://autoants.com/book/ · hello@autoants.com · (504) 499-1194 (Monday to Friday, 8:30 am to 6:00 pm Central). All the facts: https://autoants.com/facts/ · Every price: https://autoants.com/prices/

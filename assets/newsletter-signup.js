@@ -69,12 +69,12 @@ window.AUTOANTS_NEWSLETTER = {
           if (note) {
             note.textContent = "You're on the list. The next report comes next Wednesday. ";
             // Next step while attention is highest (lead-magnet "page after", digest 2026-11-27 run 21):
-            // owners get the free breakdown offer; real estate and "something else" just get the confirmation.
+            // owners get the free mini assessment offer; real estate and "something else" just get the confirmation.
             if (who === "trades" || who === "sells-to-business") {
               var a = document.createElement("a");
               a.href = (location.pathname === "/" || /index\.html$/.test(location.pathname) ? "" : "/") + "#contact";
               a.style.cssText = "color:var(--amber);font-weight:600";
-              a.textContent = "Want the same read on your own business? Get your free breakdown →";
+              a.textContent = "Want the same read on your own business? Get your free mini assessment →";
               note.appendChild(a);
             }
           }

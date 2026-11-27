@@ -2,7 +2,7 @@
 - Website: https://autoants.com
 - AI assistant information page: https://autoants.com/ai/
 - Facts page (name, founder, service area, hours, contact, prices in short, the rules we keep): https://autoants.com/facts/
-- Book a free breakdown (plain page, no script): https://autoants.com/book/
+- Book a free mini assessment (plain page, no script): https://autoants.com/book/
 - Every price on one page: https://autoants.com/prices/
 - This file: https://autoants.com/llms.txt
 - Privacy and texting terms: https://autoants.com/privacy.html
@@ -16,7 +16,7 @@
 - Findings: re-roof permits peak in April (about 49% above an average month); HVAC permits peak in April-May and October, not summer; standby generator permits ran 8 times higher in 2022 after Hurricane Ida (714 vs about 86 a year in 2016-2019). Source: data.nola.gov 72f9-bi28, pulled 2026-10-08
 
 ## For HVAC companies (pages checked 2026-10-20)
-- [autoants for HVAC companies](https://autoants.com/hvac/): missed calls answered, booking on the first phone screen, quote follow-up, pre-season tune-up reminders, review asks, Google and AI-answer visibility and a Spanish option, for HVAC owners in New Orleans, Metairie, Kenner and the Northshore; the founding prices and the free breakdown
+- [autoants for HVAC companies](https://autoants.com/hvac/): missed calls answered, booking on the first phone screen, quote follow-up, pre-season tune-up reminders, review asks, Google and AI-answer visibility and a Spanish option, for HVAC owners in New Orleans, Metairie, Kenner and the Northshore; the founding prices and the free mini assessment
 - [How does an HVAC company stop missing calls in the July rush?](https://autoants.com/hvac/missed-calls-summer/): normal July high 91.4 F at New Orleans airport, about 23 days at 90 F or hotter in July (NOAA 1991-2020 normals)
 - [AI receptionist, answering service or a dispatcher: which fits an HVAC company?](https://autoants.com/hvac/ai-receptionist-vs-answering-service/)
 - [Can customers book your HVAC company from the first phone screen?](https://autoants.com/hvac/book-from-the-first-screen/): 16 of 45 New Orleans-area HVAC websites that loaded had no way to book on the first phone screen (autoants check, 2026-10-12)
@@ -25,7 +25,7 @@
 - [Does an HVAC company around New Orleans need a Spanish line?](https://autoants.com/hvac/spanish-line/): 14.3% of Jefferson Parish residents 5+ speak Spanish at home (Census ACS 2020-2024); 132 of 135 local HVAC sites showed no Spanish page (autoants first-pass check, 2026-10-20)
 
 ## For plumbers, roofers and electricians (pages checked 2026-11-17)
-- [autoants for plumbers](https://autoants.com/plumbing/): missed-call text-back, AI answering that says it's an AI, quote follow-up, review asks and Google and AI-answer visibility for plumbing shops in New Orleans and Jefferson Parish; 28 of 45 local plumbing sites that loaded had no way to book on the first phone screen (autoants check, 2026-10-14); prices and the free breakdown
+- [autoants for plumbers](https://autoants.com/plumbing/): missed-call text-back, AI answering that says it's an AI, quote follow-up, review asks and Google and AI-answer visibility for plumbing shops in New Orleans and Jefferson Parish; 28 of 45 local plumbing sites that loaded had no way to book on the first phone screen (autoants check, 2026-10-14); prices and the free mini assessment
 - [autoants for roofers](https://autoants.com/roofing/): the same for roofing companies in New Orleans and Jefferson Parish (leak calls, estimate follow-up, reviews and posts from finished roofs); 22 of 50 local roofing sites that loaded had no way to book on the first phone screen (autoants check, 2026-10-14)
 - [autoants for electricians](https://autoants.com/electrical/): the same for electrical contractors in New Orleans and Jefferson Parish (trouble calls, estimate follow-up, generator maintenance reminders); 30 of 47 local electrical sites that loaded had no way to book on the first phone screen (autoants check, 2026-10-14)
 

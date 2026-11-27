@@ -550,7 +550,7 @@ Nobody can promise a spot in an AI answer, us included. But the answers above le
 3. **Real reviews, asked for steadily.** Ask every real customer, the same way every time, and reply to what they write. Never buy or filter reviews.
 4. **Answer what customers ask.** The questions people bring to an assistant (what does a repair cost, do you come tonight, what should I do before you arrive) deserve plain answers on your site.
 
-Want to see what AI assistants say about your own business today? We'll make you a free company breakdown from public information, including what AI answers say about you, sent only to you.
+Want to see what AI assistants say about your own business today? We'll make you a free mini assessment from public information, including what AI answers say about you, sent only to you.
 
 ## Claim or correct a listing
 
@@ -558,4 +558,4 @@ Own one of these companies, or spotted a name we got wrong or merged? Tell us. W
 
 ---
 
-Book a free breakdown: https://autoants.com/book/ · hello@autoants.com · (504) 499-1194 (Monday to Friday, 8:30 am to 6:00 pm Central). All the facts: https://autoants.com/facts/ · Every price: https://autoants.com/prices/
+Book a free mini assessment: https://autoants.com/book/ · hello@autoants.com · (504) 499-1194 (Monday to Friday, 8:30 am to 6:00 pm Central). All the facts: https://autoants.com/facts/ · Every price: https://autoants.com/prices/
