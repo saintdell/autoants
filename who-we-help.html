@@ -14,10 +14,10 @@
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#0b1712;--surface:#14261e;--ink:#f4f1e8;--muted:#a3b0a8;--faint:#87948d;--mint:#3ddcae;--mint-ink:#062a1d;--ok:#7bc96a;
-        --line:rgba(244,241,232,.12);--disp:"Archivo",system-ui,sans-serif;--body:"Inter",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+  :root{--bg:#f7f5f0;--surface:#ffffff;--ink:#0f2a1d;--muted:#4b5a52;--faint:#56655d;--mint:#0f5132;--mint-ink:#ffffff;--ok:#7bc96a;
+        --line:rgba(15,42,29,.12);--disp:"Onest",system-ui,sans-serif;--body:"Onest",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
   a{color:inherit}
@@ -40,7 +40,7 @@
   .grp h3{font-family:var(--disp);font-weight:800;font-size:19px;margin:0 0 4px}
   .grp p{margin:0 0 12px;color:var(--muted);font-size:14px;line-height:1.45}
   .chips{display:flex;flex-wrap:wrap;gap:6px}
-  .chips span{font-size:13px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(61,220,174,.08)}
+  .chips span{font-size:13px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(15,81,50,.06)}
   .sells{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
   .sell{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--mint);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px}
   .sell h3{font-family:var(--disp);font-weight:800;font-size:19px;margin:0;text-wrap:balance}
@@ -111,12 +111,19 @@
     .sector{padding:7px 0} ol.steps{gap:6px} ol.steps b{font-size:14px} .never{padding:12px 14px} .price{margin:10px 0 0;font-size:12.5px} footer{display:none}
     a{text-decoration:none} *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   }
+  #fit .fit-lede{color:var(--muted);margin:0 0 14px}
+  .fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .fit-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .fit-card h3{margin:0 0 8px}
+  .fit-card ul{margin:0;padding-left:18px;color:var(--muted)}
+  .fit-card li{margin:6px 0}
+  @media(max-width:720px){.fit-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <nav>
-    <a href="index.html"><img src="brand/autoants-logo-reverse.svg" alt="autoants home" style="height:28px;width:auto;display:block"></a>
+    <a href="index.html"><img src="brand/autoants-logo.svg" alt="autoants home" style="height:28px;width:auto;display:block"></a>
     <div class="sp"></div>
     <a class="ghost" href="index.html">Home</a>
     <a class="ghost" href="services.html">Services</a>
@@ -154,8 +161,24 @@
       </form>
     </div>
   </section>
+  <section id="fit">
+    <h2>Will Lane work with my business?</h2>
+    <p class="fit-lede">Probably. Here's the honest version.</p>
+    <div class="fit-grid">
+      <div class="fit-card"><h3>Good fit</h3><ul>
+        <li>Customers find you on Google, then call or text you.</li>
+        <li>You're busy doing the work and miss calls or follow-ups.</li>
+        <li>You want more customers without more hours.</li>
+        <li>You're in New Orleans or the parishes around it.</li></ul></div>
+      <div class="fit-card"><h3>Not a fit yet</h3><ul>
+        <li>Medical and dental offices that need patient texts or reminders. That waits until the right health-privacy agreements are in place.</li>
+        <li>Anyone who wants guaranteed rankings or a promised number of calls. I count results; I don't promise them.</li>
+        <li>Anyone who wants strangers cold-called or cold-texted.</li>
+        <li>IT support: networks, laptops, a help desk. That's a different job.</li></ul></div>
+    </div>
+  </section>
   <section>
-    <div class="assess-note"><b>Not sure what you need?</b> Start with a free mini assessment, a short video and written report on your business from public information, or <a href="index.html#assessment">the AI Opportunity Assessment</a>
+    <div class="assess-note"><b>Not sure what you need?</b> Start with a free mini assessment, a short video and written report on your business from public information, or <a href="assessment/">the AI Opportunity Assessment</a>
       ($500, credited toward setup, any remainder to the first month): a bound, printed report on what to automate first, and what each fix is worth. Every business above gets the same two choices: we get you found on Google and answer the calls you miss, $1,250 a month; or, not ready, try one assistant for $500. <a href="prices/" style="color:var(--mint);font-weight:600">Every price</a>.</div>
   </section>
   <section>
