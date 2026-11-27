@@ -6,10 +6,10 @@ Lane Davis II · AI consultant · New Orleans
 
 I'm on the AI tools every day, looking for edges a New Orleans business can use. Hire me, and I'll show you where you can modernize to bring in more customers, then set it up for you.
 
-It starts with a free mini assessment of your business. You don't fill anything out. Most fixes are one of three:
+It starts with a free mini assessment of your business. Three fields, and I do the rest. Most fixes are one of three:
 
 1. 1 **Get Found.** Show up on Google and in ChatGPT's answers.
-2. 2 **AI Front Desk.** Every call and text answered, quotes followed up, the job texted to you to confirm.
+2. 2 **AI Front Desk.** Answers the calls and texts you can't get to, follows up on quotes, and texts you the job to confirm.
 3. 3 **Social Media.** Posts and short videos from your real jobs, so customers see you more often.
 
 **◆** Free mini assessment first **◆** You approve every word **◆** No result promises
@@ -26,7 +26,7 @@ It starts with a free mini assessment of your business. You don't fill anything 
 
 *Apple Maps*Apple Business replaced Business Connect. If you claimed your Apple Maps listing a while back, the place you manage it moved.
 
-Works with the tools you already use. Nothing to switch: we connect to what you already run.
+Keep the tools you already use where a connection is supported. I'll confirm your setup before you commit. [What connects today](https://autoants.com/works-with/)
 
 Google Business Profile, Your phone & texting, QuickBooks, Jobber, Housecall Pro, Yelp & Apple Maps
 
@@ -52,7 +52,7 @@ Your Google profile, your website, and what ChatGPT says when someone asks who t
 
 AI Front Desk
 
-### Never miss a call.
+### Answer the calls you can't.
 
 AI Front Desk answers calls and texts when you can't, says it's an AI, takes the job and texts it to you to confirm.
 
@@ -105,11 +105,11 @@ When someone searches Google or asks ChatGPT who to call, your name, hours and r
 
 02 / ANSWERED
 
-### Every call gets an answer
+### Calls you miss still get an answer
 
 You're on a job and can't pick up. The caller still gets a reply, says what they need, and you get the job by text to confirm.
 
-→ more calls turn into jobs
+→ the job comes to you by text
 
 03 / SEEN
 
@@ -118,84 +118,6 @@ You're on a job and can't pick up. The caller still gets a reply, says what they
 Quotes get a follow-up, happy customers get a review ask, and your real jobs show up on Facebook and Instagram every week.
 
 → more work from people who know you
-
-Automated assistants
-
-## What runs while you're on the job.
-
-That's where the name comes from: **Auto**mated assist**Ants**. A crew of assistants that never clocks out, each with one job. You stay the boss: nothing gets confirmed to a customer without your OK.
-
-Get Found
-
-### Your website
-
-A real, fast, mobile site with your reviews and a quote form. Your free mini assessment can show you a preview; it goes live on your own domain with Get Found.
-
-Never lose a call
-
-### Missed-call text-back
-
-Text-Back Ant
-
-Miss a call, and it texts them back: "Sorry I missed you — what do you need?" The job stays yours.
-
-Be first
-
-### Fast replies to new leads
-
-Responder Ant
-
-The business that answers first wins. New lead comes in, we reply automatically, day or night.
-
-Fill the calendar
-
-### Quotes to booked jobs
-
-Scheduler Ant
-
-Quote requests turn into estimates and booked jobs without you touching your phone.
-
-Everywhere they look
-
-### Found on Google and in AI answers
-
-Scout Ant
-
-Google, Yelp, Apple, Bing — dialed in and consistent. Plus showing up when someone asks *ChatGPT* for the best one in town.
-
-When you can't pick up
-
-### AI front desk
-
-Receptionist Ant
-
-An AI that answers when you can't, says up front that it's an AI, screens the job and texts it to you. Scoped with you once you're on Get Found + AI Front Desk.
-
-Every customer asked
-
-### A review ask after every job
-
-Reviewer Ant
-
-Every finished job gets the same review ask, every customer, one tap from your phone.
-
-Fill the pipeline
-
-### Social posts from your jobs
-
-Promoter Ant
-
-Text us photos from the job. Every week you get a before/after clip, Google posts and social posts made from your real work, ready to approve by text. Ads on your own account when you want them.
-
-Found money
-
-### Past customers brought back
-
-Reminder Ant
-
-"Time for a trim?" to your past customers: by text where they've said yes, by email otherwise. Work from a list you already own.
-
-**Turn on what you need, when you need it.** Start with the essentials; add the rest as you grow.
 
 How it works
 
@@ -209,7 +131,7 @@ A short video and written report on your business, from public information: how 
 
 ### Pick the fix
 
-We go through it together in 15 minutes. Most owners start with Get Found + AI Front Desk; some start with one.
+We go through it together in 15 minutes. You pick one fix or both.
 
 ### Both, for $1,250
 
@@ -224,6 +146,8 @@ Who's behind autoants
 ## A New Orleans company, and the person who answers for it.
 
 **autoants was founded by Lane Davis II** in New Orleans. He signs off on every setup, and you deal with him directly, not a call center.
+
+**The name:** autoants is short for **auto**mated assist**ants**, AI that handles the small jobs while you're on the big ones. You stay the boss: nothing gets confirmed to a customer without your OK.
 
 #### Only claims we can back up
 
@@ -267,7 +191,7 @@ Yes. It says it's an AI assistant at the start of every call, and that the call 
 
 **What if it gets something wrong?**
 
-Nothing gets confirmed to your customer without your OK: you reply yes with a time, or no. The first weeks run supervised, and every miss becomes a new rule so it doesn't happen twice.
+Nothing gets confirmed to your customer without your OK: you reply yes with a time, or no. The first weeks run supervised. When it gets something wrong, I fix its instructions and tell you what changed.
 
 **Do I keep my phone number?**
 
@@ -279,7 +203,7 @@ Yes. It's on your own domain and it's yours to keep, even if you stop paying for
 
 **What does it cost?**
 
-We get you found on Google and answer the calls you miss: $1,250 a month, plus $1,250 to set up. Not ready? Try one assistant for $500, once. If your mini assessment shows you need only one fix, either one is $750 a month on its own, and you can add social and marketing later. Prices shown are for our first 3 shops with up to 15 trucks. Bigger or multi-location operations are quoted by size. No 12-month contract: three months, then month to month, cancel by email. Try one counts toward setup if you upgrade within 30 days, and setup is free if you pay for a year up front. Every price is on [one page](https://autoants.com/prices/).
+We get you found on Google and answer the calls you miss: $1,250 a month, plus $1,250 to set up. If your mini assessment shows you need only one fix, either one is $750 a month on its own, and you can add Social Media later. These are founding prices, for our first 3 shops with up to 15 trucks. AI phone minutes are priced with you before you sign. Bigger or multi-location operations are quoted by size. No 12-month contract: three months, then month to month, cancel by email. Every price is on [one page](https://autoants.com/prices/).
 
 **What do you need from me?**
 

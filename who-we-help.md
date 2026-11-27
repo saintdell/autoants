@@ -58,7 +58,25 @@ Patient information needs a HIPAA program and signed agreements first, so we're 
 
 Dental offices, Chiropractors, Physical therapy, Med spas, Optometry, Clinics
 
-**Not sure what you need?** Start with a free mini assessment, a short video and written report on your business from public information, or [the AI Opportunity Assessment](https://autoants.com/index.html#assessment) ($500, credited toward setup, any remainder to the first month): a bound, printed report on what to automate first, and what each fix is worth. Every business above gets the same two choices: we get you found on Google and answer the calls you miss, $1,250 a month; or, not ready, try one assistant for $500. [Every price](https://autoants.com/prices/).
+## Will Lane work with my business?
+
+Probably. Here's the honest version.
+
+### Good fit
+
+- Customers find you on Google, then call or text you.
+- You're busy doing the work and miss calls or follow-ups.
+- You want more customers without more hours.
+- You're in New Orleans or the parishes around it.
+
+### Not a fit yet
+
+- Medical and dental offices that need patient texts or reminders. That waits until the right health-privacy agreements are in place.
+- Anyone who wants guaranteed rankings or a promised number of calls. I count results; I don't promise them.
+- Anyone who wants strangers cold-called or cold-texted.
+- IT support: networks, laptops, a help desk. That's a different job.
+
+**Not sure what you need?** Start with a free mini assessment, a short video and written report on your business from public information, or [the AI Opportunity Assessment](https://autoants.com/assessment/) ($500, credited toward setup, any remainder to the first month): a bound, printed report on what to automate first, and what each fix is worth. Every business above gets the same two choices: we get you found on Google and answer the calls you miss, $1,250 a month; or, not ready, try one assistant for $500. [Every price](https://autoants.com/prices/).
 
 ## How it works
 
