@@ -12,7 +12,7 @@ It starts with a free mini assessment of your business. Three fields, and I do t
 2. 2 **AI Front Desk.** Answers the calls and texts you can't get to, follows up on quotes, and texts you the job to confirm.
 3. 3 **Social Media.** Posts and short videos from your real jobs, so customers see you more often.
 
-**◆** Free mini assessment first **◆** You approve every word **◆** No result promises
+**◆** Free mini assessment first **◆** Prices on the page **◆** No result promises
 
 **Our mission:** help every New Orleans business use today's AI to get found, answer every customer, and stay in front of the people who need it.
 
@@ -68,7 +68,7 @@ Social Media
 
 ### Stay in front of customers.
 
-Posts and short videos from your real jobs, plus postcards and reminders to past customers. You approve everything by text.
+Posts and short videos from your real jobs, plus postcards and reminders to past customers.
 
 - Hangers on the doors around every job you finish
 - Reminders to past customers when it's time again
@@ -123,7 +123,7 @@ How it works
 
 ## I do the work first. You decide after.
 
-You see a free mini assessment of your business before you spend a dollar. Then you pick the fix, and you approve every word before it goes live.
+You see a free mini assessment of your business before you spend a dollar. Then you pick the fix.
 
 ### Free mini assessment
 
@@ -147,7 +147,7 @@ Who's behind autoants
 
 **autoants was founded by Lane Davis II** in New Orleans. He signs off on every setup, and you deal with him directly, not a call center.
 
-**The name:** autoants is short for **auto**mated assist**ants**, AI that handles the small jobs while you're on the big ones. You stay the boss: nothing gets confirmed to a customer without your OK.
+**The name:** autoants is short for **auto**mated assist**ants**, AI that handles the small jobs while you're on the big ones.
 
 #### Only claims we can back up
 
