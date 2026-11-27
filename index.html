@@ -24,16 +24,16 @@
 <link rel="alternate" type="text/markdown" href="/index.md">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0b1712; --bg2:#0f1f18; --surface:#14261e; --surface2:#1a2f25;
-    --ink:#f4f1e8; --muted:#a3b0a8; --faint:#87948d;
-    --amber:#3ddcae; --amber-deep:#22b892; --amber-ink:#062a1d;
-    --line:rgba(244,241,232,.10); --line2:rgba(244,241,232,.16);
+    --bg:#f7f5f0; --bg2:#ebe8e2; --surface:#ffffff; --surface2:#ffffff;
+    --ink:#0f2a1d; --muted:#4b5a52; --faint:#56655d;
+    --amber:#0f5132; --amber-deep:#0b3d26; --amber-ink:#ffffff; --mint:#3ddcae;
+    --line:rgba(15,42,29,.10); --line2:rgba(15,42,29,.18);
     --ok:#7bc96a;
-    --disp:'Archivo',-apple-system,system-ui,sans-serif;
-    --body:'Inter',-apple-system,system-ui,sans-serif;
+    --disp:'Onest',-apple-system,system-ui,sans-serif;
+    --body:'Onest',-apple-system,system-ui,sans-serif;
     --mono:'JetBrains Mono',ui-monospace,monospace;
     --wrap:76rem;
   }
@@ -47,12 +47,12 @@
   .ant{width:1em;height:1em;color:var(--amber);flex:0 0 auto}
   .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--disp);font-weight:800;font-size:1rem;padding:.95rem 1.5rem;border-radius:11px;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;border:0}
   .btn:active{transform:scale(.98)}
-  .btn-amber{background:var(--amber);color:var(--amber-ink);box-shadow:0 10px 30px rgba(61,220,174,.22)}
-  .btn-amber:hover{box-shadow:0 14px 40px rgba(61,220,174,.34)}
+  .btn-amber{background:var(--amber);color:var(--amber-ink);box-shadow:0 10px 30px rgba(15,81,50,.18)}
+  .btn-amber:hover{box-shadow:0 14px 40px rgba(15,81,50,.26)}
   .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line2)}
   .btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
 
-  nav{position:sticky;top:0;z-index:50;background:rgba(13,14,12,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav{position:sticky;top:0;z-index:50;background:rgba(247,245,240,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
   .brand{display:flex;align-items:center;gap:.5rem;font-family:var(--disp);font-weight:900;font-size:1.22rem;letter-spacing:-.03em}
   .brand .ant{width:26px;height:26px}
@@ -65,7 +65,7 @@
   .mmenu>summary::-webkit-details-marker{display:none}
   .mmenu>summary::before{content:"";width:16px;height:12px;background:linear-gradient(currentColor 0 0) top/100% 2px no-repeat,linear-gradient(currentColor 0 0) center/100% 2px no-repeat,linear-gradient(currentColor 0 0) bottom/100% 2px no-repeat}
   .mmenu[open]>summary{border-color:var(--amber);color:var(--amber)}
-  .mpanel{position:absolute;right:0;top:calc(100% + .6rem);width:min(16rem,calc(100vw - 2rem));background:var(--surface2);border:1px solid var(--line2);border-radius:14px;padding:.4rem;box-shadow:0 24px 60px rgba(0,0,0,.5);display:flex;flex-direction:column}
+  .mpanel{position:absolute;right:0;top:calc(100% + .6rem);width:min(16rem,calc(100vw - 2rem));background:var(--surface2);border:1px solid var(--line2);border-radius:14px;padding:.4rem;box-shadow:0 24px 60px rgba(15,42,29,.14);display:flex;flex-direction:column}
   .mpanel a{display:flex;align-items:center;min-height:46px;padding:0 .9rem;border-radius:9px;font-weight:600;color:var(--ink)}
   .mpanel a:hover,.mpanel a:focus-visible{background:var(--surface)}
   /* nine links + logo + button need ~1150px; below that they move into the Menu */
@@ -74,9 +74,7 @@
 
   /* ---- hero (two-col) ---- */
   header{position:relative;padding:5rem 0 4.5rem;overflow:hidden}
-  header:before{content:"";position:absolute;inset:0;background:
-    radial-gradient(60rem 34rem at 80% -10%,rgba(61,220,174,.13),transparent 62%),
-    radial-gradient(50rem 30rem at 4% 6%,rgba(61,220,174,.05),transparent 60%);pointer-events:none}
+  header:before{content:none}
   .hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center}
   @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:2.4rem}}
   header h1{font-size:clamp(2.4rem,5.8vw,4rem);font-weight:900;margin:1rem 0 1.2rem}
@@ -86,6 +84,25 @@
   .what3 li{padding-left:1.5rem;position:relative}
   .what3 li::before{content:"";position:absolute;left:0;top:.55em;width:.6rem;height:.6rem;border-radius:50%;background:var(--amber)}
   .what3 b{font-weight:800}
+  header{padding:3.5rem 0 0}
+  header h1 .amb{color:var(--amber)}
+  .lead3{color:var(--muted);margin:0 0 .6rem;max-width:36rem}
+  header .mission{margin-top:1.3rem}
+  .fix{list-style:none;padding:0;margin:0 0 1.5rem;display:grid;gap:.7rem;max-width:37rem}
+  .fix li{display:grid;grid-template-columns:30px 1fr;gap:.7rem;align-items:start;color:var(--muted);font-size:1.02rem}
+  .fix .n{width:30px;height:30px;border-radius:50%;background:var(--amber);color:#fff;display:grid;place-items:center;font-weight:800;font-size:.9rem}
+  .fix b{color:var(--ink)}
+  .heroph{margin:0;position:relative}
+  .heroph img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:22px;box-shadow:0 20px 50px rgba(15,42,29,.18);display:block}
+  .heroph figcaption{position:absolute;left:-1.6rem;bottom:1.6rem;background:#fff;border-radius:14px;padding:.85rem 1rem;max-width:19rem;box-shadow:0 10px 30px rgba(15,42,29,.15);font-size:.92rem;line-height:1.4;color:var(--ink)}
+  .heroph figcaption b{color:var(--amber)}
+  .watch{background:#fff;border:1px solid var(--line);border-radius:18px;padding:1.2rem 1.4rem;margin:2.2rem 0 0}
+  .watch .wh{font-size:1.02rem;color:var(--amber);margin:0 0 .7rem;letter-spacing:0;font-family:var(--disp)}
+  .wl{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+  .wl div{font-size:.93rem;color:var(--muted);line-height:1.45}
+  .wl em{display:block;font-style:normal;font-family:var(--mono);font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:.25rem}
+  .roofs{display:block;width:100%;height:70px;color:var(--amber);opacity:.28;margin-top:2rem}
+  @media(max-width:900px){.wl{grid-template-columns:1fr}.heroph figcaption{left:.8rem;right:.8rem}.heroph{max-width:26rem}}
   .mission{font-size:clamp(1.02rem,1.9vw,1.18rem);color:var(--ink);margin:-.2rem 0 1rem;max-width:34rem}
   .mission b{color:var(--amber)}
   .who{font-size:.98rem;color:var(--muted);margin:-.4rem 0 1rem}
@@ -104,7 +121,7 @@
   .trust span{display:inline-flex;align-items:center;gap:.4rem}.trust b{color:var(--amber)}
 
   /* ---- dispatch panel ---- */
-  .dispatch{background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line2);border-radius:18px;padding:1.1rem;box-shadow:0 30px 70px rgba(0,0,0,.45);position:relative}
+  .dispatch{background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line2);border-radius:18px;padding:1.1rem;box-shadow:0 30px 70px rgba(15,42,29,.12);position:relative}
   .dispatch:before{content:"";position:absolute;inset:-1px;border-radius:19px;padding:1px;background:linear-gradient(180deg,rgba(61,220,174,.4),transparent 40%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
   .dispatch .dhead{display:flex;align-items:center;gap:.55rem;padding:.3rem .5rem .8rem;border-bottom:1px solid var(--line);margin-bottom:.7rem}
   .dispatch .dhead .ant{width:20px;height:20px}
@@ -113,7 +130,7 @@
   .live-dot i{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(123,201,106,.6);animation:blip 2s infinite}
   @keyframes blip{0%{box-shadow:0 0 0 0 rgba(123,201,106,.5)}70%{box-shadow:0 0 0 7px rgba(123,201,106,0)}100%{box-shadow:0 0 0 0 rgba(123,201,106,0)}}
   #feed{display:flex;flex-direction:column;gap:.5rem;min-height:270px}
-  .task{display:flex;align-items:flex-start;gap:.7rem;background:rgba(244,241,232,.03);border:1px solid var(--line);border-radius:11px;padding:.7rem .8rem;animation:slidein .45s ease both}
+  .task{display:flex;align-items:flex-start;gap:.7rem;background:rgba(15,42,29,.03);border:1px solid var(--line);border-radius:11px;padding:.7rem .8rem;animation:slidein .45s ease both}
   @keyframes slidein{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
   .task .ic{flex:0 0 auto;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:.7rem;margin-top:1px}
   .task.done .ic{background:rgba(123,201,106,.16);color:var(--ok)}
@@ -243,7 +260,7 @@
   .ba .handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:var(--amber);transform:translateX(-1px)}
   .ba .handle:after{content:"◀ ▶";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--amber);color:var(--amber-ink);font:700 .7rem var(--mono);padding:.5rem .6rem;border-radius:999px;white-space:nowrap}
   .ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
-  .ba .lab{position:absolute;top:.8rem;font:700 .6875rem var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:.3rem .6rem;border-radius:6px;background:rgba(13,14,12,.8)}
+  .ba .lab{position:absolute;top:.8rem;font:700 .6875rem var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:.3rem .6rem;border-radius:6px;background:rgba(247,245,240,.9)}
   .ba .lab.l{left:.8rem}.ba .lab.r{right:.8rem;color:var(--amber)}
   .fine{margin-top:.9rem;font-family:var(--mono);font-size:.74rem;color:var(--faint)}
   /* ---- build animation (#build) ---- */
@@ -293,7 +310,7 @@
   /* ---- mobile action bar ---- */
   .mbar{display:none}
   @media(max-width:720px){
-    .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(11,23,18,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line2);padding:.6rem;gap:.5rem}
+    .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(247,245,240,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line2);padding:.6rem;gap:.5rem}
     .mbar a{justify-content:center;padding:.85rem .6rem;font-size:.95rem}
     body{padding-bottom:72px}
   }
@@ -307,7 +324,7 @@
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="ant" viewBox="0 0 62 86"><g stroke="currentColor" stroke-width="5" stroke-linecap="round"><path d="M24 31 15 9M38 31l9-22"/></g><circle cx="31" cy="57" r="29" fill="currentColor"/><circle cx="21.5" cy="53" r="4.6" fill="var(--bg)"/><circle cx="40.5" cy="53" r="4.6" fill="var(--bg)"/></symbol></svg>
 
 <nav><div class="wrap">
-  <a class="brand" href="#top"><img src="brand/autoants-logo-reverse.svg" alt="AutoAnts" style="height:30px;width:auto;display:block"></a>
+  <a class="brand" href="#top"><img src="brand/autoants-logo.svg" alt="AutoAnts" style="height:30px;width:auto;display:block"></a>
   <div class="navlinks">
     <a href="#offerings">What we do</a><a href="services.html">Services</a><a href="who-we-help.html">Who we help</a><a href="demo/">See it work</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="about-lane/">About</a>
   </div>
@@ -324,28 +341,31 @@
 
 <header id="top"><div class="wrap"><div class="hero-grid">
   <div>
-    <p class="eyebrow">autoants · New Orleans</p>
-    <h1>We get New Orleans businesses found on Google <span class="amb">and answer the calls they miss.</span></h1>
-    <p class="mission"><b>Our mission:</b> no New Orleans business loses a customer to a missed call or a bad Google listing.</p>
-    <p class="who">For HVAC, plumbing, roofing, auto shops, salons and more.</p>
-    <ul class="what3">
-      <li><b>Get Found:</b> you show up on Google and in ChatGPT's answers</li>
-      <li><b>AI Front Desk:</b> we answer the calls you miss</li>
-      <li><b>Social Media:</b> your Facebook and Instagram, posted from your real jobs</li>
-    </ul>
-    <p class="plan"><b>Get Found + AI Front Desk:</b> $1,250 a month + $1,250 setup. Three months, then month to month. Social Media is an add-on.</p>
-    <div class="hfounder"><img src="assets/lane-davis.jpg" alt="Lane Davis II" width="48" height="48" onerror="this.remove()"><p>Founded by <a href="about-lane/">Lane Davis II</a> in New Orleans. He signs off on every setup, and you deal with him directly.</p></div>
+    <p class="eyebrow">Lane Davis II · AI consultant · New Orleans</p>
+    <h1>You know your business. <span class="amb">I know today's AI tools.</span></h1>
+    <p class="lede">I'm on the AI tools every day, looking for edges a New Orleans business can use. Hire me, and I'll show you where you can modernize to bring in more customers, then set it up for you.</p>
+    <p class="lead3">It starts with a free breakdown of your business. Most fixes are one of three:</p>
+    <ol class="fix">
+      <li><span class="n">1</span><span><b>Get Found.</b> Show up on Google and in ChatGPT's answers.</span></li>
+      <li><span class="n">2</span><span><b>AI Front Desk.</b> Every call and text answered, quotes followed up, the job texted to you to confirm.</span></li>
+      <li><span class="n">3</span><span><b>Social Media.</b> Posts and short videos from your real jobs, so customers see you more often.</span></li>
+    </ol>
     <div class="cta-row">
-      <a class="btn btn-amber" href="tel:+15044991194">Hear the AI Front Desk: (504) 499-1194</a>
-      <a class="btn btn-ghost" href="#contact" data-interest="15-minute call" data-call>Book a free 15-minute call</a>
+      <a class="btn btn-amber" href="#contact" data-interest="Free Business Breakdown" data-call>Book my free breakdown</a>
+      <a class="btn btn-ghost" href="tel:+15044991194">Hear the AI Front Desk: (504) 499-1194</a>
     </div>
-    <div class="trust"><span><b>◆</b> Free breakdown of your business first</span><span><b>◆</b> You approve every word</span><span><b>◆</b> No result promises: we count your calls and jobs, before and after</span></div>
+    <div class="trust"><span><b>◆</b> Free breakdown first</span><span><b>◆</b> You approve every word</span><span><b>◆</b> No result promises</span></div>
+    <p class="mission"><b>Our mission:</b> help every New Orleans business use today's AI to get found, answer every customer, and stay in front of the people who need it.</p>
   </div>
-  <div class="dispatch">
-    <div class="dhead"><svg class="ant"><use href="#ant"/></svg><span class="t">AutoAnt Dispatch</span><span class="live-dot"><i></i>EXAMPLE</span></div>
-    <div id="feed"></div>
-  </div>
-</div></div></header>
+  <figure class="heroph"><img src="assets/lane-davis.jpg" alt="Lane Davis II, founder of autoants" width="800" height="1000"><figcaption><b>Lane Davis II</b>, founder of autoants. I keep up with AI so you don't have to.</figcaption></figure>
+</div>
+<div class="watch"><h2 class="wh">What I'm watching for local businesses this month</h2><div class="wl">
+  <div><em>Nov 25 · Google Maps</em>Maps put a Message button next to Call on your listing. Somebody has to answer those texts.</div>
+  <div><em>Nov 10 · ChatGPT</em>Owners can now claim their business profile in ChatGPT (beta), so its answers get your hours and services right.</div>
+  <div><em>Apple Maps</em>Apple Business replaced Business Connect. If you claimed your Apple Maps listing a while back, the place you manage it moved.</div>
+</div></div></div>
+<svg class="roofs" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90 L0 55 L60 25 L120 55 L120 90 M140 90 L140 50 L210 15 L280 50 L280 90 M300 90 L300 60 L350 35 L400 60 L400 90 M420 90 L420 48 L500 10 L580 48 L580 90 M600 90 L600 58 L660 28 L720 58 L720 90 M740 90 L740 52 L810 18 L880 52 L880 90 M900 90 L900 60 L950 32 L1000 60 L1000 90 M1020 90 L1020 50 L1110 12 L1200 50" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+</header>
 
 <div class="works"><div class="wrap">
   <p>Works with the tools you already use. Nothing to switch: we connect to what you already run.</p>
@@ -390,11 +410,11 @@
 </div></section>
 
 <section id="problem" class="band"><div class="wrap">
-  <div class="sec-head"><p class="eyebrow">The problem</p><h2>Where local businesses lose jobs.</h2><p>You're great at the work and stretched thin everywhere else. Every day, jobs you already earned walk out the door — and you never see them go.</p></div>
+  <div class="sec-head"><p class="eyebrow">Where AI helps first</p><h2>Three places today's tools make the biggest difference.</h2><p>You're great at the work and stretched thin everywhere else. These are the first places I look, because they're where more customers usually come from.</p></div>
   <div class="prob">
-    <div class="pcard"><div class="n">01 / MISSED</div><h3>The phone rings out</h3><p>You're with a customer or on a job. The call goes to voicemail. That caller doesn't leave one — they call the next business on Google.</p><div class="cost">→ the caller tries the next name</div></div>
-    <div class="pcard"><div class="n">02 / INVISIBLE</div><h3>Nobody can find you</h3><p>Great reviews, no website — or a broken one. The business <em>with</em> a site gets your Google searches. And now customers are asking ChatGPT, too.</p><div class="cost">→ the searches never reach you</div></div>
-    <div class="pcard"><div class="n">03 / DROPPED</div><h3>Quotes die quietly</h3><p>Estimates sent, never followed up. A text on Tuesday would've closed it. By Friday it's someone else's job.</p><div class="cost">→ work you already priced, walking</div></div>
+    <div class="pcard"><div class="n">01 / FOUND</div><h3>Customers find you first</h3><p>When someone searches Google or asks ChatGPT who to call, your name, hours and reviews show up right, on your own site and every listing.</p><div class="cost">→ more searches reach you</div></div>
+    <div class="pcard"><div class="n">02 / ANSWERED</div><h3>Every call gets an answer</h3><p>You're on a job and can't pick up. The caller still gets a reply, says what they need, and you get the job by text to confirm.</p><div class="cost">→ more calls turn into jobs</div></div>
+    <div class="pcard"><div class="n">03 / SEEN</div><h3>Past customers come back</h3><p>Quotes get a follow-up, happy customers get a review ask, and your real jobs show up on Facebook and Instagram every week.</p><div class="cost">→ more work from people who know you</div></div>
   </div>
 </div></section>
 
@@ -417,11 +437,11 @@
 
 
 <section id="how"><div class="wrap">
-  <div class="sec-head"><p class="eyebrow">How it works</p><h2>I do the work first. You decide after.</h2><p>No contract to start. You see a free breakdown before you spend a dollar, and you can try one assistant on your phone for $500 once.</p></div>
+  <div class="sec-head"><p class="eyebrow">How it works</p><h2>I do the work first. You decide after.</h2><p>You see a free breakdown of your business before you spend a dollar. Then you pick the fix, and you approve every word before it goes live.</p></div>
   <div class="steps">
-    <div class="step"><h3>Free breakdown</h3><p>A short video and written report on your business, from public information, and where customers are slipping away. Before you pay anything.</p></div>
-    <div class="step"><h3>Try one</h3><p>Not ready for more? One assistant on your phone for $500, once. Most shops start with texting back every missed call.</p></div>
-    <div class="step"><h3>Both, for $1,250</h3><p>We get you found on Google and answer the calls you miss: $1,250 a month. Add Social Media when you're ready.</p></div>
+    <div class="step"><h3>Free breakdown</h3><p>A short video and written report on your business, from public information: how customers find you today and where today's AI tools fit. Before you pay anything.</p></div>
+    <div class="step"><h3>Pick the fix</h3><p>We go through it together in 15 minutes. Most owners start with Get Found + AI Front Desk; some start with one.</p></div>
+    <div class="step"><h3>Both, for $1,250</h3><p>We get you found on Google and answer the calls you miss: $1,250 a month + $1,250 setup. Add Social Media when you're ready.</p></div>
     <div class="step"><h3>The 30-day receipt</h3><p>One page: calls caught, quotes booked, reviews gained, each number with where it came from. The ones that didn't move stay on the page too.</p></div>
   </div>
 </div></section>
@@ -490,7 +510,7 @@
 </div></section>
 
 <footer><div class="wrap">
-  <span class="brand"><img src="brand/autoants-logo-reverse.svg" alt="AutoAnts" style="height:22px;width:auto;display:block"></span>
+  <span class="brand"><img src="brand/autoants-logo.svg" alt="AutoAnts" style="height:22px;width:auto;display:block"></span>
   <span>autoants, short for automated assistants · Louisiana · <a href="privacy.html" style="color:inherit">Privacy</a> · <a href="ai/" style="color:inherit">For AI assistants</a> · <a href="facts/" style="color:inherit">Facts</a> · <a href="nola/tree-service/" style="color:inherit">New Orleans tree services guide</a> · <a href="hvac/" style="color:inherit">For HVAC companies</a> · <a href="plumbing/" style="color:inherit">For plumbers</a> · <a href="roofing/" style="color:inherit">For roofers</a> · <a href="electrical/" style="color:inherit">For electricians</a> · <a href="ai-index/" style="color:inherit">AI Recommendation Index</a> · <a href="refer/" style="color:inherit">Refer a business</a> · <a href="https://www.instagram.com/autoants/" rel="me noopener" target="_blank" style="color:inherit">Instagram</a> · <a href="follow/" style="color:inherit">Follow us</a><span> · Call <a href="tel:+15044991194" style="color:inherit">(504) 499-1194</a></span></span>
   <span class="trust-links">Straight answers: <a href="assessment/" style="color:inherit">The AI Opportunity Assessment</a> · <a href="prices/" style="color:inherit">Prices</a> · <a href="never/" style="color:inherit">What it never does</a> · <a href="setup/" style="color:inherit">Setup week</a> · <a href="works-with/" style="color:inherit">What it connects to</a> · <a href="rules/" style="color:inherit">Texts and calls</a> · <a href="your-data/" style="color:inherit">Your data</a> · <a href="plain-terms/" style="color:inherit">Terms</a> · <a href="about-lane/" style="color:inherit">About Lane</a></span>
 </div></footer>

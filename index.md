@@ -1,22 +1,30 @@
 > Plain-text version of https://autoants.com/ (Digital Marketing, AI Assistants & Social Media, New Orleans · autoants), made from that page. If the two ever differ, the page is right.
 
-autoants · New Orleans
+Lane Davis II · AI consultant · New Orleans
 
-# We get New Orleans businesses found on Google and answer the calls they miss.
+# You know your business. I know today's AI tools.
 
-**Our mission:** no New Orleans business loses a customer to a missed call or a bad Google listing.
+I'm on the AI tools every day, looking for edges a New Orleans business can use. Hire me, and I'll show you where you can modernize to bring in more customers, then set it up for you.
 
-For HVAC, plumbing, roofing, auto shops, salons and more.
+It starts with a free breakdown of your business. Most fixes are one of three:
 
-- **Get Found:** you show up on Google and in ChatGPT's answers
-- **AI Front Desk:** we answer the calls you miss
-- **Social Media:** your Facebook and Instagram, posted from your real jobs
+1. 1 **Get Found.** Show up on Google and in ChatGPT's answers.
+2. 2 **AI Front Desk.** Every call and text answered, quotes followed up, the job texted to you to confirm.
+3. 3 **Social Media.** Posts and short videos from your real jobs, so customers see you more often.
 
-**Get Found + AI Front Desk:** $1,250 a month + $1,250 setup. Three months, then month to month. Social Media is an add-on.
+**◆** Free breakdown first **◆** You approve every word **◆** No result promises
 
-Founded by [Lane Davis II](https://autoants.com/about-lane/) in New Orleans. He signs off on every setup, and you deal with him directly.
+**Our mission:** help every New Orleans business use today's AI to get found, answer every customer, and stay in front of the people who need it.
 
-**◆** Free breakdown of your business first **◆** You approve every word **◆** No result promises: we count your calls and jobs, before and after
+**Lane Davis II**, founder of autoants. I keep up with AI so you don't have to.
+
+## What I'm watching for local businesses this month
+
+*Nov 25 · Google Maps*Maps put a Message button next to Call on your listing. Somebody has to answer those texts.
+
+*Nov 10 · ChatGPT*Owners can now claim their business profile in ChatGPT (beta), so its answers get your hours and services right.
+
+*Apple Maps*Apple Business replaced Business Connect. If you claimed your Apple Maps listing a while back, the place you manage it moved.
 
 Works with the tools you already use. Nothing to switch: we connect to what you already run.
 
@@ -79,35 +87,35 @@ The plan
 
 Free every week: [Permits Pulled](https://autoants.com/who-we-help.html#permit-report), what New Orleans city records say about where the work is.
 
-The problem
+Where AI helps first
 
-## Where local businesses lose jobs.
+## Three places today's tools make the biggest difference.
 
-You're great at the work and stretched thin everywhere else. Every day, jobs you already earned walk out the door — and you never see them go.
+You're great at the work and stretched thin everywhere else. These are the first places I look, because they're where more customers usually come from.
 
-01 / MISSED
+01 / FOUND
 
-### The phone rings out
+### Customers find you first
 
-You're with a customer or on a job. The call goes to voicemail. That caller doesn't leave one — they call the next business on Google.
+When someone searches Google or asks ChatGPT who to call, your name, hours and reviews show up right, on your own site and every listing.
 
-→ the caller tries the next name
+→ more searches reach you
 
-02 / INVISIBLE
+02 / ANSWERED
 
-### Nobody can find you
+### Every call gets an answer
 
-Great reviews, no website — or a broken one. The business *with* a site gets your Google searches. And now customers are asking ChatGPT, too.
+You're on a job and can't pick up. The caller still gets a reply, says what they need, and you get the job by text to confirm.
 
-→ the searches never reach you
+→ more calls turn into jobs
 
-03 / DROPPED
+03 / SEEN
 
-### Quotes die quietly
+### Past customers come back
 
-Estimates sent, never followed up. A text on Tuesday would've closed it. By Friday it's someone else's job.
+Quotes get a follow-up, happy customers get a review ask, and your real jobs show up on Facebook and Instagram every week.
 
-→ work you already priced, walking
+→ more work from people who know you
 
 Automated assistants
 
@@ -191,19 +199,19 @@ How it works
 
 ## I do the work first. You decide after.
 
-No contract to start. You see a free breakdown before you spend a dollar, and you can try one assistant on your phone for $500 once.
+You see a free breakdown of your business before you spend a dollar. Then you pick the fix, and you approve every word before it goes live.
 
 ### Free breakdown
 
-A short video and written report on your business, from public information, and where customers are slipping away. Before you pay anything.
+A short video and written report on your business, from public information: how customers find you today and where today's AI tools fit. Before you pay anything.
 
-### Try one
+### Pick the fix
 
-Not ready for more? One assistant on your phone for $500, once. Most shops start with texting back every missed call.
+We go through it together in 15 minutes. Most owners start with Get Found + AI Front Desk; some start with one.
 
 ### Both, for $1,250
 
-We get you found on Google and answer the calls you miss: $1,250 a month. Add Social Media when you're ready.
+We get you found on Google and answer the calls you miss: $1,250 a month + $1,250 setup. Add Social Media when you're ready.
 
 ### The 30-day receipt
 
