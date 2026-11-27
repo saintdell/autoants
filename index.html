@@ -82,6 +82,10 @@
   header h1{font-size:clamp(2.4rem,5.8vw,4rem);font-weight:900;margin:1rem 0 1.2rem}
   header h1 .amb{color:var(--amber)}
   .lede{font-size:clamp(1.06rem,2vw,1.24rem);color:var(--muted);max-width:33rem;margin-bottom:1.9rem}
+  .what3{list-style:none;padding:0;margin:0 0 1.1rem;display:grid;gap:.55rem;font-size:clamp(1.08rem,2.1vw,1.3rem);color:var(--ink)}
+  .what3 li{padding-left:1.5rem;position:relative}
+  .what3 li::before{content:"";position:absolute;left:0;top:.55em;width:.6rem;height:.6rem;border-radius:50%;background:var(--amber)}
+  .what3 b{font-weight:800}
   .lede b{color:var(--ink);font-weight:600}
   .cta-row{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:1.9rem}
   .trust{display:flex;gap:.5rem 1.3rem;flex-wrap:wrap;font-family:var(--mono);font-size:.74rem;color:var(--faint)}
@@ -308,15 +312,19 @@
 
 <header id="top"><div class="wrap"><div class="hero-grid">
   <div>
-    <p class="eyebrow">SEO &amp; AI search · Social media &amp; marketing · AI front desk</p>
-    <h1><span style="color:var(--ink)">Auto</span>mated assist<span style="color:var(--ink)">ants</span> <span class="amb">for local businesses.</span></h1>
-    <p class="lede"><b>Digital marketing, social media and an AI front desk for local businesses.</b> We get you found, keep you in front of customers, and answer your phone when you can't, so more calls turn into booked jobs. <b>Hear it yourself: call <a href="tel:+15044991194" style="color:var(--amber)">(504) 499-1194</a>.</b> And before you pay a dime, a free breakdown of your business from public information.</p>
+    <p class="eyebrow">autoants · Automated assistants for local businesses</p>
+    <h1>Digital marketing for local businesses, <span class="amb">done for you.</span></h1>
+    <ul class="what3">
+      <li><b>Get Found</b> on Google and in ChatGPT's answers</li>
+      <li><b>Your Facebook and Instagram</b> posted from your real jobs</li>
+      <li><b>An AI front desk</b> that answers the calls you miss</li>
+    </ul>
+    <p class="lede">You approve everything before it goes out. Start with one for $500.</p>
     <div class="cta-row">
-      <a class="btn btn-amber" href="assessment/">Book an AI Opportunity Assessment</a>
-      <a class="btn btn-ghost" href="#contact" data-interest="15-minute call" data-call>Free 15-minute call</a>
+      <a class="btn btn-amber" href="#contact" data-interest="15-minute call" data-call>Book a free 15-minute call</a>
+      <a class="btn btn-ghost" href="tel:+15044991194">Hear the AI front desk: (504) 499-1194</a>
     </div>
-    <p class="fine" style="margin:-1rem 0 1.6rem;color:var(--muted);font-size:.92rem">Not sure where to start? The <a href="assessment/" style="color:var(--amber);font-weight:600">AI Opportunity Assessment</a> finds where calls, jobs and hours slip, in your own numbers. $500, credited toward setup.</p>
-    <div class="trust"><span><b>◆</b> No contract to start</span><span><b>◆</b> You see it before you pay</span><span><b>◆</b> You approve the wording first</span></div>
+    <div class="trust"><span><b>◆</b> Free breakdown of your business first</span><span><b>◆</b> No contract to start</span><span><b>◆</b> You approve the wording first</span></div>
   </div>
   <div class="dispatch">
     <div class="dhead"><svg class="ant"><use href="#ant"/></svg><span class="t">AutoAnt Dispatch</span><span class="live-dot"><i></i>EXAMPLE</span></div>
