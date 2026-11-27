@@ -64,8 +64,20 @@ window.AUTOANTS_NEWSLETTER = {
                                page: (location.pathname.replace(/^\//, "") || "index") + "#permit-report" }) })
         .then(function (r) {
           if (!r.ok) throw new Error(String(r.status));
+          var who = seg ? seg.value : "";
           f.reset();
-          if (note) note.textContent = "You're on the list. The next report comes next Wednesday.";
+          if (note) {
+            note.textContent = "You're on the list. The next report comes next Wednesday. ";
+            // Next step while attention is highest (lead-magnet "page after", digest 2026-11-27 run 21):
+            // owners get the free breakdown offer; real estate and "something else" just get the confirmation.
+            if (who === "trades" || who === "sells-to-business") {
+              var a = document.createElement("a");
+              a.href = (location.pathname === "/" || /index\.html$/.test(location.pathname) ? "" : "/") + "#contact";
+              a.style.cssText = "color:var(--amber);font-weight:600";
+              a.textContent = "Want the same read on your own business? Get your free breakdown →";
+              note.appendChild(a);
+            }
+          }
         })
         .catch(function () {
           if (note) note.textContent = "That didn't go through. Check the email and try again in a minute.";
