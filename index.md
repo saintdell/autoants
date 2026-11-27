@@ -12,6 +12,8 @@ It starts with a free mini assessment of your business. Three fields, and I do t
 2. 2 **AI Front Desk.** Answers the calls and texts you can't get to, follows up on quotes, and texts you the job to confirm.
 3. 3 **Social Media.** Posts and short videos from your real jobs, so customers see you more often.
 
+[See a sample mini assessment →](https://autoants.com/sample-mini-assessment/)
+
 **◆** Free mini assessment first **◆** Prices on the page **◆** No result promises
 
 **Our mission:** help every New Orleans business use today's AI to get found, answer every customer, and stay in front of the people who need it.
@@ -83,9 +85,25 @@ The plan
 
 **$1,250 a month + $1,250 setup.** That's $250 a month less than the two alone. Three months, then month to month, cancel by email.
 
-Bigger operation, or need more than these three? The [AI Opportunity Assessment](https://autoants.com/assessment/): a recorded interview and a bound report on where AI fits your business. $500, credited toward setup. →
+Paid · $500 flat
 
-**Free first.** A short video of how customers find you: the 3 questions they ask Google and ChatGPT about your trade, who gets named today, and the 3 fixes we'd make first, walked through with you in 15 minutes. Yours to keep. [Prices →](https://autoants.com/prices/)
+### The AI Opportunity Assessment
+
+For a bigger operation, or when you want the whole picture before you spend more. The free mini assessment looks at your business from the outside. This one looks inside, at how your week actually runs.
+
+- A recorded 45-minute interview: how calls come in, how jobs get quoted, booked, followed up and paid, and where your own hours go.
+- A map of where jobs slip, from the first call to the review, and what's working that you should leave alone.
+- What each fix is worth in your own hours and dollars, from the numbers you give me. No industry averages.
+- What AI can and can't take off your plate, and a plan in order.
+- A bound, printed report, a 30-minute walkthrough, and a 90-day re-check.
+
+$500, credited toward setup if you go ahead within 60 days. It's yours to keep either way, and if your numbers say a build isn't worth it, the report says so.
+
+Sample report page, made-up business
+
+Just need a website or design work? I build websites (up to 10 pages, $1,000 once, yours to keep; free when you start Get Found + AI Front Desk) and do graphic design: logo options, business cards, flyers, signs and truck lettering, quoted by the job. Ask me →
+
+**Free first.** A short video and a written report on how customers find you: the questions they ask Google and ChatGPT about your kind of business, who gets named today, and the first fixes I'd make, walked through with you in 15 minutes. Yours to keep. [See a sample](https://autoants.com/sample-mini-assessment/). [Prices →](https://autoants.com/prices/)
 
 Free every week: [Permits Pulled](https://autoants.com/who-we-help.html#permit-report), what New Orleans city records say about where the work is.
 

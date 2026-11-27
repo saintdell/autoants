@@ -66,7 +66,7 @@ A short video of how customers find you: the 3 questions they ask Google and Cha
 
 Free
 
-[Book a 15-minute call](https://autoants.com/index.html?interest=15-minute%20call#contact)
+[Book my free mini assessment](https://autoants.com/index.html?interest=free%20mini%20assessment#contact)
 
 MOST SHOPS
 
@@ -149,7 +149,7 @@ We report the numbers from your own records. You decide whether to keep it, or a
 
 We'll make you a free mini assessment of your business from public information. Yours to keep either way.
 
-[Book a 15-minute call](https://autoants.com/index.html?interest=15-minute%20call#contact)
+[Book my free mini assessment](https://autoants.com/index.html?interest=free%20mini%20assessment#contact)
 
 ---
 

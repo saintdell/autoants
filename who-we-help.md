@@ -6,6 +6,50 @@ Who we help
 
 autoants builds automated assistants for local businesses that run on calls, messages and appointments. Here are the businesses we help.
 
+## The usual setup, by business
+
+What I'd usually set up for these five. Your free mini assessment decides what comes first.
+
+### Home services
+
+HVAC, plumbing, electrical, roofing, pool
+
+- **Get Found:** show up when someone searches "AC repair near me" or asks ChatGPT who to call.
+- **AI Front Desk:** calls you can't get to on a job or after hours are answered, and the job is texted to you to confirm.
+- **Social Media:** before-and-after posts from your real jobs.
+
+Full pages: [HVAC](https://autoants.com/hvac/) · [Plumbing](https://autoants.com/plumbing/) · [Electrical](https://autoants.com/electrical/) · [Roofing](https://autoants.com/roofing/)
+
+### Property owners who manage their own rentals
+
+5 to 50 doors
+
+- **Get Found:** your vacancies show up on Google and the rental sites renters use.
+- **AI Front Desk:** tenant calls and repair requests are taken and sent to you, and showing requests are collected.
+- **Social Media:** vacancy posts with real photos, worded to fair housing rules.
+
+### Law firms
+
+Family, criminal, immigration, successions, bankruptcy
+
+- **Get Found:** show up when someone searches "divorce lawyer New Orleans" or asks an AI who to hire.
+- **AI Front Desk:** intake only. It says it's an AI, takes the caller's details and the other party's name for your conflict check, and sends it to you. It never gives legal advice or says whether someone has a case.
+- **Social Media:** I interview you on camera about the questions clients ask, and it becomes a month of clips and posts.
+
+I'm a Louisiana lawyer too, so I know the advertising rules your firm works under.
+
+### Pet groomers
+
+- **Get Found:** show up for "dog groomer near me."
+- **AI Front Desk:** booking calls and texts are answered when your hands are full, and appointments are sent to you to confirm.
+- **Social Media:** before-and-after photos of the dogs, with their owners' permission.
+
+### Dental offices
+
+- **Get Found:** show up on Google and in AI answers for "dentist near me."
+- **AI Front Desk:** not yet. Patient calls need a HIPAA program and signed agreements, and I'm building that first.
+- **Social Media:** posts about your office and team, and review replies that never confirm someone is a patient.
+
 ## The businesses we help
 
 Find yours. Don't see it? If customers call or book with you, ask us.
@@ -50,7 +94,13 @@ Restaurants, Catering, Food trucks, Event rentals, Photographers, DJs & entertai
 
 New-client inquiries answered fast, consultations booked, reviews.
 
-Accountants & bookkeepers, Insurance agencies, Real estate agents, Tutors & learning centers, Property managers, Storage facilities
+Accountants & bookkeepers, Insurance agencies, Law firms, Tutors & learning centers
+
+### Rentals & property
+
+Tenant calls answered, showing and repair requests sent to you, vacancies found.
+
+Self-managing landlords, Property managers, Storage facilities
 
 ### Health & medical
 
