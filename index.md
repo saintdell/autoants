@@ -2,9 +2,11 @@
 
 autoants · New Orleans
 
-# We get New Orleans trades found on Google and answer the calls they miss.
+# We get New Orleans businesses found on Google and answer the calls they miss.
 
-**Our mission:** no New Orleans trade loses a job to a missed call or a bad Google listing.
+**Our mission:** no New Orleans business loses a customer to a missed call or a bad Google listing.
+
+For HVAC, plumbing, roofing, auto shops, salons and more.
 
 - **Get Found:** you show up on Google and in ChatGPT's answers
 - **AI Front Desk:** we answer the calls you miss
