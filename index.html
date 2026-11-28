@@ -87,6 +87,10 @@
   .strip li::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--mint);flex:0 0 auto}
   .strip a{color:var(--ink);font-weight:600;text-decoration:none}
 
+  .statement{padding:112px 0 0}
+  .statement blockquote{font:400 44px/1.18 var(--serif);letter-spacing:-.015em;max-width:24em}
+  .statement blockquote em{font-style:italic;color:var(--forest)}
+  .statement .by{margin-top:22px;font:500 12px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
   /* section shape */
   section{padding:128px 0}
   section.tight{padding-top:0}
@@ -191,7 +195,7 @@
   @media (max-width:760px){
     .wrap{padding:0 18px} body{font-size:17px}
     nav .links,nav .btn.sm{display:none} .mmenu{display:block;margin-left:auto}
-    h1{font-size:46px} h2{font-size:36px} section{padding:72px 0}
+    h1{font-size:46px} h2{font-size:36px} section{padding:72px 0} .statement{padding-top:64px} .statement blockquote{font-size:30px}
     .split{grid-template-columns:1fr;gap:28px} .split > :first-child{padding-right:0}
     .row{grid-template-columns:44px 1fr} .price{grid-column:2;text-align:left}
     .plan{flex-direction:column;align-items:flex-start}
@@ -246,6 +250,11 @@
 <div class="strip"><div class="wrap"><ul>
   <li>One person, start to finish</li><li>Based in New Orleans</li><li>Prices on the page</li><li>Hear the AI Front Desk: <a href="tel:+15044991194">(504) 499-1194</a></li>
 </ul></div></div>
+
+<div class="statement"><div class="wrap rise">
+  <blockquote>Think of me as an employee with an eye on the future. How are you staying ahead of the competition in the age of <em>superintelligence?</em> You're busy running your business. You need a young guy monitoring it and advising you accordingly.</blockquote>
+  <p class="by">Lane Davis II, founder of autoants</p>
+</div></div>
 
 <section id="services"><div class="wrap split">
   <div class="rise"><div class="eyebrow">Where I usually start</div><h2>Every business is different. These three come up often.</h2>
