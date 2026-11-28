@@ -23,7 +23,7 @@ How Get Found fixes it
 - Prices on the page
 - Hear the AI Front Desk: [(504) 499-1194](tel:+15044991194)
 
-> Think of me as an employee with an eye on the future. How are you staying ahead of the competition in the age of *superintelligence?* You're busy running your business. You need a young guy monitoring AI advancements and advising you accordingly.
+> Think of me as an employee with an eye on the future. How are you staying ahead of the competition in the age of *superintelligence?* You're busy running your business. I keep up with AI, tell you what's worth using, and set it up for you.
 
 Lane Davis II, founder of autoants
 
