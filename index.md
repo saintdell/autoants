@@ -4,7 +4,7 @@ Lane Davis II · AI consultant · New Orleans
 
 # You know your business. I know *today's* AI tools.
 
-I pay attention to AI so you don't have to. If you want to automate and don't know where to start, I find the new tools that can grow your customer base, ones that didn't exist a few years ago or didn't cost what they do today, and I set them up for you.
+I'm on the AI tools every day, looking for edges a New Orleans business can use. I'll show you where you can modernize to bring in more customers, then set it up for you.
 
 **It starts with a free mini assessment:** a written report on your business from public information, then a 15-minute call. Want the full picture? The paid AI Opportunity Assessment looks inside, at how your week actually runs.
 
