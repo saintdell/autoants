@@ -550,7 +550,7 @@ def build_book():
 # ---------------------------------------------------------------- llms.txt
 
 def build_llms():
-    L = [f"# {F['name_long']}", "", "> " + F["summary"], "", "## What AutoAnts does",
+    L = [f"# {F['name_long']}", "", "> " + F["summary"], "", "## What autoants does",
          f"- In one breath: \"{F['one_breath']}\"",
          f"- The offer, simply: \"{F['owner_sentence']}\"",
          f"- Starts free: {lower1(F['free_first'])}",

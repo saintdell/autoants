@@ -105,7 +105,7 @@ Just need a website or design work? I build websites (up to 10 pages, $1,000 onc
 
 **Free first.** A written report on how customers find you: the questions they ask Google and ChatGPT about your kind of business, who gets named today, and the first fixes I'd make, walked through with you in 15 minutes. Yours to keep. [See a sample](https://autoants.com/sample-mini-assessment/). [Prices →](https://autoants.com/prices/)
 
-Free every week: [Permits Pulled](https://autoants.com/who-we-help.html#permit-report), what New Orleans city records say about where the work is.
+Free every week: [autoants weekly](https://autoants.com/who-we-help.html#permit-report), an email for local business owners: trade changes, deadlines, local numbers and one AI idea.
 
 Where AI helps first
 

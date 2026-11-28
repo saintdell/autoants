@@ -330,7 +330,7 @@ def related(p, skip):
 def hub():
     p = "../"
     url = BASE + "/hvac/"
-    title = "Catch missed AC calls: autoants for HVAC companies"
+    title = "Get Found and AI Front Desk: autoants for HVAC companies"
     desc = ("For HVAC owners in New Orleans, Metairie, Kenner and the Northshore: missed calls answered, phone "
             "booking, reviews, and getting found on Google and in AI answers.")
     answer = [

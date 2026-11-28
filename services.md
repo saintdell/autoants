@@ -109,7 +109,7 @@ Most shops need both. When your mini assessment shows you only need one, or you'
 - **AI Front Desk** Just the calls: missed calls answered, quotes followed up, appointments booked and reminded, reviews requested, Facebook and Instagram messages answered, plus a "book now" box on your site.
   $750 a month + $750 setup
 - **Get Found** Just Google: your Google profile kept right and posted to every week, your listings kept right, 2 new pages a month, what AI answers say about you checked every month, review replies drafted, and your website kept up.
-  $750 a month + $250 setup
+  $750 a month + $500 setup
 - **Pay per job** Prefer to pay per job? AI Front Desk is also $250 a month + $25 for each job we save from a call you missed. Never more than $750.
   $250 a month + $25 a job
 - **Add-on: Social Media** Social and marketing, on top of Get Found + AI Front Desk: weekly posts and short videos from your real jobs, postcards to the neighbors, door hangers around every job, postcards to past customers, and New Owner Week: offers to people who just bought a house near you.
