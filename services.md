@@ -62,7 +62,7 @@ Free first
 
 A mini assessment of your business
 
-A short video of how customers find you: the 3 questions they ask Google and ChatGPT about your trade, who gets named today, and the 3 fixes we'd make first, walked through with you in 15 minutes. With a written report, made only from public information. Yours to keep either way.
+A written report on how customers find you: the 3 questions they ask Google and ChatGPT about your trade, who gets named today, and the 3 fixes we'd make first, made only from public information and walked through with you in 15 minutes. Yours to keep either way.
 
 Free
 
@@ -129,7 +129,7 @@ Prices for our first 3 shops on each. [Everything that's included, and the price
 
 #### Free mini assessment
 
-A short video and written report on your business, from public information, before you pay anything.
+A written report on your business, from public information, before you pay anything.
 
 02
 

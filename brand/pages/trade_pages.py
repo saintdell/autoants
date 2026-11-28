@@ -10,7 +10,7 @@ Each FAQ answer is printed on the page and in the FAQPage JSON-LD from the same 
 Copy rules (Lane's, for every autoants page): plain words; "autoants" lowercase; no "#1", "best", "guarantee",
 "never miss", no rank or result promises and no timing promises (the go-live promise was removed 2026-11-12); no
 prices ending in 9; the receptionist is always "an AI" and says so; no attorney credential. The free mini assessment is "a
-short video and a written report". Prices exactly as on /prices/ (checked TODAY). Every number carries its source and
+written report" plus a 15-minute call (Lane, 2026-11-27: no video promised). Prices exactly as on /prices/ (checked TODAY). Every number carries its source and
 date. Trade traps (from the trade-assessment-engine playbook): plumbing "callback" means a failed-fix return trip, so
 the page never offers to "handle callbacks"; electrical "the service" means the utility connection, so the page says
 "trouble call" for a repair visit; roofing stays clear of storm and insurance-claim work entirely (no claims,
@@ -39,7 +39,7 @@ P_TRY = "$500 once"
 P_NMJ = "$750 a month + $750 setup"
 P_GF = "$750 a month + $500 setup"
 P_PPJ = "$250 a month + $25 for each job we save from a call you missed, never more than $750 a month"
-BREAKDOWN = "a short video and a written report"
+BREAKDOWN = "a written report"
 
 SRC_COMMON = {
     "cbp": ("U.S. Census Bureau, County Business Patterns 2023, establishments with paid employees in Orleans and "

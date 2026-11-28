@@ -126,12 +126,12 @@ Probably. Here's the honest version.
 - Anyone who wants strangers cold-called or cold-texted.
 - IT support: networks, laptops, a help desk. That's a different job.
 
-**Not sure what you need?** Start with a free mini assessment, a short video and written report on your business from public information, or [the AI Opportunity Assessment](https://autoants.com/assessment/) ($500, credited toward setup, any remainder to the first month): a bound, printed report on what to automate first, and what each fix is worth. Every business above gets the same two choices: we get you found on Google and answer the calls you miss, $1,250 a month; or, not ready, try one assistant for $500. [Every price](https://autoants.com/prices/).
+**Not sure what you need?** Start with a free mini assessment, a written report on your business from public information, or [the AI Opportunity Assessment](https://autoants.com/assessment/) ($500, credited toward setup, any remainder to the first month): a bound, printed report on what to automate first, and what each fix is worth. Every business above gets the same two choices: we get you found on Google and answer the calls you miss, $1,250 a month; or, not ready, try one assistant for $500. [Every price](https://autoants.com/prices/).
 
 ## How it works
 
 1. **Reach out** Fill out the form, or call or text.
-2. **See your free mini assessment** A short video and written report on your business from public information, before you pay anything.
+2. **See your free mini assessment** A written report on your business from public information, before you pay anything.
 3. **Pick what fits** Get Found + AI Front Desk, $1,250 a month, or try one assistant for $500: a 15-minute call to choose.
 
 ---

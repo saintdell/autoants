@@ -4,7 +4,7 @@ Book
 
 # Book a free mini assessment
 
-A short video and a written report about your business, made only from public information: how you show up on Google and in AI answers, your reviews and listings next to the shops around you, and what we'd fix first. Free, and yours to keep.
+A written report about your business, made only from public information: how you show up on Google and in AI answers, your reviews and listings next to the shops around you, and what we'd fix first. Free, and yours to keep.
 
 ## Three ways to ask
 
@@ -17,7 +17,7 @@ Rather start with a 15-minute call? [Email to set one up](mailto:hello@autoants.
 ## What happens next
 
 1. Lane Davis II, the founder, makes the mini assessment from public information. You hear back from him, a person.
-2. You get a short video and a written report: the 3 questions customers ask Google and ChatGPT about your trade, who gets named today, and the 3 fixes we'd make first, walked through with you in 15 minutes. Yours to keep.
+2. You get a written report: the 3 questions customers ask Google and ChatGPT about your trade, who gets named today, and the 3 fixes we'd make first, walked through with you in 15 minutes. Yours to keep.
 3. If you want to go on, there are two choices: Get Found + AI Front Desk, $1,250 a month + $1,250 setup, or try one assistant for $500 once. [Every price](https://autoants.com/prices/).
 
 Nothing is charged until you see the price in writing. We don't promise calls, rankings or jobs.

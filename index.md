@@ -6,7 +6,7 @@ Lane Davis II · AI consultant · New Orleans
 
 I'm on the AI tools every day, looking for edges a New Orleans business can use. Hire me, and I'll show you where you can modernize to bring in more customers, then set it up for you.
 
-It starts with a free mini assessment of your business, made from public information. Want the full picture? I also offer a paid **AI Opportunity Assessment**, with a 1-on-1 interview about how your week actually runs. Most fixes are one of three:
+It starts with a free mini assessment: a written report on your business, made from public information, then a 15-minute call to go over it. Want the full picture? I also offer a paid **AI Opportunity Assessment**, with a 1-on-1 interview about how your week actually runs. Most fixes are one of three:
 
 1. 1 **Get Found.** Show up on Google and in ChatGPT's answers.
 2. 2 **AI Front Desk.** Answers the calls and texts you can't get to, follows up on quotes, and texts you the job to confirm.
@@ -103,7 +103,7 @@ Sample report page, made-up business
 
 Just need a website or design work? I build websites (up to 10 pages, $1,000 once, yours to keep; free when you start Get Found + AI Front Desk) and do graphic design: logo options, business cards, flyers, signs and truck lettering, quoted by the job. Ask me →
 
-**Free first.** A short video and a written report on how customers find you: the questions they ask Google and ChatGPT about your kind of business, who gets named today, and the first fixes I'd make, walked through with you in 15 minutes. Yours to keep. [See a sample](https://autoants.com/sample-mini-assessment/). [Prices →](https://autoants.com/prices/)
+**Free first.** A written report on how customers find you: the questions they ask Google and ChatGPT about your kind of business, who gets named today, and the first fixes I'd make, walked through with you in 15 minutes. Yours to keep. [See a sample](https://autoants.com/sample-mini-assessment/). [Prices →](https://autoants.com/prices/)
 
 Free every week: [Permits Pulled](https://autoants.com/who-we-help.html#permit-report), what New Orleans city records say about where the work is.
 
@@ -145,7 +145,7 @@ You see a free mini assessment of your business before you spend a dollar. Then 
 
 ### Free mini assessment
 
-A short video and written report on your business, from public information: how customers find you today and where today's AI tools fit. Before you pay anything.
+A written report on your business, from public information: how customers find you today and where today's AI tools fit. Before you pay anything.
 
 ### Pick the fix
 

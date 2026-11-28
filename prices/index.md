@@ -4,7 +4,7 @@
 
 We get you found on Google and answer the calls you miss: $1,250 a month. Not ready? Try one assistant for $500.
 
-**Free first:** a short video of how customers find you: the 3 questions they ask Google and ChatGPT about your trade, who gets named today, and the 3 fixes we'd make first, walked through with you in 15 minutes. Yours to keep.
+**Free first:** a written report on how customers find you: the 3 questions they ask Google and ChatGPT about your trade, who gets named today, and the 3 fixes we'd make first, walked through with you in 15 minutes. Yours to keep.
 
 - **Get Found + AI Front Desk**: $1,250 a month + $1,250 setup. We get you found on Google and answer the calls you miss. Missed calls answered, quotes followed up, appointments booked and reminded, reviews requested, your Google profile kept right and posted to every week, your listings kept right, 2 new pages a month, what AI answers say about you checked every month, and your website kept up. Plus a monthly market pack: permit share, jobs coming due, neighborhood pages, competitor watch.
 - **Not ready? Try one**: $500 once. One assistant on your phone. If you upgrade within 30 days, the $500 counts toward setup.
@@ -53,7 +53,7 @@ Same on every monthly plan: you own every account, page, listing and list, and w
 
 ## The free mini assessment
 
-A short video and a written report about your business, made only from public information: how you show up on Google and in AI answers, your reviews and listings next to the shops around you, and what we'd fix first. When it helps, it also shows you a preview of a new site or a sample postcard for your trade. Yours to keep either way.
+A written report about your business, made only from public information: how you show up on Google and in AI answers, your reviews and listings next to the shops around you, and what we'd fix first. When it helps, it also shows you a preview of a new site or a sample postcard for your trade. Yours to keep either way.
 
 ## Free mini assessment or the assessment?
 
@@ -63,7 +63,7 @@ Free
 
 - **Looks at**: How your business looks from the outside
 - **Made from**: Public information only. I make it before we talk.
-- **You get**: A short video and a written report
+- **You get**: A written report
 - **Answers**: "What might be holding my business back?"
 
 ### The AI Opportunity Assessment
