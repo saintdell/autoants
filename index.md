@@ -1,18 +1,18 @@
-> Plain-text version of https://autoants.com/ (Digital Marketing, AI Assistants & Social Media, New Orleans · autoants), made from that page. If the two ever differ, the page is right.
+> Plain-text version of https://autoants.com/ (AI Consultant in New Orleans: Digital Marketing, AI Assistants & Social Media · autoants), made from that page. If the two ever differ, the page is right.
 
 Lane Davis II · AI consultant · New Orleans
 
 # You know your business. I know *today's* AI tools.
 
-I help owner-run businesses in New Orleans get more customers from Google, ChatGPT and the calls they miss. I set it up and run it for you.
+I pay attention to AI so you don't have to. If you want to automate and don't know where to start, I find the new tools that can grow your customer base, ones that didn't exist a few years ago or didn't cost what they do today, and I set them up for you.
 
-**Get Found + AI Front Desk: $1,250 a month.** It starts with a free mini assessment: a written report on your business from public information, then a 15-minute call. Want the full picture? There's a paid AI Opportunity Assessment.
+**It starts with a free mini assessment:** a written report on your business from public information, then a 15-minute call. Want the full picture? The paid AI Opportunity Assessment looks inside, at how your week actually runs.
 
 [See prices](https://autoants.com/prices/)
 
 [See a sample mini assessment](https://autoants.com/sample-mini-assessment/)
 
-Where local businesses lose work
+Where AI can help a business today
 
 Someone asks Google or ChatGPT who to call, and another shop's name comes up.
 
@@ -23,11 +23,11 @@ How Get Found fixes it
 - Prices on the page
 - Hear the AI Front Desk: [(504) 499-1194](tel:+15044991194)
 
-What I set up
+Where I usually start
 
-## Three things grow a local business.
+## Every business is different. These three come up often.
 
-They work on their own or together. The plan is the first two; Social Media is an add-on.
+The assessment decides what's worth doing for you. These are the fixes I set up most, each with its price.
 
 01
 
@@ -67,7 +67,15 @@ Posts and short videos from your real jobs, so customers see you more often.
 
 **+$1,250**a month · add-on · $500 setup
 
-**The plan, Get Found + AI Front Desk:** $1,250 a month + $1,250 setup, $250 a month less than the two alone. Three months, then month to month. [All prices](https://autoants.com/prices/)
+04
+
+### Anything else you want automated
+
+Quoting, scheduling, invoicing, follow-ups, reports, or the AI tools your team uses every day. If it repeats every week, it can probably be automated, or I'll tell you it shouldn't be.
+
+**Quoted**after the assessment
+
+**Get Found + AI Front Desk together:** $1,250 a month + $1,250 setup, $250 a month less than the two alone. Three months, then month to month. [All prices](https://autoants.com/prices/)
 
 Just need a website or design work? Websites up to 10 pages are $1,000 once and yours to keep (free with the plan). Logo options, cards, flyers, signs and truck lettering are quoted by the job. Ask me
 
