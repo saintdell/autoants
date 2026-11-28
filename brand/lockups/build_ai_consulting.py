@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """The "autoants / AI CONSULTING" lockup (Lane's pick D, 2026-11-27): the approved wordmark, untouched, with
-"AI CONSULTING" in JetBrains Mono 500 caps, widely tracked, left-aligned under it. Text is outlined, so the files
+"AI CONSULTING" in JetBrains Mono 500 caps under it, spaced to run exactly from the wordmark's left edge to its right edge. Text is outlined, so the files
 never depend on a font being installed.
 
 Outputs (brand/lockups/):
@@ -35,6 +35,18 @@ def logo_parts(name):
     return vb, body.strip()
 
 
+def ink_bounds(name):
+    """Left and right ink edges of the wordmark, from its own paths."""
+    from fontTools.svgLib.path import parse_path
+    from fontTools.pens.boundsPen import BoundsPen
+    s = open(os.path.join(BRAND, name), encoding="utf-8").read()
+    pen = BoundsPen(None)
+    for d in re.findall(r'\bd="([^"]+)"', s):
+        parse_path(d, pen)
+    x0, y0, x1, y1 = pen.bounds
+    return x0, x1
+
+
 def outline(ttf, text, size, track_em, x0, baseline):
     font = instantiateVariableFont(TTFont(ttf), {"wght": 500})
     tmp = os.path.join(HERE, ".jbm-500.ttf")
@@ -60,33 +72,29 @@ def outline(ttf, text, size, track_em, x0, baseline):
     return pen.getCommands(), x - track_em * size, cap
 
 
-def build(ttf, logo, color, out, size, track_em, gap):
+def build(ttf, logo, color, out, size, gap):
     (vx, vy, vw, vh), body = logo_parts(logo)
-    left = 0.4                      # the wordmark's "a" starts at about x=0 in the logo file
-    base = vy + vh + gap            # gap below the wordmark box, then the caps
-    d, right, cap = outline(ttf, TEXT, size, track_em, left, 0)
-    baseline = base + cap
+    left, right_target = ink_bounds(logo)
+    n = len(TEXT)
+    _, natural_right, cap = outline(ttf, TEXT, size, 0.0, left, 0)
+    natural = natural_right - left
+    track_em = (right_target - left - natural) / ((n - 1) * size)   # spread so the caps end where the wordmark ends
+    baseline = vy + vh + gap + cap
     d, right, cap = outline(ttf, TEXT, size, track_em, left, baseline)
-    w = max(vx + vw, right + 2) - vx
+    w = vw
     h = baseline + 4 - vy
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vx} {vy} {w:.1f} {h:.1f}" role="img" '
            f'aria-label="autoants, AI consulting"><title>autoants, AI consulting</title>\n{body}\n'
            f'<path fill="{color}" d="{d}"/>\n</svg>\n')
-    p = os.path.join(HERE, out + ".svg")
-    open(p, "w", encoding="utf-8").write(svg)
-    try:
-        import cairosvg
-        cairosvg.svg2png(url=p, write_to=os.path.join(HERE, out + ".png"), output_width=1600)
-    except Exception as e:  # PNG is a convenience; the SVG is the master
-        print("png skipped:", e)
-    print("wrote", out, f"{w:.0f}x{h:.0f}")
+    open(os.path.join(HERE, out + ".svg"), "w", encoding="utf-8").write(svg)
+    print("wrote", out, f"caps {left:.1f}..{right:.1f} vs wordmark {left:.1f}..{right_target:.1f}, tracking {track_em:.3f} em")
 
 
 if __name__ == "__main__":
     ttf = sys.argv[1]
     # regular: descriptor about a third of the wordmark's height, tracked .24em (matches the approved concept)
-    build(ttf, "autoants-logo.svg", FOREST, "ai-consulting", 22.1, 0.24, 12.0)
-    build(ttf, "autoants-logo-reverse.svg", MINT, "ai-consulting-reverse", 22.1, 0.24, 12.0)
+    build(ttf, "autoants-logo.svg", FOREST, "ai-consulting", 24.0, 12.0)
+    build(ttf, "autoants-logo-reverse.svg", MINT, "ai-consulting-reverse", 24.0, 12.0)
     # small cut: bigger, tighter caps so the line still reads on cards, signatures and profile images
-    build(ttf, "autoants-logo.svg", FOREST, "ai-consulting-small", 30.0, 0.14, 10.0)
-    build(ttf, "autoants-logo-reverse.svg", MINT, "ai-consulting-small-reverse", 30.0, 0.14, 10.0)
+    build(ttf, "autoants-logo.svg", FOREST, "ai-consulting-small", 32.0, 10.0)
+    build(ttf, "autoants-logo-reverse.svg", MINT, "ai-consulting-small-reverse", 32.0, 10.0)
